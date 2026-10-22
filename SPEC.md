@@ -521,16 +521,37 @@ One file per city (for example `attractions/JAI.csv`), so each city can be curat
 | city_id | text | |
 | name | text | |
 | lat, lon | decimal | Within 60 km of the city centre |
-| visit_minutes | int | Typical visit, 20–480 |
-| open_time, close_time | HH:MM | Opening and closing time; a visit must finish by close_time. open < close, and close − open ≥ visit_minutes. Use 00:00–23:59 for always open |
+| visit_minutes | int | Typical visit, 20–480. Default by place type (below) when no source gives a duration |
+| visit_approx | bool | True when visit_minutes is the place-type default |
+| open_time, close_time | HH:MM | Opening and closing time; a visit must finish by close_time. open < close, and close − open ≥ visit_minutes. Use 00:00–23:59 for always open. From the ASI or the official site first, otherwise the place-type default (below) |
 | closed_weekdays | list of int | For example `[0]` for closed Mondays; empty if open daily |
-| entry_fee | int | Indian adult, per person; 0 allowed |
+| hours_approx | bool | True when open_time, close_time and closed_weekdays are the place-type default |
+| entry_fee | int | Indian adult, per person; 0 allowed. From the ASI or the official site first; otherwise 0 for temple, viewpoint, market and beach (noted in `source`); monument, museum and activity have no default and stay TODO |
 | tags | list | 1–3 interest tags from section 4. The first is the primary tag |
-| rating | decimal | 1.0–5.0, from a public rating source; record which |
+| rating | decimal | 1.0–5.0, popularity within the city (see **Rating and crowd level** below) |
 | outdoor | bool | |
-| crowd_level | enum | `low`, `medium`, `high` |
+| crowd_level | enum | `low`, `medium`, `high`: popularity terciles within the city |
 | fixed_slot | bool | True for events at a set time, such as Ganga Aarti. Then open_time/close_time is the event window and visit_minutes fits inside it |
 | source, checked_on | | Opening hours and fee source; may differ from seed source |
+
+**Place types.** Each attraction is given one place type during drafting (kept in `data/raw/attractions/`), used only for defaults. Other kinds map onto these: fort, palace, tomb, ruins → monument; gallery, zoo → museum; mosque, church, gurudwara, ghat → temple; lake, garden, park, waterfall → viewpoint; mall, bazaar → market; trek, rafting, safari, show → activity.
+
+| Place type | Default visit_minutes | Default hours | Default closed |
+|---|---|---|---|
+| monument | 90 | 09:00–17:00 | — |
+| museum | 120 | 10:00–17:00 | Monday |
+| temple | 45 | 06:00–20:00 | — |
+| viewpoint | 30 | 06:00–18:00 | — |
+| market | 90 | 10:00–21:00 | — |
+| beach | 120 | 06:00–19:00 | — |
+| activity | 180 | 09:00–17:00 | — |
+
+**Rating and crowd level.**
+
+- Popularity is the attraction's English Wikipedia pageviews over the 12 complete months before compilation (Wikimedia REST API, all access, user agents). Within each city, rating = 1 + 4 × (ln v − ln v_min) ÷ (ln v_max − ln v_min) over the attractions that have pageviews, rounded to 1 decimal (3.0 if they all have the same count).
+- An attraction with no Wikipedia article uses its OpenTripMap `rate` instead: 1 → 2.0, 2 → 3.0, 3 → 4.0 (the `h` heritage flag is ignored).
+- crowd_level: the city's attractions sorted by rating are split into thirds: bottom `low`, middle `medium`, top `high`.
+- Every pageview and OpenTripMap lookup is saved in `data/raw/`.
 
 **Coverage rules:**
 
@@ -702,7 +723,7 @@ The work splits into three kinds:
 | `datatools/io.py` | Read and write the CSV/JSON files into the models; list-cell parsing | |
 | `datatools/geo.py` | Haversine distance; OpenRouteService client (matrix call, response cache) | DATA-FR-03, 07 |
 | `datatools/seed.py` | `python -m datatools.seed <CITY>`: fetch candidates from OpenTripMap (fallback: Overpass) into `data/raw/seed/<CITY>.json` | Spec 6.1 |
-| `datatools/draft.py` | `python -m datatools.draft <CITY>`: turn seed candidates into a draft `attractions/<CITY>.csv`, with name, coordinates and suggested tags filled, the rest blank | Spec 6.2 |
+| `datatools/draft.py` | `python -m datatools.draft <CITY>`: turn seed candidates into a draft `attractions/<CITY>.csv`, with name, coordinates, suggested tags, place type, pageview-based rating and crowd level filled, the rest blank | Spec 5.5, 6.2 |
 | `datatools/pairs.py` | `python -m datatools.pairs`: compute road_km (ORS, bus hubs), air_km (haversine, flight hubs), availability flags and fallback durations. Keeps any hand-entered override columns | DATA-FR-03, 12 |
 | `datatools/matrices.py` | `python -m datatools.matrices [CITY]`: build `matrices/<CITY>.json` from hotels, attractions and hubs | DATA-FR-07 |
 | `datatools/validate.py` | `python -m datatools.validate [--data DIR]`: run every rule; print `file:row:field: message`; exit 1 on any error | DATA-FR-10 |
@@ -1435,3 +1456,8 @@ Update this table when a feature's tasks are written (fill **Tasks**) and when i
 | 2026-10-23 | C 001 Spec §3; Plan §1 | checked_on = fetch date for values read from an opened page with evidence in data/raw/; empty only for TODO rows | Makes checked_on mechanical and auditable |
 | 2026-10-23 | C 001 Spec §8; Plan §6; T26 | DATA-AT-05 spot check grows to 20 attractions, 10 hotels and all fare rows | Compensates for checked_on now being the fetch date |
 | 2026-10-23 | C 001 Plan §1, §2.2 | Curation scripts live in datatools/curation/ and are committed | Derived values must be reproducible |
+| 2026-10-23 | C 001 Spec §5.5 | rating = Wikipedia 12-month pageviews log-scaled 1–5 within each city; OpenTripMap rate 1/2/3 → 2/3/4 as fallback | One reproducible popularity measure for every city |
+| 2026-10-23 | C 001 Spec §5.5 | crowd_level = rating terciles within each city | No public crowd data; popularity is the closest measurable proxy |
+| 2026-10-23 | C 001 Spec §5.5 | Hours and fees from ASI or official sites first; otherwise default hours by place type and fee 0 for temple, viewpoint, market, beach | Official hours are not published for every attraction |
+| 2026-10-23 | C 001 Spec §5.5 | visit_minutes defaults by place type (monument 90, museum 120, temple 45, viewpoint 30, market 90, beach 120, activity 180); other kinds map onto these seven | Visit durations are rarely published |
+| 2026-10-23 | C 001 Spec §5.5; Plan §2.2 | New columns hours_approx and visit_approx | DATA-FR-12: approximations are flagged in the row |
