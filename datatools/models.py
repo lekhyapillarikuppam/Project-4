@@ -349,9 +349,11 @@ class Food(Curated):
 class LocalTransport(Curated):
     city_id: Code3
     mode: Literal["auto", "cab"]
-    base_fare: Rupees
+    min_fare: Rupees
+    min_km: Annotated[float, Field(ge=0)]
     per_km: Annotated[float, Field(ge=0)]
     capacity: Annotated[int, Field(gt=0)]
+    approx: Bool
 
     def checks(self) -> list[Problem]:
         out = _city_problem("city_id", self.city_id)

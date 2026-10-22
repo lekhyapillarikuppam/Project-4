@@ -13,7 +13,7 @@ CITY_CODES = (
 CITY_COUNT = 15
 
 TRAFFIC_FACTOR_RANGE = (1.0, 2.0)   # 5.1
-FOOD_MULTIPLIER_RANGE = (0.8, 1.5)  # 5.1
+FOOD_MULTIPLIER_RANGE = (0.6, 2.2)  # 5.1
 
 # --- Interest tags (section 4) ---------------------------------------------
 
@@ -40,16 +40,15 @@ MATRIX_PROFILE = "driving-car"                           # 5.9
 
 # (mode, class) -> per_km sanity bounds. These catch typos; they are not price claims.
 FARE_CLASSES = {
-    ("train", "SL"): (0.3, 1.0),
-    ("train", "3A"): (0.9, 2.2),
-    ("train", "2A"): (1.4, 3.2),
-    ("bus", "NAC"): (0.8, 2.0),
+    ("train", "SL"): (0.2, 1.0),
+    ("train", "3A"): (0.5, 2.2),
+    ("train", "2A"): (0.8, 3.2),
     ("bus", "ACS"): (1.5, 3.5),
     ("flight", "Y"): (2.0, 9.0),
 }
 # Extra bound on base_fare for these classes.
 FARE_BASE_BOUNDS = {
-    ("flight", "Y"): (1000, 4000),
+    ("flight", "Y"): (1000, 6000),
 }
 COMFORT_VALUE_RANGE = (0.0, 1.0)
 
@@ -98,7 +97,7 @@ REQUIRED_TAGS = {
 
 # --- Hotels (5.6) ----------------------------------------------------------
 
-HOTELS_PER_TIER = (3, 4)
+HOTELS_PER_TIER = (2, 4)
 HOTEL_MAX_KM_FROM_CENTRE = 25
 PRICE_BANDS = {                  # per room per night, rupees
     "budget": (600, 2500),
