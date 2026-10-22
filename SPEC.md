@@ -878,11 +878,11 @@ Work top to bottom and tick `[x]` when a task is done and its check passes. "Che
 - [x] **T05** Build the fixture mini-dataset (2 cities, valid); write pytest tests that generate one broken copy per rule and assert each error. · Check: DATA-AT-02 passes.
 
 ##### Hand-curated base files
-- [ ] **T06** Create `data/curated/VERSION`, `cities.csv` (15 rows) and `food.csv` (3 rows), with sources. · serves DATA-FR-01, 09
-- [ ] **T07** Create `hubs.csv`, verifying the outside-city hubs listed in spec 5.2. · serves DATA-FR-02
-- [ ] **T08** Create `fare_rates.csv` (5 rows) from samples of real fares, recording the method. · serves DATA-FR-04
-- [ ] **T09** Create `local_transport.csv` (auto and cab for 15 cities). · serves DATA-FR-06 (local travel inputs)
-- [ ] **T10** Create `hotels.csv`: 2–4 per tier per city (3–4 where possible), spread over at least two areas. · serves DATA-FR-06
+- [x] **T06** Create `data/curated/VERSION`, `cities.csv` (15 rows) and `food.csv` (3 rows), with sources. · serves DATA-FR-01, 09
+- [x] **T07** Create `hubs.csv`, verifying the outside-city hubs listed in spec 5.2. · serves DATA-FR-02
+- [x] **T08** Create `fare_rates.csv` (5 rows) from samples of real fares, recording the method. · serves DATA-FR-04
+- [x] **T09** Create `local_transport.csv` (auto and cab for 15 cities). · serves DATA-FR-06 (local travel inputs)
+- [x] **T10** Create `hotels.csv`: 2–4 per tier per city (3–4 where possible), spread over at least two areas. · serves DATA-FR-06
 
 ##### Scripted files
 - [ ] **T11** Write `datatools/geo.py`: haversine and an ORS client with a response cache in `data/raw/ors/`.
