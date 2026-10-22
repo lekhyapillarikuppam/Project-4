@@ -1,0 +1,6 @@
+city_id,mode,hub_name,hub_code,lat,lon,access_km,access_minutes,access_cost_per_vehicle,source,checked_on
+JAI,train,Fixture Jn,FXJ,26.92240,75.79730,2.0,11,90,test fixture (not real data),2026-10-01
+JAI,bus,Fixture Bus Stand,,26.90240,75.79730,2.0,11,90,test fixture (not real data),2026-10-01
+JAI,flight,Fixture Airport,FXA,26.83240,75.82730,12.9,44,308,test fixture (not real data),2026-10-01
+AGR,train,Fixture Cantt,FXC,27.18870,77.99810,2.3,12,96,test fixture (not real data),2026-10-01
+AGR,bus,Fixture ISBT,,27.19670,78.02810,4.1,17,132,test fixture (not real data),2026-10-01

@@ -1,0 +1,27 @@
+attraction_id,city_id,name,lat,lon,visit_minutes,open_time,close_time,closed_weekdays,entry_fee,tags,rating,outdoor,crowd_level,fixed_slot,source,checked_on
+AGR-A-01,AGR,Fixture Site AGR 01,27.18572,78.01881,70,09:00,18:00,,100,history;culture,3.6,true,medium,false,test fixture (not real data),2026-10-01
+AGR-A-02,AGR,Fixture Site AGR 02,27.19444,78.01116,80,09:00,18:00,,150,culture;history,3.7,false,high,false,test fixture (not real data),2026-10-01
+AGR-A-03,AGR,Fixture Site AGR 03,27.19569,77.99699,90,09:00,18:00,,200,history,3.8,true,low,false,test fixture (not real data),2026-10-01
+AGR-A-04,AGR,Fixture Site AGR 04,27.18541,77.98360,100,09:00,18:00,,50,culture,3.9,false,medium,false,test fixture (not real data),2026-10-01
+AGR-A-05,AGR,Fixture Site AGR 05,27.16618,77.98001,110,09:00,18:00,,0,shopping;food,4.0,true,high,false,test fixture (not real data),2026-10-01
+AGR-A-06,AGR,Fixture Site AGR 06,27.14707,77.99143,60,09:00,18:00,,150,food,4.1,false,low,false,test fixture (not real data),2026-10-01
+AGR-A-07,AGR,Fixture Site AGR 07,27.13937,78.01519,70,00:00,23:59,,200,nature;relaxation,4.2,true,medium,false,test fixture (not real data),2026-10-01
+AGR-A-08,AGR,Fixture Site AGR 08,27.15019,78.04067,80,09:00,18:00,,50,spiritual;culture,4.3,false,high,false,test fixture (not real data),2026-10-01
+AGR-A-09,AGR,Fixture Site AGR 09,27.17747,78.05409,90,09:00,18:00,0,100,history;culture,4.4,true,low,false,test fixture (not real data),2026-10-01
+AGR-A-10,AGR,Fixture Site AGR 10,27.20955,78.04580,100,09:00,18:00,,0,culture;history,4.5,false,medium,false,test fixture (not real data),2026-10-01
+AGR-A-11,AGR,Fixture Site AGR 11,27.23006,78.01638,110,09:00,18:00,,200,history,4.6,true,high,false,test fixture (not real data),2026-10-01
+AGR-A-12,AGR,Fixture Site AGR 12,27.22627,77.97798,60,09:00,18:00,,50,culture,4.7,false,low,false,test fixture (not real data),2026-10-01
+AGR-A-13,AGR,Fixture Site AGR 13,27.19648,77.94934,70,09:00,18:00,,100,shopping;food,4.8,true,medium,false,test fixture (not real data),2026-10-01
+AGR-A-14,AGR,Fixture Site AGR 14,27.15251,77.94669,80,00:00,23:59,,150,food,4.9,false,high,false,test fixture (not real data),2026-10-01
+AGR-A-15,AGR,Fixture Site AGR 15,27.11512,77.97481,90,09:00,18:00,,0,nature;relaxation,3.5,true,low,false,test fixture (not real data),2026-10-01
+AGR-A-16,AGR,Fixture Site AGR 16,27.10424,78.02312,100,09:00,18:00,,50,spiritual;culture,3.6,false,medium,false,test fixture (not real data),2026-10-01
+AGR-A-17,AGR,Fixture Site AGR 17,27.12849,78.06941,110,09:00,18:00,,100,history;culture,3.7,true,high,false,test fixture (not real data),2026-10-01
+AGR-A-18,AGR,Fixture Site AGR 18,27.17946,78.09005,60,09:00,18:00,0,150,culture;history,3.8,false,low,false,test fixture (not real data),2026-10-01
+AGR-A-19,AGR,Fixture Site AGR 19,27.23428,78.07198,70,09:00,18:00,,200,history,3.9,true,medium,false,test fixture (not real data),2026-10-01
+AGR-A-20,AGR,Fixture Site AGR 20,27.26585,78.02041,80,09:00,18:00,,0,culture,4.0,false,high,false,test fixture (not real data),2026-10-01
+AGR-A-21,AGR,Fixture Site AGR 21,27.25620,77.95794,90,00:00,23:59,,100,shopping;food,4.1,true,low,false,test fixture (not real data),2026-10-01
+AGR-A-22,AGR,Fixture Site AGR 22,27.20641,77.91471,100,09:00,18:00,,150,food,4.2,false,medium,false,test fixture (not real data),2026-10-01
+AGR-A-23,AGR,Fixture Site AGR 23,27.13773,77.91384,110,09:00,18:00,,200,nature;relaxation,4.3,true,high,false,test fixture (not real data),2026-10-01
+AGR-A-24,AGR,Fixture Site AGR 24,27.08262,77.95927,60,09:00,18:00,,50,spiritual;culture,4.4,false,low,false,test fixture (not real data),2026-10-01
+AGR-A-25,AGR,Fixture Site AGR 25,27.06938,78.03224,70,09:00,18:00,,0,history;culture,4.5,true,medium,false,test fixture (not real data),2026-10-01
+AGR-A-26,AGR,Fixture Site AGR 26,27.10775,78.09888,80,09:00,18:00,,150,shopping,4.6,false,high,false,test fixture (not real data),2026-10-01

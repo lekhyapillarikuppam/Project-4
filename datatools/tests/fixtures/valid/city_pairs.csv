@@ -1,0 +1,2 @@
+city_a,city_b,road_km,rail_km,air_km,train_available,bus_available,flight_available,train_minutes,bus_minutes,flight_minutes,rail_km_approx,train_minutes_approx,bus_minutes_approx,flight_minutes_approx,source,checked_on
+AGR,JAI,240.0,240.0,,true,true,false,322,350,,true,true,true,false,test fixture (not real data),2026-10-01

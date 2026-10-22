@@ -1,0 +1,19 @@
+hotel_id,city_id,name,tier,lat,lon,price_per_room_night,source,checked_on
+JAI-H-01,JAI,Fixture Hotel JAI 01,budget,26.88240,75.77230,900,test fixture (not real data),2026-10-01
+JAI-H-02,JAI,Fixture Hotel JAI 02,budget,26.91240,75.79730,1400,test fixture (not real data),2026-10-01
+JAI-H-03,JAI,Fixture Hotel JAI 03,budget,26.94240,75.82230,2100,test fixture (not real data),2026-10-01
+JAI-H-04,JAI,Fixture Hotel JAI 04,mid,26.88240,75.74730,2600,test fixture (not real data),2026-10-01
+JAI-H-05,JAI,Fixture Hotel JAI 05,mid,26.91240,75.77230,3800,test fixture (not real data),2026-10-01
+JAI-H-06,JAI,Fixture Hotel JAI 06,mid,26.94240,75.79730,5200,test fixture (not real data),2026-10-01
+JAI-H-07,JAI,Fixture Hotel JAI 07,premium,26.88240,75.82230,6500,test fixture (not real data),2026-10-01
+JAI-H-08,JAI,Fixture Hotel JAI 08,premium,26.91240,75.74730,9000,test fixture (not real data),2026-10-01
+JAI-H-09,JAI,Fixture Hotel JAI 09,premium,26.94240,75.77230,14000,test fixture (not real data),2026-10-01
+AGR-H-01,AGR,Fixture Hotel AGR 01,budget,27.14670,77.99310,900,test fixture (not real data),2026-10-01
+AGR-H-02,AGR,Fixture Hotel AGR 02,budget,27.17670,78.01810,1400,test fixture (not real data),2026-10-01
+AGR-H-03,AGR,Fixture Hotel AGR 03,budget,27.20670,78.04310,2100,test fixture (not real data),2026-10-01
+AGR-H-04,AGR,Fixture Hotel AGR 04,mid,27.14670,77.96810,2600,test fixture (not real data),2026-10-01
+AGR-H-05,AGR,Fixture Hotel AGR 05,mid,27.17670,77.99310,3800,test fixture (not real data),2026-10-01
+AGR-H-06,AGR,Fixture Hotel AGR 06,mid,27.20670,78.01810,5200,test fixture (not real data),2026-10-01
+AGR-H-07,AGR,Fixture Hotel AGR 07,premium,27.14670,78.04310,6500,test fixture (not real data),2026-10-01
+AGR-H-08,AGR,Fixture Hotel AGR 08,premium,27.17670,77.96810,9000,test fixture (not real data),2026-10-01
+AGR-H-09,AGR,Fixture Hotel AGR 09,premium,27.20670,77.99310,14000,test fixture (not real data),2026-10-01

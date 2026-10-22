@@ -1,0 +1,3 @@
+city_id,name,lat,lon,traffic_factor,food_multiplier,source,checked_on
+JAI,Jaipur,26.9124,75.7873,1.2,1.0,test fixture (not real data),2026-10-01
+AGR,Agra,27.1767,78.0081,1.2,0.9,test fixture (not real data),2026-10-01

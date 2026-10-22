@@ -1,0 +1,7 @@
+mode,class,base_fare,per_km,min_fare,comfort_value,source,checked_on
+train,SL,20,0.5,100,0.2,test fixture (not real data),2026-10-01
+train,3A,40,1.3,300,0.6,test fixture (not real data),2026-10-01
+train,2A,50,1.9,500,0.8,test fixture (not real data),2026-10-01
+bus,NAC,10,1.2,150,0.1,test fixture (not real data),2026-10-01
+bus,ACS,20,2.2,400,0.5,test fixture (not real data),2026-10-01
+flight,Y,2000,4.5,2500,0.9,test fixture (not real data),2026-10-01

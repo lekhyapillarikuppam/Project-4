@@ -844,11 +844,11 @@ For the mini-dataset fixtures, the validator takes `--data DIR` and a `--cities 
 Work top to bottom and tick `[x]` when a task is done and its check passes. "Check" says how you know it's finished.
 
 ##### Setup
-- [ ] **T01** Create the `datatools/` package skeleton, `datatools/requirements.txt` and `datatools/tests/`; create `backend\.venv` and install the requirements. · Check: `python -c "import datatools"` works.
-- [ ] **T02** Write `datatools/rules.py`: city codes, the 9 tags, enums, sanity bounds, price bands, coverage thresholds and city → required tags, all taken from 001 spec and plan. · serves DATA-FR-01–08
-- [ ] **T03** Write `datatools/models.py` (Pydantic models for every entity, with row checks) and `datatools/io.py` (CSV/JSON reading, `;` list cells). · serves DATA-FR-10
-- [ ] **T04** Write `datatools/validate.py`, with both passes, `--data` and `--cities` options, `file:row:field` messages and exit codes. · serves DATA-FR-10
-- [ ] **T05** Build the fixture mini-dataset (2 cities, valid) plus one broken copy per rule; write pytest tests asserting each error. · Check: DATA-AT-02 passes.
+- [x] **T01** Create the `datatools/` package skeleton, `datatools/requirements.txt` and `datatools/tests/`; create `backend\.venv` and install the requirements. · Check: `python -c "import datatools"` works.
+- [x] **T02** Write `datatools/rules.py`: city codes, the 9 tags, enums, sanity bounds, price bands, coverage thresholds and city → required tags, all taken from 001 spec and plan. · serves DATA-FR-01–08
+- [x] **T03** Write `datatools/models.py` (Pydantic models for every entity, with row checks) and `datatools/io.py` (CSV/JSON reading, `;` list cells). · serves DATA-FR-10
+- [x] **T04** Write `datatools/validate.py`, with both passes, `--data` and `--cities` options, `file:row:field` messages and exit codes. · serves DATA-FR-10
+- [x] **T05** Build the fixture mini-dataset (2 cities, valid) plus one broken copy per rule; write pytest tests asserting each error. · Check: DATA-AT-02 passes.
 
 ##### Hand-curated base files
 - [ ] **T06** Create `data/curated/VERSION`, `cities.csv` (15 rows) and `food.csv` (3 rows), with sources. · serves DATA-FR-01, 09

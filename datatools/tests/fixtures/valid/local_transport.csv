@@ -1,0 +1,5 @@
+city_id,mode,base_fare,per_km,capacity,source,checked_on
+JAI,auto,30,15.0,3,test fixture (not real data),2026-10-01
+JAI,cab,80,22.0,4,test fixture (not real data),2026-10-01
+AGR,auto,30,15.0,3,test fixture (not real data),2026-10-01
+AGR,cab,80,22.0,4,test fixture (not real data),2026-10-01
