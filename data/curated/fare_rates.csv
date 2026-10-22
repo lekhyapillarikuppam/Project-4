@@ -1,0 +1,7 @@
+mode,class,base_fare,per_km,min_fare,comfort_value,source,checked_on
+train,SL,220,0.29,275,0.2,least-squares fit fare = base_fare + per_km x km over 6 samples in data/raw/fare_samples.csv (max abs residual Rs 50); min_fare = lowest sample fare; comfort_value = 001 Spec 5.4 default,
+train,3A,583,0.72,685,0.6,least-squares fit fare = base_fare + per_km x km over 6 samples in data/raw/fare_samples.csv (max abs residual Rs 159); min_fare = lowest sample fare; comfort_value = 001 Spec 5.4 default,
+train,2A,785,1.05,945,0.8,least-squares fit fare = base_fare + per_km x km over 6 samples in data/raw/fare_samples.csv (max abs residual Rs 220); min_fare = lowest sample fare; comfort_value = 001 Spec 5.4 default,
+bus,NAC,,,,0.1,TODO: only 0 real samples found (need 4-5); comfort_value = 001 Spec 5.4 default,
+bus,ACS,246,1.90,599,0.5,least-squares fit fare = base_fare + per_km x km over 5 samples in data/raw/fare_samples.csv (max abs residual Rs 90); min_fare = lowest sample fare; comfort_value = 001 Spec 5.4 default,
+flight,Y,4693,3.25,3505,0.9,least-squares fit fare = base_fare + per_km x km over 6 samples in data/raw/fare_samples.csv (max abs residual Rs 4768); min_fare = lowest sample fare; comfort_value = 001 Spec 5.4 default,

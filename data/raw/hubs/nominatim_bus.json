@@ -1,0 +1,532 @@
+{
+ "AGR-bus": {
+  "url": "https://nominatim.openstreetmap.org/search?q=Idgah+Bus+Stand+Agra&format=json&limit=3",
+  "results": [
+   {
+    "place_id": 246800539,
+    "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+    "osm_type": "way",
+    "osm_id": 102893184,
+    "lat": "27.1660718",
+    "lon": "77.9954735",
+    "class": "amenity",
+    "type": "bus_station",
+    "place_rank": 30,
+    "importance": 6.776607919427813e-05,
+    "addresstype": "amenity",
+    "name": "idgah bus stand",
+    "display_name": "idgah bus stand, SH39, Shahganj, Agra, Uttar Pradesh, 280001, India",
+    "boundingbox": [
+     "27.1652943",
+     "27.1667085",
+     "77.9944082",
+     "77.9963182"
+    ]
+   },
+   {
+    "place_id": 246597862,
+    "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+    "osm_type": "node",
+    "osm_id": 1188216399,
+    "lat": "27.1662661",
+    "lon": "77.9976722",
+    "class": "amenity",
+    "type": "bus_station",
+    "place_rank": 30,
+    "importance": 6.776607919427813e-05,
+    "addresstype": "amenity",
+    "name": "Idgah Bus Stand",
+    "display_name": "Idgah Bus Stand, SH39, Shahganj, Agra, Uttar Pradesh, 280001, India",
+    "boundingbox": [
+     "27.1662161",
+     "27.1663161",
+     "77.9976222",
+     "77.9977222"
+    ]
+   }
+  ]
+ },
+ "HMP-bus": {
+  "url": "https://nominatim.openstreetmap.org/search?q=KSRTC+Bus+Stand+Hosapete&format=json&limit=3",
+  "results": []
+ },
+ "HMP-bus2": {
+  "url": "https://nominatim.openstreetmap.org/search?q=Hampi+Bus+Stand&format=json&limit=3",
+  "results": [
+   {
+    "place_id": 252380432,
+    "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+    "osm_type": "node",
+    "osm_id": 6117596982,
+    "lat": "15.3343399",
+    "lon": "76.4622112",
+    "class": "amenity",
+    "type": "bus_station",
+    "place_rank": 30,
+    "importance": 5.809033340958293e-05,
+    "addresstype": "amenity",
+    "name": "Hampi Bus Stand",
+    "display_name": "Hampi Bus Stand, Hampi Kamalapura Road, Hampi, Hosapete taluk, Vijayanagara, Karnataka, 583239, India",
+    "boundingbox": [
+     "15.3342899",
+     "15.3343899",
+     "76.4621612",
+     "76.4622612"
+    ]
+   }
+  ]
+ },
+ "MUN-bus": {
+  "url": "https://nominatim.openstreetmap.org/search?q=Munnar+KSRTC+Bus+Station&format=json&limit=3",
+  "results": [
+   {
+    "place_id": 253236482,
+    "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+    "osm_type": "way",
+    "osm_id": 1255249887,
+    "lat": "10.0728797",
+    "lon": "77.0620188",
+    "class": "amenity",
+    "type": "bus_station",
+    "place_rank": 30,
+    "importance": 5.018005645833551e-05,
+    "addresstype": "amenity",
+    "name": "Kerala State Road Transport Corporation Bus Stand, Munnar",
+    "display_name": "Kerala State Road Transport Corporation Bus Stand, Munnar, Kochi - Dhanushkodi Road, Moolakadai, Munnar, Devikulam, Idukki, Kerala, 685612, India",
+    "boundingbox": [
+     "10.0722707",
+     "10.0731537",
+     "77.0617155",
+     "77.0622835"
+    ]
+   }
+  ]
+ },
+ "RSH-bus": {
+  "url": "https://nominatim.openstreetmap.org/search?q=ISBT+Rishikesh&format=json&limit=3",
+  "results": [
+   {
+    "place_id": 242715729,
+    "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+    "osm_type": "way",
+    "osm_id": 630557587,
+    "lat": "30.1129433",
+    "lon": "78.2957246",
+    "class": "amenity",
+    "type": "bus_station",
+    "place_rank": 30,
+    "importance": 6.783627069500294e-05,
+    "addresstype": "amenity",
+    "name": "ISBT",
+    "display_name": "ISBT, NH7, Adarsh Gram, Rishikesh, Dehradun, Uttarakhand, 249201, India",
+    "boundingbox": [
+     "30.1123113",
+     "30.1136425",
+     "78.2948254",
+     "78.2965082"
+    ]
+   }
+  ]
+ },
+ "DJL-bus": {
+  "url": "https://nominatim.openstreetmap.org/search?q=Tenzing+Norgay+Bus+Terminus&format=json&limit=3",
+  "results": [
+   {
+    "place_id": 243864986,
+    "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+    "osm_type": "relation",
+    "osm_id": 16758006,
+    "lat": "26.7249676",
+    "lon": "88.4148820",
+    "class": "amenity",
+    "type": "bus_station",
+    "place_rank": 30,
+    "importance": 5.617990386811654e-05,
+    "addresstype": "amenity",
+    "name": "Tenzing Norgay Bus Terminus",
+    "display_name": "Tenzing Norgay Bus Terminus, SH12A, Coolie Patty, Siliguri, Matigara block, Darjeeling, West Bengal, 734001, India",
+    "boundingbox": [
+     "26.7243554",
+     "26.7258844",
+     "88.4142478",
+     "88.4154904"
+    ]
+   }
+  ]
+ },
+ "DJL-bus2": {
+  "url": "https://nominatim.openstreetmap.org/search?q=Darjeeling+Motor+Stand&format=json&limit=3",
+  "results": []
+ },
+ "GOA-bus": {
+  "url": "https://nominatim.openstreetmap.org/search?q=Kadamba+Bus+Stand+Panaji&format=json&limit=3",
+  "results": [
+   {
+    "place_id": 380982296,
+    "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+    "osm_type": "way",
+    "osm_id": 316043021,
+    "lat": "15.4953245",
+    "lon": "73.8370329",
+    "class": "building",
+    "type": "transportation",
+    "place_rank": 30,
+    "importance": 5.4533455405462995e-05,
+    "addresstype": "building",
+    "name": "Kadamba Bus Terminus Panaji",
+    "display_name": "Kadamba Bus Terminus Panaji, To Mapusa, Panjim KTC Bus Stand, Patto, Panaji, Tiswadi, North Goa, Goa, 403100, India",
+    "boundingbox": [
+     "15.4949546",
+     "15.4956731",
+     "73.8366597",
+     "73.8374095"
+    ]
+   },
+   {
+    "place_id": 252715344,
+    "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+    "osm_type": "node",
+    "osm_id": 12701303421,
+    "lat": "15.4951504",
+    "lon": "73.8368643",
+    "class": "tourism",
+    "type": "information",
+    "place_rank": 30,
+    "importance": 5.4533455405462995e-05,
+    "addresstype": "tourism",
+    "name": "Kadamba Control Room Enquiry",
+    "display_name": "Kadamba Control Room Enquiry, To Mapusa, Panjim KTC Bus Stand, Patto, Panaji, Tiswadi, North Goa, Goa, 403100, India",
+    "boundingbox": [
+     "15.4951004",
+     "15.4952004",
+     "73.8368143",
+     "73.8369143"
+    ]
+   }
+  ]
+ },
+ "PDY-bus": {
+  "url": "https://nominatim.openstreetmap.org/search?q=Puducherry+New+Bus+Stand&format=json&limit=3",
+  "results": [
+   {
+    "place_id": 253065795,
+    "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+    "osm_type": "way",
+    "osm_id": 1192782119,
+    "lat": "11.9331350",
+    "lon": "79.8159418",
+    "class": "amenity",
+    "type": "bus_station",
+    "place_rank": 30,
+    "importance": 5.9021133745281414e-05,
+    "addresstype": "amenity",
+    "name": "Puducherry New Bus Stand",
+    "display_name": "Puducherry New Bus Stand, Maraimalai Adigal Salai, Bharathipuram, Odiansalai, Puducherry, Puducherry Taluk, Puducherry, 605001, India",
+    "boundingbox": [
+     "11.9319747",
+     "11.9343002",
+     "79.8152386",
+     "79.8170624"
+    ]
+   },
+   {
+    "place_id": 251850073,
+    "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+    "osm_type": "node",
+    "osm_id": 12558330301,
+    "lat": "11.9272277",
+    "lon": "79.8192957",
+    "class": "amenity",
+    "type": "bus_station",
+    "place_rank": 30,
+    "importance": 5.9021133745281414e-05,
+    "addresstype": "amenity",
+    "name": "Puducherry new bus stand",
+    "display_name": "Puducherry new bus stand, Mill Road, Bharathipuram, Odiansalai, Puducherry, Puducherry Taluk, Puducherry, 605001, India",
+    "boundingbox": [
+     "11.9271777",
+     "11.9272777",
+     "79.8192457",
+     "79.8193457"
+    ]
+   }
+  ]
+ },
+ "BOM-bus": {
+  "url": "https://nominatim.openstreetmap.org/search?q=MSRTC+Mumbai+Central&format=json&limit=3",
+  "results": []
+ },
+ "CCU-bus": {
+  "url": "https://nominatim.openstreetmap.org/search?q=Esplanade+Bus+Terminus+Kolkata&format=json&limit=3",
+  "results": [
+   {
+    "place_id": 251789380,
+    "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+    "osm_type": "way",
+    "osm_id": 52084073,
+    "lat": "22.5625635",
+    "lon": "88.3498012",
+    "class": "amenity",
+    "type": "bus_station",
+    "place_rank": 30,
+    "importance": 7.340428778510746e-05,
+    "addresstype": "amenity",
+    "name": "Esplanade",
+    "display_name": "Esplanade, Rani Rashmoni Avenue, Esplanade, Kolkata, West Bengal, 700001, India",
+    "boundingbox": [
+     "22.5610158",
+     "22.5639747",
+     "88.3489861",
+     "88.3506766"
+    ]
+   }
+  ]
+ },
+ "VNS-bus": {
+  "url": "https://nominatim.openstreetmap.org/search?q=Varanasi+Cantt+Bus+Stand&format=json&limit=3",
+  "results": [
+   {
+    "place_id": 241608382,
+    "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+    "osm_type": "node",
+    "osm_id": 6261924154,
+    "lat": "25.3287535",
+    "lon": "82.9901165",
+    "class": "highway",
+    "type": "bus_stop",
+    "place_rank": 30,
+    "importance": 6.819790951395464e-05,
+    "addresstype": "highway",
+    "name": "Varanasi Bus Stand",
+    "display_name": "Varanasi Bus Stand, GT Road, Banaras Ghats, Cantonment, Varanasi, Sadar, Varanasi, Uttar Pradesh, 221002, India",
+    "boundingbox": [
+     "25.3287035",
+     "25.3288035",
+     "82.9900665",
+     "82.9901665"
+    ]
+   }
+  ]
+ },
+ "HMP-bus-b": {
+  "url": "https://nominatim.openstreetmap.org/search?q=Hosapete+bus+station&format=json&limit=3",
+  "results": [
+   {
+    "place_id": 253629189,
+    "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+    "osm_type": "node",
+    "osm_id": 977483009,
+    "lat": "15.2751874",
+    "lon": "76.3892617",
+    "class": "amenity",
+    "type": "bus_station",
+    "place_rank": 30,
+    "importance": 5.5247577630228386e-05,
+    "addresstype": "amenity",
+    "name": "Hosapete Bus Stand",
+    "display_name": "Hosapete Bus Stand, Bus Stand Road, Amaravati, Hosapete, Hosapete taluk, Vijayanagara, Karnataka, 583200, India",
+    "boundingbox": [
+     "15.2751374",
+     "15.2752374",
+     "76.3892117",
+     "76.3893117"
+    ]
+   },
+   {
+    "place_id": 251608137,
+    "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+    "osm_type": "way",
+    "osm_id": 312543910,
+    "lat": "15.2727207",
+    "lon": "76.3906762",
+    "class": "highway",
+    "type": "primary",
+    "place_rank": 26,
+    "importance": 0.05338858091096357,
+    "addresstype": "primary",
+    "name": "Bus Stand Station Road",
+    "display_name": "Bus Stand Station Road, Amaravati, Hosapete, Hosapete taluk, Vijayanagara, Karnataka, 583200, India",
+    "boundingbox": [
+     "15.2726432",
+     "15.2727982",
+     "76.3906668",
+     "76.3906855"
+    ]
+   },
+   {
+    "place_id": 251539651,
+    "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+    "osm_type": "way",
+    "osm_id": 310240108,
+    "lat": "15.2824601",
+    "lon": "76.3872805",
+    "class": "highway",
+    "type": "tertiary",
+    "place_rank": 26,
+    "importance": 0.05338858091096357,
+    "addresstype": "tertiary",
+    "name": "Bus Stand Station Road",
+    "display_name": "Bus Stand Station Road, Amaravati, Hosapete, Hosapete taluk, Vijayanagara, Karnataka, 583200, India",
+    "boundingbox": [
+     "15.2823012",
+     "15.2826190",
+     "76.3872794",
+     "76.3872816"
+    ]
+   }
+  ]
+ },
+ "DJL-bus-b": {
+  "url": "https://nominatim.openstreetmap.org/search?q=Siliguri+bus+terminus&format=json&limit=3",
+  "results": [
+   {
+    "place_id": 242995425,
+    "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+    "osm_type": "way",
+    "osm_id": 1392934492,
+    "lat": "26.6889514",
+    "lon": "88.4209521",
+    "class": "amenity",
+    "type": "bus_station",
+    "place_rank": 30,
+    "importance": 5.617990386811654e-05,
+    "addresstype": "amenity",
+    "name": "Tinbatti Bus Terminus",
+    "display_name": "Tinbatti Bus Terminus, SH12A, Siliguri, Rajganj, Jalpaiguri, West Bengal, 734005, India",
+    "boundingbox": [
+     "26.6881494",
+     "26.6893686",
+     "88.4191697",
+     "88.4214811"
+    ]
+   },
+   {
+    "place_id": 242653624,
+    "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+    "osm_type": "relation",
+    "osm_id": 16758006,
+    "lat": "26.7249676",
+    "lon": "88.4148820",
+    "class": "amenity",
+    "type": "bus_station",
+    "place_rank": 30,
+    "importance": 5.617990386811654e-05,
+    "addresstype": "amenity",
+    "name": "Tenzing Norgay Bus Terminus",
+    "display_name": "Tenzing Norgay Bus Terminus, SH12A, Coolie Patty, Siliguri, Matigara block, Darjeeling, West Bengal, 734001, India",
+    "boundingbox": [
+     "26.7243554",
+     "26.7258844",
+     "88.4142478",
+     "88.4154904"
+    ]
+   }
+  ]
+ },
+ "DJL-bus-c": {
+  "url": "https://nominatim.openstreetmap.org/search?q=Darjeeling+bus+stand&format=json&limit=3",
+  "results": [
+   {
+    "place_id": 242907912,
+    "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+    "osm_type": "node",
+    "osm_id": 4172602193,
+    "lat": "27.0446098",
+    "lon": "88.2654669",
+    "class": "amenity",
+    "type": "bus_station",
+    "place_rank": 30,
+    "importance": 6.120622568088835e-05,
+    "addresstype": "amenity",
+    "name": "Bus and taxi stand",
+    "display_name": "Bus and taxi stand, Hill Cart Road, Darjeeling, Darjeeling Pulbazar, Darjeeling, West Bengal, 734101, India",
+    "boundingbox": [
+     "27.0445598",
+     "27.0446598",
+     "88.2654169",
+     "88.2655169"
+    ]
+   },
+   {
+    "place_id": 242753525,
+    "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+    "osm_type": "node",
+    "osm_id": 13204399238,
+    "lat": "26.7240304",
+    "lon": "88.4171966",
+    "class": "amenity",
+    "type": "bus_station",
+    "place_rank": 30,
+    "importance": 5.617990386811654e-05,
+    "addresstype": "amenity",
+    "name": "SNT bus stand",
+    "display_name": "SNT bus stand, SH12A, Coolie Patty, Siliguri, Matigara block, Darjeeling, West Bengal, 734003, India",
+    "boundingbox": [
+     "26.7239804",
+     "26.7240804",
+     "88.4171466",
+     "88.4172466"
+    ]
+   },
+   {
+    "place_id": 242755972,
+    "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+    "osm_type": "node",
+    "osm_id": 5257025023,
+    "lat": "26.6396466",
+    "lon": "88.1680148",
+    "class": "amenity",
+    "type": "bus_station",
+    "place_rank": 30,
+    "importance": 4.6562142366628786e-05,
+    "addresstype": "amenity",
+    "name": "Panitanki bus stand",
+    "display_name": "Panitanki bus stand, NH327B, Panitanki, Naxalbari block, Darjeeling, West Bengal, India",
+    "boundingbox": [
+     "26.6395966",
+     "26.6396966",
+     "88.1679648",
+     "88.1680648"
+    ]
+   }
+  ]
+ },
+ "BOM-bus-b": {
+  "url": "https://nominatim.openstreetmap.org/search?q=Mumbai+Central+ST+Depot&format=json&limit=3",
+  "results": []
+ },
+ "BOM-bus-c": {
+  "url": "https://nominatim.openstreetmap.org/search?q=Mumbai+Central+Bus+Stand&format=json&limit=5",
+  "results": [
+   {
+    "place_id": 250177925,
+    "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+    "osm_type": "node",
+    "osm_id": 2185045487,
+    "lat": "17.3784864",
+    "lon": "78.4817136",
+    "class": "highway",
+    "type": "bus_stop",
+    "place_rank": 30,
+    "importance": 6.836270695043896e-05,
+    "addresstype": "highway",
+    "name": "TSRTC CBS BUS STAND",
+    "display_name": "TSRTC CBS BUS STAND, Mumbai Highway, Gowliguda, Afzalgunj, Ward 30 Dabeerpura, Greater Hyderabad Municipal Corporation South Zone, Hyderabad, Nampally mandal, Hyderabad, Telangana, 500095, India",
+    "boundingbox": [
+     "17.3784364",
+     "17.3785364",
+     "78.4816636",
+     "78.4817636"
+    ]
+   }
+  ]
+ },
+ "BOM-bus-d": {
+  "url": "https://nominatim.openstreetmap.org/search?q=Mumbai+Central+bus+station+Maharashtra+State+Road+Transport&format=json&limit=5",
+  "results": []
+ },
+ "BOM-bus-e": {
+  "url": "https://nominatim.openstreetmap.org/search?q=Mumbai+Central+Agar&format=json&limit=5",
+  "results": []
+ }
+}
