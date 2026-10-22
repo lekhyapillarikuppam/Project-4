@@ -1,0 +1,1 @@
+~MAO~Madgaon~MAS~Mgr Chennai Ctr~No direct trains found<br/><a href='#' onclick='return parent.ShowURL("rail/email.aspx?StationFrom=MAO&StationTo=MAS&ID=2&Message=Please suggest trains between Madgaon(MAO) and Mgr Chennai Ctr(MAS)")'>Click here</a> to request the shortest route and link station details~2026-10-22-17-33-29~~~

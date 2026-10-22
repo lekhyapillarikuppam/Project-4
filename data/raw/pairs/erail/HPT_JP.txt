@@ -1,0 +1,1 @@
+~HPT~Hosapete Jn~JP~Jaipur~No direct trains found<br/><a href='#' onclick='return parent.ShowURL("rail/email.aspx?StationFrom=HPT&StationTo=JP&ID=2&Message=Please suggest trains between Hosapete Jn(HPT) and Jaipur(JP)")'>Click here</a> to request the shortest route and link station details~2026-10-23-1-39-2~~~

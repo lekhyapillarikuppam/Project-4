@@ -1,0 +1,1 @@
+~AGC~Agra Cantt~HPT~Hosapete Jn~No direct trains found<br/><a href='#' onclick='return parent.ShowURL("rail/email.aspx?StationFrom=AGC&StationTo=HPT&ID=2&Message=Please suggest trains between Agra Cantt(AGC) and Hosapete Jn(HPT)")'>Click here</a> to request the shortest route and link station details~2026-10-22-11-51-25~~~

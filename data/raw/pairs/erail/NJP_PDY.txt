@@ -1,0 +1,1 @@
+~NJP~New Jalpaiguri~PDY~Pondicherry~No direct trains found<br/><a href='#' onclick='return parent.ShowURL("rail/email.aspx?StationFrom=NJP&StationTo=PDY&ID=2&Message=Please suggest trains between New Jalpaiguri(NJP) and Pondicherry(PDY)")'>Click here</a> to request the shortest route and link station details~2026-10-23-1-38-32~~~

@@ -1,0 +1,1 @@
+~MAS~Mgr Chennai Ctr~YNRK~Yog N Rishikesh~No direct trains found<br/><a href='#' onclick='return parent.ShowURL("rail/email.aspx?StationFrom=MAS&StationTo=YNRK&ID=2&Message=Please suggest trains between Mgr Chennai Ctr(MAS) and Yog N Rishikesh(YNRK)")'>Click here</a> to request the shortest route and link station details~2026-10-23-1-39-48~~~

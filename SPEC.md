@@ -907,8 +907,8 @@ Work top to bottom and tick `[x]` when a task is done and its check passes. "Che
 
 ##### Scripted files
 - [x] **T11** Write `datatools/geo.py`: haversine and an ORS client with a response cache in `data/raw/ors/`.
-- [ ] **T12** Write `datatools/pairs.py` and generate `city_pairs.csv` (105 rows); then enter known published travel times as overrides and clear their `*_approx` flags. · serves DATA-FR-03, 12
-- [ ] **T13** Run the validator on base files and pairs. · Check: 0 errors apart from the expected "missing attractions/matrices" errors.
+- [x] **T12** Write `datatools/pairs.py` and generate `city_pairs.csv` (105 rows); then enter known published travel times as overrides and clear their `*_approx` flags. · serves DATA-FR-03, 12
+- [x] **T13** Run the validator on base files and pairs. · Check: 0 errors apart from the expected "missing attractions/matrices" errors.
 
 ##### Attractions
 - [ ] **T14** Write `datatools/seed.py` (OpenTripMap, falling back to Overpass) and `datatools/draft.py`.

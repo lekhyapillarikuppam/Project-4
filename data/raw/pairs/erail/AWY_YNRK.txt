@@ -1,0 +1,1 @@
+~AWY~Aluva (Alwaye)~YNRK~Yog N Rishikesh~No direct trains found<br/><a href='#' onclick='return parent.ShowURL("rail/email.aspx?StationFrom=AWY&StationTo=YNRK&ID=2&Message=Please suggest trains between Aluva (Alwaye)(AWY) and Yog N Rishikesh(YNRK)")'>Click here</a> to request the shortest route and link station details~2026-10-23-1-39-55~~~
