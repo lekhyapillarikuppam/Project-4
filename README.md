@@ -7,38 +7,34 @@ Give Tripwise an origin, a destination, dates, a group size, a budget and your p
 - **Optimization engine** (OR-Tools): guarantees every plan respects the budget, opening hours, travel times and daily limits.
 - **AI assistant** (Groq): understands preferences, explains plans and turns chat requests into plan changes. It never edits a plan directly.
 
-> Status: Phase 0 — specs in progress. No application code yet.
+> Status: Feature 001 (city data) planned. No application code yet.
 
 ## Repository layout
 
 ```
 Project4/
-├── specs/                     ← source of truth (read these first)
-│   ├── constitution.md        project-wide rules
-│   ├── traceability.md        requirement → spec → task → test → status
-│   ├── _templates/            templates for spec.md, plan.md, tasks.md
-│   ├── 000-product/spec.md    top-level product spec
-│   ├── 001-city-data/         curated dataset
-│   └── 002-optimization-engine/
-├── backend/                   FastAPI + OR-Tools (from spec 002)
-├── frontend/                  React (Vite) (from spec 006)
+├── SPEC.md                    ← the single spec: rules, product, features, traceability
+├── CLAUDE.md                  instructions for Claude Code
+├── datatools/                 data scripts (Feature 001)
+├── backend/                   FastAPI + OR-Tools (Feature 002)
+├── frontend/                  React (Vite) (Feature 006)
 ├── data/
 │   ├── raw/                   seed downloads and API caches (not edited by hand)
-│   └── curated/               the dataset (from spec 001)
-└── eval/                      test trips and evaluation (specs 002, 008)
+│   └── curated/               the dataset (Feature 001)
+└── eval/                      test trips and evaluation (Features 002, 008)
 ```
 
 ## How we work (SDD)
 
-Each feature goes through the same cycle, in build order 001 → 009:
+Everything is specified in one file, `SPEC.md`, which grows phase by phase. Each feature goes through the same cycle, in build order 001 → 009:
 
-1. **Specify:** write `specs/NNN-name/spec.md`, covering what and why, requirements with IDs and acceptance tests. Review it once.
-2. **Plan:** write `plan.md`, covering how: design, modules, data model, interfaces.
-3. **Tasks:** write `tasks.md`: small, ordered, checkable tasks, each naming the requirement IDs it serves.
-4. **Implement:** work through `tasks.md` in order.
-5. **Verify:** run the spec's acceptance tests and record the results in `specs/traceability.md`.
+1. **Specify:** add the feature's **Spec** subsection to Part C, covering what and why, requirements with IDs and acceptance tests. Review it once.
+2. **Plan:** add its **Plan** subsection, covering how: design, modules, data model, interfaces.
+3. **Tasks:** add its **Tasks** subsection: small, ordered, checkable tasks, each naming the requirement IDs it serves.
+4. **Implement:** work through the tasks in order.
+5. **Verify:** run the acceptance tests and record the results in Part D (Traceability).
 
-If the code needs to differ from the spec, change the spec first and commit it with the reason (`spec(NNN): … — …`).
+If the code needs to differ from the spec, change `SPEC.md` first, add a Changelog row, and commit it with the reason (`spec(<section>): … — …`).
 
 ## Stack
 
@@ -46,7 +42,7 @@ React (Vite) + Leaflet on Vercel · Python FastAPI + OR-Tools on an Azure VM · 
 
 ## Setup
 
-Copy `.env.example` to `.env` and fill in the values. Setup steps for the backend and frontend will be added by specs 002, 005 and 006.
+Copy `.env.example` to `.env` and fill in the values. Setup steps for the backend and frontend will be added by Features 002, 005 and 006.
 
 ## Notice
 
