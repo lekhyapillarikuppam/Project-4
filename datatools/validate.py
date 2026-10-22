@@ -17,7 +17,6 @@ brings them back.
 from __future__ import annotations
 
 import argparse
-import math
 import re
 import sys
 from collections import Counter, defaultdict
@@ -28,6 +27,7 @@ from pathlib import Path
 from pydantic import ValidationError
 
 from datatools import rules
+from datatools.geo import haversine_km
 from datatools.io import Issue, Table, read_csv, read_json, read_version
 from datatools.models import (
     Attraction, City, CityPair, FareRate, Food, Hotel, Hub, LocalTransport, Matrix,
@@ -35,13 +35,6 @@ from datatools.models import (
 
 DEFAULT_DATA = Path(__file__).resolve().parents[1] / "data" / "curated"
 
-
-def _haversine_km(lat1: float, lon1: float, lat2: float, lon2: float) -> float:
-    r = 6371.0088
-    p1, p2 = math.radians(lat1), math.radians(lat2)
-    dp, dl = p2 - p1, math.radians(lon2 - lon1)
-    a = math.sin(dp / 2) ** 2 + math.cos(p1) * math.cos(p2) * math.sin(dl / 2) ** 2
-    return 2 * r * math.asin(math.sqrt(a))
 
 
 class Validator:
@@ -81,7 +74,7 @@ class Validator:
     def check_distance(self, file: str, line, city: str, lat: float, lon: float, limit: float) -> None:
         if city not in self.centres:
             return
-        km = _haversine_km(lat, lon, *self.centres[city])
+        km = haversine_km(lat, lon, *self.centres[city])
         if km > limit:
             self.error(file, line, "lat", "too_far",
                        f"{km:.1f} km from the {city} centre; limit is {limit} km")
@@ -275,7 +268,7 @@ class Validator:
                 if not lo <= n <= hi:
                     self.error(table.file, "-", "tier", "bad_hotel_count", f"{city} has {n} {tier} hotels; needs {lo}–{hi}")
             if len(hotels) > 1 and all(
-                _haversine_km(a.lat, a.lon, b.lat, b.lon) <= rules.HOTEL_SPREAD_WARN_KM
+                haversine_km(a.lat, a.lon, b.lat, b.lon) <= rules.HOTEL_SPREAD_WARN_KM
                 for a, b in combinations(hotels, 2)
             ):
                 self.warn(table.file, "-", "lat", "hotels_clustered",

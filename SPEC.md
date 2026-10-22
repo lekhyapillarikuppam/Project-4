@@ -906,7 +906,7 @@ Work top to bottom and tick `[x]` when a task is done and its check passes. "Che
 - [x] **T10** Create `hotels.csv`: 2–4 per tier per city (3–4 where possible), spread over at least two areas. · serves DATA-FR-06
 
 ##### Scripted files
-- [ ] **T11** Write `datatools/geo.py`: haversine and an ORS client with a response cache in `data/raw/ors/`.
+- [x] **T11** Write `datatools/geo.py`: haversine and an ORS client with a response cache in `data/raw/ors/`.
 - [ ] **T12** Write `datatools/pairs.py` and generate `city_pairs.csv` (105 rows); then enter known published travel times as overrides and clear their `*_approx` flags. · serves DATA-FR-03, 12
 - [ ] **T13** Run the validator on base files and pairs. · Check: 0 errors apart from the expected "missing attractions/matrices" errors.
 

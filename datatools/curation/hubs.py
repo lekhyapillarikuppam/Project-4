@@ -9,20 +9,13 @@ data/raw/hubs/ors_access.csv. access_cost_per_vehicle = the city's cab ride cost
 access_km under the local_transport tariff (001 Spec 5.8).
 """
 
-import hashlib
-import json
-import os
-
-import requests
-from dotenv import load_dotenv
-
-from datatools.curation.common import CURATED, RAW, ROOT, fetched_on, latest, read_csv, round_half_up, write_csv
+from datatools.curation.common import CURATED, RAW, fetched_on, latest, read_csv, round_half_up, write_csv
+from datatools.geo import route
 
 W = "https://en.wikipedia.org/wiki/"
 N = "https://nominatim.openstreetmap.org/search?format=json&limit=3&q="
 NOMINATIM_FETCHED = "2026-10-22"   # data/raw/hubs/nominatim_bus.json
 OVERPASS = "https://overpass-api.de/api/interpreter"
-ORS = "https://api.openrouteservice.org/v2/directions/driving-car"
 
 HUBS = [  # city, mode, name, code, lat, lon, coordinate source, note
     ("JAI", "train", "Jaipur Junction", "JP", 26.9208, 75.7866, W + "Jaipur_Junction_railway_station", ""),
@@ -79,34 +72,15 @@ HUBS = [  # city, mode, name, code, lat, lon, coordinate source, note
 ]
 
 
-def route(key: str, a: tuple[float, float], b: tuple[float, float]) -> tuple[float, float]:
-    """Driving distance (km) and free-flow time (min) from a to b. Points may snap up to 2 km to a road."""
-    start, end = f"{a[1]},{a[0]}", f"{b[1]},{b[0]}"
-    cache = RAW / "ors" / f"dir_{hashlib.md5((start + end).encode()).hexdigest()[:12]}.json"
-    if cache.exists():
-        d = json.loads(cache.read_text())
-    else:
-        r = requests.post(ORS + "/geojson", headers={"Authorization": key},
-                          json={"coordinates": [[a[1], a[0]], [b[1], b[0]]], "radiuses": [2000, 2000]}, timeout=60)
-        d = r.json()
-        if "features" not in d:
-            raise RuntimeError(f"ORS error for {start} -> {end}: {d.get('error')}")
-        cache.parent.mkdir(parents=True, exist_ok=True)
-        cache.write_text(json.dumps(d))
-    s = d["features"][0]["properties"]["summary"]
-    return s.get("distance", 0) / 1000, s.get("duration", 0) / 60
-
 
 def main() -> None:
-    load_dotenv(ROOT / ".env")
-    key = os.environ["ORS_API_KEY"]
     dates = fetched_on()
     centres = {r["city_id"]: (float(r["lat"]), float(r["lon"])) for r in read_csv(CURATED / "cities.csv")}
     cab = {r["city_id"]: r for r in read_csv(CURATED / "local_transport.csv") if r["mode"] == "cab"}
     ors_date = "2026-10-23"
     rows, summary = [], []
     for c, m, name, code, lat, lon, csrc, note in HUBS:
-        km, mins = route(key, (lat, lon), centres[c])
+        km, mins = route((lat, lon), centres[c])
         km = round(km, 1)
         mins = max(1, round(mins)) if km > 0 else 0
         t = cab[c]

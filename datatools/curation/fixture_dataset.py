@@ -48,12 +48,12 @@ for c in centres:
         lat, lon = off(c, r * math.sin(ang), r * math.cos(ang))
         tags = "shopping" if i == 26 else tagsets[(i-1) % len(tagsets)]
         fee = 0 if i % 5 == 0 else 50 * (1 + i % 4)
-        rows.append([f"{c}-A-{i:02d}", c, f"Fixture Site {c} {i:02d}", lat, lon, 60 + 10*(i%6),
-                     "09:00" if i % 7 else "00:00", "18:00" if i % 7 else "23:59", "0" if i % 9 == 0 else "",
+        rows.append([f"{c}-A-{i:02d}", c, f"Fixture Site {c} {i:02d}", lat, lon, 60 + 10*(i%6), "false",
+                     "09:00" if i % 7 else "00:00", "18:00" if i % 7 else "23:59", "0" if i % 9 == 0 else "", "false",
                      fee, tags, f"{3.5 + (i%15)/10:.1f}", "true" if i % 2 else "false",
                      ["low","medium","high"][i%3], "false", SRC, CHK])
-    w(f"attractions/{c}.csv", ["attraction_id","city_id","name","lat","lon","visit_minutes","open_time","close_time",
-       "closed_weekdays","entry_fee","tags","rating","outdoor","crowd_level","fixed_slot","source","checked_on"], rows)
+    w(f"attractions/{c}.csv", ["attraction_id","city_id","name","lat","lon","visit_minutes","visit_approx","open_time","close_time",
+       "closed_weekdays","hours_approx","entry_fee","tags","rating","outdoor","crowd_level","fixed_slot","source","checked_on"], rows)
     nodes[c] = [(r[0], float(r[3]), float(r[4])) for r in rows]
 
 rows = []

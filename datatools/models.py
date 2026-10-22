@@ -268,9 +268,11 @@ class Attraction(Curated):
     lat: Lat
     lon: Lon
     visit_minutes: Annotated[int, Field(ge=rules.VISIT_MINUTES_RANGE[0], le=rules.VISIT_MINUTES_RANGE[1])]
+    visit_approx: Bool
     open_time: Time
     close_time: Time
     closed_weekdays: StrList = []
+    hours_approx: Bool
     entry_fee: Rupees
     tags: StrList
     rating: Annotated[float, Field(ge=rules.RATING_RANGE[0], le=rules.RATING_RANGE[1])]
