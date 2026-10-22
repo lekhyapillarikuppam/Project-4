@@ -381,7 +381,7 @@ Build order: 001 → 002 → 003 → 004 → 005 → 006 → 007 → 008 → 009
 
 ### Feature 001 — City data
 
-Status: Spec **Approved** · Plan **Draft** · Tasks **Draft**
+Status: Spec **Approved** · Plan **Approved** · Tasks **Approved**
 Traces to: FR-060, FR-061, FR-062, NFR-010 · Constitution Article III
 
 #### 001 Spec
@@ -1367,7 +1367,7 @@ Update this table when a feature's tasks are written (fill **Tasks**) and when i
 | Feature | Name | Spec | Plan | Tasks | Acceptance |
 |---|---|---|---|---|---|
 | B | Product | Approved | — | — | — |
-| 001 | City data | Approved | Draft | Draft | — |
+| 001 | City data | Approved | Approved | Approved | — |
 | 002 | Optimization engine | Approved | — | — | — |
 | 003 | Variants and trade-offs | — | — | — | — |
 | 004 | Accounts and saved data | — | — | — | — |
@@ -1396,3 +1396,4 @@ Update this table when a feature's tasks are written (fill **Tasks**) and when i
 | 2026-10-22 | C 002 Spec | Approved | Review round |
 | 2026-10-22 | A Constitution | v1.1: Articles I and X reworded for the single spec file | Follows the merge below |
 | 2026-10-22 | All | Merged constitution, product spec, feature specs, plan, tasks and traceability into this single SPEC.md | User wants one spec file that grows phase by phase |
+| 2026-10-22 | C 001 Plan, Tasks | Approved | Required before code by Article I.1 |
