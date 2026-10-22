@@ -17,7 +17,7 @@ https://en.wikipedia.org/wiki/Varanasi,2026-10-22,Infobox coordinates 25°19′0
 https://en.wikipedia.org/wiki/Chennai,2026-10-22,Infobox coordinates 13.0825°N 80.275°E
 https://en.wikipedia.org/wiki/Fort_(Mumbai_precinct),2026-10-23,"Infobox coordinates 18.935°N 72.8359°E. ""a business and art Subdistrict in the city of Mumbai""; extends from the docks to Azad Maidan, CSMT at the northern edge, Kala Ghoda the southern; ""the heart of the financial markets of the city"""
 https://en.wikipedia.org/wiki/Egmore,2026-10-23,"Infobox coordinates 13.0732; 80.2609. Government Museum ""the second oldest museum in India""; Egmore Railway Station ""one of the two main railway terminii of Chennai city""; also a shopping district"
-https://en.wikipedia.org/wiki/George_Town,_Chennai,2026-10-23,"Infobox 13.0939; 80.2839. ""a historical area of Madras city""; ""remained the chief commercial hub of the city till the early 20th century"" (not chosen)"
+"https://en.wikipedia.org/wiki/George_Town,_Chennai",2026-10-23,"Infobox 13.0939; 80.2839. ""a historical area of Madras city""; ""remained the chief commercial hub of the city till the early 20th century"" (not chosen)"
 https://www.numbeo.com/cost-of-living/country_result.jsp?country=India,2026-10-22,"Meal at an Inexpensive Restaurant ₹200.00; Meal for Two at a Mid-Range Restaurant (Three Courses, Without Drinks) ₹1,000.00; last update 22 October 2026"
 https://www.numbeo.com/cost-of-living/in/Jaipur,2026-10-22,Inexpensive meal ₹400.00; Meal for Two Mid-Range ₹1200.00; last update 22 October 2026
 https://www.numbeo.com/cost-of-living/in/Delhi,2026-10-22,Inexpensive meal ₹350.00; Meal for Two Mid-Range ₹2000.00; last update 22 October 2026
@@ -133,3 +133,7 @@ https://www.booking.com/city/in/benares.html,2026-10-23,See data/raw/hotels/book
 https://www.booking.com/city/in/chennai.html,2026-10-23,See data/raw/hotels/booking_observations.csv
 https://open.er-api.com/v6/latest/USD,2026-10-23,"rates.INR 94.593871; time_last_update_utc Thu, 22 Oct 2026 00:02:31 +0000; provider https://www.exchangerate-api.com"
 https://overpass-api.de/api/interpreter,2026-10-23,"Bus stations within 1.5 km of Mumbai Central station: way 49685673 ""Mumbai Central Bus Station"", operator MSRTC, centre 18.969326, 72.8220556 (response saved as data/raw/hubs/overpass_bom_bus.json)"
+"https://en.wikipedia.org/wiki/Esplanade,_Kolkata",2026-10-23,"Infobox 22.564955°N 88.346346°E; ""Esplanade is a neighbourhood of Central Kolkata, located at the heart of city""; central business district"
+https://newsonair.gov.in/puducherry-airport-expands-connectivity-with-new-indigo-bengaluru-flight-services/,2026-10-23,"April 24, 2026: IndiGo ""will introduce additional flight services from Puducherry to Bengaluru""; morning, afternoon and evening Puducherry-Bengaluru services"
+https://www.starair.in/,2026-10-23,"Origin/destination list includes ""Vidyanagar (VDY)""; promoted route Bengaluru–Vidyanagar (image Bengaluru_to_Vidyanagar_HAMPI350.png)"
+https://www.allianceair.in/,2026-10-23,Page returned no content (title only); Alliance Air routes could not be checked

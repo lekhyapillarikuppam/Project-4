@@ -1,0 +1,922 @@
+{
+ "JAI": {
+  "point": [
+   26.915,
+   75.82
+  ],
+  "reverse_url": "https://nominatim.openstreetmap.org/reverse?format=json&zoom=16&lat=26.915&lon=75.82",
+  "reverse": {
+   "place_id": 248369062,
+   "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+   "osm_type": "way",
+   "osm_id": 932250058,
+   "lat": "26.9149402",
+   "lon": "75.8202622",
+   "class": "highway",
+   "type": "primary",
+   "place_rank": 26,
+   "importance": 0.05339917219806207,
+   "addresstype": "primary",
+   "name": "",
+   "display_name": "Ramganj, Jaipur, Jaipur Municipal Corporation, Jaipur Tehsil, Jaipur, Rajasthan, 302001, India",
+   "address": {
+    "suburb": "Ramganj",
+    "city": "Jaipur",
+    "county": "Jaipur Tehsil",
+    "state_district": "Jaipur",
+    "state": "Rajasthan",
+    "ISO3166-2-lvl4": "IN-RJ",
+    "postcode": "302001",
+    "country": "India",
+    "country_code": "in"
+   },
+   "boundingbox": [
+    "26.9139545",
+    "26.9155758",
+    "75.8200185",
+    "75.8204073"
+   ]
+  },
+  "overpass_query": "[out:json][timeout:60];(nwr(around:1500,26.915,75.82)[\"tourism\"~\"attraction|museum|viewpoint\"][\"name\"];nwr(around:1500,26.915,75.82)[\"historic\"][\"name\"];);out center tags;",
+  "nearby": [
+   [
+    204,
+    "Man Gate",
+    "city_gate"
+   ],
+   [
+    370,
+    "Albert Hall",
+    "museum"
+   ],
+   [
+    372,
+    "Albert Hall Museum",
+    "museum"
+   ],
+   [
+    408,
+    "Ajmeri Gate",
+    "city_gate"
+   ],
+   [
+    442,
+    "Ajmeri Gate",
+    "city_gate"
+   ],
+   [
+    449,
+    "Ajmeri Gate",
+    "city_gate"
+   ],
+   [
+    485,
+    "Sanganeri Gate",
+    "building"
+   ],
+   [
+    626,
+    "Haveli",
+    "yes"
+   ]
+  ],
+  "n_nearby": 20
+ },
+ "AGR": {
+  "point": [
+   27.18,
+   78.02
+  ],
+  "reverse_url": "https://nominatim.openstreetmap.org/reverse?format=json&zoom=16&lat=27.18&lon=78.02",
+  "reverse": {
+   "place_id": 246557629,
+   "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+   "osm_type": "way",
+   "osm_id": 311693465,
+   "lat": "27.1786090",
+   "lon": "78.0183924",
+   "class": "highway",
+   "type": "secondary",
+   "place_rank": 26,
+   "importance": 0.053401099412527624,
+   "addresstype": "secondary",
+   "name": "",
+   "display_name": "Subhash Bazaar, Agra, Uttar Pradesh, 280001, India",
+   "address": {
+    "neighbourhood": "Subhash Bazaar",
+    "city": "Agra",
+    "county": "Agra",
+    "state_district": "Agra",
+    "state": "Uttar Pradesh",
+    "ISO3166-2-lvl4": "IN-UP",
+    "postcode": "280001",
+    "country": "India",
+    "country_code": "in"
+   },
+   "boundingbox": [
+    "27.1770687",
+    "27.1792766",
+    "78.0177238",
+    "78.0206544"
+   ]
+  },
+  "overpass_query": "[out:json][timeout:60];(nwr(around:1500,27.18,78.02)[\"tourism\"~\"attraction|museum|viewpoint\"][\"name\"];nwr(around:1500,27.18,78.02)[\"historic\"][\"name\"];);out center tags;",
+  "nearby": [
+   [
+    105,
+    "Agra Fort",
+    "fort"
+   ],
+   [
+    140,
+    "Hathi Pol",
+    "attraction"
+   ],
+   [
+    276,
+    "Diwan-i-Aam",
+    "attraction"
+   ],
+   [
+    339,
+    "Sheesh Mahal",
+    "attraction"
+   ],
+   [
+    350,
+    "Angori Bagh",
+    "attraction"
+   ],
+   [
+    355,
+    "Diwan-i-Khas",
+    "attraction"
+   ],
+   [
+    360,
+    "Jahangir's Hauz",
+    "attraction"
+   ],
+   [
+    380,
+    "Musammun Burj",
+    "attraction"
+   ]
+  ],
+  "n_nearby": 14
+ },
+ "HMP": {
+  "point": [
+   15.33444,
+   76.46222
+  ],
+  "reverse_url": "https://nominatim.openstreetmap.org/reverse?format=json&zoom=16&lat=15.33444&lon=76.46222",
+  "reverse": {
+   "place_id": 252789002,
+   "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+   "osm_type": "way",
+   "osm_id": 836663441,
+   "lat": "15.3344432",
+   "lon": "76.4620511",
+   "class": "highway",
+   "type": "unclassified",
+   "place_rank": 26,
+   "importance": 0.053391423666742925,
+   "addresstype": "unclassified",
+   "name": "Hampi Kamalapura Road",
+   "display_name": "Hampi Kamalapura Road, Hampi, Hosapete taluk, Vijayanagara, Karnataka, 583239, India",
+   "address": {
+    "road": "Hampi Kamalapura Road",
+    "village": "Hampi",
+    "county": "Hosapete taluk",
+    "state_district": "Vijayanagara",
+    "state": "Karnataka",
+    "ISO3166-2-lvl4": "IN-KA",
+    "postcode": "583239",
+    "country": "India",
+    "country_code": "in"
+   },
+   "boundingbox": [
+    "15.3314165",
+    "15.3347533",
+    "76.4606800",
+    "76.4620874"
+   ]
+  },
+  "overpass_query": "[out:json][timeout:60];(nwr(around:1500,15.33444,76.46222)[\"tourism\"~\"attraction|museum|viewpoint\"][\"name\"];nwr(around:1500,15.33444,76.46222)[\"historic\"][\"name\"];);out center tags;",
+  "nearby": [
+   [
+    235,
+    "Hemakuta Gateway",
+    "city_gate"
+   ],
+   [
+    267,
+    "4 Pillar Structure",
+    "ruins"
+   ],
+   [
+    305,
+    "Mula Virupaksha",
+    "archaeological_site"
+   ],
+   [
+    331,
+    "Gopura",
+    "building"
+   ],
+   [
+    349,
+    "Two-Storey Gateway",
+    "building"
+   ],
+   [
+    350,
+    "Hemakuta Hill Temples",
+    "ruins"
+   ],
+   [
+    359,
+    "Sunset point Hemakuta Hill",
+    "viewpoint"
+   ],
+   [
+    360,
+    "Sunset Point",
+    "viewpoint"
+   ]
+  ],
+  "n_nearby": 42
+ },
+ "MUN": {
+  "point": [
+   10.08917,
+   77.05972
+  ],
+  "reverse_url": "https://nominatim.openstreetmap.org/reverse?format=json&zoom=16&lat=10.08917&lon=77.05972",
+  "reverse": {
+   "place_id": 252911259,
+   "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+   "osm_type": "way",
+   "osm_id": 288812489,
+   "lat": "10.0891829",
+   "lon": "77.0597033",
+   "class": "highway",
+   "type": "primary",
+   "place_rank": 26,
+   "importance": 0.05338351338979168,
+   "addresstype": "primary",
+   "name": "Northern Outlet Road",
+   "display_name": "Northern Outlet Road, Munnar Bazaar, Munnar, Devikulam, Idukki, Kerala, 685612, India",
+   "address": {
+    "road": "Northern Outlet Road",
+    "suburb": "Munnar Bazaar",
+    "town": "Munnar",
+    "county": "Devikulam",
+    "state_district": "Idukki",
+    "state": "Kerala",
+    "ISO3166-2-lvl4": "IN-KL",
+    "postcode": "685612",
+    "country": "India",
+    "country_code": "in"
+   },
+   "boundingbox": [
+    "10.0890578",
+    "10.1091428",
+    "77.0573465",
+    "77.0604228"
+   ]
+  },
+  "overpass_query": "[out:json][timeout:60];(nwr(around:1500,10.08917,77.05972)[\"tourism\"~\"attraction|museum|viewpoint\"][\"name\"];nwr(around:1500,10.08917,77.05972)[\"historic\"][\"name\"];);out center tags;",
+  "nearby": [
+   [
+    1159,
+    "KDHP Tea Museum",
+    "museum"
+   ]
+  ],
+  "n_nearby": 1
+ },
+ "RSH": {
+  "point": [
+   30.10833,
+   78.29722
+  ],
+  "reverse_url": "https://nominatim.openstreetmap.org/reverse?format=json&zoom=16&lat=30.10833&lon=78.29722",
+  "reverse": {
+   "place_id": 244005678,
+   "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+   "osm_type": "way",
+   "osm_id": 1091500499,
+   "lat": "30.1082719",
+   "lon": "78.2971598",
+   "class": "highway",
+   "type": "primary",
+   "place_rank": 26,
+   "importance": 0.053401169604028347,
+   "addresstype": "primary",
+   "name": "NH7",
+   "display_name": "NH7, Adarsh Gram, Rishikesh, Dehradun, Uttarakhand, 249201, India",
+   "address": {
+    "road": "NH7",
+    "suburb": "Adarsh Gram",
+    "town": "Rishikesh",
+    "county": "Rishikesh",
+    "state_district": "Dehradun",
+    "state": "Uttarakhand",
+    "ISO3166-2-lvl4": "IN-UK",
+    "postcode": "249201",
+    "country": "India",
+    "country_code": "in"
+   },
+   "boundingbox": [
+    "30.1068201",
+    "30.1126923",
+    "78.2933013",
+    "78.2986458"
+   ]
+  },
+  "overpass_query": "[out:json][timeout:60];(nwr(around:1500,30.10833,78.29722)[\"tourism\"~\"attraction|museum|viewpoint\"][\"name\"];nwr(around:1500,30.10833,78.29722)[\"historic\"][\"name\"];);out center tags;",
+  "nearby": [
+   [
+    620,
+    "Aarti fair pudga",
+    "memorial"
+   ],
+   [
+    740,
+    "Gallery of Sikh Martyrs",
+    "museum"
+   ],
+   [
+    1150,
+    "Aarti",
+    "attraction"
+   ],
+   [
+    1497,
+    "Beatles Ashram",
+    "ruins"
+   ],
+   [
+    1518,
+    "Beatles Ashram",
+    "museum"
+   ]
+  ],
+  "n_nearby": 5
+ },
+ "DJL": {
+  "point": [
+   27.0375,
+   88.26306
+  ],
+  "reverse_url": "https://nominatim.openstreetmap.org/reverse?format=json&zoom=16&lat=27.0375&lon=88.26306",
+  "reverse": {
+   "place_id": 241957547,
+   "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+   "osm_type": "way",
+   "osm_id": 350291479,
+   "lat": "27.0375161",
+   "lon": "88.2630231",
+   "class": "highway",
+   "type": "trunk",
+   "place_rank": 26,
+   "importance": 0.053394539559014235,
+   "addresstype": "trunk",
+   "name": "NH110",
+   "display_name": "NH110, Darjeeling, Darjeeling Pulbazar, Darjeeling, West Bengal, 734101, India",
+   "address": {
+    "road": "NH110",
+    "city": "Darjeeling",
+    "county": "Darjeeling Pulbazar",
+    "state_district": "Darjeeling",
+    "state": "West Bengal",
+    "ISO3166-2-lvl4": "IN-WB",
+    "postcode": "734101",
+    "country": "India",
+    "country_code": "in"
+   },
+   "boundingbox": [
+    "27.0373478",
+    "27.0380877",
+    "88.2629380",
+    "88.2632763"
+   ]
+  },
+  "overpass_query": "[out:json][timeout:60];(nwr(around:1500,27.0375,88.26306)[\"tourism\"~\"attraction|museum|viewpoint\"][\"name\"];nwr(around:1500,27.0375,88.26306)[\"historic\"][\"name\"];);out center tags;",
+  "nearby": [
+   [
+    22,
+    "Darjeeling Himalayan Railway",
+    "yes"
+   ],
+   [
+    41,
+    "Darjeeling Himalayan Railway",
+    "yes"
+   ],
+   [
+    354,
+    "Himalayan Tibet Museum",
+    "museum"
+   ],
+   [
+    867,
+    "Street Food Stalls",
+    "attraction"
+   ],
+   [
+    935,
+    "Burdwan Palace",
+    "memorial"
+   ],
+   [
+    943,
+    "Statue of Bhanu Bhakta Acharya",
+    "memorial"
+   ],
+   [
+    952,
+    "The Mall Market",
+    "attraction"
+   ],
+   [
+    1083,
+    "Ava art gallery museum",
+    "museum"
+   ]
+  ],
+  "n_nearby": 12
+ },
+ "PDY": {
+  "point": [
+   11.93401,
+   79.82903
+  ],
+  "reverse_url": "https://nominatim.openstreetmap.org/reverse?format=json&zoom=16&lat=11.93401&lon=79.82903",
+  "reverse": {
+   "place_id": 253416863,
+   "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+   "osm_type": "way",
+   "osm_id": 48891765,
+   "lat": "11.9339715",
+   "lon": "79.8290238",
+   "class": "highway",
+   "type": "tertiary",
+   "place_rank": 26,
+   "importance": 0.05339235446707862,
+   "addresstype": "tertiary",
+   "name": "Needarajapayar Street",
+   "display_name": "Needarajapayar Street, Bharathipuram, Grand Bazaar, Puducherry, Puducherry Taluk, Puducherry, 605001, India",
+   "address": {
+    "road": "Needarajapayar Street",
+    "quarter": "Bharathipuram",
+    "suburb": "Grand Bazaar",
+    "city": "Puducherry",
+    "county": "Puducherry Taluk",
+    "state_district": "Puducherry",
+    "state": "Puducherry",
+    "ISO3166-2-lvl4": "IN-PY",
+    "postcode": "605001",
+    "country": "India",
+    "country_code": "in"
+   },
+   "boundingbox": [
+    "11.9334096",
+    "11.9347747",
+    "79.8247015",
+    "79.8323009"
+   ]
+  },
+  "overpass_query": "[out:json][timeout:60];(nwr(around:1500,11.93401,79.82903)[\"tourism\"~\"attraction|museum|viewpoint\"][\"name\"];nwr(around:1500,11.93401,79.82903)[\"historic\"][\"name\"];);out center tags;",
+  "nearby": [
+   [
+    172,
+    "Notre-Dame de Pondicherry",
+    "attraction"
+   ],
+   [
+    489,
+    "B. R. Ambedkar",
+    "monument"
+   ],
+   [
+    489,
+    "Chidambaram Pillai (1872-1936)",
+    "monument"
+   ],
+   [
+    504,
+    "Sculpture",
+    "monument"
+   ],
+   [
+    532,
+    "Nandi",
+    "monument"
+   ],
+   [
+    532,
+    "Temple Column",
+    "monument"
+   ],
+   [
+    572,
+    "Bharathi Park",
+    "attraction"
+   ],
+   [
+    630,
+    "Hill with Park Sculpture",
+    "monument"
+   ]
+  ],
+  "n_nearby": 29
+ },
+ "DEL": {
+  "point": [
+   28.6139,
+   77.2089
+  ],
+  "reverse_url": "https://nominatim.openstreetmap.org/reverse?format=json&zoom=16&lat=28.6139&lon=77.2089",
+  "reverse": {
+   "place_id": 245291248,
+   "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+   "osm_type": "way",
+   "osm_id": 1307222666,
+   "lat": "28.6139171",
+   "lon": "77.2089013",
+   "class": "highway",
+   "type": "secondary",
+   "place_rank": 26,
+   "importance": 0.05341081483176925,
+   "addresstype": "secondary",
+   "name": "Kartavya Path",
+   "display_name": "Kartavya Path, Raisina Hill, New Delhi, Delhi, 110004, India",
+   "address": {
+    "road": "Kartavya Path",
+    "suburb": "Raisina Hill",
+    "city": "New Delhi",
+    "state_district": "New Delhi",
+    "state": "Delhi",
+    "ISO3166-2-lvl4": "IN-DL",
+    "postcode": "110004",
+    "country": "India",
+    "country_code": "in"
+   },
+   "boundingbox": [
+    "28.6137596",
+    "28.6139270",
+    "77.2087730",
+    "77.2121071"
+   ]
+  },
+  "overpass_query": "[out:json][timeout:60];(nwr(around:1500,28.6139,77.2089)[\"tourism\"~\"attraction|museum|viewpoint\"][\"name\"];nwr(around:1500,28.6139,77.2089)[\"historic\"][\"name\"];);out center tags;",
+  "nearby": [
+   [
+    445,
+    "Mahatma Gandhi",
+    "memorial"
+   ],
+   [
+    562,
+    "Uprashtrapati Bhavan",
+    "castle"
+   ],
+   [
+    568,
+    "Parliament Museum",
+    "museum"
+   ],
+   [
+    694,
+    "Jaipur Column",
+    "monument"
+   ],
+   [
+    916,
+    "Rashtrapati Bhavan",
+    "attraction"
+   ],
+   [
+    1025,
+    "National Philatelic Museum",
+    "museum"
+   ],
+   [
+    1047,
+    "National Museum",
+    "museum"
+   ],
+   [
+    1140,
+    "Lal Bahadur Shastri Memorial",
+    "memorial"
+   ]
+  ],
+  "n_nearby": 15
+ },
+ "BLR": {
+  "point": [
+   12.97889,
+   77.59167
+  ],
+  "reverse_url": "https://nominatim.openstreetmap.org/reverse?format=json&zoom=16&lat=12.97889&lon=77.59167",
+  "reverse": {
+   "place_id": 251830107,
+   "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+   "osm_type": "way",
+   "osm_id": 362206701,
+   "lat": "12.9788602",
+   "lon": "77.5917018",
+   "class": "highway",
+   "type": "primary",
+   "place_rank": 26,
+   "importance": 0.0534042778667887,
+   "addresstype": "primary",
+   "name": "Doctor B R Ambedkar Veedhi",
+   "display_name": "Doctor B R Ambedkar Veedhi, High Grounds, Sampangirama Nagar, Bengaluru Central City Corporation, Bengaluru, Bangalore North, Bengaluru Urban, Karnataka, 560001, India",
+   "address": {
+    "road": "Doctor B R Ambedkar Veedhi",
+    "quarter": "High Grounds",
+    "suburb": "Sampangirama Nagar",
+    "city_district": "Bengaluru Central City Corporation",
+    "city": "Bengaluru",
+    "county": "Bangalore North",
+    "state_district": "Bengaluru Urban",
+    "state": "Karnataka",
+    "ISO3166-2-lvl4": "IN-KA",
+    "postcode": "560001",
+    "country": "India",
+    "country_code": "in"
+   },
+   "boundingbox": [
+    "12.9778457",
+    "12.9819024",
+    "77.5907355",
+    "77.5946416"
+   ]
+  },
+  "overpass_query": "[out:json][timeout:60];(nwr(around:1500,12.97889,77.59167)[\"tourism\"~\"attraction|museum|viewpoint\"][\"name\"];nwr(around:1500,12.97889,77.59167)[\"historic\"][\"name\"];);out center tags;",
+  "nearby": [
+   [
+    29,
+    "Sri Basaveshwara",
+    "memorial"
+   ],
+   [
+    43,
+    "Nadaprabhu Sri Kempegowda",
+    "memorial"
+   ],
+   [
+    85,
+    "Jawaharlal Nehru",
+    "memorial"
+   ],
+   [
+    87,
+    "Dr B R Ambedkar",
+    "memorial"
+   ],
+   [
+    145,
+    "Vidhana Soudha",
+    "attraction"
+   ],
+   [
+    227,
+    "Mahatma Gandhi",
+    "memorial"
+   ],
+   [
+    326,
+    "Netaji Subhash Chandra Bose",
+    "memorial"
+   ],
+   [
+    356,
+    "Nadadevi Bhuvaneshwari",
+    "memorial"
+   ]
+  ],
+  "n_nearby": 48
+ },
+ "CCU": {
+  "point": [
+   22.5675,
+   88.37
+  ],
+  "reverse_url": "https://nominatim.openstreetmap.org/reverse?format=json&zoom=16&lat=22.5675&lon=88.37",
+  "reverse": {
+   "place_id": 251836940,
+   "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+   "osm_type": "way",
+   "osm_id": 105833278,
+   "lat": "22.5675989",
+   "lon": "88.3697770",
+   "class": "highway",
+   "type": "pedestrian",
+   "place_rank": 26,
+   "importance": 0.05340673762111845,
+   "addresstype": "pedestrian",
+   "name": "",
+   "display_name": "Sealdah, Kolkata, West Bengal, 700009, India",
+   "address": {
+    "suburb": "Sealdah",
+    "city": "Kolkata",
+    "state_district": "Kolkata",
+    "state": "West Bengal",
+    "ISO3166-2-lvl4": "IN-WB",
+    "postcode": "700009",
+    "country": "India",
+    "country_code": "in"
+   },
+   "boundingbox": [
+    "22.5667759",
+    "22.5707965",
+    "88.3694119",
+    "88.3713428"
+   ]
+  },
+  "overpass_query": "[out:json][timeout:60];(nwr(around:1500,22.5675,88.37)[\"tourism\"~\"attraction|museum|viewpoint\"][\"name\"];nwr(around:1500,22.5675,88.37)[\"historic\"][\"name\"];);out center tags;",
+  "nearby": [
+   [
+    1089,
+    "House of Raja Subodh Chandra Basu Mallik",
+    "castle"
+   ]
+  ],
+  "n_nearby": 1
+ },
+ "HYD": {
+  "point": [
+   17.36167,
+   78.47472
+  ],
+  "reverse_url": "https://nominatim.openstreetmap.org/reverse?format=json&zoom=16&lat=17.36167&lon=78.47472",
+  "reverse": {
+   "place_id": 249527595,
+   "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+   "osm_type": "way",
+   "osm_id": 375634696,
+   "lat": "17.3618021",
+   "lon": "78.4748867",
+   "class": "highway",
+   "type": "primary",
+   "place_rank": 26,
+   "importance": 0.05340169604028378,
+   "addresstype": "primary",
+   "name": "Charminar Circle",
+   "display_name": "Charminar Circle, Panjeshah, Moghalpura, Ward 32 Patthergatti, Greater Hyderabad Municipal Corporation South Zone, Hyderabad, Bahadurpura mandal, Hyderabad, Telangana, 500065, India",
+   "address": {
+    "road": "Charminar Circle",
+    "neighbourhood": "Panjeshah",
+    "suburb": "Moghalpura",
+    "city_district": "Greater Hyderabad Municipal Corporation South Zone",
+    "city": "Hyderabad",
+    "county": "Bahadurpura mandal",
+    "state_district": "Hyderabad",
+    "state": "Telangana",
+    "ISO3166-2-lvl4": "IN-TS",
+    "postcode": "500065",
+    "country": "India",
+    "country_code": "in"
+   },
+   "boundingbox": [
+    "17.3613579",
+    "17.3618507",
+    "78.4747351",
+    "78.4749549"
+   ]
+  },
+  "overpass_query": "[out:json][timeout:60];(nwr(around:1500,17.36167,78.47472)[\"tourism\"~\"attraction|museum|viewpoint\"][\"name\"];nwr(around:1500,17.36167,78.47472)[\"historic\"][\"name\"];);out center tags;",
+  "nearby": [
+   [
+    11,
+    "Charminar",
+    "attraction"
+   ],
+   [
+    90,
+    "Char Kaman",
+    "city_gate"
+   ],
+   [
+    180,
+    "Mecca Masjid",
+    "yes"
+   ],
+   [
+    190,
+    "Shahi Maqbara",
+    "tomb"
+   ],
+   [
+    200,
+    "Gulzar houz (fountain)",
+    "archaeological_site"
+   ],
+   [
+    218,
+    "Mecca Masjid",
+    "yes"
+   ],
+   [
+    307,
+    "Machli Kaman",
+    "city_gate"
+   ],
+   [
+    405,
+    "Mehboob Chowk Clock Tower",
+    "monument"
+   ]
+  ],
+  "n_nearby": 27
+ },
+ "VNS": {
+  "point": [
+   25.31889,
+   83.01278
+  ],
+  "reverse_url": "https://nominatim.openstreetmap.org/reverse?format=json&zoom=16&lat=25.31889&lon=83.01278",
+  "reverse": {
+   "place_id": 243179848,
+   "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+   "osm_type": "way",
+   "osm_id": 952244155,
+   "lat": "25.3188981",
+   "lon": "83.0128203",
+   "class": "highway",
+   "type": "residential",
+   "place_rank": 26,
+   "importance": 0.0534015312428473,
+   "addresstype": "residential",
+   "name": "",
+   "display_name": "Banaras Ghats, Varanasi, Sadar, Varanasi, Uttar Pradesh, 221001, India",
+   "address": {
+    "residential": "Banaras Ghats",
+    "city": "Varanasi",
+    "county": "Sadar",
+    "state_district": "Varanasi",
+    "state": "Uttar Pradesh",
+    "ISO3166-2-lvl4": "IN-UP",
+    "postcode": "221001",
+    "country": "India",
+    "country_code": "in"
+   },
+   "boundingbox": [
+    "25.3188705",
+    "25.3193078",
+    "83.0127865",
+    "83.0128259"
+   ]
+  },
+  "overpass_query": "[out:json][timeout:60];(nwr(around:1500,25.31889,83.01278)[\"tourism\"~\"attraction|museum|viewpoint\"][\"name\"];nwr(around:1500,25.31889,83.01278)[\"historic\"][\"name\"];);out center tags;",
+  "nearby": [
+   [
+    641,
+    "Gwaljor Ghat",
+    "attraction"
+   ],
+   [
+    642,
+    "Jatar Ghat",
+    "attraction"
+   ],
+   [
+    659,
+    "Balaji Ghat",
+    "attraction"
+   ],
+   [
+    661,
+    "Ram Ghat",
+    "attraction"
+   ],
+   [
+    677,
+    "Panchganga Ghat",
+    "attraction"
+   ],
+   [
+    692,
+    "Mehfa Ghat",
+    "attraction"
+   ],
+   [
+    712,
+    "Bindu Madhav Ghat",
+    "attraction"
+   ],
+   [
+    720,
+    "Ganesh Ghat",
+    "attraction"
+   ]
+  ],
+  "n_nearby": 40
+ }
+}

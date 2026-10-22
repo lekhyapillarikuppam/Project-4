@@ -13,7 +13,7 @@ Rules:
 - candidates per tier: city-page '1 night, 2 adults' prices, then city-page 'per night' prices,
   then search results by price; dorm beds, multi-room offers, entire apartments and women-only
   properties are skipped.
-- a hotel must have coordinates and lie within 25 km of the city centre.
+- a hotel must have coordinates that no other listing shares, and lie within 25 km of the city centre.
 - keep up to 3 per tier; a tier with fewer than 3 records why (001 Spec 5.6).
 """
 
@@ -37,10 +37,12 @@ def tier_of(inr: int) -> str | None:
 def main() -> None:
     centres = {r["city_id"]: (float(r["lat"]), float(r["lon"])) for r in read_csv(CURATED / "cities.csv")}
     pages = {(r["city_id"], r["name"]): r for r in read_csv(H / "booking_hotel_pages.csv")}
-    shared = {}
-    for r in pages.values():
+    search_rows = read_csv(H / "booking_search_2026-11-18.csv")
+    # Coordinates that Booking.com shows for more than one listing are not trusted.
+    shared: dict[tuple[float, float], set[str]] = {}
+    for r in list(pages.values()) + search_rows:
         if r["lat"]:
-            shared.setdefault((r["lat"], r["lon"]), []).append(r["name"])
+            shared.setdefault((float(r["lat"]), float(r["lon"])), set()).add(r["name"])
 
     cands: dict[tuple[str, str], list[dict]] = {}
     seen: set[tuple[str, str]] = set()
@@ -61,7 +63,7 @@ def main() -> None:
             "price_src": f"price: {o['page_url']} USD {o['usd']} ({o['basis']}; no dates selected) x {USD_INR_SRC}",
             "dates": [o["observed_on"], USD_INR_FETCHED],
         })
-    search = sorted(read_csv(H / "booking_search_2026-11-18.csv"), key=lambda r: int(r["price_inr"]))
+    search = sorted(search_rows, key=lambda r: int(r["price_inr"]))
     for r in search:
         key = (r["city_id"], r["name"])
         if key in seen or SKIP_UNIT.search(r["unit"]) or SKIP_NAME.search(r["name"]):
@@ -88,6 +90,9 @@ def main() -> None:
                 if not p or not p["lat"]:
                     rejected.append("no coordinates")
                     continue
+                if len(shared[(float(p["lat"]), float(p["lon"]))]) > 1:
+                    rejected.append("coordinates shared with another listing")
+                    continue
                 km = haversine_km(float(p["lat"]), float(p["lon"]), *centres[city])
                 if km > rules.HOTEL_MAX_KM_FROM_CENTRE:
                     rejected.append(f"{km:.0f} km from centre")
@@ -99,12 +104,8 @@ def main() -> None:
                 f" | tier has {len(picked)}: no more listings found in this band within 25 km of the centre (001 Spec 5.6)"
             report.append(f"{city} {tier}: {len(picked)} kept from {len(cands.get((city, tier), []))} candidates")
             for c, p, km in picked:
-                warn = ""
-                others = [x for x in shared.get((p["lat"], p["lon"]), []) if x != c["name"]]
-                if others:
-                    warn = " | CHECK: Booking.com shows the same coordinates for " + "; ".join(others)
                 src = (f"{c['price_src']} | coords: {BOOKING}{p['slug']}.html (data-atlas-latlng, "
-                       f"{km:.1f} km from centre){warn}{note}")
+                       f"{km:.1f} km from centre){note}")
                 out.append([f"{city}-H-{n:02d}", city, c["name"], tier, f"{float(p['lat']):.5f}", f"{float(p['lon']):.5f}",
                             c["price"], src, latest(*c["dates"], p["fetched_on"])])
                 n += 1

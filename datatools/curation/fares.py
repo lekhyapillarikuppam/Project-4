@@ -53,6 +53,7 @@ FLIGHTS = [
     ("bangalore-delhi-blr-del", "BLR", "DEL", 9248),
 ]
 COMFORT = {"SL": 0.2, "3A": 0.6, "2A": 0.8, "ACS": 0.5, "Y": 0.9}
+TRAIN_FIT_MAX_KM = 2000
 
 
 def air_km(a: str, b: str) -> float:
@@ -90,14 +91,22 @@ def main() -> None:
               ["mode", "class", "route", "distance_km", "distance_source", "fare_inr", "fare_source", "fare_basis", "observed_on"], S)
     rows = []
     for mode, cls in (("train", "SL"), ("train", "3A"), ("train", "2A"), ("bus", "ACS"), ("flight", "Y")):
-        pts = [(r[3], r[5], r[8]) for r in S if r[0] == mode and r[1] == cls]
+        pts = [(r[3], r[5], r[8], r[2]) for r in S if r[0] == mode and r[1] == cls]
+        scope = ""
+        if mode == "train":
+            # Rail fares taper with distance; fit the range the trips actually use.
+            pts = [p for p in pts if p[0] <= TRAIN_FIT_MAX_KM]
+            scope = f" with distance <= {TRAIN_FIT_MAX_KM} km"
         a, b = fit([p[0] for p in pts], [p[1] for p in pts])
         base, per_km = round(a), round(b, 2)
-        resid = max(abs(base + per_km * x - y) for x, y, _ in pts)
-        src = (f"least-squares fit fare = base_fare + per_km x km over {len(pts)} samples in data/raw/fare_samples.csv "
-               f"(max abs residual Rs {resid:.0f}); min_fare = lowest sample fare; comfort_value = 001 Spec 5.4 default")
+        pct = [(base + per_km * x - y) / y * 100 for x, y, _, _ in pts]
+        worst = max(pct, key=abs)
+        src = (f"least-squares fit fare = base_fare + per_km x km over the {len(pts)} samples{scope} in data/raw/fare_samples.csv "
+               f"(largest residual {worst:+.1f}%); min_fare = lowest fitted sample fare; comfort_value = 001 Spec 5.4 default")
         rows.append([mode, cls, base, f"{per_km:.2f}", min(p[1] for p in pts), COMFORT[cls], src, latest(*(p[2] for p in pts))])
-        print(f"{mode} {cls}: n={len(pts)} base={base} per_km={per_km:.2f} min={min(p[1] for p in pts)} max_resid={resid:.0f}")
+        print(f"{mode} {cls}: n={len(pts)} base={base} per_km={per_km:.2f} min={min(p[1] for p in pts)}")
+        for (x, y, _, route), e in zip(pts, pct):
+            print(f"    {route:32s} {x:7.1f} km  Rs {y:5d}  fit Rs {base + per_km * x:7.0f}  {e:+6.1f}%")
     write_csv(CURATED / "fare_rates.csv",
               ["mode", "class", "base_fare", "per_km", "min_fare", "comfort_value", "source", "checked_on"], rows)
 
