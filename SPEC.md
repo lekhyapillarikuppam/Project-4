@@ -316,6 +316,7 @@ Origin and destination are both chosen from this list and must be different. Thi
 - **A-05** Local travel within a city is by auto-rickshaw (budget comfort) or cab (mid and premium comfort). Metro and city buses are not modelled in v1.
 - **A-06** Times are Indian Standard Time, in 24-hour format.
 - **A-07** Long journeys can be taken overnight. Feature 002 defines exactly how travel time reduces the first and last days.
+- **A-08** The premium daily food allowance is 2 × the mid allowance. No published source gives a premium figure, so this is an assumption (Feature 001 Spec §5.7).
 
 ### 9. Out of scope
 
@@ -406,7 +407,8 @@ The dataset lives as version-controlled CSV/JSON files in `data/curated/` and is
 - **Weekdays:** integers 0–6, with 0 = Monday.
 - **Coordinates:** WGS84 decimal degrees, 5 places.
 - **IDs:** city codes from Part B §4 (`JAI`, `AGR`, …). Other IDs are `<CITY>-<TYPE>-<NN>`, for example `JAI-A-07` (attraction) and `JAI-H-03` (hotel).
-- **Provenance:** every curated row has `source` (URL or short citation) and `checked_on` (date).
+- **Provenance:** every curated row has `source` (URL or short citation) and `checked_on` (date). `checked_on` is the date the source page was fetched, for values read directly from an opened page whose evidence (the page extract or API response) is saved in `data/raw/`. A value derived from such evidence (a fit, a conversion, a lookup) takes the latest fetch date of its inputs. `checked_on` is empty only for rows still marked TODO, which fail validation.
+- **City centre:** the main tourist or commercial core of the city, chosen by hand. The reason is recorded in `source`.
 - **Dataset version:** `data/curated/VERSION` holds the version (for example `1.0`) and the compilation month (for example `2026-11`). This is the month shown to users (FR-062).
 
 ##### 4. Interest tags
@@ -423,9 +425,9 @@ Exactly these nine values are allowed, matching FR-005:
 |---|---|---|
 | city_id | text | One of the 15 codes |
 | name | text | |
-| lat, lon | decimal | City centre |
+| lat, lon | decimal | City centre (section 3), with the reason in `source` |
 | traffic_factor | decimal | Multiplier on free-flow drive times, 1.0–2.0. Suggested: 1.4 for DEL, BOM, BLR, CCU, HYD, MAA; 1.2 for JAI, AGR, VNS, GOA, PDY; 1.1 for the rest |
-| food_multiplier | decimal | Multiplier on base food allowance, 0.8–1.5 |
+| food_multiplier | decimal | Multiplier on base food allowance, 0.6–2.2. A city with no cost-of-living source uses 1.0, marked as an approximation in `source` |
 | source, checked_on | | |
 
 ###### 5.2 `hubs.csv` — access points per city
@@ -485,7 +487,6 @@ Each row covers both directions; the loader expands it to 210 directed pairs.
 | train | SL | Sleeper |
 | train | 3A | AC 3-tier |
 | train | 2A | AC 2-tier |
-| bus | NAC | Non-AC seater |
 | bus | ACS | AC sleeper |
 | flight | Y | Economy |
 
@@ -495,7 +496,7 @@ Each row covers both directions; the loader expands it to 210 directed pairs.
 | base_fare | int | Fixed charge per person per journey (reservation, fees) |
 | per_km | decimal | Per person per km, on rail_km / road_km / air_km |
 | min_fare | int | Floor per person |
-| comfort_value | decimal | 0–1, used by the engine's value function. Defaults: SL 0.2, 3A 0.6, 2A 0.8, NAC 0.1, ACS 0.5, Y 0.9 |
+| comfort_value | decimal | 0–1, used by the engine's value function. Defaults: SL 0.2, 3A 0.6, 2A 0.8, ACS 0.5, Y 0.9 |
 | source, checked_on | | Published fare chart or a sample of real fares, with the method recorded |
 
 **Fare formula** (per person, one way) = max(min_fare, base_fare + per_km × distance).
@@ -504,12 +505,11 @@ Each row covers both directions; the loader expands it to 210 directed pairs.
 
 | class | per_km |
 |---|---|
-| SL | 0.3–1.0 |
-| 3A | 0.9–2.2 |
-| 2A | 1.4–3.2 |
-| NAC | 0.8–2.0 |
+| SL | 0.2–1.0 |
+| 3A | 0.5–2.2 |
+| 2A | 0.8–3.2 |
 | ACS | 1.5–3.5 |
-| Y | 2.0–9.0, with base_fare 1,000–4,000 |
+| Y | 2.0–9.0, with base_fare 1,000–6,000 |
 
 ###### 5.5 `attractions/<CITY>.csv` — 25 to 40 per city
 
@@ -538,7 +538,7 @@ One file per city (for example `attractions/JAI.csv`), so each city can be curat
 - Every interest tag that fits the city's character (Part B §4) appears on at least 3 of its attractions.
 - At least 5 attractions per city have `entry_fee = 0`.
 
-###### 5.6 `hotels.csv` — 3 tiers × 3–4 hotels per city
+###### 5.6 `hotels.csv` — 3 tiers × 2–4 hotels per city
 
 | Field | Type | Rule |
 |---|---|---|
@@ -558,11 +558,13 @@ One file per city (for example `attractions/JAI.csv`), so each city can be curat
 | mid | ₹2,000–6,000 | |
 | premium | ₹5,000–20,000 | |
 
+Aim for 3–4 hotels per tier. A tier may have 2 when no more can be found within its band, with the reason in `source`.
+
 Hotels within a city should spread across at least two areas so location matters.
 
 ###### 5.7 `food.csv`
 
-Three rows, one per comfort level, giving `base_per_person_per_day`. City cost = base × the city's `food_multiplier`.
+Three rows, one per comfort level, giving `base_per_person_per_day`. City cost = base × the city's `food_multiplier`. The premium row is 2 × the mid row (assumption A-08).
 
 ###### 5.8 `local_transport.csv` — 2 rows per city
 
@@ -570,12 +572,16 @@ Three rows, one per comfort level, giving `base_per_person_per_day`. City cost =
 |---|---|---|
 | city_id | text | |
 | mode | enum | `auto`, `cab` |
-| base_fare | int | Per vehicle per ride |
-| per_km | decimal | Per vehicle |
+| min_fare | int | Minimum fare per vehicle, covering the first `min_km` |
+| min_km | decimal | Distance covered by the minimum fare |
+| per_km | decimal | Per vehicle, for each km beyond `min_km` |
 | capacity | int | People per vehicle: auto 3, cab 4 |
+| approx | bool | True when the tariff was not notified for this city (see below) |
 | source, checked_on | | |
 
-Ride cost = (base_fare + per_km × km) × ⌈people ÷ capacity⌉.
+Ride cost = (min_fare + per_km × max(0, km − min_km)) × ⌈people ÷ capacity⌉.
+
+**Missing tariffs:** a city with no notified tariff of its own uses its state's tariff: a statewide notification (`approx = false`), or failing that another city's notified tariff in the same state (`approx = true`). If the state has none either, the city uses the median `min_fare`, `min_km` and `per_km` of the cities that have a tariff for that mode, with `approx = true`.
 
 ###### 5.9 `matrices/<CITY>.json` — intra-city travel
 
@@ -609,9 +615,9 @@ The engine applies `traffic_factor` at runtime. Raw API responses are cached in 
 - **DATA-FR-01** The dataset contains exactly 15 cities with the fields in 5.1. (FR-060)
 - **DATA-FR-02** Every city has at least one hub, and every hub has access distance, time and cost. (FR-060)
 - **DATA-FR-03** `city_pairs.csv` has exactly 105 unordered pairs. Every pair has at least one available mode. Every available mode has a positive duration. (FR-060)
-- **DATA-FR-04** `fare_rates.csv` has the 6 mode-class rows, each within its sanity bounds. (FR-060)
+- **DATA-FR-04** `fare_rates.csv` has the 5 mode-class rows, each within its sanity bounds. (FR-060)
 - **DATA-FR-05** Every city meets the attraction coverage rules in 5.5. (FR-060)
-- **DATA-FR-06** Every city has 3–4 hotels in each tier, within the tier's price band. (FR-060)
+- **DATA-FR-06** Every city has 2–4 hotels in each tier, within the tier's price band. (FR-060)
 - **DATA-FR-07** Every city has a complete matrix whose nodes are exactly its hotels, attractions and hubs. All off-diagonal values are positive, and the diagonal is 0. (FR-060)
 - **DATA-FR-08** Every curated row has a non-empty `source` and a valid `checked_on` date. (FR-061)
 - **DATA-FR-09** `data/curated/VERSION` exists, and the loader writes its version and compilation month to the database. (FR-062)
@@ -627,7 +633,7 @@ The engine applies `traffic_factor` at runtime. Raw API responses are cached in 
 | DATA-AT-02 | Validator self-test: run it on fixtures that each break one rule (missing source, bad tag, open ≥ close, unknown city, price outside band, missing matrix node, pair with no mode) | Each fixture produces exactly the expected error, and the run exits non-zero |
 | DATA-AT-03 | Run `python -m datatools.load` against Neon | Row counts in the database equal the CSV counts. The version table shows the VERSION contents |
 | DATA-AT-04 | Make the loader fail partway (bad row injected in a test copy) | Previous database contents unchanged |
-| DATA-AT-05 | Spot check: pick 10 random attractions and 5 random hotels and re-check them against their source | At least 9 of 10 and 5 of 5 match. Record results in `data/spot_check.md` |
+| DATA-AT-05 | Spot check: pick 20 random attractions, 10 random hotels and every fare row, and re-check them against their source | At least 18 of 20 attractions, 10 of 10 hotels and every fare row match. Record results in `data/spot_check.md` |
 | DATA-AT-06 | Count report: `python -m datatools.report` | Prints per-city counts, and the share of pairs with approximate rail distance and with formula durations |
 
 ##### 9. Risks
@@ -650,7 +656,9 @@ The work splits into three kinds:
 
 **Package name.** The spec writes `python -m data.validate`. A Python package called `data` that also holds the CSV files mixes code and data, and the name is easy to clash with. The code therefore lives in `datatools/`, and the commands become `python -m datatools.validate`, `python -m datatools.load` and `python -m datatools.report`. The 001 Spec is amended to match (see Changelog).
 
-**Drafting attractions with Claude.** Claude may draft attraction rows from the seed candidates to save typing. Every drafted row is then checked against its source by hand before `checked_on` is filled in (Constitution III.4). A row with an empty `checked_on` fails validation, so unchecked drafts can't slip through.
+**Drafting attractions with Claude.** Claude may draft attraction rows from the seed candidates to save typing. Values come only from pages actually opened; `checked_on` follows the provenance rule in 001 Spec §3, and a row whose value could not be read from a page stays TODO with `checked_on` empty, so it fails validation (Constitution III.4). The enlarged spot check (DATA-AT-05) is the human check on drafted rows.
+
+**Curation scripts.** The scripts that build the hand-curated files from saved evidence live in `datatools/curation/` and are committed, so every derived value (fits, conversions, tier choices) can be re-run.
 
 **Rejected alternatives:**
 
@@ -667,7 +675,7 @@ The work splits into three kinds:
 | `data/curated/cities.csv` | 15 rows | 5.1 |
 | `data/curated/hubs.csv` | 1–3 rows per city | 5.2 |
 | `data/curated/city_pairs.csv` | 105 rows | 5.3 |
-| `data/curated/fare_rates.csv` | 6 rows | 5.4 |
+| `data/curated/fare_rates.csv` | 5 rows | 5.4 |
 | `data/curated/attractions/<CITY>.csv` | 25–40 rows each, 15 files | 5.5 |
 | `data/curated/hotels.csv` | 9–12 rows per city | 5.6 |
 | `data/curated/food.csv` | 3 rows | 5.7 |
@@ -702,6 +710,7 @@ The work splits into three kinds:
 | `datatools/report.py` | `python -m datatools.report`: per-city counts, tag coverage, approximation shares | DATA-FR-12, DATA-AT-06 |
 | `datatools/sql/schema.sql` | Table definitions | DATA-FR-11 |
 | `datatools/tests/` | pytest tests and broken fixtures | DATA-AT-02, 04 |
+| `datatools/curation/` | Scripts that build cities, food, hubs, fares, local transport and hotels from evidence in `data/raw/`; the fixture generator | Spec 6.3, 6.4 |
 
 ##### 3. Data model in Postgres
 
@@ -743,8 +752,9 @@ CREATE TABLE ref.hotels (hotel_id text PRIMARY KEY, city_id char(3) REFERENCES r
 
 CREATE TABLE ref.food (comfort text PRIMARY KEY, base_per_person_per_day int NOT NULL, source text NOT NULL, checked_on date NOT NULL);
 
-CREATE TABLE ref.local_transport (city_id char(3) REFERENCES ref.cities, mode text, base_fare int NOT NULL,
-  per_km numeric(5,2) NOT NULL, capacity int NOT NULL, source text NOT NULL, checked_on date NOT NULL,
+CREATE TABLE ref.local_transport (city_id char(3) REFERENCES ref.cities, mode text, min_fare int NOT NULL,
+  min_km numeric(4,1) NOT NULL, per_km numeric(5,2) NOT NULL, capacity int NOT NULL, approx bool NOT NULL,
+  source text NOT NULL, checked_on date NOT NULL,
   PRIMARY KEY (city_id, mode));
 
 -- matrices stored long-form
@@ -775,9 +785,9 @@ Two passes:
    - every city has ≥ 1 hub,
    - exactly 105 pairs with `city_a < city_b` and no duplicates; each has ≥ 1 mode, and a positive duration for every available mode,
    - a pair mode is available only if both cities have a hub for it,
-   - 6 fare rows within sanity bounds,
+   - 5 fare rows within sanity bounds,
    - per-city attraction coverage (≥ 25, tag coverage for the city's character, ≥ 5 free),
-   - hotels: 3–4 per tier per city, within price bands and within 25 km of the centre,
+   - hotels: 2–4 per tier per city, within price bands and within 25 km of the centre,
    - attractions within 60 km of the centre,
    - unique IDs, with IDs matching their city prefix,
    - each matrix's nodes = that city's hotels + attractions + `<CITY>-HUB-<mode>` for each hub; square, diagonal 0, off-diagonal > 0,
@@ -823,7 +833,7 @@ No pandas. The files are small, and the standard `csv` module plus Pydantic is e
 | DATA-AT-02 | `datatools/tests/fixtures/valid/`: a small valid mini-dataset (2 cities, fake data). Each broken case is generated by the test: it copies the valid set to a temporary directory and breaks one rule. The tests assert the exact file, row, field and error code (below) for each |
 | DATA-AT-03 | `python -m datatools.load`, then `python -m datatools.report --db`, which compares database row counts with CSV counts |
 | DATA-AT-04 | pytest against a throwaway Neon branch: load a valid set, then load a set with a row that breaks a database constraint; assert row counts unchanged |
-| DATA-AT-05 | Manual. `python -m datatools.report --sample 10 5 --seed 7` picks the rows; results go in `data/spot_check.md` |
+| DATA-AT-05 | Manual. `python -m datatools.report --sample 20 10 --seed 7` picks the attractions and hotels; all fare rows are checked; results go in `data/spot_check.md` |
 | DATA-AT-06 | `python -m datatools.report` |
 
 For the mini-dataset fixtures, the validator takes `--data DIR` and a `--cities JAI,AGR` option, so the "exactly 15 cities" rule can be relaxed in tests only.
@@ -870,9 +880,9 @@ Work top to bottom and tick `[x]` when a task is done and its check passes. "Che
 ##### Hand-curated base files
 - [ ] **T06** Create `data/curated/VERSION`, `cities.csv` (15 rows) and `food.csv` (3 rows), with sources. · serves DATA-FR-01, 09
 - [ ] **T07** Create `hubs.csv`, verifying the outside-city hubs listed in spec 5.2. · serves DATA-FR-02
-- [ ] **T08** Create `fare_rates.csv` (6 rows) from published fare charts, recording the method. · serves DATA-FR-04
+- [ ] **T08** Create `fare_rates.csv` (5 rows) from samples of real fares, recording the method. · serves DATA-FR-04
 - [ ] **T09** Create `local_transport.csv` (auto and cab for 15 cities). · serves DATA-FR-06 (local travel inputs)
-- [ ] **T10** Create `hotels.csv`: 3–4 per tier per city, spread over at least two areas. · serves DATA-FR-06
+- [ ] **T10** Create `hotels.csv`: 2–4 per tier per city (3–4 where possible), spread over at least two areas. · serves DATA-FR-06
 
 ##### Scripted files
 - [ ] **T11** Write `datatools/geo.py`: haversine and an ORS client with a response cache in `data/raw/ors/`.
@@ -898,7 +908,7 @@ Work top to bottom and tick `[x]` when a task is done and its check passes. "Che
 ##### Verify
 - [ ] **T24** Load into Neon and run `report --db`. · Check: DATA-AT-03.
 - [ ] **T25** Rollback test on a throwaway Neon branch. · Check: DATA-AT-04.
-- [ ] **T26** Spot check 10 attractions and 5 hotels; record in `data/spot_check.md`. · Check: DATA-AT-05.
+- [ ] **T26** Spot check 20 attractions, 10 hotels and all fare rows; record in `data/spot_check.md`. · Check: DATA-AT-05.
 - [ ] **T27** Run `report`, then update the traceability section with every DATA-AT result. · Check: DATA-AT-06; 001 marked Done.
 
 ### Feature 002 — Optimization engine (single plan)
@@ -1058,7 +1068,7 @@ A locked attraction that would be dropped makes the request infeasible, with the
 
 ###### 7.2 Candidate hotels
 
-All hotels of the user's comfort tier in the destination city (3–4 hotels).
+All hotels of the user's comfort tier in the destination city (2–4 hotels).
 
 ###### 7.3 Stage 1 — selection (CP-SAT, one model per candidate hotel)
 
@@ -1283,7 +1293,7 @@ Each trip has an `id`, a short `note` explaining what it tests, and an `expect` 
 
 - **Stage 1 estimates too optimistic:** if the 0.6 chain factor underestimates travel, stage 2 drops items often. Mitigation: log the drop rate in batch runs and tune `chain_factor` in config.
 - **Routing time limit vs speed:** guided local search improves with time. Mitigation: measure value against time limit on the test trips and pick the knee point.
-- **One-hotel-per-model loop:** 3–4 hotels × stage 1 is cheap, but variants in 003 may widen the candidate set. Mitigation: keep the stage 1 time limit low and reuse the model across hotels.
+- **One-hotel-per-model loop:** 2–4 hotels × stage 1 is cheap, but variants in 003 may widen the candidate set. Mitigation: keep the stage 1 time limit low and reuse the model across hotels.
 
 #### 002 Plan
 
@@ -1415,3 +1425,13 @@ Update this table when a feature's tasks are written (fill **Tasks**) and when i
 | 2026-10-22 | All | Merged constitution, product spec, feature specs, plan, tasks and traceability into this single SPEC.md | User wants one spec file that grows phase by phase |
 | 2026-10-22 | C 001 Plan, Tasks | Approved | Required before code by Article I.1 |
 | 2026-10-22 | C 001 Plan §6, Tasks T05 | Broken fixtures are generated by the tests from one valid set; validator error codes listed | Matches the T05 implementation; avoids seven near-identical fixture folders |
+| 2026-10-23 | C 001 Spec §5.4 | Sanity bounds: SL 0.2–1.0, 3A 0.5–2.2, 2A 0.8–3.2 per km; flight base_fare 1,000–6,000 | Real fare samples fit outside the old bounds (rail fares taper with distance) |
+| 2026-10-23 | C 001 Spec §5.4, §7; Plan; T08 | Bus class NAC removed; buses are ACS only; 5 fare rows | No real non-AC seater fares could be sampled |
+| 2026-10-23 | C 001 Spec §5.1 | food_multiplier band 0.6–2.2; a city with no cost-of-living source uses 1.0 as a marked approximation | Real metro/small-city meal prices fall outside 0.8–1.5; HMP and MUN have no source |
+| 2026-10-23 | B §8, C 001 Spec §5.7 | Assumption A-08: premium food allowance = 2 × mid | No published premium figure exists |
+| 2026-10-23 | C 001 Spec §5.8; Plan §3 | local_transport uses min_fare, min_km, per_km, approx; new ride-cost formula; state then median fallback for missing tariffs | Notified tariffs are minimum-fare-plus-per-km; many cities have none |
+| 2026-10-23 | C 001 Spec §3, §5.1 | City centre is the hand-chosen tourist or commercial core, with the reason in source | Wikipedia reference points can sit outside the core (e.g. Mumbai) |
+| 2026-10-23 | C 001 Spec §5.6, §7; Plan §4; T10; C 002 §7.2, §15 | 2–4 hotels per tier allowed when fewer can be found | Some cities have too few listed hotels in a band |
+| 2026-10-23 | C 001 Spec §3; Plan §1 | checked_on = fetch date for values read from an opened page with evidence in data/raw/; empty only for TODO rows | Makes checked_on mechanical and auditable |
+| 2026-10-23 | C 001 Spec §8; Plan §6; T26 | DATA-AT-05 spot check grows to 20 attractions, 10 hotels and all fare rows | Compensates for checked_on now being the fetch date |
+| 2026-10-23 | C 001 Plan §1, §2.2 | Curation scripts live in datatools/curation/ and are committed | Derived values must be reproducible |
