@@ -526,8 +526,8 @@ One file per city (for example `attractions/JAI.csv`), so each city can be curat
 | open_time, close_time | HH:MM | Opening and closing time; a visit must finish by close_time. open < close, and close − open ≥ visit_minutes. Use 00:00–23:59 for always open. From the ASI or the official site first, otherwise the place-type default (below) |
 | closed_weekdays | list of int | For example `[0]` for closed Mondays; empty if open daily |
 | hours_approx | bool | True when open_time, close_time and closed_weekdays are the place-type default |
-| entry_fee | int | Indian adult, per person; 0 allowed. From the ASI or the official site first (a fee the user read from an official booking page counts as official, recorded in `source` as "read by user from <url>, <date>"); otherwise the median of at least 2 independent secondary sources, rounded to whole rupees, with their URLs saved in `data/raw/attractions/fee_secondary.csv`; otherwise 0 for temple, viewpoint, market and beach (noted in `source`); monument, museum and activity have no default and stay TODO |
-| fee_approx | bool | True when entry_fee is the median of secondary sources |
+| entry_fee | int | Indian adult, per person; 0 allowed. From the ASI or the official site first (a fee the user read from an official booking page counts as official, recorded in `source` as "read by user from <url>, <date>"); otherwise the median of at least 2 independent secondary sources, rounded to whole rupees, with their URLs saved in `data/raw/attractions/fee_secondary.csv`; otherwise 0 for temple, ghat, viewpoint, garden, market and beach (noted in `source`); monument, fort, museum and activity have no default and stay TODO. Adventure activities: see below |
+| fee_approx | bool | True when entry_fee is the median of secondary sources, or an operator's price for an adventure activity |
 | tags | list | 1–3 interest tags from section 4. The first is the primary tag |
 | rating | decimal | 1.0–5.0, popularity within the city (see **Rating and crowd level** below) |
 | outdoor | bool | |
@@ -535,22 +535,28 @@ One file per city (for example `attractions/JAI.csv`), so each city can be curat
 | fixed_slot | bool | True for events at a set time, such as Ganga Aarti. Then open_time/close_time is the event window and visit_minutes fits inside it |
 | source, checked_on | | Opening hours and fee source; may differ from seed source |
 
-**Place types.** Each attraction is given one place type during drafting (kept in `data/raw/attractions/`), used only for defaults. Other kinds map onto these: fort, palace, tomb, ruins → monument; gallery, zoo → museum; mosque, church, gurudwara, ghat → temple; lake, garden, park, waterfall → viewpoint; mall, bazaar → market; trek, rafting, safari, show → activity.
+**Place types.** Each attraction is given one place type during drafting (kept in `data/raw/attractions/`), used only for defaults. Other kinds map onto these: palace → fort; tomb, ruins → monument; gallery, zoo → museum; mosque, church, gurudwara → temple; lake, waterfall → viewpoint; park → garden; mall, bazaar → market; trek, rafting, safari, show, water sports → activity.
 
 | Place type | Default visit_minutes | Default hours | Default closed |
 |---|---|---|---|
 | monument | 90 | 09:00–17:00 | — |
+| fort | 150 | 09:00–17:00 | — |
 | museum | 120 | 10:00–17:00 | Monday |
 | temple | 45 | 06:00–20:00 | — |
+| ghat | 30 | 06:00–20:00 | — |
 | viewpoint | 30 | 06:00–18:00 | — |
+| garden | 90 | 06:00–18:00 | — |
 | market | 90 | 10:00–21:00 | — |
 | beach | 120 | 06:00–19:00 | — |
 | activity | 180 | 09:00–17:00 | — |
+
+**Adventure activities** (place type activity, tag `adventure`) are not well covered by OpenTripMap or OSM, so they are hand-curated from the operator's or the state tourism department's page, saved as evidence in `data/raw/attractions/`. That page gives the location, hours and price. A price from a state tourism page is official (`fee_approx = false`); a price from an operator's page sets `fee_approx = true`.
 
 **Rating and crowd level.**
 
 - Popularity is the attraction's English Wikipedia pageviews over the 12 complete months before compilation (Wikimedia REST API, all access, user agents). Within each city, rating = 1 + 4 × (ln v − ln v_min) ÷ (ln v_max − ln v_min) over the attractions that have pageviews, rounded to 1 decimal (3.0 if they all have the same count).
 - An attraction with no Wikipedia article uses its OpenTripMap `rate` instead: 1 → 2.0, 2 → 3.0, 3 → 4.0 (the `h` heritage flag is ignored).
+- An attraction with neither (a hand-curated adventure activity, or a place seeded by OSM id that has no OpenTripMap record) gets 2.0, the lowest fallback, noted in `source`.
 - crowd_level: the city's attractions sorted by rating are split into thirds: bottom `low`, middle `medium`, top `high`.
 - Every pageview and OpenTripMap lookup is saved in `data/raw/`.
 
@@ -558,6 +564,7 @@ One file per city (for example `attractions/JAI.csv`), so each city can be curat
 
 - Each city has at least 25 attractions.
 - Every interest tag that fits the city's character (Part B §4) appears on at least 3 of its attractions.
+- Every city has at least 2 attractions tagged `food`, chosen from the seed's markets, food streets and nightlife candidates (the Overpass `markets_food_nightlife` query, §6.1). Well-known food places and streets that the query misses are seeded by OSM id.
 - At least 5 attractions per city have `entry_fee = 0`.
 
 ###### 5.6 `hotels.csv` — 3 tiers × 2–4 hotels per city
@@ -808,7 +815,7 @@ Two passes:
    - exactly 105 pairs with `city_a < city_b` and no duplicates; each has ≥ 1 mode, and a positive duration for every available mode,
    - a pair mode is available only if both cities have a hub for it,
    - 5 fare rows within sanity bounds,
-   - per-city attraction coverage (≥ 25, tag coverage for the city's character, ≥ 5 free),
+   - per-city attraction coverage (≥ 25, tag coverage for the city's character, ≥ 2 `food` in every city, ≥ 5 free),
    - hotels: 2–4 per tier per city, within price bands and within 25 km of the centre,
    - attractions within 60 km of the centre,
    - unique IDs, with IDs matching their city prefix,
@@ -822,7 +829,7 @@ Two passes:
 | JAI, AGR, HMP | history, culture |
 | MUN, DJL | nature, relaxation |
 | RSH | nature, adventure, spiritual |
-| GOA | relaxation, nightlife, nature |
+| GOA | relaxation, nightlife, nature, adventure |
 | PDY | relaxation, culture |
 | DEL | history, food, shopping |
 | BOM, BLR | food, nightlife, culture |
@@ -1463,3 +1470,6 @@ Update this table when a feature's tasks are written (fill **Tasks**) and when i
 | 2026-10-23 | C 001 Spec §5.5 | visit_minutes defaults by place type (monument 90, museum 120, temple 45, viewpoint 30, market 90, beach 120, activity 180); other kinds map onto these seven | Visit durations are rarely published |
 | 2026-10-23 | C 001 Spec §5.5; Plan §2.2 | New columns hours_approx and visit_approx | DATA-FR-12: approximations are flagged in the row |
 | 2026-10-23 | C 001 Spec §5.5 | New column fee_approx: with no official fee, entry_fee is the median of ≥ 2 independent secondary sources (URLs in data/raw/attractions/fee_secondary.csv) and fee_approx = true; a fee the user read from an official booking page counts as official | Some official fees are not published without login; DATA-FR-12 needs the approximation flagged |
+| 2026-10-24 | C 001 Spec §5.5; Plan §4 | Coverage rule: every city has ≥ 2 `food` attractions, from the seeded markets/food/nightlife candidates; food streets the query misses are seeded by OSM id | JAI and VNS had no food attractions although food is part of every trip |
+| 2026-10-24 | C 001 Spec §5.5; Plan §4 | GOA requires `adventure` (≥ 3). Adventure activities are hand-curated from operator or state tourism pages; fee_approx = true unless the price is from the state tourism page; with no Wikipedia article or OpenTripMap rate the rating is 2.0 (also used for food places seeded by OSM id) | Water sports are a main reason to visit Goa and are missing from OpenTripMap/OSM |
+| 2026-10-24 | C 001 Spec §5.5 | Place types split: fort (with palace) 150 min, garden (with park) 90 min, ghat 30 min; each keeps the hours and fee default of the type it came from (monument, viewpoint, temple) | 90 min was short for large forts and palaces, 30 min short for gardens and 45 min long for a ghat |
