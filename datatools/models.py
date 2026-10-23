@@ -274,6 +274,7 @@ class Attraction(Curated):
     closed_weekdays: StrList = []
     hours_approx: Bool
     entry_fee: Rupees
+    fee_approx: Bool
     tags: StrList
     rating: Annotated[float, Field(ge=rules.RATING_RANGE[0], le=rules.RATING_RANGE[1])]
     outdoor: Bool

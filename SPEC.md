@@ -912,7 +912,7 @@ Work top to bottom and tick `[x]` when a task is done and its check passes. "Che
 - [x] **T13** Run the validator on base files and pairs. · Check: 0 errors apart from the expected "missing attractions/matrices" errors.
 
 ##### Attractions
-- [ ] **T14** Write `datatools/seed.py` (OpenTripMap, falling back to Overpass) and `datatools/draft.py`.
+- [x] **T14** Write `datatools/seed.py` (OpenTripMap, falling back to Overpass) and `datatools/draft.py`.
 - [ ] **T15** Seed, draft and curate the priority cities JAI, DEL, GOA, BLR and VNS: 25–40 attractions each, every row checked against its source, `checked_on` filled. · serves DATA-FR-05, 08
 - [ ] **T16** Validate the 5 priority cities. · Check: 0 errors for these cities.
 - [ ] **T17** Seed, draft and curate AGR, HMP, MUN, RSH and DJL. · serves DATA-FR-05, 08

@@ -1,0 +1,113 @@
+{
+ "url": "https://eticket.webfront.in/asi/api/v7/circles",
+ "fetched_on": "2026-10-23",
+ "response": {
+  "isSuccess": true,
+  "data": {
+   "items": [
+    {
+     "name": "Agra"
+    },
+    {
+     "name": "Amaravati"
+    },
+    {
+     "name": "Aurangabad  "
+    },
+    {
+     "name": "Bangalore "
+    },
+    {
+     "name": "Bhopal"
+    },
+    {
+     "name": "Bhubaneshwar "
+    },
+    {
+     "name": "Chandigarh"
+    },
+    {
+     "name": "Chennai "
+    },
+    {
+     "name": "Delhi"
+    },
+    {
+     "name": "Dharwad "
+    },
+    {
+     "name": "Goa"
+    },
+    {
+     "name": "Guwahati"
+    },
+    {
+     "name": "Hampi "
+    },
+    {
+     "name": "Hyderabad"
+    },
+    {
+     "name": "Jabalpur"
+    },
+    {
+     "name": "Jaipur"
+    },
+    {
+     "name": "Jhansi"
+    },
+    {
+     "name": "Jodhpur"
+    },
+    {
+     "name": "Kolkata"
+    },
+    {
+     "name": "Leh"
+    },
+    {
+     "name": "Lucknow"
+    },
+    {
+     "name": "Mumbai "
+    },
+    {
+     "name": "Nagpur"
+    },
+    {
+     "name": "Patna"
+    },
+    {
+     "name": "Puri"
+    },
+    {
+     "name": "Raiganj"
+    },
+    {
+     "name": "Raipur "
+    },
+    {
+     "name": "Rajkot"
+    },
+    {
+     "name": "Sarnath"
+    },
+    {
+     "name": "Shimla"
+    },
+    {
+     "name": "Srinagar"
+    },
+    {
+     "name": "Thiruchirapalli"
+    },
+    {
+     "name": "Thrissur "
+    },
+    {
+     "name": "Vadodara "
+    }
+   ]
+  }
+ }
+}

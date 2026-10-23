@@ -1,0 +1,313 @@
+{
+ "url": "https://eticket.webfront.in/asi/api/v7/monuments/SMC",
+ "fetched_on": "2026-10-23",
+ "response": {
+  "isSuccess": true,
+  "data": {
+   "id": 193,
+   "name": "Archaeological Site Museum, Chandragiri",
+   "code": "SMC",
+   "appConfigVersion": "0.4.2",
+   "comment": null,
+   "version": "226.30",
+   "isCapped": true,
+   "maxAdult": 5,
+   "maxChild": 3,
+   "multipleSlots": true,
+   "circle": "Amaravati",
+   "configuration": {
+    "amounts": [
+     {
+      "type": "Indian",
+      "total": 5,
+      "ASI": 5,
+      "LDA": 0,
+      "others": 0,
+      "MSM": 0,
+      "AC": 0
+     },
+     {
+      "type": "Foreigner",
+      "total": 5,
+      "ASI": 5,
+      "LDA": 0,
+      "others": 0,
+      "MSM": 0,
+      "AC": 0
+     },
+     {
+      "type": "SAARC",
+      "total": 5,
+      "ASI": 5,
+      "LDA": 0,
+      "others": 0,
+      "MSM": 0,
+      "AC": 0
+     },
+     {
+      "type": "BIMSTEC",
+      "total": 5,
+      "ASI": 5,
+      "LDA": 0,
+      "others": 0,
+      "MSM": 0,
+      "AC": 0
+     }
+    ],
+    "optionals": []
+   },
+   "availability": {
+    "week": {
+     "id": 388,
+     "name": "forenoon",
+     "periodicity": "daily",
+     "startTime": "06:00:00 am",
+     "endTime": "12:00:00 pm",
+     "sunday": false,
+     "monday": true,
+     "tuesday": true,
+     "wednesday": true,
+     "thursday": true,
+     "friday": true,
+     "saturday": true,
+     "MonumentId": 193
+    },
+    "timeSlots": [
+     {
+      "id": 388,
+      "name": "forenoon",
+      "startTime": "06:00:00 am",
+      "endTime": "12:00:00 pm"
+     },
+     {
+      "id": 389,
+      "name": "afternoon",
+      "startTime": "12:00:00 pm",
+      "endTime": "06:00:00 pm"
+     }
+    ],
+    "holidays": [],
+    "shiftHolidays": [
+     {
+      "shiftId": 388,
+      "date": "2022-03-08"
+     },
+     {
+      "shiftId": 388,
+      "date": "2022-04-18"
+     },
+     {
+      "shiftId": 388,
+      "date": "2022-06-21"
+     },
+     {
+      "shiftId": 388,
+      "date": "2025-05-18"
+     },
+     {
+      "shiftId": 388,
+      "date": "2025-05-18"
+     },
+     {
+      "shiftId": 388,
+      "date": "2025-05-18"
+     },
+     {
+      "shiftId": 388,
+      "date": "2025-05-18"
+     },
+     {
+      "shiftId": 388,
+      "date": "2025-05-18"
+     },
+     {
+      "shiftId": 388,
+      "date": "2025-05-18"
+     },
+     {
+      "shiftId": 388,
+      "date": "2025-05-18"
+     },
+     {
+      "shiftId": 388,
+      "date": "2025-05-18"
+     },
+     {
+      "shiftId": 388,
+      "date": "2025-05-18"
+     },
+     {
+      "shiftId": 388,
+      "date": "2025-05-18"
+     },
+     {
+      "shiftId": 388,
+      "date": "2025-05-18"
+     },
+     {
+      "shiftId": 388,
+      "date": "2022-11-19"
+     },
+     {
+      "shiftId": 388,
+      "date": "2023-03-08"
+     },
+     {
+      "shiftId": 388,
+      "date": "2024-06-21"
+     },
+     {
+      "shiftId": 388,
+      "date": "2023-05-18"
+     },
+     {
+      "shiftId": 388,
+      "date": "2025-05-18"
+     },
+     {
+      "shiftId": 388,
+      "date": "2025-05-18"
+     },
+     {
+      "shiftId": 388,
+      "date": "2025-05-18"
+     },
+     {
+      "shiftId": 388,
+      "date": "2025-05-18"
+     },
+     {
+      "shiftId": 388,
+      "date": "2025-06-21"
+     },
+     {
+      "shiftId": 388,
+      "date": "2025-11-19"
+     },
+     {
+      "shiftId": 388,
+      "date": "2026-03-08"
+     },
+     {
+      "shiftId": 388,
+      "date": "2026-04-18"
+     },
+     {
+      "shiftId": 388,
+      "date": "2026-05-18"
+     },
+     {
+      "shiftId": 389,
+      "date": "2022-03-08"
+     },
+     {
+      "shiftId": 389,
+      "date": "2022-04-18"
+     },
+     {
+      "shiftId": 389,
+      "date": "2022-06-21"
+     },
+     {
+      "shiftId": 389,
+      "date": "2025-05-18"
+     },
+     {
+      "shiftId": 389,
+      "date": "2025-05-18"
+     },
+     {
+      "shiftId": 389,
+      "date": "2025-05-18"
+     },
+     {
+      "shiftId": 389,
+      "date": "2025-05-18"
+     },
+     {
+      "shiftId": 389,
+      "date": "2025-05-18"
+     },
+     {
+      "shiftId": 389,
+      "date": "2025-05-18"
+     },
+     {
+      "shiftId": 389,
+      "date": "2025-05-18"
+     },
+     {
+      "shiftId": 389,
+      "date": "2025-05-18"
+     },
+     {
+      "shiftId": 389,
+      "date": "2025-05-18"
+     },
+     {
+      "shiftId": 389,
+      "date": "2025-05-18"
+     },
+     {
+      "shiftId": 389,
+      "date": "2025-05-18"
+     },
+     {
+      "shiftId": 389,
+      "date": "2022-11-19"
+     },
+     {
+      "shiftId": 389,
+      "date": "2023-03-08"
+     },
+     {
+      "shiftId": 389,
+      "date": "2024-06-21"
+     },
+     {
+      "shiftId": 389,
+      "date": "2023-05-18"
+     },
+     {
+      "shiftId": 389,
+      "date": "2025-05-18"
+     },
+     {
+      "shiftId": 389,
+      "date": "2025-05-18"
+     },
+     {
+      "shiftId": 389,
+      "date": "2025-05-18"
+     },
+     {
+      "shiftId": 389,
+      "date": "2025-05-18"
+     },
+     {
+      "shiftId": 389,
+      "date": "2025-06-21"
+     },
+     {
+      "shiftId": 389,
+      "date": "2025-11-19"
+     },
+     {
+      "shiftId": 389,
+      "date": "2026-03-08"
+     },
+     {
+      "shiftId": 389,
+      "date": "2026-04-18"
+     },
+     {
+      "shiftId": 389,
+      "date": "2026-05-18"
+     }
+    ],
+    "maxDate": "2026-10-29T20:18:16.993Z"
+   },
+   "status": "active"
+  }
+ }
+}

@@ -1,0 +1,6515 @@
+{
+ "city_id": "GOA",
+ "centre": [
+  15.49889,
+  73.82778
+ ],
+ "radius_km": 40,
+ "fetched_on": "2026-10-23",
+ "opentripmap": {
+  "url": "https://api.opentripmap.com/0.1/en/places/radius",
+  "params": {
+   "radius": 40000,
+   "lat": 15.49889,
+   "lon": 73.82778,
+   "kinds": "interesting_places",
+   "format": "json",
+   "limit": 500,
+   "rate": "3, then 2, then 1 (merged)"
+  },
+  "items": [
+   {
+    "source": "opentripmap",
+    "xid": "W429448104",
+    "osm": "way/429448104",
+    "name": "Our Lady of the Immaculate Conception",
+    "wikidata": "Q7111015",
+    "kinds": "religion,churches,interesting_places,other_churches",
+    "rate": 7,
+    "lat": 15.498530387878418,
+    "lon": 73.8297348022461
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N1687185066",
+    "osm": "node/1687185066",
+    "name": "Fontainhas",
+    "wikidata": "Q5465121",
+    "kinds": "historic,historical_places,interesting_places,historic_districts,historic_settlements",
+    "rate": 7,
+    "lat": 15.496511459350586,
+    "lon": 73.8304443359375
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W318683103",
+    "osm": "way/318683103",
+    "name": "Sunaparanta, Goa Centre for the Arts",
+    "wikidata": "Q7638846",
+    "kinds": "cultural,museums,interesting_places,art_galleries",
+    "rate": 3,
+    "lat": 15.4938325881958,
+    "lon": 73.82762145996094
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W658699101",
+    "osm": "way/658699101",
+    "name": "Goa State Museum (closed)",
+    "wikidata": "Q5575115",
+    "kinds": "cultural,museums,interesting_places,other_museums",
+    "rate": 3,
+    "lat": 15.493284225463867,
+    "lon": 73.83316040039062
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W618724201",
+    "osm": "way/618724201",
+    "name": "Reis Magos Fort Entry / Reception",
+    "wikidata": "Q10283654",
+    "kinds": "fortifications,historic,interesting_places,castles",
+    "rate": 7,
+    "lat": 15.49714469909668,
+    "lon": 73.80945587158203
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N3992559269",
+    "osm": "node/3992559269",
+    "name": "Reis Magos Church",
+    "wikidata": "Q10283654",
+    "kinds": "religion,other_temples,fortifications,historic,interesting_places,castles",
+    "rate": 7,
+    "lat": 15.497764587402344,
+    "lon": 73.80905151367188
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W194550880",
+    "osm": "way/194550880",
+    "name": "Reis Magos Fort",
+    "wikidata": "Q10283654",
+    "kinds": "fortifications,historic,interesting_places,castles",
+    "rate": 7,
+    "lat": 15.49640941619873,
+    "lon": 73.80903625488281
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4299450698",
+    "osm": "node/4299450698",
+    "name": "Shanta Durga Temple",
+    "wikidata": "Q7489022",
+    "kinds": "other,unclassified_objects,interesting_places,tourist_object",
+    "rate": 3,
+    "lat": 15.508027076721191,
+    "lon": 73.80322265625
+   },
+   {
+    "source": "opentripmap",
+    "xid": "Q5575103",
+    "osm": null,
+    "name": "Goa Science Centre",
+    "wikidata": "Q5575103",
+    "kinds": "museums,cultural,science_museums,interesting_places",
+    "rate": 3,
+    "lat": 15.477426528930664,
+    "lon": 73.80907440185547
+   },
+   {
+    "source": "opentripmap",
+    "xid": "Q4806672",
+    "osm": null,
+    "name": "Salim Ali Bird Sanctuary",
+    "wikidata": "Q4806672",
+    "kinds": "interesting_places,natural,nature_reserves,other_nature_conservation_areas",
+    "rate": 3,
+    "lat": 15.514599800109863,
+    "lon": 73.85749816894531
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N1328303571",
+    "osm": "node/1328303571",
+    "name": "Dona paula",
+    "wikidata": "Q5293802",
+    "kinds": "historic,archaeology,interesting_places,other_archaeological_sites",
+    "rate": 3,
+    "lat": 15.450555801391602,
+    "lon": 73.80302429199219
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N1658757838",
+    "osm": "node/1658757838",
+    "name": "Shri Shantadurga Temple",
+    "wikidata": "Q7489022",
+    "kinds": "religion,hindu_temples,interesting_places",
+    "rate": 3,
+    "lat": 15.513065338134766,
+    "lon": 73.76982116699219
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N8410670986",
+    "osm": "node/8410670986",
+    "name": "Lower Aguada Fort extension",
+    "wikidata": "Q4991900",
+    "kinds": "towers,architecture,fortifications,historic,interesting_places,other_towers,fortified_towers",
+    "rate": 7,
+    "lat": 15.496369361877441,
+    "lon": 73.76482391357422
+   },
+   {
+    "source": "opentripmap",
+    "xid": "Q4871118",
+    "osm": null,
+    "name": "Battle of Goa",
+    "wikidata": "Q4871118",
+    "kinds": "battlefields,historic,historical_places,interesting_places",
+    "rate": 3,
+    "lat": 15.562999725341797,
+    "lon": 73.81800079345703
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4303706490",
+    "osm": "node/4303706490",
+    "name": "Santana Church",
+    "wikidata": "Q5117203",
+    "kinds": "religion,churches,interesting_places,other_churches",
+    "rate": 7,
+    "lat": 15.478106498718262,
+    "lon": 73.89170837402344
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W201243802",
+    "osm": "way/201243802",
+    "name": "Our Lady of the Rosary",
+    "wikidata": "Q20047855",
+    "kinds": "religion,churches,interesting_places,catholic_churches",
+    "rate": 7,
+    "lat": 15.501838684082031,
+    "lon": 73.90486907958984
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W201243466",
+    "osm": "way/201243466",
+    "name": "Ruins of Church of St. Augustine",
+    "wikidata": "Q30753669",
+    "kinds": "religion,architecture,historic_architecture,churches,interesting_places,destroyed_objects,other_churches",
+    "rate": 7,
+    "lat": 15.499577522277832,
+    "lon": 73.90631866455078
+   },
+   {
+    "source": "opentripmap",
+    "xid": "Q6940795",
+    "osm": null,
+    "name": "Museum of Christian Art",
+    "wikidata": "Q6940795",
+    "kinds": "museums,cultural,interesting_places,other_museums",
+    "rate": 3,
+    "lat": 15.50134563446045,
+    "lon": 73.90729522705078
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W640479346",
+    "osm": "way/640479346",
+    "name": "Holy Family Chapel",
+    "wikidata": "Q30600531",
+    "kinds": "religion,churches,interesting_places,other_churches",
+    "rate": 3,
+    "lat": 15.556730270385742,
+    "lon": 73.88448333740234
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W201244224",
+    "osm": "way/201244224",
+    "name": "Chapel of Saint Catherine of Alexandria",
+    "wikidata": "Q20047741",
+    "kinds": "religion,churches,interesting_places,other_churches",
+    "rate": 7,
+    "lat": 15.503235816955566,
+    "lon": 73.9104232788086
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4532503789",
+    "osm": "node/4532503789",
+    "name": "Archeological Museum",
+    "wikidata": "Q16251566",
+    "kinds": "cultural,museums,interesting_places,other_museums",
+    "rate": 3,
+    "lat": 15.50308609008789,
+    "lon": 73.91089630126953
+   },
+   {
+    "source": "opentripmap",
+    "xid": "R3569663",
+    "osm": "relation/3569663",
+    "name": "Basilica of Bom Jesus",
+    "wikidata": "Q391123",
+    "kinds": "religion,churches,interesting_places,catholic_churches",
+    "rate": 7,
+    "lat": 15.500678062438965,
+    "lon": 73.91104888916016
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W673907425",
+    "osm": "way/673907425",
+    "name": "Saint Francis of Assisi",
+    "wikidata": "Q5117224",
+    "kinds": "religion,churches,interesting_places,catholic_churches",
+    "rate": 7,
+    "lat": 15.503337860107422,
+    "lon": 73.91144561767578
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N245632163",
+    "osm": "node/245632163",
+    "name": "Old Goa",
+    "wikidata": "Q553907",
+    "kinds": "settlements,historic,historical_places,archaeology,interesting_places,historic_settlements",
+    "rate": 7,
+    "lat": 15.50233268737793,
+    "lon": 73.9117431640625
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W356361531",
+    "osm": "way/356361531",
+    "name": "Churches and Convents of Goa",
+    "wikidata": "Q15726428",
+    "kinds": "other,unclassified_objects,interesting_places,historic_object",
+    "rate": 7,
+    "lat": 15.503340721130371,
+    "lon": 73.91175842285156
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W201243945",
+    "osm": "way/201243945",
+    "name": "Se Cathedral",
+    "wikidata": "Q2942482",
+    "kinds": "religion,cathedrals,interesting_places",
+    "rate": 7,
+    "lat": 15.503783226013184,
+    "lon": 73.91227722167969
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N5441002024",
+    "osm": "node/5441002024",
+    "name": "Arch of Viceroys",
+    "wikidata": "Q9627847",
+    "kinds": "architecture,historic_architecture,historic,monuments_and_memorials,interesting_places,monuments,triumphal_archs",
+    "rate": 7,
+    "lat": 15.505873680114746,
+    "lon": 73.91358947753906
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W477447701",
+    "osm": "way/477447701",
+    "name": "Church of St Cajetan",
+    "wikidata": "Q20053751",
+    "kinds": "religion,churches,interesting_places,catholic_churches",
+    "rate": 7,
+    "lat": 15.50577449798584,
+    "lon": 73.91522216796875
+   },
+   {
+    "source": "opentripmap",
+    "xid": "Q28040839",
+    "osm": null,
+    "name": "église Saint-Gaëtan de Vieux-Goa",
+    "wikidata": "Q28040839",
+    "kinds": "religion,churches,interesting_places,other_churches",
+    "rate": 3,
+    "lat": 15.505499839782715,
+    "lon": 73.91529846191406
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N6311094804",
+    "osm": "node/6311094804",
+    "name": "Saint Paul's College",
+    "wikidata": "Q2983675",
+    "kinds": "architecture,historic_architecture,interesting_places,destroyed_objects",
+    "rate": 7,
+    "lat": 15.499297142028809,
+    "lon": 73.91829681396484
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W673907421",
+    "osm": "way/673907421",
+    "name": "Chapel of St. Francis Xavier",
+    "wikidata": "Q28952563",
+    "kinds": "religion,churches,interesting_places,other_churches",
+    "rate": 7,
+    "lat": 15.500765800476074,
+    "lon": 73.91919708251953
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W44016384",
+    "osm": "way/44016384",
+    "name": "Our Lady of the Hill Chapel",
+    "wikidata": "Q28041245",
+    "kinds": "religion,churches,interesting_places,other_churches",
+    "rate": 7,
+    "lat": 15.504534721374512,
+    "lon": 73.92351531982422
+   },
+   {
+    "source": "opentripmap",
+    "xid": "R6423947",
+    "osm": "relation/6423947",
+    "name": "Baga Beach",
+    "wikidata": "Q26793786",
+    "kinds": "natural,interesting_places,beaches,other_beaches",
+    "rate": 3,
+    "lat": 15.557372093200684,
+    "lon": 73.7509765625
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W45078433",
+    "osm": "way/45078433",
+    "name": "Zuari Bridge",
+    "wikidata": "Q8074900",
+    "kinds": "bridges,architecture,interesting_places,other_bridges",
+    "rate": 3,
+    "lat": 15.414942741394043,
+    "lon": 73.90950775146484
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4283847289",
+    "osm": "node/4283847289",
+    "name": "Corjuem Fort",
+    "wikidata": "Q5170732",
+    "kinds": "fortifications,historic,interesting_places,other_fortifications",
+    "rate": 7,
+    "lat": 15.596763610839844,
+    "lon": 73.89281463623047
+   },
+   {
+    "source": "opentripmap",
+    "xid": "Q10284074",
+    "osm": null,
+    "name": "Fort of São Tiago of Banastarim",
+    "wikidata": "Q10284074",
+    "kinds": "fortifications,historic,interesting_places,other_fortifications",
+    "rate": 7,
+    "lat": 15.49122142791748,
+    "lon": 73.9565658569336
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W280416231",
+    "osm": "way/280416231",
+    "name": "Naval Aviation Museum",
+    "wikidata": "Q12063607",
+    "kinds": "cultural,museums,interesting_places,military_museums",
+    "rate": 3,
+    "lat": 15.374600410461426,
+    "lon": 73.83868408203125
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W90307701",
+    "osm": "way/90307701",
+    "name": "Vagator beach",
+    "wikidata": "Q3553247",
+    "kinds": "natural,interesting_places,beaches,other_beaches",
+    "rate": 3,
+    "lat": 15.597442626953125,
+    "lon": 73.733642578125
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W128565257",
+    "osm": "way/128565257",
+    "name": "Chapora beach",
+    "wikidata": "Q5073350",
+    "kinds": "natural,interesting_places,beaches,other_beaches",
+    "rate": 3,
+    "lat": 15.606331825256348,
+    "lon": 73.7406005859375
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W89417358",
+    "osm": "way/89417358",
+    "name": "Fort Chapora",
+    "wikidata": "Q5073352",
+    "kinds": "architecture,historic_architecture,fortifications,historic,interesting_places,destroyed_objects,other_fortifications",
+    "rate": 7,
+    "lat": 15.605969429016113,
+    "lon": 73.73625946044922
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W484344083",
+    "osm": "way/484344083",
+    "name": "Church of St Francis of Assisi",
+    "wikidata": "Q25689874",
+    "kinds": "religion,churches,interesting_places,other_churches",
+    "rate": 7,
+    "lat": 15.649186134338379,
+    "lon": 73.8306655883789
+   },
+   {
+    "source": "opentripmap",
+    "xid": "Q4789425",
+    "osm": null,
+    "name": "Mangueshi Temple",
+    "wikidata": "Q4789425",
+    "kinds": "religion,hindu_temples,interesting_places",
+    "rate": 3,
+    "lat": 15.51630973815918,
+    "lon": 73.98300170898438
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W615283031",
+    "osm": "way/615283031",
+    "name": "Shri Mahalsa Narayani Temple",
+    "wikidata": "Q19893483",
+    "kinds": "religion,hindu_temples,interesting_places",
+    "rate": 3,
+    "lat": 15.44051456451416,
+    "lon": 73.97258758544922
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N1002534290",
+    "osm": "node/1002534290",
+    "name": "Arossim Beach",
+    "wikidata": "Q26794004",
+    "kinds": "natural,interesting_places,beaches,other_beaches",
+    "rate": 3,
+    "lat": 15.335132598876953,
+    "lon": 73.89291381835938
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W373175226",
+    "osm": "way/373175226",
+    "name": "Safa Masjid",
+    "wikidata": "Q29052432",
+    "kinds": "religion,mosques,interesting_places",
+    "rate": 7,
+    "lat": 15.406620025634766,
+    "lon": 74.0000228881836
+   },
+   {
+    "source": "opentripmap",
+    "xid": "Q55600252",
+    "osm": null,
+    "name": "église du Saint-Esprit de Margao",
+    "wikidata": "Q55600252",
+    "kinds": "religion,churches,interesting_places,other_churches",
+    "rate": 3,
+    "lat": 15.28164005279541,
+    "lon": 73.95913696289062
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4298768990",
+    "osm": "node/4298768990",
+    "name": "Rachol Seminary",
+    "wikidata": "Q7279553",
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 7,
+    "lat": 15.309916496276855,
+    "lon": 74.00139617919922
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4326458015",
+    "osm": "node/4326458015",
+    "name": "Rachol Fort Gate",
+    "wikidata": "Q10283882",
+    "kinds": "fortifications,historic,interesting_places,other_fortifications",
+    "rate": 7,
+    "lat": 15.308616638183594,
+    "lon": 74.0009994506836
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4270037210",
+    "osm": "node/4270037210",
+    "name": "Goa Chitra museum",
+    "wikidata": "Q5575071",
+    "kinds": "cultural,museums,interesting_places,other_museums",
+    "rate": 3,
+    "lat": 15.264700889587402,
+    "lon": 73.94161224365234
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4739178129",
+    "osm": "node/4739178129",
+    "name": "Rachol Church",
+    "wikidata": "Q17050432",
+    "kinds": "religion,churches,interesting_places,other_churches",
+    "rate": 7,
+    "lat": 15.308481216430664,
+    "lon": 74.01036071777344
+   },
+   {
+    "source": "opentripmap",
+    "xid": "Q4121270",
+    "osm": null,
+    "name": "Fort Tiracol",
+    "wikidata": "Q4121270",
+    "kinds": "fortifications,historic,interesting_places,other_fortifications",
+    "rate": 7,
+    "lat": 15.730600357055664,
+    "lon": 73.68199920654297
+   },
+   {
+    "source": "opentripmap",
+    "xid": "Q6744204",
+    "osm": null,
+    "name": "Mallikarjuna Temple, Goa",
+    "wikidata": "Q6744204",
+    "kinds": "religion,hindu_temples,interesting_places",
+    "rate": 3,
+    "lat": 15.215277671813965,
+    "lon": 73.86666870117188
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N1687185782",
+    "osm": "node/1687185782",
+    "name": "Chapel of St. Sebastian",
+    "wikidata": "Q55714108",
+    "kinds": "religion,churches,interesting_places,other_churches",
+    "rate": 6,
+    "lat": 15.495941162109375,
+    "lon": 73.83081817626953
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W416555220",
+    "osm": "way/416555220",
+    "name": "Kala Academy",
+    "wikidata": "Q16851397",
+    "kinds": "cultural,theatres_and_entertainments,interesting_places,other_theatres",
+    "rate": 2,
+    "lat": 15.494349479675293,
+    "lon": 73.81773376464844
+   },
+   {
+    "source": "opentripmap",
+    "xid": "Q10283797",
+    "osm": null,
+    "name": "Fortification of Tiswadi Island",
+    "wikidata": "Q10283797",
+    "kinds": "fortifications,historic,interesting_places,other_fortifications",
+    "rate": 6,
+    "lat": 15.483464241027832,
+    "lon": 73.80716705322266
+   },
+   {
+    "source": "opentripmap",
+    "xid": "Q6872686",
+    "osm": null,
+    "name": "Miramar",
+    "wikidata": "Q6872686",
+    "kinds": "beaches,interesting_places,natural,other_beaches",
+    "rate": 2,
+    "lat": 15.483055114746094,
+    "lon": 73.80722045898438
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4324640389",
+    "osm": "node/4324640389",
+    "name": "Inox - (Mall de Goa)",
+    "wikidata": "Q24514669",
+    "kinds": "cultural,cinemas,theatres_and_entertainments,interesting_places,shops,malls,tourist_facilities",
+    "rate": 2,
+    "lat": 15.52583122253418,
+    "lon": 73.82721710205078
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4288424613",
+    "osm": "node/4288424613",
+    "name": "Museum of Goa",
+    "wikidata": "Q24942720",
+    "kinds": "cultural,museums,interesting_places,art_galleries",
+    "rate": 2,
+    "lat": 15.525461196899414,
+    "lon": 73.79544830322266
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4301838569",
+    "osm": "node/4301838569",
+    "name": "Fort Aguada",
+    "wikidata": "Q56458685",
+    "kinds": "fortifications,historic,historical_places,interesting_places,other_fortifications,historic_settlements",
+    "rate": 6,
+    "lat": 15.493284225463867,
+    "lon": 73.77447509765625
+   },
+   {
+    "source": "opentripmap",
+    "xid": "R6411419",
+    "osm": "relation/6411419",
+    "name": "Fort Aguada",
+    "wikidata": "Q56458685",
+    "kinds": "fortifications,historic,interesting_places,other_fortifications",
+    "rate": 6,
+    "lat": 15.492386817932129,
+    "lon": 73.77359771728516
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N8409100602",
+    "osm": "node/8409100602",
+    "name": "Aguada Fort",
+    "wikidata": "Q56458685",
+    "kinds": "fortifications,historic,interesting_places,castles",
+    "rate": 6,
+    "lat": 15.492547988891602,
+    "lon": 73.77356719970703
+   },
+   {
+    "source": "opentripmap",
+    "xid": "R6411420",
+    "osm": "relation/6411420",
+    "name": "Aguada Fort",
+    "wikidata": "Q56458685",
+    "kinds": "fortifications,historic,interesting_places,other_fortifications",
+    "rate": 6,
+    "lat": 15.492328643798828,
+    "lon": 73.77320098876953
+   },
+   {
+    "source": "opentripmap",
+    "xid": "Q56458711",
+    "osm": null,
+    "name": "Aguada Fort (Lower)",
+    "wikidata": "Q56458711",
+    "kinds": "fortifications,historic,interesting_places,other_fortifications",
+    "rate": 6,
+    "lat": 15.498327255249023,
+    "lon": 73.76665496826172
+   },
+   {
+    "source": "opentripmap",
+    "xid": "Q10283625",
+    "osm": null,
+    "name": "Mormugão fort",
+    "wikidata": "Q10283625",
+    "kinds": "fortifications,historic,interesting_places,castles",
+    "rate": 6,
+    "lat": 15.426667213439941,
+    "lon": 73.82221984863281
+   },
+   {
+    "source": "opentripmap",
+    "xid": "Q56459098",
+    "osm": null,
+    "name": "House of Bull",
+    "wikidata": "Q56459098",
+    "kinds": "historic_architecture,architecture,interesting_places,other_buildings_and_structures",
+    "rate": 6,
+    "lat": 15.504111289978027,
+    "lon": 73.91388702392578
+   },
+   {
+    "source": "opentripmap",
+    "xid": "Q56458591",
+    "osm": null,
+    "name": "Arch of Adil Shah’s Palace",
+    "wikidata": "Q56458591",
+    "kinds": "other,unclassified_objects,interesting_places,historic_object",
+    "rate": 6,
+    "lat": 15.505450248718262,
+    "lon": 73.9141616821289
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N489592377",
+    "osm": "node/489592377",
+    "name": "St. Jerome's Church",
+    "wikidata": "Q60743342",
+    "kinds": "religion,churches,interesting_places,other_churches",
+    "rate": 2,
+    "lat": 15.589473724365234,
+    "lon": 73.81845092773438
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W274202646",
+    "osm": "way/274202646",
+    "name": "São Jacinto",
+    "wikidata": "Q25248008",
+    "kinds": "religion,churches,interesting_places,catholic_churches",
+    "rate": 2,
+    "lat": 15.404343605041504,
+    "lon": 73.86480712890625
+   },
+   {
+    "source": "opentripmap",
+    "xid": "Q10284063",
+    "osm": null,
+    "name": "Colvale Fort",
+    "wikidata": "Q10284063",
+    "kinds": "fortifications,historic,interesting_places,other_fortifications",
+    "rate": 6,
+    "lat": 15.619722366333008,
+    "lon": 73.82971954345703
+   },
+   {
+    "source": "opentripmap",
+    "xid": "Q10284073",
+    "osm": null,
+    "name": "Forte de São Tomé de Tivim",
+    "wikidata": "Q10284073",
+    "kinds": "fortifications,historic,interesting_places,other_fortifications",
+    "rate": 6,
+    "lat": 15.632499694824219,
+    "lon": 73.80055236816406
+   },
+   {
+    "source": "opentripmap",
+    "xid": "Q7490502",
+    "osm": null,
+    "name": "Sharvani Devasthan",
+    "wikidata": "Q7490502",
+    "kinds": "religion,hindu_temples,interesting_places",
+    "rate": 2,
+    "lat": 15.638333320617676,
+    "lon": 73.90249633789062
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N3066755086",
+    "osm": "node/3066755086",
+    "name": "Shree Ramnathi Temple",
+    "wikidata": "Q7289776",
+    "kinds": "religion,hindu_temples,interesting_places",
+    "rate": 2,
+    "lat": 15.398881912231445,
+    "lon": 73.98098754882812
+   },
+   {
+    "source": "opentripmap",
+    "xid": "Q10283885",
+    "osm": null,
+    "name": "Fort Sankhali",
+    "wikidata": "Q10283885",
+    "kinds": "fortifications,historic,interesting_places,other_fortifications",
+    "rate": 6,
+    "lat": 15.564129829406738,
+    "lon": 74.01004791259766
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W199363593",
+    "osm": "way/199363593",
+    "name": "Mandrem Beach",
+    "wikidata": "Q25346136",
+    "kinds": "natural,interesting_places,beaches,other_beaches",
+    "rate": 2,
+    "lat": 15.65921401977539,
+    "lon": 73.7132339477539
+   },
+   {
+    "source": "opentripmap",
+    "xid": "Q56458765",
+    "osm": null,
+    "name": "Arvelam Caves",
+    "wikidata": "Q56458765",
+    "kinds": "interesting_places,natural,geological_formations,caves",
+    "rate": 6,
+    "lat": 15.552532196044922,
+    "lon": 74.0229721069336
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4270038692",
+    "osm": "node/4270038692",
+    "name": "Ashvek Vintage world- Car Museum",
+    "wikidata": "Q16251997",
+    "kinds": "cultural,museums,interesting_places,other_museums",
+    "rate": 2,
+    "lat": 15.320843696594238,
+    "lon": 73.94165802001953
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W199370623",
+    "osm": "way/199370623",
+    "name": "Malibu",
+    "wikidata": "Q26794355",
+    "kinds": "natural,interesting_places,beaches,other_beaches",
+    "rate": 2,
+    "lat": 15.678065299987793,
+    "lon": 73.70541381835938
+   },
+   {
+    "source": "opentripmap",
+    "xid": "Q10283773",
+    "osm": null,
+    "name": "Alorna fort",
+    "wikidata": "Q10283773",
+    "kinds": "fortifications,historic,interesting_places,other_fortifications",
+    "rate": 6,
+    "lat": 15.70022201538086,
+    "lon": 73.90538787841797
+   },
+   {
+    "source": "opentripmap",
+    "xid": "Q55714184",
+    "osm": null,
+    "name": "Church of the Saviour of the World",
+    "wikidata": "Q55714184",
+    "kinds": "religion,churches,interesting_places,other_churches",
+    "rate": 6,
+    "lat": 15.34069538116455,
+    "lon": 73.98418426513672
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N2637221112",
+    "osm": "node/2637221112",
+    "name": "Betalbatim Beach",
+    "wikidata": "Q26793788",
+    "kinds": "natural,interesting_places,beaches,other_beaches",
+    "rate": 2,
+    "lat": 15.293191909790039,
+    "lon": 73.90774536132812
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4270094091",
+    "osm": "node/4270094091",
+    "name": "Big Foot Cross Museum",
+    "wikidata": "Q104876344",
+    "kinds": "cultural,museums,interesting_places,other_museums",
+    "rate": 2,
+    "lat": 15.339523315429688,
+    "lon": 73.98760223388672
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W398106490",
+    "osm": "way/398106490",
+    "name": "Querim beach",
+    "wikidata": "Q29467356",
+    "kinds": "natural,interesting_places,beaches,other_beaches",
+    "rate": 2,
+    "lat": 15.712787628173828,
+    "lon": 73.69159698486328
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N2637221265",
+    "osm": "node/2637221265",
+    "name": "Lamour beach resort",
+    "wikidata": null,
+    "kinds": "resorts,guest_houses,architecture,towers,accomodations,interesting_places,other_towers",
+    "rate": 2,
+    "lat": 15.255187034606934,
+    "lon": 73.92034149169922
+   },
+   {
+    "source": "opentripmap",
+    "xid": "Q4941423",
+    "osm": null,
+    "name": "Bondla Wildlife Sanctuary",
+    "wikidata": "Q4941423",
+    "kinds": "cultural,museums,gardens_and_parks,urban_environment,interesting_places,natural,nature_reserves,zoos,other_nature_conservation_areas",
+    "rate": 2,
+    "lat": 15.426799774169922,
+    "lon": 74.11360168457031
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W407688171",
+    "osm": "way/407688171",
+    "name": "Redi Fort",
+    "wikidata": "Q19899114",
+    "kinds": "architecture,historic_architecture,fortifications,historic,interesting_places,destroyed_objects,castles",
+    "rate": 2,
+    "lat": 15.753129005432129,
+    "lon": 73.6658706665039
+   },
+   {
+    "source": "opentripmap",
+    "xid": "Q56458970",
+    "osm": null,
+    "name": "Excavated site in Chandor",
+    "wikidata": "Q56458970",
+    "kinds": "historic,archaeology,interesting_places,other_archaeological_sites",
+    "rate": 6,
+    "lat": 15.258122444152832,
+    "lon": 74.05485534667969
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W397058898",
+    "osm": "way/397058898",
+    "name": "Cavelossim Beach",
+    "wikidata": "Q25346007",
+    "kinds": "natural,interesting_places,beaches,other_beaches",
+    "rate": 2,
+    "lat": 15.17124080657959,
+    "lon": 73.94182586669922
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4288543790",
+    "osm": "node/4288543790",
+    "name": "National Theatre",
+    "wikidata": null,
+    "kinds": "cultural,theatres_and_entertainments,interesting_places,other_theatres",
+    "rate": 1,
+    "lat": 15.499006271362305,
+    "lon": 73.82734680175781
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W200020426",
+    "osm": "way/200020426",
+    "name": "Cine National",
+    "wikidata": null,
+    "kinds": "cultural,cinemas,theatres_and_entertainments,interesting_places",
+    "rate": 1,
+    "lat": 15.499078750610352,
+    "lon": 73.82728576660156
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4288422920",
+    "osm": "node/4288422920",
+    "name": "Indian Customs & Central Excise Museum",
+    "wikidata": null,
+    "kinds": "cultural,museums,interesting_places,other_museums",
+    "rate": 1,
+    "lat": 15.501017570495605,
+    "lon": 73.82823944091797
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4551090290",
+    "osm": "node/4551090290",
+    "name": "Galeria Azulejos De Goa",
+    "wikidata": null,
+    "kinds": "cultural,urban_environment,interesting_places,installation",
+    "rate": 1,
+    "lat": 15.500809669494629,
+    "lon": 73.8288803100586
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N2782653563",
+    "osm": "node/2782653563",
+    "name": "Abade Faria Statue",
+    "wikidata": null,
+    "kinds": "cultural,urban_environment,interesting_places,sculptures",
+    "rate": 1,
+    "lat": 15.500740051269531,
+    "lon": 73.82943725585938
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4569290992",
+    "osm": "node/4569290992",
+    "name": "Aparant",
+    "wikidata": null,
+    "kinds": "cultural,urban_environment,interesting_places,installation",
+    "rate": 1,
+    "lat": 15.500455856323242,
+    "lon": 73.8255844116211
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W377967062",
+    "osm": "way/377967062",
+    "name": "Mahalakshimi Temple",
+    "wikidata": null,
+    "kinds": "religion,hindu_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.495827674865723,
+    "lon": 73.8265380859375
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W319404874",
+    "osm": "way/319404874",
+    "name": "Samrat / Ashok Theatre",
+    "wikidata": null,
+    "kinds": "cultural,cinemas,theatres_and_entertainments,interesting_places",
+    "rate": 1,
+    "lat": 15.4970064163208,
+    "lon": 73.82394409179688
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4299519695",
+    "osm": "node/4299519695",
+    "name": "Dream Land Computer Game Zone",
+    "wikidata": null,
+    "kinds": "other,unclassified_objects,interesting_places,tourist_object",
+    "rate": 1,
+    "lat": 15.498183250427246,
+    "lon": 73.82307434082031
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W377966611",
+    "osm": "way/377966611",
+    "name": "Saibaba Temple",
+    "wikidata": null,
+    "kinds": "religion,hindu_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.494388580322266,
+    "lon": 73.82564544677734
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N6684063721",
+    "osm": "node/6684063721",
+    "name": "Gitanjali",
+    "wikidata": null,
+    "kinds": "cultural,museums,interesting_places,art_galleries",
+    "rate": 1,
+    "lat": 15.495267868041992,
+    "lon": 73.83138275146484
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4298738196",
+    "osm": "node/4298738196",
+    "name": "Seventh Day Adventist Church",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.494905471801758,
+    "lon": 73.8310317993164
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4680187391",
+    "osm": "node/4680187391",
+    "name": "Mother Mary (Don Bosco High School)",
+    "wikidata": null,
+    "kinds": "cultural,urban_environment,interesting_places,installation",
+    "rate": 1,
+    "lat": 15.497097969055176,
+    "lon": 73.82218933105469
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N6994582387",
+    "osm": "node/6994582387",
+    "name": "Maquinez Palace",
+    "wikidata": null,
+    "kinds": "cultural,theatres_and_entertainments,interesting_places,other_theatres",
+    "rate": 1,
+    "lat": 15.499629974365234,
+    "lon": 73.82144927978516
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4107853715",
+    "osm": "node/4107853715",
+    "name": "Patto Plaza",
+    "wikidata": "Q74157958",
+    "kinds": "view_points,other,interesting_places,banks,bank,tourist_facilities",
+    "rate": 1,
+    "lat": 15.49633502960205,
+    "lon": 73.83381652832031
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W458672173",
+    "osm": "way/458672173",
+    "name": "Inox",
+    "wikidata": null,
+    "kinds": "cultural,cinemas,theatres_and_entertainments,interesting_places",
+    "rate": 1,
+    "lat": 15.498675346374512,
+    "lon": 73.8211669921875
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N3806476681",
+    "osm": "node/3806476681",
+    "name": "Screen 1",
+    "wikidata": null,
+    "kinds": "cultural,cinemas,theatres_and_entertainments,interesting_places",
+    "rate": 1,
+    "lat": 15.498930931091309,
+    "lon": 73.8209457397461
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4538850891",
+    "osm": "node/4538850891",
+    "name": "Bishop's Palace",
+    "wikidata": null,
+    "kinds": "other,unclassified_objects,interesting_places,tourist_object",
+    "rate": 1,
+    "lat": 15.491783142089844,
+    "lon": 73.82625579833984
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4296330697",
+    "osm": "node/4296330697",
+    "name": "Betim Chapel",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.50619888305664,
+    "lon": 73.82666778564453
+   },
+   {
+    "source": "opentripmap",
+    "xid": "Q66747623",
+    "osm": null,
+    "name": "Gurdwara Shri Guru Singh Sabha Betim Goa",
+    "wikidata": "Q66747623",
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.50668716430664,
+    "lon": 73.82831573486328
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4538850890",
+    "osm": "node/4538850890",
+    "name": "Old GMC Complex",
+    "wikidata": null,
+    "kinds": "other,unclassified_objects,interesting_places,tourist_object",
+    "rate": 1,
+    "lat": 15.490924835205078,
+    "lon": 73.82786560058594
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N5239055321",
+    "osm": "node/5239055321",
+    "name": "artorium",
+    "wikidata": null,
+    "kinds": "cultural,urban_environment,interesting_places,installation",
+    "rate": 1,
+    "lat": 15.493268966674805,
+    "lon": 73.82191467285156
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4284073891",
+    "osm": "node/4284073891",
+    "name": "River Cruises",
+    "wikidata": null,
+    "kinds": "other,unclassified_objects,interesting_places,tourist_object",
+    "rate": 1,
+    "lat": 15.499534606933594,
+    "lon": 73.83614349365234
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4284073892",
+    "osm": "node/4284073892",
+    "name": "Paradise Cruises",
+    "wikidata": null,
+    "kinds": "other,unclassified_objects,interesting_places,tourist_object",
+    "rate": 1,
+    "lat": 15.49962329864502,
+    "lon": 73.83646392822266
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W377967493",
+    "osm": "way/377967493",
+    "name": "Maruti Temple",
+    "wikidata": null,
+    "kinds": "religion,hindu_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.490080833435059,
+    "lon": 73.82832336425781
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N198742827",
+    "osm": "node/198742827",
+    "name": "Panjim city view point",
+    "wikidata": null,
+    "kinds": "view_points,other,interesting_places",
+    "rate": 1,
+    "lat": 15.48985767364502,
+    "lon": 73.82856750488281
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N1328544701",
+    "osm": "node/1328544701",
+    "name": "Hanuman temple",
+    "wikidata": null,
+    "kinds": "historic,monuments_and_memorials,interesting_places,monuments",
+    "rate": 1,
+    "lat": 15.48973274230957,
+    "lon": 73.82849884033203
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N7834475987",
+    "osm": "node/7834475987",
+    "name": "Henry the Navigator Marker",
+    "wikidata": null,
+    "kinds": "historic,monuments_and_memorials,interesting_places,monuments",
+    "rate": 1,
+    "lat": 15.493942260742188,
+    "lon": 73.81840515136719
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N5985628985",
+    "osm": "node/5985628985",
+    "name": "Mela Ground",
+    "wikidata": null,
+    "kinds": "other,unclassified_objects,interesting_places,tourist_object",
+    "rate": 1,
+    "lat": 15.495950698852539,
+    "lon": 73.83824920654297
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4296088012",
+    "osm": "node/4296088012",
+    "name": "St. Inez Church",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.491072654724121,
+    "lon": 73.8204574584961
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N6168224963",
+    "osm": "node/6168224963",
+    "name": "Ashoka Stambha",
+    "wikidata": null,
+    "kinds": "historic,monuments_and_memorials,interesting_places,monuments",
+    "rate": 1,
+    "lat": 15.509572982788086,
+    "lon": 73.83717346191406
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4296106293",
+    "osm": "node/4296106293",
+    "name": "Lourdes Chapel",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.484294891357422,
+    "lon": 73.8223648071289
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4574953296",
+    "osm": "node/4574953296",
+    "name": "Penha da Franca Open Air Hall",
+    "wikidata": null,
+    "kinds": "other,unclassified_objects,interesting_places,tourist_object",
+    "rate": 1,
+    "lat": 15.508719444274902,
+    "lon": 73.84307098388672
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W618726580",
+    "osm": "way/618726580",
+    "name": "Reis Magos Church Cemetery",
+    "wikidata": null,
+    "kinds": "cemeteries,historic,burial_places,interesting_places",
+    "rate": 1,
+    "lat": 15.497642517089844,
+    "lon": 73.80862426757812
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4747049325",
+    "osm": "node/4747049325",
+    "name": "Stella Maris Chapel",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.48579216003418,
+    "lon": 73.81206512451172
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N8496659317",
+    "osm": "node/8496659317",
+    "name": "Goa adventure team",
+    "wikidata": null,
+    "kinds": "other,unclassified_objects,interesting_places,tourist_object",
+    "rate": 1,
+    "lat": 15.4855375289917,
+    "lon": 73.81182861328125
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N7948535036",
+    "osm": "node/7948535036",
+    "name": "Capela de Nossa Senhora das necessidades",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.50784969329834,
+    "lon": 73.8067626953125
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N6283234486",
+    "osm": "node/6283234486",
+    "name": "Krishna Temple",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.50523567199707,
+    "lon": 73.80516052246094
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4560175194",
+    "osm": "node/4560175194",
+    "name": "Bank of Maharastra Holiday home",
+    "wikidata": null,
+    "kinds": "other,unclassified_objects,interesting_places,tourist_object",
+    "rate": 1,
+    "lat": 15.52235221862793,
+    "lon": 73.82979583740234
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N1328303577",
+    "osm": "node/1328303577",
+    "name": "Miramar beach",
+    "wikidata": null,
+    "kinds": "view_points,other,interesting_places",
+    "rate": 1,
+    "lat": 15.482890129089355,
+    "lon": 73.80672454833984
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4759413132",
+    "osm": "node/4759413132",
+    "name": "Amoeba Bowling Alley",
+    "wikidata": null,
+    "kinds": "other,unclassified_objects,interesting_places,tourist_object",
+    "rate": 1,
+    "lat": 15.525547981262207,
+    "lon": 73.82737731933594
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4759448728",
+    "osm": "node/4759448728",
+    "name": "Bossa Nova",
+    "wikidata": null,
+    "kinds": "other,unclassified_objects,interesting_places,tourist_object",
+    "rate": 1,
+    "lat": 15.525553703308105,
+    "lon": 73.82730865478516
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4538951389",
+    "osm": "node/4538951389",
+    "name": "Saint Caetano Chapel",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.490960121154785,
+    "lon": 73.85433959960938
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N3227563037",
+    "osm": "node/3227563037",
+    "name": "Santa Cruz Church",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.47624683380127,
+    "lon": 73.84485626220703
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W89536042",
+    "osm": "way/89536042",
+    "name": "Miramar Beach",
+    "wikidata": null,
+    "kinds": "natural,interesting_places,beaches,other_beaches",
+    "rate": 1,
+    "lat": 15.478850364685059,
+    "lon": 73.80681610107422
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W458260679",
+    "osm": "way/458260679",
+    "name": "Merces Cemetary",
+    "wikidata": null,
+    "kinds": "cemeteries,historic,burial_places,interesting_places",
+    "rate": 1,
+    "lat": 15.485237121582031,
+    "lon": 73.8548583984375
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N6033859908",
+    "osm": "node/6033859908",
+    "name": "St. Francis Xavier Chapel",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.471683502197266,
+    "lon": 73.81163787841797
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4288642100",
+    "osm": "node/4288642100",
+    "name": "Somo's House",
+    "wikidata": null,
+    "kinds": "cultural,cinemas,theatres_and_entertainments,interesting_places",
+    "rate": 1,
+    "lat": 15.470041275024414,
+    "lon": 73.8125228881836
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W202271962",
+    "osm": "way/202271962",
+    "name": "Chorao Island (Dr.Salim Ali) WLS",
+    "wikidata": null,
+    "kinds": "aquatic_protected_areas,interesting_places,natural,nature_reserves",
+    "rate": 1,
+    "lat": 15.517878532409668,
+    "lon": 73.8567886352539
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4288422304",
+    "osm": "node/4288422304",
+    "name": "House of Goa",
+    "wikidata": null,
+    "kinds": "cultural,museums,interesting_places,other_museums",
+    "rate": 1,
+    "lat": 15.530312538146973,
+    "lon": 73.8406753540039
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4296403389",
+    "osm": "node/4296403389",
+    "name": "Nossa Senhora de Remedios chapel",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.503867149353027,
+    "lon": 73.86273956298828
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W152822719",
+    "osm": "way/152822719",
+    "name": "Coco Beach",
+    "wikidata": null,
+    "kinds": "natural,interesting_places,beaches,other_beaches",
+    "rate": 1,
+    "lat": 15.499983787536621,
+    "lon": 73.7911148071289
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4937396421",
+    "osm": "node/4937396421",
+    "name": "Milroc Temple Towers",
+    "wikidata": null,
+    "kinds": "fortifications,historic,interesting_places,castles",
+    "rate": 1,
+    "lat": 15.48822021484375,
+    "lon": 73.86373901367188
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4299537694",
+    "osm": "node/4299537694",
+    "name": "Game Zone Extreme",
+    "wikidata": null,
+    "kinds": "other,unclassified_objects,interesting_places,tourist_object",
+    "rate": 1,
+    "lat": 15.535551071166992,
+    "lon": 73.82086944580078
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W366219019",
+    "osm": "way/366219019",
+    "name": "Our Lady of Remedious",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.507078170776367,
+    "lon": 73.78717803955078
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4288359489",
+    "osm": "node/4288359489",
+    "name": "Capela De Nossa",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.529427528381348,
+    "lon": 73.80062866210938
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W324649822",
+    "osm": "way/324649822",
+    "name": "Caranzalem Beach",
+    "wikidata": null,
+    "kinds": "natural,interesting_places,beaches,other_beaches",
+    "rate": 1,
+    "lat": 15.465056419372559,
+    "lon": 73.80362701416016
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4259913291",
+    "osm": "node/4259913291",
+    "name": "Our Lady Of Rosary Church",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.462752342224121,
+    "lon": 73.80590057373047
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W430896327",
+    "osm": "way/430896327",
+    "name": "St. Lawrence's Church",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.493842124938965,
+    "lon": 73.78164672851562
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W89923159",
+    "osm": "way/89923159",
+    "name": "Odxel",
+    "wikidata": null,
+    "kinds": "natural,interesting_places,beaches,other_beaches",
+    "rate": 1,
+    "lat": 15.453539848327637,
+    "lon": 73.83062744140625
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W89872044",
+    "osm": "way/89872044",
+    "name": "Vanguinim Beach",
+    "wikidata": null,
+    "kinds": "natural,interesting_places,beaches,other_beaches",
+    "rate": 1,
+    "lat": 15.45502758026123,
+    "lon": 73.81473541259766
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W89923148",
+    "osm": "way/89923148",
+    "name": "Odxel Beach",
+    "wikidata": null,
+    "kinds": "natural,interesting_places,beaches,other_beaches",
+    "rate": 1,
+    "lat": 15.45240592956543,
+    "lon": 73.8330078125
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N728177615",
+    "osm": "node/728177615",
+    "name": "Church",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.522744178771973,
+    "lon": 73.8699951171875
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N8409209722",
+    "osm": "node/8409209722",
+    "name": "Onyx Beach",
+    "wikidata": null,
+    "kinds": "view_points,other,interesting_places",
+    "rate": 1,
+    "lat": 15.493046760559082,
+    "lon": 73.77777099609375
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W89923152",
+    "osm": "way/89923152",
+    "name": "Cacra Beach",
+    "wikidata": null,
+    "kinds": "natural,interesting_places,beaches,other_beaches",
+    "rate": 1,
+    "lat": 15.450627326965332,
+    "lon": 73.83836364746094
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W89793709",
+    "osm": "way/89793709",
+    "name": "Hawaii Beach",
+    "wikidata": null,
+    "kinds": "natural,interesting_places,beaches,other_beaches",
+    "rate": 1,
+    "lat": 15.454736709594727,
+    "lon": 73.8042984008789
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4259954489",
+    "osm": "node/4259954489",
+    "name": "Dona Paula Chapel",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.455167770385742,
+    "lon": 73.80335235595703
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4296789993",
+    "osm": "node/4296789993",
+    "name": "Aquasail 360 Sailing",
+    "wikidata": null,
+    "kinds": "other,unclassified_objects,interesting_places,tourist_object",
+    "rate": 1,
+    "lat": 15.45202350616455,
+    "lon": 73.84491729736328
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W274491715",
+    "osm": "way/274491715",
+    "name": "British Cemetery",
+    "wikidata": null,
+    "kinds": "cemeteries,historic,burial_places,interesting_places",
+    "rate": 1,
+    "lat": 15.458182334899902,
+    "lon": 73.79767608642578
+   },
+   {
+    "source": "opentripmap",
+    "xid": "R6411430",
+    "osm": "relation/6411430",
+    "name": "Central Jail Aguada",
+    "wikidata": null,
+    "kinds": "other,unclassified_objects,interesting_places,tourist_object",
+    "rate": 1,
+    "lat": 15.49123764038086,
+    "lon": 73.7760238647461
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4193364236",
+    "osm": "node/4193364236",
+    "name": "Maha lakshmi temple.",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.547745704650879,
+    "lon": 73.81295776367188
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W89642845",
+    "osm": "way/89642845",
+    "name": "Marivel Beach",
+    "wikidata": null,
+    "kinds": "natural,interesting_places,beaches,other_beaches",
+    "rate": 1,
+    "lat": 15.455852508544922,
+    "lon": 73.79801177978516
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W406007384",
+    "osm": "way/406007384",
+    "name": "Dias Beach",
+    "wikidata": null,
+    "kinds": "natural,interesting_places,beaches,other_beaches",
+    "rate": 1,
+    "lat": 15.453463554382324,
+    "lon": 73.8014907836914
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N1633044071",
+    "osm": "node/1633044071",
+    "name": "Church of the Rosary",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.51779842376709,
+    "lon": 73.77738952636719
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N1328303536",
+    "osm": "node/1328303536",
+    "name": "Viwpoint to see vasco",
+    "wikidata": null,
+    "kinds": "view_points,other,interesting_places",
+    "rate": 1,
+    "lat": 15.450581550598145,
+    "lon": 73.8038101196289
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4274866590",
+    "osm": "node/4274866590",
+    "name": "Dive Goa",
+    "wikidata": null,
+    "kinds": "other,unclassified_objects,interesting_places,tourist_object",
+    "rate": 1,
+    "lat": 15.50120735168457,
+    "lon": 73.77220916748047
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N8409870030",
+    "osm": "node/8409870030",
+    "name": "Shree Ghageshwar Devasthan",
+    "wikidata": null,
+    "kinds": "religion,hindu_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.498299598693848,
+    "lon": 73.77185821533203
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W295971196",
+    "osm": "way/295971196",
+    "name": "Bambolim Beach",
+    "wikidata": null,
+    "kinds": "natural,interesting_places,beaches,other_beaches",
+    "rate": 1,
+    "lat": 15.449848175048828,
+    "lon": 73.85186004638672
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N1633038706",
+    "osm": "node/1633038706",
+    "name": "Candolim Chapel",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.505975723266602,
+    "lon": 73.77072143554688
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N2639990588",
+    "osm": "node/2639990588",
+    "name": "Povitr Khuris",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.51043701171875,
+    "lon": 73.769287109375
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N5809643255",
+    "osm": "node/5809643255",
+    "name": "Aguada Rocky Beach",
+    "wikidata": null,
+    "kinds": "natural,interesting_places,beaches,other_beaches",
+    "rate": 1,
+    "lat": 15.491873741149902,
+    "lon": 73.76809692382812
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W128565250",
+    "osm": "way/128565250",
+    "name": "Sinquerim beach",
+    "wikidata": null,
+    "kinds": "natural,interesting_places,beaches,other_beaches",
+    "rate": 1,
+    "lat": 15.5014066696167,
+    "lon": 73.76747131347656
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W128565255",
+    "osm": "way/128565255",
+    "name": "Aguada Beach",
+    "wikidata": null,
+    "kinds": "natural,interesting_places,beaches,other_beaches",
+    "rate": 1,
+    "lat": 15.498872756958008,
+    "lon": 73.76727294921875
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N1328317935",
+    "osm": "node/1328317935",
+    "name": "Shrine of Holy Cross",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.452167510986328,
+    "lon": 73.8642807006836
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W156595303",
+    "osm": "way/156595303",
+    "name": "Aguada Fortress",
+    "wikidata": null,
+    "kinds": "fortifications,historic,interesting_places,other_fortifications",
+    "rate": 1,
+    "lat": 15.498025894165039,
+    "lon": 73.76663208007812
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W128565260",
+    "osm": "way/128565260",
+    "name": "Aguada Beach",
+    "wikidata": null,
+    "kinds": "natural,interesting_places,beaches,other_beaches",
+    "rate": 1,
+    "lat": 15.497942924499512,
+    "lon": 73.7663803100586
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N8412147185",
+    "osm": "node/8412147185",
+    "name": "Sinquerim Fort",
+    "wikidata": null,
+    "kinds": "fortifications,historic,interesting_places,fortified_towers",
+    "rate": 1,
+    "lat": 15.498514175415039,
+    "lon": 73.76636505126953
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N8410667979",
+    "osm": "node/8410667979",
+    "name": "Kaurati's Caves",
+    "wikidata": null,
+    "kinds": "geological_formations,natural,interesting_places,caves",
+    "rate": 1,
+    "lat": 15.49465274810791,
+    "lon": 73.7660140991211
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4290708396",
+    "osm": "node/4290708396",
+    "name": "Chaku Arts & Crafts",
+    "wikidata": null,
+    "kinds": "cultural,urban_environment,interesting_places,installation",
+    "rate": 1,
+    "lat": 15.516398429870605,
+    "lon": 73.76846313476562
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N8410669097",
+    "osm": "node/8410669097",
+    "name": "Sinquerim Fort view Point",
+    "wikidata": null,
+    "kinds": "view_points,other,interesting_places",
+    "rate": 1,
+    "lat": 15.497593879699707,
+    "lon": 73.76490020751953
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N1688110026",
+    "osm": "node/1688110026",
+    "name": "Laxmi's Home",
+    "wikidata": null,
+    "kinds": "other,unclassified_objects,interesting_places,tourist_object",
+    "rate": 1,
+    "lat": 15.513505935668945,
+    "lon": 73.76568603515625
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W475584415",
+    "osm": "way/475584415",
+    "name": "Saligao Cemetery",
+    "wikidata": null,
+    "kinds": "cemeteries,historic,burial_places,interesting_places",
+    "rate": 1,
+    "lat": 15.545512199401855,
+    "lon": 73.78520965576172
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4296326904",
+    "osm": "node/4296326904",
+    "name": "Small Chapel",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.499407768249512,
+    "lon": 73.89250183105469
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N487236331",
+    "osm": "node/487236331",
+    "name": "Mae de Deus Church",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.54705810546875,
+    "lon": 73.7852783203125
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4861237126",
+    "osm": "node/4861237126",
+    "name": "Solar souto maior",
+    "wikidata": null,
+    "kinds": "cultural,museums,interesting_places,other_museums",
+    "rate": 1,
+    "lat": 15.499570846557617,
+    "lon": 73.89383697509766
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W202272014",
+    "osm": "way/202272014",
+    "name": "Socorro Plateau",
+    "wikidata": null,
+    "kinds": "natural,interesting_places,nature_reserves,other_nature_conservation_areas",
+    "rate": 1,
+    "lat": 15.559741020202637,
+    "lon": 73.85051727294922
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W397051478",
+    "osm": "way/397051478",
+    "name": "Candolim Beach",
+    "wikidata": null,
+    "kinds": "natural,interesting_places,beaches,other_beaches",
+    "rate": 1,
+    "lat": 15.518074989318848,
+    "lon": 73.76292419433594
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N5001818428",
+    "osm": "node/5001818428",
+    "name": "⛪",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.541494369506836,
+    "lon": 73.77456665039062
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4296403390",
+    "osm": "node/4296403390",
+    "name": "San Pedro Church",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.500332832336426,
+    "lon": 73.89701843261719
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4107573504",
+    "osm": "node/4107573504",
+    "name": "Art Chamber",
+    "wikidata": null,
+    "kinds": "cultural,urban_environment,interesting_places,installation",
+    "rate": 1,
+    "lat": 15.53386116027832,
+    "lon": 73.76764678955078
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4290708395",
+    "osm": "node/4290708395",
+    "name": "Calangute Mall",
+    "wikidata": null,
+    "kinds": "other,unclassified_objects,interesting_places,tourist_object",
+    "rate": 1,
+    "lat": 15.533376693725586,
+    "lon": 73.76465606689453
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4759449921",
+    "osm": "node/4759449921",
+    "name": "sankissed plaza",
+    "wikidata": null,
+    "kinds": "other,unclassified_objects,interesting_places,tourist_object",
+    "rate": 1,
+    "lat": 15.533961296081543,
+    "lon": 73.76427459716797
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4759448733",
+    "osm": "node/4759448733",
+    "name": "Thrill zone",
+    "wikidata": null,
+    "kinds": "other,unclassified_objects,interesting_places,tourist_object",
+    "rate": 1,
+    "lat": 15.53513240814209,
+    "lon": 73.76444244384766
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N1655851520",
+    "osm": "node/1655851520",
+    "name": "St. Alex Church",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.541509628295898,
+    "lon": 73.76863098144531
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4759413135",
+    "osm": "node/4759413135",
+    "name": "Naughty Ink Tattoo Shop",
+    "wikidata": null,
+    "kinds": "other,unclassified_objects,interesting_places,tourist_object",
+    "rate": 1,
+    "lat": 15.535948753356934,
+    "lon": 73.76424407958984
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4759413134",
+    "osm": "node/4759413134",
+    "name": "Mystery Rooms - A Real lifescape experience",
+    "wikidata": null,
+    "kinds": "other,unclassified_objects,interesting_places,tourist_object",
+    "rate": 1,
+    "lat": 15.536060333251953,
+    "lon": 73.76423645019531
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N1656279587",
+    "osm": "node/1656279587",
+    "name": "St Antony Chapel",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.536627769470215,
+    "lon": 73.76427459716797
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4296725108",
+    "osm": "node/4296725108",
+    "name": "Goa Velha Church",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.440109252929688,
+    "lon": 73.8707275390625
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W634162711",
+    "osm": "way/634162711",
+    "name": "Christ the King",
+    "wikidata": null,
+    "kinds": "historic,monuments_and_memorials,interesting_places,monuments",
+    "rate": 1,
+    "lat": 15.547720909118652,
+    "lon": 73.88435363769531
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4296410989",
+    "osm": "node/4296410989",
+    "name": "Our Lady of Piety",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.525433540344238,
+    "lon": 73.90037536621094
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4265670091",
+    "osm": "node/4265670091",
+    "name": "St Andrews Church",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.443904876708984,
+    "lon": 73.88070678710938
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N1623881945",
+    "osm": "node/1623881945",
+    "name": "St. Antony",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.500770568847656,
+    "lon": 73.9056625366211
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N2660025329",
+    "osm": "node/2660025329",
+    "name": "Dr. Jack de Sequeira",
+    "wikidata": null,
+    "kinds": "historic,monuments_and_memorials,interesting_places,monuments",
+    "rate": 1,
+    "lat": 15.544042587280273,
+    "lon": 73.7651138305664
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4551064992",
+    "osm": "node/4551064992",
+    "name": "Galeria Azulejos De Goa",
+    "wikidata": null,
+    "kinds": "cultural,urban_environment,interesting_places,installation",
+    "rate": 1,
+    "lat": 15.544012069702148,
+    "lon": 73.76500701904297
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N5079152621",
+    "osm": "node/5079152621",
+    "name": "Siridao Beach",
+    "wikidata": null,
+    "kinds": "other,unclassified_objects,interesting_places,tourist_object",
+    "rate": 1,
+    "lat": 15.430901527404785,
+    "lon": 73.86204528808594
+   },
+   {
+    "source": "opentripmap",
+    "xid": "R2013654",
+    "osm": "relation/2013654",
+    "name": "Our Lady of Weeping Cross",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.501484870910645,
+    "lon": 73.9069595336914
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W201243465",
+    "osm": "way/201243465",
+    "name": "Convent of St God Church",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.500382423400879,
+    "lon": 73.90774536132812
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N1688110388",
+    "osm": "node/1688110388",
+    "name": "Shri Shantadurga Temple",
+    "wikidata": null,
+    "kinds": "religion,hindu_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.545877456665039,
+    "lon": 73.76435852050781
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4569290490",
+    "osm": "node/4569290490",
+    "name": "Alva Mar",
+    "wikidata": null,
+    "kinds": "other,unclassified_objects,interesting_places,tourist_object",
+    "rate": 1,
+    "lat": 15.568906784057617,
+    "lon": 73.79097747802734
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N535919732",
+    "osm": "node/535919732",
+    "name": "Holy Trinity Church Nagao",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.559104919433594,
+    "lon": 73.77542114257812
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4292634090",
+    "osm": "node/4292634090",
+    "name": "Faith Community Church, Emerald Lawns",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.570491790771484,
+    "lon": 73.79268646240234
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N1321177645",
+    "osm": "node/1321177645",
+    "name": "St. John's Church",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.546407699584961,
+    "lon": 73.76049041748047
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W201244223",
+    "osm": "way/201244223",
+    "name": "Archiepiscopal Palace",
+    "wikidata": null,
+    "kinds": "cultural,museums,interesting_places,other_museums",
+    "rate": 1,
+    "lat": 15.50391960144043,
+    "lon": 73.9116439819336
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4265677589",
+    "osm": "node/4265677589",
+    "name": "St Anthony Chapel",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.444753646850586,
+    "lon": 73.89137268066406
+   },
+   {
+    "source": "opentripmap",
+    "xid": "R6423948",
+    "osm": "relation/6423948",
+    "name": "Calangute Beach",
+    "wikidata": null,
+    "kinds": "natural,interesting_places,beaches,other_beaches",
+    "rate": 1,
+    "lat": 15.542488098144531,
+    "lon": 73.75556182861328
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4508775691",
+    "osm": "node/4508775691",
+    "name": "St.  Joseph Vas Spiritual Renewal Centre",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.492208480834961,
+    "lon": 73.91321563720703
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N2555258149",
+    "osm": "node/2555258149",
+    "name": "Dayanand Bandodkar Statue",
+    "wikidata": null,
+    "kinds": "historic,monuments_and_memorials,interesting_places,monuments",
+    "rate": 1,
+    "lat": 15.545141220092773,
+    "lon": 73.75665283203125
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4297424089",
+    "osm": "node/4297424089",
+    "name": "Church of the Cross of Miracles",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.492146492004395,
+    "lon": 73.91338348388672
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4284073890",
+    "osm": "node/4284073890",
+    "name": "Wax De goa",
+    "wikidata": null,
+    "kinds": "cultural,museums,interesting_places,other_museums",
+    "rate": 1,
+    "lat": 15.500228881835938,
+    "lon": 73.91381072998047
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4265648896",
+    "osm": "node/4265648896",
+    "name": "our lady of pilar",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.441545486450195,
+    "lon": 73.89344787597656
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N6813580312",
+    "osm": "node/6813580312",
+    "name": "Our Lady of Piety",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.552241325378418,
+    "lon": 73.75855255126953
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4585456091",
+    "osm": "node/4585456091",
+    "name": "Храм",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.551067352294922,
+    "lon": 73.75743865966797
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W454277336",
+    "osm": "way/454277336",
+    "name": "Our Lady Of Piety",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.552756309509277,
+    "lon": 73.75840759277344
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4294094589",
+    "osm": "node/4294094589",
+    "name": "Church of the Carmelites",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.50536823272705,
+    "lon": 73.91778564453125
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N1656624563",
+    "osm": "node/1656624563",
+    "name": "Shri Bodgeshwar Temple",
+    "wikidata": null,
+    "kinds": "religion,hindu_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.584573745727539,
+    "lon": 73.80593872070312
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4692590594",
+    "osm": "node/4692590594",
+    "name": "Alum arts",
+    "wikidata": null,
+    "kinds": "cultural,urban_environment,interesting_places,installation",
+    "rate": 1,
+    "lat": 15.556007385253906,
+    "lon": 73.755859375
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4297438189",
+    "osm": "node/4297438189",
+    "name": "Chapel",
+    "wikidata": null,
+    "kinds": "religion,churches,interesting_places,other_churches",
+    "rate": 1,
+    "lat": 15.572870254516602,
+    "lon": 73.88114166259766
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4692564694",
+    "osm": "node/4692564694",
+    "name": "Fancy arts emporium",
+    "wikidata": null,
+    "kinds": "cultural,urban_environment,interesting_places,installation",
+    "rate": 1,
+    "lat": 15.556587219238281,
+    "lon": 73.75572204589844
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4296330099",
+    "osm": "node/4296330099",
+    "name": "Saint Mathias Church",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.527575492858887,
+    "lon": 73.91676330566406
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4297406597",
+    "osm": "node/4297406597",
+    "name": "Nachinola Catholic Church",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.585853576660156,
+    "lon": 73.85489654541016
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4692563530",
+    "osm": "node/4692563530",
+    "name": "Dragon Art",
+    "wikidata": null,
+    "kinds": "cultural,urban_environment,interesting_places,installation",
+    "rate": 1,
+    "lat": 15.556666374206543,
+    "lon": 73.75497436523438
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4692563118",
+    "osm": "node/4692563118",
+    "name": "Saturday night market",
+    "wikidata": null,
+    "kinds": "other,unclassified_objects,interesting_places,tourist_object",
+    "rate": 1,
+    "lat": 15.567390441894531,
+    "lon": 73.76559448242188
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4253973889",
+    "osm": "node/4253973889",
+    "name": "Snow Park",
+    "wikidata": null,
+    "kinds": "other,unclassified_objects,interesting_places,tourist_object",
+    "rate": 1,
+    "lat": 15.557472229003906,
+    "lon": 73.75530242919922
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4297402191",
+    "osm": "node/4297402191",
+    "name": "St. Rita's Chapel",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.578031539916992,
+    "lon": 73.8750991821289
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4290721091",
+    "osm": "node/4290721091",
+    "name": "St. Anne's Church",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.578900337219238,
+    "lon": 73.7796630859375
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4692590493",
+    "osm": "node/4692590493",
+    "name": "Tito Henry",
+    "wikidata": null,
+    "kinds": "other,unclassified_objects,interesting_places,tourist_object",
+    "rate": 1,
+    "lat": 15.556180953979492,
+    "lon": 73.75196075439453
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4294057391",
+    "osm": "node/4294057391",
+    "name": "St. John the Baptist Church",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.479973793029785,
+    "lon": 73.92253875732422
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N2656687942",
+    "osm": "node/2656687942",
+    "name": "Our Lady of Candelaria Chapel",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.559576988220215,
+    "lon": 73.75373840332031
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N1656632372",
+    "osm": "node/1656632372",
+    "name": "Shree Maharudhra Sansthan Temple",
+    "wikidata": null,
+    "kinds": "religion,hindu_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.591001510620117,
+    "lon": 73.81014251708984
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4378744292",
+    "osm": "node/4378744292",
+    "name": "Animal kingdom care",
+    "wikidata": null,
+    "kinds": "other,unclassified_objects,interesting_places,tourist_object",
+    "rate": 1,
+    "lat": 15.5906400680542,
+    "lon": 73.80805206298828
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4290804390",
+    "osm": "node/4290804390",
+    "name": "Faith Community Church, Feira Alto Altinho",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.592304229736328,
+    "lon": 73.81881713867188
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4297401894",
+    "osm": "node/4297401894",
+    "name": "St. Sebastian Chapel",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.584066390991211,
+    "lon": 73.86991882324219
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W851198311",
+    "osm": "way/851198311",
+    "name": "Agaissam Beach",
+    "wikidata": null,
+    "kinds": "natural,interesting_places,beaches,other_beaches",
+    "rate": 1,
+    "lat": 15.425814628601074,
+    "lon": 73.88997650146484
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4297484690",
+    "osm": "node/4297484690",
+    "name": "Sataporio Chapel",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.593086242675781,
+    "lon": 73.84024810791016
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4336607695",
+    "osm": "node/4336607695",
+    "name": "Mapusa Children's Park",
+    "wikidata": null,
+    "kinds": "other,unclassified_objects,interesting_places,tourist_object",
+    "rate": 1,
+    "lat": 15.593250274658203,
+    "lon": 73.8156967163086
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4297411594",
+    "osm": "node/4297411594",
+    "name": "St. Matthews Church",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.464845657348633,
+    "lon": 73.9209213256836
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4297401704",
+    "osm": "node/4297401704",
+    "name": "CKF Beach",
+    "wikidata": null,
+    "kinds": "natural,interesting_places,beaches,other_beaches",
+    "rate": 1,
+    "lat": 15.424540519714355,
+    "lon": 73.8910903930664
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4297406596",
+    "osm": "node/4297406596",
+    "name": "St. Cruz Chapel",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.590651512145996,
+    "lon": 73.85857391357422
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N3734348073",
+    "osm": "node/3734348073",
+    "name": "Ancient Cross",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.411087989807129,
+    "lon": 73.78608703613281
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W295972797",
+    "osm": "way/295972797",
+    "name": "Neura Church",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.444635391235352,
+    "lon": 73.91246032714844
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W295973008",
+    "osm": "way/295973008",
+    "name": "Neura Cemetery",
+    "wikidata": null,
+    "kinds": "cemeteries,historic,burial_places,interesting_places",
+    "rate": 1,
+    "lat": 15.444690704345703,
+    "lon": 73.91275787353516
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4286174395",
+    "osm": "node/4286174395",
+    "name": "Blackstar (Castle)",
+    "wikidata": null,
+    "kinds": "other,unclassified_objects,interesting_places,tourist_object",
+    "rate": 1,
+    "lat": 15.40086555480957,
+    "lon": 73.8169937133789
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W456960987",
+    "osm": "way/456960987",
+    "name": "Taleshwar Temple",
+    "wikidata": null,
+    "kinds": "religion,hindu_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.562439918518066,
+    "lon": 73.74920654296875
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N8121231351",
+    "osm": "node/8121231351",
+    "name": "Confraria Da Igreja De Naroa",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.538081169128418,
+    "lon": 73.92247009277344
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4535189498",
+    "osm": "node/4535189498",
+    "name": "Cross",
+    "wikidata": null,
+    "kinds": "cultural,urban_environment,interesting_places,installation",
+    "rate": 1,
+    "lat": 15.444000244140625,
+    "lon": 73.9139404296875
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W274202648",
+    "osm": "way/274202648",
+    "name": "St. Andrew's Church",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.399648666381836,
+    "lon": 73.8173828125
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4286285006",
+    "osm": "node/4286285006",
+    "name": "Z Square Complex",
+    "wikidata": null,
+    "kinds": "cultural,cinemas,theatres_and_entertainments,interesting_places",
+    "rate": 1,
+    "lat": 15.399947166442871,
+    "lon": 73.81426239013672
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W278775633",
+    "osm": "way/278775633",
+    "name": "Church of St. Lawrence",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.425435066223145,
+    "lon": 73.89788818359375
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N5578251336",
+    "osm": "node/5578251336",
+    "name": "India Freedom Monument",
+    "wikidata": null,
+    "kinds": "historic,monuments_and_memorials,interesting_places,monuments",
+    "rate": 1,
+    "lat": 15.399073600769043,
+    "lon": 73.83282470703125
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W278777162",
+    "osm": "way/278777162",
+    "name": "Vasco Cemetery",
+    "wikidata": null,
+    "kinds": "cemeteries,historic,burial_places,interesting_places",
+    "rate": 1,
+    "lat": 15.399296760559082,
+    "lon": 73.81768798828125
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4297424490",
+    "osm": "node/4297424490",
+    "name": "St. Thomas Church",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.58839225769043,
+    "lon": 73.8742904663086
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N8121226823",
+    "osm": "node/8121226823",
+    "name": "Koti-Tirth",
+    "wikidata": null,
+    "kinds": "architecture,historic_architecture,interesting_places,destroyed_objects",
+    "rate": 1,
+    "lat": 15.531310081481934,
+    "lon": 73.92613983154297
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4297406594",
+    "osm": "node/4297406594",
+    "name": "Yacht Charters & Boat Cruises",
+    "wikidata": null,
+    "kinds": "other,unclassified_objects,interesting_places,tourist_object",
+    "rate": 1,
+    "lat": 15.588171005249023,
+    "lon": 73.8753890991211
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N3242297605",
+    "osm": "node/3242297605",
+    "name": "Gateshwar Temple",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.595030784606934,
+    "lon": 73.79739379882812
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4297404192",
+    "osm": "node/4297404192",
+    "name": "Our Lady of Amparo Church",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.453394889831543,
+    "lon": 73.92098236083984
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W640503208",
+    "osm": "way/640503208",
+    "name": "Edward Soares Memorial Statue",
+    "wikidata": null,
+    "kinds": "cultural,urban_environment,interesting_places,sculptures",
+    "rate": 1,
+    "lat": 15.58974838256836,
+    "lon": 73.8732681274414
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4676650490",
+    "osm": "node/4676650490",
+    "name": "Grandmother hole beach",
+    "wikidata": null,
+    "kinds": "other,unclassified_objects,interesting_places,tourist_object",
+    "rate": 1,
+    "lat": 15.406150817871094,
+    "lon": 73.78632354736328
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W851274576",
+    "osm": "way/851274576",
+    "name": "Japanese Beach",
+    "wikidata": null,
+    "kinds": "natural,interesting_places,beaches,other_beaches",
+    "rate": 1,
+    "lat": 15.405923843383789,
+    "lon": 73.78660583496094
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4818386323",
+    "osm": "node/4818386323",
+    "name": "Box office",
+    "wikidata": null,
+    "kinds": "cultural,cinemas,theatres_and_entertainments,interesting_places",
+    "rate": 1,
+    "lat": 15.400052070617676,
+    "lon": 73.80438995361328
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4286129390",
+    "osm": "node/4286129390",
+    "name": "Chicalim Church",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.398283958435059,
+    "lon": 73.84075927734375
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4286222799",
+    "osm": "node/4286222799",
+    "name": "Eplex by Cine Elmonte",
+    "wikidata": null,
+    "kinds": "cultural,cinemas,theatres_and_entertainments,interesting_places",
+    "rate": 1,
+    "lat": 15.39907169342041,
+    "lon": 73.80448150634766
+   },
+   {
+    "source": "opentripmap",
+    "xid": "R6423949",
+    "osm": "relation/6423949",
+    "name": "Tulum Beach",
+    "wikidata": null,
+    "kinds": "natural,interesting_places,beaches,other_beaches",
+    "rate": 1,
+    "lat": 15.562745094299316,
+    "lon": 73.74470520019531
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4286103894",
+    "osm": "node/4286103894",
+    "name": "IPC EL-SHADDAI VASCO, GOA",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.396201133728027,
+    "lon": 73.82951354980469
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4895107024",
+    "osm": "node/4895107024",
+    "name": "1930",
+    "wikidata": null,
+    "kinds": "cultural,cinemas,theatres_and_entertainments,interesting_places",
+    "rate": 1,
+    "lat": 15.397156715393066,
+    "lon": 73.81303405761719
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4296385991",
+    "osm": "node/4296385991",
+    "name": "Corjuem Church",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.588282585144043,
+    "lon": 73.88043212890625
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W474139001",
+    "osm": "way/474139001",
+    "name": "New Chapel of our Lady of Vailankanni",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.398160934448242,
+    "lon": 73.80540466308594
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N8524581866",
+    "osm": "node/8524581866",
+    "name": "Jao Fachundo Church",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.48965835571289,
+    "lon": 73.93425750732422
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4818386322",
+    "osm": "node/4818386322",
+    "name": "Our lady of Desterro",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.39784049987793,
+    "lon": 73.80384063720703
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4535211189",
+    "osm": "node/4535211189",
+    "name": "Cross",
+    "wikidata": null,
+    "kinds": "cultural,urban_environment,interesting_places,installation",
+    "rate": 1,
+    "lat": 15.454835891723633,
+    "lon": 73.92526245117188
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N2997326053",
+    "osm": "node/2997326053",
+    "name": "Ponso",
+    "wikidata": null,
+    "kinds": "other,unclassified_objects,interesting_places,tourist_object",
+    "rate": 1,
+    "lat": 15.442278861999512,
+    "lon": 73.91867065429688
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N8524581855",
+    "osm": "node/8524581855",
+    "name": "Cross near the Road",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.49521541595459,
+    "lon": 73.93612670898438
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N6138637985",
+    "osm": "node/6138637985",
+    "name": "Miraculous cross",
+    "wikidata": null,
+    "kinds": "other,unclassified_objects,interesting_places,tourist_object",
+    "rate": 1,
+    "lat": 15.585400581359863,
+    "lon": 73.76323699951172
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4288423712",
+    "osm": "node/4288423712",
+    "name": "Kamal's Art Museum Home",
+    "wikidata": null,
+    "kinds": "cultural,museums,interesting_places,other_museums",
+    "rate": 1,
+    "lat": 15.580181121826172,
+    "lon": 73.75443267822266
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4292523098",
+    "osm": "node/4292523098",
+    "name": "St. Cajetan Church",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.59734058380127,
+    "lon": 73.7807846069336
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W433300978",
+    "osm": "way/433300978",
+    "name": "Mercurim Chapel",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.42390251159668,
+    "lon": 73.90959167480469
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4288374393",
+    "osm": "node/4288374393",
+    "name": "Furtado House",
+    "wikidata": null,
+    "kinds": "cultural,museums,interesting_places,other_museums",
+    "rate": 1,
+    "lat": 15.587468147277832,
+    "lon": 73.76036071777344
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W322219634",
+    "osm": "way/322219634",
+    "name": "private house temple",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.603034019470215,
+    "lon": 73.7911148071289
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N1687471778",
+    "osm": "node/1687471778",
+    "name": "Our Lady of Health Chapel",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.582514762878418,
+    "lon": 73.75296020507812
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W837341439",
+    "osm": "way/837341439",
+    "name": "church of saint Blaise",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.51244831085205,
+    "lon": 73.94158935546875
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N1329266975",
+    "osm": "node/1329266975",
+    "name": "GANESHA TEMPLE",
+    "wikidata": null,
+    "kinds": "historic,monuments_and_memorials,interesting_places,monuments",
+    "rate": 1,
+    "lat": 15.608149528503418,
+    "lon": 73.80387115478516
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4286097195",
+    "osm": "node/4286097195",
+    "name": "Old Church Sancoale",
+    "wikidata": null,
+    "kinds": "religion,churches,interesting_places,catholic_churches",
+    "rate": 1,
+    "lat": 15.406399726867676,
+    "lon": 73.89293670654297
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4310531851",
+    "osm": "node/4310531851",
+    "name": "Masjid e-Noor",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.391199111938477,
+    "lon": 73.86015319824219
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W256543724",
+    "osm": "way/256543724",
+    "name": "Baina beach",
+    "wikidata": null,
+    "kinds": "natural,interesting_places,beaches,other_beaches",
+    "rate": 1,
+    "lat": 15.387741088867188,
+    "lon": 73.80762481689453
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4294800623",
+    "osm": "node/4294800623",
+    "name": "Our Lady of Candelaria Church",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.386917114257812,
+    "lon": 73.81305694580078
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W128565248",
+    "osm": "way/128565248",
+    "name": "Anjuna Beach",
+    "wikidata": null,
+    "kinds": "natural,interesting_places,beaches,other_beaches",
+    "rate": 1,
+    "lat": 15.574429512023926,
+    "lon": 73.74066162109375
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4296012592",
+    "osm": "node/4296012592",
+    "name": "St. Stephens' Church",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.530058860778809,
+    "lon": 73.94140625
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4297404191",
+    "osm": "node/4297404191",
+    "name": "Bridge to Mansher",
+    "wikidata": null,
+    "kinds": "other,unclassified_objects,interesting_places,tourist_object",
+    "rate": 1,
+    "lat": 15.44588851928711,
+    "lon": 73.93248748779297
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4298764692",
+    "osm": "node/4298764692",
+    "name": "St.Mary's Orthodox Syrian Church",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.385295867919922,
+    "lon": 73.81796264648438
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N2675635997",
+    "osm": "node/2675635997",
+    "name": "Holy Cross Chapel",
+    "wikidata": null,
+    "kinds": "religion,churches,interesting_places,other_churches",
+    "rate": 1,
+    "lat": 15.594161987304688,
+    "lon": 73.7596206665039
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N8534761703",
+    "osm": "node/8534761703",
+    "name": "Cross",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.478859901428223,
+    "lon": 73.9465560913086
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4861237027",
+    "osm": "node/4861237027",
+    "name": "Big Ben Tattoo",
+    "wikidata": null,
+    "kinds": "cultural,urban_environment,interesting_places,installation",
+    "rate": 1,
+    "lat": 15.579732894897461,
+    "lon": 73.73881530761719
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4310441792",
+    "osm": "node/4310441792",
+    "name": "Convent Of Jesus And Mary",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.614688873291016,
+    "lon": 73.80138397216797
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N2649454954",
+    "osm": "node/2649454954",
+    "name": "St Anthony's Chapel",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.58156967163086,
+    "lon": 73.73951721191406
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4321057590",
+    "osm": "node/4321057590",
+    "name": "Crocodile Station Kamat Kingfisher",
+    "wikidata": null,
+    "kinds": "other,unclassified_objects,interesting_places,tourist_object",
+    "rate": 1,
+    "lat": 15.408196449279785,
+    "lon": 73.90850067138672
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4585476095",
+    "osm": "node/4585476095",
+    "name": "Roadside Cross",
+    "wikidata": null,
+    "kinds": "other,unclassified_objects,interesting_places,tourist_object",
+    "rate": 1,
+    "lat": 15.37873649597168,
+    "lon": 73.85057067871094
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4084944320",
+    "osm": "node/4084944320",
+    "name": "old new town",
+    "wikidata": null,
+    "kinds": "other,unclassified_objects,interesting_places,tourist_object",
+    "rate": 1,
+    "lat": 15.618415832519531,
+    "lon": 73.79871368408203
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W313669180",
+    "osm": "way/313669180",
+    "name": "Hansa beach",
+    "wikidata": null,
+    "kinds": "natural,interesting_places,beaches,other_beaches",
+    "rate": 1,
+    "lat": 15.376286506652832,
+    "lon": 73.81370544433594
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4310489789",
+    "osm": "node/4310489789",
+    "name": "Our Lady Of Seven Sorrows",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.614598274230957,
+    "lon": 73.7786865234375
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W545673743",
+    "osm": "way/545673743",
+    "name": "Shri Hanuman Temple",
+    "wikidata": null,
+    "kinds": "religion,hindu_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.490463256835938,
+    "lon": 73.95748901367188
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4425030593",
+    "osm": "node/4425030593",
+    "name": "Banastari Our Lady of Fatima Chapel",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.493101119995117,
+    "lon": 73.95822143554688
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4296711742",
+    "osm": "node/4296711742",
+    "name": "Christ the King Monument",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.536476135253906,
+    "lon": 73.95365142822266
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N6496135833",
+    "osm": "node/6496135833",
+    "name": "Fort Sant Estavam",
+    "wikidata": null,
+    "kinds": "historic,archaeology,interesting_places,other_archaeological_sites",
+    "rate": 1,
+    "lat": 15.536478042602539,
+    "lon": 73.95366668701172
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W614843553",
+    "osm": "way/614843553",
+    "name": "Shri Devi Bhagwathi Chimulkarin",
+    "wikidata": null,
+    "kinds": "religion,hindu_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.511752128601074,
+    "lon": 73.95909118652344
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W545673740",
+    "osm": "way/545673740",
+    "name": "Shri Shantadurga Verlenkarin Temple",
+    "wikidata": null,
+    "kinds": "religion,hindu_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.51245403289795,
+    "lon": 73.95951080322266
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W545673741",
+    "osm": "way/545673741",
+    "name": "Shri ShantadurgaTalaulikarin Temple",
+    "wikidata": null,
+    "kinds": "religion,hindu_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.512866973876953,
+    "lon": 73.95947265625
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4292650106",
+    "osm": "node/4292650106",
+    "name": "St. Christopher Church Tivim",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.623868942260742,
+    "lon": 73.85702514648438
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N2649454949",
+    "osm": "node/2649454949",
+    "name": "St Anthony's Church",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.614606857299805,
+    "lon": 73.77039337158203
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4321057990",
+    "osm": "node/4321057990",
+    "name": "St Philip and James Church",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.395258903503418,
+    "lon": 73.9063491821289
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4289909147",
+    "osm": "node/4289909147",
+    "name": "Marcela Cinema House",
+    "wikidata": null,
+    "kinds": "cultural,cinemas,theatres_and_entertainments,interesting_places",
+    "rate": 1,
+    "lat": 15.512200355529785,
+    "lon": 73.96047973632812
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4290219989",
+    "osm": "node/4290219989",
+    "name": "Marcela Cinema House",
+    "wikidata": null,
+    "kinds": "cultural,cinemas,theatres_and_entertainments,interesting_places",
+    "rate": 1,
+    "lat": 15.5122709274292,
+    "lon": 73.96047973632812
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4492449813",
+    "osm": "node/4492449813",
+    "name": "Issorcim",
+    "wikidata": null,
+    "kinds": "natural,interesting_places,beaches,other_beaches",
+    "rate": 1,
+    "lat": 15.372438430786133,
+    "lon": 73.85651397705078
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4290204489",
+    "osm": "node/4290204489",
+    "name": "Cine World",
+    "wikidata": null,
+    "kinds": "cultural,cinemas,theatres_and_entertainments,interesting_places",
+    "rate": 1,
+    "lat": 15.516222953796387,
+    "lon": 73.96092224121094
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W44130848",
+    "osm": "way/44130848",
+    "name": "Bogmalo Beach",
+    "wikidata": null,
+    "kinds": "natural,interesting_places,beaches,other_beaches",
+    "rate": 1,
+    "lat": 15.369516372680664,
+    "lon": 73.83419036865234
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4525145291",
+    "osm": "node/4525145291",
+    "name": "Face shiva",
+    "wikidata": null,
+    "kinds": "historic,monuments_and_memorials,interesting_places,monuments",
+    "rate": 1,
+    "lat": 15.592453956604004,
+    "lon": 73.7337417602539
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4428514690",
+    "osm": "node/4428514690",
+    "name": "Shiva's face",
+    "wikidata": null,
+    "kinds": "other,unclassified_objects,interesting_places,tourist_object",
+    "rate": 1,
+    "lat": 15.5924711227417,
+    "lon": 73.73371887207031
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4286102092",
+    "osm": "node/4286102092",
+    "name": "Blessed Joseph Vaz Sanctuary",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.391061782836914,
+    "lon": 73.9039306640625
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W90307697",
+    "osm": "way/90307697",
+    "name": "Ozran Beach",
+    "wikidata": null,
+    "kinds": "natural,interesting_places,beaches,other_beaches",
+    "rate": 1,
+    "lat": 15.593873977661133,
+    "lon": 73.73446655273438
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N2084207979",
+    "osm": "node/2084207979",
+    "name": "Siddeshwar Temple",
+    "wikidata": null,
+    "kinds": "religion,hindu_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.601727485656738,
+    "lon": 73.74382019042969
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W851548964",
+    "osm": "way/851548964",
+    "name": "Maloya Chapel",
+    "wikidata": null,
+    "kinds": "religion,churches,interesting_places,catholic_churches",
+    "rate": 1,
+    "lat": 15.61706256866455,
+    "lon": 73.88694763183594
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4310483391",
+    "osm": "node/4310483391",
+    "name": "Our Lady of Miracles Church",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.608012199401855,
+    "lon": 73.75210571289062
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N6128194586",
+    "osm": "node/6128194586",
+    "name": "Earth Bowl",
+    "wikidata": null,
+    "kinds": "other,unclassified_objects,interesting_places,tourist_object",
+    "rate": 1,
+    "lat": 15.594294548034668,
+    "lon": 73.73392486572266
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N2086900653",
+    "osm": "node/2086900653",
+    "name": "Santa Cruz Chapel",
+    "wikidata": null,
+    "kinds": "religion,churches,interesting_places,other_churches",
+    "rate": 1,
+    "lat": 15.597497940063477,
+    "lon": 73.7368392944336
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W964884129",
+    "osm": "way/964884129",
+    "name": "sateri Temple",
+    "wikidata": null,
+    "kinds": "religion,hindu_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.623174667358398,
+    "lon": 73.78076934814453
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W546135047",
+    "osm": "way/546135047",
+    "name": "Shri Ravalnath Temple",
+    "wikidata": null,
+    "kinds": "religion,hindu_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.488219261169434,
+    "lon": 73.9651107788086
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W545673745",
+    "osm": "way/545673745",
+    "name": "Shri Sateri Temple",
+    "wikidata": null,
+    "kinds": "religion,hindu_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.47513198852539,
+    "lon": 73.96343231201172
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W545673746",
+    "osm": "way/545673746",
+    "name": "Shri Shiv Temple",
+    "wikidata": null,
+    "kinds": "religion,hindu_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.474848747253418,
+    "lon": 73.96354675292969
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W614848561",
+    "osm": "way/614848561",
+    "name": "Shree Shantadurga Temple",
+    "wikidata": null,
+    "kinds": "religion,hindu_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.535248756408691,
+    "lon": 73.9610824584961
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W614848560",
+    "osm": "way/614848560",
+    "name": "Shree Ravalnath Temple",
+    "wikidata": null,
+    "kinds": "religion,hindu_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.53510570526123,
+    "lon": 73.96112060546875
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N7550634785",
+    "osm": "node/7550634785",
+    "name": "Mayem lake",
+    "wikidata": null,
+    "kinds": "other,unclassified_objects,interesting_places,tourist_object",
+    "rate": 1,
+    "lat": 15.576513290405273,
+    "lon": 73.94103240966797
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4274855090",
+    "osm": "node/4274855090",
+    "name": "Hollant beach",
+    "wikidata": null,
+    "kinds": "other,unclassified_objects,interesting_places,tourist_object",
+    "rate": 1,
+    "lat": 15.36905288696289,
+    "lon": 73.8623046875
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W545673739",
+    "osm": "way/545673739",
+    "name": "Shri Sateri Temple",
+    "wikidata": null,
+    "kinds": "religion,hindu_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.521978378295898,
+    "lon": 73.96485137939453
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W546135048",
+    "osm": "way/546135048",
+    "name": "Shri Mahapurush Temple",
+    "wikidata": null,
+    "kinds": "religion,hindu_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.488637924194336,
+    "lon": 73.96746826171875
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4290840990",
+    "osm": "node/4290840990",
+    "name": "St Clara's Church",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.618317604064941,
+    "lon": 73.89432525634766
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W431878271",
+    "osm": "way/431878271",
+    "name": "Big Vagator Beach",
+    "wikidata": null,
+    "kinds": "natural,interesting_places,beaches,other_beaches",
+    "rate": 1,
+    "lat": 15.600350379943848,
+    "lon": 73.73353576660156
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W90307703",
+    "osm": "way/90307703",
+    "name": "Small Vagator Beach",
+    "wikidata": null,
+    "kinds": "natural,interesting_places,beaches,other_beaches",
+    "rate": 1,
+    "lat": 15.602792739868164,
+    "lon": 73.7337875366211
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N2675636074",
+    "osm": "node/2675636074",
+    "name": "St. Anthony's Church",
+    "wikidata": null,
+    "kinds": "religion,churches,interesting_places,other_churches",
+    "rate": 1,
+    "lat": 15.623942375183105,
+    "lon": 73.76700592041016
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W805981229",
+    "osm": "way/805981229",
+    "name": "Kundai Math",
+    "wikidata": null,
+    "kinds": "religion,hindu_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.453411102294922,
+    "lon": 73.96317291259766
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W545673736",
+    "osm": "way/545673736",
+    "name": "Shri Gurudevbharma Temple",
+    "wikidata": null,
+    "kinds": "religion,hindu_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.525760650634766,
+    "lon": 73.96883392333984
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W755018416",
+    "osm": "way/755018416",
+    "name": "Uddo Beach",
+    "wikidata": null,
+    "kinds": "natural,interesting_places,beaches,other_beaches",
+    "rate": 1,
+    "lat": 15.617795944213867,
+    "lon": 73.75395965576172
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4302895991",
+    "osm": "node/4302895991",
+    "name": "Our Lady Of The Sea Church",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.629973411560059,
+    "lon": 73.77880859375
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4425024990",
+    "osm": "node/4425024990",
+    "name": "Swami Samarth Engineering",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.45982837677002,
+    "lon": 73.96659851074219
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W128565254",
+    "osm": "way/128565254",
+    "name": "Chapora Beach",
+    "wikidata": null,
+    "kinds": "natural,interesting_places,beaches,other_beaches",
+    "rate": 1,
+    "lat": 15.606172561645508,
+    "lon": 73.73297882080078
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4639272693",
+    "osm": "node/4639272693",
+    "name": "развалины",
+    "wikidata": null,
+    "kinds": "other,unclassified_objects,interesting_places,tourist_object",
+    "rate": 1,
+    "lat": 15.638700485229492,
+    "lon": 73.84781646728516
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N2084208092",
+    "osm": "node/2084208092",
+    "name": "Siddeshwar Temple",
+    "wikidata": null,
+    "kinds": "religion,hindu_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.60828685760498,
+    "lon": 73.73515319824219
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N7550449986",
+    "osm": "node/7550449986",
+    "name": "Cave",
+    "wikidata": null,
+    "kinds": "other,unclassified_objects,interesting_places,tourist_object",
+    "rate": 1,
+    "lat": 15.595108032226562,
+    "lon": 73.9352035522461
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4375372489",
+    "osm": "node/4375372489",
+    "name": "Near Chapora Fort",
+    "wikidata": null,
+    "kinds": "view_points,other,interesting_places",
+    "rate": 1,
+    "lat": 15.607404708862305,
+    "lon": 73.732177734375
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W614843591",
+    "osm": "way/614843591",
+    "name": "Shri Manguesh Temple",
+    "wikidata": null,
+    "kinds": "religion,hindu_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.44489860534668,
+    "lon": 73.96641540527344
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W963588354",
+    "osm": "way/963588354",
+    "name": "kalika Temple",
+    "wikidata": null,
+    "kinds": "religion,hindu_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.631377220153809,
+    "lon": 73.76813507080078
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W797007026",
+    "osm": "way/797007026",
+    "name": "seasonal lake (monsoon)",
+    "wikidata": null,
+    "kinds": "dry_lakes,water,natural,interesting_places",
+    "rate": 1,
+    "lat": 15.631637573242188,
+    "lon": 73.76871490478516
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4296330098",
+    "osm": "node/4296330098",
+    "name": "Hirabai Zanty Multipurpose Hall",
+    "wikidata": null,
+    "kinds": "cultural,theatres_and_entertainments,interesting_places,other_theatres",
+    "rate": 1,
+    "lat": 15.590476989746094,
+    "lon": 73.94540405273438
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4302895990",
+    "osm": "node/4302895990",
+    "name": "Tuar Chapel",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.644638061523438,
+    "lon": 73.82537841796875
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W963588352",
+    "osm": "way/963588352",
+    "name": "Bhraman temple",
+    "wikidata": null,
+    "kinds": "religion,hindu_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.632457733154297,
+    "lon": 73.7667007446289
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W668134122",
+    "osm": "way/668134122",
+    "name": "Ganesh Temple",
+    "wikidata": null,
+    "kinds": "religion,hindu_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.631414413452148,
+    "lon": 73.76380920410156
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N7553023237",
+    "osm": "node/7553023237",
+    "name": "satyanarayan temple",
+    "wikidata": null,
+    "kinds": "religion,hindu_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.632318496704102,
+    "lon": 73.76544952392578
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W976234766",
+    "osm": "way/976234766",
+    "name": "ram mandir",
+    "wikidata": null,
+    "kinds": "religion,hindu_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.633318901062012,
+    "lon": 73.76762390136719
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W545673749",
+    "osm": "way/545673749",
+    "name": "Shri Tirupati Balaji Temple",
+    "wikidata": null,
+    "kinds": "religion,hindu_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.456334114074707,
+    "lon": 73.97359466552734
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W963589351",
+    "osm": "way/963589351",
+    "name": "Swami Samarth Math",
+    "wikidata": null,
+    "kinds": "religion,hindu_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.630643844604492,
+    "lon": 73.76023864746094
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4575059389",
+    "osm": "node/4575059389",
+    "name": "Morgim Chapel",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.6176176071167,
+    "lon": 73.73770904541016
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W545673734",
+    "osm": "way/545673734",
+    "name": "Shri Mahadev Temple",
+    "wikidata": null,
+    "kinds": "religion,hindu_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.530885696411133,
+    "lon": 73.97855377197266
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4294197090",
+    "osm": "node/4294197090",
+    "name": "Our Lady of Piety Church",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.445151329040527,
+    "lon": 73.97225189208984
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W568072637",
+    "osm": "way/568072637",
+    "name": "Turtle Nesting Centre",
+    "wikidata": null,
+    "kinds": "natural,interesting_places,nature_reserves,other_nature_conservation_areas",
+    "rate": 1,
+    "lat": 15.6174898147583,
+    "lon": 73.73357391357422
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4582412091",
+    "osm": "node/4582412091",
+    "name": "Blueberry Hill Wedding Venue",
+    "wikidata": null,
+    "kinds": "other,unclassified_objects,interesting_places,tourist_object",
+    "rate": 1,
+    "lat": 15.376811981201172,
+    "lon": 73.91767883300781
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W614491756",
+    "osm": "way/614491756",
+    "name": "Azad Zama Masjid",
+    "wikidata": null,
+    "kinds": "religion,mosques,interesting_places",
+    "rate": 1,
+    "lat": 15.586651802062988,
+    "lon": 73.95399475097656
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4254510162",
+    "osm": "node/4254510162",
+    "name": "Church of Our Lady of Livra Febres",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.37447452545166,
+    "lon": 73.91586303710938
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W568336819",
+    "osm": "way/568336819",
+    "name": "Morje Kuladevta",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.622413635253906,
+    "lon": 73.73774719238281
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4323097073",
+    "osm": "node/4323097073",
+    "name": "Kesarvale Spring",
+    "wikidata": null,
+    "kinds": "other,unclassified_objects,interesting_places,tourist_object",
+    "rate": 1,
+    "lat": 15.383469581604004,
+    "lon": 73.92903900146484
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W169716756",
+    "osm": "way/169716756",
+    "name": "Shro Shanteri Temple",
+    "wikidata": null,
+    "kinds": "religion,hindu_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.440189361572266,
+    "lon": 73.97248077392578
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N6929622527",
+    "osm": "node/6929622527",
+    "name": "Santa Cruz Chapel",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.625258445739746,
+    "lon": 73.7399673461914
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N5508889113",
+    "osm": "node/5508889113",
+    "name": "Konkan explorers",
+    "wikidata": null,
+    "kinds": "other,unclassified_objects,interesting_places,tourist_object",
+    "rate": 1,
+    "lat": 15.633708953857422,
+    "lon": 73.75291442871094
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W169716277",
+    "osm": "way/169716277",
+    "name": "Venkateshwara Temple",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.433480262756348,
+    "lon": 73.97171020507812
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4636933276",
+    "osm": "node/4636933276",
+    "name": "Milagres Church",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.627511024475098,
+    "lon": 73.74075317382812
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W90864112",
+    "osm": "way/90864112",
+    "name": "Cansaulim beach",
+    "wikidata": null,
+    "kinds": "natural,interesting_places,beaches,other_beaches",
+    "rate": 1,
+    "lat": 15.354835510253906,
+    "lon": 73.8839340209961
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4294057390",
+    "osm": "node/4294057390",
+    "name": "Holy Cross Chapel",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.388023376464844,
+    "lon": 73.93889617919922
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W169716280",
+    "osm": "way/169716280",
+    "name": "Shri Lakshmi Narasimha Temple",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.433067321777344,
+    "lon": 73.97261810302734
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W615283026",
+    "osm": "way/615283026",
+    "name": "Mardol Masjid",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.43916130065918,
+    "lon": 73.97590637207031
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W169716273",
+    "osm": "way/169716273",
+    "name": "Shanta Durga Temple",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.430286407470703,
+    "lon": 73.97223663330078
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W156967124",
+    "osm": "way/156967124",
+    "name": "Morjim Beach",
+    "wikidata": null,
+    "kinds": "natural,interesting_places,beaches,other_beaches",
+    "rate": 1,
+    "lat": 15.622621536254883,
+    "lon": 73.7302474975586
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N2637221314",
+    "osm": "node/2637221314",
+    "name": "Three Kings Church",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.360302925109863,
+    "lon": 73.90078735351562
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4269208991",
+    "osm": "node/4269208991",
+    "name": "Abyss Marine Fish Aquarium",
+    "wikidata": null,
+    "kinds": "other,unclassified_objects,interesting_places,tourist_object",
+    "rate": 1,
+    "lat": 15.374100685119629,
+    "lon": 73.92596435546875
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4574889289",
+    "osm": "node/4574889289",
+    "name": "Индуистский храм",
+    "wikidata": null,
+    "kinds": "religion,hindu_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.628153800964355,
+    "lon": 73.73577117919922
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N5205749622",
+    "osm": "node/5205749622",
+    "name": "Огромный баньян",
+    "wikidata": null,
+    "kinds": "other,unclassified_objects,interesting_places,tourist_object",
+    "rate": 1,
+    "lat": 15.632028579711914,
+    "lon": 73.73932647705078
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W614848559",
+    "osm": "way/614848559",
+    "name": "Shri Satteri Shantadurga Temple",
+    "wikidata": null,
+    "kinds": "religion,hindu_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.536518096923828,
+    "lon": 73.9872817993164
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4294058889",
+    "osm": "node/4294058889",
+    "name": "Titan Gate",
+    "wikidata": null,
+    "kinds": "other,unclassified_objects,interesting_places,tourist_object",
+    "rate": 1,
+    "lat": 15.371170043945312,
+    "lon": 73.92706298828125
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4636891170",
+    "osm": "node/4636891170",
+    "name": "simoes cross",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.63282299041748,
+    "lon": 73.73651123046875
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4311034924",
+    "osm": "node/4311034924",
+    "name": "Maison Rodesa",
+    "wikidata": null,
+    "kinds": "other,unclassified_objects,interesting_places,tourist_object",
+    "rate": 1,
+    "lat": 15.350229263305664,
+    "lon": 73.89196014404297
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W545673750",
+    "osm": "way/545673750",
+    "name": "Shri Maruti Temple",
+    "wikidata": null,
+    "kinds": "religion,hindu_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.43370532989502,
+    "lon": 73.98583221435547
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W274491726",
+    "osm": "way/274491726",
+    "name": "Nagoa Cemetery",
+    "wikidata": null,
+    "kinds": "cemeteries,historic,burial_places,interesting_places",
+    "rate": 1,
+    "lat": 15.361141204833984,
+    "lon": 73.92400360107422
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4396497892",
+    "osm": "node/4396497892",
+    "name": "Ravada goa",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.664320945739746,
+    "lon": 73.8450698852539
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N2705594810",
+    "osm": "node/2705594810",
+    "name": "Savoi Plantation",
+    "wikidata": null,
+    "kinds": "other,unclassified_objects,interesting_places,tourist_object",
+    "rate": 1,
+    "lat": 15.493205070495605,
+    "lon": 74.00067901611328
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W177091716",
+    "osm": "way/177091716",
+    "name": "Vijayadurga Devi Sansthan",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.467233657836914,
+    "lon": 73.99791717529297
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W177091719",
+    "osm": "way/177091719",
+    "name": "Vijayadurga Devi Sansthan",
+    "wikidata": null,
+    "kinds": "religion,hindu_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.467272758483887,
+    "lon": 73.99797058105469
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W274491725",
+    "osm": "way/274491725",
+    "name": "Nagoa Church",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.357823371887207,
+    "lon": 73.92511749267578
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W545673730",
+    "osm": "way/545673730",
+    "name": "Shri Betal Temple",
+    "wikidata": null,
+    "kinds": "religion,hindu_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.52600383758545,
+    "lon": 74.00275421142578
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W265642303",
+    "osm": "way/265642303",
+    "name": "Marbela Beach",
+    "wikidata": null,
+    "kinds": "natural,interesting_places,beaches,other_beaches",
+    "rate": 1,
+    "lat": 15.63705825805664,
+    "lon": 73.72059631347656
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W545673732",
+    "osm": "way/545673732",
+    "name": "Shri Laxminarayan Temple",
+    "wikidata": null,
+    "kinds": "religion,hindu_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.527887344360352,
+    "lon": 74.00450897216797
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N6117609886",
+    "osm": "node/6117609886",
+    "name": "Banana Surf School",
+    "wikidata": null,
+    "kinds": "other,unclassified_objects,interesting_places,tourist_object",
+    "rate": 1,
+    "lat": 15.638002395629883,
+    "lon": 73.72062683105469
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W616246080",
+    "osm": "way/616246080",
+    "name": "Sateri Temple",
+    "wikidata": null,
+    "kinds": "religion,hindu_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.522171020507812,
+    "lon": 74.00617218017578
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4263083222",
+    "osm": "node/4263083222",
+    "name": "Mahalaxmi",
+    "wikidata": null,
+    "kinds": "religion,hindu_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.406132698059082,
+    "lon": 73.9799575805664
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4727965456",
+    "osm": "node/4727965456",
+    "name": "Quinta de Valadares",
+    "wikidata": null,
+    "kinds": "other,unclassified_objects,interesting_places,tourist_object",
+    "rate": 1,
+    "lat": 15.350678443908691,
+    "lon": 73.9228515625
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N6684182702",
+    "osm": "node/6684182702",
+    "name": "Shree Bhagwati Temple Tuem",
+    "wikidata": null,
+    "kinds": "religion,hindu_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.671725273132324,
+    "lon": 73.79701232910156
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W598544797",
+    "osm": "way/598544797",
+    "name": "Shri Nageshi Temple",
+    "wikidata": null,
+    "kinds": "religion,hindu_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.40744400024414,
+    "lon": 73.98362731933594
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W614018461",
+    "osm": "way/614018461",
+    "name": "Ganesh Temple",
+    "wikidata": null,
+    "kinds": "religion,hindu_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.412639617919922,
+    "lon": 73.98810577392578
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N8649638771",
+    "osm": "node/8649638771",
+    "name": "Shivaji Statue",
+    "wikidata": null,
+    "kinds": "cultural,urban_environment,interesting_places,sculptures",
+    "rate": 1,
+    "lat": 15.53000259399414,
+    "lon": 74.0086441040039
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N6100023304",
+    "osm": "node/6100023304",
+    "name": "Большой храм который мы нашли",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.658186912536621,
+    "lon": 73.74754333496094
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N5868808275",
+    "osm": "node/5868808275",
+    "name": "Rawalnath Temple",
+    "wikidata": null,
+    "kinds": "religion,hindu_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.405145645141602,
+    "lon": 73.9839859008789
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N3766893641",
+    "osm": "node/3766893641",
+    "name": "Farmagudi Shivaji Fort",
+    "wikidata": null,
+    "kinds": "other,unclassified_objects,interesting_places,historic_object",
+    "rate": 1,
+    "lat": 15.41275691986084,
+    "lon": 73.98927307128906
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N8648589346",
+    "osm": "node/8648589346",
+    "name": "Shivaji Statue",
+    "wikidata": null,
+    "kinds": "cultural,urban_environment,interesting_places,sculptures",
+    "rate": 1,
+    "lat": 15.412660598754883,
+    "lon": 73.98941802978516
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4646497989",
+    "osm": "node/4646497989",
+    "name": "розовый и большой",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.671196937561035,
+    "lon": 73.78085327148438
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4317959890",
+    "osm": "node/4317959890",
+    "name": "St Roque Chapel",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.401890754699707,
+    "lon": 73.98307037353516
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W275147750",
+    "osm": "way/275147750",
+    "name": "Verna Cemetery",
+    "wikidata": null,
+    "kinds": "cemeteries,historic,burial_places,interesting_places",
+    "rate": 1,
+    "lat": 15.349730491638184,
+    "lon": 73.93170928955078
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W273402787",
+    "osm": "way/273402787",
+    "name": "Holy Cross Church",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.348211288452148,
+    "lon": 73.93131256103516
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W156967126",
+    "osm": "way/156967126",
+    "name": "Ashvem Beach",
+    "wikidata": null,
+    "kinds": "natural,interesting_places,beaches,other_beaches",
+    "rate": 1,
+    "lat": 15.646496772766113,
+    "lon": 73.71674346923828
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W545763254",
+    "osm": "way/545763254",
+    "name": "Shri Gopaleshwar Mahadev Temple",
+    "wikidata": null,
+    "kinds": "religion,hindu_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.566987991333008,
+    "lon": 74.0037841796875
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N5447283924",
+    "osm": "node/5447283924",
+    "name": "church",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.66349983215332,
+    "lon": 73.7448959350586
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N3066755085",
+    "osm": "node/3066755085",
+    "name": "Shantadurga Temple, Kavlem",
+    "wikidata": null,
+    "kinds": "religion,hindu_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.396036148071289,
+    "lon": 73.98542022705078
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W614843531",
+    "osm": "way/614843531",
+    "name": "Shree Mahalaxmi Temple",
+    "wikidata": null,
+    "kinds": "religion,hindu_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.54612922668457,
+    "lon": 74.01209259033203
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N2634447577",
+    "osm": "node/2634447577",
+    "name": "Cansaulim Beach",
+    "wikidata": null,
+    "kinds": "natural,interesting_places,beaches,other_beaches",
+    "rate": 1,
+    "lat": 15.326781272888184,
+    "lon": 73.89603424072266
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4298768989",
+    "osm": "node/4298768989",
+    "name": "Poriebhat chapel",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.347270965576172,
+    "lon": 73.93687438964844
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W545673717",
+    "osm": "way/545673717",
+    "name": "Shri Banglapurva Mandir",
+    "wikidata": null,
+    "kinds": "religion,hindu_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.561771392822266,
+    "lon": 74.00792694091797
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W200648628",
+    "osm": "way/200648628",
+    "name": "Tropical Spice Plantation",
+    "wikidata": null,
+    "kinds": "other,unclassified_objects,interesting_places,tourist_object",
+    "rate": 1,
+    "lat": 15.45137882232666,
+    "lon": 74.01325225830078
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W545673715",
+    "osm": "way/545673715",
+    "name": "Shri Maruti Temple",
+    "wikidata": null,
+    "kinds": "religion,hindu_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.562746047973633,
+    "lon": 74.0082015991211
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W545673711",
+    "osm": "way/545673711",
+    "name": "Shri Bhagvati Mata Mandir",
+    "wikidata": null,
+    "kinds": "religion,hindu_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.567028045654297,
+    "lon": 74.00674438476562
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W545673708",
+    "osm": "way/545673708",
+    "name": "Shri Pandurang Mandir",
+    "wikidata": null,
+    "kinds": "religion,hindu_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.56676959991455,
+    "lon": 74.00713348388672
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W545673713",
+    "osm": "way/545673713",
+    "name": "Shri Hanuman Mandir",
+    "wikidata": null,
+    "kinds": "religion,hindu_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.567071914672852,
+    "lon": 74.00712585449219
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W545673726",
+    "osm": "way/545673726",
+    "name": "Shri Sateri Kelbai Devasthan",
+    "wikidata": null,
+    "kinds": "religion,hindu_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.547565460205078,
+    "lon": 74.01433563232422
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W545806313",
+    "osm": "way/545806313",
+    "name": "Shri Anant Devasthan",
+    "wikidata": null,
+    "kinds": "religion,hindu_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.478606224060059,
+    "lon": 74.01995086669922
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N5279926172",
+    "osm": "node/5279926172",
+    "name": "Sai Baba Temple",
+    "wikidata": null,
+    "kinds": "religion,hindu_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.56182861328125,
+    "lon": 74.01029968261719
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W614491747",
+    "osm": "way/614491747",
+    "name": "Jamia Masjid",
+    "wikidata": null,
+    "kinds": "religion,mosques,interesting_places",
+    "rate": 1,
+    "lat": 15.566693305969238,
+    "lon": 74.00863647460938
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W620747352",
+    "osm": "way/620747352",
+    "name": "Rai resort",
+    "wikidata": null,
+    "kinds": "natural,interesting_places,beaches,other_beaches",
+    "rate": 1,
+    "lat": 15.6517333984375,
+    "lon": 73.7158432006836
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W617625347",
+    "osm": "way/617625347",
+    "name": "Noor E Madina Markaz",
+    "wikidata": null,
+    "kinds": "religion,mosques,interesting_places",
+    "rate": 1,
+    "lat": 15.563515663146973,
+    "lon": 74.01030731201172
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W545673706",
+    "osm": "way/545673706",
+    "name": "Shri Dattatreya Mandir",
+    "wikidata": null,
+    "kinds": "religion,hindu_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.565879821777344,
+    "lon": 74.00942993164062
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N8648589389",
+    "osm": "node/8648589389",
+    "name": "Shivaji Statue",
+    "wikidata": null,
+    "kinds": "cultural,urban_environment,interesting_places,sculptures",
+    "rate": 1,
+    "lat": 15.562503814697266,
+    "lon": 74.01132202148438
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W545602356",
+    "osm": "way/545602356",
+    "name": "Radha Krishna Temple",
+    "wikidata": null,
+    "kinds": "religion,hindu_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.561012268066406,
+    "lon": 74.01216888427734
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4658776191",
+    "osm": "node/4658776191",
+    "name": "Ashvem football ground",
+    "wikidata": null,
+    "kinds": "other,unclassified_objects,interesting_places,tourist_object",
+    "rate": 1,
+    "lat": 15.657251358032227,
+    "lon": 73.72135925292969
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4690454091",
+    "osm": "node/4690454091",
+    "name": "Banian Tree",
+    "wikidata": null,
+    "kinds": "other,unclassified_objects,interesting_places,tourist_object",
+    "rate": 1,
+    "lat": 15.656866073608398,
+    "lon": 73.7201156616211
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4084944490",
+    "osm": "node/4084944490",
+    "name": "stone art",
+    "wikidata": null,
+    "kinds": "cultural,urban_environment,interesting_places,installation",
+    "rate": 1,
+    "lat": 15.66253662109375,
+    "lon": 73.72965240478516
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N3799318434",
+    "osm": "node/3799318434",
+    "name": "Udear Springs",
+    "wikidata": null,
+    "kinds": "other,unclassified_objects,interesting_places,tourist_object",
+    "rate": 1,
+    "lat": 15.347977638244629,
+    "lon": 73.94647216796875
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4425030594",
+    "osm": "node/4425030594",
+    "name": "Pandavas Cave",
+    "wikidata": null,
+    "kinds": "other,unclassified_objects,interesting_places,tourist_object",
+    "rate": 1,
+    "lat": 15.499632835388184,
+    "lon": 74.02458190917969
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W221469527",
+    "osm": "way/221469527",
+    "name": "Marjoda Beach",
+    "wikidata": null,
+    "kinds": "natural,interesting_places,beaches,other_beaches",
+    "rate": 1,
+    "lat": 15.320908546447754,
+    "lon": 73.8984603881836
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N2713529728",
+    "osm": "node/2713529728",
+    "name": "Mystic Meadows - A conservatory for Bees , Birds & Butterflies",
+    "wikidata": null,
+    "kinds": "other,unclassified_objects,interesting_places,tourist_object",
+    "rate": 1,
+    "lat": 15.429767608642578,
+    "lon": 74.01258850097656
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W545602340",
+    "osm": "way/545602340",
+    "name": "Shri Siddhivinayak Temple",
+    "wikidata": null,
+    "kinds": "religion,hindu_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.562383651733398,
+    "lon": 74.01566314697266
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N2634447620",
+    "osm": "node/2634447620",
+    "name": "Utorda Beach",
+    "wikidata": null,
+    "kinds": "natural,interesting_places,beaches,other_beaches",
+    "rate": 1,
+    "lat": 15.319635391235352,
+    "lon": 73.89893341064453
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W86323323",
+    "osm": "way/86323323",
+    "name": "Royal Orchid Hotel",
+    "wikidata": null,
+    "kinds": "natural,interesting_places,beaches,other_beaches",
+    "rate": 1,
+    "lat": 15.319782257080078,
+    "lon": 73.90084075927734
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N1633026612",
+    "osm": "node/1633026612",
+    "name": "Our Lady of Lourdes Church, Utorda",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.324959754943848,
+    "lon": 73.9133529663086
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4325388693",
+    "osm": "node/4325388693",
+    "name": "Shankar Parvati Temple",
+    "wikidata": null,
+    "kinds": "other,unclassified_objects,interesting_places,tourist_object",
+    "rate": 1,
+    "lat": 15.396454811096191,
+    "lon": 73.99710083007812
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N3766863251",
+    "osm": "node/3766863251",
+    "name": "maruti temple",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.404607772827148,
+    "lon": 74.00321197509766
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W614018467",
+    "osm": "way/614018467",
+    "name": "Ravindra Bhavan",
+    "wikidata": null,
+    "kinds": "cultural,theatres_and_entertainments,interesting_places,other_theatres",
+    "rate": 1,
+    "lat": 15.559536933898926,
+    "lon": 74.01970672607422
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N5235801421",
+    "osm": "node/5235801421",
+    "name": "jah garage",
+    "wikidata": null,
+    "kinds": "other,unclassified_objects,interesting_places,tourist_object",
+    "rate": 1,
+    "lat": 15.677513122558594,
+    "lon": 73.74749755859375
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4294194789",
+    "osm": "node/4294194789",
+    "name": "Sonia Shirsat",
+    "wikidata": null,
+    "kinds": "other,unclassified_objects,interesting_places,tourist_object",
+    "rate": 1,
+    "lat": 15.391854286193848,
+    "lon": 73.9969253540039
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N3766893578",
+    "osm": "node/3766893578",
+    "name": "Jai Mahalasa Theatre",
+    "wikidata": null,
+    "kinds": "cultural,cinemas,theatres_and_entertainments,interesting_places",
+    "rate": 1,
+    "lat": 15.413541793823242,
+    "lon": 74.01033782958984
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N3766893571",
+    "osm": "node/3766893571",
+    "name": "Curti Mosque",
+    "wikidata": null,
+    "kinds": "religion,mosques,interesting_places",
+    "rate": 1,
+    "lat": 15.406862258911133,
+    "lon": 74.0068130493164
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4283836891",
+    "osm": "node/4283836891",
+    "name": "Harvalem Caves",
+    "wikidata": "Q56458765",
+    "kinds": "other,unclassified_objects,interesting_places,tourist_object",
+    "rate": 1,
+    "lat": 15.55256175994873,
+    "lon": 74.02303314208984
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N5418345387",
+    "osm": "node/5418345387",
+    "name": "Mandrem Church",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.663759231567383,
+    "lon": 73.71827697753906
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N3766863256",
+    "osm": "node/3766863256",
+    "name": "zareshwar temple",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.400064468383789,
+    "lon": 74.00360870361328
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W545673748",
+    "osm": "way/545673748",
+    "name": "Shri Rudreshwar Temple",
+    "wikidata": null,
+    "kinds": "religion,hindu_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.550361633300781,
+    "lon": 74.02626037597656
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4146369113",
+    "osm": "node/4146369113",
+    "name": "Harvalem Waterfall",
+    "wikidata": null,
+    "kinds": "view_points,other,interesting_places",
+    "rate": 1,
+    "lat": 15.550891876220703,
+    "lon": 74.02653503417969
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N3766893608",
+    "osm": "node/3766893608",
+    "name": "Saraswati Temple",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.393345832824707,
+    "lon": 74.00274658203125
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W274469376",
+    "osm": "way/274469376",
+    "name": "Mugrumpoi Chapel",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.33285903930664,
+    "lon": 73.9424057006836
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W545619660",
+    "osm": "way/545619660",
+    "name": "Brahmarashtroli Temple",
+    "wikidata": null,
+    "kinds": "religion,hindu_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.559471130371094,
+    "lon": 74.02520751953125
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N6132103906",
+    "osm": "node/6132103906",
+    "name": "Mandrem Villagw Resort",
+    "wikidata": null,
+    "kinds": "natural,interesting_places,beaches,other_beaches",
+    "rate": 1,
+    "lat": 15.665857315063477,
+    "lon": 73.71404266357422
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4380978378",
+    "osm": "node/4380978378",
+    "name": "Bhagwati temple",
+    "wikidata": null,
+    "kinds": "religion,buddhist_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.671652793884277,
+    "lon": 73.72372436523438
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4380998417",
+    "osm": "node/4380998417",
+    "name": "Mhalasa Devi",
+    "wikidata": null,
+    "kinds": "religion,buddhist_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.669230461120605,
+    "lon": 73.71841430664062
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4227732490",
+    "osm": "node/4227732490",
+    "name": "Go-Kart Racing",
+    "wikidata": null,
+    "kinds": "other,unclassified_objects,interesting_places,tourist_object",
+    "rate": 1,
+    "lat": 15.32955265045166,
+    "lon": 73.93954467773438
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W546135076",
+    "osm": "way/546135076",
+    "name": "Shri Nagnath Devasthan",
+    "wikidata": null,
+    "kinds": "religion,hindu_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.556089401245117,
+    "lon": 74.02912902832031
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4296382192",
+    "osm": "node/4296382192",
+    "name": "Mother of God Church",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.316998481750488,
+    "lon": 73.92064666748047
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4283767989",
+    "osm": "node/4283767989",
+    "name": "Carpe Diem",
+    "wikidata": null,
+    "kinds": "cultural,urban_environment,interesting_places,installation",
+    "rate": 1,
+    "lat": 15.312919616699219,
+    "lon": 73.9122543334961
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4296329897",
+    "osm": "node/4296329897",
+    "name": "St Sebastin Chapel",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.320590019226074,
+    "lon": 73.92918395996094
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4560525896",
+    "osm": "node/4560525896",
+    "name": "Perpetual Gardens",
+    "wikidata": null,
+    "kinds": "other,unclassified_objects,interesting_places,tourist_object",
+    "rate": 1,
+    "lat": 15.308700561523438,
+    "lon": 73.90484619140625
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4292910192",
+    "osm": "node/4292910192",
+    "name": "St.Anne's Church",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.403074264526367,
+    "lon": 74.0149917602539
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4378354689",
+    "osm": "node/4378354689",
+    "name": "Eden Gardens",
+    "wikidata": null,
+    "kinds": "other,unclassified_objects,interesting_places,tourist_object",
+    "rate": 1,
+    "lat": 15.310279846191406,
+    "lon": 73.9105224609375
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4336623292",
+    "osm": "node/4336623292",
+    "name": "Rajiv Gandhi Kala Mandir",
+    "wikidata": null,
+    "kinds": "cultural,theatres_and_entertainments,interesting_places,other_theatres",
+    "rate": 1,
+    "lat": 15.399967193603516,
+    "lon": 74.01417541503906
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N5631842421",
+    "osm": "node/5631842421",
+    "name": "Palavra de Jardim",
+    "wikidata": null,
+    "kinds": "other,unclassified_objects,interesting_places,tourist_object",
+    "rate": 1,
+    "lat": 15.323993682861328,
+    "lon": 73.93997192382812
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4296790798",
+    "osm": "node/4296790798",
+    "name": "Christ Rei Chapel",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.308121681213379,
+    "lon": 73.91146850585938
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4307051289",
+    "osm": "node/4307051289",
+    "name": "Milsim Goa PaintBall",
+    "wikidata": null,
+    "kinds": "other,unclassified_objects,interesting_places,tourist_object",
+    "rate": 1,
+    "lat": 15.321929931640625,
+    "lon": 73.93975830078125
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N6377692288",
+    "osm": "node/6377692288",
+    "name": "view point",
+    "wikidata": null,
+    "kinds": "other,unclassified_objects,interesting_places,tourist_object",
+    "rate": 1,
+    "lat": 15.673467636108398,
+    "lon": 73.71086883544922
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4242322089",
+    "osm": "node/4242322089",
+    "name": "Our Lady of Fatima Chapel",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.330229759216309,
+    "lon": 73.95433807373047
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4296330699",
+    "osm": "node/4296330699",
+    "name": "Sant Sohirobanath Ambiye Government College of Arts & Commerce",
+    "wikidata": null,
+    "kinds": "cultural,urban_environment,interesting_places,installation",
+    "rate": 1,
+    "lat": 15.706829071044922,
+    "lon": 73.81684112548828
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4808923122",
+    "osm": "node/4808923122",
+    "name": "view place",
+    "wikidata": null,
+    "kinds": "cultural,urban_environment,interesting_places,installation",
+    "rate": 1,
+    "lat": 15.691347122192383,
+    "lon": 73.74476623535156
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W545763247",
+    "osm": "way/545763247",
+    "name": "Ajoba Temple",
+    "wikidata": null,
+    "kinds": "religion,hindu_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.543408393859863,
+    "lon": 74.03922271728516
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N6452529785",
+    "osm": "node/6452529785",
+    "name": "Spice garden",
+    "wikidata": null,
+    "kinds": "other,unclassified_objects,interesting_places,tourist_object",
+    "rate": 1,
+    "lat": 15.408149719238281,
+    "lon": 74.0238265991211
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N8745544217",
+    "osm": "node/8745544217",
+    "name": "elephant ferm",
+    "wikidata": null,
+    "kinds": "other,unclassified_objects,interesting_places,tourist_object",
+    "rate": 1,
+    "lat": 15.407093048095703,
+    "lon": 74.02346801757812
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4271954996",
+    "osm": "node/4271954996",
+    "name": "Holy Cross (Vollant)",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.307053565979004,
+    "lon": 73.91724395751953
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4299451491",
+    "osm": "node/4299451491",
+    "name": "Figueiredo Mansion",
+    "wikidata": null,
+    "kinds": "other,unclassified_objects,interesting_places,tourist_object",
+    "rate": 1,
+    "lat": 15.346566200256348,
+    "lon": 73.9790267944336
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N8252499378",
+    "osm": "node/8252499378",
+    "name": "Secret Garden",
+    "wikidata": null,
+    "kinds": "natural,interesting_places,beaches,other_beaches",
+    "rate": 1,
+    "lat": 15.675085067749023,
+    "lon": 73.70733642578125
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4307049589",
+    "osm": "node/4307049589",
+    "name": "Seashells",
+    "wikidata": null,
+    "kinds": "cultural,urban_environment,interesting_places,installation",
+    "rate": 1,
+    "lat": 15.318878173828125,
+    "lon": 73.94239044189453
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N3289901179",
+    "osm": "node/3289901179",
+    "name": "Sunset Beach",
+    "wikidata": null,
+    "kinds": "natural,interesting_places,beaches,other_beaches",
+    "rate": 1,
+    "lat": 15.301026344299316,
+    "lon": 73.905029296875
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4296792389",
+    "osm": "node/4296792389",
+    "name": "Capela de Nossa Senhora da Piedade",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.305421829223633,
+    "lon": 73.91690063476562
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4299439408",
+    "osm": "node/4299439408",
+    "name": "Mae de Deus Church",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.341262817382812,
+    "lon": 73.97533416748047
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W545673722",
+    "osm": "way/545673722",
+    "name": "Shri Bhumika Devi Temple",
+    "wikidata": null,
+    "kinds": "religion,hindu_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.58731460571289,
+    "lon": 74.0289306640625
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N5363385716",
+    "osm": "node/5363385716",
+    "name": "The village",
+    "wikidata": null,
+    "kinds": "other,unclassified_objects,interesting_places,tourist_object",
+    "rate": 1,
+    "lat": 15.32237720489502,
+    "lon": 73.95146942138672
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W546135077",
+    "osm": "way/546135077",
+    "name": "Shri Ghadwash Temple",
+    "wikidata": null,
+    "kinds": "religion,hindu_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.56101131439209,
+    "lon": 74.0403060913086
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4650850291",
+    "osm": "node/4650850291",
+    "name": "Ash",
+    "wikidata": null,
+    "kinds": "other,unclassified_objects,interesting_places,tourist_object",
+    "rate": 1,
+    "lat": 15.678686141967773,
+    "lon": 73.70639038085938
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N6315440386",
+    "osm": "node/6315440386",
+    "name": "Alorna Fort",
+    "wikidata": null,
+    "kinds": "historic,monuments_and_memorials,interesting_places,monuments",
+    "rate": 1,
+    "lat": 15.700182914733887,
+    "lon": 73.90494537353516
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N5197421824",
+    "osm": "node/5197421824",
+    "name": "Крыша Гоа",
+    "wikidata": null,
+    "kinds": "cultural,cinemas,theatres_and_entertainments,interesting_places",
+    "rate": 1,
+    "lat": 15.689064025878906,
+    "lon": 73.72001647949219
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4582412391",
+    "osm": "node/4582412391",
+    "name": "Wayside cross",
+    "wikidata": null,
+    "kinds": "other,unclassified_objects,interesting_places,tourist_object",
+    "rate": 1,
+    "lat": 15.3012056350708,
+    "lon": 73.92076110839844
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N2634447589",
+    "osm": "node/2634447589",
+    "name": "Our Lady of Remedios",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.30099868774414,
+    "lon": 73.92056274414062
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4533910289",
+    "osm": "node/4533910289",
+    "name": "Karma Kagyu Buddhist Center",
+    "wikidata": null,
+    "kinds": "religion,buddhist_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.686264991760254,
+    "lon": 73.71299743652344
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W546135078",
+    "osm": "way/546135078",
+    "name": "Shri Sateri Devi Temple",
+    "wikidata": null,
+    "kinds": "religion,hindu_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.564584732055664,
+    "lon": 74.04328918457031
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N6259187186",
+    "osm": "node/6259187186",
+    "name": "Big banian tree",
+    "wikidata": null,
+    "kinds": "other,unclassified_objects,interesting_places,tourist_object",
+    "rate": 1,
+    "lat": 15.700406074523926,
+    "lon": 73.74180603027344
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W546135079",
+    "osm": "way/546135079",
+    "name": "Shri Kelbai Devi Temple",
+    "wikidata": null,
+    "kinds": "religion,hindu_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.564193725585938,
+    "lon": 74.04457092285156
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4296327796",
+    "osm": "node/4296327796",
+    "name": "St. Joseph's Church",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.716755867004395,
+    "lon": 73.79706573486328
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W620932984",
+    "osm": "way/620932984",
+    "name": "Shree Gopalkrishna Prasann",
+    "wikidata": null,
+    "kinds": "religion,hindu_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.368584632873535,
+    "lon": 74.01165008544922
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N5271530621",
+    "osm": "node/5271530621",
+    "name": "Maule Temple",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.715950012207031,
+    "lon": 73.78861999511719
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N7104847585",
+    "osm": "node/7104847585",
+    "name": "Храм",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.71728229522705,
+    "lon": 73.7972183227539
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4270094790",
+    "osm": "node/4270094790",
+    "name": "Ancestral Goa",
+    "wikidata": null,
+    "kinds": "cultural,museums,interesting_places,other_museums",
+    "rate": 1,
+    "lat": 15.33974838256836,
+    "lon": 73.98667907714844
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4283836890",
+    "osm": "node/4283836890",
+    "name": "Casa Araujo Alvares",
+    "wikidata": null,
+    "kinds": "other,unclassified_objects,interesting_places,tourist_object",
+    "rate": 1,
+    "lat": 15.339344024658203,
+    "lon": 73.98638916015625
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4548726791",
+    "osm": "node/4548726791",
+    "name": "Carmelite Convent",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 15.309324264526367,
+    "lon": 73.94580078125
+   }
+  ]
+ },
+ "overpass": {
+  "markets_food_nightlife": {
+   "query": "[out:json][timeout:120];(nwr(around:40000,15.49889,73.82778)[\"amenity\"=\"marketplace\"][\"name\"];nwr(around:40000,15.49889,73.82778)[\"shop\"=\"mall\"][\"wikidata\"];nwr(around:40000,15.49889,73.82778)[\"amenity\"~\"^(nightclub|pub|bar)$\"][\"wikidata\"];nwr(around:40000,15.49889,73.82778)[\"place\"~\"^(neighbourhood|quarter)$\"][\"wikidata\"][\"tourism\"];);out center tags;",
+   "items": [
+    {
+     "source": "overpass:markets_food_nightlife",
+     "osm": "node/1889370739",
+     "name": "Margao Fish Market",
+     "wikidata": null,
+     "lat": 15.2860649,
+     "lon": 73.9580987,
+     "osm_tags": {
+      "amenity": "marketplace",
+      "name": "Margao Fish Market",
+      "shop": "fishmonger"
+     }
+    },
+    {
+     "source": "overpass:markets_food_nightlife",
+     "osm": "node/1889370743",
+     "name": "Margao Market",
+     "wikidata": null,
+     "lat": 15.2854284,
+     "lon": 73.958029,
+     "osm_tags": {
+      "amenity": "marketplace",
+      "name": "Margao Market"
+     }
+    },
+    {
+     "source": "overpass:markets_food_nightlife",
+     "osm": "node/3105409183",
+     "name": "Chapora Fish Market",
+     "wikidata": null,
+     "lat": 15.6084022,
+     "lon": 73.7384847,
+     "osm_tags": {
+      "amenity": "marketplace",
+      "name": "Chapora Fish Market",
+      "name:ru": "рыбий рынок",
+      "opening_hours": "Mo-Su 09:30-17:30"
+     }
+    },
+    {
+     "source": "overpass:markets_food_nightlife",
+     "osm": "node/7948473842",
+     "name": "Verem Market",
+     "wikidata": null,
+     "lat": 15.5074496,
+     "lon": 73.8097969,
+     "osm_tags": {
+      "amenity": "marketplace",
+      "name": "Verem Market",
+      "opening_hours": "Mo-Su 07:00-20:00"
+     }
+    },
+    {
+     "source": "overpass:markets_food_nightlife",
+     "osm": "node/8266180053",
+     "name": "Arpora Night Market",
+     "wikidata": null,
+     "lat": 15.5766815,
+     "lon": 73.7617671,
+     "osm_tags": {
+      "amenity": "marketplace",
+      "name": "Arpora Night Market",
+      "name:ru": "Ночной рынок Арпора",
+      "opening_hours": "Sa 21:00-04:00"
+     }
+    },
+    {
+     "source": "overpass:markets_food_nightlife",
+     "osm": "node/8407493042",
+     "name": "Tibetan Market",
+     "wikidata": null,
+     "lat": 15.5459822,
+     "lon": 73.7604918,
+     "osm_tags": {
+      "addr:postcode": "403516",
+      "addr:street": "Calangute Baga Road",
+      "amenity": "marketplace",
+      "name": "Tibetan Market",
+      "opening_hours": "Mo-Sa 09:00-21:30"
+     }
+    },
+    {
+     "source": "overpass:markets_food_nightlife",
+     "osm": "node/11160193946",
+     "name": "Raia Fish Market",
+     "wikidata": null,
+     "lat": 15.3132639,
+     "lon": 73.9843011,
+     "osm_tags": {
+      "amenity": "marketplace",
+      "name": "Raia Fish Market"
+     }
+    },
+    {
+     "source": "overpass:markets_food_nightlife",
+     "osm": "node/12293572326",
+     "name": "Fish Market",
+     "wikidata": null,
+     "lat": 15.6134837,
+     "lon": 73.7696518,
+     "osm_tags": {
+      "amenity": "marketplace",
+      "name": "Fish Market"
+     }
+    },
+    {
+     "source": "overpass:markets_food_nightlife",
+     "osm": "node/13078321871",
+     "name": "Britona Market",
+     "wikidata": null,
+     "lat": 15.5202962,
+     "lon": 73.8472813,
+     "osm_tags": {
+      "amenity": "marketplace",
+      "name": "Britona Market"
+     }
+    },
+    {
+     "source": "overpass:markets_food_nightlife",
+     "osm": "node/13118849449",
+     "name": "Ganeshpuri Circle Market",
+     "wikidata": null,
+     "lat": 15.6025931,
+     "lon": 73.8051599,
+     "osm_tags": {
+      "amenity": "marketplace",
+      "name": "Ganeshpuri Circle Market"
+     }
+    },
+    {
+     "source": "overpass:markets_food_nightlife",
+     "osm": "way/156504125",
+     "name": "Mapusa Municipal Market",
+     "wikidata": "Q6754242",
+     "lat": 15.5886163,
+     "lon": 73.8118534,
+     "osm_tags": {
+      "alt_name": "Mapusa Market",
+      "amenity": "marketplace",
+      "landuse": "retail",
+      "name": "Mapusa Municipal Market",
+      "name:ru": "Рынок Мапуса",
+      "opening_hours": "Mo-Sa 08:30-18:30",
+      "wikidata": "Q6754242"
+     }
+    },
+    {
+     "source": "overpass:markets_food_nightlife",
+     "osm": "way/199307692",
+     "name": "Calangute Jewellery market",
+     "wikidata": null,
+     "lat": 15.5458458,
+     "lon": 73.7604987,
+     "osm_tags": {
+      "amenity": "marketplace",
+      "name": "Calangute Jewellery market"
+     }
+    },
+    {
+     "source": "overpass:markets_food_nightlife",
+     "osm": "way/322213261",
+     "name": "MMC New Market",
+     "wikidata": null,
+     "lat": 15.2713522,
+     "lon": 73.9598531,
+     "osm_tags": {
+      "amenity": "marketplace",
+      "name": "MMC New Market"
+     }
+    },
+    {
+     "source": "overpass:markets_food_nightlife",
+     "osm": "way/362817976",
+     "name": "Municipal Market Vasco Da Gama",
+     "wikidata": null,
+     "lat": 15.3966895,
+     "lon": 73.8105444,
+     "osm_tags": {
+      "amenity": "marketplace",
+      "building": "yes",
+      "name": "Municipal Market Vasco Da Gama"
+     }
+    },
+    {
+     "source": "overpass:markets_food_nightlife",
+     "osm": "way/362817977",
+     "name": "Municipal Market Vasco Da Gama",
+     "wikidata": null,
+     "lat": 15.3964734,
+     "lon": 73.8100179,
+     "osm_tags": {
+      "amenity": "marketplace",
+      "building": "yes",
+      "name": "Municipal Market Vasco Da Gama"
+     }
+    },
+    {
+     "source": "overpass:markets_food_nightlife",
+     "osm": "way/362817979",
+     "name": "Municipal Market Vasco Da Gama",
+     "wikidata": null,
+     "lat": 15.3966437,
+     "lon": 73.810561,
+     "osm_tags": {
+      "amenity": "marketplace",
+      "building": "yes",
+      "name": "Municipal Market Vasco Da Gama"
+     }
+    },
+    {
+     "source": "overpass:markets_food_nightlife",
+     "osm": "way/366205885",
+     "name": "Candolim Market",
+     "wikidata": null,
+     "lat": 15.520779,
+     "lon": 73.7674471,
+     "osm_tags": {
+      "amenity": "marketplace",
+      "building": "yes",
+      "name": "Candolim Market"
+     }
+    },
+    {
+     "source": "overpass:markets_food_nightlife",
+     "osm": "way/373176633",
+     "name": "Upper Bazzar",
+     "wikidata": null,
+     "lat": 15.402183,
+     "lon": 74.0094566,
+     "osm_tags": {
+      "amenity": "marketplace",
+      "building": "yes",
+      "name": "Upper Bazzar"
+     }
+    },
+    {
+     "source": "overpass:markets_food_nightlife",
+     "osm": "way/428127049",
+     "name": "SGPDA Wholesale Fish Market",
+     "wikidata": null,
+     "lat": 15.2885634,
+     "lon": 73.950436,
+     "osm_tags": {
+      "amenity": "marketplace",
+      "name": "SGPDA Wholesale Fish Market"
+     }
+    },
+    {
+     "source": "overpass:markets_food_nightlife",
+     "osm": "way/429556440",
+     "name": "Municipal Market Vasco Da Gama",
+     "wikidata": null,
+     "lat": 15.3967954,
+     "lon": 73.811086,
+     "osm_tags": {
+      "amenity": "marketplace",
+      "building": "yes",
+      "name": "Municipal Market Vasco Da Gama"
+     }
+    },
+    {
+     "source": "overpass:markets_food_nightlife",
+     "osm": "way/429556442",
+     "name": "Municipal Market Vasco Da Gama",
+     "wikidata": null,
+     "lat": 15.3970799,
+     "lon": 73.8110324,
+     "osm_tags": {
+      "amenity": "marketplace",
+      "building": "yes",
+      "name": "Municipal Market Vasco Da Gama"
+     }
+    },
+    {
+     "source": "overpass:markets_food_nightlife",
+     "osm": "way/430058802",
+     "name": "Mall de Goa",
+     "wikidata": "Q24514669",
+     "lat": 15.5259209,
+     "lon": 73.8272699,
+     "osm_tags": {
+      "addr:street": "NH 17, Porvorim, Alto Porvorim, Pilerne, Goa 403521, India",
+      "building": "yes",
+      "name": "Mall de Goa",
+      "phone": "+91 832 241 3513",
+      "shop": "mall",
+      "wikidata": "Q24514669"
+     }
+    },
+    {
+     "source": "overpass:markets_food_nightlife",
+     "osm": "way/431595802",
+     "name": "New Market Complex",
+     "wikidata": null,
+     "lat": 15.2605483,
+     "lon": 74.1056748,
+     "osm_tags": {
+      "amenity": "marketplace",
+      "name": "New Market Complex"
+     }
+    },
+    {
+     "source": "overpass:markets_food_nightlife",
+     "osm": "way/559080196",
+     "name": "Tibet Market",
+     "wikidata": null,
+     "lat": 15.554622,
+     "lon": 73.7566341,
+     "osm_tags": {
+      "amenity": "marketplace",
+      "name": "Tibet Market"
+     }
+    },
+    {
+     "source": "overpass:markets_food_nightlife",
+     "osm": "way/567629210",
+     "name": "Morjim Beach Market",
+     "wikidata": null,
+     "lat": 15.6182655,
+     "lon": 73.7332706,
+     "osm_tags": {
+      "amenity": "marketplace",
+      "building": "yes",
+      "name": "Morjim Beach Market"
+     }
+    },
+    {
+     "source": "overpass:markets_food_nightlife",
+     "osm": "way/945600791",
+     "name": "Chapora Fort Flea Market",
+     "wikidata": null,
+     "lat": 15.603612,
+     "lon": 73.737044,
+     "osm_tags": {
+      "amenity": "marketplace",
+      "name": "Chapora Fort Flea Market"
+     }
+    },
+    {
+     "source": "overpass:markets_food_nightlife",
+     "osm": "way/963588353",
+     "name": "Siolim Fish Market",
+     "wikidata": null,
+     "lat": 15.6319233,
+     "lon": 73.7640283,
+     "osm_tags": {
+      "amenity": "marketplace",
+      "name": "Siolim Fish Market"
+     }
+    },
+    {
+     "source": "overpass:markets_food_nightlife",
+     "osm": "way/1020109702",
+     "name": "Sanquelim Municipal Market",
+     "wikidata": null,
+     "lat": 15.5623648,
+     "lon": 74.0081119,
+     "osm_tags": {
+      "amenity": "marketplace",
+      "name": "Sanquelim Municipal Market"
+     }
+    },
+    {
+     "source": "overpass:markets_food_nightlife",
+     "osm": "way/1155293983",
+     "name": "Arpora Saturday Night Market",
+     "wikidata": null,
+     "lat": 15.5671216,
+     "lon": 73.7661097,
+     "osm_tags": {
+      "amenity": "marketplace",
+      "name": "Arpora Saturday Night Market",
+      "tourism": "attraction"
+     }
+    },
+    {
+     "source": "overpass:markets_food_nightlife",
+     "osm": "way/1181773454",
+     "name": "Fruit Market",
+     "wikidata": null,
+     "lat": 15.588476,
+     "lon": 73.8123769,
+     "osm_tags": {
+      "amenity": "marketplace",
+      "name": "Fruit Market"
+     }
+    },
+    {
+     "source": "overpass:markets_food_nightlife",
+     "osm": "way/1182070454",
+     "name": "A.P.M.C Market Sub Yard",
+     "wikidata": null,
+     "lat": 15.5875316,
+     "lon": 73.8106993,
+     "osm_tags": {
+      "amenity": "marketplace",
+      "landuse": "industrial",
+      "name": "A.P.M.C Market Sub Yard"
+     }
+    },
+    {
+     "source": "overpass:markets_food_nightlife",
+     "osm": "way/1182070459",
+     "name": "Wholesale Fruit Market",
+     "wikidata": null,
+     "lat": 15.5878828,
+     "lon": 73.8107926,
+     "osm_tags": {
+      "amenity": "marketplace",
+      "building": "roof",
+      "building:levels": "2",
+      "layer": "1",
+      "name": "Wholesale Fruit Market"
+     }
+    },
+    {
+     "source": "overpass:markets_food_nightlife",
+     "osm": "way/1182070466",
+     "name": "Meat Market Complex",
+     "wikidata": null,
+     "lat": 15.5877215,
+     "lon": 73.8125102,
+     "osm_tags": {
+      "amenity": "marketplace",
+      "building": "retail",
+      "name": "Meat Market Complex"
+     }
+    },
+    {
+     "source": "overpass:markets_food_nightlife",
+     "osm": "way/1182070477",
+     "name": "Flower Market",
+     "wikidata": null,
+     "lat": 15.5883874,
+     "lon": 73.8114384,
+     "osm_tags": {
+      "amenity": "marketplace",
+      "building": "public",
+      "name": "Flower Market",
+      "old_name": "Fish Market"
+     }
+    },
+    {
+     "source": "overpass:markets_food_nightlife",
+     "osm": "way/1182070503",
+     "name": "Fish Market Complex",
+     "wikidata": null,
+     "lat": 15.5880268,
+     "lon": 73.8130493,
+     "osm_tags": {
+      "amenity": "marketplace",
+      "building": "public",
+      "building:levels": "3",
+      "name": "Fish Market Complex"
+     }
+    },
+    {
+     "source": "overpass:markets_food_nightlife",
+     "osm": "way/1283529440",
+     "name": "Fish Market",
+     "wikidata": null,
+     "lat": 15.5304158,
+     "lon": 74.1368645,
+     "osm_tags": {
+      "addr:city": "Valpoi",
+      "addr:district": "North Goa",
+      "addr:postcode": "403506",
+      "amenity": "marketplace",
+      "name": "Fish Market"
+     }
+    },
+    {
+     "source": "overpass:markets_food_nightlife",
+     "osm": "way/1312974191",
+     "name": "Anjuna Flea Market",
+     "wikidata": null,
+     "lat": 15.5763935,
+     "lon": 73.7435375,
+     "osm_tags": {
+      "amenity": "marketplace",
+      "name": "Anjuna Flea Market"
+     }
+    },
+    {
+     "source": "overpass:markets_food_nightlife",
+     "osm": "way/1315876558",
+     "name": "Anjuna Fish Market",
+     "wikidata": null,
+     "lat": 15.5851417,
+     "lon": 73.7542127,
+     "osm_tags": {
+      "amenity": "marketplace",
+      "name": "Anjuna Fish Market"
+     }
+    },
+    {
+     "source": "overpass:markets_food_nightlife",
+     "osm": "way/1323657968",
+     "name": "Panjim Market",
+     "wikidata": null,
+     "lat": 15.4994974,
+     "lon": 73.822218,
+     "osm_tags": {
+      "addr:city": "Panjim",
+      "addr:postcode": "403001",
+      "amenity": "marketplace",
+      "name": "Panjim Market",
+      "opening_hours": "Mo-Su 08:00-20:00"
+     }
+    },
+    {
+     "source": "overpass:markets_food_nightlife",
+     "osm": "way/1329002776",
+     "name": "Mandrem Market",
+     "wikidata": null,
+     "lat": 15.6667242,
+     "lon": 73.7214616,
+     "osm_tags": {
+      "amenity": "marketplace",
+      "name": "Mandrem Market"
+     }
+    },
+    {
+     "source": "overpass:markets_food_nightlife",
+     "osm": "way/1338822877",
+     "name": "Vasco Market",
+     "wikidata": null,
+     "lat": 15.3988111,
+     "lon": 73.8107664,
+     "osm_tags": {
+      "amenity": "marketplace",
+      "name": "Vasco Market"
+     }
+    },
+    {
+     "source": "overpass:markets_food_nightlife",
+     "osm": "way/1340669842",
+     "name": "Verla Canca Market",
+     "wikidata": null,
+     "lat": 15.5790879,
+     "lon": 73.7977884,
+     "osm_tags": {
+      "amenity": "marketplace",
+      "name": "Verla Canca Market"
+     }
+    },
+    {
+     "source": "overpass:markets_food_nightlife",
+     "osm": "way/1340679879",
+     "name": "Siolim Church Market",
+     "wikidata": null,
+     "lat": 15.6136957,
+     "lon": 73.769435,
+     "osm_tags": {
+      "amenity": "marketplace",
+      "name": "Siolim Church Market"
+     }
+    },
+    {
+     "source": "overpass:markets_food_nightlife",
+     "osm": "way/1341467110",
+     "name": "Bastora Junction Market",
+     "wikidata": null,
+     "lat": 15.5871734,
+     "lon": 73.8208393,
+     "osm_tags": {
+      "amenity": "marketplace",
+      "name": "Bastora Junction Market"
+     }
+    },
+    {
+     "source": "overpass:markets_food_nightlife",
+     "osm": "way/1349180236",
+     "name": "Old Goa Fruit Market",
+     "wikidata": null,
+     "lat": 15.5013788,
+     "lon": 73.9136278,
+     "osm_tags": {
+      "amenity": "marketplace",
+      "name": "Old Goa Fruit Market"
+     }
+    },
+    {
+     "source": "overpass:markets_food_nightlife",
+     "osm": "way/1349283233",
+     "name": "Sawal's Goa Shopping Centre",
+     "wikidata": null,
+     "lat": 15.5016804,
+     "lon": 73.9096979,
+     "osm_tags": {
+      "amenity": "marketplace",
+      "landuse": "retail",
+      "name": "Sawal's Goa Shopping Centre"
+     }
+    },
+    {
+     "source": "overpass:markets_food_nightlife",
+     "osm": "way/1349834749",
+     "name": "Calangute Market",
+     "wikidata": null,
+     "lat": 15.5451263,
+     "lon": 73.7631037,
+     "osm_tags": {
+      "amenity": "marketplace",
+      "name": "Calangute Market"
+     }
+    },
+    {
+     "source": "overpass:markets_food_nightlife",
+     "osm": "way/1349905145",
+     "name": "Clothes Market",
+     "wikidata": null,
+     "lat": 15.5877881,
+     "lon": 73.812541,
+     "osm_tags": {
+      "amenity": "marketplace",
+      "name": "Clothes Market"
+     }
+    },
+    {
+     "source": "overpass:markets_food_nightlife",
+     "osm": "way/1349905146",
+     "name": "Household Market",
+     "wikidata": null,
+     "lat": 15.5880795,
+     "lon": 73.8121566,
+     "osm_tags": {
+      "amenity": "marketplace",
+      "name": "Household Market"
+     }
+    },
+    {
+     "source": "overpass:markets_food_nightlife",
+     "osm": "way/1349909099",
+     "name": "Rope Market",
+     "wikidata": null,
+     "lat": 15.588566,
+     "lon": 73.8119954,
+     "osm_tags": {
+      "amenity": "marketplace",
+      "name": "Rope Market"
+     }
+    },
+    {
+     "source": "overpass:markets_food_nightlife",
+     "osm": "way/1349909101",
+     "name": "Pottery Market",
+     "wikidata": null,
+     "lat": 15.5881998,
+     "lon": 73.8118852,
+     "osm_tags": {
+      "amenity": "marketplace",
+      "building": "public",
+      "building:levels": "2",
+      "name": "Pottery Market"
+     }
+    },
+    {
+     "source": "overpass:markets_food_nightlife",
+     "osm": "way/1349909103",
+     "name": "Spice Market",
+     "wikidata": null,
+     "lat": 15.5880966,
+     "lon": 73.8119859,
+     "osm_tags": {
+      "amenity": "marketplace",
+      "name": "Spice Market"
+     }
+    },
+    {
+     "source": "overpass:markets_food_nightlife",
+     "osm": "way/1350430545",
+     "name": "Bread Market",
+     "wikidata": null,
+     "lat": 15.5884376,
+     "lon": 73.811464,
+     "osm_tags": {
+      "amenity": "marketplace",
+      "building": "public",
+      "building:levels": "1",
+      "name": "Bread Market"
+     }
+    },
+    {
+     "source": "overpass:markets_food_nightlife",
+     "osm": "way/1351509749",
+     "name": "Wednesday Anjuna Flea Market",
+     "wikidata": null,
+     "lat": 15.5722403,
+     "lon": 73.7431765,
+     "osm_tags": {
+      "amenity": "marketplace",
+      "name": "Wednesday Anjuna Flea Market"
+     }
+    },
+    {
+     "source": "overpass:markets_food_nightlife",
+     "osm": "way/1352860110",
+     "name": "Hilltop Friday Market",
+     "wikidata": null,
+     "lat": 15.5929576,
+     "lon": 73.7426224,
+     "osm_tags": {
+      "amenity": "marketplace",
+      "layer": "1",
+      "name": "Hilltop Friday Market"
+     }
+    },
+    {
+     "source": "overpass:markets_food_nightlife",
+     "osm": "way/1359276165",
+     "name": "Clothes Market",
+     "wikidata": null,
+     "lat": 15.5888729,
+     "lon": 73.8107318,
+     "osm_tags": {
+      "amenity": "marketplace",
+      "name": "Clothes Market"
+     }
+    },
+    {
+     "source": "overpass:markets_food_nightlife",
+     "osm": "way/1371537444",
+     "name": "Goa Velha Market",
+     "wikidata": null,
+     "lat": 15.4418242,
+     "lon": 73.8798916,
+     "osm_tags": {
+      "amenity": "marketplace",
+      "name": "Goa Velha Market"
+     }
+    },
+    {
+     "source": "overpass:markets_food_nightlife",
+     "osm": "way/1381591499",
+     "name": "Banastarim Market",
+     "wikidata": null,
+     "lat": 15.4925185,
+     "lon": 73.9567061,
+     "osm_tags": {
+      "amenity": "marketplace",
+      "name": "Banastarim Market"
+     }
+    },
+    {
+     "source": "overpass:markets_food_nightlife",
+     "osm": "way/1382476586",
+     "name": "Panaji Market",
+     "wikidata": null,
+     "lat": 15.4989635,
+     "lon": 73.8220281,
+     "osm_tags": {
+      "amenity": "marketplace",
+      "landuse": "retail",
+      "name": "Panaji Market",
+      "opening_hours": "Mo-Su 06:00-21:00"
+     }
+    },
+    {
+     "source": "overpass:markets_food_nightlife",
+     "osm": "way/1423231578",
+     "name": "Vegetable Market",
+     "wikidata": null,
+     "lat": 15.5883404,
+     "lon": 73.8128326,
+     "osm_tags": {
+      "amenity": "marketplace",
+      "name": "Vegetable Market"
+     }
+    },
+    {
+     "source": "overpass:markets_food_nightlife",
+     "osm": "way/1431889820",
+     "name": "Jewellery Market",
+     "wikidata": null,
+     "lat": 15.5883572,
+     "lon": 73.8119333,
+     "osm_tags": {
+      "amenity": "marketplace",
+      "name": "Jewellery Market"
+     }
+    },
+    {
+     "source": "overpass:markets_food_nightlife",
+     "osm": "way/1453489100",
+     "name": "Banana Market",
+     "wikidata": null,
+     "lat": 15.5881786,
+     "lon": 73.810246,
+     "osm_tags": {
+      "amenity": "marketplace",
+      "name": "Banana Market"
+     }
+    },
+    {
+     "source": "overpass:markets_food_nightlife",
+     "osm": "way/1459841775",
+     "name": "Fish Market",
+     "wikidata": null,
+     "lat": 15.4998464,
+     "lon": 73.8220429,
+     "osm_tags": {
+      "amenity": "marketplace",
+      "building": "roof",
+      "name": "Fish Market"
+     }
+    },
+    {
+     "source": "overpass:markets_food_nightlife",
+     "osm": "way/1518565045",
+     "name": "Canca Circle Market",
+     "wikidata": null,
+     "lat": 15.5806707,
+     "lon": 73.7993382,
+     "osm_tags": {
+      "amenity": "marketplace",
+      "name": "Canca Circle Market"
+     }
+    },
+    {
+     "source": "overpass:markets_food_nightlife",
+     "osm": "way/1545971428",
+     "name": "Footpath Vegetable Market",
+     "wikidata": null,
+     "lat": 15.4961763,
+     "lon": 73.8352071,
+     "osm_tags": {
+      "amenity": "marketplace",
+      "name": "Footpath Vegetable Market"
+     }
+    }
+   ]
+  }
+ }
+}

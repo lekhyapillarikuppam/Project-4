@@ -1,0 +1,182 @@
+"""Build data/curated/attractions/<CITY>.csv (T15).
+
+    python -m datatools.curation.attractions <CITY> [<CITY> ...]
+
+Inputs:
+- data/raw/attractions/<CITY>_draft.csv      ranked candidates (datatools.draft)
+- data/raw/attractions/<CITY>_selection.csv  the hand selection: candidate, name, place_type, tags,
+                                             outdoor, fixed_slot, official, note, wiki_title (the English
+                                             Wikipedia article when the seed record has no Wikidata link)
+- data/raw/attractions/asi/<CODE>.json       ASI e-ticket records (official hours and Indian fee)
+- data/raw/attractions/official_hours.csv    hours/fees read from other official sites (a fee the user read
+                                             from an official booking page: "read by user from <url>, <date>")
+- data/raw/attractions/fee_secondary.csv     secondary-source fees: city_id, place, fee, url, fetched_on, extract
+- data/raw/wiki/<CITY>/pageviews.json        12-month pageviews
+
+Rules (001 Spec §5.5): rating from pageviews log-scaled within the city, OpenTripMap rate 1/2/3 ->
+2/3/4 as fallback; crowd_level = rating terciles; hours and fee from ASI or the official site, else
+place-type defaults (hours_approx); with no official fee, the median of >= 2 independent secondary
+sources (fee_approx), else fee 0 for free-by-nature types; visit_minutes = place-type default
+(visit_approx). A monument, museum or activity with no official or secondary fee stays TODO.
+"""
+
+from __future__ import annotations
+
+import json
+import math
+import statistics
+import sys
+from datetime import datetime
+from urllib.parse import urlparse
+
+from datatools import draft as drafting
+from datatools import rules
+from datatools.curation.common import CURATED, RAW, latest, read_csv, write_csv
+
+A = RAW / "attractions"
+WIKI_FETCHED = "2026-10-23"
+HEADER = ["attraction_id", "city_id", "name", "lat", "lon", "visit_minutes", "visit_approx", "open_time", "close_time",
+          "closed_weekdays", "hours_approx", "entry_fee", "fee_approx", "tags", "rating", "outdoor", "crowd_level", "fixed_slot",
+          "source", "checked_on"]
+WEEKDAYS = ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"]
+
+
+def asi_record(code: str) -> dict:
+    d = json.loads((A / "asi" / f"{code}.json").read_text(encoding="utf-8"))
+    m = d["response"]["data"]
+    def hhmm(s: str) -> str:
+        return datetime.strptime(s.strip().upper(), "%I:%M:%S %p").strftime("%H:%M")
+    av = m.get("availability") or {}
+    slots = av.get("timeSlots") or []
+    week = av.get("week") or {}
+    return {
+        "open": min(hhmm(s["startTime"]) for s in slots), "close": max(hhmm(s["endTime"]) for s in slots),
+        "closed": [i for i, day in enumerate(WEEKDAYS) if week.get(day) is False],
+        "fee": next(a["total"] for a in m["configuration"]["amounts"] if a["type"] == "Indian"),
+        "url": d["url"], "fetched_on": d["fetched_on"], "name": m["name"],
+    }
+
+
+def ratings(rows: list[dict]) -> dict[str, tuple[float, str]]:
+    """candidate -> (rating, basis)."""
+    pv = {r["candidate"]: int(r["pageviews"]) for r in rows if r["pageviews"] and int(r["pageviews"]) > 0}
+    out = {}
+    if pv:
+        lo, hi = math.log(min(pv.values())), math.log(max(pv.values()))
+        for c, v in pv.items():
+            val = rules.RATING_SAME_PAGEVIEWS if hi == lo else 1 + 4 * (math.log(v) - lo) / (hi - lo)
+            out[c] = (round(val, 1), f"{v} pageviews {WIKI_PERIOD}")
+    for r in rows:
+        if r["candidate"] not in out and r["otm_rate"]:
+            out[r["candidate"]] = (rules.OTM_RATE_TO_RATING[int(r["otm_rate"])], f"OpenTripMap rate {r['otm_rate']} (no Wikipedia article)")
+    return out
+
+
+WIKI_PERIOD = "Oct 2025-Sep 2026"
+MIN_SECONDARY_FEES = 2
+
+
+def secondary_fee(rows: list[dict]) -> tuple[int, str, str] | None:
+    """(median fee, source text, latest fetch date) from >= 2 sources on different sites, else None."""
+    by_site = {urlparse(r["url"]).netloc.removeprefix("www."): r for r in rows}
+    if len(by_site) < MIN_SECONDARY_FEES:
+        return None
+    fees = [int(r["fee"]) for r in by_site.values()]
+    fee = int(math.floor(statistics.median(fees) + 0.5))
+    text = "; ".join(f"{r['url']} Rs {r['fee']}" for r in by_site.values())
+    return fee, f"fee: median of {len(fees)} secondary sources Rs {fee} ({text}; data/raw/attractions/fee_secondary.csv)",         latest(*(r["fetched_on"] for r in by_site.values()))
+
+
+def build(city: str) -> list[list]:
+    draft = {r["candidate"]: r for r in read_csv(A / f"{city}_draft.csv")}
+    seed_date = json.loads((RAW / "seed" / f"{city}.json").read_text(encoding="utf-8"))["fetched_on"]
+    official = {(r["city_id"], r["place"]): r for r in read_csv(A / "official_hours.csv")}
+    secondary: dict[str, list[dict]] = {}
+    for r in read_csv(A / "fee_secondary.csv"):
+        if r["city_id"] == city:
+            secondary.setdefault(r["place"], []).append(r)
+    sel = read_csv(A / f"{city}_selection.csv")
+    chosen = [{**draft[s["candidate"]], **{k: v for k, v in s.items() if v != ""}} for s in sel]
+    # Pageviews were fetched for the top candidates only (datatools.draft); fetch any selected title still missing.
+    missing = [c["wiki_title"] for c in chosen if c.get("wiki_title") and not c.get("pageviews")]
+    if missing:
+        pv = drafting.pageviews(missing, RAW / "wiki" / city / "pageviews.json")
+        for c in chosen:
+            if c.get("wiki_title") and not c.get("pageviews") and pv.get(c["wiki_title"]) is not None:
+                c["pageviews"] = str(pv[c["wiki_title"]])
+    rate = ratings(chosen)
+    order = sorted((c["candidate"] for c in chosen if c["candidate"] in rate), key=lambda c: rate[c][0])
+    n = len(order)
+    crowd = {c: ("low" if i < n / 3 else "medium" if i < 2 * n / 3 else "high") for i, c in enumerate(order)}
+
+    rows = []
+    for i, c in enumerate(chosen, start=1):
+        ptype = rules.PLACE_TYPE_ALIASES.get(c["place_type"], c["place_type"])
+        d = rules.PLACE_TYPES[ptype]
+        dates, src, todo = [seed_date], [], []
+        cand_src = f"https://opentripmap.com/en/card/{c['candidate']}" if c["candidate"][:1] in "NWRQ" and "/" not in c["candidate"] \
+            else f"https://www.openstreetmap.org/{c['candidate']}"
+        src.append(f"place: {cand_src} (data/raw/seed/{city}.json)")
+
+        open_t, close_t, closed, fee, hours_approx, fee_approx = d["open"], d["close"], d["closed"], None, True, False
+        off = c.get("official", "")
+        if off.startswith("asi:"):
+            a = asi_record(off[4:])
+            open_t, close_t, closed, fee, hours_approx = a["open"], a["close"], a["closed"], a["fee"], False
+            src.append(f"hours and fee: ASI e-ticket {a['url']} ('{a['name']}', ticket slots {a['open']}-{a['close']}, Indian Rs {a['fee']})")
+            dates.append(a["fetched_on"])
+        elif off.startswith("official:"):
+            o = official[(city, off[9:])]
+            dates.append(o["fetched_on"])
+            if o["open_time"]:
+                open_t, close_t, hours_approx = o["open_time"], o["close_time"], False
+                closed = [int(x) for x in o["closed_weekdays"].split(";") if x] if o["closed_weekdays"] else []
+            elif o["closed_weekdays"]:
+                closed = [int(x) for x in o["closed_weekdays"].split(";")]
+            if o["entry_fee"]:
+                fee = int(o["entry_fee"])
+            src.append(f"official: {o['url']} ({o['extract']})")
+        if hours_approx:
+            src.append(f"hours: {ptype} default (001 Spec 5.5)")
+        if fee is None and (sec := secondary_fee(secondary.get(c["name"], []))):
+            fee, text, sec_date = sec
+            fee_approx = True
+            src.append(text)
+            dates.append(sec_date)
+        if fee is None:
+            if ptype in rules.FREE_BY_DEFAULT:
+                fee = 0
+                src.append(f"fee: 0, {ptype} default (001 Spec 5.5)")
+            else:
+                todo.append("entry fee (no ASI, official or secondary source found)")
+
+        r, basis = rate.get(c["candidate"], (None, None))
+        if r is None:
+            todo.append("rating")
+        else:
+            src.append(f"rating: {basis}" + (f" https://en.wikipedia.org/wiki/{c['wiki_title'].replace(' ', '_')}" if c.get("wiki_title") else ""))
+            if c.get("wiki_title"):
+                dates.append(WIKI_FETCHED)
+        src.append(f"visit: {ptype} default {d['visit']} min; tags/type/outdoor: curated from OpenTripMap kinds, OSM tags and the Wikipedia summary")
+        if c.get("note"):
+            src.append(c["note"])
+        if todo:
+            src.insert(0, "TODO: " + "; ".join(todo))
+        rows.append([f"{city}-A-{i:02d}", city, c["name"], f"{float(c['lat']):.5f}", f"{float(c['lon']):.5f}", d["visit"], "true",
+                     open_t, close_t, ";".join(str(x) for x in closed), str(hours_approx).lower(),
+                     "" if fee is None else fee, str(fee_approx).lower(), c["tags"], "" if r is None else f"{r:.1f}", c["outdoor"],
+                     crowd.get(c["candidate"], ""), c.get("fixed_slot", "false"), " | ".join(src),
+                     "" if todo else latest(*dates)])
+    return rows
+
+
+def main(argv: list[str] | None = None) -> int:
+    for city in (argv if argv is not None else sys.argv[1:]):
+        rows = build(city)
+        write_csv(CURATED / rules.ATTRACTIONS_DIR / f"{city}.csv", HEADER, rows)
+        print(city, len(rows), "attractions,", sum(1 for r in rows if r[-1] == ""), "TODO")
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())
