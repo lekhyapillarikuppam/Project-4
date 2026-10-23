@@ -526,7 +526,8 @@ One file per city (for example `attractions/JAI.csv`), so each city can be curat
 | open_time, close_time | HH:MM | Opening and closing time; a visit must finish by close_time. open < close, and close − open ≥ visit_minutes. Use 00:00–23:59 for always open. From the ASI or the official site first, otherwise the place-type default (below) |
 | closed_weekdays | list of int | For example `[0]` for closed Mondays; empty if open daily |
 | hours_approx | bool | True when open_time, close_time and closed_weekdays are the place-type default |
-| entry_fee | int | Indian adult, per person; 0 allowed. From the ASI or the official site first; otherwise 0 for temple, viewpoint, market and beach (noted in `source`); monument, museum and activity have no default and stay TODO |
+| entry_fee | int | Indian adult, per person; 0 allowed. From the ASI or the official site first (a fee the user read from an official booking page counts as official, recorded in `source` as "read by user from <url>, <date>"); otherwise the median of at least 2 independent secondary sources, rounded to whole rupees, with their URLs saved in `data/raw/attractions/fee_secondary.csv`; otherwise 0 for temple, viewpoint, market and beach (noted in `source`); monument, museum and activity have no default and stay TODO |
+| fee_approx | bool | True when entry_fee is the median of secondary sources |
 | tags | list | 1–3 interest tags from section 4. The first is the primary tag |
 | rating | decimal | 1.0–5.0, popularity within the city (see **Rating and crowd level** below) |
 | outdoor | bool | |
@@ -1461,3 +1462,4 @@ Update this table when a feature's tasks are written (fill **Tasks**) and when i
 | 2026-10-23 | C 001 Spec §5.5 | Hours and fees from ASI or official sites first; otherwise default hours by place type and fee 0 for temple, viewpoint, market, beach | Official hours are not published for every attraction |
 | 2026-10-23 | C 001 Spec §5.5 | visit_minutes defaults by place type (monument 90, museum 120, temple 45, viewpoint 30, market 90, beach 120, activity 180); other kinds map onto these seven | Visit durations are rarely published |
 | 2026-10-23 | C 001 Spec §5.5; Plan §2.2 | New columns hours_approx and visit_approx | DATA-FR-12: approximations are flagged in the row |
+| 2026-10-23 | C 001 Spec §5.5 | New column fee_approx: with no official fee, entry_fee is the median of ≥ 2 independent secondary sources (URLs in data/raw/attractions/fee_secondary.csv) and fee_approx = true; a fee the user read from an official booking page counts as official | Some official fees are not published without login; DATA-FR-12 needs the approximation flagged |
