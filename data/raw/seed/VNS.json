@@ -2629,6 +2629,81 @@
      }
     }
    ]
+  },
+  "extras": {
+   "query": "[out:json][timeout:120];(node(2805194167);way(26683124);node(11438507361);node(9520848117););out center tags;",
+   "items": [
+    {
+     "source": "overpass:extras",
+     "osm": "node/2805194167",
+     "name": "Blue Lassi Shop",
+     "wikidata": null,
+     "lat": 25.3123734,
+     "lon": 83.0113542,
+     "osm_tags": {
+      "addr:city": "Varanasi",
+      "addr:street": "Kauchari Gali",
+      "air_conditioning": "no",
+      "amenity": "cafe",
+      "contact:facebook": "https://www.facebook.com/pages/Blue-Lassi-Shop/116732481739729",
+      "cuisine": "indian",
+      "diet:halal": "no",
+      "diet:kosher": "no",
+      "diet:vegan": "yes",
+      "diet:vegetarian": "only",
+      "indoor_seating": "yes",
+      "internet_access": "wlan",
+      "name": "Blue Lassi Shop",
+      "opening_hours": "Mo-Su 9:00-22:00",
+      "outdoor_seating": "no",
+      "payment:credit_cards": "yes",
+      "payment:debit_cards": "yes",
+      "smoking": "no",
+      "wheelchair": "no"
+     }
+    },
+    {
+     "source": "overpass:extras",
+     "osm": "node/9520848117",
+     "name": "Annapurna Temple",
+     "wikidata": null,
+     "lat": 25.3106142,
+     "lon": 83.0102363,
+     "osm_tags": {
+      "amenity": "place_of_worship",
+      "name:en": "Annapurna Temple",
+      "religion": "hindu"
+     }
+    },
+    {
+     "source": "overpass:extras",
+     "osm": "node/11438507361",
+     "name": "Ratneshwar Mahadev Temple",
+     "wikidata": null,
+     "lat": 25.3114543,
+     "lon": 83.0149345,
+     "osm_tags": {
+      "amenity": "place_of_worship",
+      "name": "Ratneshwar Mahadev Temple",
+      "religion": "hindu"
+     }
+    },
+    {
+     "source": "overpass:extras",
+     "osm": "way/26683124",
+     "name": "Dashashwamedh Road",
+     "wikidata": null,
+     "lat": 25.3077924,
+     "lon": 83.008449,
+     "osm_tags": {
+      "highway": "residential",
+      "name": "Dashashwamedh Road",
+      "sidewalk": "both",
+      "surface": "asphalt"
+     }
+    }
+   ],
+   "fetched_on": "2026-10-24"
   }
  }
 }

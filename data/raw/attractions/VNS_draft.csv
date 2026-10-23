@@ -1,35 +1,35 @@
 candidate,name,lat,lon,km,wikidata,wiki_title,pageviews,otm_rate,suggested_type,suggested_tags,kinds_or_osm,description
 N5841246496,Sri Kashi Vishwanath Mandir,25.31083,83.01057,0.9,Q3675,Kashi Vishwanath Temple,212429,3,temple,spiritual,"religion,hindu_temples,interesting_places","Hindu temple in Varanasi, Uttar Pradesh, India"
-N1538127100,Manikarnika Ghat(KOSTRI),25.31077,83.01402,0.9,Q3630417,Manikarnika Ghat,87499,3,temple,spiritual;nature,"other,unclassified_objects,interesting_places,tourist_object",Hindu shrine and open crematorium
+N1538127100,Manikarnika Ghat(KOSTRI),25.31077,83.01402,0.9,Q3630417,Manikarnika Ghat,87499,3,ghat,spiritual;nature,"other,unclassified_objects,interesting_places,tourist_object",Hindu shrine and open crematorium
 W295336827,Gyanvapi Mosque,25.31126,83.01042,0.9,Q3154,Gyanvapi Mosque,67379,3,temple,spiritual;history,"religion,mosques,interesting_places","Mosque and former Hindu temple in Varanasi, Uttar Pradesh, India"
 N7107002877,Maa Kashi Vishalakshi Temple,25.30997,83.01196,1.0,Q7935940,Vishalakshi Temple,31435,2,temple,spiritual,"religion,hindu_temples,interesting_places","Hindu goddess temple in Varanasi, India"
 W103169368,Dhamekh Stupa,25.38084,83.02452,7.0,Q1985137,Dhamek Stupa,25909,3,temple,spiritual;nature;relaxation,"religion,buddhist_temples,interesting_places","Post Gupta-era stupa at Sarnath, Uttar Pradesh, India"
 Q24906782,"Kaal Bhairav Mandir, Varanasi",25.31764,82.97392,3.9,Q24906782,"Kaal Bhairav Mandir, Varanasi",25103,3,temple,spiritual;history;culture,"religion,hindu_temples,interesting_places","Hindu Temple in Uttar Pradesh, India"
 N1191657127,Ramnagar Fort,25.27058,83.02488,5.5,Q4492020,Ramnagar Fort,24578,3,museum,spiritual;history;culture;nature,"fortifications,historic,cultural,museums,interesting_places,other_museums,other_fortifications","Fortification near the Ganga River in Varanasi, India"
 N293212713,Sankat-Mochan-Temple,25.28199,82.99991,4.3,Q7418686,Sankat Mochan Hanuman Temple,24243,3,temple,spiritual;history;nature,"religion,hindu_temples,interesting_places","Hindu temple in Varanasi, Uttar Pradesh, India"
-Q30621788,Ratneshwar Mahadev temple,25.31764,82.97392,3.9,Q30621788,Ratneshwar Mahadev temple,19123,3,temple,spiritual,"religion,hindu_temples,interesting_places",Temple in India
+Q30621788,Ratneshwar Mahadev temple,25.31764,82.97392,3.9,Q30621788,Ratneshwar Mahadev temple,19123,3,ghat,spiritual,"religion,hindu_temples,interesting_places",Temple in India
 Q12452455,Hindu temples in Varanasi,25.28862,82.99928,3.6,Q12452455,List of Hindu temples in Varanasi,15363,3,temple,spiritual;history,"religion,hindu_temples,interesting_places",
-N1531140948,Assi Ghat (START),25.28917,83.00617,3.4,Q4808835,Assi Ghat,14988,3,temple,spiritual;culture,"other,unclassified_objects,interesting_places,tourist_object","Hindu temple in Uttar Pradesh, India"
+N1531140948,Assi Ghat (START),25.28917,83.00617,3.4,Q4808835,Assi Ghat,14988,3,ghat,spiritual;culture,"other,unclassified_objects,interesting_places,tourist_object","Hindu temple in Uttar Pradesh, India"
 W320995844,Vishwanath Temple,25.26596,82.98797,6.4,Q19894766,Shri Vishwanath Mandir,11750,3,temple,spiritual,"religion,hindu_temples,interesting_places","Hindu Temple in Uttar Pradesh, India"
 W103178213,Sarnath Archaeological Museum,25.37948,83.02354,6.8,Q1567294,Sarnath Museum,11533,3,museum,history;culture,"archaeological_museums,cultural,museums,interesting_places,history_museums",Archaeology museum in Saranath
 Q24907458,Annapurna Devi Mandir,25.31764,82.97392,3.9,Q24907458,Annapurna Devi Mandir,11023,3,temple,spiritual;history,"religion,hindu_temples,interesting_places","Hindu Temple in Uttar Pradesh, India"
 Q19891383,"Durga Mandir, Varanasi",25.28860,82.99930,3.6,Q19891383,"Durga Mandir, Varanasi",10028,3,temple,spiritual;history,"religion,hindu_temples,interesting_places","Hindu Temple in Uttar Pradesh, India"
-Q24912874,Alamgir Mosque,25.31100,83.01000,0.9,Q24912874,Alamgir Mosque,6640,3,temple,spiritual,"religion,mosques,interesting_places","Mosque in Varanasi, Uttar Pradesh, India"
+Q24912874,Alamgir Mosque,25.31100,83.01000,0.9,Q24912874,Alamgir Mosque,6640,3,ghat,spiritual,"religion,mosques,interesting_places","Mosque in Varanasi, Uttar Pradesh, India"
 W420064449,Bharatmata Mandir,25.31720,82.98930,2.4,Q19882307,Bharat Mata Mandir,6480,3,temple,spiritual,"religion,hindu_temples,interesting_places","Hindu Temple in Uttar Pradesh, India"
 Q19898351,Shri Tilbhandeshwar Mahadev Mandir,25.30290,83.00310,2.0,Q19898351,Shri Tilbhandeshwar Mahadev Mandir,6198,2,temple,spiritual;history,"religion,hindu_temples,interesting_places","Hindu Temple in Uttar Pradesh, India"
 W103189383,Chaukhandi Stupa,25.37407,83.02366,6.2,Q1131206,Chaukhandi Stupa,5669,3,temple,spiritual;history,"religion,buddhist_temples,interesting_places","Buddhist stupa in Varanasi, Uttar Pradesh, India"
 N6163760193,Sankta Devi,25.31277,83.01509,0.7,Q24906512,Sankata Devi Mandir,5652,3,temple,spiritual;history,"religion,hindu_temples,interesting_places","Hindu Temple in Uttar Pradesh, India"
 Q19894180,Mrityunjay Mahadev Mandir,25.31760,82.97390,3.9,Q19894180,Mrityunjay Mahadev Mandir,5644,2,temple,spiritual;history;culture,"religion,hindu_temples,interesting_places","Hindu Temple in Uttar Pradesh, India"
-N988809629,Munshi Ghat,25.30545,83.00976,1.5,Q15983446,Munshi Ghat,5410,2,temple,spiritual,"other,unclassified_objects,interesting_places,tourist_object",Ghat in Varanasi
+N988809629,Munshi Ghat,25.30545,83.00976,1.5,Q15983446,Munshi Ghat,5410,2,ghat,spiritual,"other,unclassified_objects,interesting_places,tourist_object",Ghat in Varanasi
 W443016268,Tulsi Manas Temple,25.28715,83.00040,3.7,Q19899048,Tulsi Manas Mandir,5360,2,temple,spiritual;history;culture,"religion,hindu_temples,interesting_places","Hindu Temple in Varansi, Uttar Pradesh, India"
 W327756603,Nepali Temple,25.30983,83.01287,1.0,Q24912881,Nepali Mandir,4216,3,temple,spiritual;history,"religion,hindu_temples,interesting_places","Hindu Temple in Uttar Pradesh, India"
-N988809665,Tulsi Ghat,25.29024,83.00634,3.3,Q7852392,Tulsi Ghat,3432,3,temple,spiritual;history;nature,"other,unclassified_objects,interesting_places,tourist_object",Historic ghat (riverfront steps) in Varanasi
+N988809665,Tulsi Ghat,25.29024,83.00634,3.3,Q7852392,Tulsi Ghat,3432,3,ghat,spiritual;history;nature,"other,unclassified_objects,interesting_places,tourist_object",Historic ghat (riverfront steps) in Varanasi
 N5867062785,Bharat Kala Bhavan,25.27173,82.99583,5.5,Q23035092,Bharat Kala Bhavan,2933,3,museum,culture,"cultural,museums,interesting_places,other_museums","Museum in Banaras Hindu University, Varanasi (India)"
-N1538127126,Scindia Ghat,25.31174,83.01519,0.8,Q7433927,Scindia Ghat,2905,3,temple,spiritual;nature,"other,unclassified_objects,interesting_places,tourist_object",
+N1538127126,Scindia Ghat,25.31174,83.01519,0.8,Q7433927,Scindia Ghat,2905,3,ghat,spiritual;nature,"other,unclassified_objects,interesting_places,tourist_object",
 W466386112,Durga Mandir,25.28212,83.04003,4.9,Q5316383,"Durga Mandir, Ramnagar",2863,3,temple,spiritual;culture,"religion,hindu_temples,interesting_places","Hindu Temple in Uttar Pradesh, India"
-N1538127096,Lalita Ghat,25.30966,83.01287,1.0,Q24913614,Lalita Ghat,2493,2,temple,spiritual;history;nature,"other,unclassified_objects,interesting_places,tourist_object",Historic site in Varanasi
-N1550241774,Ravidas Ghat,25.28360,83.00902,3.9,Q24935222,Sant Ravidas Ghat,2155,3,temple,spiritual;nature;relaxation,"other,unclassified_objects,interesting_places,tourist_object",Hindu temple in India
-Q24931982,Lalita Gauri Mandir,25.31001,83.01328,1.0,Q24931982,Lalita Gauri Mandir,1327,3,temple,spiritual;history,"religion,hindu_temples,interesting_places","Hindu Temple in Uttar Pradesh, India"
+N1538127096,Lalita Ghat,25.30966,83.01287,1.0,Q24913614,Lalita Ghat,2493,2,ghat,spiritual;history;nature,"other,unclassified_objects,interesting_places,tourist_object",Historic site in Varanasi
+N1550241774,Ravidas Ghat,25.28360,83.00902,3.9,Q24935222,Sant Ravidas Ghat,2155,3,ghat,spiritual;nature;relaxation,"other,unclassified_objects,interesting_places,tourist_object",Hindu temple in India
+Q24931982,Lalita Gauri Mandir,25.31001,83.01328,1.0,Q24931982,Lalita Gauri Mandir,1327,3,ghat,spiritual;history,"religion,hindu_temples,interesting_places","Hindu Temple in Uttar Pradesh, India"
 Q66662448,Tomb of Lal Khan,25.32609,83.03466,2.3,Q66662448,Tomb of Lal Khan,1032,2,monument,history,"historic,monuments_and_memorials,burial_places,interesting_places,other_burial_places,monuments","Mausoleum in Uttar Pradesh, India"
 Q420480,Roman Catholic Diocese of Varanasi,25.33120,82.98418,3.2,Q420480,Diocese of Varanasi,877,3,temple,spiritual,"religion,other_temples,interesting_places","Roman Catholic diocese in Uttar Pradesh, India"
 W668742487,St. Mary's Cathedral,25.33127,82.98392,3.2,Q26053238,,,3,temple,spiritual,"religion,cathedrals,churches,interesting_places,other_churches",
@@ -227,3 +227,7 @@ way/26650750,Hotel Sun Shine,25.28407,83.11534,11.0,,,,,market,shopping,amenity=
 way/26691134,Jalalipatti Market,25.28193,82.95390,7.2,,,,,market,shopping,amenity=marketplace,
 way/868017190,Vegitable Market,25.28125,82.95337,7.3,,,,,market,shopping,amenity=marketplace,
 way/956252425,BLW Central Market,25.28529,82.96033,6.5,,,,,market,shopping,amenity=marketplace,
+node/2805194167,Blue Lassi Shop,25.31237,83.01135,0.7,,,,,monument,,amenity=cafe,
+node/9520848117,Annapurna Temple,25.31061,83.01024,1.0,,,,,temple,spiritual,amenity=place_of_worship,
+node/11438507361,Ratneshwar Mahadev Temple,25.31145,83.01493,0.9,,,,,temple,spiritual,amenity=place_of_worship,
+way/26683124,Dashashwamedh Road,25.30779,83.00845,1.3,,,,,monument,,,

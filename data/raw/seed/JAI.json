@@ -2319,6 +2319,42 @@
      }
     }
    ]
+  },
+  "extras": {
+   "query": "[out:json][timeout:120];(node(7068572485);way(170101078););out center tags;",
+   "items": [
+    {
+     "source": "overpass:extras",
+     "osm": "node/7068572485",
+     "name": "Masala Chowk",
+     "wikidata": null,
+     "lat": 26.9102996,
+     "lon": 75.8205896,
+     "osm_tags": {
+      "amenity": "fast_food",
+      "cuisine": "indian",
+      "name": "Masala Chowk"
+     }
+    },
+    {
+     "source": "overpass:extras",
+     "osm": "way/170101078",
+     "name": "Johari Bazar",
+     "wikidata": null,
+     "lat": 26.9193201,
+     "lon": 75.8258884,
+     "osm_tags": {
+      "highway": "tertiary",
+      "lane_markings": "yes",
+      "lanes": "2",
+      "name": "Johari Bazar",
+      "oneway": "yes",
+      "ref:old": "NH11C",
+      "surface": "asphalt"
+     }
+    }
+   ],
+   "fetched_on": "2026-10-24"
   }
  }
 }

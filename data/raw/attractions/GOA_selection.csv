@@ -14,7 +14,7 @@ N3066755086,Shree Ramnathi Temple,temple,spiritual,false,false,,,
 W477447701,Church of St Cajetan,church,spiritual;history,false,false,,,
 W201243802,Church of Our Lady of the Rosary,church,spiritual;history,false,false,,,
 W44016384,Our Lady of the Mount Chapel,church,spiritual;nature,true,false,,,
-way/156504125,Mapusa Municipal Market,market,shopping,true,false,,,
+way/156504125,Mapusa Municipal Market,market,shopping;food,true,false,,,
 R6423947,Baga Beach,beach,relaxation;nightlife;nature,true,false,,"nightlife: 'cafes and shacks that play some amazing music', 'famous clubs like Tito's and Mambos in Baga' (https://www.veenaworld.com/blog/places-to-visit-in-goa-at-night, fetched 2026-10-23)","Baga, Goa"
 R6423948,Calangute Beach,beach,relaxation;nature,true,false,,,Calangute
 W128565248,Anjuna Beach,beach,relaxation;nightlife;nature,true,false,,"nightlife: 'Anjuna is famous for trance parties held on its beach during the tourist season (October - April).' (https://en.wikipedia.org/wiki/Anjuna, fetched 2026-10-23)",Anjuna
@@ -28,3 +28,7 @@ N4532503789,Archaeological Museum Old Goa,museum,history;culture,false,false,asi
 N4303706490,Santana Church,church,spiritual;history,false,false,,,
 W199363593,Mandrem Beach,beach,relaxation;nature,true,false,,,
 N1002534290,Arossim Beach,beach,relaxation;nature,true,false,,,
+way/1155293983,Arpora Saturday Night Market,market,shopping;food;nightlife,true,false,,"OSM amenity=marketplace, tourism=attraction (data/raw/seed/GOA.json, markets_food_nightlife); food/nightlife: a night market (OSM name)",
+activity:Parasailing at Calangute Beach,Parasailing at Calangute Beach,activity,adventure,true,false,,,
+activity:Scuba Diving at Grand Island,Scuba Diving at Grand Island,activity,adventure;nature,true,false,,,
+activity:Sunset Kayaking at Bambolim Beach,Sunset Kayaking at Bambolim Beach,activity,adventure;nature;relaxation,true,true,,,

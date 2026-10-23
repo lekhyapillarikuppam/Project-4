@@ -43,6 +43,19 @@ def drop_matrix_node(path: Path, node: str) -> None:
     path.write_text(json.dumps(doc), encoding="utf-8")
 
 
+def drop_tag(path: Path, tag: str, keep: int) -> None:
+    """Remove `tag` from all but the first `keep` rows that carry it (a row left with no tag gets 'shopping')."""
+    with path.open(newline="", encoding="utf-8") as fh:
+        reader = csv.DictReader(fh)
+        header, rows = reader.fieldnames, list(reader)
+    for r in [r for r in rows if tag in r["tags"].split(";")][keep:]:
+        r["tags"] = ";".join(t for t in r["tags"].split(";") if t != tag) or "shopping"
+    with path.open("w", newline="", encoding="utf-8") as fh:
+        writer = csv.DictWriter(fh, header, lineterminator="\n")
+        writer.writeheader()
+        writer.writerows(rows)
+
+
 def set_pair(path: Path, **cells: str) -> None:
     for col, value in cells.items():
         set_cell(path, "city_a", "AGR", col, value)
@@ -69,6 +82,9 @@ BROKEN = [
     ("matrix_missing_node",
      lambda d: drop_matrix_node(d / "matrices/JAI.json", "JAI-A-10"),
      ("matrices/JAI.json", "-", "nodes", "matrix_missing_node")),
+    ("too_few_food",
+     lambda d: drop_tag(d / "attractions/AGR.csv", "food", keep=1),
+     ("attractions/AGR.csv", "-", "tags", "tag_coverage")),
     ("pair_no_mode",
      lambda d: set_pair(d / "city_pairs.csv", train_available="false", bus_available="false"),
      ("city_pairs.csv", "2", "-", "pair_no_mode")),

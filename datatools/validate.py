@@ -228,11 +228,12 @@ class Validator:
             if free < rules.MIN_FREE_ATTRACTIONS:
                 self.error(rel, "-", "entry_fee", "too_few_free",
                            f"{city} has {free} free attractions; needs {rules.MIN_FREE_ATTRACTIONS}")
-            for tag in rules.REQUIRED_TAGS.get(city, ()):
+            needs = {"food": rules.MIN_FOOD_ATTRACTIONS}
+            needs.update({tag: rules.MIN_ATTRACTIONS_PER_REQUIRED_TAG for tag in rules.REQUIRED_TAGS.get(city, ())})
+            for tag, need in needs.items():
                 n = sum(1 for a in usable if tag in a.tags)
-                if n < rules.MIN_ATTRACTIONS_PER_REQUIRED_TAG:
-                    self.error(rel, "-", "tags", "tag_coverage",
-                               f"{city} has {n} '{tag}' attractions; needs {rules.MIN_ATTRACTIONS_PER_REQUIRED_TAG}")
+                if n < need:
+                    self.error(rel, "-", "tags", "tag_coverage", f"{city} has {n} '{tag}' attractions; needs {need}")
         return ids_by_city
 
     def check_hotels(self) -> dict[str, list[str]] | None:

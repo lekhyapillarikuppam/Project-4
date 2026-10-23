@@ -3,17 +3,17 @@ R5284317,Vidhana Soudha,12.97974,77.59061,0.1,Q283257,Vidhana Soudha,78350,3,mon
 W143384387,Bangalore Palace,12.99860,77.59201,2.2,Q3520057,Bengaluru Palace,59664,3,activity,history;culture;nature;relaxation,"palaces,architecture,historic_architecture,interesting_places",Royal palace in India
 W346518876,Sri Nandishwara Theertha,13.00439,77.57248,3.5,Q6963346,Sri Dakshinamukha Nandi Tirtha Kalyani Kshetra,50739,3,temple,spiritual;shopping,"religion,hindu_temples,interesting_places","Shiva temple in Bengaluru Urban district, Karnataka, India"
 W15802464,Lalbagh Botanical Gardens,12.94894,77.58699,3.4,Q200711,Lal Bagh,46805,3,activity,culture;nature;relaxation,"urban_environment,gardens_and_parks,cultural,interesting_places","Botanical Garden in Karnataka, India"
-W38318887,Cubbon Park Circle,12.97550,77.59090,0.4,Q3633776,Cubbon Park,44347,3,viewpoint,culture;nature;relaxation,"urban_environment,gardens_and_parks,cultural,interesting_places","Neighbourhood in Bengaluru Urban, Karnataka, India"
+W38318887,Cubbon Park Circle,12.97550,77.59090,0.4,Q3633776,Cubbon Park,44347,3,garden,culture;nature;relaxation,"urban_environment,gardens_and_parks,cultural,interesting_places","Neighbourhood in Bengaluru Urban, Karnataka, India"
 way/38773290,UB City,12.97231,77.59594,0.9,Q3595524,UB City,32391,,market,shopping,shop=mall,"Tower block in Karnataka, India"
 Q6958784,Nageshvara Temple,12.87674,77.62671,12.0,Q6958784,"Nageshvara Temple, Begur",25652,3,temple,spiritual;shopping,"religion,hindu_temples,interesting_places","Hindu temple in Karnataka, India"
-W38751028,Tippu's Summer Palace,12.95965,77.57368,2.9,Q7809034,Tipu Sultan's Summer Palace,24707,3,monument,history;culture,"palaces,architecture,historic_architecture,interesting_places","Building in Bangalore, India"
+W38751028,Tippu's Summer Palace,12.95965,77.57368,2.9,Q7809034,Tipu Sultan's Summer Palace,24707,3,fort,history;culture,"palaces,architecture,historic_architecture,interesting_places","Building in Bangalore, India"
 N937674757,Kadu Malleshwara Temple,13.00497,77.57145,3.6,Q6345722,Kadu Malleshwara Temple,23222,2,temple,spiritual;history;nature;shopping,"religion,hindu_temples,interesting_places",Hindu temple in India
 W29459362,Iskcon Temple,13.01006,77.55114,5.6,Q4500903,"ISKCON Temple, Bengaluru",22084,3,temple,spiritual,"religion,hindu_temples,interesting_places","Radha Krishna Temple in Bengaluru, India"
 N677286789,Sri Gavigangadhareshwara Swamy Temple,12.94816,77.56290,4.6,Q5528052,Gavi Gangadhareshwara Temple,20444,3,temple,spiritual;history;culture,"religion,hindu_temples,interesting_places","16th century Hindu temple in Bengaluru, India"
 W299877335,Dodda Ganesha Temple,12.94288,77.56821,4.7,Q1531614,Dodda Basavana Gudi,17561,3,temple,spiritual;culture;nature;relaxation,"religion,hindu_temples,interesting_places","Temple in Bengaluru, India"
 W169709282,Someshwara Temple,12.97560,77.62390,3.5,Q5641096,Halasuru Someshwara Temple,17459,3,temple,spiritual,"religion,hindu_temples,interesting_places","Hindu Shiva temple in Bangalore, Karnataka, India"
 relation/6030715,Sankey Tank,13.00999,77.57486,3.9,Q7331115,Sankey tank,15828,,viewpoint,culture;nature;shopping;relaxation,natural=water,"Reservoir in Bangalore, India"
-W38751029,Bangalore Fort,12.96294,77.57576,2.5,Q4855049,Bangalore Fort,15278,3,monument,history,"fortifications,historic,interesting_places,other_fortifications","Historic mud fort in Kamataka, India"
+W38751029,Bangalore Fort,12.96294,77.57576,2.5,Q4855049,Bangalore Fort,15278,3,fort,history,"fortifications,historic,interesting_places,other_fortifications","Historic mud fort in Kamataka, India"
 relation/1857615,Ulsoor Lake,12.98247,77.61930,3.0,Q30587793,Ulsoor Lake,14832,,viewpoint,culture;nature;relaxation,natural=water,"Lake in Bangalore, India"
 way/23494413,City Market,12.96571,77.57627,2.2,Q18386400,K. R. Market,14561,,market,history;shopping,amenity=marketplace,"Wholesale market in Bangalore, India"
 way/23542631,Nexus Koramangala,12.93459,77.61124,5.4,Q7734919,Nexus Mall (Koramangala),12593,,market,shopping,shop=mall,"Shopping mall in Karnataka, India"
@@ -36,7 +36,7 @@ N1467937186,Shri Someshwara Temple,12.93646,77.61401,5.3,Q16934416,"Old Madiwala
 N1918885763,Cave Temple,12.87702,77.59985,11.4,Q15226683,Hulimavu cave Temple,4467,2,temple,spiritual,"religion,hindu_temples,interesting_places","Hindu temple in Karnataka, India"
 W112580278,Infant Jesus Church,12.95366,77.61881,4.1,Q15378772,"Infant Jesus Church, Bengaluru",4438,3,temple,spiritual;history,"religion,churches,interesting_places,other_churches","Church in Vivek Nagar Bangalore Urban, India"
 N428843492,Government Aquarium,12.97650,77.59853,0.8,Q31502,Bengaluru Aquarium,4243,3,museum,culture;nature;relaxation,"aquariums,urban_environment,gardens_and_parks,cultural,museums,interesting_places,zoos","Zoo in Karnataka, India"
-W712309876,Fossilized Tree,12.95045,77.58389,3.3,Q6972778,"National Fossil Wood Park, Tiruvakkarai",3925,3,viewpoint,history;culture;nature;relaxation,"urban_environment,gardens_and_parks,cultural,interesting_places","Fossil park in Tiruvakkarai, India"
+W712309876,Fossilized Tree,12.95045,77.58389,3.3,Q6972778,"National Fossil Wood Park, Tiruvakkarai",3925,3,garden,history;culture;nature;relaxation,"urban_environment,gardens_and_parks,cultural,interesting_places","Fossil park in Tiruvakkarai, India"
 N6419052588,Temple,12.96994,77.57980,1.6,Q7292629,"Ranganathaswamy Temple, Bengaluru",3873,2,temple,spiritual;history;culture,"religion,hindu_temples,interesting_places","Hindu temple in Karnataka, India"
 W121883110,National Gallery of Modern Arts,12.98931,77.58812,1.2,Q17077814,"National Gallery of Modern Art, Bengaluru",3659,2,museum,culture,"cultural,museums,interesting_places,other_museums","Art gallery in Bangalore, Karnataka, India"
 W45443657,Karnataka Chitrakala Parishath,12.98928,77.58075,1.7,Q6372843,Karnataka Chitrakala Parishath,3524,2,museum,culture,"cultural,museums,interesting_places,other_museums",Visual art complex
@@ -49,7 +49,7 @@ Q19898476,"St. John's Church, Bangalore",12.99180,77.61300,2.7,Q19898476,"St. Jo
 Q93806860,Hebbal Kittaya Inscription,13.04037,77.59137,6.8,Q93806860,Hebbal-Kittayya inscription,2799,3,monument,history;culture;nature;relaxation,"other,unclassified_objects,tourist_object,interesting_places","Inscription stone in Bangalore, India"
 W133881869,The Holy Trinity Church,12.97189,77.62031,3.2,Q5886431,"Holy Trinity Church, Bengaluru",2627,3,temple,spiritual,"religion,churches,interesting_places,other_churches","Anglican church in Karnataka, India"
 N663309934,Venkatappa Art Gallery,12.97426,77.59521,0.6,Q24950240,Venkatappa Art Gallery,2448,2,museum,culture;nature;relaxation,"cultural,museums,interesting_places,art_galleries","Art gallery/museum in Kasturba Road, Bengaluru"
-W273786646,National Military Memorial,12.98548,77.59070,0.7,Q18379547,National Military Memorial,2119,2,viewpoint,history;culture;nature;relaxation,"historic,gardens_and_parks,monuments_and_memorials,cultural,urban_environment,interesting_places,monuments",Indian memorial in Bangalore
+W273786646,National Military Memorial,12.98548,77.59070,0.7,Q18379547,National Military Memorial,2119,2,garden,history;culture;nature;relaxation,"historic,gardens_and_parks,monuments_and_memorials,cultural,urban_environment,interesting_places,monuments",Indian memorial in Bangalore
 W370390346,St. Andrews Church,12.97909,77.60414,1.4,Q19898472,"St. Andrew's Church, Bengaluru",2089,2,temple,spiritual;culture,"religion,churches,interesting_places,other_churches","Church in Bangalore, India"
 Q11121865,Plaza Theatre (Bangalore),12.97510,77.60600,1.6,Q11121865,Plaza Theatre (Bengaluru),2037,3,activity,culture,"theatres_and_entertainments,cultural,interesting_places,other_theatres",
 Q5334437,Ecumenical Christian Centre,12.97500,77.73889,16.0,Q5334437,Ecumenical Christian Centre,2018,2,temple,spiritual,"religion,other_temples,interesting_places","Religious centre for ecumenical relations in Bengaluru, India"
@@ -69,7 +69,7 @@ W532166925,Richmond Town Methodist Church,12.96361,77.60314,2.1,Q7331016,Richmon
 Q1143378,Syro-Malabar Catholic Eparchy of Ramanathapuram,12.99270,77.61130,2.6,Q1143378,Eparchy of Ramanathapuram,511,2,temple,spiritual,"religion,other_temples,interesting_places","Eastern Catholic eparchy in Tamil Nadu, India"
 N3948562480,St. Mary's Orthodox Valiapalli,13.05714,77.54818,9.9,Q7590380,St. Mary's Orthodox Valiyapally,389,3,temple,spiritual,"religion,churches,interesting_places,other_churches",
 Q19873319,"Fort Church, Bangalore",12.96288,77.57596,2.5,Q19873319,"Fort Church, Bengaluru",380,3,temple,spiritual;history,"religion,churches,interesting_places,other_churches","Church in Bangalore Fort, India"
-W232780058,Lumbini Gardens,13.04329,77.61027,7.4,Q6703129,Lumbini Gardens,319,2,viewpoint,culture;nature;relaxation,"gardens_and_parks,cultural,urban_environment,interesting_places",
+W232780058,Lumbini Gardens,13.04329,77.61027,7.4,Q6703129,Lumbini Gardens,319,2,garden,culture;nature;relaxation,"gardens_and_parks,cultural,urban_environment,interesting_places",
 Q64897816,Ambedkar statue,12.97956,77.59142,0.1,Q64897816,,,2,viewpoint,history;culture,"historic,cultural,urban_environment,monuments_and_memorials,burial_places,interesting_places,other_burial_places,sculptures,monuments",
 Q64828686,Statue of Mahatma Gandhi,12.97894,77.58892,0.3,Q64828686,,,2,viewpoint,history;culture,"historic,cultural,urban_environment,monuments_and_memorials,burial_places,interesting_places,other_burial_places,sculptures,monuments",
 N663564845,Seshadri Iyer Statue,12.97354,77.59034,0.6,Q65038128,,,2,viewpoint,history;culture,"historic,monuments_and_memorials,burial_places,urban_environment,cultural,interesting_places,other_burial_places,sculptures,monuments",
@@ -279,7 +279,7 @@ W346768012,Taqwa Masjid,13.00424,77.60815,3.3,,,,1,temple,spiritual,"religion,mo
 N1176722427,Mahaganapathi Temple,13.00036,77.57014,3.3,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
 N4548898589,Nagamman Koil,12.96183,77.61707,3.3,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
 N1598552982,War Tank,12.96614,77.61971,3.4,,,,1,monument,,"other,unclassified_objects,interesting_places,tourist_object",
-W403474874,ASC War Memorial,12.96508,77.61920,3.4,,,,1,viewpoint,culture;nature;relaxation,"gardens_and_parks,cultural,urban_environment,interesting_places",
+W403474874,ASC War Memorial,12.96508,77.61920,3.4,,,,1,garden,culture;nature;relaxation,"gardens_and_parks,cultural,urban_environment,interesting_places",
 N5423106786,Subramanya Swamy Temple,12.95271,77.57623,3.4,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
 N5237321921,Kota venkataramana swamy temple,12.95205,77.57742,3.4,,,,1,monument,,"other,unclassified_objects,interesting_places,tourist_object",
 N1289850490,Ram Mandir,13.00472,77.57552,3.4,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
@@ -480,6 +480,7 @@ way/1352959759,Footpath Stalls,13.01265,77.55451,5.5,,,,,market,shopping,amenity
 way/1354165113,Shivajinagar Shopping Complex,12.99050,77.60455,1.9,,,,,market,shopping,amenity=marketplace,
 way/1455433873,Yelahanka Sante,13.09732,77.59989,13.2,,,,,market,shopping,amenity=marketplace,
 way/23133647,Gandhi Bazaar Main Road,12.94592,77.57057,4.3,,,,,monument,,,
+way/27227507,100 Feet Road,12.97518,77.64108,5.4,,,,,monument,,,
 way/48166762,Church Street,12.97493,77.60526,1.5,,,,,monument,,,
 relation/10543175,Commercial Street,12.98050,77.60984,2.0,,,,,monument,,,
 relation/10602057,Brigade Road,12.97150,77.60676,1.8,,,,,monument,,,

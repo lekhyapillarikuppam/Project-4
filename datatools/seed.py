@@ -7,7 +7,11 @@ the candidates to data/raw/seed/<CITY>.json (the API key is never written). If O
 returns fewer than MIN_CANDIDATES places, OpenStreetMap is queried through Overpass instead.
 Markets, food streets and nightlife venues are not 'interesting_places' in OpenTripMap, so
 they are added from Overpass for every city. Known places neither query returns (shopping and
-nightlife streets, lakes) are listed by OSM id in EXTRA_OSM and fetched from Overpass.
+nightlife streets, lakes, food places) are listed by OSM id in EXTRA_OSM and fetched from Overpass.
+
+    python -m datatools.seed <CITY> --extras-only
+
+refetches only the EXTRA_OSM block of an existing seed file; the block records its own fetched_on.
 """
 
 from __future__ import annotations
@@ -35,8 +39,11 @@ MIN_CANDIDATES = 40
 # OSM objects for known places that neither query returns (streets, lakes), fetched by id.
 EXTRA_OSM = {
     "BLR": ["way/48166762", "relation/10602057", "relation/10543175", "way/23133647", "relation/1857615",
-            "relation/6030715"],   # Church Street, Brigade Road, Commercial Street, Gandhi Bazaar Main Road,
-                                   # Ulsoor Lake, Sankey Tank
+            "relation/6030715", "way/27227507"],   # Church Street, Brigade Road, Commercial Street,
+                                   # Gandhi Bazaar Main Road, Ulsoor Lake, Sankey Tank, 100 Feet Road (Indiranagar)
+    "JAI": ["node/7068572485", "way/170101078"],   # Masala Chowk, Johari Bazar
+    "VNS": ["node/2805194167", "way/26683124",    # Blue Lassi Shop, Dashashwamedh Road,
+            "node/11438507361", "node/9520848117"],   # Ratneshwar Mahadev, Annapurna (OpenTripMap points are wrong)
 }
 FETCHED = time.strftime("%Y-%m-%d")
 
@@ -51,12 +58,17 @@ def centre(city: str) -> tuple[float, float]:
 
 
 def overpass(query: str) -> dict:
+    status = None
     for attempt in range(6):
-        r = requests.post(OVERPASS, data={"data": query}, headers=UA, timeout=180)
-        if r.status_code == 200:
-            return r.json()
+        try:   # the public server often drops connections under load
+            r = requests.post(OVERPASS, data={"data": query}, headers=UA, timeout=180)
+            status = r.status_code
+            if r.status_code == 200:
+                return r.json()
+        except requests.RequestException as e:
+            status = type(e).__name__
         time.sleep(20 * (attempt + 1))
-    raise RuntimeError(f"Overpass failed: {r.status_code}")
+    raise RuntimeError(f"Overpass failed: {status}")
 
 
 def osm_items(elements: list[dict], source: str) -> list[dict]:
@@ -70,6 +82,20 @@ def osm_items(elements: list[dict], source: str) -> list[dict]:
         out.append({"source": source, "osm": f"{e['type']}/{e['id']}", "name": name, "wikidata": t.get("wikidata"),
                     "lat": p["lat"], "lon": p["lon"], "osm_tags": t})
     return out
+
+
+def extras_query(city: str) -> str:
+    return ("[out:json][timeout:120];("
+            + "".join(f"{t}({i});" for t, i in (x.split("/") for x in EXTRA_OSM[city]))
+            + ");out center tags;")
+
+
+def refresh_extras(city: str) -> dict:
+    data = json.loads((SEED_DIR / f"{city}.json").read_text(encoding="utf-8"))
+    q = extras_query(city)
+    data["overpass"]["extras"] = {"query": q, "items": osm_items(overpass(q).get("elements", []), "overpass:extras"),
+                                  "fetched_on": FETCHED}
+    return data
 
 
 def seed(city: str, radius_km: float) -> dict:
@@ -100,9 +126,7 @@ def seed(city: str, radius_km: float) -> dict:
             f');out center tags;'),
     }
     if city in EXTRA_OSM:
-        queries["extras"] = ("[out:json][timeout:120];("
-                             + "".join(f"{t}({i});" for t, i in (x.split("/") for x in EXTRA_OSM[city]))
-                             + ");out center tags;")
+        queries["extras"] = extras_query(city)
     if len(otm) < MIN_CANDIDATES:
         queries["fallback_attractions"] = (
             f'[out:json][timeout:120];('
@@ -112,7 +136,7 @@ def seed(city: str, radius_km: float) -> dict:
             f');out center tags;')
     osm = {}
     for key, q in queries.items():
-        osm[key] = {"query": q, "items": osm_items(overpass(q).get("elements", []), f"overpass:{key}")}
+        osm[key] = {"query": q, "items": osm_items(overpass(q).get("elements", []), f"overpass:{key}"), "fetched_on": FETCHED}
         time.sleep(5)
     return {"city_id": city, "centre": [lat, lon], "radius_km": radius_km, "fetched_on": FETCHED,
             "opentripmap": {"url": OTM, "params": params, "items": otm}, "overpass": osm}
@@ -122,10 +146,12 @@ def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(prog="python -m datatools.seed", description=__doc__.splitlines()[0])
     ap.add_argument("cities", nargs="+")
     ap.add_argument("--radius-km", type=float)
+    ap.add_argument("--extras-only", action="store_true", help="refetch only the EXTRA_OSM block of an existing seed file")
     args = ap.parse_args(argv)
     SEED_DIR.mkdir(parents=True, exist_ok=True)
     for city in args.cities:
-        data = seed(city, args.radius_km or RADIUS_KM.get(city, DEFAULT_RADIUS_KM))
+        data = (refresh_extras(city) if args.extras_only
+                else seed(city, args.radius_km or RADIUS_KM.get(city, DEFAULT_RADIUS_KM)))
         (SEED_DIR / f"{city}.json").write_text(json.dumps(data, ensure_ascii=False, indent=1), encoding="utf-8")
         print(city, "opentripmap", len(data["opentripmap"]["items"]),
               {k: len(v["items"]) for k, v in data["overpass"].items()})

@@ -75,30 +75,35 @@ RATING_RANGE = (1.0, 5.0)
 WEEKDAY_RANGE = (0, 6)           # 0 = Monday (section 3)
 MIN_FREE_ATTRACTIONS = 5
 MIN_ATTRACTIONS_PER_REQUIRED_TAG = 3
+MIN_FOOD_ATTRACTIONS = 2         # every city, whatever its character (5.5)
 
 # Place types (5.5): default visit minutes, hours and closed weekdays when no source gives them.
 PLACE_TYPES = {
     "monument": {"visit": 90, "open": "09:00", "close": "17:00", "closed": []},
+    "fort": {"visit": 150, "open": "09:00", "close": "17:00", "closed": []},
     "museum": {"visit": 120, "open": "10:00", "close": "17:00", "closed": [0]},
     "temple": {"visit": 45, "open": "06:00", "close": "20:00", "closed": []},
+    "ghat": {"visit": 30, "open": "06:00", "close": "20:00", "closed": []},
     "viewpoint": {"visit": 30, "open": "06:00", "close": "18:00", "closed": []},
+    "garden": {"visit": 90, "open": "06:00", "close": "18:00", "closed": []},
     "market": {"visit": 90, "open": "10:00", "close": "21:00", "closed": []},
     "beach": {"visit": 120, "open": "06:00", "close": "19:00", "closed": []},
     "activity": {"visit": 180, "open": "09:00", "close": "17:00", "closed": []},
 }
-# Other kinds map onto the seven types (5.5).
+# Other kinds map onto the place types (5.5).
 PLACE_TYPE_ALIASES = {
-    "fort": "monument", "palace": "monument", "tomb": "monument", "ruins": "monument",
+    "palace": "fort", "tomb": "monument", "ruins": "monument",
     "gallery": "museum", "zoo": "museum",
-    "mosque": "temple", "church": "temple", "gurudwara": "temple", "ghat": "temple",
-    "lake": "viewpoint", "garden": "viewpoint", "park": "viewpoint", "waterfall": "viewpoint",
+    "mosque": "temple", "church": "temple", "gurudwara": "temple",
+    "lake": "viewpoint", "waterfall": "viewpoint", "park": "garden",
     "mall": "market", "bazaar": "market",
-    "trek": "activity", "rafting": "activity", "safari": "activity", "show": "activity",
+    "trek": "activity", "rafting": "activity", "safari": "activity", "show": "activity", "water sports": "activity",
 }
-FREE_BY_DEFAULT = ("temple", "viewpoint", "market", "beach")   # fee 0 when no source (5.5)
+FREE_BY_DEFAULT = ("temple", "ghat", "viewpoint", "garden", "market", "beach")   # fee 0 when no source (5.5)
 # Rating (5.5): OpenTripMap rate -> rating when there is no Wikipedia article.
 OTM_RATE_TO_RATING = {1: 2.0, 2: 3.0, 3: 4.0}
 RATING_SAME_PAGEVIEWS = 3.0
+NO_POPULARITY_RATING = 2.0       # no Wikipedia article and no OpenTripMap rate (5.5)
 
 # City character -> tags that need >= MIN_ATTRACTIONS_PER_REQUIRED_TAG attractions (Plan §4)
 REQUIRED_TAGS = {
@@ -108,7 +113,7 @@ REQUIRED_TAGS = {
     "MUN": ("nature", "relaxation"),
     "DJL": ("nature", "relaxation"),
     "RSH": ("nature", "adventure", "spiritual"),
-    "GOA": ("relaxation", "nightlife", "nature"),
+    "GOA": ("relaxation", "nightlife", "nature", "adventure"),
     "PDY": ("relaxation", "culture"),
     "DEL": ("history", "food", "shopping"),
     "BOM": ("food", "nightlife", "culture"),

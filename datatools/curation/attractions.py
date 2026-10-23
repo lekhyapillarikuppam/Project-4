@@ -11,13 +11,17 @@ Inputs:
 - data/raw/attractions/official_hours.csv    hours/fees read from other official sites (a fee the user read
                                              from an official booking page: "read by user from <url>, <date>")
 - data/raw/attractions/fee_secondary.csv     secondary-source fees: city_id, place, fee, url, fetched_on, extract
+- data/raw/attractions/activities.csv        hand-curated adventure activities (selection candidate "activity:<place>"):
+                                             location, hours and price read from an operator or state tourism page
 - data/raw/wiki/<CITY>/pageviews.json        12-month pageviews
 
 Rules (001 Spec §5.5): rating from pageviews log-scaled within the city, OpenTripMap rate 1/2/3 ->
 2/3/4 as fallback; crowd_level = rating terciles; hours and fee from ASI or the official site, else
 place-type defaults (hours_approx); with no official fee, the median of >= 2 independent secondary
 sources (fee_approx), else fee 0 for free-by-nature types; visit_minutes = place-type default
-(visit_approx). A monument, museum or activity with no official or secondary fee stays TODO.
+(visit_approx). A monument, fort, museum or activity with no official or secondary fee stays TODO.
+A hand-curated activity takes its place, hours and price from its page (fee_approx unless the page is
+official) and is rated 2.0.
 """
 
 from __future__ import annotations
@@ -69,10 +73,13 @@ def ratings(rows: list[dict]) -> dict[str, tuple[float, str]]:
     for r in rows:
         if r["candidate"] not in out and r["otm_rate"]:
             out[r["candidate"]] = (rules.OTM_RATE_TO_RATING[int(r["otm_rate"])], f"OpenTripMap rate {r['otm_rate']} (no Wikipedia article)")
+        elif r["candidate"] not in out and not r.get("wiki_title"):
+            out[r["candidate"]] = (rules.NO_POPULARITY_RATING, "no Wikipedia article or OpenTripMap rate, lowest fallback (001 Spec 5.5)")
     return out
 
 
 WIKI_PERIOD = "Oct 2025-Sep 2026"
+ACTIVITY_PREFIX = "activity:"
 MIN_SECONDARY_FEES = 2
 
 
@@ -89,7 +96,14 @@ def secondary_fee(rows: list[dict]) -> tuple[int, str, str] | None:
 
 def build(city: str) -> list[list]:
     draft = {r["candidate"]: r for r in read_csv(A / f"{city}_draft.csv")}
-    seed_date = json.loads((RAW / "seed" / f"{city}.json").read_text(encoding="utf-8"))["fetched_on"]
+    seed = json.loads((RAW / "seed" / f"{city}.json").read_text(encoding="utf-8"))
+    seed_date = seed["fetched_on"]
+    # Overpass blocks refetched later (seed --extras-only) carry their own date.
+    block_date = {it["osm"]: b["fetched_on"] for b in seed["overpass"].values() if b.get("fetched_on") for it in b["items"]}
+    activities = {r["place"]: r for r in read_csv(A / "activities.csv") if r["city_id"] == city}
+    for name, a in activities.items():
+        draft[ACTIVITY_PREFIX + name] = {"candidate": ACTIVITY_PREFIX + name, "name": name, "lat": a["lat"], "lon": a["lon"],
+                                         "pageviews": "", "otm_rate": ""}
     official = {(r["city_id"], r["place"]): r for r in read_csv(A / "official_hours.csv")}
     secondary: dict[str, list[dict]] = {}
     for r in read_csv(A / "fee_secondary.csv"):
@@ -113,12 +127,23 @@ def build(city: str) -> list[list]:
     for i, c in enumerate(chosen, start=1):
         ptype = rules.PLACE_TYPE_ALIASES.get(c["place_type"], c["place_type"])
         d = rules.PLACE_TYPES[ptype]
-        dates, src, todo = [seed_date], [], []
-        cand_src = f"https://opentripmap.com/en/card/{c['candidate']}" if c["candidate"][:1] in "NWRQ" and "/" not in c["candidate"] \
-            else f"https://www.openstreetmap.org/{c['candidate']}"
-        src.append(f"place: {cand_src} (data/raw/seed/{city}.json)")
-
+        dates, src, todo = [block_date.get(c["candidate"], seed_date)], [], []
         open_t, close_t, closed, fee, hours_approx, fee_approx = d["open"], d["close"], d["closed"], None, True, False
+        act = activities.get(c["candidate"].removeprefix(ACTIVITY_PREFIX)) if c["candidate"].startswith(ACTIVITY_PREFIX) else None
+        if act:
+            dates = [act["fetched_on"]]
+            src.append(f"place, hours and price: {'state tourism' if act['official'] == 'true' else 'operator'} page {act['url']} "
+                       f"({act['extract']}); location: {act['location']} (data/raw/attractions/activities.csv)")
+            if act["open_time"]:
+                open_t, close_t, hours_approx = act["open_time"], act["close_time"], False
+                closed = [int(x) for x in act["closed_weekdays"].split(";") if x]
+            if act["entry_fee"]:
+                fee, fee_approx = int(act["entry_fee"]), act["official"] != "true"
+        else:
+            cand_src = f"https://opentripmap.com/en/card/{c['candidate']}" if c["candidate"][:1] in "NWRQ" and "/" not in c["candidate"] \
+                else f"https://www.openstreetmap.org/{c['candidate']}"
+            src.append(f"place: {cand_src} (data/raw/seed/{city}.json)")
+
         off = c.get("official", "")
         if off.startswith("asi:"):
             a = asi_record(off[4:])
@@ -157,12 +182,15 @@ def build(city: str) -> list[list]:
             src.append(f"rating: {basis}" + (f" https://en.wikipedia.org/wiki/{c['wiki_title'].replace(' ', '_')}" if c.get("wiki_title") else ""))
             if c.get("wiki_title"):
                 dates.append(WIKI_FETCHED)
-        src.append(f"visit: {ptype} default {d['visit']} min; tags/type/outdoor: curated from OpenTripMap kinds, OSM tags and the Wikipedia summary")
+        visit, visit_approx = (int(act["visit_minutes"]), False) if act and act["visit_minutes"] else (d["visit"], True)
+        src.append((f"visit: {visit} min from the activity page" if not visit_approx else f"visit: {ptype} default {visit} min")
+                   + "; tags/type/outdoor: "
+                   + ("from the activity page" if act else "curated from OpenTripMap kinds, OSM tags and the Wikipedia summary"))
         if c.get("note"):
             src.append(c["note"])
         if todo:
             src.insert(0, "TODO: " + "; ".join(todo))
-        rows.append([f"{city}-A-{i:02d}", city, c["name"], f"{float(c['lat']):.5f}", f"{float(c['lon']):.5f}", d["visit"], "true",
+        rows.append([f"{city}-A-{i:02d}", city, c["name"], f"{float(c['lat']):.5f}", f"{float(c['lon']):.5f}", visit, str(visit_approx).lower(),
                      open_t, close_t, ";".join(str(x) for x in closed), str(hours_approx).lower(),
                      "" if fee is None else fee, str(fee_approx).lower(), c["tags"], "" if r is None else f"{r:.1f}", c["outdoor"],
                      crowd.get(c["candidate"], ""), c.get("fixed_slot", "false"), " | ".join(src),

@@ -1,38 +1,38 @@
 candidate,name,lat,lon,km,wikidata,wiki_title,pageviews,otm_rate,suggested_type,suggested_tags,kinds_or_osm,description
 N7329359213,Wind Palace,26.92378,75.82727,1.2,Q836531,Hawa Mahal,199931,3,viewpoint,history;culture;nature,"view_points,other,palaces,architecture,historic_architecture,interesting_places","Palace in Jaipur, Rajasthan, India"
-N2598753117,Amber Fort,26.98631,75.85066,8.5,Q456817,Amber Fort,155005,3,monument,history;culture;nature;relaxation,"palaces,architecture,historic_architecture,fortifications,historic,archaeology,interesting_places,castles,other_archaeological_sites",World Heritage Site in India
-W134990320,Jal Mahal - Lake Palace,26.95348,75.84611,5.0,Q2757538,Jal Mahal,99919,3,monument,history;culture;nature;relaxation,"palaces,architecture,historic_architecture,interesting_places","Palace in Jaipur, Rajasthan"
+N2598753117,Amber Fort,26.98631,75.85066,8.5,Q456817,Amber Fort,155005,3,fort,history;culture;nature;relaxation,"palaces,architecture,historic_architecture,fortifications,historic,archaeology,interesting_places,castles,other_archaeological_sites",World Heritage Site in India
+W134990320,Jal Mahal - Lake Palace,26.95348,75.84611,5.0,Q2757538,Jal Mahal,99919,3,fort,history;culture;nature;relaxation,"palaces,architecture,historic_architecture,interesting_places","Palace in Jaipur, Rajasthan"
 N542886857,Jantar Mantar,26.92474,75.82446,1.2,Q508634,"Jantar Mantar, Jaipur",80476,3,monument,history;culture,"historic,archaeology,interesting_places,other_archaeological_sites",UNESCO World Heritage Site in Jaipur
 N6815872009,City Palace,26.92538,75.82385,1.2,Q2723395,"City Palace, Jaipur",73810,3,museum,history;culture;food,"cultural,museums,interesting_places,other_museums,foods,restaurants,tourist_facilities","Building in Rajasthan, India"
 N4394275790,Narangarh Fort,26.94003,75.81653,2.8,Q2723401,Nahargarh Fort,43240,3,monument,spiritual;history;nature,"other,unclassified_objects,interesting_places,tourist_object","Historic military fortress in Rajasthan, India"
 Q5589834,Govind Dev Ji Temple,26.87628,75.79184,5.1,Q5589834,Govind Dev Ji Temple,41112,3,temple,spiritual;history,"religion,hindu_temples,interesting_places",Historic Radha Krishna temple in Jaipur
 Q3635211,Galtaji,26.91692,75.85812,3.8,Q3635211,Galtaji,38557,3,temple,spiritual;history;nature,"religion,hindu_temples,interesting_places","Temple complex in Rajasthan, India"
-N542960968,Jaighar Fort,26.98469,75.84540,8.1,Q2722759,Jaigarh Fort,37897,3,monument,history;nature;relaxation,"fortifications,historic,interesting_places,castles","Historic military fortress in Rajasthan, India"
+N542960968,Jaighar Fort,26.98469,75.84540,8.1,Q2722759,Jaigarh Fort,37897,3,fort,history;nature;relaxation,"fortifications,historic,interesting_places,castles","Historic military fortress in Rajasthan, India"
 N1496872519,Albert Hall,26.91171,75.81950,0.4,Q4710411,Albert Hall Museum,33625,3,museum,history;culture;nature;relaxation,"cultural,museums,interesting_places,other_museums","Museum in Jaipur, Rajasthan, India"
 Q7285323,"Raj Mandir Cinema, Jaipur",26.91550,75.81017,1.0,Q7285323,Raj Mandir Cinema,26314,3,activity,culture,"cinemas,cultural,theatres_and_entertainments,interesting_places","Cinema in Jaipur, India"
 W230927032,Birla Mandir,26.89216,75.81549,2.6,Q4916529,"Birla Mandir, Jaipur",25841,3,temple,spiritual;nature,"religion,hindu_temples,interesting_places","Birla Mandir Hindu temple located in Jaipur, India"
 N8384426537,Jaivan Canon,26.97995,75.84390,7.6,Q6124312,Jaivana Cannon,18305,2,monument,history,"other,unclassified_objects,interesting_places,historic_object","Large historic artillery weapon in Rajasthan, India"
 W230927025,Moti Doongri Fort,26.89367,75.81676,2.4,Q28154167,Moti Dungri,9803,3,temple,spiritual;history,"religion,fortifications,historic,hindu_temples,interesting_places,other_fortifications","Hindu temple in Rajasthan, India"
 N6202692286,Jawahar Kala Kendra,26.87635,75.80909,4.4,Q6165903,Jawahar Kala Kendra,9316,3,museum,culture;shopping,"cultural,museums,interesting_places,other_museums","Building in Jaipur, India"
-W370170825,Jawahar circle,26.83978,75.80092,8.6,Q6165899,Jawahar Circle,9073,2,viewpoint,culture;nature;relaxation,"urban_environment,gardens_and_parks,cultural,interesting_places","Park in Jaipur (Rajasthan), India"
+W370170825,Jawahar circle,26.83978,75.80092,8.6,Q6165899,Jawahar Circle,9073,2,garden,culture;nature;relaxation,"urban_environment,gardens_and_parks,cultural,interesting_places","Park in Jaipur (Rajasthan), India"
 Q21503605,Jagat Shiromani Temple,26.98886,75.85118,8.8,Q21503605,"Jagat Shiromani Temple, Amer",8740,3,temple,spiritual;history,"religion,other_temples,interesting_places","Hindu temple in Amer, Rajasthan dedicated to Krishna and Meera Bai"
 N4707870391,Sisodia rani,26.89935,75.85905,4.2,Q7530898,Sisodiya Rani Bagh,7131,3,museum,history;culture;nature;relaxation,"palaces,architecture,historic_architecture,urban_environment,gardens_and_parks,cultural,interesting_places","Palace garden in India, Indiau"
 Q5523215,Garh Ganesh Temple,26.94535,75.82696,3.4,Q5523215,Garh Ganesh Temple,5342,3,temple,spiritual;nature,"religion,hindu_temples,interesting_places",Hindu temple in India
-W370170804,Kanak Vrindawan Park,26.96350,75.84853,6.1,Q12417933,Kanak Vrindavan,3992,3,viewpoint,history;culture;nature;relaxation,"urban_environment,gardens_and_parks,cultural,interesting_places",Park in India
+W370170804,Kanak Vrindawan Park,26.96350,75.84853,6.1,Q12417933,Kanak Vrindavan,3992,3,garden,history;culture;nature;relaxation,"urban_environment,gardens_and_parks,cultural,interesting_places",Park in India
 Q55615608,Kalki Mandir,26.92628,75.82687,1.4,Q55615608,Kalki Mandir,3653,2,temple,spiritual;history,"religion,hindu_temples,interesting_places",Hindu temple in Jaipur Kalki Tantram by Syam
 Q24931166,Sanghiji,26.81500,75.78611,11.6,Q24931166,Sanghiji,3002,3,temple,spiritual;history,"religion,other_temples,interesting_places",Building in India
-W442860839,Central Park,26.90439,75.80993,1.5,Q16247328,"Central Park, Jaipur",2979,2,viewpoint,culture;nature;relaxation,"urban_environment,gardens_and_parks,cultural,interesting_places","Park in Jaipur, India"
+W442860839,Central Park,26.90439,75.80993,1.5,Q16247328,"Central Park, Jaipur",2979,2,garden,culture;nature;relaxation,"urban_environment,gardens_and_parks,cultural,interesting_places","Park in Jaipur, India"
 N4728303926,Jaipur Zoo,26.91270,75.82098,0.3,Q15229182,Jaipur Zoo,2593,2,museum,history;culture;nature;relaxation,"urban_environment,gardens_and_parks,cultural,museums,interesting_places,zoos","Zoo in Jaipur, Rajasthan"
-Q2770471,Ram Niwas Garden,26.91530,75.81870,0.1,Q2770471,Ram Niwas Garden,1335,2,viewpoint,culture;nature;relaxation,"gardens_and_parks,cultural,urban_environment,interesting_places","Garden in Jaipur, Rajasthan"
+Q2770471,Ram Niwas Garden,26.91530,75.81870,0.1,Q2770471,Ram Niwas Garden,1335,2,garden,culture;nature;relaxation,"gardens_and_parks,cultural,urban_environment,interesting_places","Garden in Jaipur, Rajasthan"
 N6296995185,Anokhi Museum,26.99252,75.85048,9.1,Q61931254,Anokhi Museum of Hand Printing,1305,1,museum,culture,"cultural,museums,interesting_places,other_museums","Museum in Amber, India"
 Q392056,Roman Catholic Diocese of Jaipur,26.85865,75.81448,6.3,Q392056,Diocese of Jaipur,567,3,temple,spiritual,"religion,other_temples,interesting_places","Roman Catholic diocese in Rajasthan, India"
-N8042602037,Chandpole,26.92676,75.80830,1.7,Q102453479,,,3,monument,history,"fortifications,historic,interesting_places,other_fortifications",
+N8042602037,Chandpole,26.92676,75.80830,1.7,Q102453479,,,3,fort,history,"fortifications,historic,interesting_places,other_fortifications",
 W263783904,Royal Gaitor,26.94298,75.82465,3.1,Q12424215,,,3,monument,history,"historic,monuments_and_memorials,burial_places,interesting_places,other_burial_places,monuments",
 Q97459440,Sun Temple,26.98982,75.84988,8.8,Q97459440,,,2,temple,spiritual,"religion,other_temples,interesting_places",
 Q97459442,Laxmi Narain's Temple,26.98796,75.85561,8.8,Q97459442,,,2,temple,spiritual,"religion,other_temples,interesting_places",
-W442768311,Man Gate,26.91673,75.82067,0.2,,,,1,monument,history,"fortifications,defensive_walls,historic,interesting_places",
+W442768311,Man Gate,26.91673,75.82067,0.2,,,,1,fort,history,"fortifications,defensive_walls,historic,interesting_places",
 N6081395486,M,26.91705,75.81674,0.4,,,,1,monument,,"other,unclassified_objects,interesting_places,tourist_object",
-W547207098,Ajmeri Gate,26.91722,75.81682,0.4,,,,1,monument,history,"fortifications,defensive_walls,historic,interesting_places",
+W547207098,Ajmeri Gate,26.91722,75.81682,0.4,,,,1,fort,history,"fortifications,defensive_walls,historic,interesting_places",
 W272782999,Haveli,26.92055,75.81890,0.6,,,,1,monument,history,"other,unclassified_objects,interesting_places,historic_object",
 W272783000,Jama Masjid,26.92170,75.82616,1.0,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
 N3806705458,Sri Nrisinghji Mandir,26.91612,75.81036,1.0,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
@@ -60,7 +60,7 @@ N6395534385,Moti Doongri Ganesh Temple,26.89466,75.81668,2.3,,,,1,temple,spiritu
 W759848602,Ganesh Mandir,26.89463,75.81674,2.3,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
 N8125619178,Raja Park Gurdwara,26.90652,75.84133,2.3,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
 W872465080,Gurdwara Damdama Sahib Kalgidhar Shastra Asthan,26.90633,75.84143,2.3,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
-Q97459445,Pundrik ji-ki-Haveli,26.93668,75.82494,2.5,Q97459445,,,1,monument,history;culture,"palaces,architecture,historic_architecture,interesting_places",
+Q97459445,Pundrik ji-ki-Haveli,26.93668,75.82494,2.5,Q97459445,,,1,fort,history;culture,"palaces,architecture,historic_architecture,interesting_places",
 W863303428,Suraj Pol Gate,26.91914,75.84491,2.5,,,,1,monument,history,"historic,monuments_and_memorials,interesting_places,monuments",
 N6971310985,Sunset Point,26.93673,75.81224,2.5,,,,1,viewpoint,nature,"view_points,other,interesting_places",
 N4907341649,Birla mandir,26.89211,75.81567,2.6,,,,1,monument,history,"historic,monuments_and_memorials,interesting_places,monuments",
@@ -83,7 +83,7 @@ W866422949,Laxmi Mandir,26.88149,75.79840,4.3,,,,1,activity,culture,"cultural,ci
 W867465913,Siddeshwar Hanuman Temple,26.89327,75.77951,4.7,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
 N4824496421,Dhamma Thali,26.91859,75.86778,4.8,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
 W867324681,Shree Baikunth Nath Temple,26.90160,75.77394,4.8,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
-W554267131,Chulgiri Digamber Jain Temple,26.89077,75.86075,4.9,,,,1,monument,history,"fortifications,historic,interesting_places,castles",
+W554267131,Chulgiri Digamber Jain Temple,26.89077,75.86075,4.9,,,,1,fort,history,"fortifications,historic,interesting_places,castles",
 N7030319493,Lake Palace Viewpoint,26.95561,75.84322,5.1,,,,1,viewpoint,nature,"view_points,other,interesting_places",
 W754530042,Sapta Shakti Auditorium,26.92554,75.76833,5.3,,,,1,activity,culture,"cultural,theatres_and_entertainments,interesting_places,other_theatres",
 N5579686521,Hanuman Temple,26.95118,75.85732,5.5,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
@@ -123,8 +123,8 @@ N5571560123,Sattais Kacheri,26.98621,75.85105,8.5,,,,1,monument,,"other,unclassi
 N5079249026,Diwan-i-Am,26.98629,75.85092,8.5,,,,1,monument,,"other,unclassified_objects,interesting_places,tourist_object",
 W962874396,NANDESHWER MAHADEV MANDIR,26.83857,75.82216,8.5,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
 N6274183585,nice viewpoint forts,26.98465,75.85639,8.5,,,,1,viewpoint,nature,"view_points,other,interesting_places",
-N5079237889,Sun Gate,26.98673,75.85135,8.6,,,,1,monument,history,"fortifications,defensive_walls,historic,interesting_places",
-N5079243358,Moon Gate,26.98722,75.85086,8.6,,,,1,monument,history,"fortifications,defensive_walls,historic,interesting_places",
+N5079237889,Sun Gate,26.98673,75.85135,8.6,,,,1,fort,history,"fortifications,defensive_walls,historic,interesting_places",
+N5079243358,Moon Gate,26.98722,75.85086,8.6,,,,1,fort,history,"fortifications,defensive_walls,historic,interesting_places",
 W962874397,JAIN MANDIR,26.83764,75.82124,8.6,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
 N4568171770,Temple,26.97308,75.76260,8.6,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
 N4568171769,Shani Temple,26.97315,75.76244,8.6,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
@@ -186,3 +186,5 @@ way/170101099,Sari market,26.92234,75.82623,1.0,,,,,market,shopping,amenity=mark
 way/409834182,Chameliwala Market,26.91603,75.80469,1.5,,,,,market,shopping,amenity=marketplace,
 way/788672919,Satkar Shopping Center,26.85081,75.81823,7.1,,,,,market,shopping,amenity=marketplace,
 way/1180025743,MONDAY MARKET GROUND,26.95337,75.70352,12.3,,,,,market,shopping,amenity=marketplace,
+node/7068572485,Masala Chowk,26.91030,75.82059,0.5,,,,,monument,food,amenity=fast_food,
+way/170101078,Johari Bazar,26.91932,75.82589,0.8,,,,,monument,,,

@@ -1,5 +1,5 @@
 candidate,name,place_type,tags,outdoor,fixed_slot,official,note,wiki_title
-N7329359213,Hawa Mahal,palace,history;culture,true,false,official:Hawa Mahal,,
+N7329359213,Hawa Mahal,monument,history;culture,true,false,official:Hawa Mahal,,
 N2598753117,Amber Fort,fort,history;culture,true,false,official:Amber Fort,,
 W134990320,Jal Mahal,lake,history;nature;relaxation,true,false,,viewed from the Man Sagar lakeside,
 N542886857,Jantar Mantar,monument,history;culture,true,false,official:Jantar Mantar,,
@@ -25,3 +25,5 @@ W272783000,Jama Masjid,mosque,spiritual;history,false,false,,,
 N6971310985,Sunset Point,viewpoint,nature,true,false,,,
 N4063120631,All Saints' Church,church,spiritual;history,false,false,,,
 Q66023962,Gurudwara Raja Park,gurudwara,spiritual,false,false,,,
+node/7068572485,Masala Chowk,market,food,true,false,,"food: OSM amenity=fast_food (data/raw/seed/JAI.json, extras)",
+way/170101078,Johari Bazar,bazaar,shopping;food,true,false,,"food: 'located in downtown Jaipur in Johari Bazar ... most known for its restaurant and mithai shop, which are a popular tourist attraction' (https://en.wikipedia.org/wiki/LMB_Hotel, fetched 2026-10-24)",

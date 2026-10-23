@@ -5,11 +5,10 @@ N7291055276,Dashashwamedh Ghat,ghat,spiritual;culture,true,false,,,Dashashwamedh
 N1531140948,Assi Ghat,ghat,spiritual;culture;relaxation,true,false,,,
 N7107002877,Vishalakshi Temple,temple,spiritual,false,false,,,
 W103169368,Dhamek Stupa and Sarnath Excavated Remains,ruins,spiritual;history;culture,true,false,asi:BUV,ASI ticket 'Sarnath Excavated Remains' covers the Dhamek Stupa site,
-Q24906782,Kaal Bhairav Temple,temple,spiritual,false,false,,,
 N293212713,Sankat Mochan Hanuman Temple,temple,spiritual;culture,false,false,,,
-Q30621788,Ratneshwar Mahadev Temple,temple,spiritual;history,true,false,,,
+node/11438507361,Ratneshwar Mahadev Temple,temple,spiritual;history,true,false,,,Ratneshwar Mahadev temple
 W320995844,Shri Vishwanath Mandir (BHU),temple,spiritual;culture,false,false,,,
-Q24907458,Annapurna Devi Mandir,temple,spiritual,false,false,,,
+node/9520848117,Annapurna Devi Mandir,temple,spiritual,false,false,,,Annapurna Devi Mandir
 Q19891383,Durga Mandir,temple,spiritual;history,false,false,,,
 Q24912874,Alamgir Mosque,mosque,spiritual;history,false,false,,,
 W420064449,Bharat Mata Mandir,temple,culture;spiritual,false,false,,,
@@ -26,3 +25,5 @@ N1563505709,Man Mandir Observatory,monument,history;culture,true,false,asi:OMS,A
 Q66662448,Tomb of Lal Khan,tomb,history,true,false,asi:TLK,,
 N1538127113,Panchganga Ghat,ghat,spiritual,true,false,,,
 Q65680254,Gurdwara Badi Sangat,gurudwara,spiritual;history,false,false,,,
+node/2805194167,Blue Lassi Shop,market,food,false,false,,"food: OSM amenity=cafe (data/raw/seed/VNS.json, extras)",
+way/26683124,Dashashwamedh Road,bazaar,food;shopping,true,false,,food street: chosen by the user on 2026-10-24 as the Godowlia-Dashashwamedh stretch,

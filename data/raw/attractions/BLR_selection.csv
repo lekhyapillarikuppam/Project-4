@@ -1,10 +1,10 @@
 candidate,name,place_type,tags,outdoor,fixed_slot,official,note,wiki_title
 W143384387,Bangalore Palace,palace,history;culture,true,false,,,
 W346518876,Sri Dakshinamukha Nandi Tirtha,temple,spiritual;history,false,false,,OpenTripMap name 'Sri Nandishwara Theertha',
-W15802464,Lalbagh Botanical Garden,garden,nature;relaxation,true,false,,,
+W15802464,Lalbagh Botanical Garden,garden,nature;relaxation,true,false,official:Lalbagh Botanical Garden,,
 W38318887,Cubbon Park,park,nature;relaxation,true,false,,OpenTripMap name 'Cubbon Park Circle',
 way/38773290,UB City,mall,shopping,false,false,,,
-W38751028,Tipu Sultan's Summer Palace,palace,history;culture,true,false,asi:TIP,,
+W38751028,Tipu Sultan's Summer Palace,monument,history;culture,true,false,asi:TIP,,
 N937674757,Kadu Malleshwara Temple,temple,spiritual;history,false,false,,,
 W29459362,ISKCON Temple,temple,spiritual;culture,false,false,,,
 N677286789,Gavi Gangadhareshwara Temple,temple,spiritual;history,false,false,,,
@@ -27,3 +27,4 @@ way/23133647,Gandhi Bazaar,market,shopping;food,true,false,,"food: 'flower and c
 W335027582,The Art of Living International Center,temple,spiritual,true,false,,,
 Q6433914,Kote Venkataramana Temple,temple,spiritual;history,false,false,,,
 way/111997549,Garuda Mall,mall,shopping,false,false,,,
+way/27227507,Indiranagar 100 Feet Road,market,nightlife;food,true,false,,nightlife/food: chosen by the user on 2026-10-24; OSM name '100 Feet Road',"100 Feet Road, Bengaluru"

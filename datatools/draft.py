@@ -44,11 +44,13 @@ PAGEVIEW_TOP_N = 80   # pageviews are fetched for the city's top candidates by O
 
 # OpenTripMap kinds / OSM tags -> place type, first match wins (001 Spec §5.5 types and aliases).
 TYPE_RULES = [
-    ("beach", r"\bbeaches\b|natural=beach"), ("museum", r"museums|galler|zoos|aquariums"),
-    ("temple", r"religion|temples|churches|mosques|gurdwara|place_of_worship|ghat"),
+    ("beach", r"\bbeaches\b|natural=beach"), ("museum", r"museums|galler|zoos|aquariums"), ("ghat", r"\bghat"),
+    ("temple", r"religion|temples|churches|mosques|gurdwara|place_of_worship"),
     ("market", r"marketplace|shop=mall|bazaar|markets"), ("activity", r"amusements|sport|climbing|diving|water_parks|theatres|nightclub|pub|bar\b"),
-    ("viewpoint", r"view_points|natural|gardens_and_parks|lakes|waterfalls|nature_reserves|urban_environment"),
-    ("monument", r"historic|archaeology|fortifications|palaces|castles|monuments|architecture|towers|bridges"),
+    ("garden", r"gardens_and_parks|leisure=park|leisure=garden"),
+    ("viewpoint", r"view_points|natural|lakes|waterfalls|nature_reserves|urban_environment"),
+    ("fort", r"fortifications|palaces|castles"),
+    ("monument", r"historic|archaeology|monuments|architecture|towers|bridges"),
 ]
 # Keywords in kinds, OSM tags or the Wikipedia summary -> interest tag (section 4 values only).
 TAG_RULES = [

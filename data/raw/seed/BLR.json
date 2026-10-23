@@ -6452,7 +6452,7 @@
    ]
   },
   "extras": {
-   "query": "[out:json][timeout:120];(way(48166762);relation(10602057);relation(10543175);way(23133647);relation(1857615);relation(6030715););out center tags;",
+   "query": "[out:json][timeout:120];(way(48166762);relation(10602057);relation(10543175);way(23133647);relation(1857615);relation(6030715);way(27227507););out center tags;",
    "items": [
     {
      "source": "overpass:extras",
@@ -6467,6 +6467,32 @@
       "name": "Gandhi Bazaar Main Road",
       "name:kn": "ಗಾಂಧಿ ಬಜಾರ ಮುಖ್ಯ ರಸ್ತೆ",
       "sidewalk": "separate",
+      "surface": "concrete"
+     }
+    },
+    {
+     "source": "overpass:extras",
+     "osm": "way/27227507",
+     "name": "100 Feet Road",
+     "wikidata": null,
+     "lat": 12.9751794,
+     "lon": 77.641078,
+     "osm_tags": {
+      "alt_name": "Dr. S.K. Karim Khan Road",
+      "cycleway:left": "no",
+      "dual_carriageway": "yes",
+      "highway": "primary",
+      "lanes": "2",
+      "maxheight": "default",
+      "name": "100 Feet Road",
+      "name:kn": "೧೦೦ ಅಡಿ ರಸ್ತೆ",
+      "note": "Whitetopping of 100 Feet Road was done in October 2022: https://bangaloremirror.indiatimes.com/bangalore/civic/white-top-drain-shop/articleshow/94405790.cms",
+      "official_name": "SK Karim Khan Road",
+      "official_name:etymology:wikidata": "Q13158540",
+      "official_name:etymology:wikipedia": "kn:ಎಸ್.ಕೆ.ಕರೀಂಖಾನ್",
+      "oneway": "yes",
+      "sidewalk": "separate",
+      "smoothness": "good",
       "surface": "concrete"
      }
     },
@@ -6568,7 +6594,8 @@
       "type": "public_transport"
      }
     }
-   ]
+   ],
+   "fetched_on": "2026-10-24"
   }
  }
 }
