@@ -111,6 +111,9 @@ def build(city: str) -> list[list]:
             secondary.setdefault(r["place"], []).append(r)
     sel = read_csv(A / f"{city}_selection.csv")
     chosen = [{**draft[s["candidate"]], **{k: v for k, v in s.items() if v != ""}} for s in sel]
+    for s, c in zip(sel, chosen):   # a hand-set article (e.g. the draft had a redirect title) needs its own pageviews
+        if s.get("wiki_title") and s["wiki_title"] != draft[s["candidate"]].get("wiki_title"):
+            c["pageviews"] = ""
     # Pageviews were fetched for the top candidates only (datatools.draft); fetch any selected title still missing.
     missing = [c["wiki_title"] for c in chosen if c.get("wiki_title") and not c.get("pageviews")]
     if missing:

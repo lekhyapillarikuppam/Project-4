@@ -1,0 +1,187 @@
+candidate,name,lat,lon,km,wikidata,wiki_title,pageviews,otm_rate,suggested_type,suggested_tags,kinds_or_osm,description
+Q463874,Darjeeling Himalayan Railway,27.04500,88.26722,0.9,Q463874,Darjeeling Himalayan Railway,65106,3,monument,history;culture,"historic_architecture,architecture,interesting_places,other_buildings_and_structures",Narrow gauge mountain railway in north India
+W350317405,Tiger Hill,26.99490,88.28533,5.2,Q16901632,"Tiger Hill, Darjeeling",22585,2,viewpoint,culture;nature,"view_points,other,mountain_peaks,towers,architecture,geological_formations,natural,interesting_places,observation_towers",Mountain in India with views of the Himalayas
+N343394666,"War Memorial, Batasia Loop",27.01670,88.24712,2.8,Q4868648,Batasia Loop,8824,3,viewpoint,history;nature;shopping,"view_points,other,historic,monuments_and_memorials,interesting_places,monuments","Neighbourhood in Darjeeling District, West Bengal, India"
+N5708131421,Dunggon Samten Choling monastery,27.01166,88.25056,3.1,Q3320284,Ghum Monastery,7997,3,temple,spiritual,"religion,buddhist_temples,interesting_places",Popular name of Yiga Choeling
+W451951473,Padmaja Naidu Himalayan Zoological Park,27.05693,88.25470,2.3,Q3495905,Padmaja Naidu Himalayan Zoological Park,6868,3,museum,culture;nature;relaxation,"urban_environment,gardens_and_parks,cultural,museums,interesting_places,zoos",Zoological park in Darjeeling
+N2084522600,Himalayan Mountaineering Institute,27.05837,88.25394,2.5,Q5765015,Himalayan Mountaineering Institute,6464,2,museum,culture,"cultural,museums,interesting_places,other_museums","School in Darjeeling, West Bengal, India"
+W348905527,Peace Pagoda,27.02757,88.25900,1.2,Q7157413,"Peace Pagoda, Darjeeling",4642,3,temple,spiritual,"religion,buddhist_temples,interesting_places",Buddhist stupa in Darjeeling
+Q8066156,Zang Dhok Palri Phodang,27.03806,88.46083,19.6,Q8066156,Zang Dhok Palri Phodang,2849,3,temple,spiritual;history;nature,"religion,buddhist_temples,interesting_places","Tibetan Buddhist monastery in Kalimpong, West Bengal, India"
+W678848509,Senchal WLS,26.99123,88.28822,5.7,Q7450103,Senchal Wildlife Sanctuary,2287,3,viewpoint,nature,"natural,interesting_places,nature_reserves,nature_reserves_others,wildlife_reserves","Wildlife sanctuary in West Bengal, India"
+W350297468,Lloyd Botanical Garden (Fulbari),27.04435,88.26261,0.8,Q927658,Lloyd's Botanical Garden,2190,3,garden,culture;nature;relaxation,"urban_environment,gardens_and_parks,cultural,interesting_places",Botanical garden in Darjeeling in the Indian state of West Bengal
+Q96391950,Margaret's Hope Tea Estate,26.92348,88.27265,12.7,Q96391950,Margaret's Hope Tea Estate,2060,2,garden,culture;nature;relaxation,"gardens_and_parks,cultural,urban_environment,interesting_places","Tea garden in West Bengal, India"
+N4048657704,Bhutia Busty monastery,27.05026,88.26995,1.6,Q4902278,Bhutia Busty Monastery,1963,3,temple,spiritual,"religion,buddhist_temples,interesting_places",Monastery in West Bengal
+Q96379723,Gopaldhara Tea Estate,26.92344,88.16235,16.1,Q96379723,Gopaldhara Tea Estate,1936,2,garden,culture;nature;relaxation,"gardens_and_parks,cultural,urban_environment,interesting_places","Tea garden in West Bengal, India"
+Q24906240,Roy Villa,27.05662,88.25880,2.2,Q24906240,Roy Villa,1526,3,monument,history;culture,"historic_architecture,architecture,interesting_places,other_buildings_and_structures",
+Q7278751,Rabindra Museum,26.97442,88.37508,13.1,Q7278751,Rabindra Museum,1419,3,museum,culture,"museums,cultural,interesting_places,other_museums","Tagore museum in Mungpoo, near Kalimpong, West Bengal, India"
+Q96374538,Castleton Tea Estate,26.86948,88.27765,18.7,Q96374538,Castleton Tea Estate,1392,2,garden,culture;nature;relaxation,"gardens_and_parks,cultural,urban_environment,interesting_places","Tea garden in West Bengal, India"
+Q96390793,Lopchu Tea Estate,27.07453,88.36964,11.3,Q96390793,Lopchu Tea Estate,1253,2,garden,culture;nature;relaxation,"gardens_and_parks,cultural,urban_environment,interesting_places","Tea garden in Rangli Rangliot, India"
+Q60788884,Teesta Valley Tea Garden,27.00668,88.40106,14.1,Q60788884,Teesta Valley Tea Garden,1231,2,garden,culture;nature;relaxation,"gardens_and_parks,cultural,urban_environment,interesting_places","Village in West Bengal, India"
+Q60788816,Peshok Tea Garden,27.06720,88.39766,13.7,Q60788816,Peshok Tea Garden,1194,2,garden,culture;nature;relaxation,"gardens_and_parks,cultural,urban_environment,interesting_places","Village in West Bengal, India"
+Q96400509,Puttabong Tea Estate,27.06662,88.25831,3.3,Q96400509,Puttabong Tea Estate,1123,2,garden,culture;nature;relaxation,"gardens_and_parks,cultural,urban_environment,interesting_places","Tea garden in West Bengal, India"
+Q96379577,Glenburn Tea Estate,27.08353,88.33624,8.9,Q96379577,Glenburn Tea Estate,1105,2,garden,culture;nature;relaxation,"gardens_and_parks,cultural,urban_environment,interesting_places","Tea garden in West Bengal, India"
+Q7057041,Tukvar Tea Estate,27.09337,88.25989,6.2,Q7057041,Tukvar Tea Garden,990,2,garden,culture;nature;relaxation,"gardens_and_parks,cultural,urban_environment,interesting_places","Valley in West Bengal, India"
+Q96384840,Jungpana Tea Estate,26.90060,88.32277,16.3,Q96384840,Jungpana Tea Estate,984,2,garden,culture;nature;relaxation,"gardens_and_parks,cultural,urban_environment,interesting_places","Tea garden in Kurseong, Darjeeling, India"
+Q4802613,Arya Tea Estate,27.04360,88.23920,2.5,Q4802613,Arya Tea Estate,982,3,garden,culture;nature;relaxation,"gardens_and_parks,cultural,urban_environment,interesting_places",Indian tea garden
+Q60788876,Rangli Rangliot Tea Garden,27.02583,88.35356,9.1,Q60788876,Rangli Rangliot,968,2,garden,culture;nature;relaxation,"gardens_and_parks,cultural,urban_environment,interesting_places","Village in West Bengal, India"
+Q96397216,Okayti Tea Estate,26.90244,88.16061,18.1,Q96397216,Okayti Tea Estate,858,2,garden,culture;nature;relaxation,"gardens_and_parks,cultural,urban_environment,interesting_places","Tea garden in West Bengal, India"
+Q7228489,Pubong Tea Garden,26.98651,88.19775,8.6,Q7228489,Poobong Tea Garden,857,3,garden,culture;nature;relaxation,"gardens_and_parks,cultural,urban_environment,interesting_places","Village in West Bengal, India"
+Q96409864,Thurbo Tea Estate,26.89644,88.17161,18.1,Q96409864,Thurbo Tea Estate,794,2,garden,culture;nature;relaxation,"gardens_and_parks,cultural,urban_environment,interesting_places","Tea garden in West Bengal, India"
+Q4829337,Avongrove Tea Estate,26.93880,88.21080,12.1,Q4829337,Avongrove Tea Estate,733,2,garden,culture;nature;relaxation,"gardens_and_parks,cultural,urban_environment,interesting_places","Tea garden in West Bengal, India"
+Q96379720,Goomtee Tea Estate,26.88562,88.32536,18.0,Q96379720,Goomtee Tea Estate,685,2,garden,culture;nature;relaxation,"gardens_and_parks,cultural,urban_environment,interesting_places",Tea garden in India
+Q4840574,Badamtam tea estate,27.09440,88.29970,7.3,Q4840574,Badamtam Tea Estate,648,2,garden,culture;nature;relaxation,"gardens_and_parks,cultural,urban_environment,interesting_places","Tea garden in West Bengal, India"
+Q60789324,Mariabong Tea Garden,27.03935,88.19363,6.9,Q60789324,Mariabong Tea Garden,632,2,garden,culture;nature;relaxation,"gardens_and_parks,cultural,urban_environment,interesting_places","Village in West Bengal, India"
+Q1382137,Puttabong (Tukvar) Tea Estate,27.06783,88.25905,3.4,Q1382137,Pattabong Tea Garden,611,2,garden,culture;nature;relaxation,"gardens_and_parks,cultural,urban_environment,interesting_places","Village in West Bengal, India"
+Q96373002,Balasun Tea Estate,26.86060,88.23570,19.9,Q96373002,Balasun Tea Estate,577,2,garden,culture;nature;relaxation,"gardens_and_parks,cultural,urban_environment,interesting_places",Indian tea garden
+Q7261932,Pussimbing Tea Estate,26.99020,88.22380,6.5,Q7261932,Pussimbing Tea Estate,565,2,garden,culture;nature;relaxation,"gardens_and_parks,cultural,urban_environment,interesting_places","Tea garden in West Bengal, India"
+Q60788739,Singla Tea Garden,27.11695,88.30096,9.6,Q60788739,Singla Tea Garden,565,2,garden,culture;nature;relaxation,"gardens_and_parks,cultural,urban_environment,interesting_places","Village in West Bengal, India"
+Q60789330,Tumsong Tea Garden,27.03721,88.17381,8.8,Q60789330,Tumsong Tea Garden,505,2,garden,culture;nature;relaxation,"gardens_and_parks,cultural,urban_environment,interesting_places","Village in West Bengal, India"
+Q60788767,Soom Tea Garden,27.07987,88.23205,5.6,Q60788767,Soom Tea Garden,474,2,garden,culture;nature;relaxation,"gardens_and_parks,cultural,urban_environment,interesting_places","Village in West Bengal, India"
+Q60788799,Lebong & Mineral Spring Tea Garden,27.04114,88.29918,3.6,Q60788799,Lebong & Mineral Spring Tea Garden,430,2,garden,culture;nature;relaxation,"gardens_and_parks,cultural,urban_environment,interesting_places","Village in West Bengal, India"
+Q17038040,Phoobsering,27.08010,88.27260,4.8,Q17038040,Phoobsering Tea Estate,428,2,garden,culture;nature;relaxation,"gardens_and_parks,cultural,urban_environment,interesting_places","Tea harvesting area in Darjeeling, West Bengal, India"
+Q96396408,North Tukvar Tea Estate,27.09620,88.26750,6.5,Q96396408,North Tukvar Tea Estate,407,2,garden,culture;nature;relaxation,"gardens_and_parks,cultural,urban_environment,interesting_places",Indian tea garden
+Q6961442,Namchi Monastery,27.16500,88.36600,17.5,Q6961442,Namchi Monastery,322,2,temple,spiritual,"religion,buddhist_temples,interesting_places",
+N4157227123,Ghoom Monastery,27.01178,88.25034,3.1,,,,3,temple,spiritual,"religion,buddhist_temples,monasteries,interesting_places",
+N6091968085,Union Church,27.03755,88.26495,0.2,Q104816516,,,2,temple,spiritual,"religion,churches,interesting_places,other_churches",
+Q67355300,Darjeeling Town Hall,27.04438,88.26679,0.8,Q67355300,,,2,activity,culture,"theatres_and_entertainments,cultural,interesting_places,other_theatres",
+Q56165154,Tomb of Sándor Kőrösi Csoma,27.05000,88.26667,1.4,Q56165154,,,2,monument,history,"historic,monuments_and_memorials,burial_places,interesting_places,other_burial_places,monuments",
+Q56172240,Tomb of George W. Aylmer Lloyd,27.05000,88.26667,1.4,Q56172240,,,2,monument,history,"historic,monuments_and_memorials,burial_places,interesting_places,other_burial_places,monuments",
+Q105044754,Netaji Museum and Centre for Studies in Himalayan Languages Society & Culture,26.86631,88.29857,19.4,Q105044754,,,2,museum,culture,"museums,cultural,interesting_places,other_museums",
+Q78335380,Gouripur House,27.05706,88.46278,19.9,Q78335380,,,2,monument,history;culture,"historic_architecture,architecture,interesting_places,other_buildings_and_structures",
+W348930131,St. Columba's Church,27.03734,88.26320,0.0,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+W348942041,Dhirdham Temple,27.03751,88.26209,0.1,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+W350289107,Turnbull Church,27.03835,88.26392,0.1,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N6094541388,Upasna Kendra (C.N.I),27.03787,88.26498,0.2,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+W572594480,Municipal Girls High School,27.03967,88.26448,0.3,Q67355142,,,1,monument,history;culture,"architecture,historic_architecture,interesting_places,other_buildings_and_structures",
+N4791898423,Himalayan Tibet Museum,27.03944,88.26588,0.4,,,,1,museum,culture,"cultural,museums,interesting_places,other_museums",
+Q67354989,Victoria falls,27.03534,88.25877,0.5,Q67354989,,,1,viewpoint,nature,"waterfalls,interesting_places,natural,water",
+N6660900803,Sherpa Monastery,27.04087,88.26791,0.6,,,,1,temple,spiritual,"religion,buddhist_temples,interesting_places",
+N4172563301,Street Food Stalls,27.04400,88.26788,0.9,,,,1,monument,,"other,unclassified_objects,interesting_places,tourist_object",
+N3547309040,Burdwan Palace,27.03463,88.25418,0.9,,,,1,monument,history,"historic,monuments_and_memorials,interesting_places,monuments",
+N4172563298,Diocesan Pastoral Center,27.04574,88.26501,0.9,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N4049697954,Statue of Bhanu Bhakta Acharya,27.04497,88.26756,0.9,,,,1,viewpoint,history;culture,"historic,monuments_and_memorials,cultural,urban_environment,interesting_places,sculptures,monuments",
+N4175400389,The Mall Market,27.04515,88.26737,1.0,,,,1,monument,,"other,unclassified_objects,interesting_places,tourist_object",
+N4156655118,Japanese Temple,27.02838,88.25955,1.1,,,,1,temple,spiritual,"religion,buddhist_temples,interesting_places",
+N4830776632,Entrance to Observatory Hill,27.04609,88.26810,1.1,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N4903119121,Ava art gallery museum,27.02916,88.25742,1.1,,,,1,museum,culture,"cultural,museums,interesting_places,other_museums",
+W349472718,Gorkha Ranga Mancha Bhawan,27.04715,88.26620,1.1,,,,1,activity,culture,"cultural,theatres_and_entertainments,interesting_places,other_theatres",
+N4049655871,Deshbandu Museum,27.04663,88.26874,1.2,,,,1,museum,culture,"cultural,museums,interesting_places,other_museums",
+N3319008428,St' Andrew's Church,27.04796,88.26696,1.2,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N3549141710,Observatory Hill,27.04787,88.26803,1.3,,,,1,temple,spiritual,"religion,hindu_temples,buddhist_temples,interesting_places",
+N4787582025,Alexander Csoma de Kőrös memorial carve,27.04853,88.26587,1.3,,,,1,monument,history,"historic,monuments_and_memorials,interesting_places,monuments",
+N5708011824,Mahakal mandir,27.04806,88.26820,1.3,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N6907508187,old hotel overlooking city and tea,27.05019,88.26228,1.4,,,,1,viewpoint,nature,"view_points,other,interesting_places",
+Q60788796,Alubari Tea Garden,27.02428,88.26596,1.5,Q60788796,,,1,garden,culture;nature;relaxation,"gardens_and_parks,cultural,urban_environment,interesting_places",
+Q60788802,Pandam Tea Garden,27.03429,88.27926,1.6,Q60788802,,,1,garden,culture;nature;relaxation,"gardens_and_parks,cultural,urban_environment,interesting_places",
+N4787587221,Tomb of Alexander Csoma de Koros,27.05228,88.25903,1.7,,,,1,monument,history,"historic,monuments_and_memorials,interesting_places,monuments",
+W349476807,Dali Monastery,27.02371,88.25481,1.7,,,,1,temple,spiritual,"religion,buddhist_temples,interesting_places",
+N4056075533,Tomb of General Lloyd,27.05268,88.25867,1.7,,,,1,monument,history,"historic,monuments_and_memorials,interesting_places,monuments",
+N6594068186,Stunning views!,27.05363,88.25769,1.9,,,,1,viewpoint,nature,"view_points,other,interesting_places",
+N2084522609,Tenzing Rock,27.05794,88.25656,2.4,,,,1,viewpoint,nature,"view_points,other,interesting_places",
+N2084522598,Gombu Rock,27.05795,88.25624,2.4,,,,1,viewpoint,nature,"view_points,other,interesting_places",
+Q60788750,Rungneet Tea Garden,27.05887,88.26491,2.4,Q60788750,,,1,garden,culture;nature;relaxation,"gardens_and_parks,cultural,urban_environment,interesting_places",
+Q60788776,Arya Tea Garden,27.03889,88.23879,2.4,Q60788776,,,1,garden,culture;nature;relaxation,"gardens_and_parks,cultural,urban_environment,interesting_places",
+Q60788788,Bloomfield Tea Garden,27.03096,88.23949,2.4,Q60788788,,,1,garden,culture;nature;relaxation,"gardens_and_parks,cultural,urban_environment,interesting_places",
+Q102762485,Himalayan Mountaineering Institute museum,27.05842,88.25388,2.5,Q102762485,,,1,museum,culture,"museums,cultural,interesting_places,other_museums",
+Q60789369,Rangaroong Tea Garden,27.02270,88.28389,2.6,Q60789369,,,1,garden,culture;nature;relaxation,"gardens_and_parks,cultural,urban_environment,interesting_places",
+W251313358,Darjeeling Himalayan Railway,27.01626,88.24763,2.8,,,,1,monument,culture,"bridges,architecture,interesting_places,other_bridges",
+W480695857,Sakyacholing Gompa,27.00864,88.25124,3.4,,,,1,temple,spiritual,"religion,buddhist_temples,interesting_places",
+W480694730,Yiga Choeling Monastery,27.00751,88.24635,3.7,,,,1,temple,spiritual,"religion,buddhist_temples,interesting_places",
+N7054854686,Ghum monastery,27.00734,88.24632,3.7,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+Q60788745,Banockburn Tea Garden,27.05853,88.29335,3.8,Q60788745,,,1,garden,culture;nature;relaxation,"gardens_and_parks,cultural,urban_environment,interesting_places",
+Q60788748,Phubsering Tea Garden,27.07334,88.27551,4.2,Q60788748,,,1,garden,culture;nature;relaxation,"gardens_and_parks,cultural,urban_environment,interesting_places",
+Q60788779,Rishihat Tea Garden,27.04305,88.21609,4.7,Q60788779,,,1,garden,culture;nature;relaxation,"gardens_and_parks,cultural,urban_environment,interesting_places",
+Q60788730,Liza Hill Tea Garden,27.05248,88.20795,5.7,Q60788730,,,1,garden,culture;nature;relaxation,"gardens_and_parks,cultural,urban_environment,interesting_places",
+Q60789315,Salu Tea Garden,27.02776,88.20280,6.1,Q60789315,,,1,garden,culture;nature;relaxation,"gardens_and_parks,cultural,urban_environment,interesting_places",
+Q60788764,Lebong Tea Garden,27.09128,88.24481,6.2,Q60788764,,,1,garden,culture;nature;relaxation,"gardens_and_parks,cultural,urban_environment,interesting_places",
+Q60789320,Kacel Tea Garden,27.03317,88.19968,6.3,Q60789320,,,1,garden,culture;nature;relaxation,"gardens_and_parks,cultural,urban_environment,interesting_places",
+Q60789356,Pussinbong Tea Garden,26.99109,88.22604,6.3,Q60789356,,,1,garden,culture;nature;relaxation,"gardens_and_parks,cultural,urban_environment,interesting_places",
+Q60789382,Kalej Valley Tea Garden,26.97179,88.25412,7.4,Q60789382,,,1,garden,culture;nature;relaxation,"gardens_and_parks,cultural,urban_environment,interesting_places",
+N4618356289,Buddhist monastery,26.97172,88.27563,7.4,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+Q60788735,Barnesbeg Tea Garden,27.10783,88.27191,7.9,Q60788735,,,1,garden,culture;nature;relaxation,"gardens_and_parks,cultural,urban_environment,interesting_places",
+N4618355893,Sunada Monastery,26.96718,88.27367,7.9,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+W480701010,Samddup dargay choeling monastary,26.96683,88.27418,7.9,,,,1,temple,spiritual,"religion,buddhist_temples,interesting_places",
+Q60789327,Lingia Tea Garden,27.03798,88.18219,8.0,Q60789327,,,1,garden,culture;nature;relaxation,"gardens_and_parks,cultural,urban_environment,interesting_places",
+Q60789388,Dooteria Tea Garden,26.96712,88.22330,8.8,Q60789388,,,1,garden,culture;nature;relaxation,"gardens_and_parks,cultural,urban_environment,interesting_places",
+Q60788807,Kambal Tea Garden,27.09261,88.33997,9.8,Q60788807,,,1,garden,culture;nature;relaxation,"gardens_and_parks,cultural,urban_environment,interesting_places",
+Q60789391,Okas Tea Garden,26.95003,88.25010,9.8,Q60789391,,,1,garden,culture;nature;relaxation,"gardens_and_parks,cultural,urban_environment,interesting_places",
+Q60789337,Mim Tea Garden,27.02536,88.16487,9.8,Q60789337,,,1,garden,culture;nature;relaxation,"gardens_and_parks,cultural,urban_environment,interesting_places",
+Q60789350,Pulung Dong Tea Estate,26.97032,88.19594,10.0,Q60789350,,,1,garden,culture;nature;relaxation,"gardens_and_parks,cultural,urban_environment,interesting_places",
+Q60788888,Pumong Tea Garden,27.00779,88.35958,10.1,Q60788888,,,1,garden,culture;nature;relaxation,"gardens_and_parks,cultural,urban_environment,interesting_places",
+Q60789397,Ring Tong Tea Garden (Gunawar),26.93925,88.26667,10.9,Q60789397,,,1,garden,culture;nature;relaxation,"gardens_and_parks,cultural,urban_environment,interesting_places",
+Q60788814,Lapchu Tea Garden,27.06886,88.36939,11.1,Q60788814,,,1,garden,culture;nature;relaxation,"gardens_and_parks,cultural,urban_environment,interesting_places",
+Q60789436,Samrik Tea Garden (Simripani),26.95417,88.19672,11.4,Q60789436,,,1,garden,culture;nature;relaxation,"gardens_and_parks,cultural,urban_environment,interesting_places",
+Q60788881,Gielie Tea Garden,27.01710,88.37653,11.5,Q60788881,,,1,garden,culture;nature;relaxation,"gardens_and_parks,cultural,urban_environment,interesting_places",
+Q60789520,Dayal Thong(D.R.)Tea Garden,26.93611,88.28732,11.5,Q60789520,,,1,garden,culture;nature;relaxation,"gardens_and_parks,cultural,urban_environment,interesting_places",
+W678830535,Jorepokhri Salamander WLS,26.99119,88.15732,11.7,,,,1,viewpoint,nature,"natural,interesting_places,nature_reserves,other_nature_conservation_areas",
+W668999183,Kitam Bird WLS,27.10971,88.35249,12.0,,,,1,viewpoint,nature,"natural,interesting_places,nature_reserves,other_nature_conservation_areas",
+Q60789394,Moonda Kotee Tea Garden,26.92957,88.23566,12.3,Q60789394,,,1,garden,culture;nature;relaxation,"gardens_and_parks,cultural,urban_environment,interesting_places",
+Q60789440,Molatey Tea Garden (Aveneroge),26.93842,88.20072,12.6,Q60789440,,,1,garden,culture;nature;relaxation,"gardens_and_parks,cultural,urban_environment,interesting_places",
+Q60789523,Maharani Tea Garden,26.92512,88.28888,12.8,Q60789523,,,1,garden,culture;nature;relaxation,"gardens_and_parks,cultural,urban_environment,interesting_places",
+Q60789443,Dhajea Tea Garden,26.92550,88.21801,13.2,Q60789443,,,1,garden,culture;nature;relaxation,"gardens_and_parks,cultural,urban_environment,interesting_places",
+Q60789525,Edenvale Tea Garden,26.91714,88.28868,13.6,Q60789525,,,1,garden,culture;nature;relaxation,"gardens_and_parks,cultural,urban_environment,interesting_places",
+Q60789417,Chamu Tea Garden,26.96052,88.15430,13.8,Q60789417,,,1,garden,culture;nature;relaxation,"gardens_and_parks,cultural,urban_environment,interesting_places",
+W341644405,Tarzun tea factory,26.94254,88.17359,13.8,Q60789431,,,1,garden,culture;nature;relaxation,"urban_environment,gardens_and_parks,cultural,interesting_places",
+Q60789419,Soolbongs Tea Garden,26.94752,88.16555,13.9,Q60789419,,,1,garden,culture;nature;relaxation,"gardens_and_parks,cultural,urban_environment,interesting_places",
+N8667702117,Balasun Tea Ropeway,26.91238,88.24962,14.0,,,,1,monument,,"other,unclassified_objects,interesting_places,tourist_object",
+Q60789529,Sepoy Dhora(D.R.)Tea Garden,26.91208,88.28017,14.0,Q60789529,,,1,garden,culture;nature;relaxation,"gardens_and_parks,cultural,urban_environment,interesting_places",
+Q60789429,Sagmaru Tea Garden (Sungma),26.93403,88.17959,14.2,Q60789429,,,1,garden,culture;nature;relaxation,"gardens_and_parks,cultural,urban_environment,interesting_places",
+Q60789447,Nagri Farm Tea Garden,26.91544,88.20915,14.6,Q60789447,,,1,garden,culture;nature;relaxation,"gardens_and_parks,cultural,urban_environment,interesting_places",
+Q60789399,Nahori Tea Garden (Balasom),26.90736,88.24268,14.6,Q60789399,,,1,garden,culture;nature;relaxation,"gardens_and_parks,cultural,urban_environment,interesting_places",
+N4559411390,Shirdi Sai Mandir,27.15665,88.32874,14.8,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+Q60789664,Majua Tea Garden,26.91232,88.31657,14.9,Q60789664,,,1,garden,culture;nature;relaxation,"gardens_and_parks,cultural,urban_environment,interesting_places",
+N5786064153,Sai Temple,27.15224,88.34116,14.9,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N5786063054,Dwarka Mai Temple,27.15219,88.34130,14.9,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N5786043156,Omkāresvar Jyotirlinga,27.15264,88.34089,14.9,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N5786064353,Baidyanātha Jyotirlinga,27.15277,88.34069,14.9,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N5786064357,Kirateshvara Mangkhim,27.15203,88.34218,15.0,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N5786064354,Bhīmasankara Jyotirlinga,27.15286,88.34068,15.0,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+W478551464,Shiva,27.15285,88.34097,15.0,,,,1,temple,spiritual;culture,"religion,hindu_temples,cultural,urban_environment,interesting_places,sculptures",
+N4559873290,"Siddheshwara Dham, solophok, namchi",27.15266,88.34133,15.0,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N5786064154,Setubandha Rāmesvaram,27.15303,88.34076,15.0,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N5786064156,Ghusmesvara Jyotirlinga,27.15269,88.34151,15.0,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+W478551103,Solophok Chardham,27.15233,88.34224,15.0,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+N5786064355,Sri Nāgesvara Jyotirlinga,27.15310,88.34092,15.0,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N5786064155,Sri Tryambakesvara Jyotirlinga,27.15291,88.34133,15.0,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N5786064653,Kedāresvara Jyotirlinga,27.15278,88.34160,15.0,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N5786064356,Visvesvara Jyotirlinga,27.15314,88.34126,15.0,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N6979214491,Maney Bhanjyang,26.98729,88.12033,15.2,,,,1,viewpoint,nature,"view_points,other,interesting_places",
+Q60789661,Chaita Pani Tea Garden,26.90283,88.29816,15.4,Q60789661,,,1,garden,culture;nature;relaxation,"gardens_and_parks,cultural,urban_environment,interesting_places",
+N6981965485,Chitrey,26.99030,88.11208,15.9,,,,1,viewpoint,nature,"view_points,other,interesting_places",
+Q60789536,Singel Tea Garden,26.89469,88.26233,15.9,Q60789536,,,1,garden,culture;nature;relaxation,"gardens_and_parks,cultural,urban_environment,interesting_places",
+Q60789422,Seyok Tea Garden,26.93430,88.15091,16.0,Q60789422,,,1,garden,culture;nature;relaxation,"gardens_and_parks,cultural,urban_environment,interesting_places",
+W478553723,Allay Gumpa,27.16152,88.35470,16.5,,,,1,temple,spiritual,"religion,buddhist_temples,interesting_places",
+Q60789683,Mahal Diram Tea Garden,26.91209,88.35233,16.5,Q60789683,,,1,garden,culture;nature;relaxation,"gardens_and_parks,cultural,urban_environment,interesting_places",
+Q60789425,Gopal Dhara Tea Garden,26.91934,88.16020,16.6,Q60789425,,,1,garden,culture;nature;relaxation,"gardens_and_parks,cultural,urban_environment,interesting_places",
+Q60789539,Montiviot Tea Garden,26.88603,88.26844,16.9,Q60789539,,,1,garden,culture;nature;relaxation,"gardens_and_parks,cultural,urban_environment,interesting_places",
+Q60789641,Jungpana Tea Garden,26.89532,88.32226,16.9,Q60789641,,,1,garden,culture;nature;relaxation,"gardens_and_parks,cultural,urban_environment,interesting_places",
+W429898120,St. Paul the Apostle Church,26.88587,88.27820,16.9,,,,1,temple,spiritual,"religion,churches,interesting_places,other_churches",
+W576918570,Singling Tamang Gumpa,27.17880,88.19875,17.0,,,,1,temple,spiritual,"religion,monasteries,interesting_places",
+N4925330148,Central Park,27.16596,88.36194,17.3,,,,1,viewpoint,culture,"fountains,cultural,urban_environment,interesting_places",
+Q60789544,Karbia Tea Garden,26.88072,88.26801,17.4,Q60789544,,,1,garden,culture;nature;relaxation,"gardens_and_parks,cultural,urban_environment,interesting_places",
+Q60789637,Mahanadi Tea Garden,26.88862,88.32196,17.6,Q60789637,,,1,garden,culture;nature;relaxation,"gardens_and_parks,cultural,urban_environment,interesting_places",
+N2405480536,Meghma Gompa,27.02337,88.08349,17.9,,,,1,temple,spiritual,"religion,buddhist_temples,interesting_places",
+N5289767321,"Gopal Dhara Tea plantation , view point",26.91184,88.15002,17.9,,,,1,monument,,"other,unclassified_objects,interesting_places,tourist_object",
+Q60789472,Marma Tea Garden,26.87961,88.22485,18.0,Q60789472,,,1,garden,culture;nature;relaxation,"gardens_and_parks,cultural,urban_environment,interesting_places",
+Q60789553,Ambootia Tea Garden,26.87614,88.24769,18.0,Q60789553,,,1,garden,culture;nature;relaxation,"gardens_and_parks,cultural,urban_environment,interesting_places",
+Q60789685,Malotar Tea Garden,26.89162,88.34404,18.1,Q60789685,,,1,garden,culture;nature;relaxation,"gardens_and_parks,cultural,urban_environment,interesting_places",
+N2132509662,Boker Monastery,26.88697,88.19067,18.2,,,,1,temple,spiritual,"religion,buddhist_temples,interesting_places",
+N6294802385,Gurassey chorten,27.02648,88.07532,18.6,,,,1,monument,history,"historic,monuments_and_memorials,interesting_places,monuments",
+Q60789452,Okaity Tea Garden,26.89447,88.15843,19.0,Q60789452,,,1,garden,culture;nature;relaxation,"gardens_and_parks,cultural,urban_environment,interesting_places",
+Q60789548,Castleton Tea Garden,26.86662,88.27879,19.1,Q60789548,,,1,garden,culture;nature;relaxation,"gardens_and_parks,cultural,urban_environment,interesting_places",
+Q60789634,Lizziepur Tea Garden,26.87517,88.32583,19.1,Q60789634,,,1,garden,culture;nature;relaxation,"gardens_and_parks,cultural,urban_environment,interesting_places",
+Q60789644,North Shibkhola Tea Garden,26.86846,88.29781,19.1,Q60789644,,,1,garden,culture;nature;relaxation,"gardens_and_parks,cultural,urban_environment,interesting_places",
+N7152881585,Tree growing through house,26.86788,88.29627,19.1,,,,1,monument,,"other,unclassified_objects,interesting_places,tourist_object",
+Q60789550,Spring Sidi Tea Garden,26.86514,88.26582,19.2,Q60789550,,,1,garden,culture;nature;relaxation,"gardens_and_parks,cultural,urban_environment,interesting_places",
+Q60789695,Simring Tea Garden,26.88760,88.35970,19.2,Q60789695,,,1,garden,culture;nature;relaxation,"gardens_and_parks,cultural,urban_environment,interesting_places",
+N6979214588,Tumling,27.03137,88.06903,19.2,,,,1,viewpoint,nature,"view_points,other,interesting_places",
+N7065469685,"Rock garden, Namchi Ropeway Station",27.18045,88.37461,19.4,,,,1,monument,,"other,unclassified_objects,interesting_places,tourist_object",
+W265605687,Mani wall,27.03114,88.06718,19.4,,,,1,temple,spiritual,"religion,buddhist_temples,interesting_places",
+W478555927,Guru Padmasambhava,27.18004,88.37971,19.6,,,,1,temple,spiritual;culture,"religion,buddhist_temples,cultural,urban_environment,interesting_places,sculptures",
+N5546885922,Maniram Bhanjyang,27.16030,88.40859,19.8,,,,1,viewpoint,nature,"view_points,other,interesting_places",
+N4574489596,Samdruptse Hill,27.18184,88.38332,20.0,,,,1,viewpoint,nature,"mountain_peaks,geological_formations,natural,interesting_places",
+node/11377270069,Organic Vegetable market,27.16610,88.36356,17.4,,,,,market,shopping,amenity=marketplace,
+way/352734940,Jorethang Market,27.13166,88.28174,10.6,,,,,market,shopping,amenity=marketplace,
+way/352754281,Dargon Market,27.04018,88.26476,0.3,,,,,market,shopping,amenity=marketplace,
+way/576918556,Soreng Bazar,27.17027,88.19978,16.0,,,,,market,shopping,amenity=marketplace,
+way/1261894967,Kisan Market,27.16439,88.35966,17.0,,,,,market,shopping,amenity=marketplace,

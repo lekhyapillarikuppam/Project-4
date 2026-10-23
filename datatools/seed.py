@@ -44,6 +44,8 @@ EXTRA_OSM = {
     "JAI": ["node/7068572485", "way/170101078"],   # Masala Chowk, Johari Bazar
     "VNS": ["node/2805194167", "way/26683124",    # Blue Lassi Shop, Dashashwamedh Road,
             "node/11438507361", "node/9520848117"],   # Ratneshwar Mahadev, Annapurna (OpenTripMap points are wrong)
+    "AGR": ["way/1564172826"],                     # Fatehpur Sikri (outside the 20 km seed radius)
+    "HMP": ["node/13381673197", "way/1128222500"],   # Hampi Mango Tree Restaurant, BABA Cafe
 }
 FETCHED = time.strftime("%Y-%m-%d")
 

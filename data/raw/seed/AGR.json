@@ -1,0 +1,3095 @@
+{
+ "city_id": "AGR",
+ "centre": [
+  27.18,
+  78.02
+ ],
+ "radius_km": 20,
+ "fetched_on": "2026-10-24",
+ "opentripmap": {
+  "url": "https://api.opentripmap.com/0.1/en/places/radius",
+  "params": {
+   "radius": 20000,
+   "lat": 27.18,
+   "lon": 78.02,
+   "kinds": "interesting_places",
+   "format": "json",
+   "limit": 500,
+   "rate": "3, then 2, then 1 (merged)"
+  },
+  "items": [
+   {
+    "source": "opentripmap",
+    "xid": "W310318567",
+    "osm": "way/310318567",
+    "name": "Agra Fort",
+    "wikidata": "Q171857",
+    "kinds": "historic,monuments_and_memorials,interesting_places,monuments",
+    "rate": 7,
+    "lat": 27.179824829101562,
+    "lon": 78.02082061767578
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N5808897760",
+    "osm": "node/5808897760",
+    "name": "Agra Fort",
+    "wikidata": "Q171857",
+    "kinds": "fortifications,historic,interesting_places,castles",
+    "rate": 7,
+    "lat": 27.179962158203125,
+    "lon": 78.02159881591797
+   },
+   {
+    "source": "opentripmap",
+    "xid": "Q4179295",
+    "osm": null,
+    "name": "Moti Masjid, Agra",
+    "wikidata": "Q4179295",
+    "kinds": "religion,mosques,interesting_places",
+    "rate": 3,
+    "lat": 27.18041229248047,
+    "lon": 78.02174377441406
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N6243460886",
+    "osm": "node/6243460886",
+    "name": "Nagina Masjid (Gem Mosque)",
+    "wikidata": "Q6958835",
+    "kinds": "religion,mosques,interesting_places",
+    "rate": 3,
+    "lat": 27.17941665649414,
+    "lon": 78.02259063720703
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W307766787",
+    "osm": "way/307766787",
+    "name": "Agra Fort",
+    "wikidata": "Q4693674",
+    "kinds": "railway_stations,industrial_facilities,interesting_places",
+    "rate": 7,
+    "lat": 27.182268142700195,
+    "lon": 78.01819610595703
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N6655840089",
+    "osm": "node/6655840089",
+    "name": "Musammun Burj",
+    "wikidata": "Q6940101",
+    "kinds": "other,unclassified_objects,interesting_places,tourist_object",
+    "rate": 3,
+    "lat": 27.1788387298584,
+    "lon": 78.02360534667969
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N3893485491",
+    "osm": "node/3893485491",
+    "name": "Jahangir's Palace",
+    "wikidata": "Q3612475",
+    "kinds": "other,unclassified_objects,interesting_places,historic_object",
+    "rate": 7,
+    "lat": 27.17783546447754,
+    "lon": 78.02313995361328
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W59281879",
+    "osm": "way/59281879",
+    "name": "Jama Masjid",
+    "wikidata": "Q6127147",
+    "kinds": "religion,mosques,interesting_places",
+    "rate": 3,
+    "lat": 27.182025909423828,
+    "lon": 78.01615905761719
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W378105192",
+    "osm": "way/378105192",
+    "name": "Tomb of I'timād-ud-Daulah",
+    "wikidata": "Q1318766",
+    "kinds": "historic,monuments_and_memorials,burial_places,interesting_places,mausoleums,monuments",
+    "rate": 7,
+    "lat": 27.192867279052734,
+    "lon": 78.03099822998047
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W50284165",
+    "osm": "way/50284165",
+    "name": "Tomb of Itimad ud Daulah",
+    "wikidata": "Q1318766",
+    "kinds": "historic,monuments_and_memorials,burial_places,archaeology,interesting_places,other_archaeological_sites,mausoleums,monuments",
+    "rate": 7,
+    "lat": 27.19278335571289,
+    "lon": 78.03143310546875
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W376367510",
+    "osm": "way/376367510",
+    "name": "Taj Mahal Mosque",
+    "wikidata": "Q9141",
+    "kinds": "religion,other_temples,historic,monuments_and_memorials,burial_places,interesting_places,mausoleums,monuments",
+    "rate": 7,
+    "lat": 27.175010681152344,
+    "lon": 78.04069519042969
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W50288686",
+    "osm": "way/50288686",
+    "name": "Mehtabh Bagh",
+    "wikidata": "Q12061618",
+    "kinds": "historic,urban_environment,gardens_and_parks,archaeology,cultural,interesting_places,other_archaeological_sites",
+    "rate": 3,
+    "lat": 27.179187774658203,
+    "lon": 78.04208374023438
+   },
+   {
+    "source": "opentripmap",
+    "xid": "Q11737313",
+    "osm": null,
+    "name": "Cathedral of the Immaculate Conception of Agra",
+    "wikidata": "Q11737313",
+    "kinds": "religion,churches,interesting_places,other_churches",
+    "rate": 3,
+    "lat": 27.197799682617188,
+    "lon": 78.00969696044922
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W375257537",
+    "osm": "way/375257537",
+    "name": "Taj Mahal",
+    "wikidata": "Q9141",
+    "kinds": "historic,monuments_and_memorials,burial_places,interesting_places,mausoleums,monuments",
+    "rate": 7,
+    "lat": 27.175012588500977,
+    "lon": 78.04209899902344
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W256911883",
+    "osm": "way/256911883",
+    "name": "Chini Ka Rauza",
+    "wikidata": "Q5101062",
+    "kinds": "gardens_and_parks,cultural,urban_environment,interesting_places",
+    "rate": 7,
+    "lat": 27.20086097717285,
+    "lon": 78.03438568115234
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N301786568",
+    "osm": "node/301786568",
+    "name": "Raja-Ki-Mandi",
+    "wikidata": "Q15271403",
+    "kinds": "railway_stations,industrial_facilities,interesting_places",
+    "rate": 7,
+    "lat": 27.194026947021484,
+    "lon": 77.99707794189453
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N3079682241",
+    "osm": "node/3079682241",
+    "name": "Masjid Raja Mandi Station",
+    "wikidata": "Q15271403",
+    "kinds": "railway_stations,industrial_facilities,religion,mosques,interesting_places",
+    "rate": 7,
+    "lat": 27.193864822387695,
+    "lon": 77.99585723876953
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N458972632",
+    "osm": "node/458972632",
+    "name": "Agra Cantonment Junction",
+    "wikidata": "Q3634740",
+    "kinds": "railway_stations,industrial_facilities,interesting_places",
+    "rate": 7,
+    "lat": 27.159034729003906,
+    "lon": 77.99060821533203
+   },
+   {
+    "source": "opentripmap",
+    "xid": "Q2509591",
+    "osm": null,
+    "name": "Rooms-katholieke begraafplaats",
+    "wikidata": "Q2509591",
+    "kinds": "cemeteries,historic,burial_places,interesting_places",
+    "rate": 3,
+    "lat": 27.110000610351562,
+    "lon": 78.0
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N316226258",
+    "osm": "node/316226258",
+    "name": "Akbar's tomb and mausoleum",
+    "wikidata": "Q416646",
+    "kinds": "historic,monuments_and_memorials,burial_places,interesting_places,other_burial_places,monuments",
+    "rate": 3,
+    "lat": 27.220434188842773,
+    "lon": 77.95044708251953
+   },
+   {
+    "source": "opentripmap",
+    "xid": "Q3585487",
+    "osm": null,
+    "name": "Akbar's Church",
+    "wikidata": "Q3585487",
+    "kinds": "religion,churches,interesting_places,other_churches",
+    "rate": 7,
+    "lat": 27.100000381469727,
+    "lon": 78.0
+   },
+   {
+    "source": "opentripmap",
+    "xid": "Q16933896",
+    "osm": null,
+    "name": "Mina Masjid",
+    "wikidata": "Q16933896",
+    "kinds": "religion,mosques,interesting_places",
+    "rate": 6,
+    "lat": 27.17984962463379,
+    "lon": 78.02091217041016
+   },
+   {
+    "source": "opentripmap",
+    "xid": "Q97881959",
+    "osm": null,
+    "name": "Somnath Gates",
+    "wikidata": "Q97881959",
+    "kinds": "fortifications,historic,interesting_places,other_fortifications",
+    "rate": 6,
+    "lat": 27.17984962463379,
+    "lon": 78.02091217041016
+   },
+   {
+    "source": "opentripmap",
+    "xid": "Q97881918",
+    "osm": null,
+    "name": "Hon'ble John Russell Colvin's Tomb.",
+    "wikidata": "Q97881918",
+    "kinds": "historic,monuments_and_memorials,burial_places,interesting_places,other_burial_places,monuments",
+    "rate": 6,
+    "lat": 27.17984962463379,
+    "lon": 78.02091217041016
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W305103120",
+    "osm": "way/305103120",
+    "name": "Mankameshwar Temple",
+    "wikidata": "Q17058919",
+    "kinds": "religion,hindu_temples,interesting_places",
+    "rate": 2,
+    "lat": 27.18369483947754,
+    "lon": 78.01749420166016
+   },
+   {
+    "source": "opentripmap",
+    "xid": "Q16640646",
+    "osm": null,
+    "name": "Gurdwara Mai Than Agra",
+    "wikidata": "Q16640646",
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 2,
+    "lat": 27.19181251525879,
+    "lon": 78.0121841430664
+   },
+   {
+    "source": "opentripmap",
+    "xid": "Q5939659",
+    "osm": null,
+    "name": "Humanyun Mosque",
+    "wikidata": "Q5939659",
+    "kinds": "religion,mosques,interesting_places",
+    "rate": 2,
+    "lat": 27.182497024536133,
+    "lon": 78.03939819335938
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W778487537",
+    "osm": "way/778487537",
+    "name": "Idgah Station",
+    "wikidata": "Q5988564",
+    "kinds": "railway_stations,industrial_facilities,interesting_places",
+    "rate": 6,
+    "lat": 27.173818588256836,
+    "lon": 77.99990844726562
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4430094389",
+    "osm": "node/4430094389",
+    "name": "Taj Mahal Museum",
+    "wikidata": "Q14628832",
+    "kinds": "cultural,museums,interesting_places,other_museums",
+    "rate": 2,
+    "lat": 27.173137664794922,
+    "lon": 78.04063415527344
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W305617275",
+    "osm": "way/305617275",
+    "name": "KD Paliwal park",
+    "wikidata": "Q7127640",
+    "kinds": "gardens_and_parks,cultural,urban_environment,interesting_places",
+    "rate": 2,
+    "lat": 27.20139503479004,
+    "lon": 78.01405334472656
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W50284168",
+    "osm": "way/50284168",
+    "name": "Ram bagh",
+    "wikidata": "Q7288428",
+    "kinds": "historic,urban_environment,gardens_and_parks,archaeology,cultural,interesting_places,other_archaeological_sites",
+    "rate": 2,
+    "lat": 27.205461502075195,
+    "lon": 78.0384521484375
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W175659413",
+    "osm": "way/175659413",
+    "name": "Mariam's Tomb",
+    "wikidata": "Q7818627",
+    "kinds": "architecture,historic_architecture,interesting_places,other_buildings_and_structures",
+    "rate": 2,
+    "lat": 27.215301513671875,
+    "lon": 77.94271850585938
+   },
+   {
+    "source": "opentripmap",
+    "xid": "Q97881963",
+    "osm": null,
+    "name": "Well (Baoli) in the Akbari Mahal",
+    "wikidata": "Q97881963",
+    "kinds": "interesting_places,natural,natural_springs,springs_others",
+    "rate": 5,
+    "lat": 27.17984962463379,
+    "lon": 78.02091217041016
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N7515256508",
+    "osm": "node/7515256508",
+    "name": "Hathi Pol",
+    "wikidata": null,
+    "kinds": "other,unclassified_objects,interesting_places,tourist_object",
+    "rate": 1,
+    "lat": 27.180374145507812,
+    "lon": 78.01864624023438
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N6243460885",
+    "osm": "node/6243460885",
+    "name": "Moti Masjid (Pearl Mosque)",
+    "wikidata": "Q97881942",
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 5,
+    "lat": 27.180341720581055,
+    "lon": 78.0217056274414
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W490103297",
+    "osm": "way/490103297",
+    "name": "Diwan i Amm",
+    "wikidata": null,
+    "kinds": "other,unclassified_objects,interesting_places,tourist_object",
+    "rate": 1,
+    "lat": 27.178977966308594,
+    "lon": 78.02253723144531
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W490321400",
+    "osm": "way/490321400",
+    "name": "Sheesh Mahal",
+    "wikidata": null,
+    "kinds": "other,unclassified_objects,interesting_places,tourist_object",
+    "rate": 1,
+    "lat": 27.17875862121582,
+    "lon": 78.02313232421875
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N5931059706",
+    "osm": "node/5931059706",
+    "name": "Angori Bagh",
+    "wikidata": "Q97881899",
+    "kinds": "other,unclassified_objects,interesting_places,historic_object",
+    "rate": 5,
+    "lat": 27.178417205810547,
+    "lon": 78.02305603027344
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W506237275",
+    "osm": "way/506237275",
+    "name": "Anguri Bagh",
+    "wikidata": "Q97881899",
+    "kinds": "gardens_and_parks,cultural,urban_environment,interesting_places",
+    "rate": 5,
+    "lat": 27.17843246459961,
+    "lon": 78.0230712890625
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N6243460887",
+    "osm": "node/6243460887",
+    "name": "Diwan-i-Khas",
+    "wikidata": null,
+    "kinds": "other,unclassified_objects,interesting_places,tourist_object",
+    "rate": 1,
+    "lat": 27.178897857666016,
+    "lon": 78.02336120605469
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N6243483685",
+    "osm": "node/6243483685",
+    "name": "Khas Mahal",
+    "wikidata": null,
+    "kinds": "other,unclassified_objects,interesting_places,tourist_object",
+    "rate": 1,
+    "lat": 27.178466796875,
+    "lon": 78.0235595703125
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N6134741352",
+    "osm": "node/6134741352",
+    "name": "Roshnara",
+    "wikidata": null,
+    "kinds": "architecture,historic_architecture,interesting_places,manor_houses",
+    "rate": 1,
+    "lat": 27.178237915039062,
+    "lon": 78.02357482910156
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N6812236786",
+    "osm": "node/6812236786",
+    "name": "Rawatpara Spice Market",
+    "wikidata": null,
+    "kinds": "other,unclassified_objects,interesting_places,tourist_object",
+    "rate": 1,
+    "lat": 27.184154510498047,
+    "lon": 78.01692962646484
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N3764897501",
+    "osm": "node/3764897501",
+    "name": "Gurudwara Haathi Ghat",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 27.18496322631836,
+    "lon": 78.02365112304688
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N6812236787",
+    "osm": "node/6812236787",
+    "name": "Viewpoint of Taj Mahal & Agra Fort",
+    "wikidata": null,
+    "kinds": "other,unclassified_objects,interesting_places,tourist_object",
+    "rate": 1,
+    "lat": 27.18427085876465,
+    "lon": 78.0270767211914
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N3079686653",
+    "osm": "node/3079686653",
+    "name": "Roxy takise",
+    "wikidata": null,
+    "kinds": "cultural,cinemas,theatres_and_entertainments,interesting_places",
+    "rate": 1,
+    "lat": 27.18494415283203,
+    "lon": 78.01316833496094
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N3103382654",
+    "osm": "node/3103382654",
+    "name": "Purani Masjid",
+    "wikidata": null,
+    "kinds": "religion,mosques,interesting_places",
+    "rate": 1,
+    "lat": 27.176284790039062,
+    "lon": 78.011962890625
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N6077992485",
+    "osm": "node/6077992485",
+    "name": "Mal ka bazar",
+    "wikidata": null,
+    "kinds": "other,unclassified_objects,interesting_places,tourist_object",
+    "rate": 1,
+    "lat": 27.18830108642578,
+    "lon": 78.0194320678711
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N6077992489",
+    "osm": "node/6077992489",
+    "name": "Kashmiri bazar",
+    "wikidata": null,
+    "kinds": "other,unclassified_objects,interesting_places,tourist_object",
+    "rate": 1,
+    "lat": 27.187885284423828,
+    "lon": 78.0159912109375
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W305862151",
+    "osm": "way/305862151",
+    "name": "devi ka mandir",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 27.18863868713379,
+    "lon": 78.02204132080078
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W305861007",
+    "osm": "way/305861007",
+    "name": "jain mandir panja madarsa",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 27.18895721435547,
+    "lon": 78.02032470703125
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N3103382149",
+    "osm": "node/3103382149",
+    "name": "Hanuman Mandir",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 27.175905227661133,
+    "lon": 78.01080322265625
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N6077983187",
+    "osm": "node/6077983187",
+    "name": "Seo ka bazar",
+    "wikidata": null,
+    "kinds": "other,unclassified_objects,interesting_places,tourist_object",
+    "rate": 1,
+    "lat": 27.18842887878418,
+    "lon": 78.01434326171875
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W304937873",
+    "osm": "way/304937873",
+    "name": "church",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 27.188323974609375,
+    "lon": 78.01336669921875
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W304631061",
+    "osm": "way/304631061",
+    "name": "PATEL NAGAR",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 27.186382293701172,
+    "lon": 78.01016998291016
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N7263689486",
+    "osm": "node/7263689486",
+    "name": "Free view point",
+    "wikidata": null,
+    "kinds": "view_points,other,interesting_places",
+    "rate": 1,
+    "lat": 27.180431365966797,
+    "lon": 78.03236389160156
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N3762334562",
+    "osm": "node/3762334562",
+    "name": "dauji ka mandir",
+    "wikidata": null,
+    "kinds": "religion,hindu_temples,interesting_places",
+    "rate": 1,
+    "lat": 27.18755531311035,
+    "lon": 78.03087615966797
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N1003857375",
+    "osm": "node/1003857375",
+    "name": "Central Methodist Church",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 27.17742156982422,
+    "lon": 78.00619506835938
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N6964176785",
+    "osm": "node/6964176785",
+    "name": "Mosque",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 27.167882919311523,
+    "lon": 78.01573181152344
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N3862014924",
+    "osm": "node/3862014924",
+    "name": "radhakrishna mandir",
+    "wikidata": null,
+    "kinds": "religion,hindu_temples,interesting_places",
+    "rate": 1,
+    "lat": 27.18939971923828,
+    "lon": 78.02986907958984
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N3762475939",
+    "osm": "node/3762475939",
+    "name": "hanuman mandir",
+    "wikidata": null,
+    "kinds": "religion,hindu_temples,interesting_places",
+    "rate": 1,
+    "lat": 27.188995361328125,
+    "lon": 78.03105926513672
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N3762483410",
+    "osm": "node/3762483410",
+    "name": "masjid",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 27.189191818237305,
+    "lon": 78.0308837890625
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N3769943160",
+    "osm": "node/3769943160",
+    "name": "shitla mata mandir",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 27.1904239654541,
+    "lon": 78.01012420654297
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N7054153987",
+    "osm": "node/7054153987",
+    "name": "Old abandoned houses with monkeys",
+    "wikidata": null,
+    "kinds": "other,unclassified_objects,interesting_places,tourist_object",
+    "rate": 1,
+    "lat": 27.19253921508789,
+    "lon": 78.02610778808594
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N3763705107",
+    "osm": "node/3763705107",
+    "name": "mandir",
+    "wikidata": null,
+    "kinds": "religion,hindu_temples,interesting_places",
+    "rate": 1,
+    "lat": 27.193077087402344,
+    "lon": 78.01515197753906
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W304630070",
+    "osm": "way/304630070",
+    "name": "Gudari Chowki Ke Samne",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 27.1866397857666,
+    "lon": 78.00605010986328
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N1468368074",
+    "osm": "node/1468368074",
+    "name": "Chauburji",
+    "wikidata": null,
+    "kinds": "historic,monuments_and_memorials,interesting_places,monuments",
+    "rate": 1,
+    "lat": 27.190120697021484,
+    "lon": 78.03256225585938
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N3764850688",
+    "osm": "node/3764850688",
+    "name": "bedant mandir",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 27.194425582885742,
+    "lon": 78.02690887451172
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N6812253785",
+    "osm": "node/6812253785",
+    "name": "No View of Taj Mahal",
+    "wikidata": null,
+    "kinds": "other,unclassified_objects,interesting_places,tourist_object",
+    "rate": 1,
+    "lat": 27.174972534179688,
+    "lon": 78.03752899169922
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N3763705112",
+    "osm": "node/3763705112",
+    "name": "hanuman mandir",
+    "wikidata": null,
+    "kinds": "religion,hindu_temples,interesting_places",
+    "rate": 1,
+    "lat": 27.19399070739746,
+    "lon": 78.01014709472656
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N3081150858",
+    "osm": "node/3081150858",
+    "name": "temple",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 27.186418533325195,
+    "lon": 78.00248718261719
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N3102500874",
+    "osm": "node/3102500874",
+    "name": "Durga mandir",
+    "wikidata": null,
+    "kinds": "religion,buddhist_temples,interesting_places",
+    "rate": 1,
+    "lat": 27.18329620361328,
+    "lon": 78.00099182128906
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N3104946676",
+    "osm": "node/3104946676",
+    "name": "masjid,nagar pracharni",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 27.185604095458984,
+    "lon": 78.00129699707031
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N3763705116",
+    "osm": "node/3763705116",
+    "name": "hanuman mandir",
+    "wikidata": null,
+    "kinds": "religion,hindu_temples,interesting_places",
+    "rate": 1,
+    "lat": 27.194664001464844,
+    "lon": 78.0081787109375
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N3764886833",
+    "osm": "node/3764886833",
+    "name": "bagichi mandir",
+    "wikidata": null,
+    "kinds": "religion,hindu_temples,interesting_places",
+    "rate": 1,
+    "lat": 27.182758331298828,
+    "lon": 77.99995422363281
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N3102517059",
+    "osm": "node/3102517059",
+    "name": "sai baba mandir",
+    "wikidata": null,
+    "kinds": "religion,buddhist_temples,interesting_places",
+    "rate": 1,
+    "lat": 27.189573287963867,
+    "lon": 78.00129699707031
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4725668891",
+    "osm": "node/4725668891",
+    "name": "View",
+    "wikidata": null,
+    "kinds": "view_points,other,interesting_places",
+    "rate": 1,
+    "lat": 27.178306579589844,
+    "lon": 78.04206085205078
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N3104192316",
+    "osm": "node/3104192316",
+    "name": "st.peter's church",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 27.197681427001953,
+    "lon": 78.00969696044922
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N3079656946",
+    "osm": "node/3079656946",
+    "name": "St. Peters hostel",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 27.1981258392334,
+    "lon": 78.01017761230469
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N3103383963",
+    "osm": "node/3103383963",
+    "name": "st peter church",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 27.198577880859375,
+    "lon": 78.01026916503906
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W303608260",
+    "osm": "way/303608260",
+    "name": "mandir",
+    "wikidata": null,
+    "kinds": "religion,hindu_temples,interesting_places",
+    "rate": 1,
+    "lat": 27.180574417114258,
+    "lon": 77.99688720703125
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N3874223517",
+    "osm": "node/3874223517",
+    "name": "Hanuman mandir",
+    "wikidata": null,
+    "kinds": "religion,hindu_temples,interesting_places",
+    "rate": 1,
+    "lat": 27.19257926940918,
+    "lon": 78.00132751464844
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W304049188",
+    "osm": "way/304049188",
+    "name": "dhankameshwar temple",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 27.18436622619629,
+    "lon": 77.9970932006836
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W27044943",
+    "osm": "way/27044943",
+    "name": "Taj Mahal Garden",
+    "wikidata": null,
+    "kinds": "other,unclassified_objects,interesting_places,tourist_object",
+    "rate": 1,
+    "lat": 27.173070907592773,
+    "lon": 78.0421142578125
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N6812253187",
+    "osm": "node/6812253187",
+    "name": "Street Art Wall",
+    "wikidata": null,
+    "kinds": "other,unclassified_objects,interesting_places,tourist_object",
+    "rate": 1,
+    "lat": 27.16094207763672,
+    "lon": 78.03008270263672
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N6812253985",
+    "osm": "node/6812253985",
+    "name": "Street Art Wall",
+    "wikidata": null,
+    "kinds": "other,unclassified_objects,interesting_places,tourist_object",
+    "rate": 1,
+    "lat": 27.16066551208496,
+    "lon": 78.02970123291016
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N3765861134",
+    "osm": "node/3765861134",
+    "name": "Ayyappa Temple",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 27.167226791381836,
+    "lon": 78.00090026855469
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W59156688",
+    "osm": "way/59156688",
+    "name": "Darwaza",
+    "wikidata": null,
+    "kinds": "architecture,historic_architecture,interesting_places,other_buildings_and_structures",
+    "rate": 1,
+    "lat": 27.171630859375,
+    "lon": 78.04219055175781
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N6802201685",
+    "osm": "node/6802201685",
+    "name": "Viewpoint",
+    "wikidata": null,
+    "kinds": "other,unclassified_objects,interesting_places,tourist_object",
+    "rate": 1,
+    "lat": 27.175947189331055,
+    "lon": 78.04379272460938
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N2977242459",
+    "osm": "node/2977242459",
+    "name": "Mahaveer Digambar Jain Temple",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 27.196044921875,
+    "lon": 78.00353240966797
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N3533066370",
+    "osm": "node/3533066370",
+    "name": "Jhansi Rani Laxmibhai Statue",
+    "wikidata": null,
+    "kinds": "historic,monuments_and_memorials,interesting_places,monuments",
+    "rate": 1,
+    "lat": 27.163551330566406,
+    "lon": 78.00382232666016
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N6078040185",
+    "osm": "node/6078040185",
+    "name": "M",
+    "wikidata": null,
+    "kinds": "other,unclassified_objects,interesting_places,tourist_object",
+    "rate": 1,
+    "lat": 27.16493034362793,
+    "lon": 78.03795623779297
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N3092036573",
+    "osm": "node/3092036573",
+    "name": "M.D.JAIN INTER COLLEGE HARIPARWAT",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 27.196224212646484,
+    "lon": 78.00273895263672
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N3765397445",
+    "osm": "node/3765397445",
+    "name": "shri ram mandir",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 27.179750442504883,
+    "lon": 77.99461364746094
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N6835291986",
+    "osm": "node/6835291986",
+    "name": "Kumar Tobacco Shop",
+    "wikidata": null,
+    "kinds": "other,unclassified_objects,interesting_places,tourist_object",
+    "rate": 1,
+    "lat": 27.159353256225586,
+    "lon": 78.00941467285156
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N2653409047",
+    "osm": "node/2653409047",
+    "name": "Shaheed Smarak",
+    "wikidata": null,
+    "kinds": "historic,monuments_and_memorials,interesting_places,monuments",
+    "rate": 1,
+    "lat": 27.198389053344727,
+    "lon": 78.00484466552734
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W305667857",
+    "osm": "way/305667857",
+    "name": "Sheed smarak",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 27.19843101501465,
+    "lon": 78.00474548339844
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N3127186040",
+    "osm": "node/3127186040",
+    "name": "shanti nagra",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 27.176183700561523,
+    "lon": 77.99434661865234
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N6316562588",
+    "osm": "node/6316562588",
+    "name": "Tower with viewpoint on the Taj Mahal",
+    "wikidata": null,
+    "kinds": "view_points,other,interesting_places",
+    "rate": 1,
+    "lat": 27.177078247070312,
+    "lon": 78.04631805419922
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N3102664540",
+    "osm": "node/3102664540",
+    "name": "kela devi mandir",
+    "wikidata": null,
+    "kinds": "religion,buddhist_temples,interesting_places",
+    "rate": 1,
+    "lat": 27.2036190032959,
+    "lon": 78.01734161376953
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N3079661414",
+    "osm": "node/3079661414",
+    "name": "patwari mandiar",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 27.17611312866211,
+    "lon": 77.99324035644531
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N3077887533",
+    "osm": "node/3077887533",
+    "name": "bhudha behar",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 27.176029205322266,
+    "lon": 77.99296569824219
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N3077847130",
+    "osm": "node/3077847130",
+    "name": "Water Tank",
+    "wikidata": null,
+    "kinds": "fountains,cultural,urban_environment,interesting_places",
+    "rate": 1,
+    "lat": 27.175580978393555,
+    "lon": 77.99282836914062
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N3756045707",
+    "osm": "node/3756045707",
+    "name": "Shri Rameshwarnath Mahadev temple",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 27.178909301757812,
+    "lon": 77.99227142333984
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N6078048185",
+    "osm": "node/6078048185",
+    "name": "Sawad",
+    "wikidata": null,
+    "kinds": "other,unclassified_objects,interesting_places,tourist_object",
+    "rate": 1,
+    "lat": 27.1618595123291,
+    "lon": 78.03961181640625
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N5367489821",
+    "osm": "node/5367489821",
+    "name": "Taj Mahal view point within nature walk",
+    "wikidata": null,
+    "kinds": "view_points,other,interesting_places",
+    "rate": 1,
+    "lat": 27.17264175415039,
+    "lon": 78.0474853515625
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N3093488830",
+    "osm": "node/3093488830",
+    "name": "radhe shayam mandir",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 27.20044708251953,
+    "lon": 78.03744506835938
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N3096863648",
+    "osm": "node/3096863648",
+    "name": "Masjid",
+    "wikidata": null,
+    "kinds": "religion,mosques,interesting_places",
+    "rate": 1,
+    "lat": 27.17801284790039,
+    "lon": 77.9906234741211
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N3079682021",
+    "osm": "node/3079682021",
+    "name": "Hanuman ji Mandir",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 27.205808639526367,
+    "lon": 78.02529907226562
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N3079661419",
+    "osm": "node/3079661419",
+    "name": "gajadhar inter college agra",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 27.17405128479004,
+    "lon": 77.99087524414062
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N3077887535",
+    "osm": "node/3077887535",
+    "name": "bertland school",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 27.176244735717773,
+    "lon": 77.9901351928711
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N3127191487",
+    "osm": "node/3127191487",
+    "name": "k d plazz",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 27.17622184753418,
+    "lon": 77.9899673461914
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4306071195",
+    "osm": "node/4306071195",
+    "name": "Taj Nature Walk ₹100",
+    "wikidata": null,
+    "kinds": "view_points,other,interesting_places",
+    "rate": 1,
+    "lat": 27.17029571533203,
+    "lon": 78.04857635498047
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N3080097082",
+    "osm": "node/3080097082",
+    "name": "shree ram madir",
+    "wikidata": null,
+    "kinds": "religion,hindu_temples,interesting_places",
+    "rate": 1,
+    "lat": 27.17814826965332,
+    "lon": 77.98893737792969
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N3079695437",
+    "osm": "node/3079695437",
+    "name": "Anjna Cinema",
+    "wikidata": null,
+    "kinds": "cultural,cinemas,theatres_and_entertainments,interesting_places",
+    "rate": 1,
+    "lat": 27.20534896850586,
+    "lon": 78.00476837158203
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N3079664091",
+    "osm": "node/3079664091",
+    "name": "hanumah madir",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 27.20859718322754,
+    "lon": 78.01549530029297
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N3078448818",
+    "osm": "node/3078448818",
+    "name": "Lal Masjid",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 27.20734977722168,
+    "lon": 78.03052520751953
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W303613769",
+    "osm": "way/303613769",
+    "name": "masjid",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 27.17662239074707,
+    "lon": 77.9860610961914
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N3762160607",
+    "osm": "node/3762160607",
+    "name": "Hanuman Temple",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 27.18865966796875,
+    "lon": 77.98683166503906
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N3088594266",
+    "osm": "node/3088594266",
+    "name": "Ahamad Sa Baba Ki Dargah",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 27.1982364654541,
+    "lon": 77.99169921875
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N3081717419",
+    "osm": "node/3081717419",
+    "name": "pathvari mandir",
+    "wikidata": null,
+    "kinds": "religion,hindu_temples,interesting_places",
+    "rate": 1,
+    "lat": 27.17487907409668,
+    "lon": 77.98480987548828
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N6869600585",
+    "osm": "node/6869600585",
+    "name": "Smoking Area",
+    "wikidata": null,
+    "kinds": "other,unclassified_objects,interesting_places,tourist_object",
+    "rate": 1,
+    "lat": 27.16200065612793,
+    "lon": 77.99040985107422
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N3842148172",
+    "osm": "node/3842148172",
+    "name": "havelock church",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 27.152917861938477,
+    "lon": 77.9992904663086
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N3079684700",
+    "osm": "node/3079684700",
+    "name": "jain mandir",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 27.203521728515625,
+    "lon": 78.04574584960938
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N3102600281",
+    "osm": "node/3102600281",
+    "name": "sheila cinema hall",
+    "wikidata": null,
+    "kinds": "cultural,cinemas,theatres_and_entertainments,interesting_places",
+    "rate": 1,
+    "lat": 27.207082748413086,
+    "lon": 77.9988784790039
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N2653409019",
+    "osm": "node/2653409019",
+    "name": "Bhagwan Talkies",
+    "wikidata": null,
+    "kinds": "cultural,cinemas,theatres_and_entertainments,interesting_places",
+    "rate": 1,
+    "lat": 27.210472106933594,
+    "lon": 78.00492858886719
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N3842157166",
+    "osm": "node/3842157166",
+    "name": "Gumbad Mosque",
+    "wikidata": null,
+    "kinds": "religion,mosques,interesting_places",
+    "rate": 1,
+    "lat": 27.15186882019043,
+    "lon": 77.9998779296875
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N5332539221",
+    "osm": "node/5332539221",
+    "name": "राठौर मंदिर",
+    "wikidata": null,
+    "kinds": "religion,hindu_temples,interesting_places",
+    "rate": 1,
+    "lat": 27.154891967773438,
+    "lon": 78.04519653320312
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N3755427125",
+    "osm": "node/3755427125",
+    "name": "Sai baba mandir",
+    "wikidata": null,
+    "kinds": "religion,hindu_temples,interesting_places",
+    "rate": 1,
+    "lat": 27.21368980407715,
+    "lon": 78.02658081054688
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N3754910079",
+    "osm": "node/3754910079",
+    "name": "Sant Nirankari Bhawan",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 27.169775009155273,
+    "lon": 77.98316192626953
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N3755420931",
+    "osm": "node/3755420931",
+    "name": "sai Baba mandir",
+    "wikidata": null,
+    "kinds": "religion,hindu_temples,interesting_places",
+    "rate": 1,
+    "lat": 27.213239669799805,
+    "lon": 78.0302734375
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N3755424184",
+    "osm": "node/3755424184",
+    "name": "Shani Dev Mandir",
+    "wikidata": null,
+    "kinds": "religion,hindu_temples,interesting_places",
+    "rate": 1,
+    "lat": 27.213693618774414,
+    "lon": 78.02849578857422
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N3842150026",
+    "osm": "node/3842150026",
+    "name": "st.patrick church",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 27.151735305786133,
+    "lon": 77.99767303466797
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N3082189100",
+    "osm": "node/3082189100",
+    "name": "Masjid",
+    "wikidata": null,
+    "kinds": "religion,mosques,interesting_places",
+    "rate": 1,
+    "lat": 27.174448013305664,
+    "lon": 77.98165893554688
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N3755981735",
+    "osm": "node/3755981735",
+    "name": "sai baba mandir",
+    "wikidata": null,
+    "kinds": "religion,hindu_temples,interesting_places",
+    "rate": 1,
+    "lat": 27.166606903076172,
+    "lon": 77.984130859375
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N3755429250",
+    "osm": "node/3755429250",
+    "name": "Hanuman Mandir",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 27.21453857421875,
+    "lon": 78.02278137207031
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N3078410118",
+    "osm": "node/3078410118",
+    "name": "Shri Ram Chowk Mandir",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 27.21466636657715,
+    "lon": 78.01956939697266
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N3780525540",
+    "osm": "node/3780525540",
+    "name": "mazaar-e-muqaddas shaheed-e-saalis",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 27.21213722229004,
+    "lon": 78.00504302978516
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W303578832",
+    "osm": "way/303578832",
+    "name": "bala ji mandir at kamla nager",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 27.214580535888672,
+    "lon": 78.0242691040039
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N3093491225",
+    "osm": "node/3093491225",
+    "name": "4 shayad",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 27.207731246948242,
+    "lon": 78.04373931884766
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N3102616857",
+    "osm": "node/3102616857",
+    "name": "Tulsi cinema",
+    "wikidata": null,
+    "kinds": "cultural,cinemas,theatres_and_entertainments,interesting_places",
+    "rate": 1,
+    "lat": 27.211135864257812,
+    "lon": 78.0020980834961
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N3780534056",
+    "osm": "node/3780534056",
+    "name": "qazi nurullah shustari",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 27.212322235107422,
+    "lon": 78.00479888916016
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W488023839",
+    "osm": "way/488023839",
+    "name": "Mazaar Shaheed-E-Salis",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 27.212326049804688,
+    "lon": 78.00431823730469
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W371932048",
+    "osm": "way/371932048",
+    "name": "Jodhabhai Chhatri",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 27.166900634765625,
+    "lon": 77.98320770263672
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W303581530",
+    "osm": "way/303581530",
+    "name": "guru dwara",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 27.214767456054688,
+    "lon": 78.02851104736328
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N3092784182",
+    "osm": "node/3092784182",
+    "name": "mata ka mandir",
+    "wikidata": null,
+    "kinds": "religion,hindu_temples,interesting_places",
+    "rate": 1,
+    "lat": 27.208322525024414,
+    "lon": 78.04521179199219
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N3103943229",
+    "osm": "node/3103943229",
+    "name": "Gurgi Mandir",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 27.187849044799805,
+    "lon": 77.98002624511719
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W304976731",
+    "osm": "way/304976731",
+    "name": "Guru dwara",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 27.14513397216797,
+    "lon": 78.00740814208984
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W776209657",
+    "osm": "way/776209657",
+    "name": "Teele Wala Mandir",
+    "wikidata": null,
+    "kinds": "religion,hindu_temples,interesting_places",
+    "rate": 1,
+    "lat": 27.216604232788086,
+    "lon": 78.02249908447266
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N3754881004",
+    "osm": "node/3754881004",
+    "name": "Radha Govind mandir",
+    "wikidata": null,
+    "kinds": "religion,hindu_temples,interesting_places",
+    "rate": 1,
+    "lat": 27.167076110839844,
+    "lon": 77.98127746582031
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N3787065682",
+    "osm": "node/3787065682",
+    "name": "hanuman mandir",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 27.18363380432129,
+    "lon": 77.97830200195312
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W372059002",
+    "osm": "way/372059002",
+    "name": "SHIV MANDIR",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 27.165063858032227,
+    "lon": 77.9814224243164
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N3755987831",
+    "osm": "node/3755987831",
+    "name": "Shiv Ji Temple",
+    "wikidata": null,
+    "kinds": "religion,hindu_temples,interesting_places",
+    "rate": 1,
+    "lat": 27.165679931640625,
+    "lon": 77.98091888427734
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N6538575786",
+    "osm": "node/6538575786",
+    "name": "Shri NeelKanthewar Mahadev Mandir",
+    "wikidata": null,
+    "kinds": "religion,hindu_temples,interesting_places",
+    "rate": 1,
+    "lat": 27.180660247802734,
+    "lon": 77.97772979736328
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N6078081685",
+    "osm": "node/6078081685",
+    "name": "M",
+    "wikidata": null,
+    "kinds": "other,unclassified_objects,interesting_places,tourist_object",
+    "rate": 1,
+    "lat": 27.158214569091797,
+    "lon": 78.05509948730469
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N6824954086",
+    "osm": "node/6824954086",
+    "name": "Vegetable Market",
+    "wikidata": null,
+    "kinds": "other,unclassified_objects,interesting_places,tourist_object",
+    "rate": 1,
+    "lat": 27.157251358032227,
+    "lon": 78.0544204711914
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N3754869029",
+    "osm": "node/3754869029",
+    "name": "Jhulelal Mandir",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 27.16627311706543,
+    "lon": 77.9797592163086
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W303430403",
+    "osm": "way/303430403",
+    "name": "MHAVEER JAIN MANDIR (DADAWADI)",
+    "wikidata": null,
+    "kinds": "religion,hindu_temples,interesting_places",
+    "rate": 1,
+    "lat": 27.172714233398438,
+    "lon": 77.97750091552734
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N2652490684",
+    "osm": "node/2652490684",
+    "name": "Pacific Cinemas",
+    "wikidata": null,
+    "kinds": "cultural,cinemas,theatres_and_entertainments,interesting_places",
+    "rate": 1,
+    "lat": 27.159502029418945,
+    "lon": 78.05709838867188
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N2652490673",
+    "osm": "node/2652490673",
+    "name": "Carnival Cinemas TDI Mall",
+    "wikidata": null,
+    "kinds": "cultural,cinemas,theatres_and_entertainments,interesting_places",
+    "rate": 1,
+    "lat": 27.159591674804688,
+    "lon": 78.0577392578125
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N7139625586",
+    "osm": "node/7139625586",
+    "name": "kalakriti culture and convention center",
+    "wikidata": null,
+    "kinds": "cultural,theatres_and_entertainments,interesting_places,other_theatres",
+    "rate": 1,
+    "lat": 27.16204833984375,
+    "lon": 78.05977630615234
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W305134331",
+    "osm": "way/305134331",
+    "name": "prathvinath mandir",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 27.172996520996094,
+    "lon": 77.9753646850586
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N3079684701",
+    "osm": "node/3079684701",
+    "name": "karauli mandir Bharatpur",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 27.2080020904541,
+    "lon": 78.05261993408203
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N3533106242",
+    "osm": "node/3533106242",
+    "name": "CHAURANGA BABA,MANDIR",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 27.218305587768555,
+    "lon": 78.00505065917969
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N3079684694",
+    "osm": "node/3079684694",
+    "name": "Shri Siddh Siddheshwar Mandir",
+    "wikidata": null,
+    "kinds": "religion,hindu_temples,interesting_places",
+    "rate": 1,
+    "lat": 27.208927154541016,
+    "lon": 78.05241394042969
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W303430062",
+    "osm": "way/303430062",
+    "name": "shiv mandir,balkeshwar",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 27.220396041870117,
+    "lon": 78.0302963256836
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W303611389",
+    "osm": "way/303611389",
+    "name": "JAGESWER MANDIR",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 27.218862533569336,
+    "lon": 78.0038070678711
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N3079684695",
+    "osm": "node/3079684695",
+    "name": "Buddha Mandir",
+    "wikidata": null,
+    "kinds": "religion,buddhist_temples,interesting_places",
+    "rate": 1,
+    "lat": 27.209619522094727,
+    "lon": 78.05290985107422
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W303611066",
+    "osm": "way/303611066",
+    "name": "SNI MANDIR",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 27.219499588012695,
+    "lon": 78.00446319580078
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W303611613",
+    "osm": "way/303611613",
+    "name": "TEMPLE",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 27.218835830688477,
+    "lon": 78.00203704833984
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N6805063786",
+    "osm": "node/6805063786",
+    "name": "Temple",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 27.143383026123047,
+    "lon": 78.04388427734375
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N3103968167",
+    "osm": "node/3103968167",
+    "name": "maha Dev Upeshbar Mandir",
+    "wikidata": null,
+    "kinds": "religion,buddhist_temples,interesting_places",
+    "rate": 1,
+    "lat": 27.190959930419922,
+    "lon": 77.97344970703125
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N3102133140",
+    "osm": "node/3102133140",
+    "name": "Prithvinath mandir",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 27.172035217285156,
+    "lon": 77.97260284423828
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N3077895445",
+    "osm": "node/3077895445",
+    "name": "Lakshmi Temple At Balkeshwar",
+    "wikidata": null,
+    "kinds": "religion,hindu_temples,interesting_places",
+    "rate": 1,
+    "lat": 27.221689224243164,
+    "lon": 78.03160095214844
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N3078760752",
+    "osm": "node/3078760752",
+    "name": "Subhash Nagar Chauraha",
+    "wikidata": null,
+    "kinds": "other,unclassified_objects,interesting_places,historic_object",
+    "rate": 1,
+    "lat": 27.223024368286133,
+    "lon": 78.02237701416016
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W305103255",
+    "osm": "way/305103255",
+    "name": "jahavear tample",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 27.216318130493164,
+    "lon": 78.04621124267578
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W304943971",
+    "osm": "way/304943971",
+    "name": "Jain Temple",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 27.221094131469727,
+    "lon": 78.00303649902344
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N3077886244",
+    "osm": "node/3077886244",
+    "name": "radha swami bagh",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 27.22279167175293,
+    "lon": 78.00920867919922
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W303606833",
+    "osm": "way/303606833",
+    "name": "Soami Bagh",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 27.222806930541992,
+    "lon": 78.00926971435547
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W305102726",
+    "osm": "way/305102726",
+    "name": "sai nath mander",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 27.215518951416016,
+    "lon": 78.04931640625
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N3127127085",
+    "osm": "node/3127127085",
+    "name": "devi ma ka temple",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 27.139122009277344,
+    "lon": 78.00019836425781
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N3079683786",
+    "osm": "node/3079683786",
+    "name": "TEMPLE.",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 27.223730087280273,
+    "lon": 78.00456237792969
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N3079669038",
+    "osm": "node/3079669038",
+    "name": "Hanuman Mandir",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 27.190340042114258,
+    "lon": 77.96949768066406
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N3078749709",
+    "osm": "node/3078749709",
+    "name": "Karmayogi Chauraha",
+    "wikidata": null,
+    "kinds": "other,unclassified_objects,interesting_places,historic_object",
+    "rate": 1,
+    "lat": 27.22612762451172,
+    "lon": 78.02444458007812
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N3769969533",
+    "osm": "node/3769969533",
+    "name": "jain mandir",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 27.18197250366211,
+    "lon": 77.96730041503906
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N6699860874",
+    "osm": "node/6699860874",
+    "name": "Jain Mandir",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 27.181549072265625,
+    "lon": 77.9662857055664
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N3776174618",
+    "osm": "node/3776174618",
+    "name": "Hanuman Temple",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 27.169748306274414,
+    "lon": 77.96723937988281
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N3101540805",
+    "osm": "node/3101540805",
+    "name": "naari niketan",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 27.211647033691406,
+    "lon": 78.06119537353516
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N1468361506",
+    "osm": "node/1468361506",
+    "name": "Tomb of Sadiq Khan",
+    "wikidata": null,
+    "kinds": "historic,monuments_and_memorials,interesting_places,monuments",
+    "rate": 1,
+    "lat": 27.210729598999023,
+    "lon": 77.97782135009766
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W304944237",
+    "osm": "way/304944237",
+    "name": "Jain temple sarlabagh",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 27.226364135742188,
+    "lon": 78.00345611572266
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N3079677261",
+    "osm": "node/3079677261",
+    "name": "Parsanath Digambar Jain Mandir(Sector-04)",
+    "wikidata": null,
+    "kinds": "religion,hindu_temples,interesting_places",
+    "rate": 1,
+    "lat": 27.193086624145508,
+    "lon": 77.96658325195312
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W303608253",
+    "osm": "way/303608253",
+    "name": "TEMPLE,TULSI BAGH",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 27.22490882873535,
+    "lon": 77.9969253540039
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N3079677260",
+    "osm": "node/3079677260",
+    "name": "Sanidev Mandir",
+    "wikidata": null,
+    "kinds": "religion,hindu_temples,interesting_places",
+    "rate": 1,
+    "lat": 27.192668914794922,
+    "lon": 77.96519470214844
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N3776179192",
+    "osm": "node/3776179192",
+    "name": "Tata Gate",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 27.16934585571289,
+    "lon": 77.96460723876953
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N1468361056",
+    "osm": "node/1468361056",
+    "name": "Chausath Khamba",
+    "wikidata": null,
+    "kinds": "historic,monuments_and_memorials,interesting_places,monuments",
+    "rate": 1,
+    "lat": 27.212106704711914,
+    "lon": 77.9754867553711
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N3095389218",
+    "osm": "node/3095389218",
+    "name": "RAJPUT COLOR LAB",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 27.189109802246094,
+    "lon": 77.96297454833984
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N3077882240",
+    "osm": "node/3077882240",
+    "name": "sni temple,",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 27.228731155395508,
+    "lon": 78.00066375732422
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N3756853503",
+    "osm": "node/3756853503",
+    "name": "jain mandir",
+    "wikidata": null,
+    "kinds": "religion,hindu_temples,interesting_places",
+    "rate": 1,
+    "lat": 27.199888229370117,
+    "lon": 77.96234893798828
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N3776562616",
+    "osm": "node/3776562616",
+    "name": "TEMPLE",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 27.184871673583984,
+    "lon": 77.9581527709961
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W374306079",
+    "osm": "way/374306079",
+    "name": "Jay Mata Di Sewa Sadan",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 27.18804931640625,
+    "lon": 77.95819854736328
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N3079691045",
+    "osm": "node/3079691045",
+    "name": "Durga Mandir (Sector 11 Park  A.V.Colony Agra)",
+    "wikidata": null,
+    "kinds": "religion,hindu_temples,interesting_places",
+    "rate": 1,
+    "lat": 27.202741622924805,
+    "lon": 77.962890625
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N3095366918",
+    "osm": "node/3095366918",
+    "name": "fathbari temple",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 27.22644805908203,
+    "lon": 77.98491668701172
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N3096837694",
+    "osm": "node/3096837694",
+    "name": "Sani dev mandir (sector-11)",
+    "wikidata": null,
+    "kinds": "religion,hindu_temples,interesting_places",
+    "rate": 1,
+    "lat": 27.20281410217285,
+    "lon": 77.96244049072266
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N2977260210",
+    "osm": "node/2977260210",
+    "name": "Guru Dwara",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 27.21168327331543,
+    "lon": 77.96768188476562
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N3079671734",
+    "osm": "node/3079671734",
+    "name": "Guru Ka Taal",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 27.21168327331543,
+    "lon": 77.96768188476562
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4672600751",
+    "osm": "node/4672600751",
+    "name": "Samadh Hazur Sahab",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 27.236433029174805,
+    "lon": 78.0145492553711
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W473086364",
+    "osm": "way/473086364",
+    "name": "Satguru saran niwas trust",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 27.236709594726562,
+    "lon": 78.01465606689453
+   },
+   {
+    "source": "opentripmap",
+    "xid": "Q66104958",
+    "osm": null,
+    "name": "Gurdwara Manji Sahib Agra",
+    "wikidata": "Q66104958",
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 27.2109375,
+    "lon": 77.9661865234375
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N3874292057",
+    "osm": "node/3874292057",
+    "name": "Hanuman mandir",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 27.214616775512695,
+    "lon": 77.96900939941406
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4672601013",
+    "osm": "node/4672601013",
+    "name": "Samadh Maalik Santosh ji Sahab",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 27.237106323242188,
+    "lon": 78.01508331298828
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N4672605128",
+    "osm": "node/4672605128",
+    "name": "Samadh Bibi Rani Ji Maharaj",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 27.237163543701172,
+    "lon": 78.01466369628906
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N3103355431",
+    "osm": "node/3103355431",
+    "name": "Old TEMPLE",
+    "wikidata": null,
+    "kinds": "religion,hindu_temples,interesting_places",
+    "rate": 1,
+    "lat": 27.18717384338379,
+    "lon": 77.95596313476562
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N3776568206",
+    "osm": "node/3776568206",
+    "name": "TEMPLE",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 27.18526840209961,
+    "lon": 77.95536041259766
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N3776714088",
+    "osm": "node/3776714088",
+    "name": "Shanidev Temple",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 27.18648910522461,
+    "lon": 77.95530700683594
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N3077893445",
+    "osm": "node/3077893445",
+    "name": "hanuman tempie",
+    "wikidata": null,
+    "kinds": "religion,hindu_temples,interesting_places",
+    "rate": 1,
+    "lat": 27.181358337402344,
+    "lon": 77.9545669555664
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W374308493",
+    "osm": "way/374308493",
+    "name": "AC Wala Mandir",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 27.1959228515625,
+    "lon": 77.95521545410156
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N3776786150",
+    "osm": "node/3776786150",
+    "name": "Reliance office",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 27.206188201904297,
+    "lon": 77.95344543457031
+   },
+   {
+    "source": "opentripmap",
+    "xid": "N3077880652",
+    "osm": "node/3077880652",
+    "name": "Balkhandi Mandir",
+    "wikidata": null,
+    "kinds": "religion,other_temples,interesting_places",
+    "rate": 1,
+    "lat": 27.21894073486328,
+    "lon": 77.95700073242188
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W175509939",
+    "osm": "way/175509939",
+    "name": "South Entrance",
+    "wikidata": null,
+    "kinds": "other,unclassified_objects,interesting_places,tourist_object",
+    "rate": 1,
+    "lat": 27.21746253967285,
+    "lon": 77.9503402709961
+   },
+   {
+    "source": "opentripmap",
+    "xid": "W668738801",
+    "osm": "way/668738801",
+    "name": "Soor Sarovar Bird WLS",
+    "wikidata": null,
+    "kinds": "natural,interesting_places,nature_reserves,other_nature_conservation_areas",
+    "rate": 1,
+    "lat": 27.25047492980957,
+    "lon": 77.84746551513672
+   }
+  ]
+ },
+ "overpass": {
+  "markets_food_nightlife": {
+   "query": "[out:json][timeout:120];(nwr(around:20000,27.18,78.02)[\"amenity\"=\"marketplace\"][\"name\"];nwr(around:20000,27.18,78.02)[\"shop\"=\"mall\"][\"wikidata\"];nwr(around:20000,27.18,78.02)[\"amenity\"~\"^(nightclub|pub|bar)$\"][\"wikidata\"];nwr(around:20000,27.18,78.02)[\"place\"~\"^(neighbourhood|quarter)$\"][\"wikidata\"][\"tourism\"];);out center tags;",
+   "items": [
+    {
+     "source": "overpass:markets_food_nightlife",
+     "osm": "node/2652490760",
+     "name": "Rajpur Chungi",
+     "wikidata": null,
+     "lat": 27.1472701,
+     "lon": 78.0378416,
+     "osm_tags": {
+      "amenity": "marketplace",
+      "name": "Rajpur Chungi"
+     }
+    },
+    {
+     "source": "overpass:markets_food_nightlife",
+     "osm": "node/2653409112",
+     "name": "Sanjay Place",
+     "wikidata": null,
+     "lat": 27.2010283,
+     "lon": 78.0053271,
+     "osm_tags": {
+      "addr:city": "Agra",
+      "addr:district": "Agra",
+      "amenity": "marketplace",
+      "name": "Sanjay Place"
+     }
+    },
+    {
+     "source": "overpass:markets_food_nightlife",
+     "osm": "node/3079692452",
+     "name": "Sikandra Mandi",
+     "wikidata": null,
+     "lat": 27.220439,
+     "lon": 77.9343066,
+     "osm_tags": {
+      "amenity": "marketplace",
+      "name": "Sikandra Mandi"
+     }
+    },
+    {
+     "source": "overpass:markets_food_nightlife",
+     "osm": "node/3092792832",
+     "name": "Market",
+     "wikidata": null,
+     "lat": 27.2088926,
+     "lon": 78.0442513,
+     "osm_tags": {
+      "amenity": "marketplace",
+      "name": "Market"
+     }
+    },
+    {
+     "source": "overpass:markets_food_nightlife",
+     "osm": "node/3095982304",
+     "name": "Vikas Market, Kamla Nagar",
+     "wikidata": null,
+     "lat": 27.2097964,
+     "lon": 78.0195473,
+     "osm_tags": {
+      "amenity": "marketplace",
+      "name": "Vikas Market, Kamla Nagar"
+     }
+    },
+    {
+     "source": "overpass:markets_food_nightlife",
+     "osm": "node/3101532551",
+     "name": "Naveen Galla Mandi",
+     "wikidata": null,
+     "lat": 27.2101849,
+     "lon": 78.0567847,
+     "osm_tags": {
+      "amenity": "marketplace",
+      "name": "Naveen Galla Mandi"
+     }
+    },
+    {
+     "source": "overpass:markets_food_nightlife",
+     "osm": "node/3127186038",
+     "name": "Shabji Mendi",
+     "wikidata": null,
+     "lat": 27.1763172,
+     "lon": 77.9856532,
+     "osm_tags": {
+      "amenity": "marketplace",
+      "name": "Shabji Mendi"
+     }
+    },
+    {
+     "source": "overpass:markets_food_nightlife",
+     "osm": "node/3128806047",
+     "name": "Shah Market",
+     "wikidata": null,
+     "lat": 27.2041595,
+     "lon": 78.0050739,
+     "osm_tags": {
+      "amenity": "marketplace",
+      "name": "Shah Market"
+     }
+    },
+    {
+     "source": "overpass:markets_food_nightlife",
+     "osm": "node/3547900398",
+     "name": "Lohamandi Market",
+     "wikidata": null,
+     "lat": 27.189606,
+     "lon": 77.9949039,
+     "osm_tags": {
+      "amenity": "marketplace",
+      "name": "Lohamandi Market"
+     }
+    },
+    {
+     "source": "overpass:markets_food_nightlife",
+     "osm": "node/3759835544",
+     "name": "New Agra Market",
+     "wikidata": null,
+     "lat": 27.2123002,
+     "lon": 78.0054483,
+     "osm_tags": {
+      "amenity": "marketplace",
+      "name": "New Agra Market"
+     }
+    },
+    {
+     "source": "overpass:markets_food_nightlife",
+     "osm": "node/3762137988",
+     "name": "Sabji Mandi",
+     "wikidata": null,
+     "lat": 27.1760909,
+     "lon": 77.9886138,
+     "osm_tags": {
+      "amenity": "marketplace",
+      "name": "Sabji Mandi"
+     }
+    },
+    {
+     "source": "overpass:markets_food_nightlife",
+     "osm": "node/3764870655",
+     "name": "Ghas Ki Mandi",
+     "wikidata": null,
+     "lat": 27.1950168,
+     "lon": 78.017879,
+     "osm_tags": {
+      "amenity": "marketplace",
+      "name": "Ghas Ki Mandi"
+     }
+    },
+    {
+     "source": "overpass:markets_food_nightlife",
+     "osm": "node/4849612265",
+     "name": "Lohar Gali",
+     "wikidata": null,
+     "lat": 27.1838707,
+     "lon": 78.0164071,
+     "osm_tags": {
+      "amenity": "marketplace",
+      "name": "Lohar Gali"
+     }
+    },
+    {
+     "source": "overpass:markets_food_nightlife",
+     "osm": "node/4849624604",
+     "name": "Kinari Bazar",
+     "wikidata": null,
+     "lat": 27.1818958,
+     "lon": 78.011762,
+     "osm_tags": {
+      "addr:city": "Agra",
+      "addr:housenumber": "Hing Ki Mandi",
+      "addr:postcode": "282003",
+      "addr:street": "Mantola",
+      "amenity": "marketplace",
+      "name": "Kinari Bazar"
+     }
+    },
+    {
+     "source": "overpass:markets_food_nightlife",
+     "osm": "node/11697887558",
+     "name": "Vashishta Market",
+     "wikidata": null,
+     "lat": 27.1927758,
+     "lon": 77.9649919,
+     "osm_tags": {
+      "addr:city": "Agra",
+      "addr:district": "Agra",
+      "amenity": "marketplace",
+      "name": "Vashishta Market"
+     }
+    },
+    {
+     "source": "overpass:markets_food_nightlife",
+     "osm": "node/11697912701",
+     "name": "Gopal Atta Chakki",
+     "wikidata": null,
+     "lat": 27.1928705,
+     "lon": 77.9654993,
+     "osm_tags": {
+      "addr:city": "Agra",
+      "addr:district": "Agra",
+      "amenity": "marketplace",
+      "name": "Gopal Atta Chakki"
+     }
+    },
+    {
+     "source": "overpass:markets_food_nightlife",
+     "osm": "node/11697983502",
+     "name": "Rajendra Agarwal Halwai & Caters",
+     "wikidata": null,
+     "lat": 27.1928019,
+     "lon": 77.9654629,
+     "osm_tags": {
+      "addr:city": "Agra",
+      "addr:district": "Agra",
+      "amenity": "marketplace",
+      "name": "Rajendra Agarwal Halwai & Caters"
+     }
+    },
+    {
+     "source": "overpass:markets_food_nightlife",
+     "osm": "node/11697986312",
+     "name": "Jin Bharti Store",
+     "wikidata": null,
+     "lat": 27.1932138,
+     "lon": 77.9658824,
+     "osm_tags": {
+      "addr:city": "Agra",
+      "addr:district": "Agra",
+      "amenity": "marketplace",
+      "name": "Jin Bharti Store"
+     }
+    },
+    {
+     "source": "overpass:markets_food_nightlife",
+     "osm": "node/11698032936",
+     "name": "Artified Decor",
+     "wikidata": null,
+     "lat": 27.1935967,
+     "lon": 77.9658032,
+     "osm_tags": {
+      "addr:city": "Agra",
+      "addr:district": "Agra",
+      "amenity": "marketplace",
+      "name": "Artified Decor"
+     }
+    },
+    {
+     "source": "overpass:markets_food_nightlife",
+     "osm": "node/11698041477",
+     "name": "Rathore Crockery Store",
+     "wikidata": null,
+     "lat": 27.1933785,
+     "lon": 77.9651838,
+     "osm_tags": {
+      "addr:city": "Agra",
+      "addr:district": "Agra",
+      "amenity": "marketplace",
+      "name": "Rathore Crockery Store"
+     }
+    },
+    {
+     "source": "overpass:markets_food_nightlife",
+     "osm": "node/11698050173",
+     "name": "New Chacha Sweet & Dairy",
+     "wikidata": null,
+     "lat": 27.1934597,
+     "lon": 77.965342,
+     "osm_tags": {
+      "addr:city": "Agra",
+      "addr:district": "Agra",
+      "amenity": "marketplace",
+      "name": "New Chacha Sweet & Dairy"
+     }
+    },
+    {
+     "source": "overpass:markets_food_nightlife",
+     "osm": "node/11698078962",
+     "name": "R.K. General Store",
+     "wikidata": null,
+     "lat": 27.1928835,
+     "lon": 77.964268,
+     "osm_tags": {
+      "addr:city": "Agra",
+      "addr:district": "Agra",
+      "amenity": "marketplace",
+      "name": "R.K. General Store"
+     }
+    },
+    {
+     "source": "overpass:markets_food_nightlife",
+     "osm": "node/11698079593",
+     "name": "Aadhya Ladies Corner",
+     "wikidata": null,
+     "lat": 27.1938254,
+     "lon": 77.9654025,
+     "osm_tags": {
+      "addr:city": "Agra",
+      "addr:district": "Agra",
+      "amenity": "marketplace",
+      "name": "Aadhya Ladies Corner"
+     }
+    },
+    {
+     "source": "overpass:markets_food_nightlife",
+     "osm": "node/11698080144",
+     "name": "Hamza International Food-Court",
+     "wikidata": null,
+     "lat": 27.1936899,
+     "lon": 77.9656504,
+     "osm_tags": {
+      "addr:city": "Agra",
+      "addr:district": "Agra",
+      "amenity": "marketplace",
+      "name": "Hamza International Food-Court"
+     }
+    },
+    {
+     "source": "overpass:markets_food_nightlife",
+     "osm": "node/11698190438",
+     "name": "Jain Daily Needs",
+     "wikidata": null,
+     "lat": 27.1937606,
+     "lon": 77.9658482,
+     "osm_tags": {
+      "addr:city": "Agra",
+      "addr:district": "Agra",
+      "amenity": "marketplace",
+      "name": "Jain Daily Needs"
+     }
+    },
+    {
+     "source": "overpass:markets_food_nightlife",
+     "osm": "node/11698376259",
+     "name": "Nikhil Electronics",
+     "wikidata": null,
+     "lat": 27.1933508,
+     "lon": 77.9618264,
+     "osm_tags": {
+      "addr:city": "Agra",
+      "addr:district": "Agra",
+      "amenity": "marketplace",
+      "name": "Nikhil Electronics"
+     }
+    },
+    {
+     "source": "overpass:markets_food_nightlife",
+     "osm": "node/11698389415",
+     "name": "Paliwal Traders",
+     "wikidata": null,
+     "lat": 27.1938844,
+     "lon": 77.962101,
+     "osm_tags": {
+      "addr:city": "Agra",
+      "addr:district": "Agra",
+      "amenity": "marketplace",
+      "name": "Paliwal Traders"
+     }
+    },
+    {
+     "source": "overpass:markets_food_nightlife",
+     "osm": "node/11698467619",
+     "name": "Panchsheel Eyelet Kaaj Botten Centre",
+     "wikidata": null,
+     "lat": 27.1938368,
+     "lon": 77.9623833,
+     "osm_tags": {
+      "addr:city": "Agra",
+      "addr:district": "Agra",
+      "amenity": "marketplace",
+      "name": "Panchsheel Eyelet Kaaj Botten Centre"
+     }
+    },
+    {
+     "source": "overpass:markets_food_nightlife",
+     "osm": "node/11698467646",
+     "name": "Kratika Building Materials",
+     "wikidata": null,
+     "lat": 27.1941625,
+     "lon": 77.9621788,
+     "osm_tags": {
+      "addr:city": "Agra",
+      "addr:district": "Agra",
+      "amenity": "marketplace",
+      "name": "Kratika Building Materials"
+     }
+    },
+    {
+     "source": "overpass:markets_food_nightlife",
+     "osm": "node/11698534733",
+     "name": "Radha Krishan Collection",
+     "wikidata": null,
+     "lat": 27.1946057,
+     "lon": 77.9658339,
+     "osm_tags": {
+      "amenity": "marketplace",
+      "name": "Radha Krishan Collection"
+     }
+    },
+    {
+     "source": "overpass:markets_food_nightlife",
+     "osm": "node/11698587083",
+     "name": "Alco Masala",
+     "wikidata": null,
+     "lat": 27.1932162,
+     "lon": 77.9667389,
+     "osm_tags": {
+      "addr:city": "Agra",
+      "addr:district": "Agra",
+      "amenity": "marketplace",
+      "name": "Alco Masala"
+     }
+    },
+    {
+     "source": "overpass:markets_food_nightlife",
+     "osm": "node/11698589305",
+     "name": "Mansi Cloth Emporium",
+     "wikidata": null,
+     "lat": 27.1946353,
+     "lon": 77.9658488,
+     "osm_tags": {
+      "amenity": "marketplace",
+      "name": "Mansi Cloth Emporium"
+     }
+    },
+    {
+     "source": "overpass:markets_food_nightlife",
+     "osm": "node/11698679430",
+     "name": "Shree Balaji Ataa Chakki",
+     "wikidata": null,
+     "lat": 27.1950119,
+     "lon": 77.9625047,
+     "osm_tags": {
+      "addr:city": "Agra",
+      "addr:district": "Agra",
+      "amenity": "marketplace",
+      "name": "Shree Balaji Ataa Chakki"
+     }
+    },
+    {
+     "source": "overpass:markets_food_nightlife",
+     "osm": "node/12593113328",
+     "name": "fruit market",
+     "wikidata": null,
+     "lat": 27.142185,
+     "lon": 78.008781,
+     "osm_tags": {
+      "amenity": "marketplace",
+      "name": "fruit market"
+     }
+    },
+    {
+     "source": "overpass:markets_food_nightlife",
+     "osm": "node/12593113332",
+     "name": "sadar bazaar",
+     "wikidata": null,
+     "lat": 27.1593639,
+     "lon": 78.0100787,
+     "osm_tags": {
+      "amenity": "marketplace",
+      "name": "sadar bazaar"
+     }
+    },
+    {
+     "source": "overpass:markets_food_nightlife",
+     "osm": "node/12596027895",
+     "name": "fruit market",
+     "wikidata": null,
+     "lat": 27.1454756,
+     "lon": 78.009444,
+     "osm_tags": {
+      "amenity": "marketplace",
+      "name": "fruit market"
+     }
+    },
+    {
+     "source": "overpass:markets_food_nightlife",
+     "osm": "node/12596191498",
+     "name": "shri ram charan market",
+     "wikidata": null,
+     "lat": 27.1366785,
+     "lon": 78.0081151,
+     "osm_tags": {
+      "amenity": "marketplace",
+      "name": "shri ram charan market"
+     }
+    },
+    {
+     "source": "overpass:markets_food_nightlife",
+     "osm": "way/259792124",
+     "name": "Sadar Bazaar",
+     "wikidata": null,
+     "lat": 27.1592894,
+     "lon": 78.0087062,
+     "osm_tags": {
+      "amenity": "marketplace",
+      "building": "yes",
+      "name": "Sadar Bazaar"
+     }
+    },
+    {
+     "source": "overpass:markets_food_nightlife",
+     "osm": "way/259875902",
+     "name": "Raja Mandi",
+     "wikidata": null,
+     "lat": 27.1894419,
+     "lon": 78.0006254,
+     "osm_tags": {
+      "amenity": "marketplace",
+      "building": "yes",
+      "name": "Raja Mandi"
+     }
+    },
+    {
+     "source": "overpass:markets_food_nightlife",
+     "osm": "way/259875910",
+     "name": "Shah Market",
+     "wikidata": null,
+     "lat": 27.204205,
+     "lon": 78.0064505,
+     "osm_tags": {
+      "amenity": "marketplace",
+      "building": "yes",
+      "name": "Shah Market",
+      "note": "Electronic shops, repair"
+     }
+    },
+    {
+     "source": "overpass:markets_food_nightlife",
+     "osm": "way/299747992",
+     "name": "Kaserat Bazar",
+     "wikidata": null,
+     "lat": 27.1676651,
+     "lon": 78.0404954,
+     "osm_tags": {
+      "amenity": "marketplace",
+      "name": "Kaserat Bazar",
+      "note": "not a building...",
+      "note_1": "not sure about the actual location"
+     }
+    },
+    {
+     "source": "overpass:markets_food_nightlife",
+     "osm": "way/303612323",
+     "name": "Sabji Mandi",
+     "wikidata": null,
+     "lat": 27.2158876,
+     "lon": 77.9993912,
+     "osm_tags": {
+      "amenity": "marketplace",
+      "name": "Sabji Mandi",
+      "operator": "Agricultural Produce Market Committee",
+      "operator:wikidata": "Q4693970"
+     }
+    },
+    {
+     "source": "overpass:markets_food_nightlife",
+     "osm": "way/304635945",
+     "name": "Bodla Sabji Mandi",
+     "wikidata": null,
+     "lat": 27.1895983,
+     "lon": 77.964063,
+     "osm_tags": {
+      "amenity": "marketplace",
+      "name": "Bodla Sabji Mandi"
+     }
+    },
+    {
+     "source": "overpass:markets_food_nightlife",
+     "osm": "way/312529604",
+     "name": "Sadar Bazaar",
+     "wikidata": null,
+     "lat": 27.1589819,
+     "lon": 78.0110572,
+     "osm_tags": {
+      "amenity": "marketplace",
+      "building": "yes",
+      "name": "Sadar Bazaar"
+     }
+    },
+    {
+     "source": "overpass:markets_food_nightlife",
+     "osm": "way/312529605",
+     "name": "Sadar Bazaar",
+     "wikidata": null,
+     "lat": 27.1590991,
+     "lon": 78.0102057,
+     "osm_tags": {
+      "amenity": "marketplace",
+      "building": "yes",
+      "name": "Sadar Bazaar"
+     }
+    },
+    {
+     "source": "overpass:markets_food_nightlife",
+     "osm": "way/312529606",
+     "name": "Sadar Bazaar",
+     "wikidata": null,
+     "lat": 27.1591826,
+     "lon": 78.0094428,
+     "osm_tags": {
+      "amenity": "marketplace",
+      "building": "yes",
+      "name": "Sadar Bazaar"
+     }
+    },
+    {
+     "source": "overpass:markets_food_nightlife",
+     "osm": "way/312538011",
+     "name": "Raja Mandi",
+     "wikidata": null,
+     "lat": 27.1892481,
+     "lon": 78.0003405,
+     "osm_tags": {
+      "addr:city": "Agra",
+      "addr:district": "Agra",
+      "amenity": "marketplace",
+      "name": "Raja Mandi"
+     }
+    }
+   ]
+  },
+  "extras": {
+   "query": "[out:json][timeout:120];(way(1564172826););out center tags;",
+   "items": [
+    {
+     "source": "overpass:extras",
+     "osm": "way/1564172826",
+     "name": "Fatehpur Sikri",
+     "wikidata": "Q179046",
+     "lat": 27.0973036,
+     "lon": 77.6667599,
+     "osm_tags": {
+      "area": "yes",
+      "heritage:operator": "whc",
+      "heritage:website": "https://whc.unesco.org/en/list/255/",
+      "name": "फ़तेहपुर सीकरी",
+      "name:en": "Fatehpur Sikri",
+      "name:hi": "फ़तेहपुर सीकरी",
+      "ref:whc": "255",
+      "tourism": "attraction",
+      "whc:criteria": "(ii)(iii)(iv)",
+      "whc:inscription_date": "1986",
+      "wikidata": "Q179046",
+      "wikipedia": "en:Fatehpur Sikri"
+     }
+    }
+   ],
+   "fetched_on": "2026-10-24"
+  }
+ }
+}

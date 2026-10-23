@@ -1,0 +1,102 @@
+{
+ "Taj Mahal": {
+  "description": "Marble mausoleum in Agra, India",
+  "extract": "The Taj Mahal is an ivory-white marble mausoleum on the right bank of the river Yamuna in Agra, Uttar Pradesh, India. It was commissioned in 1631 by the fifth Mughal emperor, Shah Jahan, to house the tomb of his late wife, Mumtaz Mahal; it also houses the tomb of Shah Jahan himself. The tomb is the centrepiece of a 17-hectare (42-acre) complex, which includes a mosque and a guest house, and is set in formal gardens bounded on three sides by a crenellated wall.",
+  "url": "https://en.wikipedia.org/wiki/Taj_Mahal"
+ },
+ "Agra Fort": {
+  "description": "Historical Mughal fort in India",
+  "extract": "Agra Fort, also known as the Red Fort of Agra (Lal-Qila) or Qila-i-Akbari, is an historic fort in the city of Agra in Uttar Pradesh, India. A brick fortification on the site, noted as early as 1080 and later known as Badalgarh, was extensively rebuilt in red sandstone by the Mughal emperor Akbar from 1565 to 1573. It served as the main residence of the rulers of the Mughal dynasty until 1638, when the capital was moved from Agra to Shahjahanabad in Delhi. Much of the present interior dates from the reign of Shah Jahan, who added a number of white marble palaces and mosques within the fort after 1628. The Marathas were the last Indian rulers to occupy the fort before it was captured by the British in 1803.",
+  "url": "https://en.wikipedia.org/wiki/Agra_Fort"
+ },
+ "Akbar's tomb": {
+  "description": "Tomb of the third Mughal Emperor",
+  "extract": "Akbar's tomb is the mausoleum of the third Mughal emperor Akbar. The tomb was built in 1605–1613 by his son, Jahangir and is situated on 119 acres of grounds in Sikandra, a suburb of Agra, Uttar Pradesh, India. The buildings are constructed mainly from a deep red sandstone, enriched with features in white marble.",
+  "url": "https://en.wikipedia.org/wiki/Akbar's_tomb"
+ },
+ "Black Taj Mahal": {
+  "description": "Historic site in Agra",
+  "extract": "The Black Taj Mahal was a legendary black marble mausoleum that is said to have been planned to be built across the Yamuna River opposite the Taj Mahal in Agra, Uttar Pradesh, India. Mughal emperor Shah Jahan is said to have desired a mausoleum for himself similar to that of the one he had built in memory of his second wife, Mumtaz Mahal.",
+  "url": "https://en.wikipedia.org/wiki/Black_Taj_Mahal"
+ },
+ "Tomb of Mariam-uz-Zamani": {
+  "description": "Tomb of Mughal Empress Mariam-uz-Zamani",
+  "extract": "The Tomb of Mariam-uz-Zamani or Mariam's tomb is the mausoleum of Mariam-uz-Zamani, commonly known by the misnomer Jodha Bai, the favorite wife of the Mughal Emperor Akbar. The tomb was built by her son Jahangir, in her memory between years 1623–1627 and is located in Agra's Sikandra suburb next to Akbar's tomb, in the direction of Mathura. She is the only wife of Akbar to be buried close to him.",
+  "url": "https://en.wikipedia.org/wiki/Tomb_of_Mariam-uz-Zamani"
+ },
+ "Mehtab Bagh": {
+  "description": "Charbagh garden in Agra, India, opposite the Taj Mahal",
+  "extract": "Mehtab Bagh is a charbagh complex in Agra, North India. It lies north of the Taj Mahal complex and the Agra Fort on the opposite side of the Yamuna River, in the flood plains. The garden complex, square in shape, measures about 300 by 300 metres and is perfectly aligned with the Taj Mahal on the opposite bank. During the rainy season, the ground becomes partially flooded.",
+  "url": "https://en.wikipedia.org/wiki/Mehtab_Bagh"
+ },
+ "Jahangiri Mahal": {
+  "description": "Residence of imperial consorts at the Agra Fort",
+  "extract": "Jahangiri Mahal is a palace inside the Agra Fort of India. The Mahal was the principal zenana, and was constructed for the chief wife, Mariam-uz-Zamani or few other Hindu wives of Akbar. It is a form of Islamic architecture.",
+  "url": "https://en.wikipedia.org/wiki/Jahangiri_Mahal"
+ },
+ "Aram Bagh, Agra": {
+  "description": "16th century Mughal garden in Agra, India",
+  "extract": "The Aram Bagh is the oldest Mughal garden in India, originally built by Emperor Babur, the first Mughal emperor, in 1526, located about five kilometers northeast of the Taj Mahal in Agra, India. Babur was temporarily buried there before being interred in Kabul.",
+  "url": "https://en.wikipedia.org/wiki/Aram_Bagh%2C_Agra"
+ },
+ "Jama Mosque, Agra": {
+  "description": "Mosque in Agra, Uttar Pradesh, India",
+  "extract": "The Jama Mosque is a 17th-century congregational mosque located in the historic core of Agra, Uttar Pradesh. It was built by Jahanara Begum, the eldest daughter of Mughal Emperor Shah Jahan, during the latter's reign. It is the principal mosque in the city of Agra, and lies close to Agra Fort.",
+  "url": "https://en.wikipedia.org/wiki/Jama_Mosque%2C_Agra"
+ },
+ "Moti Masjid (Agra Fort)": {
+  "description": "Sunni mosque in Agra, Uttar Pradesh, India",
+  "extract": "The Moti Masjid is a Sunni Friday mosque, situated in the Agra Fort, a UNESCO World Heritage Site, located in Agra, in the state of Uttar Pradesh, India. Built in the 17th-century by Mughal Emperor Shah Jahan, the mosque is made entirely of white marble.",
+  "url": "https://en.wikipedia.org/wiki/Moti_Masjid_(Agra_Fort)"
+ },
+ "Mankameshwar Temple": {
+  "description": "Hindu temple in Agra, India",
+  "extract": "Mankameshwar Temple in a Hindu temple in Agra is one of the ancient temples devoted to Lord Shiva. The temple is situated at Rawatpara, near Agra Fort Railway Station. This temple is believed to be one of the oldest temples in the city. It is said that the Shiva Linga in the temple is covered by silver and was founded by Shiva himself in the Dvapara Yuga, when Krishna was born in Mathura.",
+  "url": "https://en.wikipedia.org/wiki/Mankameshwar_Temple"
+ },
+ "Akbar's Church": {
+  "description": "Church in Uttar Pradesh , India",
+  "extract": "Akbar's Church also known as Church of Akbar is a Roman Catholic Church, built in 1600 by Jesuit Fathers, situated in Agra, India.",
+  "url": "https://en.wikipedia.org/wiki/Akbar's_Church"
+ },
+ "Musamman Burj (Agra Fort)": {
+  "description": "Tower in the Agra Fort complex",
+  "extract": "Musamman Burj also known as the Saman Burj or the Shah-burj, is an octagonal tower standing close to the Shah Jahan's private hall Diwan-e-Khas in Agra Fort.",
+  "url": "https://en.wikipedia.org/wiki/Musamman_Burj_(Agra_Fort)"
+ },
+ "Chini Ka Rauza": {
+  "description": "Monument in India",
+  "extract": "Chini ka Rauza is a funerary monument, rauza in Agra, India, containing the tomb of Afzal Khan Shirazi, a scholar and poet who was the Grand Vizier of the Mughal Emperor Shah Jahan. The tomb was built in 1635. The Chini Ka Rauza is situated just 1 kilometre north of Itmad-Ud-Daulah's Tomb, on the eastern (left) bank of Yamuna river in Agra, and 2 kilometres away from the Taj Mahal.",
+  "url": "https://en.wikipedia.org/wiki/Chini_Ka_Rauza"
+ },
+ "Itmad Ud Daulah": {
+  "description": "Mughal monument in Agra, India",
+  "extract": "Itmad Ud Daulah is a Mughal mausoleum in Agra, Uttar Pradesh, India. Built between 1622 and 1628, it was commissioned by the Mughal empress Nur Jahan for her father, Mirza Ghiyas Beg, who had been given the title I'timād-ud-Daulah by Emperor Jahangir. Ghiyas Beg was the grandfather of Mumtaz Mahal, the Empress consort of Shah Jahan who later commissioned the Taj Mahal for her.",
+  "url": "https://en.wikipedia.org/wiki/Itmad_Ud_Daulah"
+ },
+ "Nagina Masjid, Agra Fort": {
+  "description": "Mosque in Agra India, Build by Mughal Emperor Shah Jahan",
+  "extract": "The Nagina Masjid, also known as the Gem Mosque and the Jewel Mosque, is a Sunni mosque, situated in the Agra Fort, a UNESCO World Heritage Site, located in Agra, in the state of Uttar Pradesh, India. The mosque was built by Shah Jahan, a Mughal leader, who succeeded Jahangir in 1628 CE and constructed three marble mosques inside the fort complex- the Moti Masjid, Nagina Masjid and Mina Masjid.",
+  "url": "https://en.wikipedia.org/wiki/Nagina_Masjid%2C_Agra_Fort"
+ },
+ "Mina Mosque": {
+  "description": "Mosque in Agra, Uttar Pradesh, India",
+  "extract": "The Mina Mosque, also known as the Heavenly Mosque, is a Sunni mosque, situated near Diwan-i-Khas in the Agra Fort, a UNESCO World Heritage Site, located in Agra, in the state of Uttar Pradesh, India. The mosque was built, entirely of white marble, by Shah Jahan, the fifth Mughal Emperor, in c. 1631-1640 CE, for his personal use.",
+  "url": "https://en.wikipedia.org/wiki/Mina_Mosque"
+ },
+ "Paliwal Park": {
+  "description": "Park in Agra, India",
+  "extract": "K.D.Paliwal Park also known as Hewitt Park is located in the heart of Agra, India. It is spread over an area of around 70 acres (280,000 m2). Kd Paliwal Park, one of the top attractions in Agra, is where visitors go to unwind and spend some quiet time in a peaceful environment. It attracts many tourists because it is in the centre of the city, close to a financial sector. The park is home to a vast variety of plants and animals as well as a stunning lake that is surrounded by lush vegetation. The park was originally known as Hewitt Park when it was constructed during the British era, but it was later renamed in honour of Shri Krishna Dutta Paliwal, the first finance minister of Uttar Pradesh. Tourists can rent boats on the lake. The area is buzzing with educational energy thanks to the numerous colleges around.",
+  "url": "https://en.wikipedia.org/wiki/Paliwal_Park"
+ },
+ "Humayun Mosque": {
+  "description": "Mosque in Agra, Uttar Pradesh, India",
+  "extract": "The Humayun Mosque, also known as the Kachpura Masjid and as the Humayun Masjid, is a former mosque, in a partial ruinous state, located in the village of Kachhpura in Agra, Fatehabad, in the state of Uttar Pradesh, India on the left bank of River Yamuna.",
+  "url": "https://en.wikipedia.org/wiki/Humayun_Mosque"
+ },
+ "Fatehpur Sikri": {
+  "description": "Town in Uttar Pradesh, India",
+  "extract": "Fatehpur Sikri is a town in the Agra District of Uttar Pradesh, India. Situated 35.7 kilometres (22.2 mi) from the district headquarters of Agra, Fatehpur Sikri itself was founded as the capital of the Mughal Empire in 1571 by Emperor Akbar, serving this role from 1571 to 1585, when Akbar abandoned it due to a campaign in Punjab and was later completely abandoned in 1610.",
+  "url": "https://en.wikipedia.org/wiki/Fatehpur_Sikri"
+ }
+}

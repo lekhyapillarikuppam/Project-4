@@ -1,0 +1,37 @@
+{
+ "Hampi": {
+  "description": "Ancient and medieval monuments, a UNESCO World Heritage Site in Karnataka, India",
+  "extract": "Hampi or Hampe, also referred to as the Group of Monuments at Hampi, is a UNESCO World Heritage Site located in the town of Hampi in Vijayanagara district, east-central Karnataka, India. Hampi predates the Vijayanagara Empire; it is mentioned in the Ramayana and the Puranas of Hinduism as Pampa Devi Tirtha Kshetra. Hampi continues as a religious centre, with the Virupaksha Temple, an active Adi Shankara-linked monastery and various monuments belonging to the old city.",
+  "url": "https://en.wikipedia.org/wiki/Hampi"
+ },
+ "Virupaksha Temple, Hampi": {
+  "description": "Temple in Karnataka, India",
+  "extract": "The Virūpaksha Temple is located in Hampi in the Vijayanagara district of Karnataka, India, situated on the banks of the river Tungabhadra. Built in the 7th-century, it is dedicated to Virupaksha, a form of Shiva. It is part of the Group of Monuments at Hampi, designated as a UNESCO World Heritage Site. The temple was expanded by Lakkan Dandesha, a nayaka (chieftain) under the ruler Deva Raya II, also known as Prauda Deva Raya of the Vijayanagara Empire.",
+  "url": "https://en.wikipedia.org/wiki/Virupaksha_Temple%2C_Hampi"
+ },
+ "Vijayanagara": {
+  "description": "City in Karnataka, India",
+  "extract": "Vijayanagara was the capital city of the historic Vijayanagara Empire. Located on the banks of the Tungabhadra River, it spread over a large area and included sites in the Vijayanagara district, the Ballari district, and others around these districts. A part of Vijayanagara ruins known as the Group of Monuments at Hampi has been designated as a UNESCO World Heritage Site.",
+  "url": "https://en.wikipedia.org/wiki/Vijayanagara"
+ },
+ "Lotus Mahal": {
+  "description": "Building in Karnataka, India",
+  "extract": "\nLotus Mahal or Chitrangini Mahal is an important secular structure in Hampi, India. The Lotus Mahal is an example of Vijayanagara style of architecture and is a two storied structure built in Rubble masonry and finely plastered. The structure was used as residue place for royal family of the Vijayanagara Empire.",
+  "url": "https://en.wikipedia.org/wiki/Lotus_Mahal"
+ },
+ "Daroji Sloth Bear Sanctuary": {
+  "description": "Sloth bear sanctuary in India",
+  "extract": "Daroji Sloth Bear Sanctuary is located in Ballari district in Karnataka. This is Asia's first sloth bear sanctuary. It is spread over 82.72 km2 (31.94 sq mi). The sanctuary was created exclusively for the conservation of the sloth bear. It is about 50 km from Ballari and about 15 km from the World Heritage Site Hampi. The area between Daroji in Sandur taluka and Ramasagar of Hospet Taluk is host to numerous sloth bears.",
+  "url": "https://en.wikipedia.org/wiki/Daroji_Sloth_Bear_Sanctuary"
+ },
+ "Kanakachalapathi Temple, Kanakagiri": {
+  "description": "Hindu Temple in Karnataka, India",
+  "extract": "The Kanakachalapathi temple is a 16th-century Hindu temple dedicated to the god Vishnu. It is located in the town of Kanakagiri, in the Gangavathi taluk of Koppal district in the Karnataka state, India. Kanakagiri, known in ancient times as \"Swarnagiri\" is about 3 km from the district headquarters Koppal city, 380 km north of Bangalore city and 200 km east of Belagavi city.",
+  "url": "https://en.wikipedia.org/wiki/Kanakachalapathi_Temple%2C_Kanakagiri"
+ },
+ "Gudekote Wildlife Sanctuary": {
+  "description": "Sloth bear sanctuary in India",
+  "extract": "Gudekote Sloth Bear Sanctuary is located in Ballari district in Karnataka, India. It is spread over 38.48 km2 (14.86 sq mi). The sanctuary was created exclusively for the preservation of the Indian sloth bear  and is Asia's second sloth bear sanctuary, the first being Daroji Sloth Bear Sanctuary.",
+  "url": "https://en.wikipedia.org/wiki/Gudekote_Wildlife_Sanctuary"
+ }
+}
