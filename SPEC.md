@@ -1586,7 +1586,7 @@ chat_messages(id bigserial pk, trip_id uuid references trips on delete cascade, 
 - [x] **T02** Do follow-ups F1–F3; commit.
 - [x] **T03** `backend/api/` skeleton, settings, requirements, `/health`, `/meta`, `/cities`; run with `uvicorn api.main:app --reload`. · Check: `curl /health`
 - [x] **T04** `app_schema.sql` + `db.py`; create schemas `app` and `app_test` in Neon.
-- [ ] **T05** `auth.py` + auth router. · Check: API-AT-01, API-AT-07
+- [x] **T05** `auth.py` + auth router. · Check: API-AT-01, API-AT-07
 - [ ] **T06** Profile router.
 - [ ] **T07** `validation.py` + `POST /trips` with `solver.py` (semaphore and 429). · Check: API-AT-03, API-AT-04, API-AT-08
 - [ ] **T08** Trips list, get, rename, duplicate, delete. · Check: API-AT-06
@@ -2111,3 +2111,4 @@ Measured 2026-10-25 on the developer laptop (Windows 11, Python 3.11.9, OR-Tools
 | 2026-10-25 | C 004 Plan (T03) | Dependencies pinned: fastapi 0.143.0, starlette 1.7.0 (fastapi would pull 1.10.0 from 2026-10-24), uvicorn 0.54.0, psycopg 3.3.6, psycopg-pool 3.3.3, bcrypt 5.0.0, PyJWT 2.15.1, python-dotenv 1.2.4, httpx 0.28.1 | Each a release at least two weeks old |
 | 2026-10-25 | C 004 Plan (T04) | `plan_versions` gains `request jsonb NOT NULL`: the request each version was planned from, so restore brings back its request and later replans build on it | Plan versions must be reproducible; trips.request alone loses older states |
 | 2026-10-25 | C 004 Plan (T04) | Queries name their schema (`{s}.table`) and psycopg prepared statements are off; schemas `app` and `app_test` created in Neon (Postgres 18.6); `db.drop_schema` refuses any schema not ending in `_test` | Neon's pooled endpoint is PgBouncer in transaction mode; never drop non-test schemas |
+| 2026-10-25 | C 004 (T05) | Email format checked by a simple pattern (no email-validator dependency); log-out is client-side (the stateless JWT is discarded); an expired token returns 401 with code `session_expired` | Smallest version that meets API-FR-01 and FR-041 |
