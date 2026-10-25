@@ -61,3 +61,17 @@ variants:
 
 near_miss_count: 5
 tradeoff_factors: [0.8, 0.9, 1.1, 1.2]
+
+# API (Feature 004)
+api:
+  max_concurrent_solves: 2
+  solve_wait_s: 20
+  jwt_days: 7
+  password_len: [8, 128]
+  trip_days: [2, 7]
+  people: [1, 6]
+  hours_out: [4, 14]
+  budget_min_per_person: 2000
+  budget_max_total: 1000000
+  max_days_ahead: 365
+  db_pool: {min: 1, max: 5}

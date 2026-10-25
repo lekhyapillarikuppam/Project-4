@@ -1584,7 +1584,7 @@ chat_messages(id bigserial pk, trip_id uuid references trips on delete cascade, 
 #### 004 Tasks
 - [x] **T01** Insert this file's sections into SPEC.md as instructed; commit as `spec(004-008): …`.
 - [x] **T02** Do follow-ups F1–F3; commit.
-- [ ] **T03** `backend/api/` skeleton, settings, requirements, `/health`, `/meta`, `/cities`; run with `uvicorn api.main:app --reload`. · Check: `curl /health`
+- [x] **T03** `backend/api/` skeleton, settings, requirements, `/health`, `/meta`, `/cities`; run with `uvicorn api.main:app --reload`. · Check: `curl /health`
 - [ ] **T04** `app_schema.sql` + `db.py`; create schemas `app` and `app_test` in Neon.
 - [ ] **T05** `auth.py` + auth router. · Check: API-AT-01, API-AT-07
 - [ ] **T06** Profile router.
@@ -2107,3 +2107,5 @@ Measured 2026-10-25 on the developer laptop (Windows 11, Python 3.11.9, OR-Tools
 | 2026-10-25 | C 001 data (F2 decision) | Chowmahalla Palace and Qutb Shahi Tombs keep the default (no) closed days although secondary sources say Fridays | 001 Spec §5.5 takes closed days from the ASI or an official page only |
 | 2026-10-25 | C 002 addendum A2 (F2) | Variant fallbacks refined: Saver that cannot reach ρ V* (or costs more than Experience) takes the Experience plan; a Balanced plan below ρ V* takes the Saver plan; a Saver costing more than Balanced then takes the Balanced plan | After F2, T18's cheapest ρ V* plan cost more than a Balanced plan below ρ V*, so the old rule broke VAR-AT-02 |
 | 2026-10-25 | C Follow-ups (F3) | `002-engine-plan-tasks.md` deleted from the repo root (it was never committed; its content is in 002 Plan and Tasks) | F3 |
+| 2026-10-25 | C 004 Plan (T03) | API tunables (solve concurrency and wait, JWT days, validation limits, DB pool) live in `config.yaml` under `api:`; new env vars `APP_ENV` (development adds http://localhost:5173 to CORS) and `DB_SCHEMA` | CLAUDE.md: tunables in config.yaml; API-FR-12 development origin |
+| 2026-10-25 | C 004 Plan (T03) | Dependencies pinned: fastapi 0.143.0, starlette 1.7.0 (fastapi would pull 1.10.0 from 2026-10-24), uvicorn 0.54.0, psycopg 3.3.6, psycopg-pool 3.3.3, bcrypt 5.0.0, PyJWT 2.15.1, python-dotenv 1.2.4, httpx 0.28.1 | Each a release at least two weeks old |

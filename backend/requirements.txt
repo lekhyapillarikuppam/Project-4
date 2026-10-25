@@ -1,5 +1,15 @@
-# Engine (Feature 002). Install into backend/.venv: python -m pip install -r backend/requirements.txt
+# Engine (Feature 002) and API (Feature 004). Install into backend/.venv:
+#   python -m pip install -r backend/requirements.txt
 ortools==9.15.6755
 pydantic>=2.6
 pyyaml==6.0.3
+fastapi==0.143.0
+starlette==1.7.0
+uvicorn[standard]==0.54.0
+psycopg[binary]==3.3.6
+psycopg-pool==3.3.3
+bcrypt==5.0.0
+PyJWT==2.15.1
+python-dotenv==1.2.4
+httpx==0.28.1
 pytest>=8.0
