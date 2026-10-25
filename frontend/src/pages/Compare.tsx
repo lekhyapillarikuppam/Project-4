@@ -1,5 +1,91 @@
-import { PageTitle } from "../components/ui";
+import { useState } from "react";
+import { useQuery, useQueryClient } from "@tanstack/react-query";
+import { Link, useNavigate, useParams } from "react-router-dom";
+import { api } from "../api/client";
+import type { Trip, VariantName, VariantsResult } from "../api/types";
+import VariantCard, { scoreWithin } from "../components/VariantCard";
+import { ErrorBox, PageTitle, Price, Skeleton } from "../components/ui";
+import { inr, niceDate, VARIANT_LABEL } from "../lib/format";
+import { useCityName } from "../lib/meta";
+
+export function tripSubtitle(trip: Trip, city: (c: string) => string) {
+  const r = trip.request;
+  return `${city(r.origin)} → ${city(r.destination)} · ${niceDate(r.start_date)} to ${niceDate(r.end_date)} · `
+    + `${r.people} ${r.people === 1 ? "person" : "people"} · budget ${inr(r.budget_total)}`;
+}
 
 export default function Compare() {
-  return <PageTitle>Compare</PageTitle>;
+  const { id = "" } = useParams();
+  const trip = useQuery({ queryKey: ["trip", id], queryFn: () => api.getTrip(id) });
+  const city = useCityName();
+  const navigate = useNavigate();
+  const qc = useQueryClient();
+  const [choosing, setChoosing] = useState<VariantName | null>(null);
+  const [error, setError] = useState<unknown>(null);
+
+  if (trip.isError) return <ErrorBox error={trip.error} onRetry={() => trip.refetch()} />;
+  if (!trip.data) return <Skeleton lines={6} />;
+  const t = trip.data;
+  const res = t.result;
+
+  async function choose(v: VariantName) {
+    setChoosing(v);
+    setError(null);
+    try {
+      await api.select(t.id, v);
+      await qc.invalidateQueries({ queryKey: ["trip", t.id] });
+      await qc.invalidateQueries({ queryKey: ["versions", t.id] });
+      navigate(`/trips/${t.id}/plan`);
+    } catch (e) {
+      setError(e);
+      setChoosing(null);
+    }
+  }
+
+  if (res.status === "infeasible") {
+    return (
+      <div>
+        <PageTitle sub={tripSubtitle(t, city)}>{t.name}</PageTitle>
+        <section className="card space-y-3 border-warn-700/30 bg-warn-50" role="status">
+          <h2 className="text-lg font-semibold text-warn-700">No plan fits this trip yet</h2>
+          <p>{res.message}</p>
+          {res.min_budget_total !== null && (
+            <p className="text-lg">Minimum budget for these dates and people: <strong><Price>{inr(res.min_budget_total)}</Price></strong></p>
+          )}
+          <button type="button" className="btn-primary"
+                  onClick={() => navigate("/new", { state: { request: { ...t.request } } })}>
+            Edit budget
+          </button>
+        </section>
+      </div>
+    );
+  }
+
+  const vr = res as VariantsResult;
+  const values = vr.variants.map((p) => p.value);
+  return (
+    <div>
+      <PageTitle sub={tripSubtitle(t, city)}>{t.name}</PageTitle>
+      {t.selected_variant && (
+        <p className="mb-4 text-sm">
+          You chose {VARIANT_LABEL[t.selected_variant]}. <Link to={`/trips/${t.id}/plan`} className="btn-link">Open your plan</Link>
+        </p>
+      )}
+      <div className={`grid gap-4 ${vr.variants.length === 3 ? "md:grid-cols-3" : vr.variants.length === 2 ? "md:grid-cols-2" : ""}`}>
+        {vr.variants.map((p) => (
+          <VariantCard key={p.variant} plan={p} score={scoreWithin(values, p.value)}
+                       onChoose={() => choose(p.variant!)} choosing={choosing === p.variant} />
+        ))}
+      </div>
+      {vr.dropped.length > 0 && (
+        <div className="mt-4 rounded-md bg-sand-100 p-3 text-sm text-ink-700">
+          <p className="font-medium">Why fewer than three plans?</p>
+          <ul className="list-inside list-disc">
+            {vr.dropped.map((d) => <li key={d.name}>{VARIANT_LABEL[d.name]}: {d.reason.toLowerCase()}, so it isn't shown.</li>)}
+          </ul>
+        </div>
+      )}
+      {error !== null && <div className="mt-4"><ErrorBox error={error} /></div>}
+    </div>
+  );
 }
