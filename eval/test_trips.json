@@ -1,0 +1,1046 @@
+[
+ {
+  "id": "T01",
+  "note": "BLR-JAI, 4 days, 2 people, balanced, mid: generous budget (minimum 63500); avoids bus",
+  "expect": "ok",
+  "budget_kind": "generous",
+  "request": {
+   "origin": "BLR",
+   "destination": "JAI",
+   "start_date": "2026-12-18",
+   "end_date": "2026-12-21",
+   "people": 2,
+   "budget_total": 165500,
+   "prefs": {
+    "daily_hours_out": 9,
+    "interests": {
+     "nature": 1,
+     "adventure": 0,
+     "food": 3,
+     "history": 5,
+     "culture": 4,
+     "spiritual": 2,
+     "shopping": 2,
+     "relaxation": 1,
+     "nightlife": 0
+    },
+    "pace": "balanced",
+    "comfort": "mid",
+    "modes": {
+     "bus": "avoid"
+    },
+    "avoid_crowds": false
+   },
+   "locks": [],
+   "excludes": []
+  }
+ },
+ {
+  "id": "T02",
+  "note": "DEL-AGR, 2 days, 1 people, relaxed, budget: tight budget (minimum 4500)",
+  "expect": "ok",
+  "budget_kind": "tight",
+  "request": {
+   "origin": "DEL",
+   "destination": "AGR",
+   "start_date": "2026-12-14",
+   "end_date": "2026-12-15",
+   "people": 1,
+   "budget_total": 5000,
+   "prefs": {
+    "daily_hours_out": 8,
+    "interests": {
+     "nature": 1,
+     "adventure": 0,
+     "food": 3,
+     "history": 5,
+     "culture": 4,
+     "spiritual": 2,
+     "shopping": 2,
+     "relaxation": 1,
+     "nightlife": 0
+    },
+    "pace": "relaxed",
+    "comfort": "budget",
+    "modes": {},
+    "avoid_crowds": false
+   },
+   "locks": [],
+   "excludes": []
+  }
+ },
+ {
+  "id": "T03",
+  "note": "BOM-GOA, 5 days, 3 people, packed, mid: medium budget (minimum 79000)",
+  "expect": "ok",
+  "budget_kind": "medium",
+  "request": {
+   "origin": "BOM",
+   "destination": "GOA",
+   "start_date": "2027-01-08",
+   "end_date": "2027-01-12",
+   "people": 3,
+   "budget_total": 126500,
+   "prefs": {
+    "daily_hours_out": 10,
+    "interests": {
+     "nature": 3,
+     "adventure": 3,
+     "food": 4,
+     "history": 1,
+     "culture": 1,
+     "spiritual": 0,
+     "shopping": 2,
+     "relaxation": 5,
+     "nightlife": 4
+    },
+    "pace": "packed",
+    "comfort": "mid",
+    "modes": {},
+    "avoid_crowds": false
+   },
+   "locks": [],
+   "excludes": []
+  }
+ },
+ {
+  "id": "T04",
+  "note": "CCU-DJL, 4 days, 4 people, balanced, premium: generous budget (minimum 114000); avoids crowds",
+  "expect": "ok",
+  "budget_kind": "generous",
+  "request": {
+   "origin": "CCU",
+   "destination": "DJL",
+   "start_date": "2027-02-10",
+   "end_date": "2027-02-13",
+   "people": 4,
+   "budget_total": 296500,
+   "prefs": {
+    "daily_hours_out": 9,
+    "interests": {
+     "nature": 5,
+     "adventure": 3,
+     "food": 2,
+     "history": 1,
+     "culture": 1,
+     "spiritual": 1,
+     "shopping": 0,
+     "relaxation": 4,
+     "nightlife": 0
+    },
+    "pace": "balanced",
+    "comfort": "premium",
+    "modes": {},
+    "avoid_crowds": true
+   },
+   "locks": [],
+   "excludes": []
+  }
+ },
+ {
+  "id": "T05",
+  "note": "MAA-PDY, 3 days, 2 people, relaxed, budget: tight budget (minimum 6500)",
+  "expect": "ok",
+  "budget_kind": "tight",
+  "request": {
+   "origin": "MAA",
+   "destination": "PDY",
+   "start_date": "2027-01-22",
+   "end_date": "2027-01-24",
+   "people": 2,
+   "budget_total": 7500,
+   "prefs": {
+    "daily_hours_out": 8,
+    "interests": {
+     "nature": 3,
+     "adventure": 3,
+     "food": 4,
+     "history": 1,
+     "culture": 1,
+     "spiritual": 0,
+     "shopping": 2,
+     "relaxation": 5,
+     "nightlife": 4
+    },
+    "pace": "relaxed",
+    "comfort": "budget",
+    "modes": {},
+    "avoid_crowds": false
+   },
+   "locks": [],
+   "excludes": []
+  }
+ },
+ {
+  "id": "T06",
+  "note": "DEL-VNS, 3 days, 6 people, balanced, budget: medium budget (minimum 29000)",
+  "expect": "ok",
+  "budget_kind": "medium",
+  "request": {
+   "origin": "DEL",
+   "destination": "VNS",
+   "start_date": "2027-01-04",
+   "end_date": "2027-01-06",
+   "people": 6,
+   "budget_total": 46500,
+   "prefs": {
+    "daily_hours_out": 9,
+    "interests": {
+     "nature": 2,
+     "adventure": 1,
+     "food": 2,
+     "history": 3,
+     "culture": 3,
+     "spiritual": 5,
+     "shopping": 1,
+     "relaxation": 3,
+     "nightlife": 0
+    },
+    "pace": "balanced",
+    "comfort": "budget",
+    "modes": {},
+    "avoid_crowds": false
+   },
+   "locks": [],
+   "excludes": []
+  }
+ },
+ {
+  "id": "T07",
+  "note": "HYD-GOA, 6 days, 2 people, packed, premium: generous budget (minimum 111000); avoids train",
+  "expect": "ok",
+  "budget_kind": "generous",
+  "request": {
+   "origin": "HYD",
+   "destination": "GOA",
+   "start_date": "2027-03-05",
+   "end_date": "2027-03-10",
+   "people": 2,
+   "budget_total": 289000,
+   "prefs": {
+    "daily_hours_out": 12,
+    "interests": {
+     "nature": 3,
+     "adventure": 3,
+     "food": 4,
+     "history": 1,
+     "culture": 1,
+     "spiritual": 0,
+     "shopping": 2,
+     "relaxation": 5,
+     "nightlife": 4
+    },
+    "pace": "packed",
+    "comfort": "premium",
+    "modes": {
+     "train": "avoid"
+    },
+    "avoid_crowds": false
+   },
+   "locks": [],
+   "excludes": []
+  }
+ },
+ {
+  "id": "T08",
+  "note": "BLR-MUN, 4 days, 1 people, relaxed, mid: tight budget (minimum 19500); excludes the top 1 by value",
+  "expect": "ok",
+  "budget_kind": "tight",
+  "request": {
+   "origin": "BLR",
+   "destination": "MUN",
+   "start_date": "2026-12-26",
+   "end_date": "2026-12-29",
+   "people": 1,
+   "budget_total": 21500,
+   "prefs": {
+    "daily_hours_out": 8,
+    "interests": {
+     "nature": 5,
+     "adventure": 3,
+     "food": 2,
+     "history": 1,
+     "culture": 1,
+     "spiritual": 1,
+     "shopping": 0,
+     "relaxation": 4,
+     "nightlife": 0
+    },
+    "pace": "relaxed",
+    "comfort": "mid",
+    "modes": {},
+    "avoid_crowds": false
+   },
+   "locks": [],
+   "excludes": [
+    "MUN-A-01"
+   ]
+  }
+ },
+ {
+  "id": "T09",
+  "note": "JAI-RSH, 3 days, 2 people, balanced, mid: medium budget (minimum 18500); locks RSH-A-10",
+  "expect": "ok",
+  "budget_kind": "medium",
+  "request": {
+   "origin": "JAI",
+   "destination": "RSH",
+   "start_date": "2027-02-17",
+   "end_date": "2027-02-19",
+   "people": 2,
+   "budget_total": 30000,
+   "prefs": {
+    "daily_hours_out": 10,
+    "interests": {
+     "nature": 2,
+     "adventure": 1,
+     "food": 2,
+     "history": 3,
+     "culture": 3,
+     "spiritual": 5,
+     "shopping": 1,
+     "relaxation": 3,
+     "nightlife": 0
+    },
+    "pace": "balanced",
+    "comfort": "mid",
+    "modes": {},
+    "avoid_crowds": false
+   },
+   "locks": [
+    "RSH-A-10"
+   ],
+   "excludes": []
+  }
+ },
+ {
+  "id": "T10",
+  "note": "DEL-MAA, 5 days, 4 people, packed, mid: generous budget (minimum 151000)",
+  "expect": "ok",
+  "budget_kind": "generous",
+  "request": {
+   "origin": "DEL",
+   "destination": "MAA",
+   "start_date": "2027-01-15",
+   "end_date": "2027-01-19",
+   "people": 4,
+   "budget_total": 393000,
+   "prefs": {
+    "daily_hours_out": 11,
+    "interests": {
+     "nature": 1,
+     "adventure": 0,
+     "food": 5,
+     "history": 3,
+     "culture": 4,
+     "spiritual": 0,
+     "shopping": 3,
+     "relaxation": 1,
+     "nightlife": 4
+    },
+    "pace": "packed",
+    "comfort": "mid",
+    "modes": {},
+    "avoid_crowds": false
+   },
+   "locks": [],
+   "excludes": []
+  }
+ },
+ {
+  "id": "T11",
+  "note": "CCU-HYD, 7 days, 2 people, relaxed, premium: generous budget (minimum 151000)",
+  "expect": "ok",
+  "budget_kind": "generous",
+  "request": {
+   "origin": "CCU",
+   "destination": "HYD",
+   "start_date": "2027-03-10",
+   "end_date": "2027-03-16",
+   "people": 2,
+   "budget_total": 393000,
+   "prefs": {
+    "daily_hours_out": 8,
+    "interests": {
+     "nature": 1,
+     "adventure": 0,
+     "food": 5,
+     "history": 3,
+     "culture": 4,
+     "spiritual": 0,
+     "shopping": 3,
+     "relaxation": 1,
+     "nightlife": 4
+    },
+    "pace": "relaxed",
+    "comfort": "premium",
+    "modes": {},
+    "avoid_crowds": false
+   },
+   "locks": [],
+   "excludes": []
+  }
+ },
+ {
+  "id": "T12",
+  "note": "AGR-VNS, 2 days, 3 people, packed, budget: tight budget (minimum 10500)",
+  "expect": "ok",
+  "budget_kind": "tight",
+  "request": {
+   "origin": "AGR",
+   "destination": "VNS",
+   "start_date": "2027-02-24",
+   "end_date": "2027-02-25",
+   "people": 3,
+   "budget_total": 11500,
+   "prefs": {
+    "daily_hours_out": 12,
+    "interests": {
+     "nature": 2,
+     "adventure": 1,
+     "food": 2,
+     "history": 3,
+     "culture": 3,
+     "spiritual": 5,
+     "shopping": 1,
+     "relaxation": 3,
+     "nightlife": 0
+    },
+    "pace": "packed",
+    "comfort": "budget",
+    "modes": {},
+    "avoid_crowds": false
+   },
+   "locks": [],
+   "excludes": []
+  }
+ },
+ {
+  "id": "T13",
+  "note": "BOM-DEL, 4 days, 2 people, balanced, premium: medium budget (minimum 86500); avoids bus; avoids crowds",
+  "expect": "ok",
+  "budget_kind": "medium",
+  "request": {
+   "origin": "BOM",
+   "destination": "DEL",
+   "start_date": "2026-12-30",
+   "end_date": "2027-01-02",
+   "people": 2,
+   "budget_total": 138500,
+   "prefs": {
+    "daily_hours_out": 9,
+    "interests": {
+     "nature": 1,
+     "adventure": 0,
+     "food": 3,
+     "history": 5,
+     "culture": 4,
+     "spiritual": 2,
+     "shopping": 2,
+     "relaxation": 1,
+     "nightlife": 0
+    },
+    "pace": "balanced",
+    "comfort": "premium",
+    "modes": {
+     "bus": "avoid"
+    },
+    "avoid_crowds": true
+   },
+   "locks": [],
+   "excludes": []
+  }
+ },
+ {
+  "id": "T14",
+  "note": "GOA-HMP, 3 days, 1 people, relaxed, budget: tight budget (minimum 6500)",
+  "expect": "ok",
+  "budget_kind": "tight",
+  "request": {
+   "origin": "GOA",
+   "destination": "HMP",
+   "start_date": "2027-02-01",
+   "end_date": "2027-02-03",
+   "people": 1,
+   "budget_total": 7500,
+   "prefs": {
+    "daily_hours_out": 8,
+    "interests": {
+     "nature": 1,
+     "adventure": 0,
+     "food": 3,
+     "history": 5,
+     "culture": 4,
+     "spiritual": 2,
+     "shopping": 2,
+     "relaxation": 1,
+     "nightlife": 0
+    },
+    "pace": "relaxed",
+    "comfort": "budget",
+    "modes": {},
+    "avoid_crowds": false
+   },
+   "locks": [],
+   "excludes": []
+  }
+ },
+ {
+  "id": "T15",
+  "note": "BLR-HYD, 5 days, 6 people, balanced, mid: medium budget (minimum 130000)",
+  "expect": "ok",
+  "budget_kind": "medium",
+  "request": {
+   "origin": "BLR",
+   "destination": "HYD",
+   "start_date": "2027-01-27",
+   "end_date": "2027-01-31",
+   "people": 6,
+   "budget_total": 208000,
+   "prefs": {
+    "daily_hours_out": 9,
+    "interests": {
+     "nature": 1,
+     "adventure": 0,
+     "food": 5,
+     "history": 3,
+     "culture": 4,
+     "spiritual": 0,
+     "shopping": 3,
+     "relaxation": 1,
+     "nightlife": 4
+    },
+    "pace": "balanced",
+    "comfort": "mid",
+    "modes": {},
+    "avoid_crowds": false
+   },
+   "locks": [],
+   "excludes": []
+  }
+ },
+ {
+  "id": "T16",
+  "note": "PDY-MUN, 6 days, 3 people, relaxed, mid: generous budget (minimum 73000); locks MUN-A-08, MUN-A-10",
+  "expect": "ok",
+  "budget_kind": "generous",
+  "request": {
+   "origin": "PDY",
+   "destination": "MUN",
+   "start_date": "2026-12-12",
+   "end_date": "2026-12-17",
+   "people": 3,
+   "budget_total": 190000,
+   "prefs": {
+    "daily_hours_out": 9,
+    "interests": {
+     "nature": 5,
+     "adventure": 3,
+     "food": 2,
+     "history": 1,
+     "culture": 1,
+     "spiritual": 1,
+     "shopping": 0,
+     "relaxation": 4,
+     "nightlife": 0
+    },
+    "pace": "relaxed",
+    "comfort": "mid",
+    "modes": {},
+    "avoid_crowds": false
+   },
+   "locks": [
+    "MUN-A-08",
+    "MUN-A-10"
+   ],
+   "excludes": []
+  }
+ },
+ {
+  "id": "T17",
+  "note": "DEL-JAI, 2 days, 2 people, packed, premium: tight budget (minimum 24500); avoids bus",
+  "expect": "ok",
+  "budget_kind": "tight",
+  "request": {
+   "origin": "DEL",
+   "destination": "JAI",
+   "start_date": "2027-03-19",
+   "end_date": "2027-03-20",
+   "people": 2,
+   "budget_total": 26500,
+   "prefs": {
+    "daily_hours_out": 12,
+    "interests": {
+     "nature": 1,
+     "adventure": 0,
+     "food": 3,
+     "history": 5,
+     "culture": 4,
+     "spiritual": 2,
+     "shopping": 2,
+     "relaxation": 1,
+     "nightlife": 0
+    },
+    "pace": "packed",
+    "comfort": "premium",
+    "modes": {
+     "bus": "avoid"
+    },
+    "avoid_crowds": false
+   },
+   "locks": [],
+   "excludes": []
+  }
+ },
+ {
+  "id": "T18",
+  "note": "MAA-HYD, 3 days, 4 people, packed, budget: medium budget (minimum 23500); excludes the top 2 by value",
+  "expect": "ok",
+  "budget_kind": "medium",
+  "request": {
+   "origin": "MAA",
+   "destination": "HYD",
+   "start_date": "2027-02-05",
+   "end_date": "2027-02-07",
+   "people": 4,
+   "budget_total": 38000,
+   "prefs": {
+    "daily_hours_out": 10,
+    "interests": {
+     "nature": 1,
+     "adventure": 0,
+     "food": 5,
+     "history": 3,
+     "culture": 4,
+     "spiritual": 0,
+     "shopping": 3,
+     "relaxation": 1,
+     "nightlife": 4
+    },
+    "pace": "packed",
+    "comfort": "budget",
+    "modes": {},
+    "avoid_crowds": false
+   },
+   "locks": [],
+   "excludes": [
+    "HYD-A-02",
+    "HYD-A-01"
+   ]
+  }
+ },
+ {
+  "id": "T19",
+  "note": "BLR-GOA, 7 days, 2 people, balanced, budget: generous budget (minimum 29000)",
+  "expect": "ok",
+  "budget_kind": "generous",
+  "request": {
+   "origin": "BLR",
+   "destination": "GOA",
+   "start_date": "2027-01-11",
+   "end_date": "2027-01-17",
+   "people": 2,
+   "budget_total": 75500,
+   "prefs": {
+    "daily_hours_out": 9,
+    "interests": {
+     "nature": 3,
+     "adventure": 3,
+     "food": 4,
+     "history": 1,
+     "culture": 1,
+     "spiritual": 0,
+     "shopping": 2,
+     "relaxation": 5,
+     "nightlife": 4
+    },
+    "pace": "balanced",
+    "comfort": "budget",
+    "modes": {},
+    "avoid_crowds": false
+   },
+   "locks": [],
+   "excludes": []
+  }
+ },
+ {
+  "id": "T20",
+  "note": "HYD-VNS, 4 days, 1 people, packed, premium: medium budget (minimum 48500); avoids crowds",
+  "expect": "ok",
+  "budget_kind": "medium",
+  "request": {
+   "origin": "HYD",
+   "destination": "VNS",
+   "start_date": "2027-03-26",
+   "end_date": "2027-03-29",
+   "people": 1,
+   "budget_total": 78000,
+   "prefs": {
+    "daily_hours_out": 11,
+    "interests": {
+     "nature": 2,
+     "adventure": 1,
+     "food": 2,
+     "history": 3,
+     "culture": 3,
+     "spiritual": 5,
+     "shopping": 1,
+     "relaxation": 3,
+     "nightlife": 0
+    },
+    "pace": "packed",
+    "comfort": "premium",
+    "modes": {},
+    "avoid_crowds": true
+   },
+   "locks": [],
+   "excludes": []
+  }
+ },
+ {
+  "id": "T21",
+  "note": "RSH-DEL, 3 days, 2 people, balanced, mid: tight budget (minimum 28500); locks DEL-A-10",
+  "expect": "ok",
+  "budget_kind": "tight",
+  "request": {
+   "origin": "RSH",
+   "destination": "DEL",
+   "start_date": "2026-12-21",
+   "end_date": "2026-12-23",
+   "people": 2,
+   "budget_total": 31000,
+   "prefs": {
+    "daily_hours_out": 9,
+    "interests": {
+     "nature": 1,
+     "adventure": 0,
+     "food": 5,
+     "history": 3,
+     "culture": 4,
+     "spiritual": 0,
+     "shopping": 3,
+     "relaxation": 1,
+     "nightlife": 4
+    },
+    "pace": "balanced",
+    "comfort": "mid",
+    "modes": {},
+    "avoid_crowds": false
+   },
+   "locks": [
+    "DEL-A-10"
+   ],
+   "excludes": []
+  }
+ },
+ {
+  "id": "T22",
+  "note": "VNS-CCU, 5 days, 2 people, relaxed, premium: medium budget (minimum 74500); excludes the top 1 by value",
+  "expect": "ok",
+  "budget_kind": "medium",
+  "request": {
+   "origin": "VNS",
+   "destination": "CCU",
+   "start_date": "2027-01-29",
+   "end_date": "2027-02-02",
+   "people": 2,
+   "budget_total": 119500,
+   "prefs": {
+    "daily_hours_out": 8,
+    "interests": {
+     "nature": 1,
+     "adventure": 0,
+     "food": 5,
+     "history": 3,
+     "culture": 4,
+     "spiritual": 0,
+     "shopping": 3,
+     "relaxation": 1,
+     "nightlife": 4
+    },
+    "pace": "relaxed",
+    "comfort": "premium",
+    "modes": {},
+    "avoid_crowds": false
+   },
+   "locks": [],
+   "excludes": [
+    "CCU-A-01"
+   ]
+  }
+ },
+ {
+  "id": "T23",
+  "note": "BOM-HMP, 6 days, 4 people, packed, budget: tight budget (minimum 36500)",
+  "expect": "ok",
+  "budget_kind": "tight",
+  "request": {
+   "origin": "BOM",
+   "destination": "HMP",
+   "start_date": "2027-02-12",
+   "end_date": "2027-02-17",
+   "people": 4,
+   "budget_total": 39500,
+   "prefs": {
+    "daily_hours_out": 10,
+    "interests": {
+     "nature": 1,
+     "adventure": 0,
+     "food": 3,
+     "history": 5,
+     "culture": 4,
+     "spiritual": 2,
+     "shopping": 2,
+     "relaxation": 1,
+     "nightlife": 0
+    },
+    "pace": "packed",
+    "comfort": "budget",
+    "modes": {},
+    "avoid_crowds": false
+   },
+   "locks": [],
+   "excludes": []
+  }
+ },
+ {
+  "id": "T24",
+  "note": "DJL-CCU, 3 days, 6 people, relaxed, mid: generous budget (minimum 61500)",
+  "expect": "ok",
+  "budget_kind": "generous",
+  "request": {
+   "origin": "DJL",
+   "destination": "CCU",
+   "start_date": "2027-03-01",
+   "end_date": "2027-03-03",
+   "people": 6,
+   "budget_total": 160000,
+   "prefs": {
+    "daily_hours_out": 9,
+    "interests": {
+     "nature": 1,
+     "adventure": 0,
+     "food": 5,
+     "history": 3,
+     "culture": 4,
+     "spiritual": 0,
+     "shopping": 3,
+     "relaxation": 1,
+     "nightlife": 4
+    },
+    "pace": "relaxed",
+    "comfort": "mid",
+    "modes": {},
+    "avoid_crowds": false
+   },
+   "locks": [],
+   "excludes": []
+  }
+ },
+ {
+  "id": "T25",
+  "note": "BLR-DEL, 4 days, 2 people, balanced, mid: infeasible budget (minimum 78000)",
+  "expect": "budget",
+  "budget_kind": "infeasible",
+  "request": {
+   "origin": "BLR",
+   "destination": "DEL",
+   "start_date": "2027-01-20",
+   "end_date": "2027-01-23",
+   "people": 2,
+   "budget_total": 62000,
+   "prefs": {
+    "daily_hours_out": 9,
+    "interests": {
+     "nature": 1,
+     "adventure": 0,
+     "food": 3,
+     "history": 5,
+     "culture": 4,
+     "spiritual": 2,
+     "shopping": 2,
+     "relaxation": 1,
+     "nightlife": 0
+    },
+    "pace": "balanced",
+    "comfort": "mid",
+    "modes": {},
+    "avoid_crowds": false
+   },
+   "locks": [],
+   "excludes": []
+  }
+ },
+ {
+  "id": "T26",
+  "note": "GOA-BOM, 3 days, 3 people, packed, premium: infeasible budget (minimum 126500)",
+  "expect": "budget",
+  "budget_kind": "infeasible",
+  "request": {
+   "origin": "GOA",
+   "destination": "BOM",
+   "start_date": "2027-02-19",
+   "end_date": "2027-02-21",
+   "people": 3,
+   "budget_total": 101000,
+   "prefs": {
+    "daily_hours_out": 10,
+    "interests": {
+     "nature": 1,
+     "adventure": 0,
+     "food": 5,
+     "history": 3,
+     "culture": 4,
+     "spiritual": 0,
+     "shopping": 3,
+     "relaxation": 1,
+     "nightlife": 4
+    },
+    "pace": "packed",
+    "comfort": "premium",
+    "modes": {},
+    "avoid_crowds": false
+   },
+   "locks": [],
+   "excludes": []
+  }
+ },
+ {
+  "id": "T27",
+  "note": "JAI-AGR, 5 days, 1 people, relaxed, budget: infeasible budget (minimum 11000)",
+  "expect": "budget",
+  "budget_kind": "infeasible",
+  "request": {
+   "origin": "JAI",
+   "destination": "AGR",
+   "start_date": "2026-12-28",
+   "end_date": "2027-01-01",
+   "people": 1,
+   "budget_total": 8500,
+   "prefs": {
+    "daily_hours_out": 8,
+    "interests": {
+     "nature": 1,
+     "adventure": 0,
+     "food": 3,
+     "history": 5,
+     "culture": 4,
+     "spiritual": 2,
+     "shopping": 2,
+     "relaxation": 1,
+     "nightlife": 0
+    },
+    "pace": "relaxed",
+    "comfort": "budget",
+    "modes": {},
+    "avoid_crowds": false
+   },
+   "locks": [],
+   "excludes": []
+  }
+ },
+ {
+  "id": "T28",
+  "note": "BOM-GOA, 2 days, 2 people, balanced, mid: locks GOA-A-30, which is not open on any trip day",
+  "expect": "lock_impossible",
+  "budget_kind": "generous",
+  "request": {
+   "origin": "BOM",
+   "destination": "GOA",
+   "start_date": "2026-12-14",
+   "end_date": "2026-12-15",
+   "people": 2,
+   "budget_total": 200000,
+   "prefs": {
+    "daily_hours_out": 9,
+    "interests": {
+     "nature": 3,
+     "adventure": 3,
+     "food": 4,
+     "history": 1,
+     "culture": 1,
+     "spiritual": 0,
+     "shopping": 2,
+     "relaxation": 5,
+     "nightlife": 4
+    },
+    "pace": "balanced",
+    "comfort": "mid",
+    "modes": {},
+    "avoid_crowds": false
+   },
+   "locks": [
+    "GOA-A-30"
+   ],
+   "excludes": []
+  }
+ },
+ {
+  "id": "T29",
+  "note": "HMP-MAA, 7 days, 3 people, balanced, mid: medium budget (minimum 82000)",
+  "expect": "ok",
+  "budget_kind": "medium",
+  "request": {
+   "origin": "HMP",
+   "destination": "MAA",
+   "start_date": "2027-01-06",
+   "end_date": "2027-01-12",
+   "people": 3,
+   "budget_total": 131500,
+   "prefs": {
+    "daily_hours_out": 9,
+    "interests": {
+     "nature": 1,
+     "adventure": 0,
+     "food": 5,
+     "history": 3,
+     "culture": 4,
+     "spiritual": 0,
+     "shopping": 3,
+     "relaxation": 1,
+     "nightlife": 4
+    },
+    "pace": "balanced",
+    "comfort": "mid",
+    "modes": {},
+    "avoid_crowds": false
+   },
+   "locks": [],
+   "excludes": []
+  }
+ },
+ {
+  "id": "T30",
+  "note": "AGR-DEL, 4 days, 2 people, packed, mid: generous budget (minimum 37500)",
+  "expect": "ok",
+  "budget_kind": "generous",
+  "request": {
+   "origin": "AGR",
+   "destination": "DEL",
+   "start_date": "2027-01-11",
+   "end_date": "2027-01-14",
+   "people": 2,
+   "budget_total": 97500,
+   "prefs": {
+    "daily_hours_out": 10,
+    "interests": {
+     "nature": 1,
+     "adventure": 0,
+     "food": 3,
+     "history": 5,
+     "culture": 4,
+     "spiritual": 2,
+     "shopping": 2,
+     "relaxation": 1,
+     "nightlife": 0
+    },
+    "pace": "packed",
+    "comfort": "mid",
+    "modes": {},
+    "avoid_crowds": false
+   },
+   "locks": [],
+   "excludes": []
+  }
+ }
+]
