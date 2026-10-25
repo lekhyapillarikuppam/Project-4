@@ -1670,7 +1670,7 @@ These are run by Claude Code in the browser against a local API, with results re
 - [x] **T06** DayMap with numbered markers and coloured day routes. · Check: UI-AT-02
 - [x] **T07** My Trips page. · Check: UI-AT-05
 - [x] **T08** Loading, error and 429 states; accessibility pass. · Check: UI-AT-08, UI-AT-09
-- [ ] **T09** Run UI-AT-01–09 in the browser at 360 px and 1280 px; save screenshots to `frontend/test-shots/`; record in `frontend/TESTING.md`. Update Part D; mark 006 Done; commit.
+- [x] **T09** Run UI-AT-01–09 in the browser at 360 px and 1280 px; save screenshots to `frontend/test-shots/`; record in `frontend/TESTING.md`. Update Part D; mark 006 Done; commit.
 
 ### Feature 007 — AI layer (Groq)
 
@@ -1840,16 +1840,16 @@ Update this table when a feature's tasks are written (fill **Tasks**) and when i
 | FR-004 | Total or per-person budget, bounds | 004 (merged from 005) | API-FR-01–13 | 004 T03–T10 | API-AT-03 | Pass |
 | FR-005 | Preferences (hours, interests, pace, comfort, modes, crowds) | 004 (merged from 005) | API-FR-01–13 | 004 T03–T10 | API-AT-03 | Pass |
 | FR-006 | Free-text preferences parsed and confirmed | 007 | | | | Planned |
-| FR-007 | Form pre-filled from saved profile | 004 (merged from 005), 006 | API-FR-03 | 004 T06 | API profile tests | In progress (API Pass; form pre-fill in 006) |
+| FR-007 | Form pre-filled from saved profile | 004 (merged from 005), 006 | API-FR-03 | 004 T06 | API profile tests | Pass |
 | FR-010 | Complete plan produced | 002 | ENG-FR-02–05 | 002 T02–T15 | ENG-AT-01 | Pass |
 | FR-011 | Hard constraints respected | 002 | ENG-FR-01, 04, 07, 08 | 002 T05, T08–T12 | ENG-AT-01, 05 | Pass |
 | FR-012 | Infeasible answer with minimum budget | 002 | ENG-FR-06 | 002 T12 | ENG-AT-07 | Pass |
-| FR-013 | Prices labelled as estimates; breakdown sums exactly | 002, 006 | ENG-FR-02 | 002 T06, T12 | ENG-AT-03 | Pass (002 part; display in 006) |
+| FR-013 | Prices labelled as estimates; breakdown sums exactly | 002, 006 | ENG-FR-02 | 002 T06, T12 | ENG-AT-03 | Pass |
 | FR-014 | Itinerary entries with times, fees and legs | 002 | ENG-FR-01, 05 | 002 T05, T11, T12 | ENG-AT-01, 02 | Pass |
-| FR-015 | Contingency shown | 002, 006 | ENG-FR-02 | 002 T06, T12 | ENG-AT-03 | Pass (002 part; display in 006) |
+| FR-015 | Contingency shown | 002, 006 | ENG-FR-02 | 002 T06, T12 | ENG-AT-03 | Pass |
 | FR-020 | Saver / Balanced / Experience variants | 002 (merged from 003) | A2 | 002 T16 | VAR-AT-01, 02 | Pass |
 | FR-021 | Difference rule | 002 (merged from 003) | A3 | 002 T16 | VAR-AT-01 | Pass |
-| FR-022 | Side-by-side comparison | 006 | | | | Planned |
+| FR-022 | Side-by-side comparison | 006 | UI-FR-01–09 | 006 T01–T09 | UI-AT-01 | Pass |
 | FR-023 | Budget sensitivity ±10/20% | 002 (merged from 003) | A4 | 002 T17 | VAR-AT-04 | Pass |
 | FR-024 | Near-misses with reasons | 002 (merged from 003) | A5 | 002 T12 | ENG-AT-01 | Pass |
 | FR-025 | Trade-offs computed by the engine only | 002 (merged from 003) | A4 | 002 T17 | VAR-AT-04 | Pass |
@@ -1865,15 +1865,15 @@ Update this table when a feature's tasks are written (fill **Tasks**) and when i
 | FR-043 | Trips saved with all variants | 004 | API-FR-01–13 | 004 T03–T10 | API-AT-04 | Pass |
 | FR-044 | Plan versions and restore | 004 | API-FR-01–13 | 004 T03–T10 | API-AT-05 | Pass |
 | FR-045 | Chat history saved | 004 | API-FR-01–13 | 004 T03–T10 | API-AT-02 | Pass |
-| FR-046 | My Trips: rename, duplicate, delete | 004, 006 | API-FR-06 | 004 T08 | API-AT-06 | In progress (API Pass; My Trips page in 006) |
+| FR-046 | My Trips: rename, duplicate, delete | 004, 006 | API-FR-06 | 004 T08 | API-AT-06 | Pass |
 | FR-047 | Per-user data isolation | 004 | API-FR-01–13 | 004 T03–T10 | API-AT-02 | Pass |
-| FR-050 | Seven pages | 006 | | | | Planned |
-| FR-051 | Map with daily routes | 006 | | | | Planned |
-| FR-052 | Budget chart and table | 006 | | | | Planned |
-| FR-053 | Responsive from 360 px | 006 | | | | Planned |
+| FR-050 | Seven pages | 006 | UI-FR-01–09 | 006 T01–T09 | UI-AT-01, 07 | Pass |
+| FR-051 | Map with daily routes | 006 | UI-FR-01–09 | 006 T01–T09 | UI-AT-02 | Pass |
+| FR-052 | Budget chart and table | 006 | UI-FR-01–09 | 006 T01–T09 | UI-AT-02 | Pass |
+| FR-053 | Responsive from 360 px | 006 | UI-FR-01–09 | 006 T01–T09 | UI-AT-07 | Pass |
 | FR-060 | Curated data for 15 cities | 001 | DATA-FR-01–07 | 001 T01–T24 | DATA-AT-01, 03 | Pass |
 | FR-061 | Source and date on every record | 001 | DATA-FR-08 | 001 T06–T18, T26, F4 | DATA-AT-01, 05 | Pass |
-| FR-062 | Compilation month shown with prices | 001, 006 | DATA-FR-09 | 001 T06, T22, T24 | DATA-AT-03 | In progress (001 part Pass; display in 006) |
+| FR-062 | Compilation month shown with prices | 001, 006 | DATA-FR-09 | 001 T06, T22, T24 | DATA-AT-03 | Pass |
 | FR-070 | Evaluation vs greedy and LLM-only | 008 | | | | Planned |
 | FR-071 | Chat intent test set | 008 | | | | Planned |
 
@@ -1886,8 +1886,8 @@ Update this table when a feature's tasks are written (fill **Tasks**) and when i
 | NFR-003 | Security | 004, 008 (merged from 009) | API-FR-01, 02, 11, 12 | 004 T03, T05 | API-AT-01, 02, 07 | In progress (API Pass; HTTPS in 008) |
 | NFR-004 | Free tiers only | 008 (merged from 009) | | | | Planned |
 | NFR-005 | LLM call limits | 007 | | | | Planned |
-| NFR-006 | Browser support | 006 | | | | Planned |
-| NFR-007 | Accessibility basics | 006 | | | | Planned |
+| NFR-006 | Browser support | 006 | UI-FR-08 | 006 T09 | UI-AT-07 (Chromium) | In progress (Chromium Pass; other browsers in 008) |
+| NFR-007 | Accessibility basics | 006 | UI-FR-08 | 006 T08 | UI-AT-08, axe scan | Pass |
 | NFR-008 | Repeatable output | 002 | ENG-FR-10 | 002 T10–T12, T18 | ENG-AT-06 | Pass |
 | NFR-009 | One config file | 002 | ENG-FR-09 | 002 T02, T18 | ENG-AT-09 | Pass |
 | NFR-010 | Validated dataset | 001 | DATA-FR-10 | 001 T02–T05, T20 | DATA-AT-01, 02 | Pass |
@@ -1941,15 +1941,15 @@ Measured 2026-10-25 on the developer laptop (Windows 11, Python 3.11.9, OR-Tools
 | API-FR-11 | Errors return {"error": "<code>", "message": "<plain text>", "fields": {…}?} wit | 004 | FR-012, NFR-003 | Pass |
 | API-FR-12 | CORS allows only FRONTEND_ORIGIN, plus http://localhost:5173 in development | 004 | NFR-003 | Pass |
 | API-FR-13 | Planning calls run in a thread pool, at most max_concurrent_solves (config, defa | 004 | NFR-001, NFR-004 | Pass |
-| UI-FR-01 | The seven pages: Landing, Sign up / Log in, New trip, Plan comparison, Plan deta | 006 | FR-050 | Planned |
-| UI-FR-02 | New trip form | 006 | FR-007 | Planned |
-| UI-FR-03 | Plan comparison | 006 | FR-012, FR-022 | Planned |
-| UI-FR-04 | Plan detail | 006 | FR-013, FR-015, FR-052 | Planned |
-| UI-FR-05 | Map | 006 | FR-051 | Planned |
-| UI-FR-06 | My Trips | 006 | FR-046 | Planned |
-| UI-FR-07 | Estimates | 006 | FR-013, FR-062 | Planned |
-| UI-FR-08 | Responsive and accessible | 006 | FR-053, NFR-007 | Planned |
-| UI-FR-09 | States | 006 | FR-010, NFR-001 | Planned |
+| UI-FR-01 | The seven pages: Landing, Sign up / Log in, New trip, Plan comparison, Plan deta | 006 | FR-050 | Pass |
+| UI-FR-02 | New trip form | 006 | FR-007 | Pass |
+| UI-FR-03 | Plan comparison | 006 | FR-012, FR-022 | Pass |
+| UI-FR-04 | Plan detail | 006 | FR-013, FR-015, FR-052 | Pass |
+| UI-FR-05 | Map | 006 | FR-051 | Pass |
+| UI-FR-06 | My Trips | 006 | FR-046 | Pass |
+| UI-FR-07 | Estimates | 006 | FR-013, FR-062 | Pass |
+| UI-FR-08 | Responsive and accessible | 006 | FR-053, NFR-007 | Pass |
+| UI-FR-09 | States | 006 | FR-010, NFR-001 | Pass |
 | AI-FR-01 | Preference parsing | 007 | FR-006 | Planned |
 | AI-FR-02 | Explanations | 007 | FR-030, NFR-005 | Planned |
 | AI-FR-03 | Chat | 007 | FR-031, FR-032, NFR-005 | Planned |
@@ -1974,15 +1974,15 @@ Measured 2026-10-25 on the developer laptop (Windows 11, Python 3.11.9, OR-Tools
 | API-AT-06 | Rename, duplicate, delete, list upcoming/past | 004 | — | Pass |
 | API-AT-07 | Passwords in DB and logs | 004 | — | Pass |
 | API-AT-08 | 3 concurrent creates with max 2 solves | 004 | — | Pass |
-| UI-AT-01 | Sign up → New trip → submit a feasible trip | 006 | — | Planned |
-| UI-AT-02 | Choose a plan | 006 | — | Planned |
-| UI-AT-03 | Infeasible budget | 006 | — | Planned |
-| UI-AT-04 | Form validation | 006 | — | Planned |
-| UI-AT-05 | My Trips | 006 | — | Planned |
-| UI-AT-06 | Versions and trade-offs | 006 | — | Planned |
-| UI-AT-07 | 360 px and 1280 px screenshots of every page | 006 | — | Planned |
-| UI-AT-08 | Keyboard-only run of UI-AT-01 | 006 | — | Planned |
-| UI-AT-09 | Every price on screen | 006 | — | Planned |
+| UI-AT-01 | Sign up → New trip → submit a feasible trip | 006 | — | Pass |
+| UI-AT-02 | Choose a plan | 006 | — | Pass |
+| UI-AT-03 | Infeasible budget | 006 | — | Pass |
+| UI-AT-04 | Form validation | 006 | — | Pass |
+| UI-AT-05 | My Trips | 006 | — | Pass |
+| UI-AT-06 | Versions and trade-offs | 006 | — | Pass |
+| UI-AT-07 | 360 px and 1280 px screenshots of every page | 006 | — | Pass |
+| UI-AT-08 | Keyboard-only run of UI-AT-01 | 006 | — | Pass |
+| UI-AT-09 | Every price on screen | 006 | — | Pass |
 | AI-AT-01 | 10 free-text preference samples | 007 | — | Planned |
 | AI-AT-02 | Explanations for 10 test trips | 007 | — | Planned |
 | AI-AT-03 | `eval/chat_intents.json`: 50 hand-written messages with expected tool and argume | 007 | — | Planned |
@@ -2011,6 +2011,22 @@ Measured 2026-10-25 against Neon schema `app_test` with FastAPI's TestClient (`p
 | API-AT-07 | Pass | Stored hashes start with `$2b$`; no password or JWT in any log record |
 | API-AT-08 | Pass | 3 concurrent creates: all 201, at most 2 solves at once (peak exactly 2) |
 
+### Feature 006 acceptance results
+
+Run 2026-10-25 with Playwright 1.64.0 (Chromium) against the local API (schema `app_e2e_test`); 12 tests passed. Details in `frontend/TESTING.md`, screenshots in `frontend/test-shots/`.
+
+| Test | Result | Evidence |
+|---|---|---|
+| UI-AT-01 | Pass | 3 variant cards 888 ms after submitting (limit 8 s) |
+| UI-AT-02 | Pass | Transport, hotel, every day, map with one colour per day, donut and table that add up |
+| UI-AT-03 | Pass | Minimum budget shown; Edit budget keeps every value |
+| UI-AT-04 | Pass | 7 client-side violations blocked; a server 422 shows at its field |
+| UI-AT-05 | Pass | Rename, duplicate (pre-filled), delete with confirm; upcoming and past tabs |
+| UI-AT-06 | Pass | Restore creates a new version; trade-offs load |
+| UI-AT-07 | Pass | 7 pages × 360 px and 1280 px, no horizontal scroll or clipping |
+| UI-AT-08 | Pass | Keyboard-only UI-AT-01 with a visible focus ring throughout |
+| UI-AT-09 | Pass | Every ₹ amount under an Estimated marker |
+
 ### Feature status
 
 | Feature | Name | Spec | Plan | Tasks | Acceptance |
@@ -2021,7 +2037,7 @@ Measured 2026-10-25 against Neon schema `app_test` with FastAPI's TestClient (`p
 | 003 | Variants and trade-offs | Merged into 002 | Merged into 002 | Merged into 002 | Merged into 002 |
 | 004 | Accounts, saved data and API | Approved | Approved | Approved | Done: API-AT-01–08 Pass |
 | 005 | Trip planning API | Merged into 004 | Merged into 004 | Merged into 004 | Merged into 004 |
-| 006 | Frontend | Approved | Approved | Approved | — |
+| 006 | Frontend | Approved | Approved | Approved | Done: UI-AT-01–09 Pass |
 | 007 | AI layer | Approved | Approved | Approved | — |
 | 008 | Evaluation and deployment | Approved | — (tasks only) | Approved | — |
 | 009 | Deployment | Merged into 008 | Merged into 008 | Merged into 008 | Merged into 008 |
@@ -2145,3 +2161,4 @@ Measured 2026-10-25 against Neon schema `app_test` with FastAPI's TestClient (`p
 | 2026-10-25 | C 006 (T07) | My Trips rows link to the plan when one is chosen, otherwise to the comparison; the delete dialog traps focus and closes on Escape; the UI test inserts a past trip with `frontend/tests/make_past_trip.py` (the API cannot create one) | UI-FR-06, FR-046 |
 | 2026-10-25 | C 006 (T08) | Accessibility checked with axe-core (`@axe-core/playwright` 4.13.0, `axe-core` 4.14.0, dev only) for WCAG 2 A/AA on all seven pages, map tiles excluded; text inputs show a focus ring on any focus (Chromium date inputs focus an inner segment that `:focus-visible` misses); the hidden donut is not focusable (the table carries the same figures) | NFR-007, UI-FR-08; small test-only dependency |
 | 2026-10-25 | C 006 (T08) | UI-AT-09 is checked mechanically: every text node with a ₹ amount must sit inside an element marked `data-estimate` (the est. tag, the budget table, the estimate label) or `data-not-price` (the user's own budget figures) | Makes "every price is labelled" testable (Article IV.3) |
+| 2026-10-25 | C 006 (T09) | UI-AT-07 "nothing clipped" is checked as: no element outside the map extends past the viewport's right edge, plus a review of the screenshots | Makes the check decidable (Article IV.3) |
