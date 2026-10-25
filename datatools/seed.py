@@ -46,6 +46,15 @@ EXTRA_OSM = {
             "node/11438507361", "node/9520848117"],   # Ratneshwar Mahadev, Annapurna (OpenTripMap points are wrong)
     "AGR": ["way/1564172826"],                     # Fatehpur Sikri (outside the 20 km seed radius)
     "HMP": ["node/13381673197", "way/1128222500"],   # Hampi Mango Tree Restaurant, BABA Cafe
+    "RSH": ["way/47434019", "way/268608158", "relation/8815465",   # Ram Jhula, Triveni Ghat, Rajaji National Park,
+            "way/425936983", "node/2583229951", "node/5324966021",   # Chotiwala, Little Buddha Cafe, Pumpernickel Bakery,
+            "node/7886624339", "node/3821187543"],   # Shivpuri, Tapovan (rafting and kayaking locations)
+    "MUN": ["way/44141031", "way/44138558", "node/4627941691",   # Mattupetty Dam, Kundala Dam, Pothamedu viewpoint,
+            "node/1172852406", "node/353409852", "node/4621777398"],   # Rapsy Restaurant, Saravana Bhavan, Gurubhavan
+    "DJL": ["node/4865096621", "node/2084522604", "node/14287804933",   # Chowrasta, Happy Valley Tea Estate, Rock Garden,
+            "node/4156655118", "node/5708011824", "node/6660775813",   # Japanese Temple, Mahakal Mandir, Nightingale Park,
+            "node/2084522610", "node/5982369515", "node/5704936222",   # Glenary's, Keventers, Kunga Restaurant,
+            "node/3560266497"],   # Mahakal Market
 }
 FETCHED = time.strftime("%Y-%m-%d")
 

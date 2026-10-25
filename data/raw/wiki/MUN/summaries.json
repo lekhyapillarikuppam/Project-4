@@ -83,5 +83,15 @@
   "description": "Mountain peak in southern India",
   "extract": "Meenuliyan Para is a prominent mountain peak located near Thodupuzha in the Idukki district of Kerala, India. Characterized by a massive rock formation that rises over 4000 feet, the mountain is named for the fish-scale appearance of its rocky surface. The peak hosts approximately two acres of evergreen forest at its summit.",
   "url": "https://en.wikipedia.org/wiki/Meenuliyan_Para"
+ },
+ "Mattupetty Dam": {
+  "description": "Dam in the mountains of Kerala, India",
+  "extract": "Mattupetty Dam, Kannan Devan Hills in Idukki District, is a storage concrete gravity dam built in the mountains of Kerala, India, to conserve water for hydroelectricity. It has been a vital source of power and huge revenue for Idukki District. The large amount of perennially available water allows wild animals and birds to flourish.\nConstruction of the dam was led by E.U. Philipose, Superintending Engineer, Kerala State Electricity Board. The height of the dam is 83.35 metres (273.5 ft) and the length is 237.74 metres (780.0 ft). Taluks through which the release flows are Udumpanchola, Devikulam, Kothamangalam, Muvattupuzha, Kunnathunadu, Aluva, Kodungalloor and Paravur.",
+  "url": "https://en.wikipedia.org/wiki/Mattupetty_Dam"
+ },
+ "Kundala Dam": {
+  "description": "Dam in Kerala, India",
+  "extract": "Kundala Dam, also known as Setuparvatipuram Dam, is a masonry gravity dam built on Muthirapuzha River in Mattupetty panchayat of Idukki district in Kerala, India. It is part of the Pallivasal Hydroelectric Project, the first hydroelectric project in Kerala. The dam is considered to be Asia's first arch dam. It has a height of 46.93 m (154.0 ft) and length of 259.38 m (851.0 ft). Release from dam is to river Palar and taluks through which release flow are Udumbanchola, Devikulam, Kothamangalam, Muvattupuzha, Kunnathunadu, Aluva, Kodungalloor and Paravur.",
+  "url": "https://en.wikipedia.org/wiki/Kundala_Dam"
  }
 }

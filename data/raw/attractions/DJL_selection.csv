@@ -1,0 +1,28 @@
+candidate,name,place_type,tags,outdoor,fixed_slot,official,note,wiki_title
+W350317405,Tiger Hill,viewpoint,nature;relaxation,true,false,,sunrise viewpoint over Kangchenjunga,
+N343394666,Batasia Loop,viewpoint,nature;history,true,false,,"OpenTripMap name 'War Memorial, Batasia Loop'; railway loop with war memorial and garden: viewpoint type",
+node/14287804933,Rock Garden,garden,nature;relaxation,true,false,,OSM tourism=attraction (data/raw/seed/DJL.json extras),
+node/2084522604,Happy Valley Tea Estate,garden,nature;culture,true,false,,tea estate: garden type (data/raw/seed/DJL.json extras),Happy Valley Tea Estate
+W350297468,Lloyd Botanical Garden,garden,nature;relaxation,true,false,,OpenTripMap name 'Lloyd Botanical Garden (Fulbari)',
+node/4865096621,Chowrasta,park,relaxation;culture,true,false,,"town square at the head of the Mall: park type (OSM leisure=park, data/raw/seed/DJL.json extras)",Chowrasta (Darjeeling)
+node/6660775813,Nightingale Park,park,relaxation;nature,true,false,,OSM leisure=park (data/raw/seed/DJL.json extras),
+N3549141710,Observatory Hill,temple,spiritual;nature,true,false,,hilltop Mahakal shrine above Chowrasta: temple type,"Observatory Hill, Darjeeling"
+N5708011824,Mahakal Mandir,temple,spiritual,false,false,,OpenTripMap name 'Mahakal mandir',
+W348905527,Peace Pagoda,temple,spiritual;culture,true,false,,,
+N4156655118,Japanese Temple,temple,spiritual;culture,false,false,,,
+N5708131421,Ghum Monastery,temple,spiritual;culture,false,false,,OpenTripMap name 'Dunggon Samten Choling monastery',
+N4048657704,Bhutia Busty Monastery,temple,spiritual;culture,false,false,,OpenTripMap name 'Bhutia Busty monastery',
+W349476807,Dali Monastery,temple,spiritual,false,false,,,
+W480695857,Sakyacholing Gompa,temple,spiritual,false,false,,,
+Q8066156,Zang Dhok Palri Phodang,temple,spiritual;culture,false,false,,,
+W678848509,Senchal Wildlife Sanctuary,park,nature,true,false,,OpenTripMap name 'Senchal WLS': park type,
+Q4802613,Arya Tea Estate,garden,nature;culture,true,false,,tea estate: garden type,
+Q96400509,Puttabong Tea Estate,garden,nature;culture,true,false,,tea estate: garden type,
+Q96379577,Glenburn Tea Estate,garden,nature;relaxation,true,false,,tea estate: garden type,
+Q96391950,Margaret's Hope Tea Estate,garden,nature;culture,true,false,,tea estate: garden type,
+Q67354989,Victoria Falls,waterfall,nature,true,false,,OpenTripMap name 'Victoria falls',
+N2084522609,Tenzing Rock,viewpoint,nature;adventure,true,false,,rock-climbing training rock: viewpoint type,
+node/2084522610,Glenary's,market,food,false,false,,food: OSM amenity=restaurant (data/raw/seed/DJL.json extras); market type for defaults,
+node/5982369515,Keventers,market,food,false,false,,food: OSM amenity=restaurant (data/raw/seed/DJL.json extras); market type for defaults,
+node/5704936222,Kunga Restaurant,market,food,false,false,,"food: OSM amenity=restaurant, name 'Kunga restaurant' (data/raw/seed/DJL.json extras); market type for defaults",
+N4175400389,The Mall Market,market,shopping;food,true,false,,,

@@ -1,8 +1,10 @@
 candidate,name,lat,lon,km,wikidata,wiki_title,pageviews,otm_rate,suggested_type,suggested_tags,kinds_or_osm,description
 W103393986,Neelkanth Mahadev,30.08120,78.34088,5.2,Q12063668,Nilkanth Mahadev,33025,3,temple,spiritual;culture,"religion,hindu_temples,interesting_places",Hindu temple dedicated to Nilkanth
 W103261257,Beatles Ashram,30.10989,78.31260,1.5,Q55605098,Beatles Ashram,26384,2,monument,history;culture;nature,"architecture,historic_architecture,interesting_places,destroyed_objects",Ashram in India
+relation/8815465,Rajaji National Park/Tiger Reserve,30.06277,78.13000,16.9,Q181933,Rajaji National Park,17903,,monument,nature;relaxation,leisure=nature_reserve,"National park in Uttarakhand, India"
 N3814408830,Parmart Niketan Ghat,30.11934,78.31160,1.8,Q7139173,Parmarth Niketan,17534,3,temple,spiritual,"religion,hindu_temples,interesting_places","Hindu temple in Uttarakhand, India"
 W102572833,Lakshman Jhula bridge,30.12622,78.33066,3.8,Q2689560,Lakshman Jhula,17012,3,monument,culture;nature,"bridges,architecture,interesting_places,suspension_bridges","Footbridge across the Ganges in Uttarakhand, India"
+way/47434019,Ram Jhula,30.12333,78.31452,2.4,Q7288488,Ram Jhula,10898,,monument,nature,,Bridge in Rishikesh
 N9009100373,Single Use Plastic Deathbed,30.12432,78.32957,3.6,Q107675972,Single Use Plastic Deathbed,395,2,ghat,spiritual;history;culture;nature,"historic,monuments_and_memorials,interesting_places,monuments","Art installation in Rishikesh, Uttarakhand, India"
 N5217492021,Sri Bharat Mandir,30.10644,78.30207,0.5,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
 N6318571085,Aarti fair pudga,30.10300,78.29983,0.6,,,,1,monument,history,"historic,monuments_and_memorials,interesting_places,monuments",
@@ -81,3 +83,9 @@ N4045245689,Vashishta Gufa,30.11426,78.43189,13.0,,,,1,temple,spiritual,"religio
 N5282345321,Veda Vyas Mandir,29.98946,78.19705,16.4,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
 node/3815423296,Fruit & veg market,30.10599,78.29783,0.3,,,,,market,shopping,amenity=marketplace,
 way/377632894,Motorbike market,30.10331,78.29584,0.6,,,,,market,shopping,amenity=marketplace,
+node/2583229951,Little Buddha Café,30.12383,78.32902,3.5,,,,,monument,,amenity=restaurant,
+node/3821187543,Tapovan,30.12966,78.32211,3.4,,,,,monument,,place=suburb,
+node/5324966021,Pumpernickel German Bakery,30.12350,78.32861,3.5,,,,,monument,,amenity=cafe,
+node/7886624339,Shivpuri,30.13808,78.39217,9.7,,,,,monument,,place=hamlet,
+way/268608158,Triveni ghat,30.10366,78.30199,0.7,,,,,monument,,,
+way/425936983,Chotiwala,30.12182,78.31512,2.3,,,,,monument,,amenity=restaurant,

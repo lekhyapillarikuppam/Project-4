@@ -4,6 +4,7 @@ N5224499201,Anamudi,10.16964,77.06119,8.9,Q485550,Anamudi,52812,3,ghat,spiritual
 Q6807721,Meesapulimala,10.09740,77.20341,15.8,Q6807721,Meesapulimala,34664,3,ghat,spiritual;nature,"mountain_peaks,interesting_places,natural,geological_formations",Peak in India
 R4148317,Eravikulam National Park,10.22434,77.07315,15.1,Q1194252,Eravikulam National Park,22890,3,ghat,spiritual;culture;nature;relaxation,"urban_environment,gardens_and_parks,cultural,natural,interesting_places,nature_reserves,national_parks",National park in India
 R5573605,Indira Gandhi National Park,10.35029,77.09019,29.2,Q1661434,Anamalai Tiger Reserve,12119,3,garden,culture;nature;relaxation,"urban_environment,gardens_and_parks,cultural,natural,interesting_places,nature_reserves,national_parks","Wildlife sanctuary and national park in Tamil Nadu, India"
+way/44141031,Mattupetty Dam,10.10626,77.12394,7.3,Q3531035,Mattupetty Dam,7624,,monument,nature,,"Dam in the mountains of Kerala, India"
 Q3522009,Chinnar Wildlife Sanctuary,10.30000,77.17500,26.6,Q3522009,Chinnar Wildlife Sanctuary,6478,3,viewpoint,nature,"interesting_places,natural,nature_reserves,nature_reserves_others,wildlife_reserves",Wildlife sanctuary in South India
 Q7568910,South Western Ghats montane rain forests,10.16667,77.06667,8.7,Q7568910,South Western Ghats montane rain forests,5453,3,ghat,spiritual;nature,"other,unclassified_objects,tourist_object,interesting_places",Ecoregion in South India
 R11279545,Pambadum Shola National Park,10.14409,77.25608,22.3,Q3330156,Pampadum Shola National Park,5166,3,ghat,spiritual;history;culture;nature;shopping;relaxation,"urban_environment,gardens_and_parks,cultural,natural,interesting_places,nature_reserves,national_parks",National park in India
@@ -13,6 +14,7 @@ W683443563,Anamudi Shola National Park,10.20206,77.20802,20.5,Q3333420,Anamudi S
 N560825499,KDHP Tea Museum,10.09418,77.05078,1.1,Q24807588,KDHP Tea Museum,3013,3,museum,culture;nature,"cultural,museums,interesting_places,other_museums","Tea museum, industry and history museum in Idukki district Kerala, India"
 Q38335,Cheeyappara,10.03288,76.87981,20.7,Q38335,Cheeyappara Waterfalls,3000,3,viewpoint,nature,"waterfalls,interesting_places,natural,water","Waterfall in Kerala, India"
 Q7057349,North Western Ghats montane rain forests,10.25000,77.06667,17.9,Q7057349,North Western Ghats montane rain forests,2489,3,ghat,spiritual;nature,"other,unclassified_objects,tourist_object,interesting_places",Ecoregion in the Indian Peninsula
+way/44138558,Kundala Dam,10.14371,77.19857,16.4,Q13111293,Kundala Dam,2409,,monument,culture;nature,,"Dam in Kerala, India"
 W798216958,Munnar Temple,10.08921,77.06089,0.1,Q27996483,"Subramanya Temple, Munnar",1233,3,temple,spiritual,"religion,hindu_temples,interesting_places","Hindu temple in Kerala, India"
 Q5597433,Grass Hills National Park,10.34102,76.98564,29.2,Q5597433,Grass Hills National Park,1128,3,ghat,spiritual;culture;nature;relaxation,"gardens_and_parks,cultural,urban_environment,interesting_places,natural,nature_reserves,national_parks","Protected area in the Western Ghats, India"
 N4568066533,meenuliyanpara,10.00077,76.86565,23.4,Q6807649,Meenuliyan Para,939,3,viewpoint,nature,"mountain_peaks,geological_formations,natural,interesting_places",Mountain peak in southern India
@@ -311,3 +313,6 @@ way/798009729,Adimali Fish Market,10.01162,76.95481,14.4,,,,,market,shopping,ame
 way/798639479,oasis,10.01444,76.95364,14.3,,,,,market,shopping,amenity=marketplace,
 way/844833609,Vegetable and Fruit Promotion Council Keralam Vegitable Market Thopramkudy,9.87564,77.05601,23.7,,,,,market,shopping,amenity=marketplace,
 way/961613057,Vegetable And Fruits Promotion Council Keralam Rajakumari,9.96850,77.13967,16.0,,,,,market,shopping,amenity=marketplace,
+node/353409852,Saravana Bhavan pur Veg,10.08721,77.05968,0.2,,,,,monument,,amenity=restaurant,
+node/1172852406,Rapsy Restaurant,10.08804,77.06033,0.1,,,,,monument,,amenity=restaurant,
+node/4621777398,Gurubhavan,10.08774,77.06494,0.6,,,,,monument,,amenity=restaurant,

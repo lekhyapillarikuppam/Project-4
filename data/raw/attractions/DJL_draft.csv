@@ -6,12 +6,14 @@ N5708131421,Dunggon Samten Choling monastery,27.01166,88.25056,3.1,Q3320284,Ghum
 W451951473,Padmaja Naidu Himalayan Zoological Park,27.05693,88.25470,2.3,Q3495905,Padmaja Naidu Himalayan Zoological Park,6868,3,museum,culture;nature;relaxation,"urban_environment,gardens_and_parks,cultural,museums,interesting_places,zoos",Zoological park in Darjeeling
 N2084522600,Himalayan Mountaineering Institute,27.05837,88.25394,2.5,Q5765015,Himalayan Mountaineering Institute,6464,2,museum,culture,"cultural,museums,interesting_places,other_museums","School in Darjeeling, West Bengal, India"
 W348905527,Peace Pagoda,27.02757,88.25900,1.2,Q7157413,"Peace Pagoda, Darjeeling",4642,3,temple,spiritual,"religion,buddhist_temples,interesting_places",Buddhist stupa in Darjeeling
+node/2084522610,Glenary's,27.04301,88.26693,0.7,Q102789668,Glenary's,4226,,monument,history;nature;food,amenity=restaurant,"Colonial-era cafe in Darjeeling, India"
 Q8066156,Zang Dhok Palri Phodang,27.03806,88.46083,19.6,Q8066156,Zang Dhok Palri Phodang,2849,3,temple,spiritual;history;nature,"religion,buddhist_temples,interesting_places","Tibetan Buddhist monastery in Kalimpong, West Bengal, India"
 W678848509,Senchal WLS,26.99123,88.28822,5.7,Q7450103,Senchal Wildlife Sanctuary,2287,3,viewpoint,nature,"natural,interesting_places,nature_reserves,nature_reserves_others,wildlife_reserves","Wildlife sanctuary in West Bengal, India"
 W350297468,Lloyd Botanical Garden (Fulbari),27.04435,88.26261,0.8,Q927658,Lloyd's Botanical Garden,2190,3,garden,culture;nature;relaxation,"urban_environment,gardens_and_parks,cultural,interesting_places",Botanical garden in Darjeeling in the Indian state of West Bengal
 Q96391950,Margaret's Hope Tea Estate,26.92348,88.27265,12.7,Q96391950,Margaret's Hope Tea Estate,2060,2,garden,culture;nature;relaxation,"gardens_and_parks,cultural,urban_environment,interesting_places","Tea garden in West Bengal, India"
 N4048657704,Bhutia Busty monastery,27.05026,88.26995,1.6,Q4902278,Bhutia Busty Monastery,1963,3,temple,spiritual,"religion,buddhist_temples,interesting_places",Monastery in West Bengal
 Q96379723,Gopaldhara Tea Estate,26.92344,88.16235,16.1,Q96379723,Gopaldhara Tea Estate,1936,2,garden,culture;nature;relaxation,"gardens_and_parks,cultural,urban_environment,interesting_places","Tea garden in West Bengal, India"
+node/14287804933,Rock Garden,27.02508,88.23803,2.8,Q7354433,"Rock Garden, Darjeeling",1596,,monument,culture;nature;relaxation,tourism=attraction,"Rock garden in Darjeeling, India"
 Q24906240,Roy Villa,27.05662,88.25880,2.2,Q24906240,Roy Villa,1526,3,monument,history;culture,"historic_architecture,architecture,interesting_places,other_buildings_and_structures",
 Q7278751,Rabindra Museum,26.97442,88.37508,13.1,Q7278751,Rabindra Museum,1419,3,museum,culture,"museums,cultural,interesting_places,other_museums","Tagore museum in Mungpoo, near Kalimpong, West Bengal, India"
 Q96374538,Castleton Tea Estate,26.86948,88.27765,18.7,Q96374538,Castleton Tea Estate,1392,2,garden,culture;nature;relaxation,"gardens_and_parks,cultural,urban_environment,interesting_places","Tea garden in West Bengal, India"
@@ -185,3 +187,9 @@ way/352734940,Jorethang Market,27.13166,88.28174,10.6,,,,,market,shopping,amenit
 way/352754281,Dargon Market,27.04018,88.26476,0.3,,,,,market,shopping,amenity=marketplace,
 way/576918556,Soreng Bazar,27.17027,88.19978,16.0,,,,,market,shopping,amenity=marketplace,
 way/1261894967,Kisan Market,27.16439,88.35966,17.0,,,,,market,shopping,amenity=marketplace,
+node/2084522604,Happy Valley Tea Estate,27.05110,88.25853,1.6,,,,,monument,,,
+node/3560266497,Mahakal Market,27.04019,88.26498,0.4,,,,,market,shopping,shop=mall,
+node/4865096621,Chowrasta,27.04469,88.26774,0.9,,,,,garden,nature;relaxation,leisure=park,
+node/5704936222,Kunga restaurant,27.04172,88.26658,0.6,,,,,monument,,amenity=restaurant,
+node/5982369515,Keventers,27.04219,88.26664,0.6,Q102786987,,,,monument,,amenity=restaurant,
+node/6660775813,Nightingale Park,27.05372,88.25982,1.8,,,,,garden,nature;relaxation,leisure=park,

@@ -2211,6 +2211,159 @@
     }
    ],
    "fetched_on": "2026-10-24"
+  },
+  "extras": {
+   "query": "[out:json][timeout:120];(node(4865096621);node(2084522604);node(14287804933);node(4156655118);node(5708011824);node(6660775813);node(2084522610);node(5982369515);node(5704936222);node(3560266497););out center tags;",
+   "items": [
+    {
+     "source": "overpass:extras",
+     "osm": "node/2084522604",
+     "name": "Happy Valley Tea Estate",
+     "wikidata": null,
+     "lat": 27.0511046,
+     "lon": 88.2585333,
+     "osm_tags": {
+      "building": "manufacture",
+      "name": "Happy Valley Tea Estate",
+      "source": "GPS"
+     }
+    },
+    {
+     "source": "overpass:extras",
+     "osm": "node/2084522610",
+     "name": "Glenary's",
+     "wikidata": "Q102789668",
+     "lat": 27.0430088,
+     "lon": 88.2669313,
+     "osm_tags": {
+      "amenity": "restaurant",
+      "name": "Glenary's",
+      "source": "GPS",
+      "website": "https://glenaryscafe.com",
+      "wikidata": "Q102789668"
+     }
+    },
+    {
+     "source": "overpass:extras",
+     "osm": "node/3560266497",
+     "name": "Mahakal Market",
+     "wikidata": null,
+     "lat": 27.040187,
+     "lon": 88.2649791,
+     "osm_tags": {
+      "name": "Mahakal Market",
+      "shop": "mall"
+     }
+    },
+    {
+     "source": "overpass:extras",
+     "osm": "node/4156655118",
+     "name": "Japanese Temple",
+     "wikidata": null,
+     "lat": 27.0283842,
+     "lon": 88.2595509,
+     "osm_tags": {
+      "addr:street": "Gandhi Road",
+      "amenity": "place_of_worship",
+      "name": "Japanese Temple",
+      "opening_hours": "Mo-Su 04:30-19:00",
+      "phone": "+913542254102",
+      "religion": "buddhist",
+      "smoking": "no"
+     }
+    },
+    {
+     "source": "overpass:extras",
+     "osm": "node/4865096621",
+     "name": "Chowrasta",
+     "wikidata": null,
+     "lat": 27.0446884,
+     "lon": 88.267737,
+     "osm_tags": {
+      "addr:landmark": "Square",
+      "leisure": "park",
+      "name": "Chowrasta",
+      "name:en": "Chowrasta"
+     }
+    },
+    {
+     "source": "overpass:extras",
+     "osm": "node/5704936222",
+     "name": "Kunga restaurant",
+     "wikidata": null,
+     "lat": 27.041717,
+     "lon": 88.2665786,
+     "osm_tags": {
+      "amenity": "restaurant",
+      "name": "Kunga restaurant"
+     }
+    },
+    {
+     "source": "overpass:extras",
+     "osm": "node/5708011824",
+     "name": "Mahakal mandir",
+     "wikidata": null,
+     "lat": 27.0477571,
+     "lon": 88.2679805,
+     "osm_tags": {
+      "addr:city": "Darjeeling",
+      "amenity": "place_of_worship",
+      "name": "Mahakal mandir",
+      "religion": "buddhist"
+     }
+    },
+    {
+     "source": "overpass:extras",
+     "osm": "node/5982369515",
+     "name": "Keventers",
+     "wikidata": "Q102786987",
+     "lat": 27.0421868,
+     "lon": 88.2666364,
+     "osm_tags": {
+      "amenity": "restaurant",
+      "description": "Must try restaurant in Darjeeling",
+      "name": "Keventers",
+      "wikidata": "Q102786987"
+     }
+    },
+    {
+     "source": "overpass:extras",
+     "osm": "node/6660775813",
+     "name": "Nightingale Park",
+     "wikidata": null,
+     "lat": 27.0537171,
+     "lon": 88.259824,
+     "osm_tags": {
+      "leisure": "park",
+      "name": "Nightingale Park"
+     }
+    },
+    {
+     "source": "overpass:extras",
+     "osm": "node/14287804933",
+     "name": "Rock Garden",
+     "wikidata": "Q7354433",
+     "lat": 27.0250832,
+     "lon": 88.2380271,
+     "osm_tags": {
+      "addr:city": "Darjeeling",
+      "addr:district": "Darjeeling",
+      "addr:postcode": "734102",
+      "addr:street": "Rock Garden Rd, Darjeeling, Bloomfield Tea Garden, West Bengal",
+      "description": "Picturesque park featuring cascading waterfalls and lush landscaped gardens.",
+      "ele": "1750",
+      "fee": "yes",
+      "name": "Rock Garden",
+      "opening_hours": "Monday-Sunday 8:00-17:00",
+      "operator": "Goverment Of West Bengal",
+      "start_date": "1994-10-04",
+      "tourism": "attraction",
+      "wikidata": "Q7354433",
+      "wikipedia": "en:Rock Garden, Darjeeling"
+     }
+    }
+   ],
+   "fetched_on": "2026-10-25"
   }
  }
 }

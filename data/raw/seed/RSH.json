@@ -974,6 +974,137 @@
      }
     }
    ]
+  },
+  "extras": {
+   "query": "[out:json][timeout:120];(way(47434019);way(268608158);relation(8815465);way(425936983);node(2583229951);node(5324966021);node(7886624339);node(3821187543););out center tags;",
+   "items": [
+    {
+     "source": "overpass:extras",
+     "osm": "node/2583229951",
+     "name": "Little Buddha Café",
+     "wikidata": null,
+     "lat": 30.1238324,
+     "lon": 78.3290235,
+     "osm_tags": {
+      "amenity": "restaurant",
+      "cuisine": "mexican;breakfast;indian;italian",
+      "diet:vegetarian": "yes",
+      "name": "Little Buddha Café"
+     }
+    },
+    {
+     "source": "overpass:extras",
+     "osm": "node/3821187543",
+     "name": "Tapovan",
+     "wikidata": null,
+     "lat": 30.1296603,
+     "lon": 78.3221145,
+     "osm_tags": {
+      "name": "Tapovan",
+      "place": "suburb"
+     }
+    },
+    {
+     "source": "overpass:extras",
+     "osm": "node/5324966021",
+     "name": "Pumpernickel German Bakery",
+     "wikidata": null,
+     "lat": 30.1234952,
+     "lon": 78.328606,
+     "osm_tags": {
+      "addr:street": "Laxman Jhula",
+      "amenity": "cafe",
+      "name": "Pumpernickel German Bakery"
+     }
+    },
+    {
+     "source": "overpass:extras",
+     "osm": "node/7886624339",
+     "name": "Shivpuri",
+     "wikidata": null,
+     "lat": 30.1380758,
+     "lon": 78.3921718,
+     "osm_tags": {
+      "name": "Shivpuri",
+      "place": "hamlet"
+     }
+    },
+    {
+     "source": "overpass:extras",
+     "osm": "way/47434019",
+     "name": "Ram Jhula",
+     "wikidata": "Q7288488",
+     "lat": 30.1233275,
+     "lon": 78.3145179,
+     "osm_tags": {
+      "bicycle": "no",
+      "bridge": "yes",
+      "bridge:structure": "suspension",
+      "foot": "yes",
+      "highway": "footway",
+      "horse": "yes",
+      "lanes": "2",
+      "layer": "1",
+      "maxspeed": "10",
+      "motor_vehicle": "no",
+      "motorcar": "no",
+      "motorcycle": "no",
+      "name": "Ram Jhula",
+      "smoothness": "good",
+      "source": "GPS",
+      "surface": "asphalt",
+      "wikidata": "Q7288488"
+     }
+    },
+    {
+     "source": "overpass:extras",
+     "osm": "way/268608158",
+     "name": "Triveni ghat",
+     "wikidata": null,
+     "lat": 30.1036557,
+     "lon": 78.3019913,
+     "osm_tags": {
+      "area": "yes",
+      "man_made": "pier",
+      "name": "Triveni ghat"
+     }
+    },
+    {
+     "source": "overpass:extras",
+     "osm": "way/425936983",
+     "name": "Chotiwala",
+     "wikidata": null,
+     "lat": 30.1218195,
+     "lon": 78.3151186,
+     "osm_tags": {
+      "amenity": "restaurant",
+      "building": "commercial",
+      "capacity": "500",
+      "cuisine": "indian",
+      "name": "Chotiwala"
+     }
+    },
+    {
+     "source": "overpass:extras",
+     "osm": "relation/8815465",
+     "name": "Rajaji National Park/Tiger Reserve",
+     "wikidata": "Q181933",
+     "lat": 30.0627747,
+     "lon": 78.129997,
+     "osm_tags": {
+      "boundary": "national_park",
+      "leisure": "nature_reserve",
+      "name": "Rajaji National Park/Tiger Reserve",
+      "name:hi": "राजाजी राष्ट्रीय उद्यान",
+      "protect_class": "2",
+      "source": "source=http://www.uttarakhandforest.org/hindi/maps/maps-protected-area-uk.jpg",
+      "type": "boundary",
+      "website": "https://rajajijunglesafari.com/",
+      "wikidata": "Q181933"
+     }
+    }
+   ],
+   "fetched_on": "2026-10-25"
   }
  }
 }

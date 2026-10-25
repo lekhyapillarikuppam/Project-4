@@ -3885,6 +3885,99 @@
      }
     }
    ]
+  },
+  "extras": {
+   "query": "[out:json][timeout:120];(way(44141031);way(44138558);node(4627941691);node(1172852406);node(353409852);node(4621777398););out center tags;",
+   "items": [
+    {
+     "source": "overpass:extras",
+     "osm": "node/353409852",
+     "name": "Saravana Bhavan pur Veg",
+     "wikidata": null,
+     "lat": 10.0872093,
+     "lon": 77.059678,
+     "osm_tags": {
+      "amenity": "restaurant",
+      "check_date": "2023-01-27",
+      "cuisine": "indian",
+      "diet:vegetarian": "only",
+      "name": "Saravana Bhavan pur Veg"
+     }
+    },
+    {
+     "source": "overpass:extras",
+     "osm": "node/1172852406",
+     "name": "Rapsy Restaurant",
+     "wikidata": null,
+     "lat": 10.0880375,
+     "lon": 77.0603339,
+     "osm_tags": {
+      "amenity": "restaurant",
+      "cuisine": "indian",
+      "name": "Rapsy Restaurant"
+     }
+    },
+    {
+     "source": "overpass:extras",
+     "osm": "node/4621777398",
+     "name": "Gurubhavan",
+     "wikidata": null,
+     "lat": 10.0877375,
+     "lon": 77.064938,
+     "osm_tags": {
+      "amenity": "restaurant",
+      "check_date": "2023-01-28",
+      "name": "Gurubhavan Munnar",
+      "name:en": "Gurubhavan"
+     }
+    },
+    {
+     "source": "overpass:extras",
+     "osm": "node/4627941691",
+     "name": "Pothamedu",
+     "wikidata": null,
+     "lat": 10.059648,
+     "lon": 77.064075,
+     "osm_tags": {
+      "name": "Pothamedu",
+      "name:en": "Pothamedu",
+      "tourism": "viewpoint"
+     }
+    },
+    {
+     "source": "overpass:extras",
+     "osm": "way/44138558",
+     "name": "Kundala Dam",
+     "wikidata": "Q13111293",
+     "lat": 10.1437082,
+     "lon": 77.1985743,
+     "osm_tags": {
+      "name": "Kundala Dam",
+      "operator": "Kerala State Electricity Board",
+      "source": "GPS",
+      "waterway": "dam",
+      "wikidata": "Q13111293"
+     }
+    },
+    {
+     "source": "overpass:extras",
+     "osm": "way/44141031",
+     "name": "Mattupetty Dam",
+     "wikidata": "Q3531035",
+     "lat": 10.1062584,
+     "lon": 77.1239405,
+     "osm_tags": {
+      "area": "yes",
+      "name": "Mattupetty Dam",
+      "name:ml": "മാട്ടുപ്പെട്ടി അണക്കെട്ട്",
+      "name:ta": "மாட்டுப்பெட்டி அணை",
+      "source": "GPS",
+      "waterway": "dam",
+      "wikidata": "Q3531035"
+     }
+    }
+   ],
+   "fetched_on": "2026-10-25"
   }
  }
 }

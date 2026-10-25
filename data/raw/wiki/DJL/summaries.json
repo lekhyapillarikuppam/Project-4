@@ -208,5 +208,15 @@
   "description": null,
   "extract": "Namchi Monastery is a Buddhist monastery in Sikkim, northeastern India.",
   "url": "https://en.wikipedia.org/wiki/Namchi_Monastery"
+ },
+ "Glenary's": {
+  "description": "Colonial-era cafe in Darjeeling, India",
+  "extract": "Glenary's Bakery & Cafe is a British Raj-era heritage cafe in Darjeeling, India. It was founded as a confectionery store named Vado by an Italian family around 1885. It is counted among the oldest eateries in the hill station and is known for its teas and pastries.",
+  "url": "https://en.wikipedia.org/wiki/Glenary's"
+ },
+ "Rock Garden, Darjeeling": {
+  "description": "Rock garden in Darjeeling, India",
+  "extract": "The Rock Garden at Chunnu Summer Falls and Ganga Maya Park are recently added tourist attractions in the hilly town of Darjeeling in the state of West Bengal, India. It is a tourist attraction meant to attract people to Darjeeling after political agitations disrupted tourism in the 1980s. There is another rock garden in Darjeeling known as Sir John Anderson Rock Garden, which is part of Lloyd's Botanical Garden.",
+  "url": "https://en.wikipedia.org/wiki/Rock_Garden%2C_Darjeeling"
  }
 }

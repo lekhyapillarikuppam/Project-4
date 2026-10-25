@@ -23,5 +23,15 @@
   "description": "Art installation in Rishikesh, Uttarakhand, India",
   "extract": "The Single Use Plastic Deathbed is an art installation at Freedom Ghat on the bank of Ganga river near Laxman Jhula in Rishikesh, Uttarakhand, India. It features three funeral pyres made from single use plastic waste. The installation was opened in December 2020.",
   "url": "https://en.wikipedia.org/wiki/Single_Use_Plastic_Deathbed"
+ },
+ "Rajaji National Park": {
+  "description": "National park in Uttarakhand, India",
+  "extract": "Rajaji National Park is a national park and tiger reserve in the Haridwar, Dehradun and Pauri Garhwal districts of the Indian state of Uttarakhand. It encompasses an area of 820 km2 (320 sq mi) in the Sivalik Hills. In 1983, three wildlife sanctuaries in the area, namely Chilla, Motichur and Rajaji, were merged into one.",
+  "url": "https://en.wikipedia.org/wiki/Rajaji_National_Park"
+ },
+ "Ram Jhula": {
+  "description": "Bridge in Rishikesh",
+  "extract": "Ram Jhula is an iron suspension bridge across the river Ganges, located 3 kilometres (1.9 mi) northeast of the city of Rishikesh in Uttarakhand, India. The bridge connects the Sivananda Nagar area of Muni Ki Reti in Tehri Garhwal district to the Swargashram area in Pauri Garhwal district, crossing the river from west to east. Built in 1986, the bridge is one of the iconic landmarks of Rishikesh.",
+  "url": "https://en.wikipedia.org/wiki/Ram_Jhula"
  }
 }

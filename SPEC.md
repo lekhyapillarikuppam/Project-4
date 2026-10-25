@@ -922,7 +922,7 @@ Work top to bottom and tick `[x]` when a task is done and its check passes. "Che
 - [x] **T14** Write `datatools/seed.py` (OpenTripMap, falling back to Overpass) and `datatools/draft.py`.
 - [x] **T15** Seed, draft and curate the priority cities JAI, DEL, GOA, BLR and VNS: 25–40 attractions each, every row checked against its source, `checked_on` filled. · serves DATA-FR-05, 08
 - [x] **T16** Validate the 5 priority cities. · Check: 0 errors for these cities.
-- [ ] **T17** Seed, draft and curate AGR, HMP, MUN, RSH and DJL. · serves DATA-FR-05, 08
+- [x] **T17** Seed, draft and curate AGR, HMP, MUN, RSH and DJL. · serves DATA-FR-05, 08
 - [ ] **T18** Seed, draft and curate PDY, BOM, CCU, HYD and MAA. · serves DATA-FR-05, 08
 
 ##### Matrices
