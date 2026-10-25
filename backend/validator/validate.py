@@ -64,7 +64,6 @@ class _Check:
     def windows(self, out_mode: str, out_info: dict, ret_mode: str, ret_info: dict) -> list[dict]:
         c = self.c
         s = _t(c["day_start"])
-        e = min(s + round(self.r.prefs.daily_hours_out * 60), _t(c["day_end_cap"]))
         om, rm = out_info["minutes"], ret_info["minutes"]
         o_night = out_mode != "flight" and om >= c["overnight_min_minutes"]
         r_night = ret_mode != "flight" and rm >= c["overnight_min_minutes"]
@@ -82,6 +81,8 @@ class _Check:
         pace = c["pace"][self.r.prefs.pace]
         out = []
         for d in range(1, self.D + 1):
+            hours = self.r.day_hours.get(d, self.r.prefs.daily_hours_out)     # 007 day_hours
+            e = min(s + round(hours * 60), _t(c["day_end_cap"]))
             ws = max(s, first) if d == 1 else s
             we = min(e, last) if d == self.D else e
             we = max(ws, we)
@@ -177,6 +178,17 @@ class _Check:
         if any("V-05" in f for f in self.fail) or h is None:
             return self.fail
 
+        # V-14 pins: each pinned attraction is on its day (007)
+        on_day = {s.attraction_id: d.day for d in p.days for s in d.stops}
+        for a, day in r.pins.items():
+            if on_day.get(a) != day:
+                self.err("V-14", f"{a} is pinned to day {day} but is on day {on_day.get(a)}")
+        # V-16 forced transport is used (007)
+        if r.transport:
+            for name, j, forced in (("outbound", ob, r.transport.out), ("return", rt, r.transport.ret)):
+                if forced and (j.mode, j.class_) != (forced.mode, forced.class_):
+                    self.err("V-16", f"{name} is {j.mode} {j.class_}, forced {forced.mode} {forced.class_}")
+
         # V-12 locks and excludes
         for a in r.locks:
             if a not in ids:
@@ -194,7 +206,8 @@ class _Check:
                 if w["active"] else None
             # V-09 the window itself and first/last times
             if d.window != exp_window:
-                self.err("V-09", f"{tag} window {d.window}, expected {exp_window}")
+                code = "V-15" if d.day in r.day_hours else "V-09"
+                self.err(code, f"{tag} window {d.window}, expected {exp_window}")
             if d.stops and not w["active"]:
                 self.err("V-09", f"{tag} has stops but no usable window")
             # V-11 lunch on exactly the right days

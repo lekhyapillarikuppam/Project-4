@@ -1249,6 +1249,9 @@ Run the validator (section 9) on the final plan. A validator failure is a bug: t
 | V-11 | Lunch is 60 minutes, starts between 12:30 and 14:30, lies inside the day window and overlaps no visit or leg, on exactly the days that get lunch (4.1) |
 | V-12 | Every lock is present; no exclude is present |
 | V-13 | Hotel is in the destination city and in the requested tier; nights = D − 1; rooms = ⌈P ÷ 2⌉ |
+| V-14 | (007) Every pinned attraction is scheduled on its pinned day |
+| V-15 | (007) A day with `day_hours` has the window those hours give (reported as V-15 instead of V-09) |
+| V-16 | (007) A forced outbound or return option is the one used |
 
 The validator is a separate module with no imports from the solver code, so it can also check the baseline planners in Feature 008.
 
@@ -1749,7 +1752,7 @@ The validator gains checks: V-14 (pins honoured), V-15 (day_hours windows) and V
 Config keys: `groq_model`, `groq_timeout_s`, `chat_rate_per_hour`, temperatures. Env: `GROQ_API_KEY`.
 
 #### 007 Tasks
-- [ ] **T01** Engine extensions + validator V-14–16 + tests. · Check: AI-AT-06, and all 002 acceptance tests still pass
+- [x] **T01** Engine extensions + validator V-14–16 + tests. · Check: AI-AT-06, and all 002 acceptance tests still pass
 - [ ] **T02** Groq client; pick the model from `/models` and record it in config and the Changelog.
 - [ ] **T03** Parse-prefs endpoint + DescribeTrip UI. · Check: AI-AT-01
 - [ ] **T04** Grounding + explanations (cached) + Explanation UI. · Check: AI-AT-02
@@ -1988,7 +1991,7 @@ Measured 2026-10-25 on the developer laptop (Windows 11, Python 3.11.9, OR-Tools
 | AI-AT-03 | `eval/chat_intents.json`: 50 hand-written messages with expected tool and argume | 007 | — | Planned |
 | AI-AT-04 | 10 chat changes end to end | 007 | — | Planned |
 | AI-AT-05 | Groq key removed | 007 | — | Planned |
-| AI-AT-06 | Engine extensions | 007 | — | Planned |
+| AI-AT-06 | Engine extensions | 007 | — | Pass |
 | AI-AT-07 | Chat timing over 10 messages, local | 007 | — | Planned |
 | EVAL-AT-01 | `run_eval.py` | 008 | — | Planned |
 | EVAL-AT-02 | Re-run | 008 | — | Planned |
@@ -2162,3 +2165,6 @@ Run 2026-10-25 with Playwright 1.64.0 (Chromium) against the local API (schema `
 | 2026-10-25 | C 006 (T08) | Accessibility checked with axe-core (`@axe-core/playwright` 4.13.0, `axe-core` 4.14.0, dev only) for WCAG 2 A/AA on all seven pages, map tiles excluded; text inputs show a focus ring on any focus (Chromium date inputs focus an inner segment that `:focus-visible` misses); the hidden donut is not focusable (the table carries the same figures) | NFR-007, UI-FR-08; small test-only dependency |
 | 2026-10-25 | C 006 (T08) | UI-AT-09 is checked mechanically: every text node with a ₹ amount must sit inside an element marked `data-estimate` (the est. tag, the budget table, the estimate label) or `data-not-price` (the user's own budget figures) | Makes "every price is labelled" testable (Article IV.3) |
 | 2026-10-25 | C 006 (T09) | UI-AT-07 "nothing clipped" is checked as: no element outside the map extends past the viewport's right edge, plus a review of the screenshots | Makes the check decidable (Article IV.3) |
+| 2026-10-25 | C 002 §3, §7, §9 (007 T01) | TripRequest gains optional `pins` (attraction → day), `day_hours` (day → hours, 4–14) and `transport` ({out?, ret?} mode and class); pins are locks restricted to one routing day; a pin to a closed or out-of-range day gives `pin_impossible`; a forced option that does not exist gives `no_route`; validator V-14–V-16 | 007 Spec §2 |
+| 2026-10-25 | C 002 (007 T01 decision) | Empty extension fields are left out of the request hash, so earlier plans keep their hashes; requests are stored with field aliases (`class`) | Plans saved before 007 still pass V-01; replans can read stored transport |
+| 2026-10-25 | C 004 (007 T01) | Replan accepts `pins`, `day_hours` (merged key by key, null removes) and `transport` (each direction replaced, null clears), validated with field messages | AI-FR-03 maps chat tools to these change sets |

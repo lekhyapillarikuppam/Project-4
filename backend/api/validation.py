@@ -157,8 +157,50 @@ def check_trip(body: dict) -> TripRequest:
                 errs[key] = f"Not attractions of {ds.cities[d].name}: {', '.join(bad)}."
     if isinstance(locks, list) and isinstance(excludes, list) and set(locks) & set(excludes):
         errs["locks"] = "An attraction cannot be both locked and excluded."
+    n_days = (end - start).days + 1 if start and end else None
+    pins = body.get("pins") or {}
+    if not isinstance(pins, dict):
+        errs["pins"] = "Pins map attraction ids to day numbers."
+        pins = {}
+    for aid, day in pins.items():
+        if d in ds.cities and (aid not in ds.attractions or ds.attractions[aid].city_id != d):
+            errs["pins"] = f"Not an attraction of {ds.cities[d].name}: {aid}."
+        elif not isinstance(day, int) or isinstance(day, bool) or (n_days and not 1 <= day <= n_days):
+            errs["pins"] = f"Day must be between 1 and {n_days}."
+        elif isinstance(excludes, list) and aid in excludes:
+            errs["pins"] = "An attraction cannot be both pinned and excluded."
+    day_hours = body.get("day_hours") or {}
+    if not isinstance(day_hours, dict):
+        errs["day_hours"] = "Day hours map day numbers to hours."
+        day_hours = {}
+    hlo, hhi = a["hours_out"]
+    clean_hours = {}
+    for k, v in day_hours.items():
+        try:
+            day = int(k)
+        except (TypeError, ValueError):
+            errs["day_hours"] = "Day hours map day numbers to hours."
+            continue
+        if n_days and not 1 <= day <= n_days:
+            errs["day_hours"] = f"Day must be between 1 and {n_days}."
+        elif not _num(v) or not hlo <= v <= hhi:
+            errs["day_hours"] = f"Hours out must be between {hlo} and {hhi}."
+        else:
+            clean_hours[day] = v
+    transport = body.get("transport") or None
+    if transport is not None:
+        if not isinstance(transport, dict) or set(transport) - {"out", "ret"}:
+            errs["transport"] = "Transport is {out?, ret?} with a mode and class."
+        else:
+            for key, j in transport.items():
+                if j is None:
+                    continue
+                if not isinstance(j, dict) or j.get("mode") not in MODES or (j.get("mode"), j.get("class")) not in ds.fares:
+                    errs[f"transport.{key}"] = "Choose a valid mode and class (train SL/3A/2A, bus ACS, flight Y)."
+            transport = {k: v for k, v in transport.items() if v is not None} or None
     if errs:
         raise ApiError(422, "Some fields are not valid.", "invalid", errs)
     return TripRequest.model_validate({"origin": o, "destination": d, "start_date": start, "end_date": end,
                                        "people": people, "budget_total": total, "prefs": prefs,
-                                       "locks": locks, "excludes": excludes})
+                                       "locks": locks, "excludes": excludes, "pins": pins, "day_hours": clean_hours,
+                                       "transport": transport})

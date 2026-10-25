@@ -44,7 +44,7 @@ async def create_trip(body: dict = Body(...), user: dict = Depends(current_user)
         raise ApiError(500, "The planner produced an invalid plan; it was withheld.", "internal_validation_failed")
     name = (body.get("name") or "").strip()[:120] or default_name(req)
     row = db.one("INSERT INTO {s}.trips (user_id, name, request, result, start_date) VALUES (%s, %s, %s, %s, %s) RETURNING *",
-                 user["id"], name, db.jsonb(req.model_dump(mode="json")), db.jsonb(result), req.start_date)
+                 user["id"], name, db.jsonb(req.model_dump(mode="json", by_alias=True)), db.jsonb(result), req.start_date)
     return trip_out(row)
 
 

@@ -20,7 +20,7 @@ from tripwise.models import Plan, TripRequest, dump
 from tripwise.tradeoffs import trade_offs, variant_at
 
 router = APIRouter(prefix="/trips/{trip_id}", tags=["versions"])
-CHANGE_KEYS = {"locks", "excludes", "budget_total", "prefs"}
+CHANGE_KEYS = {"locks", "excludes", "budget_total", "prefs", "pins", "day_hours", "transport"}
 SOURCES = {"replan", "chat"}
 
 
@@ -81,6 +81,25 @@ def apply_changes(request: dict, changes: dict) -> dict:
     for k in ("locks", "excludes", "budget_total"):
         if k in changes:
             new[k] = changes[k]
+    for k in ("pins", "day_hours"):          # merged key by key; a null value removes the entry
+        if k in changes:
+            if not isinstance(changes[k], dict):
+                raise ApiError(422, f"{k} must be an object.", "invalid", {k: "An object."})
+            merged = {str(a): b for a, b in (new.get(k) or {}).items()}
+            for a, b in changes[k].items():
+                if b is None:
+                    merged.pop(str(a), None)
+                else:
+                    merged[str(a)] = b
+            new[k] = merged
+    if "transport" in changes:             # each direction replaced; null clears it
+        t = changes["transport"]
+        if t is not None and not isinstance(t, dict):
+            raise ApiError(422, "transport must be an object.", "invalid", {"transport": "An object."})
+        cur = dict(new.get("transport") or {})
+        for k, v in (t or {}).items():
+            cur[k] = v
+        new["transport"] = {k: v for k, v in cur.items() if v is not None} or None
     if "prefs" in changes:
         patch = changes["prefs"]
         if not isinstance(patch, dict):
@@ -108,7 +127,7 @@ async def replan_request(trip_id: str, user: dict, changes: dict, source: str, n
         if out.get("status") == "error":
             raise ApiError(500, "The planner produced an invalid plan; it was withheld.", "internal_validation_failed")
         raise ApiError(409, out.get("message", "No plan fits these changes."), "infeasible", extra={"result": out})
-    return _full(add_version(trip_id, dump(res), req.model_dump(mode="json"), source, changes, note))
+    return _full(add_version(trip_id, dump(res), req.model_dump(mode="json", by_alias=True), source, changes, note))
 
 
 @router.post("/replan", status_code=201)
