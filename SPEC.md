@@ -1664,7 +1664,7 @@ These are run by Claude Code in the browser against a local API, with results re
 #### 006 Tasks
 - [x] **T01** Scaffold Vite React TS, Tailwind and routing; layout with header, nav and footer (with the estimate label); API client and auth context.
 - [x] **T02** Landing, Sign up and Log in pages; route guard with `next=`.
-- [ ] **T03** PrefsForm + New trip page + Profile page (load and save). · Check: UI-AT-04
+- [x] **T03** PrefsForm + New trip page + Profile page (load and save). · Check: UI-AT-04
 - [ ] **T04** Plan comparison page, including the infeasible and dropped states. · Check: UI-AT-01, UI-AT-03
 - [ ] **T05** Plan detail page: transport, hotel, Timeline, BudgetDonut and BudgetTable, NearMisses, TradeOffs, VersionList. · Check: UI-AT-02, UI-AT-06
 - [ ] **T06** DayMap with numbered markers and coloured day routes. · Check: UI-AT-02
@@ -2137,3 +2137,5 @@ Measured 2026-10-25 against Neon schema `app_test` with FastAPI's TestClient (`p
 | 2026-10-25 | C 006 Plan (T01) | Pinned: react/react-dom 18.3.1, react-router-dom 6.30.6, @tanstack/react-query 5.104.1, tailwindcss 3.4.19, react-leaflet 4.2.1, leaflet 1.9.4, recharts 2.15.4, vite 6.4.4 with @vitejs/plugin-react 4.7.0, typescript 5.9.3, postcss 8.5.29, autoprefixer 10.6.1, @playwright/test 1.64.0 (UI-AT runner) | Latest releases ≥ 2 weeks old within the majors the plan names; Vite 6 because plugin-react 4 (React 18) supports it |
 | 2026-10-25 | C 006 (T01) | Scaffolded by hand (no interactive generator); esbuild's install script is not run (npm 11 allowScripts), its platform binary package works without it | Repeatable, non-interactive setup |
 | 2026-10-25 | C 006 (T02) | After log-in or sign-up the user goes to `next` when it is a same-site path, otherwise to New trip | Avoids open redirects through `next=` |
+| 2026-10-25 | C 006 (T03) | Client checks use the API's field keys (`prefs.daily_hours_out`, `budget_total`, …), so server 422 messages land next to the same fields; the form pre-fills from the saved profile, or from a duplicated / re-budgeted trip passed in navigation state | UI-FR-02, FR-007 |
+| 2026-10-25 | C 006 Plan (T03) | UI acceptance tests run with Playwright (Chromium) from `frontend/tests/`; the config starts the API on schema `app_e2e_test` and the Vite dev server | UI-AT-01–09 need a scripted browser; keeps test users out of schema `app` |

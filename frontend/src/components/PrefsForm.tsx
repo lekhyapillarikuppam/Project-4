@@ -1,0 +1,96 @@
+import type { Comfort, Meta, Mode, ModePref, Pace, Prefs, Tag } from "../api/types";
+import { FieldError } from "./ui";
+
+const TAG_LABEL: Record<Tag, string> = {
+  nature: "Nature", adventure: "Adventure", food: "Food", history: "History & heritage", culture: "Culture & art",
+  spiritual: "Spiritual", shopping: "Shopping", relaxation: "Relaxation", nightlife: "Nightlife",
+};
+const PACE_HELP: Record<Pace, string> = { relaxed: "up to 3 a day", balanced: "up to 4 a day", packed: "up to 6 a day" };
+const COMFORT_HELP: Record<Comfort, string> = { budget: "hostels, guesthouses", mid: "comfortable hotels", premium: "top hotels" };
+
+interface Props {
+  value: Prefs;
+  onChange: (p: Prefs) => void;
+  meta: Meta;
+  errors: Record<string, string>;
+}
+
+export default function PrefsForm({ value, onChange, meta, errors }: Props) {
+  const set = <K extends keyof Prefs>(k: K, v: Prefs[K]) => onChange({ ...value, [k]: v });
+  const [lo, hi] = meta.limits.hours_out;
+  return (
+    <div className="space-y-6">
+      <div>
+        <label htmlFor="hours" className="label">Hours out each day: <strong>{value.daily_hours_out} h</strong></label>
+        <input id="hours" type="range" min={lo} max={hi} step={1} value={value.daily_hours_out} className="w-full accent-accent-700"
+               aria-describedby="hours-err" onChange={(e) => set("daily_hours_out", Number(e.target.value))} />
+        <div className="flex justify-between text-xs text-ink-500"><span>{lo} h</span><span>{hi} h</span></div>
+        <FieldError id="hours-err" message={errors["prefs.daily_hours_out"]} />
+      </div>
+
+      <fieldset>
+        <legend className="label">What do you enjoy? <span className="font-normal text-ink-500">(0 = not at all, 5 = love it)</span></legend>
+        <div className="grid gap-x-6 gap-y-3 sm:grid-cols-2 lg:grid-cols-3">
+          {meta.interests.map((t) => (
+            <div key={t}>
+              <div className="flex justify-between text-sm text-ink-700">
+                <label htmlFor={`int-${t}`}>{TAG_LABEL[t]}</label>
+                <span aria-hidden className="font-semibold text-ink-900">{value.interests[t]}</span>
+              </div>
+              <input id={`int-${t}`} type="range" min={0} max={5} step={1} value={value.interests[t]} className="w-full accent-accent-700"
+                     aria-valuetext={`${value.interests[t]} of 5`}
+                     onChange={(e) => set("interests", { ...value.interests, [t]: Number(e.target.value) })} />
+            </div>
+          ))}
+        </div>
+        <FieldError id="interests-err" message={errors["prefs.interests"]} />
+      </fieldset>
+
+      <div className="grid gap-6 sm:grid-cols-2">
+        <fieldset>
+          <legend className="label">Pace</legend>
+          <div className="space-y-1">
+            {meta.paces.map((p) => (
+              <label key={p} className="flex items-center gap-2 text-sm">
+                <input type="radio" name="pace" value={p} checked={value.pace === p} onChange={() => set("pace", p)} className="accent-accent-700" />
+                <span className="capitalize">{p}</span> <span className="text-ink-500">— {PACE_HELP[p]}</span>
+              </label>
+            ))}
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend className="label">Stay comfort</legend>
+          <div className="space-y-1">
+            {meta.comforts.map((c) => (
+              <label key={c} className="flex items-center gap-2 text-sm">
+                <input type="radio" name="comfort" value={c} checked={value.comfort === c} onChange={() => set("comfort", c)} className="accent-accent-700" />
+                <span className="capitalize">{c === "mid" ? "Mid-range" : c}</span> <span className="text-ink-500">— {COMFORT_HELP[c]}</span>
+              </label>
+            ))}
+          </div>
+        </fieldset>
+      </div>
+
+      <fieldset>
+        <legend className="label">Transport</legend>
+        <div className="grid gap-3 sm:grid-cols-3">
+          {meta.modes.map((m: Mode) => (
+            <div key={m}>
+              <label htmlFor={`mode-${m}`} className="text-sm capitalize text-ink-700">{m}</label>
+              <select id={`mode-${m}`} className="input mt-1" value={value.modes[m]}
+                      onChange={(e) => set("modes", { ...value.modes, [m]: e.target.value as ModePref })}>
+                {meta.mode_prefs.map((v) => <option key={v} value={v}>{v === "avoid" ? "Avoid" : v === "preferred" ? "Preferred" : "Neutral"}</option>)}
+              </select>
+            </div>
+          ))}
+        </div>
+        <FieldError id="modes-err" message={errors["prefs.modes"]} />
+      </fieldset>
+
+      <label className="flex items-center gap-2 text-sm">
+        <input type="checkbox" checked={value.avoid_crowds} onChange={(e) => set("avoid_crowds", e.target.checked)} className="h-4 w-4 accent-accent-700" />
+        Avoid crowded places
+      </label>
+    </div>
+  );
+}
