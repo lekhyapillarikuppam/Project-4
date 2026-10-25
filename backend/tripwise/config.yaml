@@ -52,9 +52,9 @@ min_budget_round: 500
 local_mode: {budget: auto, mid: cab, premium: cab}
 
 variants:
-  kappa_h: 10
+  kappa_h: 160
   tier_value: {budget: 0, mid: 0.5, premium: 1}
-  lambda: 0.5
+  lambda: 4.0
   rho: 0.7
   difference: 0.30
   saver_retries: 2

@@ -28,6 +28,8 @@ def test_crowd_penalty():
 
 
 def test_plan_value_with_hotel_term():
-    # 100 + 15 × (0.6 + 0.9) / 2 + 5 × 1 − 0.05 × 120 + 10 × 0.5
-    assert value.plan(100, 0.6, 0.9, 1, 120, "mid", CFG) == pytest.approx(115.25, abs=0.01)
-    assert value.plan(100, 0.6, 0.9, 1, 120, "premium", CFG) == pytest.approx(120.25, abs=0.01)
+    # 100 + 15 × (0.6 + 0.9) / 2 + 5 × 1 − 0.05 × 120 + κ_h × tier value (κ_h from config)
+    kh = CFG.variants["kappa_h"]
+    assert value.plan(100, 0.6, 0.9, 1, 120, "mid", CFG) == pytest.approx(110.25 + kh * 0.5, abs=0.01)
+    assert value.plan(100, 0.6, 0.9, 1, 120, "premium", CFG) == pytest.approx(110.25 + kh, abs=0.01)
+    assert value.plan(100, 0.6, 0.9, 1, 120, "budget", CFG) == pytest.approx(110.25, abs=0.01)

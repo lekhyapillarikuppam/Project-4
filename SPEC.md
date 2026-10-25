@@ -1270,7 +1270,7 @@ The validator is a separate module with no imports from the solver code, so it c
 | cpsat | {time_limit_s: 0.4, workers: 1, seed: 42} |
 | routing_time_limit_s | 1.0 |
 | routing_solution_limit | 200 |
-| variants | {kappa_h: 10, tier_value: {budget: 0, mid: 0.5, premium: 1}, lambda: 0.5, rho: 0.7, difference: 0.30} |
+| variants | {kappa_h: 160, tier_value: {budget: 0, mid: 0.5, premium: 1}, lambda: 4.0, rho: 0.7, difference: 0.30} |
 | tradeoff_factors | [0.8, 0.9, 1.1, 1.2] |
 | max_feedback_iters | 3 |
 | min_budget_round | 500 |
@@ -1340,7 +1340,7 @@ Each trip has an `id`, a short `note` explaining what it tests, and an `expect` 
 Traces to: FR-020–FR-025, NFR-001.
 
 ##### A1. Hotel comfort in trip value
-Add a hotel term to the plan value (section 6.2): **+ κ_h × tier_value(hotel)**, with tier_value budget 0, mid 0.5, premium 1 and κ_h = 10 (config). Without it, no variant would ever choose a better hotel.
+Add a hotel term to the plan value (section 6.2): **+ κ_h × tier_value(hotel)**, with tier_value budget 0, mid 0.5, premium 1 and κ_h = 160 (config; tuned in F1, was 10). Without it, no variant would ever choose a better hotel.
 
 ##### A2. Variants
 Let V* be the Experience plan's value and B_u = ⌊0.9 × budget⌋.
@@ -1348,7 +1348,7 @@ Let V* be the Experience plan's value and B_u = ⌊0.9 × budget⌋.
 | Variant | Candidate hotels | Objective (stage 1) |
 |---|---|---|
 | Experience | user's tier and one tier above | maximise V (cost ≤ B_u) |
-| Balanced | user's tier | maximise V − λ × V* × cost ÷ B_u, λ = 0.5 (config) |
+| Balanced | user's tier | maximise V − λ × V* × cost ÷ B_u, λ = 4.0 (config; tuned in F1, was 0.5) |
 | Saver | user's tier and one tier below | minimise cost subject to V ≥ ρ × V*, ρ = 0.7 (config) |
 
 Each variant runs the full stage 1 → stage 2 → feedback → repair → validator pipeline. Experience runs first because the others need V*.
@@ -1471,7 +1471,7 @@ Work top to bottom and tick `[x]` when the check passes. Decide small things you
 
 ### Follow-ups to 001 and 002 (do these first)
 
-- [ ] **F1 Variant tuning.** Balanced usually equals Experience. Tune `variants.lambda`, `variants.kappa_h` and `variants.rho` in `backend/tripwise/config.yaml` to maximise the number of `ok` test trips with 3 distinct variants, while VAR-AT-01–04 and ENG-AT-01 still pass. Starting point: λ = 1.5, κ_h = 40. Record the before and after counts, and the chosen values, in the Changelog.
+- [x] **F1 Variant tuning.** Balanced usually equals Experience. Tune `variants.lambda`, `variants.kappa_h` and `variants.rho` in `backend/tripwise/config.yaml` to maximise the number of `ok` test trips with 3 distinct variants, while VAR-AT-01–04 and ENG-AT-01 still pass. Starting point: λ = 1.5, κ_h = 40. Record the before and after counts, and the chosen values, in the Changelog.
 - [ ] **F2 Major missing sites (45-minute cap).** Look for official fee pages for Victoria Memorial and the Indian Museum (CCU); Salar Jung Museum, Chowmahalla Palace and the Qutb Shahi Tombs (HYD); and Valluvar Kottam (MAA). Add each one found, rebuild those cities, validate and reload Neon. Skip any without an official or ≥ 2-source fee.
 - [ ] **F3** Delete `002-engine-plan-tasks.md` from the repo root.
 - [x] **F4 Owner spot-check edits** (done before F1). Apply the owner's edited values in `data/spot_check.md` (BLR-A-05, BOM-A-24, DEL-A-19, HMP-A-04, JAI-A-09, PDY-A-03) to the curated attractions; one window per place (the longest stated window, `hours_approx = true`, real hours in the source text); validate, reload Neon `ref`, run the backend tests and the 30-trip batch; amend DATA-AT-05 to the owner review; fix the `spot_check.md` tables.
@@ -2102,3 +2102,4 @@ Measured 2026-10-25 on the developer laptop (Windows 11, Python 3.11.9, OR-Tools
 | 2026-10-25 | C 001 data (F4 decision) | Owner edits live in `data/raw/attractions/owner_review.csv`, applied last by `datatools.curation.attractions` (rather than hand-editing the curated CSVs), so rebuilds keep them | Curated files are generated from evidence (Plan §1) |
 | 2026-10-25 | C 001 data (F4 decision) | One window per place (A-04): DEL-A-19 National Museum uses the longest window 10:00–20:00 (weekend hours; weekdays close 18:00) and PDY-A-03 Manakula Vinayagar the longer window 06:00–12:00 (second window 16:00–21:00); both hours_approx with the real hours in the source text | The data model holds one opening interval per place; schema unchanged as instructed |
 | 2026-10-25 | C 001 data (F4 decision) | BOM-A-24 Leopold Cafe: "cafe" is not a 001 §5.5 place type; mapped to market, the nearest type (it was already market) | Keeps the place-type set unchanged |
+| 2026-10-25 | C 002 addendum A1, A2, §10 (F1) | variants.lambda 0.5 → 4.0 and variants.kappa_h 10 → 160; rho stays 0.7. `ok` test trips with 3 distinct variants: 3 before, 15 after (2 variants: 22 → 10; 1 variant: 1 → 1); VAR-AT-01–04 and ENG-AT-01 pass; variants p95 1.3 s. Grid tried λ ∈ {0.5, 1.5, 2, 3, 4, 5} × κ_h ∈ {10, 40, 80, 120, 160, 200} × ρ ∈ {0.6, 0.65, 0.7, 0.8} (partial); λ = 5 broke VAR-AT-02 on 2–5 trips (Balanced fell below ρ V*, leaving no cheaper Saver that reaches ρ V*) | Balanced usually equalled Experience |
