@@ -1667,7 +1667,7 @@ These are run by Claude Code in the browser against a local API, with results re
 - [x] **T03** PrefsForm + New trip page + Profile page (load and save). · Check: UI-AT-04
 - [x] **T04** Plan comparison page, including the infeasible and dropped states. · Check: UI-AT-01, UI-AT-03
 - [x] **T05** Plan detail page: transport, hotel, Timeline, BudgetDonut and BudgetTable, NearMisses, TradeOffs, VersionList. · Check: UI-AT-02, UI-AT-06
-- [ ] **T06** DayMap with numbered markers and coloured day routes. · Check: UI-AT-02
+- [x] **T06** DayMap with numbered markers and coloured day routes. · Check: UI-AT-02
 - [ ] **T07** My Trips page. · Check: UI-AT-05
 - [ ] **T08** Loading, error and 429 states; accessibility pass. · Check: UI-AT-08, UI-AT-09
 - [ ] **T09** Run UI-AT-01–09 in the browser at 360 px and 1280 px; save screenshots to `frontend/test-shots/`; record in `frontend/TESTING.md`. Update Part D; mark 006 Done; commit.
@@ -2141,3 +2141,4 @@ Measured 2026-10-25 against Neon schema `app_test` with FastAPI's TestClient (`p
 | 2026-10-25 | C 006 Plan (T03) | UI acceptance tests run with Playwright (Chromium) from `frontend/tests/`; the config starts the API on schema `app_e2e_test` and the Vite dev server | UI-AT-01–09 need a scripted browser; keeps test users out of schema `app` |
 | 2026-10-25 | C 006 (T04) | Variant-card highlights are the plan's first three stops in itinerary order; the 1–5 value bar is 1 + 4 × (V − min) ÷ (max − min) within the trip, 5 when all variants are equal | Plans carry no per-stop ratings; UI-FR-03 |
 | 2026-10-25 | C 006 (T05) | The budget table shows the six lines, the plan total, the 10% contingency, the unused plannable budget and the user's budget, so the rows add up to the budget (FR-013); Plan detail always shows the newest version, and a trip with no version redirects to the comparison | UI-FR-04 |
+| 2026-10-25 | C 006 (T06) | Day colours use the Okabe–Ito palette (7 colours safe for common colour-blindness); markers are div icons with `role="img"` labels ("Day 2, stop 1: …", "Hotel: …"); the map does not zoom on scroll so the page scrolls normally | UI-FR-05, UI-FR-08 |

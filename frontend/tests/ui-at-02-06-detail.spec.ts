@@ -24,10 +24,14 @@ test("UI-AT-02 plan detail", async ({ page }) => {
   for (let i = 0; i < 6; i++) sum += await num(i);
   expect(sum).toBe(await num(6));                                  // lines sum to the plan total
   expect((await num(6)) + (await num(7)) + (await num(8))).toBe(await num(9));   // total + contingency + unused = budget
-  if (await page.locator(".leaflet-container").count()) {
-    await expect(page.locator(".leaflet-overlay-pane path").first()).toBeVisible();
-    await expect(page.getByText("Routes shown as straight lines")).toBeVisible();
-  }
+  await expect(page.locator(".leaflet-container")).toBeVisible();
+  const routes = page.locator(".leaflet-overlay-pane path");
+  await expect(routes.first()).toBeVisible();
+  const colours = new Set(await routes.evaluateAll((els) => els.map((e) => e.getAttribute("stroke"))));
+  expect(colours.size).toBe(await routes.count());                // one distinct colour per day
+  await expect(page.getByRole("img", { name: /^Hotel:/ })).toBeVisible();
+  await expect(page.getByRole("img", { name: /^Day 1, stop 1:/ })).toBeVisible();
+  await expect(page.getByText("Routes shown as straight lines")).toBeVisible();
 });
 
 // UI-AT-06: restore creates a new version; the trade-offs panel shows figures or the "limited by time" message.
