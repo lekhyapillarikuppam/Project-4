@@ -306,8 +306,33 @@ over valid plans. Times: Tripwise and greedy on this laptop; LLM-only includes t
 ## Discussion
 
 {discussion}
+
+{HISTORY}
 """
     (ROOT / "eval" / "RESULTS.md").write_text(text, encoding="utf-8", newline="\n")
+
+
+HISTORY = """## Before and after the fill step (2026-10-26)
+
+After the first evaluation, greedy beat Tripwise on 8 of 26 trips. The engine gained a fill step (ENG-FR-13): after
+exact routing it tries the unchosen candidates in descending value and keeps each one that still fits a day and
+the budget (Experience and the single plan: any value gain; Balanced: ΔV − λ·V*·Δcost/B_u > 0; Saver: no fill).
+A routing fix came with it: when every lock is mandatory and no first route exists, routing retries with locks as
+very expensive drops instead of dropping every stop.
+
+| Tripwise, all 30 trips | Before | After |
+|---|---|---|
+| Valid plans | 26/26 | 26/26 |
+| Mean value | 684.7 | 729.5 |
+| Trips where greedy scores higher | 8 of 26 (T04, T06, T07, T12, T16, T20, T21, T23) | 6 of 26 (T04, T06, T12, T16, T20, T23) |
+| Mean budget use | 71.6% | 72.1% |
+| Mean travel share | 15.2% | 15.6% |
+| Single plan p95 / all variants p95 | 568 ms / 1,531 ms | 559 ms / 1,761 ms |
+
+The fill closed most of the stop-count gap (T20: 15 → 24 stops, value 783 → 1,131; T07 now beats greedy). Where
+greedy still wins, both planners usually have the same number of stops but greedy's are worth more (T06, T12:
+12 against 12): stage 1 chose a lower-value set and the fill can only add, not swap. A swap step is the next
+improvement."""
 
 
 DISCUSSION = """- **Feasibility.** Tripwise returned a validator-clean plan for {tw[valid]}/{tw[feasible_trips]} feasible trips and

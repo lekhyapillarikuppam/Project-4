@@ -1170,7 +1170,18 @@ Compute the exact local travel cost from the routed legs. If the exact total exc
 
 Locked activities are never removed. If they alone break the budget, the answer is infeasible with `lock_over_budget`.
 
-###### 7.7 Validation
+###### 7.7 Fill step (ENG-FR-13, added 2026-10-26)
+
+Stage 1 selects on estimated time and cost, so the exactly routed and costed plan can leave time and budget unused.
+After 7.6, try every pre-filtered candidate that is not in the plan (and not pinned), in descending v(a):
+
+1. For each day and each position in that day's order, time the day with the exact scheduler (opening hours, closed days, pace limit, lunch, window, U_d) and cost the whole plan exactly.
+2. Of the positions that fit with a total ≤ B_u, take the cheapest (then the earliest return to the hotel).
+3. Keep it if the objective improves: the single plan and Experience keep any gain in plan value; Balanced keeps it only if ΔV − λ·V*·Δcost/B_u > 0 (the stage 1 Balanced objective applied to one addition); Saver does not fill, because it minimises cost.
+
+Stop after `fill_ms` (300 ms). Then validate as in 7.8.
+
+###### 7.8 Validation
 
 Run the validator (section 9) on the final plan. A validator failure is a bug: the engine returns error `internal_validation_failed` with the list of failed checks, and never returns the plan.
 
@@ -1292,6 +1303,7 @@ The validator is a separate module with no imports from the solver code, so it c
 - **ENG-FR-10** The same request and dataset version produce identical output, apart from `solve_ms`. (NFR-008)
 - **ENG-FR-11** A command-line harness runs `python -m tripwise.cli plan <request.json>` and prints a readable plan, or the infeasible message. `python -m tripwise.cli batch eval/test_trips.json` runs all test trips and prints a summary table.
 - **ENG-FR-12** `eval/test_trips.json` holds 30 test trips that meet the coverage rules in section 12.
+- **ENG-FR-13** Fill step (section 7.7): after exact routing and costing, unchosen candidates are tried in descending v(a) and each is kept at its cheapest position in any day where the exact scheduler still fits it, if the exact cost stays within B_u and the variant objective improves. Capped at `fill_ms` (300 ms) per plan. (FR-010; added 2026-10-26)
 
 ##### 12. Test trips — coverage rules
 
@@ -1844,7 +1856,7 @@ Update this table when a feature's tasks are written (fill **Tasks**) and when i
 | FR-005 | Preferences (hours, interests, pace, comfort, modes, crowds) | 004 (merged from 005) | API-FR-01–13 | 004 T03–T10 | API-AT-03 | Pass |
 | FR-006 | Free-text preferences parsed and confirmed | 007 | | | | Planned |
 | FR-007 | Form pre-filled from saved profile | 004 (merged from 005), 006 | API-FR-03 | 004 T06 | API profile tests | Pass |
-| FR-010 | Complete plan produced | 002 | ENG-FR-02–05 | 002 T02–T15 | ENG-AT-01 | Pass |
+| FR-010 | Complete plan produced | 002 | ENG-FR-02–05, 13 | 002 T02–T15; F6 fill step | ENG-AT-01; `tests/test_fill.py`; `eval/RESULTS.md` | Pass |
 | FR-011 | Hard constraints respected | 002 | ENG-FR-01, 04, 07, 08 | 002 T05, T08–T12 | ENG-AT-01, 05 | Pass |
 | FR-012 | Infeasible answer with minimum budget | 002 | ENG-FR-06 | 002 T12 | ENG-AT-07 | Pass |
 | FR-013 | Prices labelled as estimates; breakdown sums exactly | 002, 006 | ENG-FR-02 | 002 T06, T12 | ENG-AT-03 | Pass |
@@ -1920,11 +1932,11 @@ Measured 2026-10-25 on the developer laptop (Windows 11, Python 3.11.9, OR-Tools
 | ENG-AT-05 | Pass | `backend/tests/test_validator.py`: one broken plan per check V-01–V-13, each caught by exactly that check |
 | ENG-AT-06 | Pass | Every `ok` trip run twice: identical output apart from `solve_ms` |
 | ENG-AT-07 | Pass | T25–T27 re-run at their `min_budget_total` (₹78,000, ₹1,26,500, ₹11,000) return `ok` |
-| ENG-AT-08 | Pass | Single plan p95 568 ms, max 707 ms (limit 2,500 ms) |
+| ENG-AT-08 | Pass | Single plan p95 568 ms, max 707 ms (limit 2,500 ms); after the fill step (2026-10-26) p95 559 ms, max 651 ms |
 | ENG-AT-09 | Pass | κ_t 15 → 40 and μ 0.05 → 0.5 in a config copy change the plan with no code edit |
 | VAR-AT-01 | Pass | 26 `ok` trips: 1–3 variants each, every kept pair distinct, every plan validated |
 | VAR-AT-02 | Pass | cost(Saver) ≤ cost(Balanced) ≤ cost(Experience) and V(Saver) ≥ 0.7 V* on every trip |
-| VAR-AT-03 | Pass | All variants p95 1,531 ms, max 1,820 ms (limit 5,000 ms) |
+| VAR-AT-03 | Pass | All variants p95 1,531 ms, max 1,820 ms (limit 5,000 ms); after the fill step (2026-10-26) p95 1,761 ms, max 2,193 ms |
 | VAR-AT-04 | Pass | Trade-offs on 5 trips: every row equals a fresh engine run at that budget |
 
 ### Feature requirements and acceptance tests (004–008)
@@ -2189,3 +2201,6 @@ Run 2026-10-25 with Playwright 1.64.0 (Chromium) against the local API (schema `
 | 2026-10-26 | C 008 (order) | 008 T01 committed while 007 T07 and T09 wait on Groq's daily token limit (owner said to continue 008 and to run the LLM-only baseline only after AI-AT-03) | External quota |
 | 2026-10-26 | C 008 (T02 decisions) | Feasibility is measured over the 26 feasible trips (a validator-clean plan); the 4 must-decline trips are reported as "declined infeasible". EVAL-AT-02 compares every result column except times. Charts go to `eval/charts/` (committed, linked from RESULTS.md); `eval/out/results.csv` and `eval/out/llm_only.json` are committed, the rest of `eval/out/` stays ignored. matplotlib 3.10.8 is pinned in a separate `eval/requirements.txt` so the API stays lean | EVAL-FR-04 asks for PNG charts; the API does not need matplotlib |
 | 2026-10-26 | C 006 (F5) | Design pass with Impeccable (critique 27/40, audit 14/20; every P1 and P2 fixed): the feasibility checks shown as a check row on every variant card, under the Plan detail title and on a labelled example day on Landing; budget headroom (plan total of your budget) on cards and Plan detail; the value bar keeps its 1–5 scale (UI-FR-03) but its text is relative ("Most value of these plans" … "Least value, lowest cost") with a one-line legend; trip facts as chips instead of a subtitle that repeated the name; the Plan detail order is now logistics, Day by day, Map, Nearly made it, Budget, Trade-offs; a quieter timeline ("from the hotel", tabular times, stops lead, lunch pill); a preferences summary line and a sticky Plan my trip bar on phones; My Trips rows with Open as the primary action and a status chip; headings in Bricolage Grotesque (Google Fonts, 600/700; body stays system-ui) and tabular numerals instead of monospace; 44 px minimum controls (`.btn`, new `.btn-sm`, `.btn-text`, nav, tabs, radios, inputs); input borders on a new `sand-500` token (3.75:1); map pin numbers at ≥ 4.5:1 per day (vermilion darkened to #B34F00, dark numbers on light fills) and a white halo on route lines; a page title per route; signed-in pages lazy-loaded and Leaflet CSS loaded with the map (first-load JS 794 KB → 228 KB); the phone chat sheet gets a scrim, focus in and out, a Tab loop and Escape; superseded chat versions say so; the explanations-unavailable notice shows once per page; arrow keys on the My Trips tabs and the Total/Per person radios; Log in, Sign up and Profile focus the first invalid field; reduced-motion skeleton and spinner. Labels, roles, accessible names and the data-estimate / data-not-price markers are unchanged; no API or behaviour change; no new runtime dependency | Owner task F5; 14/14 Playwright tests pass (live chat test skipped, it needs Groq), axe scan clean; screenshots 1–7 retaken, 8-chat not (live only) |
+| 2026-10-26 | C 002 §7.7, ENG-FR-13 | New fill step after exact costing (owner decision): unchosen candidates in descending v(a), cheapest fitting position in any day, kept if the exact cost stays within B_u and the objective improves (single plan and Experience: any value gain; Balanced: ΔV − λ·V*·Δcost/B_u > 0; Saver: none); `fill_ms: 300` in config; validation renumbered 7.8. Result on the 30 trips: Tripwise mean value 684.7 → 729.5, greedy wins 8 → 6 of 26, ENG-AT-08 p95 559 ms, VAR-AT-03 p95 1,761 ms | 008 T01 finding: greedy beat the engine on 8 of 26 trips because nothing used the room left after routing |
+| 2026-10-26 | C 002 §7.4 (fix) | Stage 2: when every lock and pin is mandatory and the first-solution heuristic finds no route, routing is retried with locks as very expensive drops (`LOCK_PENALTY` 10⁷), so other stops make room; a lock still left out is reported as before | Found while testing the fill step: pinning Jagat Shiromani Temple to day 3 or 4 of a 4-day Jaipur trip gave `pin_impossible` although it fits |
+| 2026-10-26 | C 002 (fill decision) | Experience and the single plan keep a fill addition only when plan value rises (not "anything that fits" literally): with the travel penalty an addition can lower value, and a zero-interest stop adds nothing | Keeps the fill consistent with the max-value objective |

@@ -2,7 +2,7 @@
 
 plan(request) -> Plan | Infeasible | InternalError
   pre-filter → hotel loop (stage 1) → stage 2 → feedback cuts → exact costing and budget repair →
-  validator gate. Variants (variants.py) call run() with other objectives and hotel tiers.
+  fill step (ENG-FR-13) → validator gate. Variants (variants.py) call run() with other objectives and hotel tiers.
 """
 
 from __future__ import annotations
@@ -258,11 +258,61 @@ def run(ctx: Context, mode: str = "max_value", hotels: list | None = None, vstar
         routed = stage2.route(ds, cfg, req, hotel, wins, ch.chosen, ctx.v_all)
         placed = [s.attraction for d in routed.days for s in d.stops]
         b = lines(ctx, hotel, oi, ri, routed)
+    routed, b = fill(ctx, hotel, oi, ri, wins, routed, b, mode, vstar)
+    placed = [s.attraction for d in routed.days for s in d.stops]
     p = build(ctx, hotel, oi, ri, routed, b, len(hotels), iters, repairs, variant, wins, t0)
     fails = validate(p, req, ds, cfg.as_dict())
     if fails:
         return Outcome(InternalError(failures=fails), placed)
     return Outcome(p, placed)
+
+
+def fill(ctx: Context, hotel: Hotel, oi: int, ri: int, wins: list, routed: stage2.Routed, b: dict, mode: str,
+         vstar: float | None) -> tuple[stage2.Routed, dict]:
+    """Fill step (ENG-FR-13): stage 1 chose on estimates, so the exactly routed plan can leave time and money
+    unused. Try the unchosen candidates in descending v(a); put each at its cheapest position in any day where
+    the exact scheduler still fits it (hours, closed days, pace, lunch, window) and keep it only if the exact
+    cost stays within B_u and the variant's objective improves: max_value keeps any value gain; balanced needs
+    ΔV − λ·V*·Δcost/B_u > 0; min_cost (Saver) does not fill. Capped at fill_ms per plan."""
+    ds, cfg, req = ctx.ds, ctx.cfg, ctx.req
+    if mode == "min_cost":
+        return routed, b
+    deadline = time.perf_counter() + cfg.fill_ms / 1000
+    lam, B = cfg.variants["lambda"], ctx.usable
+    days = list(routed.days)
+    used = {s.attraction.attraction_id for d in days for s in d.stops}
+    value_now = plan_value(ctx, hotel, oi, ri, routed)
+    pool = sorted((a for a in ctx.filt.kept if a.attraction_id not in used and a.attraction_id not in req.pins),
+                  key=lambda a: (-ctx.v_all[a.attraction_id], a.attraction_id))
+    for a in pool:
+        if time.perf_counter() > deadline:
+            break
+        best = None
+        for i, w in enumerate(wins):
+            if not w.active or w.weekday in a.closed:
+                continue
+            order = [s.attraction for s in days[i].stops]
+            for pos in range(len(order) + 1):
+                sched = stage2.schedule_day(ds, cfg, req.destination, hotel, w, order[:pos] + [a] + order[pos:])
+                if sched is None:
+                    continue
+                trial = stage2.Routed(days[:i] + [sched] + days[i + 1:], [])
+                tb = lines(ctx, hotel, oi, ri, trial)
+                if tb["total"] > B:
+                    continue
+                key = (tb["total"], sched.back or 0, i, pos)
+                if best is None or key < best[0]:
+                    best = (key, trial, tb)
+        if best is None:
+            continue
+        _, trial, tb = best
+        gain = plan_value(ctx, hotel, oi, ri, trial) - value_now
+        if mode == "balanced":
+            gain -= lam * (vstar or 0) * (tb["total"] - b["total"]) / B
+        if gain > 0:
+            routed, b, days = trial, tb, list(trial.days)
+            value_now = plan_value(ctx, hotel, oi, ri, routed)
+    return routed, b
 
 
 def near_misses(ctx: Context, chosen_ids: set, total: int, hotel: Hotel, wins: list) -> list[NearMiss]:

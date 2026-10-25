@@ -126,6 +126,9 @@ class Routed:
     dropped: list         # [Attraction] chosen in stage 1 but not scheduled
 
 
+LOCK_PENALTY = 10_000_000
+
+
 def route(ds: Dataset, cfg: Config, req: TripRequest, hotel: Hotel, windows: list, chosen: list, v: dict) -> Routed:
     city = req.destination
     locks = set(req.fixed_ids())
@@ -143,36 +146,45 @@ def route(ds: Dataset, cfg: Config, req: TripRequest, hotel: Hotel, windows: lis
         visit = [0] + [a.visit for a in nodes]
         n = len(ids)
         travel = [[0 if i == j else ds.travel(city, ids[i], ids[j])[1] for j in range(n)] for i in range(n)]
-        mgr = pywrapcp.RoutingIndexManager(n, len(active), 0)
-        rt = pywrapcp.RoutingModel(mgr)
+        def solve(soft: bool):
+            mgr = pywrapcp.RoutingIndexManager(n, len(active), 0)
+            rt = pywrapcp.RoutingModel(mgr)
 
-        # node-indexed matrices registered in C++ (no Python callbacks in the search loop)
-        t_cb = rt.RegisterTransitMatrix([[visit[i] + travel[i][j] for j in range(n)] for i in range(n)])
-        rt.SetArcCostEvaluatorOfAllVehicles(rt.RegisterTransitMatrix(travel))
-        rt.AddDimension(t_cb, 1440, 1440, False, "time")
-        tdim = rt.GetDimensionOrDie("time")
-        c_cb = rt.RegisterUnaryTransitVector([0] + [1] * (n - 1))
-        rt.AddDimensionWithVehicleCapacity(c_cb, 0, [w.max_count for w in active], True, "count")
-        # Lunch is not a routing break (breaks slow the search 25-50x): the span bound U_d already leaves
-        # the lunch hour free, and the exact pass places lunch (Changelog 2026-10-25).
-        for vi, w in enumerate(active):
-            tdim.CumulVar(rt.Start(vi)).SetRange(w.start, w.end)
-            tdim.CumulVar(rt.End(vi)).SetRange(w.start, w.end)
-            tdim.SetSpanUpperBoundForVehicle(w.usable, vi)
-        for k, a in enumerate(nodes, start=1):
-            idx = mgr.NodeToIndex(k)
-            hi = a.open if a.fixed_slot else a.close - a.visit
-            tdim.CumulVar(idx).SetRange(a.open, max(a.open, hi))
-            rt.VehicleVar(idx).SetValues([-1] + allowed[a.attraction_id])   # -1: dropped
-            if a.attraction_id not in locks:
-                rt.AddDisjunction([idx], round(1000 * v[a.attraction_id]))
-        params = pywrapcp.DefaultRoutingSearchParameters()
-        params.first_solution_strategy = routing_enums_pb2.FirstSolutionStrategy.PATH_CHEAPEST_ARC
-        params.local_search_metaheuristic = getattr(routing_enums_pb2.LocalSearchMetaheuristic, cfg.routing_metaheuristic)
-        if cfg.routing_solution_limit:
-            params.solution_limit = cfg.routing_solution_limit
-        params.time_limit.FromMilliseconds(int(cfg.routing_time_limit_s * 1000))
-        sol = rt.SolveWithParameters(params)
+            # node-indexed matrices registered in C++ (no Python callbacks in the search loop)
+            t_cb = rt.RegisterTransitMatrix([[visit[i] + travel[i][j] for j in range(n)] for i in range(n)])
+            rt.SetArcCostEvaluatorOfAllVehicles(rt.RegisterTransitMatrix(travel))
+            rt.AddDimension(t_cb, 1440, 1440, False, "time")
+            tdim = rt.GetDimensionOrDie("time")
+            c_cb = rt.RegisterUnaryTransitVector([0] + [1] * (n - 1))
+            rt.AddDimensionWithVehicleCapacity(c_cb, 0, [w.max_count for w in active], True, "count")
+            # Lunch is not a routing break (breaks slow the search 25-50x): the span bound U_d already leaves
+            # the lunch hour free, and the exact pass places lunch (Changelog 2026-10-25).
+            for vi, w in enumerate(active):
+                tdim.CumulVar(rt.Start(vi)).SetRange(w.start, w.end)
+                tdim.CumulVar(rt.End(vi)).SetRange(w.start, w.end)
+                tdim.SetSpanUpperBoundForVehicle(w.usable, vi)
+            for k, a in enumerate(nodes, start=1):
+                idx = mgr.NodeToIndex(k)
+                hi = a.open if a.fixed_slot else a.close - a.visit
+                tdim.CumulVar(idx).SetRange(a.open, max(a.open, hi))
+                rt.VehicleVar(idx).SetValues([-1] + allowed[a.attraction_id])   # -1: dropped
+                if a.attraction_id not in locks:
+                    rt.AddDisjunction([idx], round(1000 * v[a.attraction_id]))
+                elif soft:     # locks may drop only when no route can hold them all
+                    rt.AddDisjunction([idx], LOCK_PENALTY)
+            params = pywrapcp.DefaultRoutingSearchParameters()
+            params.first_solution_strategy = routing_enums_pb2.FirstSolutionStrategy.PATH_CHEAPEST_ARC
+            params.local_search_metaheuristic = getattr(routing_enums_pb2.LocalSearchMetaheuristic, cfg.routing_metaheuristic)
+            if cfg.routing_solution_limit:
+                params.solution_limit = cfg.routing_solution_limit
+            params.time_limit.FromMilliseconds(int(cfg.routing_time_limit_s * 1000))
+            return rt, mgr, rt.SolveWithParameters(params)
+
+        rt, mgr, sol = solve(False)
+        if sol is None and locks & {a.attraction_id for a in nodes}:
+            # with every lock mandatory the first-solution heuristic can fail outright; retry with locks as
+            # very expensive drops so the other stops make room (the engine still rejects a lock left out)
+            rt, mgr, sol = solve(True)
         if sol is None:
             dropped += nodes
         else:

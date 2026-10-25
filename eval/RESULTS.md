@@ -16,15 +16,15 @@ over valid plans. Times: Tripwise and greedy on this laptop; LLM-only includes t
 
 | Planner | Feasible trips with a valid plan | Failed plans | Violations (V-xx: trips) | Declined infeasible | Mean value | Total value | Mean budget use | Mean travel share | Median time | Distinct variants |
 |---|---|---|---|---|---|---|---|---|---|---|
-| Tripwise | 26/26 (100%) | 0 | none | 4/4 | 684.742 | 17803.3 | 72% | 15% | 159 ms | 2.538 |
+| Tripwise | 26/26 (100%) | 0 | none | 4/4 | 729.472 | 18966.3 | 72% | 16% | 154 ms | 2.423 |
 | Greedy | 26/26 (100%) | 0 | none | 4/4 | 645.475 | 16782.4 | 69% | 28% | 6 ms | – |
 
 ## Same 10 trips (all three planners)
 
 | Planner | Feasible trips with a valid plan | Failed plans | Violations (V-xx: trips) | Declined infeasible | Mean value | Total value | Mean budget use | Mean travel share | Median time | Distinct variants |
 |---|---|---|---|---|---|---|---|---|---|---|
-| Tripwise | 10/10 (100%) | 0 | none | – | 687.255 | 6872.5 | 72% | 13% | 215 ms | 2.6 |
-| Greedy | 10/10 (100%) | 0 | none | – | 620.894 | 6208.9 | 69% | 27% | 5 ms | – |
+| Tripwise | 10/10 (100%) | 0 | none | – | 714.961 | 7149.6 | 73% | 13% | 208 ms | 2.6 |
+| Greedy | 10/10 (100%) | 0 | none | – | 620.894 | 6208.9 | 69% | 27% | 6 ms | – |
 
 ![Feasibility](charts/feasibility.png)
 ![Value per trip](charts/value.png)
@@ -36,13 +36,35 @@ over valid plans. Times: Tripwise and greedy on this laptop; LLM-only includes t
   correctly declined 4/4 infeasible ones. Greedy, built on the same time and cost functions, was
   also clean (26/26): feasibility comes from the shared model, not from the optimiser.
   LLM-only has not been run yet (`python eval/run_eval.py --llm`).
-- **Value.** Tripwise's mean value is 684.742 against greedy's 645.475, but greedy scored higher on
-  8 of 26 trips (T04, T06, T07, T12, T16, T20, T21, T23). On those trips greedy fits more activities (16.12 against
-  12.88 on average) for about the same share of the budget (0.69 against 0.68): the engine selects
+- **Value.** Tripwise's mean value is 729.472 against greedy's 645.475, but greedy scored higher on
+  6 of 26 trips (T04, T06, T12, T16, T20, T23). On those trips greedy fits more activities (15 against
+  14.67 on average) for about the same share of the budget (0.68 against 0.68): the engine selects
   activities in stage 1 on conservative estimates of time and cost and does not top up the plan after exact routing.
-  Over all trips budget use is similar (0.716 against 0.693). A post-routing fill step
+  Over all trips budget use is similar (0.721 against 0.693). A post-routing fill step
   is the clearest improvement to make next.
 - **Travel.** Tripwise routes each day (OR-Tools), so a smaller share of the day goes on local rides
-  (0.152 against greedy's 0.277).
-- **Variants.** Tripwise showed 2.538 distinct variants per feasible trip on average.
+  (0.156 against greedy's 0.277).
+- **Variants.** Tripwise showed 2.423 distinct variants per feasible trip on average.
 - **Chat intents (EVAL-FR-03).** See AI-AT-03 in `eval/AI_AT_03.md`.
+
+## Before and after the fill step (2026-10-26)
+
+After the first evaluation, greedy beat Tripwise on 8 of 26 trips. The engine gained a fill step (ENG-FR-13): after
+exact routing it tries the unchosen candidates in descending value and keeps each one that still fits a day and
+the budget (Experience and the single plan: any value gain; Balanced: ΔV − λ·V*·Δcost/B_u > 0; Saver: no fill).
+A routing fix came with it: when every lock is mandatory and no first route exists, routing retries with locks as
+very expensive drops instead of dropping every stop.
+
+| Tripwise, all 30 trips | Before | After |
+|---|---|---|
+| Valid plans | 26/26 | 26/26 |
+| Mean value | 684.7 | 729.5 |
+| Trips where greedy scores higher | 8 of 26 (T04, T06, T07, T12, T16, T20, T21, T23) | 6 of 26 (T04, T06, T12, T16, T20, T23) |
+| Mean budget use | 71.6% | 72.1% |
+| Mean travel share | 15.2% | 15.6% |
+| Single plan p95 / all variants p95 | 568 ms / 1,531 ms | 559 ms / 1,761 ms |
+
+The fill closed most of the stop-count gap (T20: 15 → 24 stops, value 783 → 1,131; T07 now beats greedy). Where
+greedy still wins, both planners usually have the same number of stops but greedy's are worth more (T06, T12:
+12 against 12): stage 1 chose a lower-value set and the fill can only add, not swap. A swap step is the next
+improvement.

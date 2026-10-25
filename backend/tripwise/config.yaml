@@ -47,6 +47,7 @@ routing_metaheuristic: GUIDED_LOCAL_SEARCH
 routing_solution_limit: 50
 max_feedback_iters: 3
 max_repairs: 20
+fill_ms: 300          # post-routing fill step time cap per plan (ENG-FR-13)
 min_budget_round: 500
 
 local_mode: {budget: auto, mid: cab, premium: cab}
