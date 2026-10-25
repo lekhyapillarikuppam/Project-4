@@ -1753,7 +1753,7 @@ Config keys: `groq_model`, `groq_timeout_s`, `chat_rate_per_hour`, temperatures.
 
 #### 007 Tasks
 - [x] **T01** Engine extensions + validator V-14–16 + tests. · Check: AI-AT-06, and all 002 acceptance tests still pass
-- [ ] **T02** Groq client; pick the model from `/models` and record it in config and the Changelog.
+- [x] **T02** Groq client; pick the model from `/models` and record it in config and the Changelog.
 - [ ] **T03** Parse-prefs endpoint + DescribeTrip UI. · Check: AI-AT-01
 - [ ] **T04** Grounding + explanations (cached) + Explanation UI. · Check: AI-AT-02
 - [ ] **T05** Chat tools, name resolution, replan mapping, diff, reply, unsupported, why. · Check: AI-AT-04
@@ -2168,3 +2168,4 @@ Run 2026-10-25 with Playwright 1.64.0 (Chromium) against the local API (schema `
 | 2026-10-25 | C 002 §3, §7, §9 (007 T01) | TripRequest gains optional `pins` (attraction → day), `day_hours` (day → hours, 4–14) and `transport` ({out?, ret?} mode and class); pins are locks restricted to one routing day; a pin to a closed or out-of-range day gives `pin_impossible`; a forced option that does not exist gives `no_route`; validator V-14–V-16 | 007 Spec §2 |
 | 2026-10-25 | C 002 (007 T01 decision) | Empty extension fields are left out of the request hash, so earlier plans keep their hashes; requests are stored with field aliases (`class`) | Plans saved before 007 still pass V-01; replans can read stored transport |
 | 2026-10-25 | C 004 (007 T01) | Replan accepts `pins`, `day_hours` (merged key by key, null removes) and `transport` (each direction replaced, null clears), validated with field messages | AI-FR-03 maps chat tools to these change sets |
+| 2026-10-26 | C 007 (T02) | Groq model `openai/gpt-oss-120b` (config `groq.model`). GET /models on 2026-10-26 listed openai/gpt-oss-120b, openai/gpt-oss-20b and qwen/qwen3.8-27b as tool-capable chat models; all three returned a correct `set_budget` tool call and valid JSON mode; gpt-oss-120b (tool call 0.95 s, JSON 0.76 s) is the largest at similar latency (qwen: 2.2 s tool call). Config also holds the 10 s timeout, temperatures (tools 0.2, explanations 0.4, parse 0.2) and chat_rate_per_hour 30 | AI-FR-07 |
