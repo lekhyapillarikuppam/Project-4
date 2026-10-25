@@ -41,7 +41,7 @@ export function TradeOffsPanel({ tripId, variant, names }: { tripId: string; var
         <tbody>
           {q.data.rows.map((r) => (
             <tr key={r.factor} className="border-b border-sand-200 align-top">
-              <td className="py-1 font-mono">{Math.round((r.factor - 1) * 100) > 0 ? "+" : ""}{Math.round((r.factor - 1) * 100)}% <span className="text-ink-500">({inr(r.budget_total)})</span></td>
+              <td className="py-1 font-mono">{Math.round((r.factor - 1) * 100) > 0 ? "+" : ""}{Math.round((r.factor - 1) * 100)}% <span data-not-price className="text-ink-500">({inr(r.budget_total)})</span></td>
               {r.status !== "ok" ? <td colSpan={3} className="py-1 text-warn-700">No plan fits this budget</td> : (
                 <>
                   <td className="py-1 font-mono"><Price>{signedInr(r.delta_cost ?? 0)}</Price></td>
@@ -78,7 +78,7 @@ export function VersionList({ tripId, versions, current }: { tripId: string; ver
           <li key={v.version} className="flex flex-wrap items-center justify-between gap-2 border-b border-sand-200 pb-2">
             <span>
               <strong>Version {v.version}</strong> · {SOURCE[v.source]}{v.variant ? ` · ${VARIANT_LABEL[v.variant]}` : ""}
-              <span className="block text-ink-500">{v.note ?? ""} {inr(v.total)} est.</span>
+              <span className="block text-ink-500">{v.note ?? ""} <Price>{inr(v.total)}</Price></span>
             </span>
             {v.version === current ? <span className="text-xs font-semibold text-accent-700">Current</span> : (
               <button type="button" className="btn-secondary px-3 py-1" disabled={restore.isPending}

@@ -10,8 +10,12 @@ import { useCityName } from "../lib/meta";
 
 export function tripSubtitle(trip: Trip, city: (c: string) => string) {
   const r = trip.request;
-  return `${city(r.origin)} → ${city(r.destination)} · ${niceDate(r.start_date)} to ${niceDate(r.end_date)} · `
-    + `${r.people} ${r.people === 1 ? "person" : "people"} · budget ${inr(r.budget_total)}`;
+  return (
+    <>
+      {city(r.origin)} → {city(r.destination)} · {niceDate(r.start_date)} to {niceDate(r.end_date)} ·{" "}
+      {r.people} {r.people === 1 ? "person" : "people"} · <span data-not-price>your budget {inr(r.budget_total)}</span>
+    </>
+  );
 }
 
 export default function Compare() {

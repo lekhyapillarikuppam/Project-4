@@ -15,11 +15,11 @@ const LINES: { key: keyof Budget; label: string; colour: string }[] = [
 export function BudgetDonut({ budget }: { budget: Budget }) {
   const data = LINES.map((l) => ({ name: l.label, value: budget[l.key] as number, colour: l.colour })).filter((d) => d.value > 0);
   return (
-    <figure aria-label={`Budget chart: total ${inr(budget.total)}`} className="flex flex-col items-center">
+    <figure data-estimate aria-label={`Budget chart: estimated total ${inr(budget.total)}`} className="flex flex-col items-center">
       <div className="h-56 w-full max-w-xs" aria-hidden>
         <ResponsiveContainer>
-          <PieChart>
-            <Pie data={data} dataKey="value" nameKey="name" innerRadius="55%" outerRadius="85%" isAnimationActive={false}>
+          <PieChart accessibilityLayer={false}>
+            <Pie data={data} dataKey="value" nameKey="name" innerRadius="55%" outerRadius="85%" isAnimationActive={false} rootTabIndex={-1}>
               {data.map((d) => <Cell key={d.name} fill={d.colour} />)}
             </Pie>
             <Tooltip formatter={(v: number) => inr(v)} />
@@ -33,7 +33,7 @@ export function BudgetDonut({ budget }: { budget: Budget }) {
 
 export function BudgetTable({ budget }: { budget: Budget }) {
   return (
-    <table className="w-full text-sm">
+    <table data-estimate className="w-full text-sm">
       <caption className="mb-2 text-left"><EstimatedLabel /></caption>
       <tbody>
         {LINES.map((l) => (

@@ -130,7 +130,8 @@ export default function NewTrip() {
           <h2 className="mb-4 text-lg font-semibold">Your preferences</h2>
           <PrefsForm value={draft.prefs} onChange={(p) => set("prefs", p)} meta={m} errors={errors} />
         </section>
-        {error !== null && <ErrorBox error={error} />}
+        {error !== null && <ErrorBox error={error}
+          onRetry={error instanceof ApiError && error.status === 429 ? () => document.querySelector<HTMLFormElement>("form")?.requestSubmit() : undefined} />}
         <div className="flex flex-wrap items-center gap-3">
           <button type="submit" className="btn-primary px-6 py-3 text-base" disabled={busy}>
             {busy ? "Planning…" : "Plan my trip"}

@@ -12,7 +12,7 @@ const BLURB: Record<string, string> = {
 export function ValueBar({ score }: { score: number }) {
   const filled = Math.round(score);
   return (
-    <span className="inline-flex items-center gap-1" aria-label={`Value ${score.toFixed(1)} of 5`}>
+    <span role="img" className="inline-flex items-center gap-1" aria-label={`Value ${score.toFixed(1)} of 5`}>
       {Array.from({ length: 5 }, (_, i) => (
         <span key={i} aria-hidden className={`h-2 w-6 rounded-full ${i < filled ? "bg-accent-600" : "bg-sand-200"}`} />
       ))}

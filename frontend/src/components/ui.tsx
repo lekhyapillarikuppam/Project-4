@@ -4,13 +4,13 @@ import { useMeta } from "../lib/meta";
 
 export function EstimatedLabel({ className = "" }: { className?: string }) {
   const { data } = useMeta();
-  return <span className={`text-xs font-medium text-ink-500 ${className}`}>{data?.estimate_label ?? "Estimated prices"}</span>;
+  return <span data-estimate className={`text-xs font-medium text-ink-500 ${className}`}>{data?.estimate_label ?? "Estimated prices"}</span>;
 }
 
 /** A price with its "Estimated" tag (UI-FR-07). */
 export function Price({ children, className = "" }: { children: ReactNode; className?: string }) {
   return (
-    <span className={className}>
+    <span data-estimate className={className}>
       {children} <abbr title="Estimated price" className="text-xs font-normal text-ink-500 no-underline">est.</abbr>
     </span>
   );

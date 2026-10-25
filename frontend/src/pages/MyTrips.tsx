@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { api } from "../api/client";
 import type { TripSummary } from "../api/types";
 import ConfirmDialog from "../components/ConfirmDialog";
-import { ErrorBox, PageTitle, Price, Skeleton } from "../components/ui";
+import { ErrorBox, PageTitle, Skeleton } from "../components/ui";
 import { inr, niceDate, VARIANT_LABEL } from "../lib/format";
 import { useCityName } from "../lib/meta";
 
@@ -40,7 +40,7 @@ function TripRow({ t, onDelete }: { t: TripSummary; onDelete: (t: TripSummary) =
           <h2 className="truncate text-lg font-semibold"><Link to={link} className="hover:underline">{t.name}</Link></h2>
         )}
         <p className="text-sm text-ink-700">
-          {city(t.origin)} → {city(t.destination)} · {niceDate(t.start_date)} – {niceDate(t.end_date)} · {t.people} {t.people === 1 ? "person" : "people"} · <Price>{inr(t.budget_total)}</Price>
+          {city(t.origin)} → {city(t.destination)} · {niceDate(t.start_date)} – {niceDate(t.end_date)} · {t.people} {t.people === 1 ? "person" : "people"} · <span data-not-price>budget {inr(t.budget_total)}</span>
         </p>
         <p className="text-sm text-ink-500">
           {t.status === "infeasible" ? "No plan fits yet" : t.selected_variant ? `${VARIANT_LABEL[t.selected_variant]} plan chosen` : "Plans ready to compare"}

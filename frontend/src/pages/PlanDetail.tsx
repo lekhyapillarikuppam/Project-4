@@ -70,7 +70,7 @@ export default function PlanDetail() {
               <h3 className="text-sm font-semibold text-ink-700">Hotel</h3>
               <p className="mt-1 text-lg font-semibold">{plan.hotel.name}</p>
               <p className="text-sm">{TIER_LABEL[plan.hotel.tier]} · {plan.hotel.nights} night{plan.hotel.nights === 1 ? "" : "s"} · {plan.hotel.rooms} room{plan.hotel.rooms === 1 ? "" : "s"}</p>
-              <p className="text-sm text-ink-700"><Price>{inr(plan.hotel.cost)}</Price> ({inr(plan.hotel.price_per_room_night)} per room per night)</p>
+              <p className="text-sm text-ink-700"><Price>{inr(plan.hotel.cost)}</Price> · <Price>{inr(plan.hotel.price_per_room_night)}</Price> per room per night</p>
             </div>
           </div>
         </Section>
