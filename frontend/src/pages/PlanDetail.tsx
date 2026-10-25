@@ -2,6 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import { Link, Navigate, useParams } from "react-router-dom";
 import { api } from "../api/client";
 import type { Journey, Plan } from "../api/types";
+import Explanation from "../components/Explanation";
 import { BudgetDonut, BudgetTable } from "../components/Budget";
 import ChatPanel from "../components/ChatPanel";
 import DayMap from "../components/DayMap";
@@ -62,6 +63,9 @@ export default function PlanDetail() {
           </PageTitle>
           <Link to={`/trips/${id}`} className="btn-link">← Compare plans</Link>
         </div>
+        {plan.variant && trip.data.result.status === "ok"
+          && trip.data.result.variants.some((v) => v.variant === plan.variant && v.request_hash === plan.request_hash)
+          && <Explanation tripId={id} variant={plan.variant} />}
         <Section title="Getting there and staying">
           <div className="grid gap-3 sm:grid-cols-3">
             <JourneyCard title="Outbound" j={plan.transport.outbound} out />

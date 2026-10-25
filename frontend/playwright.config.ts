@@ -15,7 +15,7 @@ export default defineConfig({
       command: "..\\backend\\.venv\\Scripts\\python.exe -m uvicorn api.main:app --port 8000",
       cwd: "../backend",
       url: "http://localhost:8000/health",
-      env: { DB_SCHEMA: "app_e2e_test", APP_ENV: "development" },
+      env: { DB_SCHEMA: "app_e2e_test", APP_ENV: "development", GROQ_API_KEY: "" },   // no Groq in UI tests: AI parts show their fallbacks
       reuseExistingServer: false,
       timeout: 60_000,
     },

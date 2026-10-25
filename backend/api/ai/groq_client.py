@@ -49,6 +49,8 @@ def chat(messages: list[dict], *, temperature: float, tools: list[dict] | None =
         body["tool_choice"] = tool_choice or "auto"
     if json_mode:
         body["response_format"] = {"type": "json_object"}
+    if g.get("reasoning_effort"):
+        body["reasoning_effort"] = g["reasoning_effort"]
     headers = {"Authorization": f"Bearer {_key()}", "Content-Type": "application/json"}
     for attempt in range(2):
         t0 = time.perf_counter()

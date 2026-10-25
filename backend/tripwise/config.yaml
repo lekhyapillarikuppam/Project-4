@@ -86,4 +86,5 @@ groq:
   temperature_explain: 0.4
   temperature_parse: 0.2
   max_tokens: 1200
+  reasoning_effort: "low"     # gpt-oss: reasoning tokens count against max_tokens; "low" leaves room for the answer
 chat_rate_per_hour: 30

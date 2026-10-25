@@ -116,6 +116,9 @@ export interface ParsedTrip {
   prefs: Prefs; origin?: string; destination?: string; start_date?: string; end_date?: string; people?: number;
   budget_total?: number; budget_per_person?: number;
 }
+export type Explanations =
+  | { status: "ok"; texts: Partial<Record<VariantName, string>>; source: Partial<Record<VariantName, "llm" | "llm_retry" | "template">>; cached: boolean }
+  | { status: "unavailable"; notice: string };
 export interface ChatMessage {
   id: number; role: "user" | "assistant"; text: string; actions: unknown; version: number | null; created_at: string;
 }

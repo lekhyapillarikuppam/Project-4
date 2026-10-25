@@ -1,5 +1,6 @@
 import type { Plan } from "../api/types";
 import { inr, MODE_LABEL, TIER_LABEL, VARIANT_LABEL } from "../lib/format";
+import Explanation from "./Explanation";
 import { Price } from "./ui";
 
 const BLURB: Record<string, string> = {
@@ -26,8 +27,8 @@ export function scoreWithin(values: number[], v: number): number {
   return hi === lo ? 5 : 1 + (4 * (v - lo)) / (hi - lo);
 }
 
-export default function VariantCard({ plan, score, onChoose, choosing }: {
-  plan: Plan; score: number; onChoose: () => void; choosing: boolean;
+export default function VariantCard({ plan, score, onChoose, choosing, tripId }: {
+  plan: Plan; score: number; onChoose: () => void; choosing: boolean; tripId: string;
 }) {
   const name = VARIANT_LABEL[plan.variant ?? "balanced"];
   const stops = plan.days.flatMap((d) => d.stops);
@@ -54,6 +55,7 @@ export default function VariantCard({ plan, score, onChoose, choosing }: {
           </ul>
         </div>
       )}
+      <Explanation tripId={tripId} variant={plan.variant ?? "balanced"} />
       <div className="mt-auto pt-2">
         <button type="button" className="btn-primary w-full" onClick={onChoose} disabled={choosing}>
           {choosing ? "Opening…" : `Choose ${name}`}

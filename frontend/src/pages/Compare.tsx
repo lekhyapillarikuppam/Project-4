@@ -78,7 +78,7 @@ export default function Compare() {
       <div className={`grid gap-4 ${vr.variants.length === 3 ? "md:grid-cols-3" : vr.variants.length === 2 ? "md:grid-cols-2" : ""}`}>
         {vr.variants.map((p) => (
           <VariantCard key={p.variant} plan={p} score={scoreWithin(values, p.value)}
-                       onChoose={() => choose(p.variant!)} choosing={choosing === p.variant} />
+                       onChoose={() => choose(p.variant!)} choosing={choosing === p.variant} tripId={t.id} />
         ))}
       </div>
       {vr.dropped.length > 0 && (

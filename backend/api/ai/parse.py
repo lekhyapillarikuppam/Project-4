@@ -11,31 +11,13 @@ import json
 from datetime import date
 
 from api.ai import groq_client
-from api.validation import DEFAULT_PREFS, MODES, check_prefs, today
+from api.ai.prompts import parse_system as system_prompt
+from api.validation import DEFAULT_PREFS, MODES, check_prefs
 from tripwise import config, data
-from tripwise.models import TAGS
 
 
 class Unparseable(Exception):
     """The model's answer failed validation twice."""
-
-
-def system_prompt() -> str:
-    cities = ", ".join(f"{c.city_id} = {c.name}" for c in data.default().cities.values())
-    return f"""You turn a traveller's description of a trip in India into structured preferences for a planner.
-Reply with one JSON object only, with these keys:
-- "prefs": {{
-    "daily_hours_out": number 4-14 (hours per day out of the hotel; 9 if not said),
-    "interests": {{{", ".join(f'"{t}"' for t in TAGS)}: whole numbers 0-5 (0 = not interested, 5 = loves it);
-                  at least one above 0; infer from what they mention and give 0-1 to what they dislike}},
-    "pace": "relaxed" | "balanced" | "packed",
-    "comfort": "budget" | "mid" | "premium" (the hotel level),
-    "modes": {{"train", "bus", "flight": each "preferred" | "neutral" | "avoid"}},
-    "avoid_crowds": true | false }}
-- optional, only if the text clearly states them: "origin" and "destination" (city codes from this list only:
-  {cities}; a single city named as the place to visit is the destination, and "from X" is the origin), "start_date" and "end_date" (YYYY-MM-DD; today is {today().isoformat()}), "people" (1-6),
-  and either "budget_total" or "budget_per_person" (whole rupees; "1.5 lakh" = 150000, "20k" = 20000).
-Never invent values the text does not support; use the defaults above. Do not add other keys."""
 
 
 def _validate(obj) -> tuple[dict, dict]:
