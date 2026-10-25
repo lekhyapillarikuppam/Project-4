@@ -22,7 +22,11 @@ Last updated 2026-10-25.
 - Part C — Features
   - 001 City data: Spec, Plan, Tasks
   - 002 Optimization engine, variants and trade-offs: Spec, Plan, Tasks (003 merged into 002)
-  - 004–009: added phase by phase
+  - Follow-ups to 001 and 002 (F1–F4)
+  - 004 Accounts, saved data and API (005 merged in): Spec, Plan, Tasks
+  - 006 Frontend: Spec, Plan, Tasks
+  - 007 AI layer: Spec, Plan, Tasks
+  - 008 Evaluation and deployment (009 merged in): Spec, Tasks
 - Part D — Traceability
 - Changelog
 
@@ -1465,19 +1469,355 @@ Work top to bottom and tick `[x]` when the check passes. Decide small things you
 - [x] **T19** Timing: single plan p95 ≤ 2.5 s (ENG-AT-08) and all variants p95 ≤ 5 s (VAR-AT-03). If over, tune time limits in config only, record the chosen values and their measured effect on value, and re-run.
 - [x] **T20** Update Part D for every ENG-* and VAR-* test, mark 002 Done, and commit.
 
-### Features 003–009
+### Follow-ups to 001 and 002 (do these first)
 
-*Each is added here as its phase starts, using the same Spec / Plan / Tasks layout:*
+- [ ] **F1 Variant tuning.** Balanced usually equals Experience. Tune `variants.lambda`, `variants.kappa_h` and `variants.rho` in `backend/tripwise/config.yaml` to maximise the number of `ok` test trips with 3 distinct variants, while VAR-AT-01–04 and ENG-AT-01 still pass. Starting point: λ = 1.5, κ_h = 40. Record the before and after counts, and the chosen values, in the Changelog.
+- [ ] **F2 Major missing sites (45-minute cap).** Look for official fee pages for Victoria Memorial and the Indian Museum (CCU); Salar Jung Museum, Chowmahalla Palace and the Qutb Shahi Tombs (HYD); and Valluvar Kottam (MAA). Add each one found, rebuild those cities, validate and reload Neon. Skip any without an official or ≥ 2-source fee.
+- [ ] **F3** Delete `002-engine-plan-tasks.md` from the repo root.
+- [ ] **F4 Owner spot-check edits** (done before F1). Apply the owner's edited values in `data/spot_check.md` (BLR-A-05, BOM-A-24, DEL-A-19, HMP-A-04, JAI-A-09, PDY-A-03) to the curated attractions; one window per place (the longest stated window, `hours_approx = true`, real hours in the source text); validate, reload Neon `ref`, run the backend tests and the 30-trip batch; amend DATA-AT-05 to the owner review; fix the `spot_check.md` tables.
 
-| Feature | Name |
+### Feature 004 — Accounts, saved data and API (005 merged in)
+
+Status: Spec **Approved** · Plan **Approved** · Tasks **Approved**
+Traces to: FR-001–FR-005, FR-007, FR-040–FR-047, NFR-003 · Constitution Articles II, VIII · Depends on: 002
+
+#### 004 Spec
+
+##### 1. Goal
+An HTTPS JSON API (FastAPI) over the engine. It provides accounts, saved preference profiles, saved trips with all variants, plan versions and the hooks the chat (007) will use.
+
+##### 2. Requirements
+- **API-FR-01** Sign up and log in with email and password.
+  - Passwords are hashed with bcrypt.
+  - Login returns a JWT (HS256, 7-day expiry, signed with `JWT_SECRET`).
+  - Emails are case-insensitive and unique.
+  - Passwords are 8–128 characters.
+  - (FR-040, FR-041, NFR-003)
+- **API-FR-02** Every endpoint except `/health`, `/cities`, `/auth/*` and `/meta` requires `Authorization: Bearer <jwt>`. A user can read or change only their own rows; anyone else's id returns 404, never 403, so ids are not revealed. (FR-047)
+- **API-FR-03** Profile: get and put the saved preferences (the `prefs` schema of 002 §3). (FR-042, FR-007)
+- **API-FR-04** Trip input validation. Reject with 422 and a field-level message:
+  - origin = destination, or an unknown city (FR-001),
+  - start not in [tomorrow, today + 365], or length not 2–7 days (FR-002),
+  - people not 1–6 (FR-003),
+  - total budget < ₹2,000 × people or > ₹10,00,000 (FR-004),
+  - prefs out of range: hours 4–14, weights 0–5 with at least one > 0, every mode avoided (FR-005).
+  - A per-person budget is converted to a total.
+- **API-FR-05** Creating a trip runs `plan_variants`. It saves the request and the result (variants or infeasible) and returns the trip. Infeasible trips are saved too, so users can duplicate and re-budget them. (FR-043)
+- **API-FR-06** My Trips: list (upcoming = start date ≥ today, otherwise past), get, rename, duplicate and delete.
+  - Duplicate returns a copy of the request for the form and creates nothing.
+  - Delete removes the trip, its versions and its chat messages. (FR-046)
+- **API-FR-07** Selecting a variant creates plan version 1. Re-planning with changes, or restoring an old version, creates the next version. Restoring copies the old plan as the newest version. Versions are immutable. (FR-044)
+- **API-FR-08** `POST /trips/{id}/replan` with a change set re-runs the engine for the selected variant and stores a new version. Change set: locks, excludes, budget_total, prefs patch, plus the 007 extensions `pins`, `day_hours` and `transport`. Chat (007) uses only this endpoint to change a plan. (FR-032, Constitution II)
+- **API-FR-09** `GET /trips/{id}/tradeoffs?variant=` returns 002 addendum A4 output. Results are cached in the trip row.
+- **API-FR-10** Chat messages are stored per trip (role, text, actions, created_at) and returned in order. (FR-045)
+- **API-FR-11** Errors return `{"error": "<code>", "message": "<plain text>", "fields": {…}?}` with status 400/401/404/409/422/429/500. 500 errors never leak stack traces.
+- **API-FR-12** CORS allows only `FRONTEND_ORIGIN`, plus `http://localhost:5173` in development. (NFR-003)
+- **API-FR-13** Planning calls run in a thread pool, at most `max_concurrent_solves` (config, default 2) at once. Extra requests wait up to 20 s, then get a 429 "busy, try again". (This protects the small VM.)
+
+##### 3. Acceptance tests
+| ID | Test | Pass when |
+|---|---|---|
+| API-AT-01 | Sign up, log in, `/auth/me`; wrong password; duplicate email; expired token | 201/200/200; 401; 409; 401 |
+| API-AT-02 | User B requests user A's trip, versions, chat and replan | 404 each |
+| API-AT-03 | Each FR-001–FR-005 violation | 422 naming the field |
+| API-AT-04 | Create a feasible trip; create an infeasible one | 201 with variants; 201 with infeasible and `min_budget_total` |
+| API-AT-05 | Select → replan with an exclude → restore v1 | Versions 1, 2, 3; v3 plan equals v1; v2 lacks the excluded item; every plan passes the validator |
+| API-AT-06 | Rename, duplicate, delete, list upcoming/past | Expected results; deleted trip's versions and chat are gone |
+| API-AT-07 | Passwords in DB and logs | Only bcrypt hashes; no password or JWT in logs |
+| API-AT-08 | 3 concurrent creates with max 2 solves | All succeed, or the third gets 429 after 20 s; none fail with 500 |
+
+#### 004 Plan
+
+**Layout:** `backend/api/` (FastAPI) imports `tripwise` (the engine) and loads the `Dataset` once at start-up.
+
+| Path | Responsibility |
 |---|---|
-| 003 | Variants and trade-offs — merged into 002 |
-| 004 | Accounts and saved data |
-| 005 | Trip planning API |
-| 006 | Frontend |
-| 007 | AI layer |
-| 008 | Evaluation |
-| 009 | Deployment |
+| `backend/api/main.py` | App, CORS, error handlers, routers, start-up (dataset, DB pool) |
+| `backend/api/settings.py` | Env: `DATABASE_URL`, `JWT_SECRET`, `FRONTEND_ORIGIN`, `DB_SCHEMA` (default `app`; tests use `app_test`) |
+| `backend/api/db.py` | psycopg 3 + psycopg_pool; tiny query helpers; no ORM |
+| `backend/api/sql/app_schema.sql` | Tables below; idempotent `CREATE … IF NOT EXISTS` |
+| `backend/api/auth.py` | bcrypt hash/verify (`bcrypt` package), PyJWT encode/decode, `current_user` dependency |
+| `backend/api/schemas.py` | API request/response models (reuse `tripwise.models` where possible) |
+| `backend/api/validation.py` | FR-001–005 checks → 422 field errors |
+| `backend/api/routers/{auth,profile,meta,trips,versions,chat}.py` | Endpoints |
+| `backend/api/solver.py` | Thread pool + semaphore around `plan_variants`, `engine.run`, `trade_offs` |
+| `backend/tests/api/` | pytest + FastAPI TestClient against `DB_SCHEMA=app_test` (dropped and recreated per session) |
+
+**Tables** (schema `app`):
+```sql
+users(id uuid pk default gen_random_uuid(), email text unique not null, password_hash text not null, created_at timestamptz default now())
+profiles(user_id uuid pk references users on delete cascade, prefs jsonb not null, updated_at timestamptz default now())
+trips(id uuid pk, user_id uuid references users on delete cascade, name text not null, request jsonb not null,
+      result jsonb not null, selected_variant text, tradeoffs jsonb, start_date date not null,
+      created_at timestamptz default now(), updated_at timestamptz default now())
+plan_versions(trip_id uuid references trips on delete cascade, version int, plan jsonb not null,
+              source text check (source in ('select','replan','chat','restore')), changes jsonb, note text,
+              created_at timestamptz default now(), primary key (trip_id, version))
+chat_messages(id bigserial pk, trip_id uuid references trips on delete cascade, role text check (role in ('user','assistant')),
+              text text not null, actions jsonb, version int, created_at timestamptz default now())
+```
+
+**Endpoints:**
+
+| Method | Path | Purpose |
+|---|---|---|
+| GET | `/health` | Liveness + dataset version |
+| GET | `/meta` | Dataset version label, interests, paces, comforts, limits |
+| GET | `/cities` | 15 cities with name, code, lat, lon |
+| POST | `/auth/signup`, `/auth/login` | → `{token, user}` |
+| GET | `/auth/me` | Current user |
+| GET, PUT | `/profile` | Saved prefs |
+| POST | `/trips` | Create + plan |
+| GET | `/trips?when=upcoming\|past` | List |
+| GET, PATCH, DELETE | `/trips/{id}` | Get, rename, delete |
+| POST | `/trips/{id}/duplicate` | Returns request copy |
+| POST | `/trips/{id}/select` `{variant}` | → version 1 |
+| POST | `/trips/{id}/replan` `{changes, source?, note?}` | → new version |
+| GET | `/trips/{id}/versions` | List versions |
+| GET | `/trips/{id}/versions/{v}` | One version |
+| POST | `/trips/{id}/versions/{v}/restore` | Copy to newest |
+| GET | `/trips/{id}/tradeoffs?variant=` | Trade-offs |
+| GET | `/trips/{id}/chat` | Messages (POST added in 007) |
+
+**Dependencies:** fastapi, uvicorn[standard], psycopg[binary], psycopg_pool, bcrypt, pyjwt, python-dotenv, httpx (tests). Pin each to a release at least two weeks old.
+
+#### 004 Tasks
+- [x] **T01** Insert this file's sections into SPEC.md as instructed; commit as `spec(004-008): …`.
+- [ ] **T02** Do follow-ups F1–F3; commit.
+- [ ] **T03** `backend/api/` skeleton, settings, requirements, `/health`, `/meta`, `/cities`; run with `uvicorn api.main:app --reload`. · Check: `curl /health`
+- [ ] **T04** `app_schema.sql` + `db.py`; create schemas `app` and `app_test` in Neon.
+- [ ] **T05** `auth.py` + auth router. · Check: API-AT-01, API-AT-07
+- [ ] **T06** Profile router.
+- [ ] **T07** `validation.py` + `POST /trips` with `solver.py` (semaphore and 429). · Check: API-AT-03, API-AT-04, API-AT-08
+- [ ] **T08** Trips list, get, rename, duplicate, delete. · Check: API-AT-06
+- [ ] **T09** Select, replan (locks, excludes, budget, prefs patch), versions, restore, trade-offs cache. · Check: API-AT-05
+- [ ] **T10** `GET /trips/{id}/chat`; ownership checks on every router. · Check: API-AT-02
+- [ ] **T11** Write `backend/api/README.md` covering how to run locally and every env var; update `.env.example`. Update Part D; mark 004 Done; commit.
+
+### Feature 006 — Frontend (web app)
+
+Status: Spec **Approved** · Plan **Approved** · Tasks **Approved**
+Traces to: FR-013, FR-015, FR-022, FR-050–FR-053, FR-062, NFR-006, NFR-007 · Depends on: 004
+
+#### 006 Spec
+
+##### 1. Goal
+A responsive React web app over the 004 API. It has seven pages, a map of each day's route, a budget chart and table, and space for the chat panel (007).
+
+##### 2. Requirements
+- **UI-FR-01** The seven pages: Landing, Sign up / Log in, New trip, Plan comparison, Plan detail, My Trips, Profile. Routes `/`, `/login`, `/signup`, `/new`, `/trips/:id`, `/trips/:id/plan`, `/trips`, `/profile`. Every page except Landing and auth requires login, and redirects to `/login?next=`. (FR-050)
+- **UI-FR-02 New trip form.**
+  - Fields: origin and destination selects (15 cities, must differ), date range (2–7 days, tomorrow onwards), people 1–6, budget with a Total / Per-person toggle.
+  - Preferences: hours-out slider 4–14, nine interest sliders 0–5, pace, comfort, three mode toggles (preferred / neutral / avoid), and avoid-crowds.
+  - The form is pre-filled from the saved profile (FR-007), validated on the client with the same rules as API-FR-04, and server 422 messages are shown next to their fields.
+  - A free-text box ("Describe your trip") is added in 007.
+- **UI-FR-03 Plan comparison.** 1–3 variant cards side by side, stacking on mobile. Each card shows:
+  - name and total cost,
+  - a value score shown as a 1–5 star bar (scaled within the trip),
+  - hotel and tier, outbound and return transport,
+  - the number of activities and the top 3 highlights,
+  - a "Choose this plan" button.
+
+  It also shows dropped variants with their reason, and the infeasible state with the minimum budget and an "Edit budget" button. (FR-022, FR-012)
+- **UI-FR-04 Plan detail.**
+  - Transport cards and a hotel card.
+  - A day-by-day timeline: time, stop, fee, and the travel leg (mode, minutes, ₹). Lunch is shown.
+  - A budget chart (donut) plus a table with every line, the contingency and the total. (FR-052, FR-013, FR-015)
+  - A trade-offs panel, loaded on demand. If no row changes anything, it says "Your plan is limited by time, not budget".
+  - Near-misses with their reasons.
+  - Version history with restore.
+  - A docked chat panel slot (007).
+- **UI-FR-05 Map.** Leaflet with OSM tiles. Markers for the hotel and each stop are numbered per day, and each day's legs are drawn as straight polylines in a distinct colour, with a day legend. The caption reads "Routes shown as straight lines". (FR-051)
+- **UI-FR-06 My Trips.** Upcoming and Past tabs; each trip has rename (inline), duplicate (opens the New trip form pre-filled) and delete (an in-page confirm dialog). (FR-046)
+- **UI-FR-07 Estimates.** Every price is labelled "Estimated", and the footer and budget card show the dataset compilation label from `/meta`, for example "Estimated prices, compiled Nov 2026". (FR-013, FR-062)
+- **UI-FR-08 Responsive and accessible.**
+  - Works from 360 px wide with no horizontal scroll (FR-053).
+  - Every input has a label, everything works by keyboard with visible focus, and text meets WCAG AA contrast (NFR-007).
+- **UI-FR-09 States.** Loading skeletons while planning (with "Planning your trip… usually under 5 s"), clear error messages from API-FR-11, and a "busy, retry" message for 429.
+
+##### 3. Acceptance tests
+These are run by Claude Code in the browser against a local API, with results recorded in `frontend/TESTING.md`.
+
+| ID | Test | Pass when |
+|---|---|---|
+| UI-AT-01 | Sign up → New trip → submit a feasible trip | Comparison shows 1–3 cards in < 8 s locally |
+| UI-AT-02 | Choose a plan | Detail shows transport, hotel, every day, map with coloured routes, budget donut and table summing to the total |
+| UI-AT-03 | Infeasible budget | Shows the minimum budget; "Edit budget" returns to the form with values kept |
+| UI-AT-04 | Form validation | Each FR-001–005 violation is blocked on the client; a forced server 422 shows next to its field |
+| UI-AT-05 | My Trips | Rename, duplicate (pre-filled form) and delete (with confirm) work; upcoming/past tabs are correct |
+| UI-AT-06 | Versions and trade-offs | Restore creates a new version; the trade-offs panel loads and shows figures or the "limited by time" message |
+| UI-AT-07 | 360 px and 1280 px screenshots of every page | No horizontal scroll; nothing clipped |
+| UI-AT-08 | Keyboard-only run of UI-AT-01 | Possible end to end; focus is always visible |
+| UI-AT-09 | Every price on screen | Has the Estimated label or sits under one |
+
+#### 006 Plan
+- **Stack:** Vite + React 18 + TypeScript; react-router-dom 6; TanStack Query for API state; Tailwind CSS 3; react-leaflet 4 + leaflet; recharts for the donut. Pin each to a version at least two weeks old. No other UI framework.
+- **Structure:**
+  - `frontend/src/api/` holds a typed client generated by hand from 004 `schemas.py` and attaches the JWT. The JWT is kept in `localStorage`, and a 401 logs the user out.
+  - `frontend/src/pages/` has one file per page.
+  - `frontend/src/components/` holds VariantCard, Timeline, DayMap, BudgetDonut, BudgetTable, TradeOffs, NearMisses, VersionList, ChatPanel (a placeholder until 007), PrefsForm (shared by New trip and Profile), EstimatedLabel and ConfirmDialog.
+- **Config:** `VITE_API_URL` env var; `frontend/.env.example`.
+- **Visual style:** a calm travel palette with one accent colour, system font stack, and cards only for variants and summary boxes.
+- **Map:** day colours from a fixed palette of 7 colours that are distinguishable for colour-blind users.
+
+#### 006 Tasks
+- [ ] **T01** Scaffold Vite React TS, Tailwind and routing; layout with header, nav and footer (with the estimate label); API client and auth context.
+- [ ] **T02** Landing, Sign up and Log in pages; route guard with `next=`.
+- [ ] **T03** PrefsForm + New trip page + Profile page (load and save). · Check: UI-AT-04
+- [ ] **T04** Plan comparison page, including the infeasible and dropped states. · Check: UI-AT-01, UI-AT-03
+- [ ] **T05** Plan detail page: transport, hotel, Timeline, BudgetDonut and BudgetTable, NearMisses, TradeOffs, VersionList. · Check: UI-AT-02, UI-AT-06
+- [ ] **T06** DayMap with numbered markers and coloured day routes. · Check: UI-AT-02
+- [ ] **T07** My Trips page. · Check: UI-AT-05
+- [ ] **T08** Loading, error and 429 states; accessibility pass. · Check: UI-AT-08, UI-AT-09
+- [ ] **T09** Run UI-AT-01–09 in the browser at 360 px and 1280 px; save screenshots to `frontend/test-shots/`; record in `frontend/TESTING.md`. Update Part D; mark 006 Done; commit.
+
+### Feature 007 — AI layer (Groq)
+
+Status: Spec **Approved** · Plan **Approved** · Tasks **Approved**
+Traces to: FR-006, FR-030–FR-035, NFR-002, NFR-005 · Constitution Article II · Depends on: 004, 006
+
+#### 007 Spec
+
+##### 1. Goal
+Use the Groq LLM to understand free-text preferences, explain plans, and turn chat messages into plan changes. The engine produces every plan; the LLM never edits one (Constitution II).
+
+##### 2. Engine extensions (amend 002; all are optional TripRequest fields, validated)
+- `pins: {attraction_id: day}`: the attraction must be scheduled on that day. In stage 2, its allowed vehicle is only that day, and it is not droppable; it is also locked in stage 1. If that's impossible, the result is infeasible with `pin_impossible`.
+- `day_hours: {day: hours}`: overrides `daily_hours_out` for that day (4–14).
+- `transport: {"out"?: {"mode","class"}, "ret"?: {…}}`: forces that option. If it isn't available, the result is infeasible with `no_route`.
+
+The validator gains checks: V-14 (pins honoured), V-15 (day_hours windows) and V-16 (forced transport used).
+
+##### 3. Requirements
+- **AI-FR-01 Preference parsing.** `POST /ai/parse-prefs {text}` makes one Groq call in JSON mode and returns the 002 `prefs` schema, plus optional origin, destination, dates, people and budget if stated. The output is validated by pydantic: invalid output means one retry, then 422 "Couldn't understand, please use the sliders". The UI shows the parsed values in the form before the user plans. (FR-006)
+- **AI-FR-02 Explanations.** One Groq call explains all variants of a trip (NFR-005); results are cached in `trips.result.explanations`.
+  - **Input:** only the plan JSON, the near-misses and the user's prefs.
+  - **Output:** 2–4 sentences per variant.
+  - **Grounding check:** every attraction, hotel or city-attraction name found in the text must be in that plan or its near-miss list, and every ₹ amount must appear in the plan. Text that fails is regenerated once; if it fails again, a template explanation built from the plan is used instead. (FR-030)
+- **AI-FR-03 Chat.** `POST /trips/{id}/chat {message}`:
+  - **Call 1** uses Groq tool calling with the fixed tools: `lock_activity`, `exclude_activity`, `set_budget`, `set_day_hours`, `set_all_hours`, `set_hotel_tier`, `set_transport`, `set_pace`, `set_interest`, `move_activity`, `regenerate`, `explain`, `unsupported`.
+  - Tool arguments are validated: names are resolved to attraction ids with fuzzy matching against the trip's city, and an ambiguous name gets a clarifying reply.
+  - Each change tool maps to a 004 replan change set (`move_activity` → `pins`; hours → `day_hours`/prefs; tier → prefs.comfort; and so on).
+  - The server calls replan, stores the new version, and builds a diff: added and removed activities, hotel and transport changes, Δcost and Δvalue.
+  - **Call 2** turns the diff into a reply, using the same grounding check with a template fallback.
+  - At most 2 Groq calls per message. (FR-031, FR-032, NFR-005)
+- **AI-FR-04 Unsupported.** Anything outside the tool set (booking, other cities, weather, …) gets a short refusal plus the closest supported action. No replan is run. (FR-033)
+- **AI-FR-05 "Why".**
+  - If the activity is in the near-miss list: answer with its reason and the numbers.
+  - Otherwise: run one trial engine call with it locked (not saved) and report whether it fits and its Δcost and Δvalue.
+  - The answer is generated from engine data only. (FR-034)
+- **AI-FR-06 Failure.** On Groq timeout (10 s), error or missing key:
+  - parse returns 503 "Use the sliders",
+  - explanations are omitted with a notice,
+  - chat returns "Assistant unavailable" and no changes.
+
+  Planning never depends on Groq. (FR-035)
+- **AI-FR-07 Model and limits.**
+  - The model id lives in config, chosen from Groq's current production models with tool calling (check `GET https://api.groq.com/openai/v1/models` at build time; record the choice).
+  - temperature 0.2 for chat tools, 0.4 for explanations.
+  - Per-user limit of 30 chat messages per hour, otherwise 429.
+- **AI-FR-08 UI.**
+  - A "Describe your trip" box on New trip that fills the sliders.
+  - An explanation under each variant card and on Plan detail.
+  - A chat panel docked on Plan detail (a bottom sheet on mobile) showing history, typing state and, after each change, a "Version N created" chip with an undo, which is a restore of the previous version.
+
+##### 4. Acceptance tests
+| ID | Test | Pass when |
+|---|---|---|
+| AI-AT-01 | 10 free-text preference samples | All return valid prefs; sensible weights on 9 of 10 (manual review recorded) |
+| AI-AT-02 | Explanations for 10 test trips | Grounding check passes on the first or second try for ≥ 9; the rest use the template; no ungrounded name or ₹ reaches the user |
+| AI-AT-03 | `eval/chat_intents.json`: 50 hand-written messages with expected tool and arguments, covering all tools including 5 unsupported and 5 ambiguous | Tool accuracy ≥ 90% (FR-071; reported again in 008) |
+| AI-AT-04 | 10 chat changes end to end | Each creates a new version that passes the validator; the reply's diff matches the actual version diff |
+| AI-AT-05 | Groq key removed | Planning works; parse 503; explanations omitted with a notice; chat says unavailable |
+| AI-AT-06 | Engine extensions | Pins, day_hours and transport honoured (V-14–16); impossible pins give `pin_impossible` |
+| AI-AT-07 | Chat timing over 10 messages, local | p95 ≤ 8 s (NFR-002) |
+
+#### 007 Plan
+| Path | Responsibility |
+|---|---|
+| `backend/tripwise/` (stage1, stage2, models, timemodel) + `backend/validator/` | pins, day_hours, transport + V-14–16 |
+| `backend/api/ai/groq_client.py` | httpx client, 10 s timeout, retries once on 5xx, logs token counts, never logs the key |
+| `backend/api/ai/prompts.py` | System prompts (all three), tool schemas (JSON Schema per tool) |
+| `backend/api/ai/parse.py`, `explain.py`, `chat.py` | AI-FR-01, 02, 03–05 |
+| `backend/api/ai/grounding.py` | Name and ₹ extraction against the plan, the near-miss list and the city attraction list |
+| `backend/api/ai/diff.py` | Version diff |
+| `backend/api/routers/ai.py` + chat POST | Endpoints, rate limit (in-memory per process is fine) |
+| `frontend/src/components/ChatPanel.tsx`, `DescribeTrip.tsx`, `Explanation.tsx` | UI |
+| `eval/chat_intents.json`, `eval/run_chat_intents.py` | AI-AT-03 |
+
+Config keys: `groq_model`, `groq_timeout_s`, `chat_rate_per_hour`, temperatures. Env: `GROQ_API_KEY`.
+
+#### 007 Tasks
+- [ ] **T01** Engine extensions + validator V-14–16 + tests. · Check: AI-AT-06, and all 002 acceptance tests still pass
+- [ ] **T02** Groq client; pick the model from `/models` and record it in config and the Changelog.
+- [ ] **T03** Parse-prefs endpoint + DescribeTrip UI. · Check: AI-AT-01
+- [ ] **T04** Grounding + explanations (cached) + Explanation UI. · Check: AI-AT-02
+- [ ] **T05** Chat tools, name resolution, replan mapping, diff, reply, unsupported, why. · Check: AI-AT-04
+- [ ] **T06** ChatPanel UI with history, version chip and undo.
+- [ ] **T07** Write `eval/chat_intents.json` (50) and run it. · Check: AI-AT-03
+- [ ] **T08** Failure modes and rate limit. · Check: AI-AT-05
+- [ ] **T09** Timing. · Check: AI-AT-07. Update Part D; mark 007 Done; commit.
+
+### Feature 008 — Evaluation and deployment (009 merged in)
+
+Status: Spec **Approved** · Plan **Approved** · Tasks **Approved**
+Traces to: FR-070, FR-071, NFR-001–NFR-004 · Depends on: 007
+
+#### 008 Spec
+
+##### 1. Evaluation
+- **EVAL-FR-01 Baselines**, run on the same 30 test trips:
+  - **Greedy:** cheapest available transport each way, cheapest hotel in the user's tier, then activities in descending v(a) ÷ (fee × P + 1) order, each assigned to the first day it fits in visit order with no routing optimisation, until money or time runs out. Same data and cost model.
+  - **LLM-only:** one Groq call per trip with the request, the city's candidate attractions (id, name, hours, closed days, fee, visit minutes, tags), the transport options with prices and the hotels with prices. It must return a Plan JSON (schema given). The output is parsed (a parse failure counts as a failed plan), then the times and costs are recomputed by the same functions the validator uses.
+- **EVAL-FR-02 Metrics per planner:**
+  - feasibility rate (validator clean),
+  - violations by check (V-xx counts),
+  - total value,
+  - budget use (cost ÷ B_u),
+  - share of out-of-hotel time spent travelling,
+  - solve time,
+  - for Tripwise only, the number of distinct variants.
+- **EVAL-FR-03** Chat intent accuracy from AI-AT-03.
+- **EVAL-FR-04** `python eval/run_eval.py` regenerates `eval/out/results.csv`, three charts (PNG: feasibility, value, travel share) and `eval/RESULTS.md` with a results table and a short discussion. Running it twice gives the same Tripwise and greedy numbers; LLM-only numbers vary, so report the mean of 3 runs.
+
+##### 2. Deployment
+- **DEP-FR-01 Backend on the Azure VM:**
+  - uvicorn with 1 worker as a systemd service (`tripwise-api`), behind nginx with HTTPS from Let's Encrypt on the VM's DNS name (reuse the Project 2 nginx and certbot set-up, with a separate server block or path).
+  - Env from `/etc/tripwise.env`, and the dataset deployed with the code.
+  - Check free RAM first; if the available figure is under 400 MB, add swap or report the VM-resize option and stop.
+- **DEP-FR-02 Frontend on Vercel**, with `VITE_API_URL` set to the API's HTTPS URL; CORS `FRONTEND_ORIGIN` set to the Vercel URL.
+- **DEP-FR-03 Live checks:**
+  - full flow for a new user: sign up → plan → choose → chat change → My Trips,
+  - p95 timings on 10 trips (NFR-001 ≤ 5 s variants) and 10 chat messages (NFR-002 ≤ 8 s),
+  - all recorded in `eval/LIVE.md`.
+- **DEP-FR-04** `README.md` covers what the app is, the architecture diagram (Mermaid), local run steps, deploy steps, env vars and the evaluation summary.
+
+##### 3. Acceptance tests
+| ID | Test | Pass when |
+|---|---|---|
+| EVAL-AT-01 | `run_eval.py` | Produces the CSV, charts and RESULTS.md; Tripwise feasibility 100% |
+| EVAL-AT-02 | Re-run | Tripwise and greedy numbers identical |
+| DEP-AT-01 | Live full flow | Passes on the deployed URLs |
+| DEP-AT-02 | Live timings | Within NFR-001 and NFR-002, or the gap is recorded with the cause |
+| DEP-AT-03 | Security | HTTPS only (HTTP redirects); CORS rejects other origins; no secrets in the repo (`git grep` for key patterns) |
+
+#### 008 Tasks
+- [ ] **T01** `eval/baselines/greedy.py` + `eval/baselines/llm_only.py` (Groq).
+- [ ] **T02** `eval/run_eval.py`: metrics, CSV, charts, RESULTS.md. · Check: EVAL-AT-01, EVAL-AT-02
+- [ ] **T03** Check VM RAM and disk over SSH; deploy the backend (systemd, nginx, certbot); `/health` over HTTPS. Ask the user for the SSH host or key if it's not already configured.
+- [ ] **T04** Deploy the frontend to Vercel (CLI or Git integration); set env and CORS. · Check: DEP-AT-01
+- [ ] **T05** Live timings + security checks. · Check: DEP-AT-02, DEP-AT-03; write `eval/LIVE.md`.
+- [ ] **T06** README + architecture diagram. Update Part D for everything; mark 008 Done; final commit and push.
+
+**Left for the user:** the friend test (3+ people rating realism 1–5, recorded in `eval/LIVE.md`), the demo video, and the `data/spot_check.md` manual check.
+
+### Merged features
+
+| Feature | Name | Now part of |
+|---|---|---|
+| 003 | Variants and trade-offs | 002 |
+| 005 | Trip planning API | 004 |
+| 009 | Deployment | 008 |
 
 ---
 
@@ -1493,13 +1833,13 @@ Update this table when a feature's tasks are written (fill **Tasks**) and when i
 
 | Req | Summary | Feature spec | Feature reqs | Tasks | Tests | Status |
 |---|---|---|---|---|---|---|
-| FR-001 | Origin and destination from 15 cities, different | 005 | | | | Planned |
-| FR-002 | Dates, 2–7 days, start tomorrow to +365 days | 005 | | | | Planned |
-| FR-003 | Group size 1–6 | 005 | | | | Planned |
-| FR-004 | Total or per-person budget, bounds | 005 | | | | Planned |
-| FR-005 | Preferences (hours, interests, pace, comfort, modes, crowds) | 005 | | | | Planned |
+| FR-001 | Origin and destination from 15 cities, different | 004 (merged from 005) | | | | Planned |
+| FR-002 | Dates, 2–7 days, start tomorrow to +365 days | 004 (merged from 005) | | | | Planned |
+| FR-003 | Group size 1–6 | 004 (merged from 005) | | | | Planned |
+| FR-004 | Total or per-person budget, bounds | 004 (merged from 005) | | | | Planned |
+| FR-005 | Preferences (hours, interests, pace, comfort, modes, crowds) | 004 (merged from 005) | | | | Planned |
 | FR-006 | Free-text preferences parsed and confirmed | 007 | | | | Planned |
-| FR-007 | Form pre-filled from saved profile | 005, 006 | | | | Planned |
+| FR-007 | Form pre-filled from saved profile | 004 (merged from 005), 006 | | | | Planned |
 | FR-010 | Complete plan produced | 002 | ENG-FR-02–05 | 002 T02–T15 | ENG-AT-01 | Pass |
 | FR-011 | Hard constraints respected | 002 | ENG-FR-01, 04, 07, 08 | 002 T05, T08–T12 | ENG-AT-01, 05 | Pass |
 | FR-012 | Infeasible answer with minimum budget | 002 | ENG-FR-06 | 002 T12 | ENG-AT-07 | Pass |
@@ -1540,10 +1880,10 @@ Update this table when a feature's tasks are written (fill **Tasks**) and when i
 
 | Req | Summary | Feature spec | Feature reqs | Tasks | Tests | Status |
 |---|---|---|---|---|---|---|
-| NFR-001 | All variants ≤ 5 s p95 | 002 (merged from 003), 009 | A7 | 002 T19 | ENG-AT-08, VAR-AT-03 | In progress (laptop Pass: p95 1.5 s; live system in 009) |
-| NFR-002 | Chat action ≤ 8 s p95 | 007, 009 | | | | Planned |
-| NFR-003 | Security | 004, 009 | | | | Planned |
-| NFR-004 | Free tiers only | 009 | | | | Planned |
+| NFR-001 | All variants ≤ 5 s p95 | 002 (merged from 003), 008 (merged from 009) | A7 | 002 T19 | ENG-AT-08, VAR-AT-03 | In progress (laptop Pass: p95 1.5 s; live system in 009) |
+| NFR-002 | Chat action ≤ 8 s p95 | 007, 008 (merged from 009) | | | | Planned |
+| NFR-003 | Security | 004, 008 (merged from 009) | | | | Planned |
+| NFR-004 | Free tiers only | 008 (merged from 009) | | | | Planned |
 | NFR-005 | LLM call limits | 007 | | | | Planned |
 | NFR-006 | Browser support | 006 | | | | Planned |
 | NFR-007 | Accessibility basics | 006 | | | | Planned |
@@ -1583,6 +1923,78 @@ Measured 2026-10-25 on the developer laptop (Windows 11, Python 3.11.9, OR-Tools
 | VAR-AT-03 | Pass | All variants p95 1,531 ms, max 1,820 ms (limit 5,000 ms) |
 | VAR-AT-04 | Pass | Trade-offs on 5 trips: every row equals a fresh engine run at that budget |
 
+### Feature requirements and acceptance tests (004–008)
+
+| ID | Summary | Feature | Traces to | Status |
+|---|---|---|---|---|
+| API-FR-01 | Sign up and log in with email and password | 004 | FR-040, FR-041, NFR-003 | Planned |
+| API-FR-02 | Every endpoint except /health, /cities, /auth/* and /meta requires Authorization | 004 | FR-047 | Planned |
+| API-FR-03 | Profile: get and put the saved preferences (the prefs schema of 002 §3) | 004 | FR-007, FR-042 | Planned |
+| API-FR-04 | Trip input validation | 004 | FR-001, FR-002, FR-003, FR-004, FR-005 | Planned |
+| API-FR-05 | Creating a trip runs plan_variants | 004 | FR-043 | Planned |
+| API-FR-06 | My Trips: list (upcoming = start date ≥ today, otherwise past), get, rename, dup | 004 | FR-046 | Planned |
+| API-FR-07 | Selecting a variant creates plan version 1 | 004 | FR-044 | Planned |
+| API-FR-08 | POST /trips/{id}/replan with a change set re-runs the engine for the selected va | 004 | FR-032 | Planned |
+| API-FR-09 | GET /trips/{id}/tradeoffs?variant= returns 002 addendum A4 output | 004 | FR-023, FR-025 | Planned |
+| API-FR-10 | Chat messages are stored per trip (role, text, actions, created_at) and returned | 004 | FR-045 | Planned |
+| API-FR-11 | Errors return {"error": "<code>", "message": "<plain text>", "fields": {…}?} wit | 004 | FR-012, NFR-003 | Planned |
+| API-FR-12 | CORS allows only FRONTEND_ORIGIN, plus http://localhost:5173 in development | 004 | NFR-003 | Planned |
+| API-FR-13 | Planning calls run in a thread pool, at most max_concurrent_solves (config, defa | 004 | NFR-001, NFR-004 | Planned |
+| UI-FR-01 | The seven pages: Landing, Sign up / Log in, New trip, Plan comparison, Plan deta | 006 | FR-050 | Planned |
+| UI-FR-02 | New trip form | 006 | FR-007 | Planned |
+| UI-FR-03 | Plan comparison | 006 | FR-012, FR-022 | Planned |
+| UI-FR-04 | Plan detail | 006 | FR-013, FR-015, FR-052 | Planned |
+| UI-FR-05 | Map | 006 | FR-051 | Planned |
+| UI-FR-06 | My Trips | 006 | FR-046 | Planned |
+| UI-FR-07 | Estimates | 006 | FR-013, FR-062 | Planned |
+| UI-FR-08 | Responsive and accessible | 006 | FR-053, NFR-007 | Planned |
+| UI-FR-09 | States | 006 | FR-010, NFR-001 | Planned |
+| AI-FR-01 | Preference parsing | 007 | FR-006 | Planned |
+| AI-FR-02 | Explanations | 007 | FR-030, NFR-005 | Planned |
+| AI-FR-03 | Chat | 007 | FR-031, FR-032, NFR-005 | Planned |
+| AI-FR-04 | Unsupported | 007 | FR-033 | Planned |
+| AI-FR-05 | "Why" | 007 | FR-034 | Planned |
+| AI-FR-06 | Failure | 007 | FR-035 | Planned |
+| AI-FR-07 | Model and limits | 007 | NFR-004, NFR-005 | Planned |
+| AI-FR-08 | UI | 007 | FR-006, FR-031 | Planned |
+| EVAL-FR-01 | Baselines | 008 | FR-070 | Planned |
+| EVAL-FR-02 | Metrics per planner: | 008 | FR-070 | Planned |
+| EVAL-FR-03 | Chat intent accuracy from AI-AT-03 | 008 | FR-071 | Planned |
+| EVAL-FR-04 | python eval/run_eval.py regenerates eval/out/results.csv, three charts (PNG: fea | 008 | FR-070 | Planned |
+| DEP-FR-01 | Backend on the Azure VM: | 008 | NFR-003, NFR-004 | Planned |
+| DEP-FR-02 | Frontend on Vercel | 008 | NFR-003, NFR-004 | Planned |
+| DEP-FR-03 | Live checks: | 008 | NFR-001, NFR-002 | Planned |
+| DEP-FR-04 | README.md covers what the app is, the architecture diagram (Mermaid), local run  | 008 | FR-070 | Planned |
+| API-AT-01 | Sign up, log in, `/auth/me`; wrong password; duplicate email; expired token | 004 | — | Planned |
+| API-AT-02 | User B requests user A's trip, versions, chat and replan | 004 | — | Planned |
+| API-AT-03 | Each FR-001–FR-005 violation | 004 | — | Planned |
+| API-AT-04 | Create a feasible trip; create an infeasible one | 004 | — | Planned |
+| API-AT-05 | Select → replan with an exclude → restore v1 | 004 | — | Planned |
+| API-AT-06 | Rename, duplicate, delete, list upcoming/past | 004 | — | Planned |
+| API-AT-07 | Passwords in DB and logs | 004 | — | Planned |
+| API-AT-08 | 3 concurrent creates with max 2 solves | 004 | — | Planned |
+| UI-AT-01 | Sign up → New trip → submit a feasible trip | 006 | — | Planned |
+| UI-AT-02 | Choose a plan | 006 | — | Planned |
+| UI-AT-03 | Infeasible budget | 006 | — | Planned |
+| UI-AT-04 | Form validation | 006 | — | Planned |
+| UI-AT-05 | My Trips | 006 | — | Planned |
+| UI-AT-06 | Versions and trade-offs | 006 | — | Planned |
+| UI-AT-07 | 360 px and 1280 px screenshots of every page | 006 | — | Planned |
+| UI-AT-08 | Keyboard-only run of UI-AT-01 | 006 | — | Planned |
+| UI-AT-09 | Every price on screen | 006 | — | Planned |
+| AI-AT-01 | 10 free-text preference samples | 007 | — | Planned |
+| AI-AT-02 | Explanations for 10 test trips | 007 | — | Planned |
+| AI-AT-03 | `eval/chat_intents.json`: 50 hand-written messages with expected tool and argume | 007 | — | Planned |
+| AI-AT-04 | 10 chat changes end to end | 007 | — | Planned |
+| AI-AT-05 | Groq key removed | 007 | — | Planned |
+| AI-AT-06 | Engine extensions | 007 | — | Planned |
+| AI-AT-07 | Chat timing over 10 messages, local | 007 | — | Planned |
+| EVAL-AT-01 | `run_eval.py` | 008 | — | Planned |
+| EVAL-AT-02 | Re-run | 008 | — | Planned |
+| DEP-AT-01 | Live full flow | 008 | — | Planned |
+| DEP-AT-02 | Live timings | 008 | — | Planned |
+| DEP-AT-03 | Security | 008 | — | Planned |
+
 ### Feature status
 
 | Feature | Name | Spec | Plan | Tasks | Acceptance |
@@ -1591,12 +2003,12 @@ Measured 2026-10-25 on the developer laptop (Windows 11, Python 3.11.9, OR-Tools
 | 001 | City data | Approved | Approved | Approved | In progress: DATA-AT-01–04, 06 Pass; DATA-AT-05 awaiting manual check |
 | 002 | Optimization engine, variants and trade-offs | Approved | Approved | Approved | Done: ENG-AT-01–09 and VAR-AT-01–04 Pass |
 | 003 | Variants and trade-offs | Merged into 002 | Merged into 002 | Merged into 002 | Merged into 002 |
-| 004 | Accounts and saved data | — | — | — | — |
-| 005 | Trip planning API | — | — | — | — |
-| 006 | Frontend | — | — | — | — |
-| 007 | AI layer | — | — | — | — |
-| 008 | Evaluation | — | — | — | — |
-| 009 | Deployment | — | — | — | — |
+| 004 | Accounts, saved data and API | Approved | Approved | Approved | — |
+| 005 | Trip planning API | Merged into 004 | Merged into 004 | Merged into 004 | Merged into 004 |
+| 006 | Frontend | Approved | Approved | Approved | — |
+| 007 | AI layer | Approved | Approved | Approved | — |
+| 008 | Evaluation and deployment | Approved | — (tasks only) | Approved | — |
+| 009 | Deployment | Merged into 008 | Merged into 008 | Merged into 008 | Merged into 008 |
 
 ---
 
@@ -1672,3 +2084,16 @@ Measured 2026-10-25 on the developer laptop (Windows 11, Python 3.11.9, OR-Tools
 | 2026-10-25 | C 002 §12 (T14) | Test-trip budgets: tight = 1.08 × min, medium = 1.6 × min, generous = 2.6 × min, infeasible = 0.8 × min, rounded to ₹500; locks are schedulable attractions just below the top six by value; excludes are the top ones; T28 locks the Saturday-only Arpora market on a Monday–Tuesday trip | Reproducible calibration from `min_budget` (`eval/make_test_trips.py`) |
 | 2026-10-25 | C 002 (T19 result) | No tuning needed: single plan p95 568 ms (≤ 2.5 s), all variants p95 1,531 ms (≤ 5 s) with cpsat 0.4 s, routing 50 solutions / 1.0 s cap | Measured on the developer laptop |
 | 2026-10-25 | C 002 (T16 observation) | On most trips Balanced equals Experience and is dropped (λ = 0.5 rarely outweighs the value of extra activities); κ_h = 10 rarely buys a higher tier because one value point is worth ₹1,000 in the objective | Noted for tuning in Feature 008 evaluation; the spec values are kept |
+| 2026-10-25 | C Follow-ups | F1–F3 added (variant tuning, major missing sites, delete the 002 paste-in); F4 added for the owner's spot-check edits; F1's config keys renamed to the built `variants.lambda`, `variants.kappa_h`, `variants.rho` | remaining-features.md; built code wins |
+| 2026-10-25 | C 004 Spec | Accounts, saved data and API: API-FR-01–13, API-AT-01–08 | Feature 005 merged into 004 |
+| 2026-10-25 | C 004 Plan | FastAPI package `backend/api/`, schema `app` (tests `app_test`), endpoints, dependencies | Spec approved |
+| 2026-10-25 | C 004 Tasks | T01–T11 | Plan approved |
+| 2026-10-25 | C 006 Spec | Frontend: UI-FR-01–09, UI-AT-01–09 | Next feature in build order |
+| 2026-10-25 | C 006 Plan | Vite + React 18 + TypeScript, Tailwind 3, react-leaflet 4, recharts, TanStack Query | Spec approved |
+| 2026-10-25 | C 006 Tasks | T01–T09 | Plan approved |
+| 2026-10-25 | C 007 Spec | AI layer: engine extensions (pins, day_hours, transport; V-14–16), AI-FR-01–08, AI-AT-01–07 | Next feature in build order |
+| 2026-10-25 | C 007 Plan | Groq client, prompts, parse, explain, chat, grounding, diff, UI, chat intents | Spec approved |
+| 2026-10-25 | C 007 Tasks | T01–T09 | Plan approved |
+| 2026-10-25 | C 008 Spec | Evaluation and deployment: EVAL-FR-01–04, DEP-FR-01–04, EVAL-AT-01–02, DEP-AT-01–03 | Feature 009 merged into 008 |
+| 2026-10-25 | C 008 Tasks | T01–T06 (the paste-in has no separate 008 Plan; the Spec and Tasks carry it) | Spec approved |
+| 2026-10-25 | C Contents, Part C, Part D | 005 marked merged into 004 and 009 into 008; product rows re-pointed; Part D gains one row per 004–008 requirement and acceptance test | Fewer, larger features for the remaining phases |
