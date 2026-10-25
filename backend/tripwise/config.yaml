@@ -81,6 +81,7 @@ groq:
   base_url: "https://api.groq.com/openai/v1"
   model: "openai/gpt-oss-120b"
   timeout_s: 10
+  rate_limit_wait_s: 5
   temperature_tools: 0.2
   temperature_explain: 0.4
   temperature_parse: 0.2

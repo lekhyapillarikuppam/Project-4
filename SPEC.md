@@ -1754,7 +1754,7 @@ Config keys: `groq_model`, `groq_timeout_s`, `chat_rate_per_hour`, temperatures.
 #### 007 Tasks
 - [x] **T01** Engine extensions + validator V-14–16 + tests. · Check: AI-AT-06, and all 002 acceptance tests still pass
 - [x] **T02** Groq client; pick the model from `/models` and record it in config and the Changelog.
-- [ ] **T03** Parse-prefs endpoint + DescribeTrip UI. · Check: AI-AT-01
+- [x] **T03** Parse-prefs endpoint + DescribeTrip UI. · Check: AI-AT-01
 - [ ] **T04** Grounding + explanations (cached) + Explanation UI. · Check: AI-AT-02
 - [ ] **T05** Chat tools, name resolution, replan mapping, diff, reply, unsupported, why. · Check: AI-AT-04
 - [ ] **T06** ChatPanel UI with history, version chip and undo.
@@ -1986,7 +1986,7 @@ Measured 2026-10-25 on the developer laptop (Windows 11, Python 3.11.9, OR-Tools
 | UI-AT-07 | 360 px and 1280 px screenshots of every page | 006 | — | Pass |
 | UI-AT-08 | Keyboard-only run of UI-AT-01 | 006 | — | Pass |
 | UI-AT-09 | Every price on screen | 006 | — | Pass |
-| AI-AT-01 | 10 free-text preference samples | 007 | — | Planned |
+| AI-AT-01 | 10 free-text preference samples | 007 | `eval/run_parse_samples.py`, `eval/AI_AT_01.md` | Pass (10/10 valid, 10/10 sensible) |
 | AI-AT-02 | Explanations for 10 test trips | 007 | — | Planned |
 | AI-AT-03 | `eval/chat_intents.json`: 50 hand-written messages with expected tool and argume | 007 | — | Planned |
 | AI-AT-04 | 10 chat changes end to end | 007 | — | Planned |
@@ -2169,3 +2169,4 @@ Run 2026-10-25 with Playwright 1.64.0 (Chromium) against the local API (schema `
 | 2026-10-25 | C 002 (007 T01 decision) | Empty extension fields are left out of the request hash, so earlier plans keep their hashes; requests are stored with field aliases (`class`) | Plans saved before 007 still pass V-01; replans can read stored transport |
 | 2026-10-25 | C 004 (007 T01) | Replan accepts `pins`, `day_hours` (merged key by key, null removes) and `transport` (each direction replaced, null clears), validated with field messages | AI-FR-03 maps chat tools to these change sets |
 | 2026-10-26 | C 007 (T02) | Groq model `openai/gpt-oss-120b` (config `groq.model`). GET /models on 2026-10-26 listed openai/gpt-oss-120b, openai/gpt-oss-20b and qwen/qwen3.8-27b as tool-capable chat models; all three returned a correct `set_budget` tool call and valid JSON mode; gpt-oss-120b (tool call 0.95 s, JSON 0.76 s) is the largest at similar latency (qwen: 2.2 s tool call). Config also holds the 10 s timeout, temperatures (tools 0.2, explanations 0.4, parse 0.2) and chat_rate_per_hour 30 | AI-FR-07 |
+| 2026-10-26 | C 007 (T03 decision) | Parse prompt: a single named city is the destination; the Groq client retries once on 429 when Retry-After ≤ `groq.rate_limit_wait_s` (5 s); the parse eval spaces calls by 4 s; the parser retries once with the validation errors, then returns 422 | First AI-AT-01 run hit the free-tier token limit and left one-city texts without a destination |

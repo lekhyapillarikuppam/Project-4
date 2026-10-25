@@ -3,6 +3,7 @@ import { useQuery } from "@tanstack/react-query";
 import { useLocation, useNavigate } from "react-router-dom";
 import { api, ApiError } from "../api/client";
 import type { Prefs, TripForm } from "../api/types";
+import DescribeTrip from "../components/DescribeTrip";
 import PrefsForm from "../components/PrefsForm";
 import { ErrorBox, FieldError, PageTitle, Skeleton } from "../components/ui";
 import { addDays, todayIST } from "../lib/format";
@@ -76,6 +77,16 @@ export default function NewTrip() {
   return (
     <div>
       <PageTitle sub={incoming ? "Adjust the details and plan again." : "Tell us about your trip."}>New trip</PageTitle>
+      <div className="mb-6">
+        <DescribeTrip onParsed={(p) => setDraft({
+          ...draft, prefs: p.prefs,
+          ...(p.origin ? { origin: p.origin } : {}), ...(p.destination ? { destination: p.destination } : {}),
+          ...(p.start_date ? { start_date: p.start_date } : {}), ...(p.end_date ? { end_date: p.end_date } : {}),
+          ...(p.people ? { people: p.people } : {}),
+          ...(p.budget_total ? { budget: String(p.budget_total), per: false } : {}),
+          ...(p.budget_per_person ? { budget: String(p.budget_per_person), per: true } : {}),
+        })} />
+      </div>
       <form onSubmit={submit} noValidate className="space-y-6" aria-busy={busy}>
         <section className="card grid gap-4 sm:grid-cols-2">
           {(["origin", "destination"] as const).map((k) => (

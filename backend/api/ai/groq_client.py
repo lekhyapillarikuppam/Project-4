@@ -31,6 +31,13 @@ def _key() -> str:
     return k
 
 
+def _retry_after(r: httpx.Response) -> float | None:
+    try:
+        return float(r.headers.get("retry-after", ""))
+    except ValueError:
+        return None
+
+
 def chat(messages: list[dict], *, temperature: float, tools: list[dict] | None = None,
          tool_choice: Any = None, json_mode: bool = False, max_tokens: int | None = None) -> dict:
     """One chat completion; returns the assistant message dict (content and/or tool_calls)."""
@@ -53,6 +60,12 @@ def chat(messages: list[dict], *, temperature: float, tools: list[dict] | None =
         if r.status_code >= 500 and attempt == 0:
             log.warning("groq %s, retrying once", r.status_code)
             continue
+        if r.status_code == 429 and attempt == 0:      # rate limited: wait once if Groq asks for a short pause
+            wait = _retry_after(r)
+            if wait is not None and wait <= g["rate_limit_wait_s"]:
+                log.warning("groq 429, retrying in %.1f s", wait)
+                time.sleep(wait)
+                continue
         if r.status_code != 200:
             log.warning("groq HTTP %s", r.status_code)
             raise Unavailable(f"HTTP {r.status_code}")

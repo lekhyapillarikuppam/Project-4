@@ -112,6 +112,10 @@ export interface Meta {
   };
 }
 export interface User { id: string; email: string }
+export interface ParsedTrip {
+  prefs: Prefs; origin?: string; destination?: string; start_date?: string; end_date?: string; people?: number;
+  budget_total?: number; budget_per_person?: number;
+}
 export interface ChatMessage {
   id: number; role: "user" | "assistant"; text: string; actions: unknown; version: number | null; created_at: string;
 }

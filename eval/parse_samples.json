@@ -1,0 +1,22 @@
+[
+ {"id": "P01", "text": "Two of us from Bangalore going to Goa for 4 days, about 40k total. We love beaches, seafood and nightlife, no temples please, and we hate long bus rides.",
+  "expect": {"high": ["food", "nightlife"], "low": ["spiritual"], "modes": {"bus": "avoid"}, "origin": "BLR", "destination": "GOA", "people": 2}},
+ {"id": "P02", "text": "Solo history buff, I want to see every fort and old palace in Jaipur. Happy to walk all day, packed schedule is fine.",
+  "expect": {"high": ["history"], "pace": "packed", "destination": "JAI", "people": 1}},
+ {"id": "P03", "text": "Family of four with small kids, relaxed pace please, nothing too tiring. Kids like parks and the zoo. Mid-range hotels.",
+  "expect": {"high": ["nature"], "pace": "relaxed", "comfort": "mid", "people": 4}},
+ {"id": "P04", "text": "Spiritual retreat in Rishikesh, yoga, ganga aarti, ashrams. Maybe one rafting trip. Avoid crowds if possible.",
+  "expect": {"high": ["spiritual"], "destination": "RSH", "avoid_crowds": true}},
+ {"id": "P05", "text": "We're foodies — street food crawls, famous biryani, sweets. Hyderabad, 3 people, around 15000 each.",
+  "expect": {"high": ["food"], "destination": "HYD", "people": 3, "budget_per_person": 15000}},
+ {"id": "P06", "text": "Premium stay only, I don't care about cost. Art galleries, museums and good restaurants in Mumbai. I hate flying.",
+  "expect": {"high": ["culture"], "comfort": "premium", "destination": "BOM", "modes": {"flight": "avoid"}}},
+ {"id": "P07", "text": "Backpacker on a shoestring, hostels, trains only, I love trekking, waterfalls and viewpoints in the hills of Munnar.",
+  "expect": {"high": ["nature", "adventure"], "comfort": "budget", "destination": "MUN", "modes": {"train": "preferred"}}},
+ {"id": "P08", "text": "Just want to relax: lie on a beach, cafes, a little shopping. Short days out, maybe 5 hours.",
+  "expect": {"high": ["relaxation"], "hours_max": 6}},
+ {"id": "P09", "text": "Kolkata for the culture — Durga puja vibes, old colonial buildings, book street, sweets. Me and my partner.",
+  "expect": {"high": ["culture"], "destination": "CCU", "people": 2}},
+ {"id": "P10", "text": "Party trip with friends, 6 of us, clubs and bars every night, sleep late, long days out are fine.",
+  "expect": {"high": ["nightlife"], "people": 6}}
+]

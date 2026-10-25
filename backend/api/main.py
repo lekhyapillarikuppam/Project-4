@@ -12,10 +12,10 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from api import db, errors, settings, solver
-from api.routers import auth, chat, meta, profile, trips, versions
+from api.routers import ai, auth, chat, meta, profile, trips, versions
 from tripwise import data
 
-ROUTERS = [meta, auth, profile, trips, versions, chat]
+ROUTERS = [meta, auth, profile, trips, versions, chat, ai]
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(name)s: %(message)s")
 
