@@ -15,6 +15,8 @@ Inputs:
 - data/raw/attractions/fee_revisions.csv     known fee revisions: city_id, place, effective_on, fee, url, published_on,
                                              fetched_on, extract (the revision's source is also a dated fee source)
 - data/raw/attractions/hours_secondary.csv   secondary-source hours, used when the official page gives days but no hours
+- data/raw/attractions/owner_review.csv      the owner's spot-check edits (DATA-AT-05), applied last: hours, closed days,
+                                             fee, visit and approx flags, with notes that replace the hours/fee/visit text
 - data/raw/attractions/activities.csv        hand-curated adventure activities (selection candidate "activity:<place>"):
                                              location, hours and price read from an operator or state tourism page
 - data/raw/wiki/<CITY>/pageviews.json        12-month pageviews
@@ -155,6 +157,7 @@ def build(city: str) -> list[list]:
         draft[ACTIVITY_PREFIX + name] = {"candidate": ACTIVITY_PREFIX + name, "name": name, "lat": a["lat"], "lon": a["lon"],
                                          "pageviews": "", "otm_rate": ""}
     official = {(r["city_id"], r["place"]): r for r in read_csv(A / "official_hours.csv")}
+    owner = {r["name"]: r for r in read_csv(A / "owner_review.csv") if r["city_id"] == city}
     secondary: dict[str, list[dict]] = {}
     for r in read_csv(A / "fee_secondary.csv"):
         if r["city_id"] == city:
@@ -261,6 +264,26 @@ def build(city: str) -> list[list]:
                    + ("from the activity page" if act else "curated from OpenTripMap kinds, OSM tags and the Wikipedia summary"))
         if c.get("note"):
             src.append(c["note"])
+        ov = owner.get(c["name"])
+        if ov:   # owner review (DATA-AT-05): applied last, replacing the values it names
+            if ov["open_time"]:
+                open_t, close_t = ov["open_time"], ov["close_time"]
+            if ov["closed_weekdays"] != "":
+                closed = [] if ov["closed_weekdays"] == "-" else [int(x) for x in ov["closed_weekdays"].split(";")]
+            if ov["entry_fee"]:
+                fee = int(ov["entry_fee"])
+            if ov["visit_minutes"]:
+                visit = int(ov["visit_minutes"])
+            hours_approx = ov["hours_approx"] == "true" if ov["hours_approx"] else hours_approx
+            fee_approx = ov["fee_approx"] == "true" if ov["fee_approx"] else fee_approx
+            visit_approx = ov["visit_approx"] == "true" if ov["visit_approx"] else visit_approx
+            for key, prefix in (("hours_note", "hours:"), ("fee_note", "fee:")):
+                if ov[key]:
+                    src = [s for s in src if not s.startswith(prefix)] + [f"{prefix} {ov[key]}"]
+            if ov["visit_note"]:
+                src = [("visit: " + ov["visit_note"] + ";" + s.split(";", 1)[1]) if s.startswith("visit:") else s for s in src]
+            src.append(f"owner review {ov['reviewed_on']}: {ov['note']} (data/raw/attractions/owner_review.csv)")
+            dates.append(ov["reviewed_on"])
         if todo:
             src.insert(0, "TODO: " + "; ".join(todo))
         rows.append([f"{city}-A-{i:02d}", city, c["name"], f"{float(c['lat']):.5f}", f"{float(c['lon']):.5f}", visit, str(visit_approx).lower(),
