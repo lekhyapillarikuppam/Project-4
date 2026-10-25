@@ -1,9 +1,10 @@
+import { Suspense } from "react";
 import { Link, NavLink, Outlet, useNavigate } from "react-router-dom";
 import { useAuth } from "../auth/AuthContext";
-import { EstimatedLabel } from "./ui";
+import { EstimatedLabel, Skeleton } from "./ui";
 
 const navClass = ({ isActive }: { isActive: boolean }) =>
-  `rounded-md px-3 py-2 text-sm font-medium ${isActive ? "bg-accent-50 text-accent-800" : "text-ink-700 hover:bg-sand-100"}`;
+  `inline-flex min-h-11 items-center rounded-md px-3 text-sm font-medium ${isActive ? "bg-accent-50 text-accent-800" : "text-ink-700 hover:bg-sand-100"}`;
 
 export default function Layout() {
   const { user, logout } = useAuth();
@@ -15,14 +16,14 @@ export default function Layout() {
       </a>
       <header className="border-b border-sand-200 bg-white">
         <div className="mx-auto flex max-w-6xl flex-wrap items-center gap-2 px-4 py-3">
-          <Link to="/" className="mr-auto text-lg font-bold text-accent-800">Tripwise</Link>
+          <Link to="/" className="mr-auto font-display text-xl font-bold tracking-tight text-accent-800">Tripwise</Link>
           <nav aria-label="Main" className="flex flex-wrap items-center gap-1">
             {user ? (
               <>
                 <NavLink to="/new" className={navClass}>New trip</NavLink>
                 <NavLink to="/trips" end className={navClass}>My Trips</NavLink>
                 <NavLink to="/profile" className={navClass}>Profile</NavLink>
-                <button type="button" className="rounded-md px-3 py-2 text-sm font-medium text-ink-700 hover:bg-sand-100"
+                <button type="button" className="inline-flex min-h-11 items-center rounded-md px-3 text-sm font-medium text-ink-700 hover:bg-sand-100"
                         onClick={() => { logout(); navigate("/"); }}>
                   Log out
                 </button>
@@ -37,7 +38,9 @@ export default function Layout() {
         </div>
       </header>
       <main id="main" className="mx-auto w-full max-w-6xl flex-1 px-4 py-6">
-        <Outlet />
+        <Suspense fallback={<Skeleton lines={6} />}>
+          <Outlet />
+        </Suspense>
       </main>
       <footer className="border-t border-sand-200 bg-white">
         <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-2 px-4 py-3 text-xs text-ink-500">

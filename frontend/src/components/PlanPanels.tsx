@@ -41,11 +41,11 @@ export function TradeOffsPanel({ tripId, variant, names }: { tripId: string; var
         <tbody>
           {q.data.rows.map((r) => (
             <tr key={r.factor} className="border-b border-sand-200 align-top">
-              <td className="py-1 font-mono">{Math.round((r.factor - 1) * 100) > 0 ? "+" : ""}{Math.round((r.factor - 1) * 100)}% <span data-not-price className="text-ink-500">({inr(r.budget_total)})</span></td>
+              <td className="py-1 num">{Math.round((r.factor - 1) * 100) > 0 ? "+" : ""}{Math.round((r.factor - 1) * 100)}% <span data-not-price className="text-ink-500">({inr(r.budget_total)})</span></td>
               {r.status !== "ok" ? <td colSpan={3} className="py-1 text-warn-700">No plan fits this budget</td> : (
                 <>
-                  <td className="py-1 font-mono"><Price>{signedInr(r.delta_cost ?? 0)}</Price></td>
-                  <td className="py-1 font-mono">{(r.delta_value ?? 0) > 0 ? "+" : ""}{(r.delta_value ?? 0).toFixed(1)}</td>
+                  <td className="py-1 num"><Price>{signedInr(r.delta_cost ?? 0)}</Price></td>
+                  <td className="py-1 num">{(r.delta_value ?? 0) > 0 ? "+" : ""}{(r.delta_value ?? 0).toFixed(1)}</td>
                   <td className="py-1">
                     {r.added.length > 0 && <p>Adds {r.added.map(names).join(", ")}</p>}
                     {r.dropped.length > 0 && <p>Drops {r.dropped.map(names).join(", ")}</p>}
@@ -81,7 +81,7 @@ export function VersionList({ tripId, versions, current }: { tripId: string; ver
               <span className="block text-ink-500">{v.note ?? ""} <Price>{inr(v.total)}</Price></span>
             </span>
             {v.version === current ? <span className="text-xs font-semibold text-accent-700">Current</span> : (
-              <button type="button" className="btn-secondary px-3 py-1" disabled={restore.isPending}
+              <button type="button" className="btn-secondary btn-sm" disabled={restore.isPending}
                       onClick={() => restore.mutate(v.version)}>
                 Restore
               </button>

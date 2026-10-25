@@ -5,15 +5,22 @@ import { api } from "../api/client";
 import type { Trip, VariantName, VariantsResult } from "../api/types";
 import VariantCard, { scoreWithin } from "../components/VariantCard";
 import { ErrorBox, PageTitle, Price, Skeleton } from "../components/ui";
-import { inr, niceDate, VARIANT_LABEL } from "../lib/format";
+import { ExplanationNotice } from "../components/Explanation";
+import { daysBetween, inr, niceDate, VARIANT_LABEL } from "../lib/format";
 import { useCityName } from "../lib/meta";
+import { useDocumentTitle } from "../lib/title";
 
+/** The trip's facts as chips under its name; the route is repeated only when the name no longer says it. */
 export function tripSubtitle(trip: Trip, city: (c: string) => string) {
   const r = trip.request;
+  const route = `${city(r.origin)} to ${city(r.destination)}`;
+  const days = daysBetween(r.start_date, r.end_date) + 1;
   return (
     <>
-      {city(r.origin)} → {city(r.destination)} · {niceDate(r.start_date)} to {niceDate(r.end_date)} ·{" "}
-      {r.people} {r.people === 1 ? "person" : "people"} · <span data-not-price>your budget {inr(r.budget_total)}</span>
+      {!trip.name.startsWith(route) && <span className="chip">{city(r.origin)} → {city(r.destination)}</span>}
+      <span className="chip">{niceDate(r.start_date)} – {niceDate(r.end_date)} · {days} days</span>
+      <span className="chip">{r.people} {r.people === 1 ? "person" : "people"}</span>
+      <span className="chip" data-not-price>Budget <span className="num">{inr(r.budget_total)}</span></span>
     </>
   );
 }
@@ -26,6 +33,7 @@ export default function Compare() {
   const qc = useQueryClient();
   const [choosing, setChoosing] = useState<VariantName | null>(null);
   const [error, setError] = useState<unknown>(null);
+  useDocumentTitle(trip.data?.name ?? "Your plans");
 
   if (trip.isError) return <ErrorBox error={trip.error} onRetry={() => trip.refetch()} />;
   if (!trip.data) return <Skeleton lines={6} />;
@@ -67,6 +75,7 @@ export default function Compare() {
 
   const vr = res as VariantsResult;
   const values = vr.variants.map((p) => p.value);
+  const ranked = [...values].sort((a, b) => b - a);
   return (
     <div>
       <PageTitle sub={tripSubtitle(t, city)}>{t.name}</PageTitle>
@@ -75,9 +84,15 @@ export default function Compare() {
           You chose {VARIANT_LABEL[t.selected_variant]}. <Link to={`/trips/${t.id}/plan`} className="btn-link">Open your plan</Link>
         </p>
       )}
+      <div className="mb-4 space-y-1 text-sm text-ink-700">
+        <p>Every plan below was checked by the planner against your budget, opening hours, travel times and daily time limit.
+          Value compares these plans with each other: places that match your interests, comfort and less time in transit.</p>
+        <ExplanationNotice tripId={t.id} />
+      </div>
       <div className={`grid gap-4 ${vr.variants.length === 3 ? "md:grid-cols-3" : vr.variants.length === 2 ? "md:grid-cols-2" : ""}`}>
         {vr.variants.map((p) => (
           <VariantCard key={p.variant} plan={p} score={scoreWithin(values, p.value)}
+                       rank={values.length === 1 ? "only" : p.value === ranked[0] ? "most" : p.value === ranked[ranked.length - 1] ? "least" : "middle"}
                        onChoose={() => choose(p.variant!)} choosing={choosing === p.variant} tripId={t.id} />
         ))}
       </div>

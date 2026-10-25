@@ -6,6 +6,7 @@ import { useAuth } from "../auth/AuthContext";
 import PrefsForm from "../components/PrefsForm";
 import { ErrorBox, PageTitle, Skeleton } from "../components/ui";
 import { useMeta } from "../lib/meta";
+import { useDocumentTitle } from "../lib/title";
 import { validatePrefs } from "../lib/validate";
 
 export default function Profile() {
@@ -16,6 +17,7 @@ export default function Profile() {
   const [prefs, setPrefs] = useState<Prefs | null>(null);
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [saved, setSaved] = useState(false);
+  useDocumentTitle("Profile");
   useEffect(() => { if (profile.data && !prefs) setPrefs(profile.data.prefs); }, [profile.data, prefs]);
   const save = useMutation({
     mutationFn: (p: Prefs) => api.putProfile(p),
@@ -26,13 +28,19 @@ export default function Profile() {
   if (!prefs || !meta.data) return <Skeleton lines={8} />;
   return (
     <div>
-      <PageTitle sub={`Signed in as ${user?.email}. These preferences pre-fill every new trip.`}>Profile and preferences</PageTitle>
+      <PageTitle sub={<p>Signed in as <span className="break-all">{user?.email}</span>. These preferences pre-fill every new trip.</p>}>
+        Profile and preferences
+      </PageTitle>
       <form className="space-y-4" noValidate onSubmit={(e) => {
         e.preventDefault();
         setSaved(false);
         const errs = validatePrefs(prefs, meta.data!);
         setErrors(errs);
-        if (!Object.keys(errs).length) save.mutate(prefs);
+        const first = Object.keys(errs)[0];
+        if (first) {      // focus the first control with a problem, as New trip does
+          const id = first === "prefs.daily_hours_out" ? "hours" : first === "prefs.modes" ? "mode-train" : `int-${meta.data!.interests[0]}`;
+          document.getElementById(id)?.focus();
+        } else save.mutate(prefs);
       }}>
         <section className="card"><PrefsForm value={prefs} onChange={(p) => { setPrefs(p); setSaved(false); }} meta={meta.data} errors={errors} /></section>
         {save.isError && !(save.error instanceof ApiError && Object.keys(save.error.fields).length) && <ErrorBox error={save.error} />}

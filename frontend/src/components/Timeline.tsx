@@ -5,8 +5,8 @@ import { Price } from "./ui";
 
 function LegLine({ minutes, km, mode, cost, note }: { minutes: number; km: number; mode: string; cost: number; note?: string }) {
   return (
-    <p className="ml-6 border-l-2 border-dashed border-sand-300 py-1 pl-3 text-xs text-ink-500">
-      {mode === "auto" ? "Auto" : "Cab"} · {duration(minutes)} · {km} km · <Price>{inr(cost)}</Price>{note ? ` · ${note}` : ""}
+    <p className="ml-[5.75rem] border-l-2 border-dashed border-sand-300 py-1 pl-3 text-[13px] text-ink-500">
+      {mode === "auto" ? "Auto" : "Cab"}{note ? ` ${note}` : ""} · {duration(minutes)} · <span className="num">{km} km</span> · <Price className="num">{inr(cost)}</Price>
     </p>
   );
 }
@@ -23,10 +23,14 @@ function lunchBefore(day: Day): number {
 }
 
 function Lunch({ day }: { day: Day }) {
-  return <p className="ml-6 pl-3 text-xs font-medium text-ink-700">Lunch {day.lunch![0]}–{day.lunch![1]}</p>;
+  return (
+    <p className="ml-[5.75rem] py-1">
+      <span className="num rounded bg-sand-100 px-2 py-0.5 text-xs font-medium text-ink-700">Lunch {day.lunch![0]}–{day.lunch![1]}</span>
+    </p>
+  );
 }
 
-function DayBlock({ day, hotel }: { day: Day; hotel: string }) {
+function DayBlock({ day }: { day: Day }) {
   const colour = DAY_COLOURS[(day.day - 1) % DAY_COLOURS.length];
   const li = lunchBefore(day);
   return (
@@ -44,16 +48,18 @@ function DayBlock({ day, hotel }: { day: Day; hotel: string }) {
         <ol className="mt-3 space-y-1">
           {day.stops.map((s, i) => (
             <li key={s.attraction_id}>
-              <LegLine {...s.leg_from_prev} note={i === 0 ? `from ${hotel}` : undefined} />
+              <LegLine {...s.leg_from_prev} note={i === 0 ? "from the hotel" : undefined} />
               {li === i && <Lunch day={day} />}
-              <div className="flex flex-wrap items-baseline gap-x-3">
-                <span className="w-28 shrink-0 font-mono text-sm text-ink-700">{s.start}–{s.end}</span>
-                <span className="font-medium">{i + 1}. {s.name}</span>
-                <span className="text-sm text-ink-500">{s.entry_cost ? <Price>{inr(s.entry_cost)}</Price> : "free entry"}</span>
+              <div className="grid grid-cols-[5rem,1fr] gap-x-3 py-0.5">
+                <span className="num pt-px text-sm text-ink-700">{s.start}–{s.end}</span>
+                <span>
+                  <span className="text-[15px] font-semibold">{i + 1}. {s.name}</span>{" "}
+                  <span className="block text-sm text-ink-500 sm:inline">{s.entry_cost ? <Price className="num">{inr(s.entry_cost)}</Price> : "free entry"}</span>
+                </span>
               </div>
             </li>
           ))}
-          {day.return_leg && <li><LegLine {...day.return_leg} note={`back to ${hotel}`} /></li>}
+          {day.return_leg && <li><LegLine {...day.return_leg} note="back to the hotel" /></li>}
           {li === day.stops.length && <li><Lunch day={day} /></li>}
         </ol>
       )}
@@ -64,7 +70,7 @@ function DayBlock({ day, hotel }: { day: Day; hotel: string }) {
 export default function Timeline({ plan }: { plan: Plan }) {
   return (
     <div className="space-y-3">
-      {plan.days.map((d) => <DayBlock key={d.day} day={d} hotel={plan.hotel.name} />)}
+      {plan.days.map((d) => <DayBlock key={d.day} day={d} />)}
     </div>
   );
 }

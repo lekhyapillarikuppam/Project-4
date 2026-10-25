@@ -41,24 +41,24 @@ export function BudgetTable({ budget }: { budget: Budget }) {
             <th scope="row" className="py-1 text-left font-normal">
               <span aria-hidden className="mr-2 inline-block h-2.5 w-2.5 rounded-sm" style={{ background: l.colour }} />{l.label}
             </th>
-            <td className="py-1 text-right font-mono">{inr(budget[l.key] as number)}</td>
+            <td className="py-1 text-right num">{inr(budget[l.key] as number)}</td>
           </tr>
         ))}
         <tr className="border-b border-sand-300 font-semibold">
           <th scope="row" className="py-1 text-left">Plan total (estimated)</th>
-          <td className="py-1 text-right font-mono">{inr(budget.total)}</td>
+          <td className="py-1 text-right num">{inr(budget.total)}</td>
         </tr>
         <tr className="border-b border-sand-200">
           <th scope="row" className="py-1 text-left font-normal">Contingency (10%, kept aside)</th>
-          <td className="py-1 text-right font-mono">{inr(budget.contingency)}</td>
+          <td className="py-1 text-right num">{inr(budget.contingency)}</td>
         </tr>
         <tr className="text-ink-700">
           <th scope="row" className="py-1 text-left font-normal">Unused within the plannable budget</th>
-          <td className="py-1 text-right font-mono">{inr(budget.usable_budget - budget.total)}</td>
+          <td className="py-1 text-right num">{inr(budget.usable_budget - budget.total)}</td>
         </tr>
         <tr className="font-semibold">
           <th scope="row" className="py-1 text-left">Your budget</th>
-          <td className="py-1 text-right font-mono">{inr(budget.budget_total)}</td>
+          <td className="py-1 text-right num">{inr(budget.budget_total)}</td>
         </tr>
       </tbody>
     </table>

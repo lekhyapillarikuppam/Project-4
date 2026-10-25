@@ -8,6 +8,13 @@ const TAG_LABEL: Record<Tag, string> = {
 const PACE_HELP: Record<Pace, string> = { relaxed: "up to 3 a day", balanced: "up to 4 a day", packed: "up to 6 a day" };
 const COMFORT_HELP: Record<Comfort, string> = { budget: "hostels, guesthouses", mid: "comfortable hotels", premium: "top hotels" };
 
+/** One line naming the current preferences, e.g. "9 h a day · balanced pace · mid-range stays · likes Food, History & heritage". */
+export function prefsSummary(p: Prefs): string {
+  const liked = (Object.keys(p.interests) as Tag[]).filter((t) => p.interests[t] >= 4).map((t) => TAG_LABEL[t]);
+  return [`${p.daily_hours_out} h a day`, `${p.pace} pace`, `${p.comfort === "mid" ? "mid-range" : p.comfort} stays`,
+          liked.length ? `likes ${liked.join(", ")}` : null].filter(Boolean).join(" · ");
+}
+
 interface Props {
   value: Prefs;
   onChange: (p: Prefs) => void;
@@ -30,10 +37,10 @@ export default function PrefsForm({ value, onChange, meta, errors }: Props) {
 
       <fieldset>
         <legend className="label">What do you enjoy? <span className="font-normal text-ink-500">(0 = not at all, 5 = love it)</span></legend>
-        <div className="grid gap-x-6 gap-y-3 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-2 gap-x-4 gap-y-3 lg:grid-cols-3">
           {meta.interests.map((t) => (
             <div key={t}>
-              <div className="flex justify-between text-sm text-ink-700">
+              <div className="flex justify-between gap-2 text-sm text-ink-700">
                 <label htmlFor={`int-${t}`}>{TAG_LABEL[t]}</label>
                 <span aria-hidden className="font-semibold text-ink-900">{value.interests[t]}</span>
               </div>
@@ -49,9 +56,9 @@ export default function PrefsForm({ value, onChange, meta, errors }: Props) {
       <div className="grid gap-6 sm:grid-cols-2">
         <fieldset>
           <legend className="label">Pace</legend>
-          <div className="space-y-1">
+          <div>
             {meta.paces.map((p) => (
-              <label key={p} className="flex items-center gap-2 text-sm">
+              <label key={p} className="flex min-h-11 items-center gap-2 text-sm">
                 <input type="radio" name="pace" value={p} checked={value.pace === p} onChange={() => set("pace", p)} className="accent-accent-700" />
                 <span className="capitalize">{p}</span> <span className="text-ink-500">— {PACE_HELP[p]}</span>
               </label>
@@ -60,11 +67,11 @@ export default function PrefsForm({ value, onChange, meta, errors }: Props) {
         </fieldset>
         <fieldset>
           <legend className="label">Stay comfort</legend>
-          <div className="space-y-1">
+          <div>
             {meta.comforts.map((c) => (
-              <label key={c} className="flex items-center gap-2 text-sm">
+              <label key={c} className="flex min-h-11 items-center gap-2 text-sm">
                 <input type="radio" name="comfort" value={c} checked={value.comfort === c} onChange={() => set("comfort", c)} className="accent-accent-700" />
-                <span className="capitalize">{c === "mid" ? "Mid-range" : c}</span> <span className="text-ink-500">— {COMFORT_HELP[c]}</span>
+                <span>{c === "mid" ? "Mid-range" : c === "budget" ? "Budget" : "Premium"}</span> <span className="text-ink-500">— {COMFORT_HELP[c]}</span>
               </label>
             ))}
           </div>
@@ -87,7 +94,7 @@ export default function PrefsForm({ value, onChange, meta, errors }: Props) {
         <FieldError id="modes-err" message={errors["prefs.modes"]} />
       </fieldset>
 
-      <label className="flex items-center gap-2 text-sm">
+      <label className="flex min-h-11 items-center gap-2 text-sm">
         <input type="checkbox" checked={value.avoid_crowds} onChange={(e) => set("avoid_crowds", e.target.checked)} className="h-4 w-4 accent-accent-700" />
         Avoid crowded places
       </label>

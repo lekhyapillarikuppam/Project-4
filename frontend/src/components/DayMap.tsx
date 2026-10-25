@@ -1,22 +1,23 @@
 import { useMemo } from "react";
 import L from "leaflet";
+import "leaflet/dist/leaflet.css";
 import { MapContainer, Marker, Polyline, TileLayer, Tooltip } from "react-leaflet";
 import type { Places, Plan } from "../api/types";
-import { DAY_COLOURS } from "./DayColours";
+import { DAY_COLOURS, DAY_TEXT } from "./DayColours";
 import { Skeleton } from "./ui";
 
 type LatLon = [number, number];
 
 const esc = (t: string) => t.replace(/[&<>"']/g, (c) => `&#${c.charCodeAt(0)};`);
 
-function pin(label: string, colour: string, name: string, big = false) {
+function pin(label: string, colour: string, text: string, name: string, big = false) {
   const size = big ? 30 : 24;
   return L.divIcon({
     className: "",
     iconSize: [size, size],
     iconAnchor: [size / 2, size / 2],
     html: `<span role="img" aria-label="${esc(name)}" style="display:flex;align-items:center;justify-content:center;width:${size}px;height:${size}px;border-radius:9999px;`
-      + `background:${colour};color:#fff;font:600 ${big ? 13 : 12}px system-ui;border:2px solid #fff;box-shadow:0 1px 3px rgba(0,0,0,.4)">${esc(label)}</span>`,
+      + `background:${colour};color:${text};font:600 ${big ? 13 : 12}px system-ui;border:2px solid #fff;box-shadow:0 1px 3px rgba(0,0,0,.4)">${esc(label)}</span>`,
   });
 }
 
@@ -34,6 +35,7 @@ export default function DayMap({ plan, places }: { plan: Plan; places?: Places }
   const days = plan.days.filter((d) => d.stops.length).map((d) => ({
     day: d.day,
     colour: DAY_COLOURS[(d.day - 1) % DAY_COLOURS.length],
+    text: DAY_TEXT[(d.day - 1) % DAY_TEXT.length],
     stops: d.stops.map((s) => ({ id: s.attraction_id, name: s.name, at: where.get(s.attraction_id) })).filter((s) => s.at) as
       { id: string; name: string; at: LatLon }[],
   }));
@@ -47,15 +49,15 @@ export default function DayMap({ plan, places }: { plan: Plan; places?: Places }
                      attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors' />
           {days.map((d) => (
             <Polyline key={`r${d.day}`} positions={[hotel, ...d.stops.map((s) => s.at), hotel]}
-                      pathOptions={{ color: d.colour, weight: 3, opacity: 0.85 }} />
+                      pathOptions={{ color: d.colour, weight: 4, opacity: 1 }} />
           ))}
           {days.flatMap((d) => d.stops.map((s, i) => (
-            <Marker key={`${d.day}-${s.id}`} position={s.at} icon={pin(String(i + 1), d.colour, `Day ${d.day}, stop ${i + 1}: ${s.name}`)}
+            <Marker key={`${d.day}-${s.id}`} position={s.at} icon={pin(String(i + 1), d.colour, d.text, `Day ${d.day}, stop ${i + 1}: ${s.name}`)}
                     title={`Day ${d.day}, stop ${i + 1}: ${s.name}`}>
               <Tooltip>Day {d.day} · {i + 1}. {s.name}</Tooltip>
             </Marker>
           )))}
-          <Marker position={hotel} icon={pin("H", "#1c2430", `Hotel: ${plan.hotel.name}`, true)}
+          <Marker position={hotel} icon={pin("H", "#1c2430", "#ffffff", `Hotel: ${plan.hotel.name}`, true)}
                   title={`Hotel: ${plan.hotel.name}`}>
             <Tooltip>{plan.hotel.name}</Tooltip>
           </Marker>

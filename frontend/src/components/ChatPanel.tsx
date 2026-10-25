@@ -1,5 +1,5 @@
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
-import { FormEvent, useEffect, useRef, useState } from "react";
+import { FormEvent, KeyboardEvent, useEffect, useRef, useState } from "react";
 import { api } from "../api/client";
 import type { ChatMessage } from "../api/types";
 import { ErrorBox, TextWithPrices } from "./ui";
@@ -13,11 +13,11 @@ function VersionChip({ tripId, version, current }: { tripId: string; version: nu
   return (
     <span className="mt-1 flex flex-wrap items-center gap-2 text-xs">
       <span className="rounded-full bg-accent-100 px-2 py-0.5 font-semibold text-accent-800">Version {version} created</span>
-      {version === current && (
-        <button type="button" className="btn-link text-xs" disabled={undo.isPending} onClick={() => undo.mutate()}>
+      {version === current ? (
+        <button type="button" className="btn-text min-h-0 py-2 text-xs" disabled={undo.isPending} onClick={() => undo.mutate()}>
           {undo.isPending ? "Undoing…" : `Undo (back to version ${version - 1})`}
         </button>
-      )}
+      ) : version < current && <span className="text-ink-500">· a later version replaced it</span>}
       {undo.isError && <span className="text-warn-700">Couldn't undo, please retry.</span>}
     </span>
   );
@@ -32,6 +32,9 @@ export default function ChatPanel({ tripId, currentVersion }: { tripId: string; 
   const [open, setOpen] = useState(false);
   const [text, setText] = useState("");
   const logRef = useRef<HTMLOListElement>(null);
+  const sheetRef = useRef<HTMLElement>(null);
+  const triggerRef = useRef<HTMLButtonElement>(null);
+  const wasOpen = useRef(false);
   const history = useQuery({ queryKey: ["chat", tripId], queryFn: () => api.chat(tripId) });
   const send = useMutation({
     mutationFn: (message: string) => api.sendChat(tripId, message),
@@ -45,6 +48,21 @@ export default function ChatPanel({ tripId, currentVersion }: { tripId: string; 
   useEffect(() => {
     logRef.current?.lastElementChild?.scrollIntoView({ block: "nearest" });
   }, [messages.length, send.isPending, open]);
+  useEffect(() => {        // phone sheet: focus goes in when it opens and back to the button when it closes
+    if (open) document.getElementById("chat-input")?.focus();
+    else if (wasOpen.current) triggerRef.current?.focus();
+    wasOpen.current = open;
+  }, [open]);
+
+  function sheetKeys(e: KeyboardEvent) {
+    if (!open) return;
+    if (e.key === "Escape") { setOpen(false); return; }
+    if (e.key !== "Tab" || !sheetRef.current) return;
+    const items = [...sheetRef.current.querySelectorAll<HTMLElement>("button:not([disabled]), input, [href]")];
+    const first = items[0], last = items[items.length - 1];
+    if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+    else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+  }
 
   function submit(e: FormEvent) {
     e.preventDefault();
@@ -55,16 +73,18 @@ export default function ChatPanel({ tripId, currentVersion }: { tripId: string; 
   return (
     <>
       {!open && (
-        <button type="button" className="btn-primary fixed bottom-4 right-4 z-[1100] shadow-lg lg:hidden"
+        <button ref={triggerRef} type="button"
+                className="btn-primary fixed bottom-[max(1rem,env(safe-area-inset-bottom))] right-4 z-[1100] shadow-lg lg:hidden"
                 aria-expanded={false} aria-controls="chat-panel" onClick={() => setOpen(true)}>
           Ask the assistant
         </button>
       )}
-      <aside id="chat-panel" aria-labelledby="chat-title"
+      {open && <div aria-hidden className="fixed inset-0 z-[1090] bg-ink-900/40 lg:hidden" onClick={() => setOpen(false)} />}
+      <aside id="chat-panel" ref={sheetRef} aria-labelledby="chat-title" onKeyDown={sheetKeys}
              className={`${open ? "fixed inset-x-0 bottom-0 z-[1100] flex max-h-[80vh] rounded-b-none shadow-2xl" : "hidden"} card flex-col gap-3 lg:static lg:z-auto lg:flex lg:max-h-none lg:rounded-md lg:shadow-none`}>
         <div className="flex items-center justify-between gap-2">
-          <h2 id="chat-title" className="font-semibold">Chat assistant</h2>
-          <button type="button" className="btn-link lg:hidden" onClick={() => setOpen(false)}>Close</button>
+          <h2 id="chat-title" className="text-lg font-semibold">Chat assistant</h2>
+          <button type="button" className="btn-text lg:hidden" onClick={() => setOpen(false)}>Close</button>
         </div>
         <div role="log" aria-live="polite" aria-label="Conversation" className="max-h-80 min-h-16 overflow-y-auto text-sm lg:max-h-96">
           <ol ref={logRef} className="flex flex-col gap-2">

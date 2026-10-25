@@ -1,12 +1,13 @@
-import { useEffect, useState, type FormEvent } from "react";
+import { useEffect, useState, type FormEvent, type KeyboardEvent } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { useLocation, useNavigate } from "react-router-dom";
 import { api, ApiError } from "../api/client";
 import type { Prefs, TripForm } from "../api/types";
 import DescribeTrip from "../components/DescribeTrip";
-import PrefsForm from "../components/PrefsForm";
+import PrefsForm, { prefsSummary } from "../components/PrefsForm";
 import { ErrorBox, FieldError, PageTitle, Skeleton } from "../components/ui";
 import { addDays, todayIST } from "../lib/format";
+import { useDocumentTitle } from "../lib/title";
 import { useCities, useMeta } from "../lib/meta";
 import { validateTrip, type Errors } from "../lib/validate";
 
@@ -40,6 +41,7 @@ export default function NewTrip() {
   const [errors, setErrors] = useState<Errors>({});
   const [error, setError] = useState<unknown>(null);
   const [busy, setBusy] = useState(false);
+  useDocumentTitle("New trip");
 
   useEffect(() => {
     if (draft === null && profile.data) setDraft(draftFrom(incoming, profile.data.prefs));
@@ -72,6 +74,12 @@ export default function NewTrip() {
   }
 
   const budgetField = draft.per ? "budget_per_person" : "budget_total";
+  function radioKeys(e: KeyboardEvent<HTMLDivElement>) {        // arrow keys move the choice (ARIA radio group)
+    if (!["ArrowLeft", "ArrowRight", "ArrowUp", "ArrowDown"].includes(e.key)) return;
+    e.preventDefault();
+    set("per", !draft!.per);
+    requestAnimationFrame(() => e.currentTarget?.querySelector<HTMLElement>('[aria-checked="true"]')?.focus());
+  }
   const days = draft.start_date && draft.end_date
     ? Math.round((Date.parse(draft.end_date) - Date.parse(draft.start_date)) / 86_400_000) + 1 : null;
   return (
@@ -124,10 +132,11 @@ export default function NewTrip() {
             <div className="flex gap-2">
               <input id={`f-${budgetField}`} type="number" inputMode="numeric" min={0} step={500} className="input" value={draft.budget}
                      aria-invalid={!!errors[budgetField]} aria-describedby="budget-err" onChange={(e) => set("budget", e.target.value)} />
-              <div role="radiogroup" aria-label="Budget is" className="flex shrink-0 overflow-hidden rounded-md border border-sand-300">
+              <div role="radiogroup" aria-label="Budget is" onKeyDown={radioKeys}
+                   className="flex shrink-0 overflow-hidden rounded-md border border-sand-500">
                 {[false, true].map((per) => (
-                  <button key={String(per)} type="button" role="radio" aria-checked={draft.per === per}
-                          className={`px-3 text-sm ${draft.per === per ? "bg-accent-700 text-white" : "bg-white text-ink-700"}`}
+                  <button key={String(per)} type="button" role="radio" aria-checked={draft.per === per} tabIndex={draft.per === per ? 0 : -1}
+                          className={`min-h-11 px-3 text-sm ${draft.per === per ? "bg-accent-700 text-white" : "bg-white text-ink-700"}`}
                           onClick={() => set("per", per)}>
                     {per ? "Per person" : "Total"}
                   </button>
@@ -138,12 +147,14 @@ export default function NewTrip() {
           </div>
         </section>
         <section className="card">
-          <h2 className="mb-4 text-lg font-semibold">Your preferences</h2>
+          <h2 className="text-lg font-semibold">Your preferences</h2>
+          <p className="mb-4 mt-1 text-sm text-ink-500">{prefsSummary(draft.prefs)}</p>
           <PrefsForm value={draft.prefs} onChange={(p) => set("prefs", p)} meta={m} errors={errors} />
         </section>
         {error !== null && <ErrorBox error={error}
           onRetry={error instanceof ApiError && error.status === 429 ? () => document.querySelector<HTMLFormElement>("form")?.requestSubmit() : undefined} />}
-        <div className="flex flex-wrap items-center gap-3">
+        <div className="sticky bottom-0 z-10 -mx-4 flex flex-wrap items-center gap-3 border-t border-sand-200 bg-sand-50/95 px-4 py-3
+                        sm:static sm:mx-0 sm:border-0 sm:bg-transparent sm:p-0">
           <button type="submit" className="btn-primary px-6 py-3 text-base" disabled={busy}>
             {busy ? "Planning…" : "Plan my trip"}
           </button>

@@ -1,14 +1,17 @@
+import { lazy } from "react";
 import { Route, Routes } from "react-router-dom";
 import Layout from "./components/Layout";
 import RequireAuth from "./components/RequireAuth";
 import AuthPage from "./pages/AuthPage";
-import Compare from "./pages/Compare";
 import Landing from "./pages/Landing";
-import MyTrips from "./pages/MyTrips";
-import NewTrip from "./pages/NewTrip";
 import NotFound from "./pages/NotFound";
-import PlanDetail from "./pages/PlanDetail";
-import Profile from "./pages/Profile";
+
+// Signed-in pages load on demand, so Landing and Log in don't download the map and chart libraries.
+const Compare = lazy(() => import("./pages/Compare"));
+const MyTrips = lazy(() => import("./pages/MyTrips"));
+const NewTrip = lazy(() => import("./pages/NewTrip"));
+const PlanDetail = lazy(() => import("./pages/PlanDetail"));
+const Profile = lazy(() => import("./pages/Profile"));
 
 export default function App() {
   const guard = (el: JSX.Element) => <RequireAuth>{el}</RequireAuth>;

@@ -3,6 +3,7 @@ import { Link, Navigate, useNavigate, useSearchParams } from "react-router-dom";
 import { ApiError } from "../api/client";
 import { useAuth } from "../auth/AuthContext";
 import { ErrorBox, FieldError, PageTitle } from "../components/ui";
+import { useDocumentTitle } from "../lib/title";
 
 export default function AuthPage({ mode }: { mode: "login" | "signup" }) {
   const { user, login, signup } = useAuth();
@@ -15,6 +16,7 @@ export default function AuthPage({ mode }: { mode: "login" | "signup" }) {
   const [fields, setFields] = useState<Record<string, string>>({});
   const [error, setError] = useState<unknown>(null);
   const [busy, setBusy] = useState(false);
+  useDocumentTitle(mode === "login" ? "Log in" : "Sign up");
   if (user) return <Navigate to={safeNext} replace />;
 
   async function submit(e: FormEvent) {
@@ -24,7 +26,10 @@ export default function AuthPage({ mode }: { mode: "login" | "signup" }) {
     if (password.length < 8 || password.length > 128) errs.password = "Password must be 8–128 characters.";
     setFields(errs);
     setError(null);
-    if (Object.keys(errs).length) return;
+    if (Object.keys(errs).length) {
+      document.getElementById(Object.keys(errs)[0])?.focus();       // say what is wrong at once (WCAG 3.3.1)
+      return;
+    }
     setBusy(true);
     try {
       await (mode === "login" ? login(email, password) : signup(email, password));

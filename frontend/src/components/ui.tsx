@@ -26,7 +26,7 @@ export function TextWithPrices({ text }: { text: string }) {
 export function Spinner({ label = "Loading" }: { label?: string }) {
   return (
     <span role="status" className="inline-flex items-center gap-2 text-sm text-ink-700">
-      <span aria-hidden className="h-4 w-4 animate-spin rounded-full border-2 border-accent-700 border-t-transparent" />
+      <span aria-hidden className="h-4 w-4 motion-safe:animate-spin rounded-full border-2 border-accent-700 border-t-transparent" />
       {label}
     </span>
   );
@@ -36,7 +36,7 @@ export function Skeleton({ lines = 3 }: { lines?: number }) {
   return (
     <div aria-hidden className="space-y-2">
       {Array.from({ length: lines }, (_, i) => (
-        <div key={i} className="h-4 animate-pulse rounded bg-sand-200" style={{ width: `${90 - i * 12}%` }} />
+        <div key={i} className="h-4 motion-safe:animate-pulse rounded bg-sand-200" style={{ width: `${90 - i * 12}%` }} />
       ))}
     </div>
   );
@@ -48,7 +48,7 @@ export function ErrorBox({ error, onRetry }: { error: unknown; onRetry?: () => v
   return (
     <div role="alert" className={`rounded-md border p-3 text-sm ${busy ? "border-warn-700/30 bg-warn-50 text-warn-700" : "border-bad-700/30 bg-bad-50 text-bad-700"}`}>
       <p>{e ? e.message : "Something went wrong."}</p>
-      {onRetry && <button type="button" className="btn-link mt-2" onClick={onRetry}>{busy ? "Retry" : "Try again"}</button>}
+      {onRetry && <button type="button" className="btn-text mt-1" onClick={onRetry}>{busy ? "Retry" : "Try again"}</button>}
     </div>
   );
 }
@@ -61,8 +61,8 @@ export function FieldError({ id, message }: { id: string; message?: string }) {
 export function PageTitle({ children, sub }: { children: ReactNode; sub?: ReactNode }) {
   return (
     <div className="mb-6">
-      <h1 className="text-2xl font-bold sm:text-3xl">{children}</h1>
-      {sub && <p className="mt-1 text-ink-700">{sub}</p>}
+      <h1 className="text-2xl font-bold leading-tight sm:text-3xl">{children}</h1>
+      {sub && <div className="mt-2 flex flex-wrap items-center gap-2 text-ink-700">{sub}</div>}
     </div>
   );
 }
