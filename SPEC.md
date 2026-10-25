@@ -1005,7 +1005,7 @@ All times are minutes after midnight, IST.
 ###### 4.1 Day windows
 
 - **Daily window:** each day d = 1…D has a nominal window [S, S + H], where S = `day_start` (config, default 09:00) and H = `daily_hours_out` × 60. The window end is capped at `day_end_cap` (default 23:00).
-- **Lunch:** a day whose window is at least 6 hours gets a 60-minute lunch break that must start between 12:30 and 14:30. It is modelled as a break in the routing time dimension.
+- **Lunch:** a day whose window is at least 6 hours, and can hold a 60-minute lunch starting between 12:30 and 14:30 inside the window, gets a 60-minute lunch break. It is modelled as a break in the routing time dimension. In the final schedule lunch is taken at the hotel before the first departure, at a stop between arrival and the visit start, or at the hotel after the last return.
 - **Pace:** pace sets the activity limit per day and the share of the window that may be used.
 
 | Pace | Max activities per day | Window fill |
@@ -1050,16 +1050,17 @@ All amounts are integer rupees; P = people.
 
 | Item | Formula |
 |---|---|
-| Outbound | P × fare(m, k, distance) + destination-side access cost × ⌈P ÷ capacity⌉ |
+| Outbound | P × fare(m, k, distance) + destination-side hub access cost × ⌈P ÷ capacity⌉, where capacity is that of the trip's local mode (auto 3, cab 4) |
 | Return | Same as outbound, in the other direction |
 | Stay | (D − 1) nights × ⌈P ÷ 2⌉ rooms × hotel price per room per night |
-| Food | P × D × food base(comfort) × city food multiplier |
+| Food | P × D × food base(comfort) × city food multiplier, rounded half up to whole rupees |
 | Entry fees | P × Σ entry fee of the chosen activities |
-| Local travel | Σ over route legs of ride cost(km), using auto for `budget` comfort and cab for `mid`/`premium` (Feature 001 Spec §5.8) |
+| Local travel | Σ over route legs of ride cost(km) = round_half_up(min_fare + per_km × max(0, km − min_km)) × ⌈P ÷ capacity⌉, using auto for `budget` comfort and cab for `mid`/`premium` (Feature 001 Spec §5.8) |
 | **Total** | Sum of the above |
 | **Contingency** | Budget − ⌊0.9 × budget⌋ (shown separately) |
 
-- The fare formula is max(min_fare, base_fare + per_km × distance), using rail_km, road_km or air_km for the mode.
+- The fare formula is max(min_fare, base_fare + per_km × distance), using rail_km, road_km or air_km for the mode, rounded half up to whole rupees per person per journey.
+- A transport option is one row of `fare_rates.csv` for an available mode: train SL, 3A or 2A; bus ACS; flight Y. Its comfort_value is that row's.
 - Origin-side hub access is assumed to be paid by the traveller outside the trip budget, and is excluded. (Assumption, listed in section 13.)
 - **Hard budget rule:** Total ≤ ⌊0.9 × budget_total⌋.
 
@@ -1134,14 +1135,16 @@ Pick the hotel whose model gives the highest objective.
 - **Vehicles:** one per day with activities; vehicle d has the day-d window.
 - **Depot:** the hotel. Every day starts and ends at the hotel (section 4.3 approximation).
 - **Nodes:** the activities chosen in stage 1.
-- **Time dimension:** transit(i → j) = visit(i) + time(i, j) × traffic_factor. Vehicle d's start ≥ its window start and its end ≤ its window end. The route span ≤ U_d plus lunch.
-- **Node time windows:** a visit starts within [open, close − visit].
+- **Time dimension:** transit(i → j) = visit(i) + time(i, j) × traffic_factor, the travel part rounded half up to whole minutes. Vehicle d's start ≥ its window start and its end ≤ its window end. The route span ≤ U_d plus lunch.
+- **Node time windows:** a visit starts within [open, close − visit]; a `fixed_slot` attraction starts exactly at open.
 - **Allowed vehicles:** an activity cannot be assigned to a day whose weekday is in its `closed_weekdays`.
 - **Count dimension:** at most the pace's activities per day.
 - **Lunch:** a 60-minute break on each day with a window of at least 6 hours.
 - **Dropping:** every activity is optional, with drop penalty = 1000 × v(a). Locked activities cannot be dropped.
 
-**Search:** first solution `PATH_CHEAPEST_ARC`, then `GUIDED_LOCAL_SEARCH`, with time limit `routing_time_limit_s` (default 1.0).
+**Search:** first solution `PATH_CHEAPEST_ARC`, then `GUIDED_LOCAL_SEARCH`, stopped after `routing_solution_limit` solutions so the result is repeatable (ENG-FR-10), with `routing_time_limit_s` (default 1.0) as a safety cap.
+
+**Exact times:** routing decides each stop's day and order. A forward pass then sets the times: the first departure is timed to arrive at the first stop's start; start = max(arrive, open); end = start + visit; lunch as in 4.1, at the earliest place that lets the day fit. A day the pass cannot fit drops its lowest-value stop, which counts as a stage 2 drop.
 
 ###### 7.5 Feedback loop
 
@@ -1221,7 +1224,7 @@ Run the validator (section 9) on the final plan. A validator failure is a bug: t
 | `lock_impossible` | A locked activity cannot be scheduled on any trip day |
 | `lock_over_budget` | Locked activities alone exceed the budget |
 
-**Minimum budget:** solve stage 1 with the objective "minimize cost", subject to at least one activity and all locks. Then min_budget_total = ⌈(min cost ÷ 0.9) ÷ 500⌉ × 500.
+**Minimum budget:** the minimum cost is the cheapest exactly costed plan with at least one activity and all locks: over every outbound option, return option and candidate hotel, the locked set (or, with no locks, each single attraction) is scheduled and costed with routed legs. Then min_budget_total = ⌈(min cost ÷ 0.9) ÷ 500⌉ × 500. A request at min_budget_total therefore returns `ok`: if budget repair would leave no activity, the engine returns that cheapest plan.
 
 ##### 9. Validator
 
@@ -1235,11 +1238,11 @@ Run the validator (section 9) on the final plan. A validator failure is a bug: t
 | V-04 | Total ≤ ⌊0.9 × budget_total⌋ |
 | V-05 | No attraction appears twice; all belong to the destination city |
 | V-06 | No visit falls on a closed weekday |
-| V-07 | Every visit starts at or after open and ends by close |
+| V-07 | Every visit starts at or after open and ends by close; a `fixed_slot` visit starts exactly at open |
 | V-08 | Leg times equal matrix time × traffic factor (±1 min), and stop times are consistent: arrive = previous end + leg; start ≥ arrive; end = start + visit |
 | V-09 | Each day's first departure and last return lie within that day's window (section 4.3) |
-| V-10 | Each day's span (hotel departure to hotel return, minus lunch) ≤ U_d, and its activity count ≤ the pace limit |
-| V-11 | Lunch is 60 minutes, starts between 12:30 and 14:30 and does not overlap a visit, on days whose window is at least 6 hours |
+| V-10 | Each day's span (last hotel return − first hotel departure, minus lunch when lunch lies between them) ≤ U_d, and its activity count ≤ the pace limit |
+| V-11 | Lunch is 60 minutes, starts between 12:30 and 14:30, lies inside the day window and overlaps no visit or leg, on exactly the days that get lunch (4.1) |
 | V-12 | Every lock is present; no exclude is present |
 | V-13 | Hotel is in the destination city and in the requested tier; nights = D − 1; rooms = ⌈P ÷ 2⌉ |
 
@@ -1262,6 +1265,9 @@ The validator is a separate module with no imports from the solver code, so it c
 | variety_share | 0.4 |
 | cpsat | {time_limit_s: 0.4, workers: 1, seed: 42} |
 | routing_time_limit_s | 1.0 |
+| routing_solution_limit | 200 |
+| variants | {kappa_h: 10, tier_value: {budget: 0, mid: 0.5, premium: 1}, lambda: 0.5, rho: 0.7, difference: 0.30} |
+| tradeoff_factors | [0.8, 0.9, 1.1, 1.2] |
 | max_feedback_iters | 3 |
 | min_budget_round | 500 |
 
@@ -1426,7 +1432,7 @@ or the infeasible object (section 8.2). Each Plan gains `"variant": "experience|
 Work top to bottom and tick `[x]` when the check passes. Decide small things yourself and log each one as a Changelog row; stop only for a conflict with Part A, an irreversible action, or a missing secret.
 
 ##### Setup
-- [ ] **T01** Reconcile 002 Spec §§3–10 with the Feature 001 data model as built (local transport formula, hotel counts, bus classes, fixed_slot, fee_approx, place types); add Changelog rows. · serves ENG-FR-01–03
+- [x] **T01** Reconcile 002 Spec §§3–10 with the Feature 001 data model as built (local transport formula, hotel counts, bus classes, fixed_slot, fee_approx, place types); add Changelog rows. · serves ENG-FR-01–03
 - [ ] **T02** Create `backend/tripwise/` and `backend/validator/` packages, `backend/requirements.txt`, `config.yaml` + `config.py` with every tunable. · Check: `python -c "import tripwise, validator"` · serves ENG-FR-09
 - [ ] **T03** `data.py`: load the full curated dataset into `Dataset`; expand pairs to 210 directed; matrix lookups × traffic factor. · Check: loads in < 2 s, counts match `datatools.report` · serves ENG-FR-02
 - [ ] **T04** `models.py`: request, plan, infeasible, variants and trade-off schemas exactly as in 002 §3, §8 and addendum A6. · serves ENG-FR-05, 06
@@ -1626,3 +1632,11 @@ Update this table when a feature's tasks are written (fill **Tasks**) and when i
 | 2026-10-25 | C 002 Plan | Plan added: engine package `backend/tripwise/`, validator package `backend/validator/`, modules, design points, dependencies, test strategy | 002 Spec approved; 001 done apart from the manual spot check |
 | 2026-10-25 | C 002 Tasks | Tasks T01–T20 added | Plan approved |
 | 2026-10-25 | C Contents, Part C, Part D | Feature 003 marked merged into 002; FR-020–025 and NFR-001 trace to 002; 002 header, goal, scope, A5 and ENG-AT-08 references to 003 updated | Variants and the engine share one pipeline and one test set |
+| 2026-10-25 | C 002 Spec §5 (T01) | Rounding: fares per person per journey, food line, and each ride's per-vehicle fare are rounded half up to whole rupees; hub access and rides use the local mode's capacity (auto 3, cab 4) | Feature 001 stores decimal per_km and multipliers; money is integer rupees |
+| 2026-10-25 | C 002 Spec §5 (T01) | A transport option is one fare_rates row of an available mode: train SL/3A/2A, bus ACS, flight Y | Feature 001 has one bus class (ACS) |
+| 2026-10-25 | C 002 Spec §7.4, V-07 (T01) | fixed_slot attractions start exactly at open; matrix times × traffic factor rounded half up to whole minutes | Feature 001 has fixed_slot rows (Parmarth aarti) and integer-minute matrices |
+| 2026-10-25 | C 002 Spec §4.1, V-10, V-11 (T01) | Lunch only where a 60-minute lunch starting 12:30–14:30 fits inside the window; taken at the hotel before departure, at a stop before its visit, or at the hotel after return; span excludes lunch only when lunch lies within it | A late-starting 6-hour window cannot hold a 12:30–14:30 lunch; keeps V-08's arrive = previous end + leg |
+| 2026-10-25 | C 002 Spec §7.4, §10 (T01) | Routing stops after `routing_solution_limit` solutions (time limit is a safety cap); exact times come from a forward pass over the routed order | A wall-clock stop makes guided local search non-repeatable (ENG-FR-10, NFR-008) |
+| 2026-10-25 | C 002 Spec §8.2 (T01) | Minimum budget is the cheapest exactly costed plan (routed legs) over options, hotels and single attractions or the locked set; at that budget the engine returns ok | Stage 1's chained travel estimate is below the exact cost of a one-stop day, so the stage 1 minimum would fail ENG-AT-07 |
+| 2026-10-25 | C 002 Spec §10 (T01) | Config gains variants (κ_h, tier values, λ, ρ, difference share) and tradeoff_factors | Addendum tunables belong in config (NFR-009) |
+| 2026-10-25 | C 002 (T01 note) | Feature 001's visit_approx, hours_approx and fee_approx flags and the place types are not used by the engine; it uses the curated values as given | They document provenance only |
