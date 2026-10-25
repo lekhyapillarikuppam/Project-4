@@ -1,0 +1,3 @@
+# Evaluation (Feature 008) only, not needed by the API. Install into backend/.venv:
+#   python -m pip install -r eval/requirements.txt
+matplotlib==3.10.8
