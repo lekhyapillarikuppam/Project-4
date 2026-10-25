@@ -1,0 +1,17 @@
+{
+ "unroutable": [],
+ "below_rounding": [
+  [
+   "CCU-A-15",
+   "CCU-HUB-bus"
+  ],
+  [
+   "CCU-A-23",
+   "CCU-A-22"
+  ],
+  [
+   "CCU-HUB-bus",
+   "CCU-A-15"
+  ]
+ ]
+}

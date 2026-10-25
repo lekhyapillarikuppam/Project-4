@@ -1,0 +1,21 @@
+{
+ "unroutable": [],
+ "below_rounding": [
+  [
+   "JAI-A-04",
+   "JAI-A-05"
+  ],
+  [
+   "JAI-A-05",
+   "JAI-A-04"
+  ],
+  [
+   "JAI-A-14",
+   "JAI-A-22"
+  ],
+  [
+   "JAI-A-22",
+   "JAI-A-14"
+  ]
+ ]
+}

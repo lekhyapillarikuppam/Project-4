@@ -1,0 +1,37 @@
+{
+ "unroutable": [],
+ "below_rounding": [
+  [
+   "MUN-A-14",
+   "MUN-A-15"
+  ],
+  [
+   "MUN-A-15",
+   "MUN-A-14"
+  ],
+  [
+   "MUN-A-24",
+   "MUN-A-25"
+  ],
+  [
+   "MUN-A-24",
+   "MUN-A-27"
+  ],
+  [
+   "MUN-A-25",
+   "MUN-A-24"
+  ],
+  [
+   "MUN-A-25",
+   "MUN-A-27"
+  ],
+  [
+   "MUN-A-27",
+   "MUN-A-24"
+  ],
+  [
+   "MUN-A-27",
+   "MUN-A-25"
+  ]
+ ]
+}

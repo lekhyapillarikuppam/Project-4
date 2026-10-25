@@ -1,0 +1,45 @@
+{
+ "unroutable": [],
+ "below_rounding": [
+  [
+   "RSH-H-07",
+   "RSH-A-12"
+  ],
+  [
+   "RSH-H-08",
+   "RSH-A-15"
+  ],
+  [
+   "RSH-A-05",
+   "RSH-A-19"
+  ],
+  [
+   "RSH-A-05",
+   "RSH-A-22"
+  ],
+  [
+   "RSH-A-12",
+   "RSH-H-07"
+  ],
+  [
+   "RSH-A-15",
+   "RSH-H-08"
+  ],
+  [
+   "RSH-A-19",
+   "RSH-A-05"
+  ],
+  [
+   "RSH-A-19",
+   "RSH-A-22"
+  ],
+  [
+   "RSH-A-22",
+   "RSH-A-05"
+  ],
+  [
+   "RSH-A-22",
+   "RSH-A-19"
+  ]
+ ]
+}

@@ -1,0 +1,53 @@
+{
+ "unroutable": [],
+ "below_rounding": [
+  [
+   "DJL-H-06",
+   "DJL-A-24"
+  ],
+  [
+   "DJL-H-06",
+   "DJL-A-25"
+  ],
+  [
+   "DJL-A-01",
+   "DJL-A-17"
+  ],
+  [
+   "DJL-A-08",
+   "DJL-A-09"
+  ],
+  [
+   "DJL-A-09",
+   "DJL-A-08"
+  ],
+  [
+   "DJL-A-10",
+   "DJL-A-11"
+  ],
+  [
+   "DJL-A-11",
+   "DJL-A-10"
+  ],
+  [
+   "DJL-A-17",
+   "DJL-A-01"
+  ],
+  [
+   "DJL-A-24",
+   "DJL-H-06"
+  ],
+  [
+   "DJL-A-25",
+   "DJL-H-06"
+  ],
+  [
+   "DJL-A-25",
+   "DJL-A-26"
+  ],
+  [
+   "DJL-A-26",
+   "DJL-A-25"
+  ]
+ ]
+}

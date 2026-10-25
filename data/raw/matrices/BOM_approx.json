@@ -1,0 +1,21 @@
+{
+ "unroutable": [],
+ "below_rounding": [
+  [
+   "BOM-A-14",
+   "BOM-A-15"
+  ],
+  [
+   "BOM-A-16",
+   "BOM-A-14"
+  ],
+  [
+   "BOM-A-20",
+   "BOM-A-11"
+  ],
+  [
+   "BOM-A-25",
+   "BOM-A-24"
+  ]
+ ]
+}

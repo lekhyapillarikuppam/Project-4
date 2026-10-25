@@ -101,6 +101,12 @@ def broken_dir(tmp_path: Path) -> Path:
     return target
 
 
+def test_shipped_dataset_has_no_errors():
+    """DATA-AT-01 as a test: the validator finds 0 errors in data/curated."""
+    from datatools.validate import DEFAULT_DATA
+    assert [str(i) for i in validate(DEFAULT_DATA) if i.severity == "error"] == []
+
+
 def test_valid_fixture_has_no_issues(capsys):
     assert validate(VALID, CITIES) == []
     assert main(["--data", str(VALID), "--cities", CITIES_ARG]) == 0

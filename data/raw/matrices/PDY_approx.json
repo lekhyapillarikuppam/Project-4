@@ -1,0 +1,29 @@
+{
+ "unroutable": [],
+ "below_rounding": [
+  [
+   "PDY-A-01",
+   "PDY-A-14"
+  ],
+  [
+   "PDY-A-01",
+   "PDY-A-15"
+  ],
+  [
+   "PDY-A-05",
+   "PDY-A-24"
+  ],
+  [
+   "PDY-A-14",
+   "PDY-A-01"
+  ],
+  [
+   "PDY-A-15",
+   "PDY-A-01"
+  ],
+  [
+   "PDY-A-24",
+   "PDY-A-05"
+  ]
+ ]
+}
