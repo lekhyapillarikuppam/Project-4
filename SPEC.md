@@ -1757,7 +1757,7 @@ Config keys: `groq_model`, `groq_timeout_s`, `chat_rate_per_hour`, temperatures.
 - [x] **T03** Parse-prefs endpoint + DescribeTrip UI. · Check: AI-AT-01
 - [x] **T04** Grounding + explanations (cached) + Explanation UI. · Check: AI-AT-02
 - [x] **T05** Chat tools, name resolution, replan mapping, diff, reply, unsupported, why. · Check: AI-AT-04
-- [ ] **T06** ChatPanel UI with history, version chip and undo.
+- [x] **T06** ChatPanel UI with history, version chip and undo.
 - [ ] **T07** Write `eval/chat_intents.json` (50) and run it. · Check: AI-AT-03
 - [ ] **T08** Failure modes and rate limit. · Check: AI-AT-05
 - [ ] **T09** Timing. · Check: AI-AT-07. Update Part D; mark 007 Done; commit.
@@ -2178,3 +2178,5 @@ Run 2026-10-25 with Playwright 1.64.0 (Chromium) against the local API (schema `
 | 2026-10-26 | C 007 (T05 decisions) | Chat: `tool_choice` required; several tool calls in one message merge into one change set; a change tool wins over explain and unsupported; `regenerate` replans with the current settings; `set_transport` without a class uses `chat.default_class`; activity names resolve exactly, then by substring, then by similarity (`chat.name_match_cutoff` 0.6, margin 0.1), otherwise a clarifying reply; the last `chat.history_messages` (6) messages go with call 1; unsupported, clarifying and infeasible replies are templates (one Groq call) | Spec fixes the tools, not these details |
 | 2026-10-26 | C 007 (T05 decision) | The Groq client retries once on HTTP 400 `tool_use_failed` | Malformed tool calls happen occasionally and succeed on a second try |
 | 2026-10-26 | C 007 (T05 decision) | Config key `chat_rate_per_hour` moved under a `chat:` section as `rate_per_hour` with the other chat settings | One place for chat tunables |
+| 2026-10-26 | C 007 (T06 decisions) | Undo on the "Version N created" chip restores version N−1 and is offered only while N is the current version; on screens under 1024 px the panel is a bottom sheet opened by an "Ask the assistant" button; ₹ amounts in AI text get the "est." tag (UI-FR-07) | AI-FR-08 leaves these details open |
+| 2026-10-26 | C 006 (007 T06) | `E2E_LIVE_GROQ=1` keeps the Groq key for the opt-in live chat spec; the default UI suite stays Groq-free | Lets the chip and undo be checked end to end without making the suite depend on Groq |

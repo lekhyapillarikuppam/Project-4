@@ -1,7 +1,7 @@
 // Minimal typed client for the Tripwise API. The JWT lives in localStorage; a 401 logs the user out.
 
 import type {
-  ChatMessage, City, Explanations, Meta, ParsedTrip, Places, Prefs, TradeOffs, Trip, TripForm, TripSummary, User, Version, VersionSummary, VariantName,
+  ChatMessage, ChatReply, City, Explanations, Meta, ParsedTrip, Places, Prefs, TradeOffs, Trip, TripForm, TripSummary, User, Version, VersionSummary, VariantName,
 } from "./types";
 
 export const API_URL = (import.meta.env.VITE_API_URL as string | undefined)?.replace(/\/$/, "") || "http://localhost:8000";
@@ -71,5 +71,6 @@ export const api = {
   tradeoffs: (id: string, variant: VariantName) => request<TradeOffs>("GET", `/trips/${id}/tradeoffs?variant=${variant}`),
   chat: (id: string) => request<ChatMessage[]>("GET", `/trips/${id}/chat`),
   explanations: (id: string) => request<Explanations>("GET", `/trips/${id}/explanations`),
+  sendChat: (id: string, message: string) => request<ChatReply>("POST", `/trips/${id}/chat`, { message }),
   parsePrefs: (text: string) => request<ParsedTrip>("POST", "/ai/parse-prefs", { text }),
 };

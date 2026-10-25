@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import { ApiError } from "../api/client";
+import { inr } from "../lib/format";
 import { useMeta } from "../lib/meta";
 
 export function EstimatedLabel({ className = "" }: { className?: string }) {
@@ -14,6 +15,12 @@ export function Price({ children, className = "" }: { children: ReactNode; class
       {children} <abbr title="Estimated price" className="text-xs font-normal text-ink-500 no-underline">est.</abbr>
     </span>
   );
+}
+
+/** Assistant text with each ₹ amount regrouped the Indian way and tagged as estimated (UI-FR-07). */
+export function TextWithPrices({ text }: { text: string }) {
+  const parts = text.split(/(₹\s?\d[\d,]*)/g);
+  return <>{parts.map((p, i) => (i % 2 ? <Price key={i}>{inr(Number(p.replace(/[^\d]/g, "")))}</Price> : p))}</>;
 }
 
 export function Spinner({ label = "Loading" }: { label?: string }) {

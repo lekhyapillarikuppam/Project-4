@@ -98,7 +98,7 @@ export default function PlanDetail() {
         </Section>
       </div>
       <div className="space-y-6 lg:sticky lg:top-4 lg:self-start">
-        <ChatPanel />
+        <ChatPanel tripId={id} currentVersion={version.data.version} />
         <section aria-labelledby="versions" className="card">
           <h2 id="versions" className="mb-2 font-semibold">Version history</h2>
           <VersionList tripId={id} versions={versions.data} current={version.data.version} />

@@ -7,7 +7,7 @@ local API (`uvicorn api.main:app`, schema `app_e2e_test`) and the Vite dev serve
 cd C:\dev\Project4\frontend
 npm install
 npx playwright install chromium
-npx playwright test            # 12 tests, about 55 s
+npx playwright test            # 15 tests (1 live test skipped), about 70 s
 ```
 
 | ID | Test file | Result | Notes |
@@ -28,3 +28,15 @@ Screenshots (`test-shots/`): `1-landing`, `2-login`, `3-new-trip`, `4-comparison
 `7-profile`, each at `-360.png` and `-1280.png`. They were also reviewed by eye.
 
 Not covered automatically: Safari, Firefox and mobile browsers (NFR-006). These are checked on the deployed site in Feature 008.
+
+## Feature 007 additions (2026-10-26)
+
+The API runs with an empty `GROQ_API_KEY` in these tests, so the AI parts show their fallbacks and no test calls Groq.
+
+| Check | Test file | Result | Notes |
+|---|---|---|---|
+| Chat panel, no Groq (AI-AT-05, UI side) | `tests/ai-ui-chat.spec.ts` | Pass | At 360 px (bottom sheet, opened by "Ask the assistant") and 1280 px (docked): the message and an "assistant is unavailable" reply appear, no version is created, history survives a reload; explanations show their notice; the Describe-your-trip box is on New trip |
+| Live chat, version chip and undo | `tests/ai-live-chat.spec.ts` | Pass (live, 2026-10-26) | Opt-in, real Groq: `$env:E2E_LIVE_GROQ="1"; npx playwright test tests/ai-live-chat.spec.ts`. "Switch to a budget hotel" → "Version 2 created", the page moves to version 2; Undo restores version 1 as version 3; screenshot `test-shots/8-chat-1280.png` |
+
+₹ amounts inside AI text (explanations, chat replies) are rendered with the "est." tag, as UI-AT-09 requires.
+

@@ -122,3 +122,4 @@ export type Explanations =
 export interface ChatMessage {
   id: number; role: "user" | "assistant"; text: string; actions: unknown; version: number | null; created_at: string;
 }
+export interface ChatReply { user: ChatMessage; assistant: ChatMessage; version: Version | null }

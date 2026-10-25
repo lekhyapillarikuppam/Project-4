@@ -1,12 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { api } from "../api/client";
 import type { VariantName } from "../api/types";
-import { inr } from "../lib/format";
-
-/** Rupee amounts in the model's text, regrouped the Indian way (the numbers themselves are not changed). */
-function tidy(text: string): string {
-  return text.replace(/₹\s?(\d[\d,]*)/g, (_, n: string) => inr(Number(n.replace(/,/g, ""))));
-}
+import { TextWithPrices } from "./ui";
 
 /** AI explanation of one variant (AI-FR-02, AI-FR-08). Grounded or template text from the API; never blocks the plan. */
 export default function Explanation({ tripId, variant }: { tripId: string; variant: VariantName }) {
@@ -21,7 +16,7 @@ export default function Explanation({ tripId, variant }: { tripId: string; varia
       <p className="mb-1 text-xs font-semibold uppercase tracking-wide text-ink-500">
         Why this plan{q.data.source[variant] === "template" ? "" : " · AI summary of the plan"}
       </p>
-      <p>{tidy(text)}</p>
+      <p><TextWithPrices text={text} /></p>
     </div>
   );
 }
