@@ -24,3 +24,5 @@ node/2703679634,College Street,market,shopping;culture,true,false,,book market s
 node/4571180589,Indian Coffee House,market,food;culture,false,false,,food: OSM restaurant or cafe (data/raw/seed/CCU.json extras); market type for defaults,
 node/3565448998,Peter Cat,market,food,false,false,,food: OSM restaurant or cafe (data/raw/seed/CCU.json extras); market type for defaults,
 relation/5403555,Gariahat Market,market,shopping;food,true,false,,OSM amenity=marketplace (markets_food_nightlife),
+N6375289885,Victoria Memorial,museum,history;culture,false,false,,"OpenTripMap name 'Victoria Memorial Hall'; museum galleries (the official site victoriamemorial-cal.org blocks automated fetches, so the fee is the secondary median and the hours the museum default)",
+R2900062,Indian Museum,museum,history;culture,false,false,,,

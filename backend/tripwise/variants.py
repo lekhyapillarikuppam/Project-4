@@ -3,9 +3,9 @@
 Each variant runs the full pipeline (engine.run). Experience runs first because the others need V*.
 Ordering guarantees (VAR-AT-02), applied before the difference rule:
 - Saver must reach V ≥ ρ × V* on its routed plan: it is re-run with a raised target up to saver_retries times,
-  and otherwise takes the Balanced plan;
-- a Balanced plan costing more than Experience takes the Experience plan; a Saver costing more than
-  Balanced takes the Balanced plan.
+  and otherwise (or if it costs more than Experience) takes the Experience plan;
+- a Balanced plan costing more than Experience takes the Experience plan; a Balanced plan below ρ × V* takes
+  the Saver plan; a Saver costing more than Balanced takes the Balanced plan.
 A variant that took another's plan is then dropped as "same as …".
 """
 
@@ -40,17 +40,22 @@ def variant_plans(ctx: Context) -> dict:
     if not isinstance(bal, Plan) or bal.budget.total > exp.budget.total:
         bal = _as(exp, "balanced")
     rho = cfg.variants["rho"]
+    floor = rho * vstar
     target = vstar
     sav = None
     for _ in range(1 + cfg.variants["saver_retries"]):
         s = run(ctx, "min_cost", hotels_for(ctx.ds, req, tiers_for(req, -1)), vstar=target, variant="saver").result
         if not isinstance(s, Plan):
             break
-        if s.value >= rho * vstar:
+        if s.value >= floor:
             sav = s
             break
-        target += (rho * vstar - s.value) / rho + 1e-6
-    if sav is None or sav.budget.total > bal.budget.total:
+        target += (floor - s.value) / rho + 1e-6
+    if sav is None or sav.budget.total > exp.budget.total:
+        sav = _as(exp, "saver")          # Experience always reaches the floor
+    if bal.value < floor:                # a Balanced plan below the Saver floor takes the Saver plan
+        bal = _as(sav, "balanced")
+    if sav.budget.total > bal.budget.total:
         sav = _as(bal, "saver")
     return {"experience": exp, "balanced": bal, "saver": sav}
 

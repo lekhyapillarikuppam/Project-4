@@ -25,3 +25,6 @@ node/626897444,Shadab Hotel,market,food,false,false,,food: OSM restaurant or caf
 node/7012057585,Pista House,market,food,false,false,,food: OSM restaurant or cafe (data/raw/seed/HYD.json extras); market type for defaults,
 node/2710929650,Nimrah Cafe,market,food,false,false,,food: OSM restaurant or cafe (data/raw/seed/HYD.json extras); market type for defaults,
 node/2429976498,Gokul Chat,market,food,false,false,,food: OSM restaurant or cafe (data/raw/seed/HYD.json extras); market type for defaults,
+W238284090,Salar Jung Museum,museum,history;culture,false,false,official:Salar Jung Museum,OpenTripMap name 'Salar Jung museum',
+W116030267,Chowmahalla Palace,palace,history;culture,false,false,,"palace: fort type; secondary sources say closed on Fridays, but closed days come only from an official page (001 Spec 5.5), so the fort default applies",
+W253509394,Qutb Shahi Tombs,tomb,history;culture,true,false,,"OpenTripMap name 'Qutub Shahi Tombs'; tomb: monument type; secondary sources say closed on Fridays (not used, as above)",
