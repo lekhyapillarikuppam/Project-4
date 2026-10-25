@@ -1592,7 +1592,7 @@ chat_messages(id bigserial pk, trip_id uuid references trips on delete cascade, 
 - [x] **T08** Trips list, get, rename, duplicate, delete. · Check: API-AT-06
 - [x] **T09** Select, replan (locks, excludes, budget, prefs patch), versions, restore, trade-offs cache. · Check: API-AT-05
 - [x] **T10** `GET /trips/{id}/chat`; ownership checks on every router. · Check: API-AT-02
-- [ ] **T11** Write `backend/api/README.md` covering how to run locally and every env var; update `.env.example`. Update Part D; mark 004 Done; commit.
+- [x] **T11** Write `backend/api/README.md` covering how to run locally and every env var; update `.env.example`. Update Part D; mark 004 Done; commit.
 
 ### Feature 006 — Frontend (web app)
 
@@ -1833,13 +1833,13 @@ Update this table when a feature's tasks are written (fill **Tasks**) and when i
 
 | Req | Summary | Feature spec | Feature reqs | Tasks | Tests | Status |
 |---|---|---|---|---|---|---|
-| FR-001 | Origin and destination from 15 cities, different | 004 (merged from 005) | | | | Planned |
-| FR-002 | Dates, 2–7 days, start tomorrow to +365 days | 004 (merged from 005) | | | | Planned |
-| FR-003 | Group size 1–6 | 004 (merged from 005) | | | | Planned |
-| FR-004 | Total or per-person budget, bounds | 004 (merged from 005) | | | | Planned |
-| FR-005 | Preferences (hours, interests, pace, comfort, modes, crowds) | 004 (merged from 005) | | | | Planned |
+| FR-001 | Origin and destination from 15 cities, different | 004 (merged from 005) | API-FR-01–13 | 004 T03–T10 | API-AT-03 | Pass |
+| FR-002 | Dates, 2–7 days, start tomorrow to +365 days | 004 (merged from 005) | API-FR-01–13 | 004 T03–T10 | API-AT-03 | Pass |
+| FR-003 | Group size 1–6 | 004 (merged from 005) | API-FR-01–13 | 004 T03–T10 | API-AT-03 | Pass |
+| FR-004 | Total or per-person budget, bounds | 004 (merged from 005) | API-FR-01–13 | 004 T03–T10 | API-AT-03 | Pass |
+| FR-005 | Preferences (hours, interests, pace, comfort, modes, crowds) | 004 (merged from 005) | API-FR-01–13 | 004 T03–T10 | API-AT-03 | Pass |
 | FR-006 | Free-text preferences parsed and confirmed | 007 | | | | Planned |
-| FR-007 | Form pre-filled from saved profile | 004 (merged from 005), 006 | | | | Planned |
+| FR-007 | Form pre-filled from saved profile | 004 (merged from 005), 006 | API-FR-03 | 004 T06 | API profile tests | In progress (API Pass; form pre-fill in 006) |
 | FR-010 | Complete plan produced | 002 | ENG-FR-02–05 | 002 T02–T15 | ENG-AT-01 | Pass |
 | FR-011 | Hard constraints respected | 002 | ENG-FR-01, 04, 07, 08 | 002 T05, T08–T12 | ENG-AT-01, 05 | Pass |
 | FR-012 | Infeasible answer with minimum budget | 002 | ENG-FR-06 | 002 T12 | ENG-AT-07 | Pass |
@@ -1858,14 +1858,14 @@ Update this table when a feature's tasks are written (fill **Tasks**) and when i
 | FR-033 | Unsupported requests handled | 007 | | | | Planned |
 | FR-034 | "Why" answered from engine data | 007 | | | | Planned |
 | FR-035 | Works without the LLM | 007 | | | | Planned |
-| FR-040 | Sign up and log in | 004 | | | | Planned |
-| FR-041 | Log out; 7-day sessions | 004 | | | | Planned |
-| FR-042 | Preference profile | 004 | | | | Planned |
-| FR-043 | Trips saved with all variants | 004 | | | | Planned |
-| FR-044 | Plan versions and restore | 004 | | | | Planned |
-| FR-045 | Chat history saved | 004 | | | | Planned |
-| FR-046 | My Trips: rename, duplicate, delete | 004, 006 | | | | Planned |
-| FR-047 | Per-user data isolation | 004 | | | | Planned |
+| FR-040 | Sign up and log in | 004 | API-FR-01–13 | 004 T03–T10 | API-AT-01 | Pass |
+| FR-041 | Log out; 7-day sessions | 004 | API-FR-01–13 | 004 T03–T10 | API-AT-01 | Pass |
+| FR-042 | Preference profile | 004 | API-FR-01–13 | 004 T03–T10 | API profile tests | Pass |
+| FR-043 | Trips saved with all variants | 004 | API-FR-01–13 | 004 T03–T10 | API-AT-04 | Pass |
+| FR-044 | Plan versions and restore | 004 | API-FR-01–13 | 004 T03–T10 | API-AT-05 | Pass |
+| FR-045 | Chat history saved | 004 | API-FR-01–13 | 004 T03–T10 | API-AT-02 | Pass |
+| FR-046 | My Trips: rename, duplicate, delete | 004, 006 | API-FR-06 | 004 T08 | API-AT-06 | In progress (API Pass; My Trips page in 006) |
+| FR-047 | Per-user data isolation | 004 | API-FR-01–13 | 004 T03–T10 | API-AT-02 | Pass |
 | FR-050 | Seven pages | 006 | | | | Planned |
 | FR-051 | Map with daily routes | 006 | | | | Planned |
 | FR-052 | Budget chart and table | 006 | | | | Planned |
@@ -1882,7 +1882,7 @@ Update this table when a feature's tasks are written (fill **Tasks**) and when i
 |---|---|---|---|---|---|---|
 | NFR-001 | All variants ≤ 5 s p95 | 002 (merged from 003), 008 (merged from 009) | A7 | 002 T19 | ENG-AT-08, VAR-AT-03 | In progress (laptop Pass: p95 1.5 s; live system in 009) |
 | NFR-002 | Chat action ≤ 8 s p95 | 007, 008 (merged from 009) | | | | Planned |
-| NFR-003 | Security | 004, 008 (merged from 009) | | | | Planned |
+| NFR-003 | Security | 004, 008 (merged from 009) | API-FR-01, 02, 11, 12 | 004 T03, T05 | API-AT-01, 02, 07 | In progress (API Pass; HTTPS in 008) |
 | NFR-004 | Free tiers only | 008 (merged from 009) | | | | Planned |
 | NFR-005 | LLM call limits | 007 | | | | Planned |
 | NFR-006 | Browser support | 006 | | | | Planned |
@@ -1927,19 +1927,19 @@ Measured 2026-10-25 on the developer laptop (Windows 11, Python 3.11.9, OR-Tools
 
 | ID | Summary | Feature | Traces to | Status |
 |---|---|---|---|---|
-| API-FR-01 | Sign up and log in with email and password | 004 | FR-040, FR-041, NFR-003 | Planned |
-| API-FR-02 | Every endpoint except /health, /cities, /auth/* and /meta requires Authorization | 004 | FR-047 | Planned |
-| API-FR-03 | Profile: get and put the saved preferences (the prefs schema of 002 §3) | 004 | FR-007, FR-042 | Planned |
-| API-FR-04 | Trip input validation | 004 | FR-001, FR-002, FR-003, FR-004, FR-005 | Planned |
-| API-FR-05 | Creating a trip runs plan_variants | 004 | FR-043 | Planned |
-| API-FR-06 | My Trips: list (upcoming = start date ≥ today, otherwise past), get, rename, dup | 004 | FR-046 | Planned |
-| API-FR-07 | Selecting a variant creates plan version 1 | 004 | FR-044 | Planned |
-| API-FR-08 | POST /trips/{id}/replan with a change set re-runs the engine for the selected va | 004 | FR-032 | Planned |
-| API-FR-09 | GET /trips/{id}/tradeoffs?variant= returns 002 addendum A4 output | 004 | FR-023, FR-025 | Planned |
-| API-FR-10 | Chat messages are stored per trip (role, text, actions, created_at) and returned | 004 | FR-045 | Planned |
-| API-FR-11 | Errors return {"error": "<code>", "message": "<plain text>", "fields": {…}?} wit | 004 | FR-012, NFR-003 | Planned |
-| API-FR-12 | CORS allows only FRONTEND_ORIGIN, plus http://localhost:5173 in development | 004 | NFR-003 | Planned |
-| API-FR-13 | Planning calls run in a thread pool, at most max_concurrent_solves (config, defa | 004 | NFR-001, NFR-004 | Planned |
+| API-FR-01 | Sign up and log in with email and password | 004 | FR-040, FR-041, NFR-003 | Pass |
+| API-FR-02 | Every endpoint except /health, /cities, /auth/* and /meta requires Authorization | 004 | FR-047 | Pass |
+| API-FR-03 | Profile: get and put the saved preferences (the prefs schema of 002 §3) | 004 | FR-007, FR-042 | Pass |
+| API-FR-04 | Trip input validation | 004 | FR-001, FR-002, FR-003, FR-004, FR-005 | Pass |
+| API-FR-05 | Creating a trip runs plan_variants | 004 | FR-043 | Pass |
+| API-FR-06 | My Trips: list (upcoming = start date ≥ today, otherwise past), get, rename, dup | 004 | FR-046 | Pass |
+| API-FR-07 | Selecting a variant creates plan version 1 | 004 | FR-044 | Pass |
+| API-FR-08 | POST /trips/{id}/replan with a change set re-runs the engine for the selected va | 004 | FR-032 | Pass |
+| API-FR-09 | GET /trips/{id}/tradeoffs?variant= returns 002 addendum A4 output | 004 | FR-023, FR-025 | Pass |
+| API-FR-10 | Chat messages are stored per trip (role, text, actions, created_at) and returned | 004 | FR-045 | Pass |
+| API-FR-11 | Errors return {"error": "<code>", "message": "<plain text>", "fields": {…}?} wit | 004 | FR-012, NFR-003 | Pass |
+| API-FR-12 | CORS allows only FRONTEND_ORIGIN, plus http://localhost:5173 in development | 004 | NFR-003 | Pass |
+| API-FR-13 | Planning calls run in a thread pool, at most max_concurrent_solves (config, defa | 004 | NFR-001, NFR-004 | Pass |
 | UI-FR-01 | The seven pages: Landing, Sign up / Log in, New trip, Plan comparison, Plan deta | 006 | FR-050 | Planned |
 | UI-FR-02 | New trip form | 006 | FR-007 | Planned |
 | UI-FR-03 | Plan comparison | 006 | FR-012, FR-022 | Planned |
@@ -1965,14 +1965,14 @@ Measured 2026-10-25 on the developer laptop (Windows 11, Python 3.11.9, OR-Tools
 | DEP-FR-02 | Frontend on Vercel | 008 | NFR-003, NFR-004 | Planned |
 | DEP-FR-03 | Live checks: | 008 | NFR-001, NFR-002 | Planned |
 | DEP-FR-04 | README.md covers what the app is, the architecture diagram (Mermaid), local run  | 008 | FR-070 | Planned |
-| API-AT-01 | Sign up, log in, `/auth/me`; wrong password; duplicate email; expired token | 004 | — | Planned |
-| API-AT-02 | User B requests user A's trip, versions, chat and replan | 004 | — | Planned |
-| API-AT-03 | Each FR-001–FR-005 violation | 004 | — | Planned |
-| API-AT-04 | Create a feasible trip; create an infeasible one | 004 | — | Planned |
-| API-AT-05 | Select → replan with an exclude → restore v1 | 004 | — | Planned |
-| API-AT-06 | Rename, duplicate, delete, list upcoming/past | 004 | — | Planned |
-| API-AT-07 | Passwords in DB and logs | 004 | — | Planned |
-| API-AT-08 | 3 concurrent creates with max 2 solves | 004 | — | Planned |
+| API-AT-01 | Sign up, log in, `/auth/me`; wrong password; duplicate email; expired token | 004 | — | Pass |
+| API-AT-02 | User B requests user A's trip, versions, chat and replan | 004 | — | Pass |
+| API-AT-03 | Each FR-001–FR-005 violation | 004 | — | Pass |
+| API-AT-04 | Create a feasible trip; create an infeasible one | 004 | — | Pass |
+| API-AT-05 | Select → replan with an exclude → restore v1 | 004 | — | Pass |
+| API-AT-06 | Rename, duplicate, delete, list upcoming/past | 004 | — | Pass |
+| API-AT-07 | Passwords in DB and logs | 004 | — | Pass |
+| API-AT-08 | 3 concurrent creates with max 2 solves | 004 | — | Pass |
 | UI-AT-01 | Sign up → New trip → submit a feasible trip | 006 | — | Planned |
 | UI-AT-02 | Choose a plan | 006 | — | Planned |
 | UI-AT-03 | Infeasible budget | 006 | — | Planned |
@@ -1995,6 +1995,21 @@ Measured 2026-10-25 on the developer laptop (Windows 11, Python 3.11.9, OR-Tools
 | DEP-AT-02 | Live timings | 008 | — | Planned |
 | DEP-AT-03 | Security | 008 | — | Planned |
 
+### Feature 004 acceptance results
+
+Measured 2026-10-25 against Neon schema `app_test` with FastAPI's TestClient (`python -m pytest backend/tests/api`, 28 tests; full backend suite 71 passed).
+
+| Test | Result | Evidence |
+|---|---|---|
+| API-AT-01 | Pass | `test_api_auth.py`: sign-up 201, login 200 (email case-insensitive), `/auth/me` 200; wrong password 401; duplicate email 409; expired token 401 `session_expired`; token lifetime 7 days |
+| API-AT-02 | Pass | `test_api_ownership.py`: 11 trip, version, replan, trade-off and chat routes return 404 to another user |
+| API-AT-03 | Pass | `test_api_trips_create.py`: 14 FR-001–005 violations each return 422 naming the field |
+| API-AT-04 | Pass | Feasible trip 201 with 1–3 variants; infeasible trip 201 with `min_budget_total` |
+| API-AT-05 | Pass | `test_api_versions.py`: versions 1, 2, 3; v3 plan equals v1; v2 lacks the excluded attraction; every plan passes the validator |
+| API-AT-06 | Pass | `test_api_trips_manage.py`: rename, duplicate (creates nothing), upcoming/past lists, delete removes versions and chat |
+| API-AT-07 | Pass | Stored hashes start with `$2b$`; no password or JWT in any log record |
+| API-AT-08 | Pass | 3 concurrent creates: all 201, at most 2 solves at once (peak exactly 2) |
+
 ### Feature status
 
 | Feature | Name | Spec | Plan | Tasks | Acceptance |
@@ -2003,7 +2018,7 @@ Measured 2026-10-25 on the developer laptop (Windows 11, Python 3.11.9, OR-Tools
 | 001 | City data | Approved | Approved | Approved | Done: DATA-AT-01–06 Pass (DATA-AT-05 by owner review) |
 | 002 | Optimization engine, variants and trade-offs | Approved | Approved | Approved | Done: ENG-AT-01–09 and VAR-AT-01–04 Pass |
 | 003 | Variants and trade-offs | Merged into 002 | Merged into 002 | Merged into 002 | Merged into 002 |
-| 004 | Accounts, saved data and API | Approved | Approved | Approved | — |
+| 004 | Accounts, saved data and API | Approved | Approved | Approved | Done: API-AT-01–08 Pass |
 | 005 | Trip planning API | Merged into 004 | Merged into 004 | Merged into 004 | Merged into 004 |
 | 006 | Frontend | Approved | Approved | Approved | — |
 | 007 | AI layer | Approved | Approved | Approved | — |
