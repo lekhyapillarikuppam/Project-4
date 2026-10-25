@@ -1,7 +1,7 @@
 # Tripwise — Specification
 
 The single source of truth for Tripwise (UMC301 Project 4), built with spec-driven development.
-Last updated 2026-10-22.
+Last updated 2026-10-25.
 
 ## How this document works
 
@@ -524,9 +524,9 @@ One file per city (for example `attractions/JAI.csv`), so each city can be curat
 | visit_minutes | int | Typical visit, 20–480. Default by place type (below) when no source gives a duration |
 | visit_approx | bool | True when visit_minutes is the place-type default |
 | open_time, close_time | HH:MM | Opening and closing time; a visit must finish by close_time. open < close, and close − open ≥ visit_minutes. Use 00:00–23:59 for always open. From the ASI or the official site first, otherwise the place-type default (below) |
-| closed_weekdays | list of int | For example `[0]` for closed Mondays; empty if open daily |
+| closed_weekdays | list of int | For example `[0]` for closed Mondays; empty if open daily. At most 6 days: a place closed on all 7 is not an attraction and is dropped |
 | hours_approx | bool | True when open_time, close_time and closed_weekdays are the place-type default |
-| entry_fee | int | Indian adult, per person; 0 allowed. From the ASI or the official site first (a fee the user read from an official booking page counts as official, recorded in `source` as "read by user from <url>, <date>"); otherwise the median of at least 2 independent secondary sources, rounded to whole rupees, with their URLs saved in `data/raw/attractions/fee_secondary.csv`; otherwise 0 for temple, ghat, viewpoint, garden, market and beach (noted in `source`); monument, fort, museum and activity have no default and stay TODO. Adventure activities: see below |
+| entry_fee | int | Indian adult, per person; 0 allowed. From the ASI or the official site first (a fee the user read from an official booking page counts as official, recorded in `source` as "read by user from <url>, <date>"); otherwise the median of at least 2 independent secondary sources, rounded to whole rupees, with their URLs saved in `data/raw/attractions/fee_secondary.csv`. When a fee revision is known for the attraction (its effective date and source saved in `data/raw/attractions/fee_revisions.csv`), only sources dated on or after the revision's effective date count; a source's date is the published, updated or reviewed date the page shows, and an undated source does not count; otherwise 0 for temple, ghat, viewpoint, garden, market and beach (noted in `source`); monument, fort, museum and activity have no default and stay TODO. Adventure activities: see below |
 | fee_approx | bool | True when entry_fee is the median of secondary sources, or an operator's price for an adventure activity |
 | tags | list | 1–3 interest tags from section 4. The first is the primary tag |
 | rating | decimal | 1.0–5.0, popularity within the city (see **Rating and crowd level** below) |
@@ -877,7 +877,7 @@ For the mini-dataset fixtures, the validator takes `--data DIR` and a `--cities 
 | Cities and IDs | `unknown_city`, `missing_city`, `duplicate_id`, `id_city_mismatch`, `too_far` |
 | Hubs and pairs | `city_no_hub`, `missing_pair`, `pair_order`, `pair_no_mode`, `pair_mode_without_hub`, `missing_duration`, `bus_too_far`, `flight_too_short`, `approx_mismatch` |
 | Fares | `missing_fare`, `fare_out_of_bounds` |
-| Attractions | `open_not_before_close`, `visit_exceeds_hours`, `bad_weekday`, `bad_tag`, `bad_tag_count`, `bad_attraction_count`, `too_few_free`, `tag_coverage` |
+| Attractions | `open_not_before_close`, `visit_exceeds_hours`, `bad_weekday`, `closed_all_week`, `bad_tag`, `bad_tag_count`, `bad_attraction_count`, `too_few_free`, `tag_coverage` |
 | Hotels, food, local transport | `price_out_of_band`, `bad_hotel_count`, `missing_row`, `bad_capacity` |
 | Matrices | `bad_matrix`, `matrix_missing_node`, `matrix_extra_node`, `matrix_shape`, `matrix_diagonal`, `matrix_nonpositive` |
 | Warning only | `hotels_clustered` |
@@ -1473,3 +1473,4 @@ Update this table when a feature's tasks are written (fill **Tasks**) and when i
 | 2026-10-24 | C 001 Spec §5.5; Plan §4 | Coverage rule: every city has ≥ 2 `food` attractions, from the seeded markets/food/nightlife candidates; food streets the query misses are seeded by OSM id | JAI and VNS had no food attractions although food is part of every trip |
 | 2026-10-24 | C 001 Spec §5.5; Plan §4 | GOA requires `adventure` (≥ 3). Adventure activities are hand-curated from operator or state tourism pages; fee_approx = true unless the price is from the state tourism page; with no Wikipedia article or OpenTripMap rate the rating is 2.0 (also used for food places seeded by OSM id) | Water sports are a main reason to visit Goa and are missing from OpenTripMap/OSM |
 | 2026-10-24 | C 001 Spec §5.5 | Place types split: fort (with palace) 150 min, garden (with park) 90 min, ghat 30 min; each keeps the hours and fee default of the type it came from (monument, viewpoint, temple) | 90 min was short for large forts and palaces, 30 min short for gardens and 45 min long for a ghat |
+| 2026-10-25 | C 001 Spec §5.5; Plan §6 | closed_weekdays holds at most 6 days (new validator code `closed_all_week`). With a known fee revision, the secondary-source median uses only sources dated on or after its effective date; undated sources do not count | AGR's Mariam's Tomb is listed by the ASI as closed on all 7 days; Rajasthan's 1 Jan 2026 fee revision made older and undated secondary sources stale for JAI's state monuments |
