@@ -37,6 +37,7 @@ class Filtered:
     kept: list            # [Attraction] in file order
     removed: dict         # attraction_id -> "excluded" | "closed"
     lock_problem: str | None   # attraction_id of an impossible lock
+    pin_problem: str | None = None   # attraction_id of an impossible pin (007)
 
 
 def prefilter(ds: Dataset, cfg: Config, req: TripRequest, outs: list[Option], rets: list[Option]) -> Filtered:
@@ -55,4 +56,10 @@ def prefilter(ds: Dataset, cfg: Config, req: TripRequest, outs: list[Option], re
         if at is None or at.city_id != req.destination or lid in removed:
             problem = lid
             break
-    return Filtered(kept, removed, problem)
+    pin_problem = None
+    for pid, day in req.pins.items():
+        at = ds.attractions.get(pid)
+        if at is None or at.city_id != req.destination or pid in removed or not 1 <= day <= req.days                 or not fits(at, wins[day - 1]):
+            pin_problem = pid
+            break
+    return Filtered(kept, removed, problem, pin_problem)

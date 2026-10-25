@@ -128,10 +128,13 @@ class Routed:
 
 def route(ds: Dataset, cfg: Config, req: TripRequest, hotel: Hotel, windows: list, chosen: list, v: dict) -> Routed:
     city = req.destination
-    locks = set(req.locks)
+    locks = set(req.fixed_ids())
     active = [w for w in windows if w.active]
-    # nodes no active day can take are dropped up front (an empty allowed-vehicle list means "any" to OR-Tools)
-    allowed = {a.attraction_id: [i for i, w in enumerate(active) if w.weekday not in a.closed] for a in chosen}
+    # nodes no active day can take are dropped up front (an empty allowed-vehicle list means "any" to OR-Tools);
+    # a pinned attraction (007) may go only on its day
+    allowed = {a.attraction_id: [i for i, w in enumerate(active) if w.weekday not in a.closed
+                                 and (a.attraction_id not in req.pins or w.day == req.pins[a.attraction_id])]
+               for a in chosen}
     nodes = [a for a in chosen if allowed[a.attraction_id]]
     dropped = [a for a in chosen if not allowed[a.attraction_id]]
     assign: dict[int, list] = {i: [] for i in range(len(active))}

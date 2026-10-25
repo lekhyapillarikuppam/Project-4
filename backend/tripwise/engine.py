@@ -76,6 +76,11 @@ def setup(req: TripRequest, ds: Dataset, cfg: Config) -> Context | Infeasible:
         name = a.name if a else filt.lock_problem
         return Infeasible(reason="lock_impossible", attraction_id=filt.lock_problem,
                           message=f"{name} cannot be scheduled on any day of this trip.")
+    if filt.pin_problem:
+        a = ds.attractions.get(filt.pin_problem)
+        name = a.name if a else filt.pin_problem
+        return Infeasible(reason="pin_impossible", attraction_id=filt.pin_problem,
+                          message=f"{name} cannot be scheduled on day {req.pins[filt.pin_problem]} of this trip.")
     cand = stage1.prepare(ds, cfg, req, outs, rets, filt.kept)
     v_all = {a.attraction_id: value.activity(a, req.prefs, cfg) for a in ds.by_city[req.destination]}
     return Context(ds, cfg, req, outs, rets, filt, cand, costs.usable_budget(req.budget_total, cfg), v_all)
@@ -124,7 +129,7 @@ class Cheapest:
 def cheapest(ctx: Context, hotels: list) -> Cheapest | None:
     """The cheapest exactly costed plan with ≥ 1 activity and all locks."""
     ds, cfg, req = ctx.ds, ctx.cfg, ctx.req
-    locks = [ds.attractions[a] for a in req.locks]
+    locks = [ds.attractions[a] for a in req.fixed_ids()]
     best: Cheapest | None = None
     combos = sorted(((ctx.cand.out_cost[i] + ctx.cand.ret_cost[j], i, j)
                      for i in range(len(ctx.outs)) for j in range(len(ctx.rets))))
@@ -220,15 +225,20 @@ def run(ctx: Context, mode: str = "max_value", hotels: list | None = None, vstar
         chosen = nxt.chosen
         routed = stage2.route(ds, cfg, req, hotel, wins, chosen, ctx.v_all)
     placed = [s.attraction for d in routed.days for s in d.stops]
-    if any(lid not in {a.attraction_id for a in placed} for lid in req.locks):
-        lid = next(l for l in req.locks if l not in {a.attraction_id for a in placed})
-        return Outcome(Infeasible(reason="lock_impossible", attraction_id=lid,
-                                  message=f"{ds.attractions[lid].name} cannot be fitted into this trip's days."))
+    on_day = {s.attraction.attraction_id: d.window.day for d in routed.days for s in d.stops}
+    missing = [l for l in req.locks if l not in on_day]
+    if missing:
+        return Outcome(Infeasible(reason="lock_impossible", attraction_id=missing[0],
+                                  message=f"{ds.attractions[missing[0]].name} cannot be fitted into this trip's days."))
+    off = [p for p, day in req.pins.items() if on_day.get(p) != day]
+    if off:
+        return Outcome(Infeasible(reason="pin_impossible", attraction_id=off[0],
+                                  message=f"{ds.attractions[off[0]].name} cannot be fitted into day {req.pins[off[0]]}."))
     repairs = 0
     b = lines(ctx, hotel, oi, ri, routed)
     while b["total"] > ctx.usable and placed:
         lc = leg_costs(ctx, routed)
-        removable = [a for a in placed if a.attraction_id not in req.locks]
+        removable = [a for a in placed if a.attraction_id not in req.fixed_ids()]
         if not removable or repairs >= cfg.max_repairs:
             break
         worst = min(removable, key=lambda a: (ctx.v_all[a.attraction_id]

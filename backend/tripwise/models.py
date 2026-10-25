@@ -26,6 +26,17 @@ class Prefs(Strict):
     avoid_crowds: bool = False
 
 
+class ForcedJourney(Strict):
+    mode: Literal["train", "bus", "flight"]
+    class_: str = Field(alias="class", serialization_alias="class")
+    model_config = ConfigDict(extra="forbid", populate_by_name=True)
+
+
+class ForcedTransport(Strict):
+    out: Optional[ForcedJourney] = None
+    ret: Optional[ForcedJourney] = None
+
+
 class TripRequest(Strict):
     origin: str
     destination: str
@@ -36,13 +47,28 @@ class TripRequest(Strict):
     prefs: Prefs
     locks: list[str] = []
     excludes: list[str] = []
+    # 007 extensions (all optional): attraction → day, day → hours out, forced transport options
+    pins: dict[str, int] = {}
+    day_hours: dict[int, float] = {}
+    transport: Optional[ForcedTransport] = None
 
     @property
     def days(self) -> int:
         return (self.end_date - self.start_date).days + 1
 
+    def fixed_ids(self) -> list[str]:
+        """Attractions that must be in the plan: locks, then pins."""
+        return list(dict.fromkeys([*self.locks, *self.pins]))
+
+    def hours_on(self, day: int) -> float:
+        return self.day_hours.get(day, self.prefs.daily_hours_out)
+
     def request_hash(self) -> str:
-        body = json.dumps(self.model_dump(mode="json"), sort_keys=True, separators=(",", ":"))
+        body = self.model_dump(mode="json", by_alias=True)
+        for k in ("pins", "day_hours", "transport"):     # empty extensions keep older hashes unchanged
+            if not body.get(k):
+                body.pop(k, None)
+        body = json.dumps(body, sort_keys=True, separators=(",", ":"))
         return "sha256:" + hashlib.sha256(body.encode()).hexdigest()
 
     def mode_pref(self, mode: str) -> str:
@@ -164,7 +190,7 @@ class Plan(Strict):
 
 class Infeasible(Strict):
     status: Literal["infeasible"] = "infeasible"
-    reason: Literal["budget", "no_route", "lock_impossible", "lock_over_budget"]
+    reason: Literal["budget", "no_route", "lock_impossible", "lock_over_budget", "pin_impossible"]
     min_budget_total: Optional[int] = None
     message: str
     attraction_id: Optional[str] = None      # for lock_impossible

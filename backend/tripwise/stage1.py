@@ -82,7 +82,7 @@ def solve(ds: Dataset, cfg: Config, cand: Candidate, hotel: Hotel, mode: str = "
         m.Add(r[fix[1]] == 1)
     attrs = [a for a in cand.attrs if a.attraction_id not in cuts]
     x = {a.attraction_id: m.NewBoolVar(a.attraction_id) for a in attrs}
-    for lid in req.locks:
+    for lid in req.fixed_ids():
         if lid not in x:
             return None
         m.Add(x[lid] == 1)

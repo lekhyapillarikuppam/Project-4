@@ -31,8 +31,10 @@ class Option:
 
 
 def options(ds: Dataset, cfg: Config, req: TripRequest, direction: str) -> list[Option]:
-    """Options for the outbound (origin → destination) or return journey, after §4.2 removals."""
+    """Options for the outbound (origin → destination) or return journey, after §4.2 removals.
+    A forced journey (007 `transport`) keeps only that mode and class."""
     a, b = (req.origin, req.destination) if direction == "out" else (req.destination, req.origin)
+    forced = getattr(req.transport, direction, None) if req.transport else None
     pair = ds.pairs.get((a, b))
     out: list[Option] = []
     if pair is None:
@@ -48,7 +50,11 @@ def options(ds: Dataset, cfg: Config, req: TripRequest, direction: str) -> list[
         if mode != "flight" and minutes > cfg.max_surface_minutes:
             continue
         overnight = mode != "flight" and minutes >= cfg.overnight_min_minutes
+        if forced and forced.mode != mode:
+            continue
         for f in ds.fare_classes(mode):
+            if forced and forced.class_ != f.cls:
+                continue
             out.append(Option(direction, mode, f.cls, minutes, pair.km[mode], overnight, f.comfort_value,
                               req.mode_pref(mode) == "preferred", dest_hub, origin_hub))
     return out
@@ -120,16 +126,17 @@ def make_window(day: int, req: TripRequest, start: int, end: int, cfg: Config) -
     return Window(day, d.isoformat(), d.weekday(), start, end, active, lunch, usable, pace["max"] if active else 0)
 
 
-def nominal(req: TripRequest, cfg: Config) -> tuple[int, int]:
+def nominal(req: TripRequest, cfg: Config, day: int) -> tuple[int, int]:
+    """The day's nominal window; 007 `day_hours` overrides daily_hours_out for that day."""
     s = hhmm(cfg.day_start)
-    return s, min(s + round(req.prefs.daily_hours_out * 60), hhmm(cfg.day_end_cap))
+    return s, min(s + round(req.hours_on(day) * 60), hhmm(cfg.day_end_cap))
 
 
 def day_windows(req: TripRequest, cfg: Config, out: Option, ret: Option) -> list[Window]:
-    s, e = nominal(req, cfg)
     n = req.days
     wins = []
     for d in range(1, n + 1):
+        s, e = nominal(req, cfg, d)
         start, end = s, e
         if d == 1:
             start = max(s, outbound_times(out, cfg)["day1_earliest"])
@@ -140,17 +147,16 @@ def day_windows(req: TripRequest, cfg: Config, out: Option, ret: Option) -> list
 
 
 def first_window(req: TripRequest, cfg: Config, out: Option) -> Window:
-    s, e = nominal(req, cfg)
+    s, e = nominal(req, cfg, 1)
     start = max(s, outbound_times(out, cfg)["day1_earliest"])
     return make_window(1, req, start, max(start, e), cfg)
 
 
 def last_window(req: TripRequest, cfg: Config, ret: Option) -> Window:
-    s, e = nominal(req, cfg)
+    s, e = nominal(req, cfg, req.days)
     end = min(e, return_times(ret, cfg)["dayD_latest"])
     return make_window(req.days, req, s, max(s, end), cfg)
 
 
 def middle_windows(req: TripRequest, cfg: Config) -> list[Window]:
-    s, e = nominal(req, cfg)
-    return [make_window(d, req, s, e, cfg) for d in range(2, req.days)]
+    return [make_window(d, req, *nominal(req, cfg, d), cfg) for d in range(2, req.days)]
