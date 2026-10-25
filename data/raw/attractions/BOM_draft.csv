@@ -1,0 +1,468 @@
+candidate,name,lat,lon,km,wikidata,wiki_title,pageviews,otm_rate,suggested_type,suggested_tags,kinds_or_osm,description
+R6356858,Gateway of India,18.92259,72.83434,1.4,Q864862,Gateway of India,168758,3,monument,history;culture,"architecture,historic_architecture,historic,monuments_and_memorials,interesting_places,monuments,triumphal_archs","Landmark monument in Mumbai, India"
+N2127352602,Elephanta Caves,18.96354,72.93138,10.5,Q649384,Elephanta Caves,126451,3,temple,spiritual;history;culture;nature,"architecture,historic_architecture,geological_formations,natural,interesting_places,destroyed_objects,caves","Collection of cave temples in Maharashtra, India"
+W970357483,haji ali,18.98275,72.80888,6.0,Q542756,Haji Ali Dargah,78906,3,temple,spiritual;history,"religion,other_temples,interesting_places","Dargah and mosque near Mumbai, Maharashtra, India"
+Q620809,Palais Royale,18.99917,72.82027,7.3,Q620809,"Palais Royale, Mumbai",70917,3,monument,culture,"skyscrapers,architecture,interesting_places","Supertall skyscraper in Mumbai, India"
+W848968690,Mumbai Trans Harbour Link,18.99024,72.93909,12.5,Q2723192,Mumbai Trans Harbour Link,70502,3,monument,culture,"bridges,architecture,interesting_places,other_bridges",Sea bridge in India
+N5287646853,Marine Drive,18.94149,72.82384,1.5,Q985828,"Marine Drive, Mumbai",65323,3,activity,nature;relaxation,"other,unclassified_objects,interesting_places,tourist_object","Promenade in Maharashtra, India"
+Q13115097,Shree Siddhivinayak Ganapati Mandir,18.96000,72.82000,3.2,Q13115097,"Siddhivinayak Temple, Mumbai",64283,3,temple,spiritual,"religion,hindu_temples,interesting_places",Hindu temple dedicated to Ganesha in Mumbai
+Q507939,World One,19.00254,72.82653,7.6,Q507939,World One,44226,3,monument,culture,"skyscrapers,architecture,interesting_places","Residential skyscraper in Mumbai, India"
+W206808196,Chhatrapati Shivaji Maharaj Vastu Sangrahalaya,18.92688,72.83260,1.0,Q1071500,Chhatrapati Shivaji Maharaj Vastu Sangrahalaya,41592,3,museum,history;culture,"cultural,museums,interesting_places,other_museums","Museum in Mumbai, India"
+Q17001591,Chaitya Bhoomi,19.02508,72.83386,10.0,Q17001591,Chaitya Bhoomi,33417,3,monument,spiritual;history;nature;relaxation,"historic,monuments_and_memorials,burial_places,interesting_places,other_burial_places,monuments",Resting place of Babasaheb Ambedkar
+Q3520892,Mumba Devi Temple,18.95000,72.83000,1.8,Q3520892,Mumba Devi Temple,31481,3,temple,spiritual,"religion,hindu_temples,interesting_places","Hindu Temple in Mumbai, India"
+N1803645346,Prithvi Theatre,19.10621,72.82569,19.1,Q7245963,Prithvi Theatre,28280,3,activity,culture,"cultural,theatres_and_entertainments,interesting_places,other_theatres","Theatre in Mumbai, India"
+Q649218,India Tower,18.95016,72.82135,2.3,Q649218,India Tower,27200,3,monument,culture,"skyscrapers,architecture,interesting_places","Proposed skyscraper in Mumbai, India"
+N7019038385,Mahalaxmi Racecourse,18.98440,72.81983,5.7,Q5455373,Mahalaxmi Racecourse,22713,3,monument,culture,"other,unclassified_objects,interesting_places,tourist_object","Horse racing track in Mumbai, India"
+N4583583497,Nariman Point,18.92534,72.81803,2.2,Q3632268,Nariman Point,21192,3,monument,,"other,unclassified_objects,interesting_places,tourist_object","Urban in Maharashtra, India"
+Q2458919,The Imperial,18.97090,72.81290,4.7,Q2458919,The Imperial (Mumbai),20834,3,monument,culture;nature;relaxation,"skyscrapers,architecture,interesting_places",Residential complex in Mumbai
+Q5564239,Girgaum Chowpatty,18.95100,72.81100,3.2,Q5564239,Girgaon Chowpatty,20587,3,beach,nature;relaxation,"beaches,interesting_places,natural,other_beaches","Neighbourhood in Mumbai City, Maharashtra, India"
+N7019038485,Mount Mary Church,19.04656,72.82260,12.5,Q3635765,"Basilica of Our Lady of the Mount, Bandra",19924,3,temple,spiritual,"religion,churches,interesting_places,catholic_churches",Church in Archdiocese of Bombay
+Q4838092,Babulnath,18.96636,72.80977,4.4,Q4838092,Babulnath Temple,18200,3,temple,spiritual;nature;shopping,"religion,hindu_temples,interesting_places","Hindu temple in Mumbai, India"
+N4666728589,Rajabai Clock Tower,18.92977,72.83017,0.8,Q7285587,Rajabai Clock Tower,17680,3,monument,history;culture,"other,unclassified_objects,interesting_places,tourist_object","Clock tower in Mumbai, India"
+W38883141,Pherozeshah Mehta Gardens (Hanging Gardens),18.95669,72.80490,4.1,Q5647995,Hanging Gardens of Mumbai,17160,3,ghat,spiritual;culture;nature;relaxation,"urban_environment,gardens_and_parks,cultural,interesting_places",Indian terraced gardens
+W38718204,Banganga Tank,18.94549,72.79364,4.6,Q4855094,Banganga Tank,15063,3,activity,spiritual;history;culture;nature,"reservoirs,water,natural,interesting_places",Ancient water tank in Mumbai
+W353200932,Walkeshwar Temple,18.94561,72.79320,4.6,Q7962402,Walkeshwar Temple,14735,3,temple,spiritual;history;nature,"religion,hindu_temples,interesting_places","Ancient Hindu temple in Mumbai, India"
+N4119416792,Taraporewala Aquarium,18.94919,72.81992,2.3,Q31509,Taraporewala Aquarium,14026,3,museum,culture;nature;relaxation,"aquariums,urban_environment,gardens_and_parks,cultural,museums,interesting_places,zoos","Aquarium in Marine Drive, Mumbai"
+W42351560,Azad Maidan,18.94043,72.83045,0.8,Q4832044,Azad Maidan,13093,2,activity,culture;nature;relaxation,"gardens_and_parks,cultural,urban_environment,interesting_places","Sports ground in Mumbai, India"
+W431494579,Saint Thomas Cathedral,18.93195,72.83366,0.4,Q7591927,"St. Thomas Cathedral, Mumbai",12448,3,temple,spiritual;history,"religion,cathedrals,interesting_places","Church in Maharashtra, India"
+N674906629,Bhau Daji Lad Museum (Victoria & Albert Museum),18.97919,72.83483,4.9,Q5303985,Dr. Bhau Daji Lad Museum,12207,3,museum,culture,"cultural,museums,interesting_places,other_museums","Museum in Mumbai, India"
+N2168470032,Flora Fountain,18.93247,72.83165,0.5,Q5460296,Flora Fountain,12111,3,viewpoint,history;culture,"fountains,historic,monuments_and_memorials,urban_environment,cultural,interesting_places,sculptures,monuments","Heritage monument in Mumbai, India"
+W112796885,Veermata Jijabhai Bhose Botanical Garden,18.97865,72.83681,4.9,Q647766,Jijamata Udyaan,11573,3,museum,culture;nature;relaxation,"urban_environment,gardens_and_parks,cultural,museums,interesting_places,zoos","Gardens and zoo in Mumbai, India"
+Q4058307,Asiatic Society of Mumbai,18.93217,72.83622,0.3,Q4058307,The Asiatic Society of Mumbai,11180,3,museum,culture,"museums,cultural,interesting_places,other_museums",Indian learned society
+N5926157724,SPI Cinemas,19.05620,72.83387,13.5,Q7392589,SPI Cinemas,10910,3,activity,culture,"cultural,cinemas,theatres_and_entertainments,interesting_places",Indian multiplex cinema chain
+Q7962083,Walk of the Stars,19.04272,72.81913,12.1,Q7962083,Walk of the Stars,10287,3,museum,culture;relaxation,"museums,cultural,interesting_places,other_museums","Entertainment hall of fame in Bandra, Mumbai"
+W49277977,Afghan Church,18.90569,72.81598,3.9,Q3918419,Afghan Church,10041,3,temple,spiritual,"religion,churches,interesting_places,other_churches","Anglican church in Mumbai, India"
+W89124826,Friday Mosque,18.94905,72.83224,1.6,Q4159791,"Jama Mosque, Mumbai",10001,3,temple,spiritual;history;culture;shopping,"religion,mosques,interesting_places","Mosque in Mumbai, Maharashtra, India"
+N494772647,Castella de Aguada,19.04198,72.81850,12.0,Q5049681,Castella de Aguada,9955,3,fort,history,"fortifications,historic,interesting_places,castles","Coastal fort in Mumbai, India"
+Q16942531,The Victorian and Art Deco Ensemble of Mumbai,18.92981,72.83009,0.8,Q16942531,Victorian Gothic and Art Deco Ensembles of Mumbai,9720,3,activity,history;culture,"other,unclassified_objects,interesting_places,historic_object","Art Deco & Victorian Architecture in Mumbai, India"
+N648837255,Main Portuguese gate to Bombay Castle,18.93198,72.83775,0.4,Q4940545,Bombay Castle,9701,2,fort,history;culture,"architecture,historic_architecture,fortifications,historic,interesting_places,destroyed_objects,other_fortifications","Coastal fort in Mumbai, India"
+N1332570741,Eros Cinema,18.93224,72.82794,0.9,Q5395341,Eros Cinema,9257,3,activity,spiritual;culture,"cultural,cinemas,theatres_and_entertainments,interesting_places","Cinema in Mumbai, India"
+Q5589979,Gowalia Tank,18.96250,72.80970,4.1,Q5589979,Gowalia Tank,8301,2,viewpoint,culture;nature;relaxation,"cultural,urban_environment,interesting_places,squares","Park in South Mumbai, India"
+N456313288,Nehru Science Centre,18.99035,72.81757,6.4,Q6987907,Nehru Science Centre,7679,3,museum,culture;nature;relaxation,"science_museums,cultural,museums,interesting_places","Science museum in Worli, Mumbai, India"
+N6369646785,Dhobi Ghat viewpoint,18.98205,72.82470,5.4,Q5269642,Dhobi Ghat (Mumbai),7180,3,ghat,spiritual;nature,"view_points,other,interesting_places",Open air commercial laundry in Mumbai; a generic term for the same throughout India
+W40743182,Horniman Circle Garden,18.93200,72.83502,0.3,Q5904402,Horniman Circle Gardens,7066,3,garden,history;culture;nature;relaxation,"gardens_and_parks,cultural,urban_environment,interesting_places","Park in South Mumbai, India"
+W194654625,"St, Michael's Church",19.04277,72.84079,12.0,Q7590663,"St. Michael's Church, Mumbai",6612,3,temple,spiritual,"religion,churches,interesting_places,other_churches","Church in Mumbai, India"
+N7017923187,Bombay Stock Exchange (BSE),18.92986,72.83329,0.6,Q3633944,Madras Stock Exchange,6028,2,monument,,"other,unclassified_objects,interesting_places,tourist_object","Stock exchange in Chennai, India"
+W50880513,Asiatic Society Town Hall,18.93181,72.83611,0.4,Q71209843,Asiatic Society of Mumbai Town Hall,5876,3,monument,history;culture,"architecture,historic_architecture,interesting_places,other_buildings_and_structures","Library and town hall in Mumbai, India"
+N1973436453,National Gallery of Modern Art,18.92589,72.83120,1.1,Q15261119,"National Gallery of Modern Art, Mumbai",5736,3,museum,culture,"cultural,museums,interesting_places,other_museums","Art gallery in Mumbai, India"
+N8084252882,Delhi Art Gallery,18.92825,72.83226,0.8,Q6176452,Jehangir Art Gallery,5675,3,museum,culture,"cultural,museums,interesting_places,art_galleries","Art gallery in Mumbai, India"
+W39835569,Mani Bhavan,18.95989,72.81150,3.8,Q3634413,Mani Bhavan,5663,3,museum,history;culture,"cultural,museums,interesting_places,other_museums",Museum in Mumbai
+W53361712,Worli Fort,19.02375,72.81683,10.1,Q5218318,Worli Fort,5582,3,fort,history;nature,"fortifications,historic,interesting_places,other_fortifications","Coastal fort in Mumbai, India"
+W46717574,Metro INOX Cinema,18.94288,72.82907,1.1,Q6824505,Metro INOX Cinemas,5399,3,activity,history;culture,"cultural,cinemas,theatres_and_entertainments,interesting_places","Cinema in Mumbai, India"
+W42348712,Keneseth Eliyahoo Synagogue,18.92810,72.83259,0.8,Q6421993,Knesset Eliyahoo Synagogue,5200,3,temple,spiritual;history,"religion,synagogues,interesting_places","Synagogue in Mumbai, India"
+Q7201100,Planet Godrej,18.98083,72.83000,5.1,Q7201100,Planet Godrej,4320,3,monument,culture,"skyscrapers,architecture,interesting_places","Residential Skyscraper in Mumbai, India"
+Q7503898,"Shri Swaminarayan Mandir, Mumbai",18.95398,72.83022,2.2,Q7503898,"Shri Swaminarayan Mandir, Mumbai",4279,3,temple,spiritual;culture,"religion,hindu_temples,interesting_places","Hindu temple in Maharashtra, India"
+W431512593,Sion Fort,19.04661,72.86758,12.9,Q7525357,Sion Hillock Fort,4109,3,fort,history;nature,"fortifications,historic,interesting_places,castles","Hill fort in Mumbai, India"
+W192598442,St. Andrew's,19.05512,72.82462,13.4,Q7586832,"St. Andrew's Church, Mumbai",4038,3,temple,spiritual;history,"religion,churches,interesting_places,other_churches","Church in Mumbai , India"
+Q97040246,Maharashtra Police Headquarters,18.92528,72.83334,1.1,Q97040246,Maharashtra Police Headquarters,3744,2,monument,history;culture,"historic_architecture,architecture,interesting_places,other_buildings_and_structures",Heritage building in Maharashtra
+N4302249390,Gloria Church,18.97590,72.83487,4.5,Q5571343,Gloria Church,3549,3,temple,spiritual;history;culture,"religion,churches,interesting_places,other_churches","Church in Byculla, Mumbai"
+N5282134222,holy name cathedral,18.92359,72.83057,1.4,Q855497,"Cathedral of the Holy Name, Mumbai",3540,3,temple,spiritual,"religion,cathedrals,interesting_places","Church in Mumbai, India"
+W115064729,Magen David Synagogue,18.96696,72.83206,3.6,Q16950011,Magen David Synagogue (Byculla),3222,3,temple,spiritual,"religion,synagogues,interesting_places","Synagogue in Mumbai, India"
+N537766323,Mahim Fort,19.04201,72.83813,11.9,Q3633207,Mahim Fort,3215,3,fort,history,"fortifications,historic,interesting_places,castles","Coastal fort in Mumbai, India"
+Q15207463,Capitol Cinema,18.93934,72.83431,0.5,Q15207463,Capitol Cinema (Mumbai),2840,3,activity,history;culture,"cinemas,cultural,theatres_and_entertainments,interesting_places","Theatre in Mumbai, India"
+Q5179489,Cowasji Jehangir Hall,18.92592,72.83134,1.1,Q5179489,Cowasji Jehangir Hall,2785,3,museum,culture,"museums,cultural,interesting_places,other_museums","Public hall in Mumbai, India"
+W626249301,Sewri Fort,19.00053,72.86018,7.7,Q7458299,Sewri Fort,2773,3,fort,history;nature,"fortifications,historic,interesting_places,other_fortifications","Hill fort in Mumbai, India"
+W966029979,Dronagiri fort,18.86698,72.93616,13.0,Q24950049,Dronagiri Fort,2251,3,viewpoint,history;nature,"mountain_peaks,fortifications,historic,geological_formations,natural,interesting_places,other_fortifications",
+Q5527023,Gate of Mercy Synagogue,18.95226,72.83637,1.9,Q5527023,Gate of Mercy Synagogue,2249,3,temple,spiritual,"religion,synagogues,interesting_places","Synagogue in Mumbai, India"
+N5085177522,Royal Opera House,18.95605,72.81557,3.2,Q3210038,"Royal Opera House, Mumbai",2044,3,activity,culture,"cultural,cinemas,theatres_and_entertainments,interesting_places,opera_houses","Opera house in Mumbai, India"
+W510975324,Holy cross church,19.08326,72.88731,17.3,Q5885129,"Holy Cross Church, Kurla",1986,3,temple,spiritual,"religion,churches,interesting_places,catholic_churches","Roman Catholic Church in Mumbai, India"
+W220303375,Portuguese Church,19.01858,72.83638,9.3,Q7232623,"Portuguese Church, Mumbai",1945,3,temple,spiritual,"religion,churches,interesting_places,other_churches","Church in Mumbai, India"
+N4695310999,Sterling Theatre,18.93842,72.83295,0.5,Q7611381,Sterling Cineplex,1841,3,activity,culture,"cultural,cinemas,theatres_and_entertainments,interesting_places","Multiplex cinema hall in Mumbai, India"
+Q15229742,Joseph Baptista Gardens,18.96563,72.84270,3.5,Q15229742,Joseph Baptista Gardens,1828,3,garden,culture;nature;relaxation,"gardens_and_parks,cultural,urban_environment,interesting_places","Park in South Mumbai, India"
+W427324277,Bombay Fort Wall Remnant,18.94125,72.83850,0.7,Q5471207,"Fort George, Mumbai",1625,3,fort,history,"fortifications,historic,interesting_places,other_fortifications","Fort in Fort, Mumbai"
+W38748504,Jamshed Bhabha Theatre,18.92492,72.81986,2.0,Q582039,Jamshed Bhabha Theatre,1543,3,activity,history;culture;nature,"cultural,theatres_and_entertainments,interesting_places,music_venues","Theatre in Mumbai, India"
+N537762970,Riwa Fort,19.05099,72.86017,13.1,Q7338999,Riwa Fort,1503,2,fort,history;culture;nature,"architecture,historic_architecture,fortifications,historic,interesting_places,destroyed_objects,other_fortifications","Coastal fort in Mumbai, India"
+W779260411,Our Lady of Egypt Church Kalina,19.07840,72.86921,16.3,Q7110781,Our Lady of Egypt Church,1495,3,temple,spiritual,"religion,churches,interesting_places,other_churches","Church in Mumbai, India"
+N346592564,Mount Carmels Church,19.05100,72.82826,12.9,Q5116978,"Church of Our Lady of Mount Carmel, Bandra",1086,3,temple,spiritual;history,"religion,churches,interesting_places,other_churches","Church in Mumbai, India"
+Q6345392,Kadeshwari Devi Temple,19.04244,72.81982,12.1,Q6345392,Kadeshwari Devi Temple,997,3,temple,spiritual;history;nature,"religion,hindu_temples,interesting_places","Hindu temple in Maharashtra, India"
+Q17508776,Chemould Prescott Road,18.93593,72.83234,0.4,Q17508776,Chemould Prescott Road,847,2,museum,history;culture,"museums,cultural,interesting_places,art_galleries","Contemporary Art Gallery in Fort, Mumbai"
+Q4851500,Ballard Bunder Gatehouse,18.93366,72.84037,0.5,Q4851500,Ballard Bunder Gatehouse,795,3,museum,history;culture;shopping,"museums,cultural,interesting_places,museums_of_science_and_technology,maritime_museums","Converted maritime museum in Mumbai, India"
+W438517807,Experimental Theatre,18.92547,72.82009,2.0,Q15217115,Experimental Theatre (NCPA),638,3,activity,culture,"cultural,theatres_and_entertainments,interesting_places,other_theatres","Arts complex in Mumbai, India"
+Q29026977,"St. Mary's Orthodox Cathedral, Dadar, Mumbai",19.01337,72.84696,8.8,Q29026977,"St. Mary's Orthodox Cathedral, Dadar, Mumbai",95,3,temple,spiritual,"religion,churches,interesting_places,other_churches","Church in Navi Mumbai, India"
+Q17005917,ISKCON temple Mumbai,18.96470,72.82580,3.5,Q17005917,,,3,temple,spiritual,"religion,other_temples,interesting_places",
+Q15238865,Kohinoor Square,19.02514,72.84154,10.0,Q15238865,,,3,monument,culture,"skyscrapers,architecture,interesting_places",
+N4230128192,Crawford Market,18.94719,72.83465,1.4,Q97184925,Crawford Market Fountain,,2,viewpoint,history;culture;nature;shopping,"fountains,historic,monuments_and_memorials,urban_environment,cultural,interesting_places,sculptures,monuments","Historic fountain in Mumbai, India"
+Q5116969,"Church of Our Lady of Health, Cavel",18.94913,72.84055,1.6,Q5116969,"Church of Our Lady of Health, Cavel",,2,temple,spiritual,"religion,churches,interesting_places,other_churches","Church in Mumbai, India"
+N4343426454,Mazagaon FOrt,18.96704,72.84290,3.6,Q6798200,Mazgaon Fort,,2,monument,history;culture;nature;relaxation,"architecture,historic_architecture,interesting_places,destroyed_objects","Fort in Mazagaon, Mumbai"
+Q4770978,Antarang – Sex Health Information Art Gallery,18.96743,72.82436,3.8,Q4770978,Antarang Museum,,2,museum,history;culture,"museums,cultural,interesting_places,other_museums",Sexuality museum in India
+W39181022,Kamala Nehru Park,18.95502,72.80506,3.9,Q6355601,"Kamala Nehru Park, Mumbai",,2,activity,culture;nature;relaxation,"gardens_and_parks,cultural,urban_environment,interesting_places","Park in Hanging Gardens Complex, Mumbai"
+N2730461096,Maratha Mandir Theatre,18.97116,72.82212,4.3,Q5320999,Maratha Mandir,,2,activity,history;culture,"cultural,cinemas,theatres_and_entertainments,interesting_places","CInema hall in Mumbai, India"
+Q6668660,Lokhandwala Minerva,18.98705,72.82783,5.8,Q6668660,Lokhandwala Minerva,,2,monument,culture,"skyscrapers,architecture,interesting_places",Supertall residential skyscraper in India
+Q547270,Lodha Bellissimo,18.98732,72.82862,5.9,Q547270,Lodha Bellissimo,,2,monument,culture,"skyscrapers,architecture,interesting_places","Residential Apartments in Mumbai, India"
+Q621675,Namaste Tower,18.99150,72.82326,6.4,Q621675,Namaste Tower,,2,monument,culture,"skyscrapers,architecture,interesting_places",Skyscraper office buildings in Mumbai
+W113576203,Haffkine Institute,19.00256,72.84540,7.6,Q5638342,Haffkine Institute,,2,monument,history;culture,"other,unclassified_objects,interesting_places,historic_object","Bio-medical research centre in Mumbai, India"
+Q98937711,Three Sixty West Tower B,19.01097,72.82335,8.5,Q98937711,,,2,monument,culture,"skyscrapers,architecture,interesting_places",
+Q98937606,Three Sixty West Tower A,19.01190,72.82261,8.7,Q98937606,,,2,monument,culture,"skyscrapers,architecture,interesting_places",
+Q7499285,Shivaji Park,19.02672,72.83805,10.2,Q7499285,Shivaji Park,,2,activity,history;culture;nature;shopping;relaxation,"gardens_and_parks,cultural,urban_environment,interesting_places","Urban park in Mumbai, Maharashtra, India"
+Q6410876,King's Circle,19.02673,72.85534,10.4,Q6410876,"Maheshwari Udyan, Mumbai",,2,garden,culture;nature;relaxation,"gardens_and_parks,cultural,urban_environment,interesting_places","Park in Mumbai, India"
+Q7061910,Nossa Senhora de Bom Concelho,19.04611,72.86389,12.7,Q7061910,"Church of Our Lady of Good Counsel & Shrine of St. Anthony, Sion",,2,temple,spiritual,"religion,churches,interesting_places,other_churches","Church in Mumbai, India"
+W365920274,Our Lady of Perpetual Succour Church,19.05550,72.90149,15.1,Q7110945,Our Lady of Perpetual Succour High School,,2,temple,spiritual,"religion,other_temples,interesting_places","Public school in Mumbai, Maharashtra, India"
+Q38250896,"Our Lady of Fatima Church, Kirol",19.08000,72.89600,17.3,Q38250896,"Our Lady of Fatima Church, Kirol",,2,temple,spiritual;shopping,"religion,churches,interesting_places,other_churches","Suburb in Mumbai Suburban, Maharashtra, India"
+N1803684580,Juhu Church,19.10724,72.82653,19.2,Q7589101,"St. Joseph's Church, Juhu",,2,temple,spiritual,"religion,churches,interesting_places,other_churches","Church in Mumbai, India"
+W556491645,Maneckji Seth Parsi Agiary,18.93511,72.83598,0.0,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+W207361729,Maneckji Sett Agiary,18.93520,72.83555,0.0,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N666041566,Bomanjee Hormasjee Wadia Memorial Clock Tower,18.93453,72.83575,0.1,,,,1,monument,history,"historic,monuments_and_memorials,interesting_places,monuments",
+N5263883521,Shantinath Jain Mandir,18.93499,72.83517,0.1,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N6052636216,RBI Monetary Museum,18.93401,72.83618,0.1,,,,1,museum,culture,"cultural,museums,interesting_places,other_museums",
+N666041428,Ruttonsee Mujee Fountain,18.93560,72.83714,0.1,,,,1,monument,history,"historic,monuments_and_memorials,interesting_places,monuments",
+N662474023,Godavara (Gamadia) Agiary,18.93465,72.83394,0.2,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N6504287787,Stable temple (krishna gujarati temple),18.93746,72.83643,0.3,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+W42350123,Banaji Limji Agiary,18.93319,72.83296,0.4,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N2166796345,New Excelsior Cinema,18.93767,72.83322,0.4,,,,1,activity,culture,"cultural,cinemas,theatres_and_entertainments,interesting_places",
+Q56218620,Excelsior Theatre,18.93767,72.83322,0.4,Q56218620,,,1,activity,history;culture,"architecture,historic_architecture,theatres_and_entertainments,cultural,cinemas,interesting_places,destroyed_objects",
+N666068463,Port Trust WW I Memorial,18.93407,72.84014,0.5,,,,1,monument,history,"historic,monuments_and_memorials,interesting_places,monuments",
+W206800789,Central Bank Building,18.93116,72.83221,0.6,,,,1,monument,history;culture,"architecture,historic_architecture,interesting_places,other_buildings_and_structures",
+W206348534,Central Telegraph Office,18.93308,72.83046,0.6,,,,1,monument,history;culture,"architecture,historic_architecture,interesting_places,other_buildings_and_structures",
+N7017923189,Cross Maidan,18.93567,72.82961,0.7,,,,1,monument,,"other,unclassified_objects,interesting_places,tourist_object",
+N4327820700,Bhikha Behram Well,18.93294,72.82986,0.7,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+W130533406,Public Works Department,18.93213,72.83024,0.7,,,,1,monument,history;culture,"architecture,historic_architecture,interesting_places,other_buildings_and_structures",
+N4689875989,Port of Mumbao Green Gate,18.93364,72.84218,0.7,,,,1,monument,,"other,unclassified_objects,interesting_places,tourist_object",
+N5263811022,Armenian Church,18.92960,72.83246,0.7,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+W107602112,Western Railway Headquarters,18.93361,72.82837,0.8,,,,1,monument,history;culture,"architecture,historic_architecture,interesting_places,other_buildings_and_structures",
+N6033788063,Western Railway 585,18.93362,72.82819,0.8,,,,1,monument,history,"other,unclassified_objects,interesting_places,historic_object",
+N4731890021,KALA GHODA,18.92786,72.83183,0.9,,,,1,monument,history,"historic,monuments_and_memorials,interesting_places,monuments",
+W407952106,Church of St Andrew and St Columba,18.92697,72.83356,0.9,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N7017923188,Oval Maidan,18.92957,72.82897,0.9,,,,1,monument,,"other,unclassified_objects,interesting_places,tourist_object",
+N4690189489,Vikrant,18.92660,72.83367,1.0,,,,1,monument,history,"historic,monuments_and_memorials,interesting_places,monuments",
+N7931550875,chapel,18.94269,72.83157,1.0,,,,1,temple,spiritual,"religion,monasteries,interesting_places",
+N5289067824,Gate 9,18.93308,72.82591,1.1,,,,1,monument,,"other,unclassified_objects,interesting_places,tourist_object",
+N5846473792,Indian National Kennel Club,18.92833,72.82787,1.1,,,,1,monument,,"other,unclassified_objects,interesting_places,tourist_object",
+N8457587103,Wellington Fountain,18.92546,72.83233,1.1,,,,1,viewpoint,culture,"fountains,cultural,urban_environment,interesting_places",
+N5289067822,Gate 10 (only collection window),18.93313,72.82526,1.1,,,,1,monument,,"other,unclassified_objects,interesting_places,tourist_object",
+N605221910,Metro BIG Cinema,18.94307,72.82890,1.2,,,,1,activity,culture,"cultural,theatres_and_entertainments,interesting_places,other_theatres",
+W46717569,Liberty Cinema,18.94154,72.82711,1.2,,,,1,activity,culture,"cultural,cinemas,theatres_and_entertainments,interesting_places",
+N1127817574,Syed Qadar Shah Vali,18.94208,72.82726,1.2,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N5289067823,Gate 11,18.93332,72.82455,1.2,,,,1,monument,,"other,unclassified_objects,interesting_places,tourist_object",
+N669259757,Regal Cinema,18.92459,72.83252,1.2,,,,1,activity,culture,"cultural,cinemas,theatres_and_entertainments,interesting_places",
+N605222669,Gol Masjid,18.94274,72.82727,1.3,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N6608982566,Rajiv Gandhi Statue,18.92605,72.82837,1.3,,,,1,viewpoint,culture,"cultural,urban_environment,interesting_places,sculptures",
+N6287774485,Good view of Mumbai,18.93370,72.82344,1.3,,,,1,viewpoint,nature,"view_points,other,interesting_places",
+W54224515,Royal Bombay Yacht Club,18.92339,72.83334,1.3,,,,1,monument,history;culture,"architecture,historic_architecture,interesting_places,other_buildings_and_structures",
+W40387620,Bowen Methodist Church,18.92337,72.83267,1.3,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+W434914793,Swami Vivekananda Statue,18.92276,72.83470,1.4,,,,1,monument,history,"historic,monuments_and_memorials,interesting_places,monuments",
+N6869946311,Shivaji Maharaj Statue,18.92284,72.83386,1.4,,,,1,viewpoint,culture,"cultural,urban_environment,interesting_places,sculptures",
+N2176684917,Gandhi Statue,18.92834,72.82495,1.4,,,,1,viewpoint,culture,"cultural,urban_environment,interesting_places,sculptures",
+N4133879811,Night Market,18.94796,72.83630,1.4,,,,1,monument,,"other,unclassified_objects,interesting_places,tourist_object",
+N605221860,Our Lady of Seven Dolours,18.94391,72.82583,1.5,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+W79304233,Mangaldas Market,18.94821,72.83237,1.5,,,,1,monument,,"other,unclassified_objects,interesting_places,tourist_object",
+N1033742803,St Ignatius Church Mandvi,18.94927,72.83714,1.6,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+W207419302,Fire Temple,18.92096,72.82824,1.8,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N4583583498,Marine Drive,18.92836,72.82074,1.8,,,,1,monument,,"other,unclassified_objects,interesting_places,tourist_object",
+N4346023476,tishacreation,18.94939,72.82825,1.8,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+N3183016312,Mahadev Mandir,18.91909,72.82943,1.9,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+N5297499123,Shaar Harahamim Synagogue,18.95237,72.83612,1.9,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N4362556096,Little Theatre,18.92533,72.82042,2.0,,,,1,activity,culture,"cultural,theatres_and_entertainments,interesting_places,other_theatres",
+W288436478,Maheshwari Devi Temple,18.94968,72.82561,2.0,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+W438518249,Godrej Dance Theatre,18.92538,72.82024,2.0,,,,1,activity,culture,"cultural,theatres_and_entertainments,interesting_places,other_theatres",
+N6797130006,Shree Mumbadevi Temple,18.95198,72.83073,2.0,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+N6121162486,Nariman Point,18.92353,72.82152,2.0,,,,1,viewpoint,nature,"view_points,other,interesting_places",
+N4362564704,art gallery,18.92551,72.81994,2.0,,,,1,museum,culture,"cultural,museums,interesting_places,art_galleries",
+W207538309,Zakaria Masjid,18.95331,72.83462,2.0,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+W207413334,Tata Theatre,18.92540,72.81913,2.1,,,,1,activity,culture,"cultural,theatres_and_entertainments,interesting_places,music_venues",
+W207538305,Khoja Sunnat Jamat Masjid,18.95456,72.83626,2.2,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+W207538307,Minara Masjid,18.95448,72.83324,2.2,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+W207538306,Masjid,18.95466,72.83373,2.2,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+W115514599,Shaare Rason Synagogue,18.95478,72.83615,2.2,,,,1,temple,spiritual,"religion,synagogues,interesting_places",
+W725787839,Hamidiya Masjid,18.95447,72.83170,2.2,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N7056928510,Khatri Masjid,18.95438,72.83102,2.2,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N714858847,Mota Mandir,18.95393,72.82891,2.2,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+N6280152487,Chabad House Mumbai,18.91650,72.82764,2.2,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+W357448147,Chuna Bhatti Markaz Masjid,18.95531,72.83309,2.3,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N6369470198,Darkhana Jamatkhana,18.95575,72.83650,2.3,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N858463543,Kazi Masjid,18.95532,72.83104,2.3,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N1033625169,Khoja Jama Masjid,18.95657,72.83638,2.4,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+W725785605,Nawab Masjid,18.95687,72.83183,2.5,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N1033625162,Sayyed Ashiq Shah Bukhari Dargah Masjid,18.95730,72.83646,2.5,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+W207556891,Murgimohalla Masjid,18.95714,72.83279,2.5,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+W800664296,Noor Masjid,18.95835,72.83537,2.6,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+W392751932,Swami samartha math,18.95385,72.82103,2.6,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+W357448190,Shaafi Masjid,18.95854,72.83617,2.6,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+W358341212,Mumbai Marathi sahitya sangh mandir,18.95289,72.81959,2.6,,,,1,activity,culture,"cultural,theatres_and_entertainments,interesting_places,other_theatres",
+N3959362467,Sahitya sangh mandir,18.95292,72.81960,2.6,,,,1,activity,culture,"cultural,theatres_and_entertainments,interesting_places,other_theatres",
+N4294811090,Cawasji Patel Tank,18.95713,72.82681,2.6,,,,1,monument,,"other,unclassified_objects,interesting_places,tourist_object",
+N4844717537,Card makers,18.95423,72.82114,2.6,,,,1,viewpoint,culture,"cultural,urban_environment,interesting_places,installation",
+W72531982,Shirazi Mosque,18.95890,72.83385,2.7,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N860310391,Raza Jame Masjid,18.95851,72.83088,2.7,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N2919862254,Mahalaxmi Mandir,18.95510,72.82201,2.7,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+W402321522,Jhulelal Mandir,18.91715,72.81882,2.7,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+W288426352,Jain Sthanakwasi Derasar,18.95477,72.82138,2.7,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N858565491,Gol Deval,18.95808,72.82816,2.7,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+W146468968,Saifee Masjid,18.95867,72.83041,2.7,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+W72571107,Raudat Tahera,18.95890,72.83101,2.7,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N714896920,Suryenarayan Mandir,18.95807,72.82600,2.8,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+W72545869,Piru Lane Masjid,18.95979,72.83297,2.8,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+W72455636,Moti Talkies,18.95835,72.82660,2.8,,,,1,activity,culture,"cultural,cinemas,theatres_and_entertainments,interesting_places",
+N4844717822,Alankar,18.95802,72.82542,2.8,,,,1,activity,culture,"cultural,cinemas,theatres_and_entertainments,interesting_places",
+N4844675135,Ideal Wafer House,18.95564,72.82035,2.8,,,,1,monument,,"other,unclassified_objects,interesting_places,tourist_object",
+N4844717531,Assisi mansion,18.95580,72.82043,2.8,,,,1,monument,,"other,unclassified_objects,interesting_places,tourist_object",
+N4844717530,Ganesha,18.95569,72.82024,2.8,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+W72531981,Imamiya Masjid,18.96043,72.83443,2.8,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N860271204,Dhakhni Mohalla Masjid,18.95937,72.82807,2.8,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+W72542774,St Joseph's Church,18.96078,72.83730,2.9,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N861039769,Etz Haeem Prayer Hall,18.96095,72.83597,2.9,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+W725788339,Temkar Street Masjid,18.96201,72.83095,3.0,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+W250266108,Somerset House,18.91088,72.82117,3.1,,,,1,monument,history;culture,"architecture,historic_architecture,interesting_places,other_buildings_and_structures",
+W763400845,Rasool Masjid,18.96262,72.83141,3.1,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+W353364867,Badi masjid,18.96272,72.82925,3.2,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N619377230,New Roshan Talkies,18.96123,72.82343,3.2,,,,1,activity,culture,"cultural,cinemas,theatres_and_entertainments,interesting_places",
+W725794947,Huzaria Street Masjid,18.96334,72.83057,3.2,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+W725794948,Chowki Mohalla Masjid,18.96340,72.83010,3.2,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+W47978361,Naaz Cinema,18.95884,72.81833,3.2,,,,1,activity,culture,"cultural,cinemas,theatres_and_entertainments,interesting_places",
+N619377234,Alfred Talkies,18.96152,72.82317,3.2,,,,1,activity,culture,"cultural,cinemas,theatres_and_entertainments,interesting_places",
+W725782282,Ahl e Hadith Masjid,18.96377,72.83102,3.2,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N6608967031,Lokmanya Tilak  Statue,18.95496,72.81335,3.2,,,,1,viewpoint,culture,"cultural,urban_environment,interesting_places,sculptures",
+N861219177,Choti Masjid,18.96356,72.82933,3.3,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+W47978363,Imperial Cinema,18.95860,72.81757,3.3,,,,1,activity,culture,"cultural,cinemas,theatres_and_entertainments,interesting_places",
+W47978479,Dreamland,18.95968,72.81915,3.3,,,,1,activity,culture,"cultural,cinemas,theatres_and_entertainments,interesting_places",
+W47978362,Swastik Cinema,18.95925,72.81828,3.3,,,,1,activity,culture,"cultural,cinemas,theatres_and_entertainments,interesting_places",
+W38718382,Girgaum Chowpatty Beach,18.95436,72.81232,3.3,,,,1,beach,nature;relaxation,"natural,interesting_places,beaches,other_beaches",
+W353405013,Sangtarash Masjid,18.96487,72.83086,3.4,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N619377620,Super Plaza Cinema,18.96188,72.82118,3.4,,,,1,activity,culture,"cultural,cinemas,theatres_and_entertainments,interesting_places",
+N861219171,Dawni Masjid,18.96526,72.83177,3.4,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N6608967032,Shri Vithalbhai J Patel,18.95558,72.81202,3.4,,,,1,viewpoint,culture,"cultural,urban_environment,interesting_places,sculptures",
+W48809212,Arab Lane Masjid,18.96316,72.82333,3.4,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N619344379,Goodwill Theatre,18.96210,72.81864,3.5,,,,1,activity,culture,"cultural,cinemas,theatres_and_entertainments,interesting_places",
+N619345972,Mahela Patel Agyari,18.96290,72.81901,3.6,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N4230836350,Kwan Tai Shek Temple,18.96605,72.84677,3.6,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N4510283089,Sri Sri Radha Gopinath Mandir,18.95764,72.80992,3.7,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N4084945107,origami centre,18.95768,72.80915,3.8,,,,1,viewpoint,culture,"cultural,urban_environment,interesting_places,installation",
+W39837371,Modi Sorabji Vachaghandhy Agiary,18.95909,72.81028,3.8,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+W39838856,Babunath Temple,18.95878,72.80857,3.9,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+N4513110190,Old Woman’s Shoe,18.95568,72.80569,3.9,,,,1,monument,,"other,unclassified_objects,interesting_places,tourist_object",
+N7017923087,Kamala Nehru Park,18.95490,72.80489,3.9,,,,1,monument,,"other,unclassified_objects,interesting_places,tourist_object",
+N6608966496,Gandhi Memorial Column,18.96245,72.81067,4.0,,,,1,monument,history,"historic,burial_places,interesting_places,war_memorials",
+N4302253089,Khada Parsi,18.97158,72.83245,4.1,,,,1,monument,history,"historic,monuments_and_memorials,interesting_places,monuments",
+W39163912,All Saints Church,18.95583,72.80347,4.1,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+W595020463,Soonaiji Agiari,18.96378,72.81087,4.1,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N342120224,Tejpal Hall,18.96240,72.80915,4.1,,,,1,activity,culture,"cultural,theatres_and_entertainments,interesting_places,other_theatres",
+N3313013692,Babu Amichand Panalal Jain Temple,18.94912,72.79880,4.2,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N5230561925,Hasnabad Mosoleum,18.97335,72.83934,4.3,,,,1,monument,history,"historic,monuments_and_memorials,interesting_places,monuments",
+W39162781,Shapoorji Fakirji Jokhi Agiary,18.96105,72.80411,4.4,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N2663532413,Homi Bhaba Auditorium,18.90743,72.80528,4.4,,,,1,activity,culture,"cultural,theatres_and_entertainments,interesting_places,other_theatres",
+N4302149791,Palace Talkies,18.97598,72.83314,4.6,,,,1,activity,culture,"cultural,cinemas,theatres_and_entertainments,interesting_places",
+N4302285789,R. C. Church,18.89963,72.81325,4.6,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+W48758133,Kappawala Fire Temple,18.97176,72.81567,4.6,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N4510287089,Magen Hasidim Synagogue,18.97567,72.82710,4.6,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N342120208,Saint Stephens,18.96437,72.80462,4.6,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+Q16901495,The Imperial 3,18.97090,72.81290,4.7,Q16901495,,,1,monument,culture,"skyscrapers,architecture,interesting_places",
+N5380306300,Digambar Jain Derrasar,18.96392,72.80369,4.7,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N6989263285,Laundry gath,18.94571,72.79292,4.7,,,,1,monument,,"other,unclassified_objects,interesting_places,tourist_object",
+N5330830439,Jain Derasar,18.96405,72.80358,4.7,,,,1,temple,spiritual,"religion,buddhist_temples,interesting_places",
+W113476294,Hindustan Spinning and Weaving Mills no.1-2,18.97840,72.82651,4.9,,,,1,monument,history,"other,unclassified_objects,interesting_places,historic_object",
+N5846484885,National Museum of Indian Cinema,18.97083,72.80788,5.0,,,,1,museum,culture,"cultural,museums,interesting_places,other_museums",
+N5846473793,Jindal Mansion,18.97344,72.80958,5.1,,,,1,monument,,"other,unclassified_objects,interesting_places,tourist_object",
+W112796884,New Great Eastern Spinning and Weaving Mills,18.98229,72.83641,5.3,,,,1,monument,history,"other,unclassified_objects,interesting_places,historic_object",
+N7139457385,The Great Eastern Art District,18.98238,72.83720,5.3,,,,1,viewpoint,culture,"cultural,urban_environment,interesting_places,installation",
+N7139458085,Nine Fish Gallery,18.98245,72.83725,5.3,,,,1,viewpoint,culture,"cultural,urban_environment,interesting_places,installation",
+N2295481105,Mahalakshmi Mandir,18.97737,72.80647,5.6,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+W353762113,Damji Lakshmichand Jain Dharm Sthanak,18.98767,72.83503,5.9,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+W55796942,Cotton Exchange,18.98725,72.84576,5.9,,,,1,monument,history;culture,"architecture,historic_architecture,interesting_places,other_buildings_and_structures",
+N7139458285,Tao Art Gallery,18.98766,72.81407,6.3,,,,1,viewpoint,culture,"cultural,urban_environment,interesting_places,installation",
+N5846473794,Nehru Centre Art Gallery,18.98861,72.81537,6.3,,,,1,monument,,"other,unclassified_objects,interesting_places,tourist_object",
+N771136777,Maa Hajjani Masjid and Dargah,18.98742,72.81146,6.4,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N5846483488,Nehru Planetarium,18.99012,72.81476,6.5,,,,1,monument,,"other,unclassified_objects,interesting_places,tourist_object",
+N1527263128,Bharatmata Cinema,18.99560,72.83626,6.7,,,,1,activity,culture,"cultural,cinemas,theatres_and_entertainments,interesting_places",
+W113570536,Bharat Mata Cinema,18.99596,72.83629,6.8,,,,1,activity,culture,"cultural,cinemas,theatres_and_entertainments,interesting_places",
+W275865018,PVR Cinemas,18.99514,72.82404,6.8,,,,1,activity,culture,"cultural,cinemas,theatres_and_entertainments,interesting_places",
+N4210274293,Shim Graphics,18.99603,72.82796,6.8,,,,1,viewpoint,culture,"cultural,urban_environment,interesting_places,installation",
+W55794887,Flamingo Point,18.99560,72.86155,7.3,,,,1,monument,,"other,unclassified_objects,interesting_places,tourist_object",
+Q97308682,Baradeva,19.00067,72.84736,7.4,Q97308682,Parel Relief,,1,viewpoint,history;culture,"historic,cultural,urban_environment,monuments_and_memorials,interesting_places,sculptures,monuments",
+N5908533456,Monolithic Bas Relief Depicting Shiva,19.00076,72.84739,7.4,,,,1,monument,history,"historic,monuments_and_memorials,interesting_places,monuments",
+N5908533455,Baradevi Temple,19.00079,72.84746,7.4,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+N462267688,Lal Bahadur Shastri,19.00013,72.81415,7.6,,,,1,monument,history,"historic,monuments_and_memorials,interesting_places,monuments",
+N6335029686,Nipponzhan Myohoji,19.00080,72.81585,7.6,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+W684562349,Damodar Natyagruha,19.00559,72.83861,7.9,,,,1,activity,culture,"cultural,theatres_and_entertainments,interesting_places,other_theatres",
+N4854493422,Smaaash!,19.00515,72.82586,7.9,,,,1,monument,,"other,unclassified_objects,interesting_places,tourist_object",
+W354278881,Deepak Talkies,19.00565,72.83053,7.9,,,,1,activity,culture,"cultural,cinemas,theatres_and_entertainments,interesting_places",
+N899832827,Buddhist Temple,19.00632,72.84123,8.0,,,,1,temple,spiritual,"religion,buddhist_temples,interesting_places",
+W113566060,St Paul's Church,19.00815,72.84248,8.2,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+Q15278137,"Skylink, Mumbai",19.00756,72.81851,8.3,Q15278137,,,1,monument,culture,"skyscrapers,architecture,interesting_places",
+W116072869,Sharada Talkies,19.01376,72.84629,8.8,,,,1,activity,culture,"cultural,cinemas,theatres_and_entertainments,interesting_places",
+W113566063,Chitra Cinema,19.01398,72.84449,8.8,,,,1,activity,culture,"cultural,cinemas,theatres_and_entertainments,interesting_places",
+W975880708,Prabhadevi Mandir,19.01451,72.82752,8.9,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+W220425070,Ravindra Natya Mandir,19.01529,72.83027,8.9,,,,1,activity,culture,"cultural,theatres_and_entertainments,interesting_places,other_theatres",
+W112781808,Ram Mandir,19.01555,72.85190,9.1,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+W27036332,Siddhivinayak Temple,19.01688,72.83040,9.1,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+W236614961,Siddhivinayak Mandir,19.01699,72.83027,9.1,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+W113687687,Albela Hanuman Mandir,19.01586,72.85156,9.1,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+N9019727218,Astro Park-Dadar Salvation Turf,19.01751,72.83504,9.2,,,,1,monument,,"other,unclassified_objects,interesting_places,tourist_object",
+W113566062,Imperial Mahal,19.01721,72.84790,9.2,,,,1,monument,history;culture,"architecture,historic_architecture,interesting_places,other_buildings_and_structures",
+N6187817688,Gajanan Maharaj Temple,19.01795,72.83885,9.2,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+W113683038,Shree Vithal Rakhumai Mandir,19.01688,72.85236,9.3,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+W113566066,Harganga Mahal,19.01779,72.84715,9.3,,,,1,monument,history;culture,"architecture,historic_architecture,interesting_places,other_buildings_and_structures",
+N1289231870,Mancherji Edulji Joshi Statue,19.01755,72.84917,9.3,,,,1,monument,history,"historic,monuments_and_memorials,interesting_places,monuments",
+W113566049,Empire Mahal,19.01784,72.84842,9.3,,,,1,monument,history;culture,"architecture,historic_architecture,interesting_places,other_buildings_and_structures",
+N6187853587,Kabutar Khana,19.01891,72.84045,9.3,,,,1,monument,history,"historic,monuments_and_memorials,interesting_places,monuments",
+W135732928,JAIN TEMPLE,19.01898,72.84019,9.3,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+W113566048,Empress Mahal,19.01839,72.84775,9.4,,,,1,monument,history;culture,"architecture,historic_architecture,interesting_places,other_buildings_and_structures",
+W675133631,CLOSED SHOPS,19.01923,72.83877,9.4,,,,1,monument,history;culture,"architecture,historic_architecture,interesting_places,destroyed_objects",
+W150363473,Pir Baghdadi Masjid,19.01933,72.84079,9.4,,,,1,temple,spiritual,"religion,mosques,interesting_places",
+W135732924,Hanuman temple,19.01951,72.84036,9.4,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+W113578544,Rustam Faramna Agiary,19.01856,72.85163,9.4,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+W118555654,Our Lady of Dolours Church,19.01878,72.85654,9.6,,,,1,temple,spiritual,"religion,churches,interesting_places,other_churches",
+W115832672,Five Gardens Fountain,19.02014,72.85384,9.7,,,,1,viewpoint,culture,"fountains,cultural,urban_environment,interesting_places",
+W135730532,Plaza Cinema,19.02186,72.84290,9.7,,,,1,activity,culture,"cultural,cinemas,theatres_and_entertainments,interesting_places",
+W112781797,Acworth Leper Asylum,19.01993,72.85875,9.7,,,,1,monument,history,"other,unclassified_objects,interesting_places,historic_object",
+N6991331085,SWAMI SAMARTHA MAHARAJAS MATH,19.02397,72.84080,9.9,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N771136229,Antop Hill,19.02076,72.86526,10.0,,,,1,viewpoint,nature,"mountain_peaks,geological_formations,natural,interesting_places",
+N7028122887,Matoshree Tower,19.02604,72.84219,10.1,,,,1,monument,,"other,unclassified_objects,interesting_places,tourist_object",
+N2841826660,Cannon 2,18.96022,72.92883,10.2,,,,1,monument,history,"other,unclassified_objects,interesting_places,historic_object",
+N2841826661,Bombay Skyline viewpoint,18.96080,72.92889,10.2,,,,1,viewpoint,nature,"view_points,other,interesting_places",
+W685270320,Hanuman Mandir,19.02211,72.86605,10.2,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+N2841826659,Cannon 1,18.96209,72.92860,10.2,,,,1,monument,history,"other,unclassified_objects,interesting_places,historic_object",
+W280006087,Tunnel,18.96119,72.92901,10.2,,,,1,fort,history,"fortifications,historic,interesting_places,bunkers",
+N1646526516,Samyukta Maharashtra Daalan,19.02789,72.83652,10.3,,,,1,museum,culture,"cultural,museums,interesting_places,other_museums",
+W112781800,Don Bosco Church,19.02577,72.85742,10.3,,,,1,temple,spiritual,"religion,churches,interesting_places,other_churches",
+W151804685,Veer Savarkar Smarak Samiti,19.02845,72.83671,10.4,,,,1,monument,history;culture,"architecture,historic_architecture,interesting_places,other_buildings_and_structures",
+W120169295,Star City Cinema,19.02856,72.84365,10.4,,,,1,activity,culture,"cultural,cinemas,theatres_and_entertainments,interesting_places",
+W116616992,Marubai Gaondevi Temple,19.02687,72.85674,10.4,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+W115628096,Asthika Samaj Ram Temple,19.02757,72.85413,10.5,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+W118442682,Shree Parasnath Jain Mandir,19.02787,72.85585,10.5,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+W683026261,Dolphin Fountain,19.02796,72.85675,10.6,,,,1,viewpoint,culture,"fountains,cultural,urban_environment,interesting_places",
+W115628061,South Indian Bajana Samaj,19.02872,72.85315,10.6,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+W118181508,Sankara Mattam,19.02888,72.85390,10.6,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+W151806622,Ashford City Light,19.03052,72.84143,10.6,,,,1,activity,culture,"cultural,cinemas,theatres_and_entertainments,interesting_places",
+W113775902,Aurora Cinema,19.02843,72.85814,10.6,,,,1,activity,culture,"cultural,cinemas,theatres_and_entertainments,interesting_places",
+W150466934,Matunga Khalsa Sabha,19.03084,72.84073,10.7,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+W118176254,Kanyaka Parameshwari Temple,19.02961,72.85355,10.7,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+W120170849,Dattatreya Mandir,19.03167,72.83927,10.8,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+N3205767044,antophill church,19.02751,72.86740,10.8,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N5907305549,Pir Pau Dargah,18.99974,72.91270,10.8,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+W356529271,Kesari Tours Pvt Ltd,19.03495,72.84256,11.1,,,,1,monument,,"other,unclassified_objects,interesting_places,tourist_object",
+Q97308996,Ancient Bricks stupa at Elephanta Island.,18.96729,72.93621,11.1,Q97308996,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N7200612560,Gharapuri Caves,18.96635,72.93697,11.2,,,,1,viewpoint,nature,"mountain_peaks,geological_formations,natural,interesting_places",
+N4569874291,Paradise E-Square,19.03717,72.84250,11.4,,,,1,activity,culture,"cultural,cinemas,theatres_and_entertainments,interesting_places",
+N2294332686,The Wall Project,19.03806,72.84736,11.5,,,,1,viewpoint,culture,"cultural,urban_environment,interesting_places,installation",
+N4559516090,Makhdoom Ali Shah Mahimi Dargah,19.03999,72.83910,11.7,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+W663713227,Ganpati Mandir,19.03667,72.86430,11.7,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+W246344383,Carnival Cinemas,19.03145,72.88119,11.7,,,,1,activity,culture,"cultural,cinemas,theatres_and_entertainments,interesting_places",
+W353205711,Gurudwara,19.03723,72.86559,11.8,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N4819919821,Sonawala Agyari,19.04214,72.84226,11.9,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N4819920121,Dutta Mandir,19.04254,72.84184,12.0,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+W654567861,Bandra Fort,19.04186,72.81837,12.0,,,,1,fort,history,"fortifications,historic,interesting_places,other_fortifications",
+N2932495033,Sree Dutta mandir,19.02278,72.90290,12.0,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+N346629372,Baba's Temple,19.04243,72.81976,12.1,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+N346611983,Amphitheatre,19.04257,72.81887,12.1,,,,1,monument,,"other,unclassified_objects,interesting_places,tourist_object",
+N6813467113,Bandra Fort gate,19.04292,72.81860,12.1,,,,1,monument,,"other,unclassified_objects,interesting_places,tourist_object",
+W824826865,Ahl e Hadid,19.04370,72.84699,12.1,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+W53366367,Mahim Beach,19.04424,72.83775,12.1,,,,1,beach,nature;relaxation,"natural,interesting_places,beaches,other_beaches",
+N6534526404,Sachkhand Darbar,19.04162,72.86139,12.2,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N6534526403,Sunni masjid,19.04208,72.86222,12.2,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+W357187603,Moiniya Jama Masjid,19.04451,72.84645,12.2,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+W824826838,Good News Methodist Kannada Church,19.04473,72.84652,12.3,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+W353199868,Fr. Agnel Ashram,19.04450,72.82005,12.3,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N1495380531,Shankar Deol,19.02852,72.89851,12.3,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+N348114308,St. Francis of Assisi Church,19.04604,72.82616,12.4,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N2932494120,shiv mandir,19.02460,72.90641,12.4,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+N2932496005,lumboni budhh vihar,19.02469,72.90646,12.4,,,,1,temple,spiritual,"religion,buddhist_temples,interesting_places",
+N4309673211,Oratory of Our Lady of Fatima,19.04647,72.82201,12.5,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N4815555824,Mannat Lands End (Shah Rukh Khan's Bungalow),19.04683,72.82011,12.5,,,,1,monument,,"other,unclassified_objects,interesting_places,tourist_object",
+N2851477517,St John The Baptist Shrine/Oratory,19.04819,72.82590,12.6,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N4725621692,Bramhand Sai Temple,19.04411,72.87257,12.7,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N4709535490,Bandra link road,19.04803,72.85720,12.8,,,,1,monument,,"other,unclassified_objects,interesting_places,tourist_object",
+W543960011,St. Stephen's Church,19.04955,72.82256,12.8,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N7192414641,Sion/Shiv Fort,19.04655,72.86770,12.8,,,,1,viewpoint,nature,"mountain_peaks,geological_formations,natural,interesting_places",
+N347038572,Rang Sharda,19.05120,72.83231,12.9,,,,1,activity,culture,"cultural,theatres_and_entertainments,interesting_places,other_theatres",
+N1282389460,Statue of St. Sebastian,19.05109,72.82570,13.0,,,,1,monument,history,"historic,monuments_and_memorials,interesting_places,monuments",
+W356425974,The Bombay Art Society,19.05158,72.83283,13.0,,,,1,museum,culture,"cultural,museums,interesting_places,art_galleries",
+W202918262,Jama Masjid,19.05172,72.83858,13.0,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+W255363748,Shia Imami Ismaili Jamatkhana,19.05249,72.82281,13.1,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N4575721768,Mandir,19.05312,72.83215,13.1,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+N5056120381,BEST Museum,19.04669,72.87771,13.2,,,,1,museum,culture,"cultural,museums,interesting_places,other_museums",
+N2319214064,Ashish Theater,19.03958,72.89518,13.2,,,,1,activity,culture,"cultural,cinemas,theatres_and_entertainments,interesting_places",
+W357472352,Prathnalaya,19.05339,72.82264,13.2,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N4815556924,Galaxy (Salman Khan House),19.05404,72.82349,13.3,,,,1,monument,,"other,unclassified_objects,interesting_places,tourist_object",
+W511064344,St. Peter's Church,19.05474,72.82951,13.3,,,,1,temple,spiritual,"religion,churches,interesting_places,catholic_churches",
+N4273389598,Nandi Cinema,19.05538,72.83861,13.4,,,,1,activity,culture,"cultural,cinemas,theatres_and_entertainments,interesting_places",
+W899160203,Marry Grotto,19.05540,72.83034,13.4,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N8354691096,Grotto,19.05540,72.83034,13.4,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N2134898672,Shri Krishna Mandir,19.05196,72.86757,13.4,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+W840493792,Tata Agiary,19.05584,72.83492,13.4,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N5291742743,Datta Temple at Kalanagar,19.05542,72.84961,13.5,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+N3125255950,Kali -Bari Mandir,19.04370,72.89365,13.5,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+N8344285126,CHIMBAI BEACH,19.05622,72.82372,13.5,,,,1,beach,nature;relaxation,"interesting_places,natural,shingle_beaches,beaches",
+N4309819457,St. Andrew's Auditorium,19.05674,72.82870,13.6,,,,1,activity,culture,"cultural,theatres_and_entertainments,interesting_places,other_theatres",
+N8068560286,Laxmi Narayan Themple,19.05676,72.82343,13.6,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+W713425346,Bhakti Dham Mandir,19.05186,72.87675,13.7,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+N8832865617,Navpada Jama Masjid,19.05818,72.83919,13.7,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+W504690399,Sai Baba Mandir,19.05818,72.84748,13.8,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+W545621131,Missionary Society of the Sacred Hearts of Jesus,19.05854,72.82761,13.8,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N632352284,Neat's Tongue,19.03506,72.91306,13.8,,,,1,viewpoint,nature,"mountain_peaks,geological_formations,natural,interesting_places",
+W816790575,Ganesh Mandir,19.05869,72.84585,13.8,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+W203215536,"Kalavati Aie Mandir, Chunabhatti",19.05424,72.87457,13.9,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N2895351320,Rameshwar Mandir,19.05408,72.87540,13.9,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+N923872556,mvdp,19.05972,72.82907,13.9,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N3207684380,Sai Baba Temple,19.06016,72.84532,14.0,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N7611714585,G7 Multiplex,19.06155,72.83864,14.1,,,,1,activity,culture,"cultural,theatres_and_entertainments,interesting_places,other_theatres",
+N9019757017,Cubic Mall,19.04557,72.90298,14.2,,,,1,activity,culture,"cultural,cinemas,theatres_and_entertainments,interesting_places",
+N2947820896,Bhomiya Temple,19.06244,72.84377,14.2,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+W932401221,Buddha Vihar,19.03999,72.91312,14.2,,,,1,temple,spiritual,"religion,buddhist_temples,interesting_places",
+W235923268,St. Theresa's Church,19.06351,72.83340,14.3,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+W357306183,Bal Gandharva Rang Mandir,19.06399,72.83340,14.3,,,,1,activity,culture,"cultural,theatres_and_entertainments,interesting_places,other_theatres",
+N8147900579,Shanni Mandir,19.04458,72.90901,14.4,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+W255369904,St. Anne Church,19.06430,72.82642,14.4,,,,1,temple,spiritual,"religion,churches,interesting_places,catholic_churches",
+W310012017,Dakshin Mukhi Hanuman Temple,19.05302,72.89423,14.5,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+N2567620985,Anushaktinagar Mosque,19.03821,72.92088,14.5,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N5976402115,Shivaji,19.04585,72.90955,14.6,,,,1,viewpoint,history;culture,"historic,monuments_and_memorials,cultural,urban_environment,interesting_places,sculptures,monuments",
+N2319153768,Mar Gregorios Orthodox Syrian Church,19.05015,72.90210,14.6,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N3133194581,Siddhi Vinayak Temple,19.05435,72.89362,14.6,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+W878078194,Danda Mangrove Reserved Forest,19.06641,72.82244,14.7,,,,1,viewpoint,nature,"natural,interesting_places,nature_reserves,other_nature_conservation_areas",
+N5068125421,Gnat Mk 1 E-325,19.05264,72.90057,14.7,,,,1,monument,history,"historic,monuments_and_memorials,interesting_places,monuments",
+N2947780259,St. Joseph the Worker Church,19.06728,72.84746,14.8,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N5039962633,Sharadambal Temple,19.05256,72.90125,14.8,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N3529565705,QURESHI MASJID,19.06224,72.87668,14.8,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+W354049759,Ahobila Mutt,19.05385,72.89944,14.8,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+W816434678,Ayyappa Temple,19.04013,72.92267,14.8,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+W816434680,Anushatingar Kali Temple,19.04028,72.92247,14.8,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+W816434679,Anushaktinagar Shiva Temple,19.04031,72.92271,14.8,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+W905319548,Anushaktinar Kanchi Kamakoti Temple,19.04016,72.92365,14.9,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+N3206043329,footware,19.05957,72.88908,14.9,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+W554805309,Carter  Rd Beach,19.06909,72.82257,15.0,,,,1,beach,nature;relaxation,"natural,interesting_places,beaches,other_beaches",
+W891856246,Sagar Vinayak Temple,19.06912,72.82105,15.0,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+N6223966086,Amir Khan House,19.06992,72.82608,15.0,,,,1,monument,,"other,unclassified_objects,interesting_places,tourist_object",
+N2319401656,OLPS Redemptorist Monastery,19.05569,72.90175,15.1,,,,1,temple,spiritual,"religion,monasteries,interesting_places",
+W289851995,Shree Swami Samartha Math,19.06359,72.88439,15.2,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+N4709535489,Sujona chembers,19.04968,72.91469,15.2,,,,1,monument,,"other,unclassified_objects,interesting_places,tourist_object",
+W853277772,Anushaktingar Main Gate,19.04273,72.92510,15.2,,,,1,fort,history,"fortifications,defensive_walls,historic,interesting_places",
+node/3529569766,bhaji & machhi market,19.04802,72.91134,14.9,,,,,market,shopping,amenity=marketplace,
+node/4846878580,"Mahila Fish Market, Mahim",19.04040,72.84398,11.8,,,,,market,shopping,amenity=marketplace,
+node/4848773730,Sabji Market,19.03175,72.86036,11.1,,,,,market,shopping,amenity=marketplace,
+node/5792430067,Hemant Manjrekar Market,19.03665,72.86514,11.7,,,,,market,shopping,amenity=marketplace,
+node/6813483776,Umbrella traders market area,18.94775,72.82959,1.6,,,,,market,shopping,amenity=marketplace,
+node/8438952889,Bandra Market,19.05372,72.83292,13.2,,,,,market,shopping,amenity=marketplace,
+node/12998926092,al saadha,18.95971,72.83064,2.8,,,,,market,shopping,amenity=marketplace,
+way/47977744,Lokmanya Tilak Market,18.96117,72.81849,3.4,,,,,market,shopping,amenity=marketplace,
+way/49001325,Crawford Market,18.94733,72.83455,1.4,Q5182895,Crawford Market,,,market,shopping,amenity=marketplace;tourism=attraction,
+way/49176878,MBPT Colaba Fish Market,18.91383,72.82379,2.7,,,,,market,shopping,amenity=marketplace,
+way/113777721,Wadala Market,19.01758,72.85480,9.4,,,,,market,shopping,amenity=marketplace,
+way/113792252,Gopi Tank Market,19.03074,72.84224,10.7,,,,,market,shopping,amenity=marketplace,
+way/120177533,Chhatrapati Shivaji Municipal Market,19.01964,72.84159,9.4,,,,,market,shopping,amenity=marketplace,
+way/150363474,Moolji Jaitha Market,18.94938,72.83085,1.7,,,,,market,shopping,amenity=marketplace,
+way/151807307,MUNCIPAL MARKED,19.01886,72.84130,9.3,,,,,market,shopping,amenity=marketplace,
+way/151889253,Phoenix Marketcity Kurla,19.08628,72.88886,17.7,Q22952144,Phoenix Marketcity (Mumbai),,,market,shopping,shop=mall,
+way/206348532,Fort Market,18.93480,72.83664,0.1,,,,,market,shopping,amenity=marketplace,
+way/236629909,Dadar Flower Market,19.01175,72.83722,8.5,,,,,market,shopping,amenity=marketplace,
+way/237025757,Pali Bazaar,19.06273,72.82854,14.2,,,,,market,shopping,amenity=marketplace,
+way/260754870,Trombay Market,19.03372,72.94827,16.1,,,,,market,shopping,amenity=marketplace,
+way/314366757,Kena Market,19.05758,72.91318,15.9,,,,,market,shopping,amenity=marketplace,
+way/346686045,Footware market,19.05949,72.88797,14.9,,,,,market,shopping,amenity=marketplace,
+way/353424934,Lakshmi Market,19.07033,72.87910,15.7,,,,,market,shopping,amenity=marketplace,
+way/357082983,Mahatma Gandhi Market,19.03132,72.85895,11.0,,,,,market,shopping,amenity=marketplace,
+way/358489270,Mahatma Jyotiba Phule Wholesale Fish Market,18.94620,72.83532,1.2,,,,,market,shopping,amenity=marketplace,
+way/416559780,Jai Kisan Mandai,19.06276,72.89801,15.6,,,,,market,shopping,amenity=marketplace,
+way/426750555,Manish Market,18.94666,72.83608,1.3,,,,,market,shopping,amenity=marketplace,
+way/625809278,Sewri Fish Market,18.99916,72.84949,7.3,,,,,market,shopping,amenity=marketplace,
+way/626348893,Janata Timber Market,19.06168,72.91662,16.4,,,,,market,shopping,amenity=marketplace,
+way/680077236,Dongri Bazaar,18.95937,72.83750,2.7,,,,,market,shopping,amenity=marketplace,
+way/1123427082,Parle Market,19.09979,72.84531,18.4,,,,,market,shopping,amenity=marketplace,
+way/1330679653,Ghatkopar West Vegetable Market,19.08736,72.90695,18.5,,,,,market,shopping,amenity=marketplace,
+way/1330679654,Ghatkopar West Market,19.08631,72.90555,18.3,,,,,market,shopping,amenity=marketplace,
+way/1374671929,Fish Market,19.04624,72.85399,12.5,,,,,market,shopping,amenity=marketplace,
+way/1387934953,Swadeshi Market,18.94936,72.82812,1.8,,,,,market,shopping,amenity=marketplace,
+relation/5327411,Matunga Market,19.02755,72.85087,10.4,,,,,market,shopping,amenity=marketplace,
+relation/20393994,Mirza Ghalib Municipal Market,18.95781,72.82968,2.6,,,,,market,shopping,amenity=marketplace,
+node/488208617,Bademiya Seekh Kebab Stall,18.92315,72.83251,1.4,Q24895746,Bademiya,,,monument,food,amenity=fast_food,
+way/31217338,Khau Galli,19.07119,72.82364,15.2,,,,,monument,,,
+way/40387597,Leopold Cafe,18.92271,72.83176,1.4,Q153072,Leopold Cafe,,,monument,,amenity=restaurant,
+way/151253238,Juhu Beach,19.10296,72.82306,18.7,,,,,beach,nature;relaxation,natural=beach,
+way/369460776,Kanheri Cave Complex,19.20647,72.90615,31.1,Q1356198,Kanheri Caves,,,viewpoint,history;nature,historic=archaeological_site;natural=bare_rock;tourism=attraction,

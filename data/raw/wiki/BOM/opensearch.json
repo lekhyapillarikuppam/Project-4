@@ -1,0 +1,150 @@
+{
+ "Juhu Beach": {
+  "fetched_on": "2026-10-25",
+  "results": [
+   {
+    "title": "Juhu",
+    "description": "Place in Maharashtra, India",
+    "lat": 19.1,
+    "lon": 72.83
+   },
+   {
+    "title": "The Mountain Goats",
+    "description": "American indie folk band",
+    "lat": null,
+    "lon": null
+   },
+   {
+    "title": "Juno Beach",
+    "description": "Code name for an amphibious landing zone on D-Day",
+    "lat": 49.33527778,
+    "lon": -0.41527778
+   },
+   {
+    "title": "Juno Beach, Florida",
+    "description": "Town in the state of Florida, United States",
+    "lat": 26.87055556,
+    "lon": -80.05555556
+   },
+   {
+    "title": "Juno Beach order of battle",
+    "description": "Order of battle on D-Day",
+    "lat": null,
+    "lon": null
+   }
+  ]
+ },
+ "Juhu Beach Mumbai": {
+  "fetched_on": "2026-10-25",
+  "results": []
+ },
+ "Juhu Beach [fuzzy]": {
+  "fetched_on": "2026-10-25",
+  "results": [
+   {
+    "title": "Juhu",
+    "description": "Place in Maharashtra, India",
+    "lat": 19.1,
+    "lon": 72.83
+   },
+   {
+    "title": "The Mountain Goats",
+    "description": "American indie folk band",
+    "lat": null,
+    "lon": null
+   },
+   {
+    "title": "Juno Beach",
+    "description": "Code name for an amphibious landing zone on D-Day",
+    "lat": 49.33527778,
+    "lon": -0.41527778
+   },
+   {
+    "title": "Juno Beach, Florida",
+    "description": "Town in the state of Florida, United States",
+    "lat": 26.87055556,
+    "lon": -80.05555556
+   },
+   {
+    "title": "Juno Beach order of battle",
+    "description": "Order of battle on D-Day",
+    "lat": null,
+    "lon": null
+   }
+  ]
+ },
+ "Khau Galli": {
+  "fetched_on": "2026-10-25",
+  "results": [
+   {
+    "title": "Kfar Galim",
+    "description": "Place in Haifa, Israel",
+    "lat": 32.76611111,
+    "lon": 34.95944444
+   },
+   {
+    "title": "Kangalli station",
+    "description": "Railway station in North Korea",
+    "lat": 42.8239,
+    "lon": 129.8241
+   },
+   {
+    "title": "Khatgal, Khövsgöl",
+    "description": "District in Khövsgöl Province, Mongolia",
+    "lat": 50.43944444,
+    "lon": 100.16166667
+   },
+   {
+    "title": "Klaus Allisat",
+    "description": "German fencer (born 1938)",
+    "lat": null,
+    "lon": null
+   },
+   {
+    "title": "Kangallı, Pülümür",
+    "description": "Village in Tunceli Province, Turkey",
+    "lat": 39.4515,
+    "lon": 39.8523
+   }
+  ]
+ },
+ "Khau Galli Mumbai": {
+  "fetched_on": "2026-10-25",
+  "results": []
+ },
+ "Khau Galli [fuzzy]": {
+  "fetched_on": "2026-10-25",
+  "results": [
+   {
+    "title": "Kfar Galim",
+    "description": "Place in Haifa, Israel",
+    "lat": 32.76611111,
+    "lon": 34.95944444
+   },
+   {
+    "title": "Kangalli station",
+    "description": "Railway station in North Korea",
+    "lat": 42.8239,
+    "lon": 129.8241
+   },
+   {
+    "title": "Khatgal, Khövsgöl",
+    "description": "District in Khövsgöl Province, Mongolia",
+    "lat": 50.43944444,
+    "lon": 100.16166667
+   },
+   {
+    "title": "Klaus Allisat",
+    "description": "German fencer (born 1938)",
+    "lat": null,
+    "lon": null
+   },
+   {
+    "title": "Kangallı, Pülümür",
+    "description": "Village in Tunceli Province, Turkey",
+    "lat": 39.4515,
+    "lon": 39.8523
+   }
+  ]
+ }
+}

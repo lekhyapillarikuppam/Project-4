@@ -1,0 +1,394 @@
+{
+ "Mulanathaswami Temple, Bahour": {
+  "fetched_on": "2026-10-25",
+  "results": []
+ },
+ "Mulanathaswami Temple, Bahour Pondicherry": {
+  "fetched_on": "2026-10-25",
+  "results": []
+ },
+ "Mulanathaswami Temple, Bahour [fuzzy]": {
+  "fetched_on": "2026-10-25",
+  "results": []
+ },
+ "Botanical Garden, Puducherry": {
+  "fetched_on": "2026-10-25",
+  "results": []
+ },
+ "Botanical Garden, Puducherry Pondicherry": {
+  "fetched_on": "2026-10-25",
+  "results": []
+ },
+ "Botanical Garden, Puducherry [fuzzy]": {
+  "fetched_on": "2026-10-25",
+  "results": []
+ },
+ "Bharathi Park": {
+  "fetched_on": "2026-10-25",
+  "results": [
+   {
+    "title": "Arun Bharathi",
+    "description": "Indian lyricist",
+    "lat": null,
+    "lon": null
+   },
+   {
+    "title": "Palani Bharathi",
+    "description": "Indian poet and writer",
+    "lat": null,
+    "lon": null
+   },
+   {
+    "title": "Rajkumar Bharathi",
+    "description": "Indian classical singer and composer",
+    "lat": null,
+    "lon": null
+   },
+   {
+    "title": "Bharathiar University",
+    "description": "State-run university in Coimbatore, Tamil Nadu",
+    "lat": 11.03976944,
+    "lon": 76.87881111
+   },
+   {
+    "title": "Marumalarchi Bharathi",
+    "description": "Indian film director",
+    "lat": null,
+    "lon": null
+   }
+  ]
+ },
+ "Bharathi Park Pondicherry": {
+  "fetched_on": "2026-10-25",
+  "results": []
+ },
+ "Bharathi Park [fuzzy]": {
+  "fetched_on": "2026-10-25",
+  "results": [
+   {
+    "title": "Arun Bharathi",
+    "description": "Indian lyricist",
+    "lat": null,
+    "lon": null
+   },
+   {
+    "title": "Palani Bharathi",
+    "description": "Indian poet and writer",
+    "lat": null,
+    "lon": null
+   },
+   {
+    "title": "Rajkumar Bharathi",
+    "description": "Indian classical singer and composer",
+    "lat": null,
+    "lon": null
+   },
+   {
+    "title": "Bharathiar University",
+    "description": "State-run university in Coimbatore, Tamil Nadu",
+    "lat": 11.03976944,
+    "lon": 76.87881111
+   },
+   {
+    "title": "Marumalarchi Bharathi",
+    "description": "Indian film director",
+    "lat": null,
+    "lon": null
+   }
+  ]
+ },
+ "Serenity Beach": {
+  "fetched_on": "2026-10-25",
+  "results": []
+ },
+ "Serenity Beach Pondicherry": {
+  "fetched_on": "2026-10-25",
+  "results": []
+ },
+ "Serenity Beach [fuzzy]": {
+  "fetched_on": "2026-10-25",
+  "results": []
+ },
+ "Paradise Beach": {
+  "fetched_on": "2026-10-25",
+  "results": [
+   {
+    "title": "Paradise Beach",
+    "description": "1993 Australian TV series or program",
+    "lat": null,
+    "lon": null
+   },
+   {
+    "title": "Paradise Beach (film)",
+    "description": "2019 French action thriller film",
+    "lat": null,
+    "lon": null
+   },
+   {
+    "title": "Paradise Beach, Victoria",
+    "description": "Town in Victoria, Australia",
+    "lat": -38.13722222,
+    "lon": 147.44972222
+   },
+   {
+    "title": "Rügen",
+    "description": "Island off the Pomeranian coast of Germany",
+    "lat": 54.45,
+    "lon": 13.4
+   },
+   {
+    "title": "Gokarna, Karnataka",
+    "description": "Tourist destination in Karnataka",
+    "lat": 14.55,
+    "lon": 74.31667
+   }
+  ]
+ },
+ "Paradise Beach Pondicherry": {
+  "fetched_on": "2026-10-25",
+  "results": []
+ },
+ "Paradise Beach [fuzzy]": {
+  "fetched_on": "2026-10-25",
+  "results": [
+   {
+    "title": "Paradise Beach",
+    "description": "1993 Australian TV series or program",
+    "lat": null,
+    "lon": null
+   },
+   {
+    "title": "Paradise Beach (film)",
+    "description": "2019 French action thriller film",
+    "lat": null,
+    "lon": null
+   },
+   {
+    "title": "Paradise Beach, Victoria",
+    "description": "Town in Victoria, Australia",
+    "lat": -38.13722222,
+    "lon": 147.44972222
+   },
+   {
+    "title": "Rügen",
+    "description": "Island off the Pomeranian coast of Germany",
+    "lat": 54.45,
+    "lon": 13.4
+   },
+   {
+    "title": "Gokarna, Karnataka",
+    "description": "Tourist destination in Karnataka",
+    "lat": 14.55,
+    "lon": 74.31667
+   }
+  ]
+ },
+ "Chunnambar Backwaters": {
+  "fetched_on": "2026-10-25",
+  "results": []
+ },
+ "Chunnambar Backwaters Pondicherry": {
+  "fetched_on": "2026-10-25",
+  "results": []
+ },
+ "Chunnambar Backwaters [fuzzy]": {
+  "fetched_on": "2026-10-25",
+  "results": []
+ },
+ "Auroville Botanical Garden": {
+  "fetched_on": "2026-10-25",
+  "results": []
+ },
+ "Auroville Botanical Garden Pondicherry": {
+  "fetched_on": "2026-10-25",
+  "results": []
+ },
+ "Auroville Botanical Garden [fuzzy]": {
+  "fetched_on": "2026-10-25",
+  "results": []
+ },
+ "Auroville Visitors Centre": {
+  "fetched_on": "2026-10-25",
+  "results": []
+ },
+ "Auroville Visitors Centre Pondicherry": {
+  "fetched_on": "2026-10-25",
+  "results": []
+ },
+ "Auroville Visitors Centre [fuzzy]": {
+  "fetched_on": "2026-10-25",
+  "results": []
+ },
+ "Goubert Market": {
+  "fetched_on": "2026-10-25",
+  "results": []
+ },
+ "Goubert Market Pondicherry": {
+  "fetched_on": "2026-10-25",
+  "results": []
+ },
+ "Goubert Market [fuzzy]": {
+  "fetched_on": "2026-10-25",
+  "results": []
+ },
+ "Surguru Restaurant": {
+  "fetched_on": "2026-10-25",
+  "results": []
+ },
+ "Surguru Restaurant Pondicherry": {
+  "fetched_on": "2026-10-25",
+  "results": []
+ },
+ "Surguru Restaurant [fuzzy]": {
+  "fetched_on": "2026-10-25",
+  "results": []
+ },
+ "Villa Shanti": {
+  "fetched_on": "2026-10-25",
+  "results": [
+   {
+    "title": "Mathías Villasanti",
+    "description": "Paraguayan footballer (born 1997)",
+    "lat": null,
+    "lon": null
+   },
+   {
+    "title": "Villa Sant'Angelo",
+    "description": "Comune in Abruzzo, Italy",
+    "lat": 42.26666667,
+    "lon": 13.53333333
+   },
+   {
+    "title": "Villa Santa Lucia degli Abruzzi",
+    "description": "Comune in Abruzzo, Italy",
+    "lat": null,
+    "lon": null
+   },
+   {
+    "title": "Richard Villasanti",
+    "description": "Australia international rugby league footballer",
+    "lat": null,
+    "lon": null
+   },
+   {
+    "title": "Villa Santa Maria",
+    "description": "Comune in Abruzzo, Italy",
+    "lat": null,
+    "lon": null
+   }
+  ]
+ },
+ "Villa Shanti Pondicherry": {
+  "fetched_on": "2026-10-25",
+  "results": []
+ },
+ "Villa Shanti [fuzzy]": {
+  "fetched_on": "2026-10-25",
+  "results": [
+   {
+    "title": "Mathías Villasanti",
+    "description": "Paraguayan footballer (born 1997)",
+    "lat": null,
+    "lon": null
+   },
+   {
+    "title": "Villa Sant'Angelo",
+    "description": "Comune in Abruzzo, Italy",
+    "lat": 42.26666667,
+    "lon": 13.53333333
+   },
+   {
+    "title": "Villa Santa Lucia degli Abruzzi",
+    "description": "Comune in Abruzzo, Italy",
+    "lat": null,
+    "lon": null
+   },
+   {
+    "title": "Richard Villasanti",
+    "description": "Australia international rugby league footballer",
+    "lat": null,
+    "lon": null
+   },
+   {
+    "title": "Villa Santa Maria",
+    "description": "Comune in Abruzzo, Italy",
+    "lat": null,
+    "lon": null
+   }
+  ]
+ },
+ "Baker Street": {
+  "fetched_on": "2026-10-25",
+  "results": [
+   {
+    "title": "Baker Street",
+    "description": "Street in the City of Westminster",
+    "lat": 51.52,
+    "lon": -0.1566
+   },
+   {
+    "title": "Baker Street and Waterloo Railway",
+    "description": "Underground railway company in London",
+    "lat": null,
+    "lon": null
+   },
+   {
+    "title": "Baker Street robbery",
+    "description": "1971 burglary of a bank in London, England",
+    "lat": 51.52230556,
+    "lon": -0.15783333
+   },
+   {
+    "title": "Baker Street (song)",
+    "description": "1978 single by Gerry Rafferty",
+    "lat": null,
+    "lon": null
+   },
+   {
+    "title": "Baker Street tube station",
+    "description": "London Underground station",
+    "lat": 51.522,
+    "lon": -0.157
+   }
+  ]
+ },
+ "Baker Street Pondicherry": {
+  "fetched_on": "2026-10-25",
+  "results": []
+ },
+ "Baker Street [fuzzy]": {
+  "fetched_on": "2026-10-25",
+  "results": [
+   {
+    "title": "Baker Street",
+    "description": "Street in the City of Westminster",
+    "lat": 51.52,
+    "lon": -0.1566
+   },
+   {
+    "title": "Baker Street and Waterloo Railway",
+    "description": "Underground railway company in London",
+    "lat": null,
+    "lon": null
+   },
+   {
+    "title": "Baker Street robbery",
+    "description": "1971 burglary of a bank in London, England",
+    "lat": 51.52230556,
+    "lon": -0.15783333
+   },
+   {
+    "title": "Baker Street (song)",
+    "description": "1978 single by Gerry Rafferty",
+    "lat": null,
+    "lon": null
+   },
+   {
+    "title": "Baker Street tube station",
+    "description": "London Underground station",
+    "lat": 51.522,
+    "lon": -0.157
+   }
+  ]
+ }
+}

@@ -178,9 +178,12 @@ def build(city: str) -> list[list]:
             if c.get("wiki_title") and not c.get("pageviews") and pv.get(c["wiki_title"]) is not None:
                 c["pageviews"] = str(pv[c["wiki_title"]])
     pv_dates = drafting.load_cache(drafting.fetched_path(RAW / "wiki" / city / "pageviews.json"))
-    unknown = [c["wiki_title"] for c in chosen if c.get("wiki_title") and not c.get("pageviews")]
+    unknown = [s["wiki_title"] for s, c in zip(sel, chosen) if s.get("wiki_title") and not c.get("pageviews")]
     if unknown:   # a shifted column or a typo lands here: Wikipedia has no such article
         raise SystemExit(f"{city}_selection.csv: wiki_title not found on English Wikipedia: {unknown}")
+    for c in chosen:   # a Wikidata sitelink whose article has no pageviews counts as no article
+        if c.get("wiki_title") and not c.get("pageviews"):
+            c["wiki_title"] = ""
     rate = ratings(chosen)
     order = sorted((c["candidate"] for c in chosen if c["candidate"] in rate), key=lambda c: rate[c][0])
     n = len(order)

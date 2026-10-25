@@ -1,0 +1,530 @@
+candidate,name,lat,lon,km,wikidata,wiki_title,pageviews,otm_rate,suggested_type,suggested_tags,kinds_or_osm,description
+N5808896358,Chennai Meenambakkam Airport,12.98170,80.16304,14.7,Q502670,Chennai International Airport,225839,3,monument,,"other,unclassified_objects,interesting_places,tourist_object","Airport serving Chennai, Tamil Nadu, India"
+W22902280,Marina Beach,13.05188,80.28301,3.4,Q673659,Marina Beach,87301,3,beach,history;nature;relaxation,"natural,interesting_places,beaches,other_beaches","Beach in Chennai, India"
+N7016742490,Santhome Church,13.03358,80.27782,4.8,Q733577,"St. Thomas Cathedral Basilica, Chennai",69747,3,temple,spiritual;history,"religion,cathedrals,churches,interesting_places,catholic_churches","Church in Tamil Nadu, India"
+N289373830,Kapaleeswarar Temple,13.03374,80.26984,4.5,Q1587164,Kapaleeshwarar Temple,61268,3,temple,spiritual;history;culture,"religion,hindu_temples,interesting_places","Hindu temple in Tamil Nadu, India"
+N316076994,Fort St. George,13.07952,80.28743,3.0,Q1438739,Fort St. George,59339,3,fort,history,"fortifications,historic,interesting_places,other_fortifications","Fort in Chennai, India"
+N604693374,Sri Parthasarathy Temple,13.05398,80.27659,2.7,Q3522649,"Parthasarathy Temple, Chennai",37855,3,temple,spiritual;history,"religion,hindu_temples,interesting_places",Temple in India
+N5694124024,MGR Memorial,13.06428,80.28536,2.8,Q6715769,M.G.R. and Amma Memorial,35168,3,monument,history;nature;relaxation,"historic,monuments_and_memorials,interesting_places,monuments","Memorial complex in Chennai, Tamil Nadu, India"
+W680969893,marundeeswara temple,12.98510,80.26030,9.8,Q6777963,Marundeeswarar Temple,31830,3,temple,spiritual;history,"religion,hindu_temples,interesting_places","Hindu temple in Chennai, Tamil Nadu, India"
+W209535268,Valluvar Kottam,13.05408,80.24183,3.0,Q2509435,Valluvar Kottam,24165,3,monument,history;culture,"other,unclassified_objects,interesting_places,tourist_object",Building in India
+N317239800,Egmore National Museum,13.07128,80.25677,0.5,Q3536763,"Government Museum, Chennai",20024,3,museum,culture,"cultural,museums,interesting_places,other_museums","Museum in Tamil Nadu, India"
+Q7799553,"Thyagaraja Temple, Tiruvottiyur",13.15000,80.30000,9.5,Q7799553,"Thyagaraja Temple, Tiruvottiyur",19936,3,temple,spiritual;history;culture,"religion,hindu_temples,interesting_places","Hindu temple of Shiva in Tiruvottiyur, India"
+W28404811,"Children's Park, Guindy",13.00438,80.23655,8.1,Q648548,Guindy National Park,18620,3,museum,culture;nature;shopping;relaxation,"urban_environment,gardens_and_parks,cultural,museums,natural,interesting_places,nature_reserves,zoos,national_parks","National park in Tamil Nadu, India"
+Q4455449,Edward Elliot's Beach,12.99953,80.27241,8.3,Q4455449,Edward Elliot's Beach,18504,3,garden,spiritual;history;culture;nature;relaxation,"gardens_and_parks,cultural,urban_environment,interesting_places","Beach in Chennai, India"
+N4524178689,Sri Kalikambal Temple - Parrys,13.09469,80.28912,3.9,Q6352668,Kalikambal Temple,17207,3,temple,spiritual,"religion,hindu_temples,interesting_places",Temple in India
+W32256323,Tholkappiar Ecological Park,13.02215,80.26580,5.7,Q7786692,Tholkappia Poonga,16989,3,activity,culture;nature;relaxation,"urban_environment,gardens_and_parks,cultural,interesting_places","Ecological park in Chennai, India"
+W23885061,Victoria Public Hall,13.08196,80.27268,1.6,Q7926978,Victoria Public Hall,14865,3,activity,history;culture,"architecture,historic_architecture,interesting_places,other_buildings_and_structures",Building in India
+N304944324,Vadapalani Murugan Temple,13.05291,80.21362,5.6,Q16902435,Vadapalani Andavar Temple,14662,3,temple,spiritual;culture,"religion,hindu_temples,interesting_places","Hindu temple in Tamil Nadu, India"
+Q12988685,"Masilamaniswara Temple, Thirumullaivoyal",13.11667,80.11667,16.4,Q12988685,"Masilamaniswara Temple, Thirumullaivoyal",11951,3,temple,spiritual;history,"religion,hindu_temples,interesting_places",Hindu temple in Tamil Nadu
+N254122040,George Town,13.09209,80.28224,3.1,Q3276293,"George Town, Chennai",11927,3,monument,history;nature;relaxation,"historical_places,historic,interesting_places,historic_districts","Neighbourhood in Chennai District, Tamil Nadu, India"
+N367032338,Amir Mahal,13.05816,80.26901,1.9,Q4746591,Amir Mahal,11581,2,monument,history,"other,unclassified_objects,interesting_places,tourist_object",Building in India
+N410718772,Birla Planetarium,13.01196,80.24402,7.1,Q4916535,"Birla Planetarium, Chennai",11544,3,museum,culture,"planetariums,cultural,museums,interesting_places","Planetarium museum in Chennai, India"
+N357224811,Chepauk Palace,13.06367,80.28175,2.5,Q5091701,Chepauk Palace,11314,3,monument,history;culture,"other,unclassified_objects,interesting_places,tourist_object",Official residence of the Nawab of Arcot
+W220099483,Vishwaroopa Sri Bhakta Anjaneya Swami Temple,12.98623,80.19440,12.1,Q4765773,"Anjaneya Temple, Nanganallur",11143,3,temple,spiritual,"religion,hindu_temples,interesting_places",Hindu temple
+Q5091480,"Chennakesava Perumal Temple, Chennai",13.08389,80.27000,1.5,Q5091480,Chennakesava Perumal Temple,10805,2,temple,spiritual;shopping,"religion,hindu_temples,interesting_places","Perumal temple in Chennai district, Tamil Nadu, India"
+N310981471,Triumph of Labour,13.06411,80.28375,2.7,Q7844567,Triumph of Labour,9974,3,activity,history;culture;nature;relaxation,"historic,monuments_and_memorials,urban_environment,cultural,interesting_places,sculptures,monuments","Statue at the Marina Beach, Chennai, India"
+W178747904,Vedhapureeswarar Temple Kulam,13.07223,80.11585,15.7,Q16308571,"Vedapureeswarar temple, Thiruverkadu",9716,3,temple,spiritual;history,"religion,hindu_temples,interesting_places","Hindu temple of Shiva in Thiruverkadu, India"
+W217646643,St Mary's CSI Church,13.07879,80.28659,2.9,Q3595679,"St. Mary's Church, Chennai",9323,3,temple,spiritual;history,"religion,churches,interesting_places,other_churches","Church in Chennai, India"
+Q5974012,ISKCON Temple Chennai,12.90611,80.24167,18.7,Q5974012,"ISKCON Temple, Chennai",9234,3,temple,spiritual;shopping,"religion,hindu_temples,interesting_places","Radha Krishna temple in Chennai, India"
+W211772507,Vivekanandar Illam,13.04916,80.28024,3.4,Q3350092,Vivekanandar Illam,9124,3,museum,history;culture,"cultural,museums,interesting_places,other_museums",Museum in South India
+W822593948,Howrah–Chennai main line,13.09130,80.27417,2.5,Q5922477,Howrah–Chennai main line,8716,2,monument,culture,"bridges,architecture,interesting_places,other_bridges",Railway route in India
+W24240071,Anna Nagar Tower Park,13.08705,80.21427,5.3,Q4767371,Anna Nagar Tower Park,8305,3,garden,culture;nature;relaxation,"urban_environment,gardens_and_parks,cultural,interesting_places","Urban park in Chennai, India"
+W156248599,Music Academy,13.04586,80.25964,3.0,Q10981461,Madras Music Academy,7878,3,activity,culture,"cultural,theatres_and_entertainments,interesting_places,other_theatres","Music school in Tamil Nadu, India"
+W208570708,Kesava Perumal Temple,13.03069,80.27045,4.8,Q24928068,"Adikesava Perumal temple, Mylapore",7208,3,temple,spiritual;culture,"religion,hindu_temples,interesting_places","Hindu temple in Chennai, India"
+W217662069,Thousand Lights Mosque,13.05510,80.25524,2.1,Q3535254,Thousand Lights Mosque,6948,3,temple,spiritual,"religion,mosques,interesting_places","Mosque in Chennai, Tamil Nadu, India"
+W28077657,St George's Cathedral,13.05187,80.25307,2.5,Q199785,"St. George's Cathedral, Chennai",6192,3,temple,spiritual,"religion,cathedrals,interesting_places","Church in Tamil Nadu, India"
+W25808365,Senmozhi Poonga,13.05068,80.25147,2.7,Q12068695,Semmozhi Poonga,5895,3,garden,culture;nature;relaxation,"urban_environment,gardens_and_parks,cultural,interesting_places","Botanical garden in Chennai, India"
+N366487531,Rajaji Hall,13.06936,80.27497,1.6,Q7285655,Rajaji Hall,5697,3,activity,,"other,unclassified_objects,interesting_places,tourist_object",Building in India
+Q30692841,Bodyguard Muniswaran Temple,13.07696,80.27579,1.7,Q30692841,Bodyguard Muniswaran Temple,5687,2,temple,spiritual;shopping,"religion,hindu_temples,interesting_places","Hindu temple in Tamil Nadu, India"
+N4373454389,abirami mega mall,13.08629,80.24811,2.0,Q4667451,Abhirami Mega Mall,5513,3,activity,culture;shopping,"cultural,cinemas,theatres_and_entertainments,interesting_places,shops,malls,tourist_facilities","Shopping mall in Tamil Nadu, India"
+Q23405815,Triplicane Big Mosque,13.06000,80.27000,1.8,Q23405815,Triplicane Big Mosque,5350,3,temple,spiritual;history,"religion,mosques,interesting_places","Mosque in Chennai, India"
+N257532685,Madhya Kailash,13.00643,80.24713,7.6,Q12445208,Madhya Kailash,5272,3,temple,spiritual,"religion,hindu_temples,interesting_places","Hindu temple in South Chennai, India"
+Q7127849,"Palli Kondeswarar Temple, Surutapalli",13.15000,80.30000,9.5,Q7127849,"Pallikondeswara Temple, Surutupalle",5243,3,temple,spiritual,"religion,hindu_temples,interesting_places",Hindu temple in India
+N355515116,Luz Church,13.03814,80.26241,3.9,Q5116974,"Our Lady of Light Church, Chennai",4515,3,temple,spiritual;history,"religion,churches,interesting_places,other_churches",Catholic shrine in India
+W209513246,Panagal Park,13.04150,80.23310,4.6,Q7129811,Panagal Park,4508,3,activity,culture;nature;shopping;relaxation,"urban_environment,gardens_and_parks,cultural,interesting_places","Park and locality in Chennai, India"
+W208572071,Ramakrishna Math Universal Temple,13.03127,80.26756,4.7,Q7586210,"Sri Ramakrishna Math, Chennai",4259,3,temple,spiritual,"religion,other_temples,interesting_places",Indian monastic organisation for men
+N472061143,Thiruvalluvar House,13.03965,80.27077,3.9,Q7785491,"Thiruvalluvar Temple, Mylapore",4125,3,temple,spiritual;history,"religion,hindu_temples,interesting_places",Hindu temple in India
+N3376339318,Armenian Church of Virgin Mary,13.08902,80.28750,3.4,Q4504905,"Armenian Church, Chennai",3912,3,temple,spiritual,"religion,churches,interesting_places,other_churches",Armenian church building in India
+W27768993,St. Andrew's Church,13.07955,80.26407,0.8,Q189141,"St. Andrew's Church, Chennai",3624,3,temple,spiritual,"religion,churches,interesting_places,other_churches","Church in Tamil Nadu, India"
+Q24927947,Madhava Perumal temple,13.03778,80.27139,4.1,Q24927947,"Madhava Perumal temple, Mylapore",3498,3,temple,spiritual;culture,"religion,hindu_temples,interesting_places",Vishnu temple in Chennai
+W29114920,National Art Gallery,13.06964,80.25611,0.7,Q7753143,"National Art Gallery, Chennai",3476,3,museum,culture,"cultural,museums,interesting_places,other_museums",
+R60175,Southern Railways Headquarters,13.08252,80.27760,2.1,Q7570377,"Southern Railway Headquarters, Chennai",3361,3,monument,history;culture;shopping,"architecture,historic_architecture,interesting_places,other_buildings_and_structures","Office building in Chennai, India"
+W217845704,Ekambareswarar Temple - Bhumi Stalam(Sani Stlm),13.08821,80.27818,2.5,Q5350288,"Ekambareswarar Temple, Chennai",3138,3,temple,spiritual,"religion,hindu_temples,interesting_places","Hindu temple in Tamil Nadu, India"
+Q18648965,Chennai Tech Park,13.06883,80.27109,1.2,Q18648965,One Indiabulls Park,2770,3,monument,culture;nature;relaxation,"skyscrapers,architecture,interesting_places",Building in India
+W397190720,Statue of Sir Thomas Munro,13.07583,80.27879,2.0,Q7604503,Equestrian statue of Thomas Munro,2631,3,viewpoint,history;culture,"historic,monuments_and_memorials,urban_environment,cultural,interesting_places,sculptures,monuments","Statue by Francis Leggatt Chantrey in Chennai, India"
+N7843307251,Victory War Memorial,13.07349,80.28568,2.7,Q7927570,Victory War Memorial,2573,3,monument,history,"historic,burial_places,interesting_places,war_memorials","Memorial in Chennai, India"
+Q7398809,Safire Theatre complex,13.05400,80.25260,2.3,Q7398809,Safire Theatre complex,2464,2,activity,history;culture,"architecture,historic_architecture,cinemas,cultural,theatres_and_entertainments,interesting_places,destroyed_objects","Former multiple-theatre complex in Chennai, India"
+Q6744208,"Mallikesvarar Temple, Chennai",13.08389,80.27000,1.5,Q6744208,Mallikesvarar Temple,2238,2,temple,spiritual;shopping,"religion,hindu_temples,interesting_places","Shiva temple in Chennai district, Tamil Nadu, India"
+Q6344625,Kachchaleswarar Temple,13.03363,80.27020,4.5,Q6344625,Kachchaleswarar Temple,1934,3,temple,spiritual,"religion,hindu_temples,interesting_places","Temple in Chennai, Tamil Nadu, India"
+Q15181228,"Anna Nagar Ayyappan Koil, Chennai",13.08500,80.21306,5.3,Q15181228,"Anna Nagar Ayyappan Koil, Chennai",1885,3,temple,spiritual,"religion,hindu_temples,interesting_places","Hindu temple dedicated to the deity Ayyappan in Chennai, India"
+W217834274,Garrison Church,13.00231,80.19594,10.6,Q24939064,St. Thomas Garrison Church,1788,3,temple,spiritual;nature,"religion,churches,interesting_places,other_churches","Church in Chennai, India"
+Q24939057,"Anderson Church, Chennai",13.08861,80.28833,3.4,Q24939057,"Anderson Church, Chennai",1701,3,temple,spiritual,"religion,churches,interesting_places,other_churches","Church in Chennai, India"
+Q24939047,"Wesley Church, Egmore",13.07944,80.25667,0.8,Q24939047,"Wesley Church, Egmore",1699,3,temple,spiritual;culture,"religion,churches,interesting_places,other_churches","Church in Chennai, India"
+Q7165645,"People's Park, Chennai",13.07344,80.27322,1.3,Q7165645,"People's Park, Chennai",1310,2,garden,culture;nature;relaxation,"gardens_and_parks,cultural,urban_environment,interesting_places","Recreational park in the city of Chennai, India"
+W28085766,Natesan Park,13.03752,80.23640,4.8,Q6968765,Natesan Park,1242,3,activity,culture;nature;relaxation,"urban_environment,gardens_and_parks,cultural,interesting_places","Park in Chennai, India"
+N310504179,Ambedkar Memorial,13.01932,80.26698,6.0,Q15179678,Dr. Ambedkar Mani Mandapam,1143,3,monument,history,"historic,monuments_and_memorials,interesting_places,monuments",Monument in Chennai
+W217677421,St Peters Church,13.10846,80.29471,5.4,Q24939035,"St. Peter's Church, Royapuram",1139,3,temple,spiritual;culture,"religion,churches,interesting_places,other_churches","Church in Chennai, India"
+N366121227,St Patricks Church,13.00811,80.19536,10.1,Q7401984,"St. Patrick's Church, Chennai",1038,3,temple,spiritual,"religion,cathedrals,interesting_places","Church in Chennai, India"
+W165856075,Periamet Masjid,13.08466,80.27019,1.6,Q7168354,Periamet Mosque,984,2,temple,spiritual,"religion,mosques,interesting_places","Mosque in Chennai, India"
+W211864557,Bharat Insurance Building,13.06501,80.26713,1.1,Q4901121,Bharat Insurance Building,886,2,monument,history;culture,"architecture,historic_architecture,interesting_places,other_buildings_and_structures","Building in Chennai, India, built in 1897"
+Q7402226,"Saint Theresa Church, Perambur",13.12219,80.24021,5.9,Q7402226,"St. Theresa Church, Perambur",678,3,temple,spiritual;culture,"religion,churches,interesting_places,other_churches","Church in Tamil Nadu, India"
+W214698560,Zion Church,13.07522,80.27197,1.2,Q55638257,"Zion Church, Chintadripet",653,2,temple,spiritual;culture,"religion,churches,interesting_places,other_churches","Church in Chennai, India"
+W214698540,May Day Park,13.07363,80.27308,1.3,Q6796482,"May Day Park, Chennai",602,2,garden,culture;nature;relaxation,"urban_environment,gardens_and_parks,cultural,interesting_places","Urban park in Chennai, India"
+Q4842845,Bahram Jung Mosque,13.06273,80.26437,1.2,Q4842845,Bahram Jung Mosque,514,2,temple,spiritual,"religion,mosques,interesting_places","Mosque in Chennai, Tamil Nadu, India"
+Q5303965,"Dr. Annie Besant Park, Chennai",13.05028,80.28056,3.3,Q5303965,Dr. Annie Besant Park,479,3,garden,culture;nature;relaxation,"gardens_and_parks,cultural,urban_environment,interesting_places","Urban park in Chennai, India"
+N5346480621,triplican lebbai mosque,13.05549,80.27173,2.3,Q7843603,Triplicane Labbai Jamaath Mosque,364,2,temple,spiritual;shopping,"religion,mosques,interesting_places","Mosque in Chennai, Tamil Nadu, India"
+Q6783318,Masjid-o-Anwari,13.06286,80.27341,1.8,Q6783318,Masjid-o-Anwari,303,2,temple,spiritual;history,"religion,mosques,interesting_places","Mosque in Chennai, Tamil Nadu, India"
+Q24895645,St.Anne's Church Nesapakkam,13.03600,80.19028,8.7,Q24895645,"St. Anne's Church, Chennai",283,3,temple,spiritual;history,"religion,churches,interesting_places,other_churches",
+W211435481,Queenship Mary Church,13.07763,80.26926,1.0,Q7270874,"Queenship of Mary Church, Chintadripet",217,2,temple,spiritual,"religion,churches,interesting_places,other_churches",
+Q30307003,Mizpah church,13.08861,80.28833,3.4,Q30307003,Mizpah church,62,3,temple,spiritual,"religion,churches,interesting_places,other_churches","Diocese of the Church of South India in Tamil Nadu, India"
+N7016742491,Chennai Marina Lighthouse,13.03963,80.27942,4.2,Q6546309,Chennai Lighthouse (1977),32,3,monument,,"other,unclassified_objects,interesting_places,tourist_object",Lighthouse in India
+Q4906033,"Big Mosque, Poonamallee",13.05374,80.27418,2.6,Q4906033,"Big Mosque, Poonamallee",,2,temple,spiritual;shopping,"religion,mosques,interesting_places","Mosque in Chennai, Tamil Nadu, India"
+Q5638358,Hafiz Ahmad Khan Mosque,13.05313,80.27348,2.6,Q5638358,Hafiz Ahmad Khan Mosque,,2,temple,spiritual,"religion,mosques,interesting_places","Mosque in Chennai, Tamil Nadu, India"
+Q12975439,Ettampadai Temple,13.05151,80.27512,2.9,Q12975439,Ettampadai Temple,,2,temple,spiritual,"religion,hindu_temples,interesting_places","Hindu temple in Tamil Nadu, India"
+W217637689,Raja Annamalai Hall,13.08584,80.28408,2.9,Q7285390,Raja Annamalai Chettiar Hall,,2,activity,culture,"cultural,theatres_and_entertainments,interesting_places,other_theatres",
+Q16309709,"Kandaswami Temple, Georgetown",13.09390,80.28390,3.4,Q16309709,"Kandaswami Temple, Georgetown",,2,temple,spiritual,"religion,hindu_temples,interesting_places","Hindu temple in Tamil Nadu, India"
+Q16879413,"Masjid e Mahmood, Choolaimedu",13.06475,80.22992,3.5,Q16879413,"Masjid e Mahmood, Choolaimedu",,2,temple,spiritual,"religion,mosques,interesting_places","Mosque in Chennai, Tamil Nadu, India"
+Q4780945,Apparswami Temple,13.04028,80.26747,3.7,Q4780945,Apparswami Temple,,2,temple,spiritual;history,"religion,hindu_temples,interesting_places","Hindu temple in Tamil Nadu, India"
+W23929748,Nageswara Rao Park,13.03682,80.26359,4.1,Q6958785,Nageshwara Rao Park,,2,activity,culture;nature;relaxation,"urban_environment,gardens_and_parks,cultural,interesting_places",Regional tourist place in India
+Q6437619,"Krishnaswami Temple, Muthialpet",13.09896,80.28938,4.2,Q6437619,"Krishnaswami Temple, Muthialpet",,2,temple,spiritual;history,"religion,hindu_temples,interesting_places","Hindu temple in Tamil Nadu, India"
+Q23582381,Perambur Flyover Park,13.10888,80.24345,4.4,Q23582381,Perambur Flyover Park,,2,activity,culture;nature;relaxation,"gardens_and_parks,cultural,urban_environment,interesting_places","Urban Park near Perambur railway station, in Chennai, Tamil Nadu, India"
+N4544780100,Tirupathi Balaji Temple,13.03572,80.23636,4.9,Q7585801,"Sri Venkateswara Swamy Temple, T. Nagar",,2,temple,spiritual,"religion,other_temples,interesting_places","Perumal temple in Chennai district, Tamil Nadu, India"
+Q7589510,"St. Lazarus' Church, Chennai",13.02610,80.27430,5.4,Q7589510,"St. Lazarus' Church, Chennai",,2,temple,spiritual;history,"religion,churches,interesting_places,other_churches","Church in Chennai, India"
+W339882886,Ayodhya Aswamedha Yaga Maha Mandapam,13.03911,80.22097,5.8,Q15195505,Ayodhya Mandapam,,2,temple,spiritual,"religion,hindu_temples,interesting_places",Congregation hall
+W102479309,Greenways Road,13.02204,80.25291,5.8,Q5604796,Greenways Road,,2,monument,culture,"bridges,architecture,interesting_places,other_bridges","Neighbourhood in Chennai District, Tamil Nadu, India"
+Q16899142,"Rajah Annamalaipuram Ayyappan Koil, Chennai",13.01860,80.26810,6.1,Q16899142,"Rajah Annamalaipuram Ayyappan Koil, Chennai",,2,temple,spiritual,"religion,hindu_temples,interesting_places","Hindu temple dedicated to the deity Ayyappa in Chennai, India"
+N4691858189,Chennai Railway Museum,13.10043,80.20873,6.4,Q7309131,Chennai Rail Museum,,2,museum,history;culture;nature;relaxation,"cultural,museums,interesting_places,museums_of_science_and_technology,railway_museums","Rail museum in Tamil Nadu, India"
+Q7238466,"Prasanna Venkatesa Perumal Temple, Saidapet",13.03094,80.21889,6.5,Q7238466,"Prasanna Venkatesa Perumal Temple, Saidapet",,2,temple,spiritual;history,"religion,hindu_temples,interesting_places",Hindu temple in Chennai
+Q6355315,"Kamakshi Amman Temple, Saidapet",13.02100,80.22025,7.3,Q6355315,"Kamakshi Amman Temple, Saidapet",,2,temple,spiritual,"religion,hindu_temples,interesting_places","Hindu temple in Tamil Nadu, India"
+Q31354978,Chennai Sivavishnu temple,13.09373,80.19290,7.7,Q31354978,,,2,temple,spiritual,"religion,hindu_temples,interesting_places",
+N312011819,Gandhi Mandapam,13.00650,80.23740,7.8,Q5520701,Gandhi Mandapam (Chennai),,2,activity,culture,"cultural,theatres_and_entertainments,interesting_places,other_theatres","Memorial structures built on Sardar Patel Salai, in Adyar, Chennai"
+N417751248,Varasiddhi Vinayakar Koil,13.00049,80.26732,8.1,Q7915473,Varasiddhi Vinayaka Temple,,2,temple,spiritual;nature;relaxation,"religion,hindu_temples,interesting_places","Hindu temple in Chennai, India"
+N335983002,Snake Park,13.00327,80.23849,8.1,Q5091461,Chennai Snake Park,,2,monument,nature;relaxation,"other,unclassified_objects,interesting_places,tourist_object",Indian non-profit organization
+W379696345,Karl Schmidt memorial,12.99939,80.27214,8.3,Q6372233,Kaj Schmidt Memorial,,2,monument,history;culture;nature;relaxation,"architecture,historic_architecture,interesting_places,other_buildings_and_structures","Monument in Chennai, India"
+W443225463,Madhavaram Botanical Garden,13.14845,80.24224,8.6,Q15068112,Madhavaram Botanical Garden,,2,garden,culture;nature;relaxation,"urban_environment,gardens_and_parks,cultural,interesting_places","Botanical garden in Chennai, India"
+Q16308303,Tiruvalithayam,13.10000,80.18330,8.9,Q16308303,Tiruvalithayam Tiruvallesvarar Temple,,2,temple,spiritual;history,"religion,hindu_temples,interesting_places","Shiva temple in Chennai district, Tamil Nadu, India"
+N5849503688,MGR Film City,12.99356,80.24706,9.0,Q6715762,MGR Film City,,2,monument,,"other,unclassified_objects,interesting_places,tourist_object","Film studio in Taramani, Chennai. India"
+N334651033,Ashtalakshmi Temple,12.99253,80.27042,9.0,Q4805940,"Ashtalakshmi Temple, Chennai",,2,temple,spiritual;nature;food;relaxation,"religion,hindu_temples,interesting_places","Hindu temple of Ashtalakshmi in Chennai, India"
+N340891549,Kalakshetra,12.98818,80.26498,9.5,Q1431414,Kalakshetra Foundation,,2,activity,culture,"cultural,theatres_and_entertainments,interesting_places,other_theatres","Art school in Besant Nagar, India"
+N365954022,Nandambakkam Ramar Temple,13.01730,80.19149,9.8,Q6433998,"Kothandaramaswami Temple, Nandambakkam",,2,temple,spiritual,"religion,hindu_temples,interesting_places","Hindu temple in Tamil Nadu, India"
+N370495399,Juma Masjid,13.00902,80.19586,10.0,Q5002764,Butt Road Jumma Masjid,,2,temple,spiritual;shopping,"religion,mosques,interesting_places","Mosque in Parangimalai, Tamil Nadu, India"
+W25504265,Velachery Lake,12.98830,80.21047,10.9,Q7352533,Velachery Lake,,2,viewpoint,nature;relaxation,"dry_lakes,water,natural,interesting_places","Lake in Velachery, Chennai, India"
+Q23581781,Mathur MMDA Park,13.17240,80.24788,11.1,Q23581781,Mathur MMDA Park,,2,garden,culture;nature;relaxation,"gardens_and_parks,cultural,urban_environment,interesting_places","Urban park in Chennai, India"
+W406910200,Metro Nagar Park,13.04269,80.16198,11.2,,,,2,garden,culture;nature;relaxation,"gardens_and_parks,cultural,urban_environment,interesting_places",
+Q6739781,"Makkah Masjid, Chennai",13.05832,80.15176,11.9,Q6739781,"Makkah Mosque, Chennai",,2,temple,spiritual,"religion,mosques,interesting_places","Mosque in Chennai, Tamil Nadu, India"
+Q64828554,நங்கநல்லூர் அர்த்தநாரீஸ்வரர் கோயில்,12.98498,80.18832,12.6,Q64828554,,,2,temple,spiritual,"religion,other_temples,interesting_places",
+N4532181589,Agatheeswarar Temple - Surian Stalam(Kolapakkam),13.01163,80.15097,13.7,Q4691441,"Agasteeswarar Temple, Kolapakkam",,2,temple,spiritual,"religion,hindu_temples,interesting_places","Hindu temple in Chennai, India"
+N4451648479,Sri Devi karumariamman Temple,13.07199,80.12403,14.8,Q19807826,Tiruverkadu Devi Karumariamman Temple,,2,temple,spiritual,"religion,hindu_temples,interesting_places","Hindu temple in Chennai, Tamil Nadu, India"
+N3936307622,Cholamandal Artists' Village,12.92291,80.25173,16.7,Q5104278,Cholamandal Artists' Village,,2,museum,culture,"other,unclassified_objects,interesting_places,tourist_object","Artists' commune in Chennai, India"
+W178751075,Kamakashi Amman Temple,13.02990,80.11019,17.0,Q6355313,"Kamakshi Amman Temple, Mangadu",,2,temple,spiritual;nature,"religion,hindu_temples,interesting_places","Hindu temple in Tamil Nadu, India"
+W35458852,VGP Golden Beach Resorts,12.91449,80.25321,17.7,Q5579191,"Golden Beach, Chennai",,2,beach,nature;relaxation;adventure,"natural,interesting_places,beaches,other_beaches,amusements,amusement_parks","Beach on the Bay of Bengal in Chennai, India"
+Q6963787,Nanmangalam Reserve Forest,12.92627,80.17518,18.8,Q6963787,Nanmangalam Reserve Forest,,2,viewpoint,nature,"interesting_places,natural,nature_reserves,other_nature_conservation_areas",
+N2127117955,Sri Pratyagara Devi Temple,12.89791,80.23545,19.7,Q15268483,"Prathyangira Devi Temple, Shollinganallur",,2,temple,spiritual,"religion,hindu_temples,interesting_places",
+Q15240792,Kundrathur Murugan Temple,12.99740,80.09660,19.7,Q15240792,Kundrathur Murugan Temple,,2,temple,spiritual,"religion,hindu_temples,interesting_places",
+Q2229733,Thiruneermalai,12.96368,80.11469,20.0,Q2229733,Thiruneermalai,,2,temple,spiritual,"religion,hindu_temples,interesting_places",
+W335568735,Sri Ranganatha Perumal Temple,12.96359,80.11446,20.0,Q19807724,Thiruneermalai (temple complex),,2,temple,spiritual,"religion,hindu_temples,interesting_places",
+N4308319901,EMPEE GROUP OF COMPANY,13.07272,80.26175,0.1,,,,1,monument,,"other,unclassified_objects,interesting_places,tourist_object",
+N4308320193,BHARATH PETROLEUM BUNK,13.07232,80.26026,0.1,,,,1,monument,,"other,unclassified_objects,interesting_places,tourist_object",
+N4324801889,MOTOR FINANCE CORPORATION,13.07246,80.26206,0.2,,,,1,monument,,"other,unclassified_objects,interesting_places,tourist_object",
+W214715748,Sacred Heart Shrine,13.07482,80.26362,0.3,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+W354453583,Sri Lankan Buddhist Temple,13.07625,80.26234,0.4,,,,1,temple,spiritual,"religion,buddhist_temples,interesting_places",
+N6938761989,Sri Lankan Maha Bodhi Society,13.07628,80.26241,0.4,,,,1,temple,spiritual,"religion,buddhist_temples,interesting_places",
+W214714602,C.S.I. St. John Baptist Church,13.07579,80.26375,0.4,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+W344497261,Albert,13.07623,80.26384,0.5,,,,1,activity,culture,"cultural,cinemas,theatres_and_entertainments,interesting_places",
+W29114923,Egmore National Museum,13.07123,80.25711,0.5,,,,1,museum,culture,"cultural,museums,interesting_places,other_museums",
+N365353380,Egmore Museum Theatre,13.07072,80.25721,0.5,,,,1,activity,culture,"cultural,theatres_and_entertainments,interesting_places,other_theatres",
+W28854894,Egmore Museum,13.07074,80.25710,0.5,,,,1,monument,,"other,unclassified_objects,interesting_places,tourist_object",
+N4332238490,DUGAR GROUP OF COMPANY,13.06850,80.26058,0.5,,,,1,monument,,"other,unclassified_objects,interesting_places,tourist_object",
+W344497260,Adhi Ponniyamman temple,13.07695,80.26445,0.6,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+W211435485,Shanti Gurudev Temple,13.07584,80.26674,0.7,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+W214711622,Komaleshwaran temple,13.06898,80.26648,0.8,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+N304918810,Annai Maniammai Statue,13.08006,80.26284,0.8,,,,1,monument,history,"historic,monuments_and_memorials,interesting_places,monuments",
+W211435480,Perumal Koil,13.07623,80.26752,0.8,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+N2296732709,Sivan Koil,13.07659,80.26758,0.8,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+N2296733064,Vinayagar Koil,13.07654,80.26834,0.9,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+N8488620392,Periyar Memorial,13.08146,80.26131,0.9,,,,1,monument,history,"historic,monuments_and_memorials,interesting_places,monuments",
+N369875745,Holy Trinity Church,13.08155,80.25981,0.9,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+W354773285,Masjid Osmaina,13.07591,80.26968,1.0,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+W240919361,Makkah Mosque,13.06649,80.26761,1.0,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+W354795060,Gaiety,13.06866,80.26979,1.1,,,,1,activity,culture,"cultural,cinemas,theatres_and_entertainments,interesting_places",
+N366487478,Philatelic Bureau,13.06717,80.26968,1.2,,,,1,monument,,"other,unclassified_objects,interesting_places,tourist_object",
+W209546158,Lalit Kala Academy,13.06462,80.25475,1.2,,,,1,activity,culture,"cultural,theatres_and_entertainments,interesting_places,other_theatres",
+N5625312409,Church at Jehovah Shammah,13.08354,80.25686,1.2,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N5079397361,St. Antony's Church,13.07143,80.27233,1.3,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N3954606807,Anna Statue,13.06832,80.27193,1.3,,,,1,viewpoint,culture,"cultural,urban_environment,interesting_places,installation",
+N366488596,Devi Cineplex,13.06668,80.27106,1.3,,,,1,activity,culture,"cultural,cinemas,theatres_and_entertainments,interesting_places",
+N4377811599,mvc,13.08465,80.26498,1.3,,,,1,viewpoint,nature,"view_points,other,interesting_places",
+W217657441,Jayapradha,13.06227,80.26695,1.4,,,,1,activity,culture,"cultural,cinemas,theatres_and_entertainments,interesting_places",
+W218191085,Sangam Cinemas,13.07939,80.24938,1.4,,,,1,activity,culture,"cultural,cinemas,theatres_and_entertainments,interesting_places",
+N370908513,Victoria Technical Institute,13.06023,80.26028,1.4,,,,1,monument,,"other,unclassified_objects,interesting_places,tourist_object",
+N610963080,Gangadeeshwar Koil,13.08457,80.25428,1.5,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+N321831793,பெரியார் சிலை,13.07159,80.27440,1.5,,,,1,monument,history,"historic,monuments_and_memorials,interesting_places,monuments",
+N8634822101,P. Theagaraya Chetty,13.08138,80.27172,1.5,,,,1,viewpoint,culture,"cultural,urban_environment,interesting_places,sculptures",
+N5362867015,Temle Of God,13.08274,80.27050,1.5,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+W211435531,Siddique Sarai,13.08105,80.27238,1.5,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N309062091,King Edward VI Statue,13.07141,80.27483,1.5,,,,1,monument,history,"historic,monuments_and_memorials,interesting_places,monuments",
+N5849501686,British Council,13.05974,80.25788,1.5,,,,1,monument,,"other,unclassified_objects,interesting_places,tourist_object",
+N355549777,Governers Bodyguard Mosque,13.07356,80.27505,1.5,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+W218216039,St Mathias Church,13.08725,80.26128,1.6,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N4221573010,Blaze Dream Technologies Pvt Ltd,13.06377,80.24979,1.6,,,,1,monument,,"other,unclassified_objects,interesting_places,tourist_object",
+N354959982,Triplicane Big Wallajah Mosque,13.06374,80.27224,1.6,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N315897595,Melody,13.05934,80.26579,1.6,,,,1,activity,culture,"cultural,cinemas,theatres_and_entertainments,interesting_places",
+N3693619427,Escape Cinemas,13.05873,80.26379,1.6,,,,1,activity,culture,"cultural,cinemas,theatres_and_entertainments,interesting_places",
+N6274191289,Madras Gymkhana Club,13.07276,80.27644,1.7,,,,1,monument,,"other,unclassified_objects,interesting_places,tourist_object",
+N309061729,Muniswarar Koil,13.07682,80.27612,1.7,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+N315897178,Royapettah Clock Tower,13.05802,80.26514,1.7,,,,1,monument,,"other,unclassified_objects,interesting_places,tourist_object",
+W217722033,St Paul's Church,13.08892,80.26305,1.8,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N6274195588,Dargah Hazrath Syed Akbar Ali Shah Khaderi Rah,13.06596,80.27544,1.8,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+W670181583,CSI Wesley Church,13.05765,80.26467,1.8,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N370317596,Alliance Française,13.06693,80.24573,1.8,,,,1,activity,culture,"cultural,theatres_and_entertainments,interesting_places,other_theatres",
+N315901385,Wesley Church,13.05746,80.26447,1.8,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N4524159593,Thiruveteeswarar - Raghu&Kethu Stalam,13.06131,80.27254,1.8,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+W240920337,Star Theatre,13.06285,80.27456,1.9,,,,1,activity,culture,"cultural,cinemas,theatres_and_entertainments,interesting_places",
+W217645021,Woodlands,13.05662,80.26527,1.9,,,,1,activity,culture,"cultural,cinemas,theatres_and_entertainments,interesting_places",
+N4603364790,Chidambareswarar Temple - Agaya Stalam,13.09045,80.26307,1.9,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+W240869118,RC Church,13.09078,80.26012,2.0,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N4000119364,The Stirrupless Majesty,13.07588,80.27882,2.0,,,,1,monument,history,"historic,monuments_and_memorials,interesting_places,monuments",
+W154030371,Sathyam Cinemas,13.05540,80.25819,2.0,,,,1,activity,culture,"cultural,cinemas,theatres_and_entertainments,interesting_places",
+N386890399,Sathyam Cinema,13.05536,80.25809,2.0,,,,1,activity,culture,"cultural,theatres_and_entertainments,interesting_places,other_theatres",
+W217845113,CSI Trinity Chapel,13.08380,80.27636,2.0,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+W241540252,Buvaneshvari,13.09163,80.25831,2.1,,,,1,activity,culture,"cultural,cinemas,theatres_and_entertainments,interesting_places",
+N6274254485,Masjid d Qudusia,13.06456,80.27824,2.1,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N303283690,Memorial Hall,13.08276,80.27832,2.2,,,,1,activity,culture,"cultural,theatres_and_entertainments,interesting_places,other_theatres",
+W240920335,Presentation Church,13.05534,80.27097,2.3,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+W215475864,Ega,13.07786,80.24051,2.3,,,,1,activity,culture,"cultural,cinemas,theatres_and_entertainments,interesting_places",
+N4792615751,Kosapet 5 lights,13.09319,80.25648,2.3,,,,1,monument,history,"historic,monuments_and_memorials,interesting_places,monuments",
+N3053552705,Village Road Mosque,13.06087,80.24290,2.4,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N313127753,St Theresas Church,13.05519,80.24893,2.4,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+W240501605,Layman's Evangelical Fellowship,13.05623,80.24732,2.4,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+W217722024,Saravana,13.09271,80.25153,2.4,,,,1,activity,culture,"cultural,cinemas,theatres_and_entertainments,interesting_places",
+N611549980,Balaj,13.09287,80.25176,2.4,,,,1,activity,culture,"cultural,cinemas,theatres_and_entertainments,interesting_places",
+N8443636924,KANDHAKOTTAM Temple,13.08599,80.27914,2.4,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+W778761509,Vinayaka Temple,13.05914,80.24332,2.5,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+N415915377,MV Rao Concert Hall,13.06837,80.23870,2.5,,,,1,activity,culture,"cultural,theatres_and_entertainments,interesting_places,other_theatres",
+N7272343104,Rani Seethai Hall,13.05299,80.25131,2.5,,,,1,activity,culture,"cultural,theatres_and_entertainments,interesting_places,other_theatres",
+W952172166,St. Georges Cathedral Church of South India,13.05208,80.25294,2.5,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+W217609139,Ekambareswara Koil,13.08815,80.27827,2.5,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+W798821766,Saint Thomas Chapel,13.07816,80.23824,2.5,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+W240461910,Pilot Theatre,13.05066,80.26362,2.5,,,,1,activity,culture,"cultural,cinemas,theatres_and_entertainments,interesting_places",
+W209546277,Agatheeswarar Temple - Sukran Stalam,13.06012,80.24132,2.6,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+W31897155,Public Works Department,13.06185,80.28206,2.6,,,,1,monument,history;culture,"architecture,historic_architecture,interesting_places,other_buildings_and_structures",
+W964604228,Tamil Nadu Legislative Assembly Diamond Jubilee Arch,13.07159,80.28520,2.6,,,,1,monument,history,"historic,monuments_and_memorials,interesting_places,monuments",
+W217609835,bhaira mattam,13.09090,80.27715,2.6,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+N415915284,MCC Auditorium,13.07051,80.23667,2.6,,,,1,activity,culture,"cultural,theatres_and_entertainments,interesting_places,other_theatres",
+W677244970,Renuka Parmeshwari Temple (Chinnama Kovil),13.08937,80.27882,2.6,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+N310981345,Robert Caldwell Statue,13.06685,80.28465,2.7,,,,1,monument,,"other,unclassified_objects,interesting_places,tourist_object",
+N7016743185,Semmozhi Poonga,13.05063,80.25151,2.7,,,,1,monument,,"other,unclassified_objects,interesting_places,tourist_object",
+N3954647647,Stone inscrptions,13.05404,80.27637,2.7,,,,1,monument,history,"other,unclassified_objects,interesting_places,historic_object",
+N310981506,Barthiayar Statue,13.06222,80.28329,2.7,,,,1,monument,history,"historic,monuments_and_memorials,interesting_places,monuments",
+R5492630,Sri Venkatakrishnan Swamy vai temple,13.05395,80.27635,2.7,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+W964602899,Dr. M. G. Ramachandran Memorial Arch,13.06074,80.28272,2.7,,,,1,monument,history,"historic,monuments_and_memorials,interesting_places,monuments",
+N6261162585,Mosque,13.09739,80.25529,2.8,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+W355666434,Power of Jesus Church,13.04885,80.25555,2.8,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N5849458088,Perarignar Anna Memorial,13.06547,80.28558,2.8,,,,1,monument,history,"historic,monuments_and_memorials,interesting_places,monuments",
+N319781245,King George V Statue,13.08838,80.28215,2.9,,,,1,monument,history,"historic,monuments_and_memorials,interesting_places,monuments",
+N310981548,Kannagi Statue,13.05748,80.28224,2.9,,,,1,monument,history,"historic,monuments_and_memorials,interesting_places,monuments",
+N6356480609,Kamaraj Memorial,13.04903,80.24963,3.0,,,,1,monument,history,"historic,monuments_and_memorials,interesting_places,monuments",
+W354736240,Gurudwara Sahib,13.05055,80.24646,3.0,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N308301823,Kamaraj Arangam,13.04905,80.24833,3.0,,,,1,activity,culture,"cultural,theatres_and_entertainments,interesting_places,other_theatres",
+W217646642,Chennai Fort Museum,13.08097,80.28770,3.0,,,,1,museum,culture,"cultural,museums,interesting_places,other_museums",
+N4880197522,Dharmaraja Dhroupathi Amman Temple,13.09466,80.27816,3.0,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N366498874,GK Moopanar Memorial,13.04910,80.24749,3.0,,,,1,monument,history,"historic,monuments_and_memorials,interesting_places,monuments",
+N4880197521,Sivan Temple,13.09441,80.27882,3.1,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N8935540226,Gurdwara sahib,13.04937,80.24682,3.1,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+W354815293,Sri Rama Anjaneya Temple,13.04673,80.26971,3.1,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+W354759920,Christ King Church,13.06123,80.23475,3.1,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N1871340240,CSI CHURCH OF THE GOOD SHEPHERD,13.04494,80.26060,3.1,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N301739701,Russian Cultural Centre,13.04511,80.25668,3.2,,,,1,activity,culture,"cultural,theatres_and_entertainments,interesting_places,other_theatres",
+N4524178792,Theerthabaleeswarar - Sapta Lingam,13.04785,80.27451,3.2,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N2485384468,L. Balasubramaniam Hall Aiobeu Swastika,13.04580,80.26936,3.2,,,,1,activity,culture,"cultural,theatres_and_entertainments,interesting_places,other_theatres",
+N6356473264,Devi Muthumariamman Temple,13.04813,80.24593,3.2,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+W231054880,ECI Church,13.08627,80.23387,3.3,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N5298110721,KUSHI TURST,13.04980,80.24260,3.3,,,,1,monument,,"other,unclassified_objects,interesting_places,tourist_object",
+N393765059,St. Thomas Orthodox Cathedral,13.09117,80.28481,3.3,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N4694981089,CIT colony,13.04373,80.26048,3.3,,,,1,viewpoint,culture,"cultural,urban_environment,interesting_places,installation",
+N4694790589,Office in Mylapore,13.04371,80.26049,3.3,,,,1,viewpoint,culture,"cultural,urban_environment,interesting_places,installation",
+N310981550,Annie Besant Statue,13.05040,80.28056,3.3,,,,1,monument,history,"historic,monuments_and_memorials,interesting_places,monuments",
+N4335719689,Sangeetha hostel,13.06621,80.23119,3.3,,,,1,viewpoint,nature,"view_points,other,interesting_places",
+N6297569966,Om Sakthi Vinayagar Temple,13.04767,80.24512,3.3,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N6297571205,AGS Cinemas (T Nagar),13.04748,80.24505,3.3,,,,1,activity,culture,"cultural,cinemas,theatres_and_entertainments,interesting_places",
+W306867200,Durga Temple,13.04290,80.25935,3.4,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+N3488536142,St. Anthony's Church,13.08972,80.28745,3.4,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+W354514929,Kashi Vishwanathar Temple,13.09805,80.24124,3.5,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+W156241245,Narada Gana Sabha,13.04153,80.25820,3.5,,,,1,activity,culture,"cultural,theatres_and_entertainments,interesting_places,other_theatres",
+W217609833,CSI Tucker Church,13.09302,80.28646,3.5,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N5533743121,mm preview  theatre,13.05342,80.23485,3.6,,,,1,activity,culture,"cultural,theatres_and_entertainments,interesting_places,other_theatres",
+N8935516678,Shree Shantinath jain temple,13.04620,80.24292,3.6,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+W218191034,Lakshmi Talkies,13.07475,80.22780,3.6,,,,1,activity,culture,"cultural,cinemas,theatres_and_entertainments,interesting_places",
+N4382115001,Pothiamman Koil,13.04227,80.25095,3.6,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N7653024582,Inox,13.04309,80.27374,3.6,,,,1,activity,culture,"cultural,cinemas,theatres_and_entertainments,interesting_places",
+W355449335,Mahalingapuram Ayyappan Temple,13.05659,80.23186,3.6,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+N583159458,Amman Temple,13.04297,80.24749,3.7,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+W217849587,Kachaleeswarar Koil,13.09330,80.28787,3.7,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N366795457,Kamaraj Memorial House,13.04746,80.23955,3.7,,,,1,museum,culture,"cultural,museums,interesting_places,other_museums",
+N4529954004,Ekambaresewarar Temple Bhumi,13.07347,80.22662,3.7,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N308303592,Anna Arivalayam,13.04172,80.24945,3.7,,,,1,activity,culture,"cultural,theatres_and_entertainments,interesting_places,other_theatres",
+W156244245,Asthika Samajam,13.03989,80.25538,3.8,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+N310982030,Thiruvalluvar Statue,13.04014,80.26810,3.8,,,,1,monument,,"other,unclassified_objects,interesting_places,tourist_object",
+W47416300,Assumption Church,13.09911,80.28323,3.8,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N4416325391,my home,13.09556,80.23464,3.8,,,,1,viewpoint,nature,"view_points,other,interesting_places",
+W209413521,Mylapore Fine Arts,13.03926,80.26258,3.8,,,,1,activity,culture,"cultural,theatres_and_entertainments,interesting_places,other_theatres",
+N4359605889,Brahma Kumaris,13.06362,80.22725,3.8,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+W211261672,Mylapore Anjaneya Temple,13.03975,80.26802,3.8,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+N366795454,NS Krishnan Statue,13.04535,80.24027,3.8,,,,1,viewpoint,culture,"cultural,urban_environment,interesting_places,sculptures",
+N311988613,Alwarpet Anjaneyar Temple,13.03854,80.25847,3.9,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+N310981786,Shivaji Ganesan Statue,13.04351,80.27979,3.9,,,,1,monument,history,"historic,monuments_and_memorials,interesting_places,monuments",
+W218144536,Vani Mahal,13.04455,80.24019,3.9,,,,1,activity,culture,"cultural,theatres_and_entertainments,interesting_places,other_theatres",
+N310981680,Gandhi Statue,13.04332,80.28005,3.9,,,,1,viewpoint,history;culture,"historic,monuments_and_memorials,cultural,urban_environment,interesting_places,sculptures,monuments",
+N308450691,Tatvaloka,13.03894,80.25111,4.0,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+N416413322,Kamadhenu,13.03780,80.26654,4.0,,,,1,activity,culture,"cultural,cinemas,theatres_and_entertainments,interesting_places",
+W771308054,Elim Revival Church,13.05313,80.23040,4.0,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+W217672432,St Xaviers Church,13.09979,80.28561,4.0,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N365281356,Sivagami Petachi Auditorium,13.03730,80.25889,4.0,,,,1,activity,culture,"cultural,theatres_and_entertainments,interesting_places,other_theatres",
+N4415983490,King marine services,13.09431,80.29078,4.0,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+W156250615,Subramania Temple,13.03874,80.24938,4.0,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+N4524159592,Malleswarar - Saptha Lingam,13.03881,80.27302,4.0,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N603480842,Crown Talkies,13.10473,80.27959,4.0,,,,1,activity,culture,"cultural,cinemas,theatres_and_entertainments,interesting_places",
+W240901893,Donic Savio Church,13.10022,80.28596,4.0,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+W208593376,Navashakthi Vinayakar Koil,13.03717,80.26707,4.1,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+N4524178590,Virupaksheeswarar - Sapta Lingam,13.03893,80.27420,4.1,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+W211423279,Mundakanniamman Koil,13.03794,80.27142,4.1,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+W157989474,Alaiamman Koil,13.03911,80.24625,4.1,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+N603499167,Anjaneya Koil,13.10338,80.28305,4.1,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+N6117607937,Madina Mosque,13.09114,80.22755,4.1,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N4524159394,Karaneeswarar - Saptha Lingam,13.03820,80.27380,4.1,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N310981827,Kamarajar Statue,13.04027,80.27951,4.2,,,,1,monument,history,"historic,monuments_and_memorials,interesting_places,monuments",
+N600666554,Krishnan Koil,13.09893,80.28920,4.2,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+N603480847,Sri Krishna Talkies,13.10633,80.27949,4.2,,,,1,activity,culture,"cultural,cinemas,theatres_and_entertainments,interesting_places",
+W209412388,Piliyar Koil,13.03545,80.26003,4.2,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+N4411849890,Nishanth,13.03694,80.27218,4.2,,,,1,monument,,"other,unclassified_objects,interesting_places,tourist_object",
+N4603345194,Malligeswarar Temple,13.09822,80.29030,4.2,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N941573710,PVR Cinemas,13.07362,80.22169,4.2,,,,1,activity,culture,"cultural,cinemas,theatres_and_entertainments,interesting_places",
+N8935512052,Panchamuga vinayakar koil,13.04085,80.23976,4.3,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+W355626573,Sri Ragavendra Mutt,13.04340,80.23579,4.3,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N4524178793,Vaaliswarar - Saptha Lingam,13.03749,80.27594,4.3,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N3153724270,St Marks Church,13.10309,80.28608,4.3,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+W354839625,New Life Rainbow Church,13.06444,80.22221,4.3,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N600666568,Sengazhuneer Pilliyar Koil,13.10131,80.28859,4.3,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+N4794732210,Kannadasan Statue,13.04266,80.23588,4.3,,,,1,viewpoint,history;culture,"historic,monuments_and_memorials,cultural,urban_environment,interesting_places,sculptures,monuments",
+N618619758,Gopikrishna,13.09506,80.22738,4.4,,,,1,activity,culture,"cultural,cinemas,theatres_and_entertainments,interesting_places",
+N4035158589,CSI St James Church,13.09814,80.22971,4.4,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N4035161699,Gopikrishna theatre,13.09503,80.22735,4.4,,,,1,activity,culture,"cultural,cinemas,theatres_and_entertainments,interesting_places",
+W354839579,Arulmigu Sri Pushpavalli Ammal Temple,13.06494,80.22118,4.4,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+W208567678,Jain Temple,13.03460,80.27156,4.4,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N415412674,Nandalala Institute,13.03327,80.26347,4.4,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+N4524159392,Kalahasteeswarar Temple - Vaayu Stalam,13.10199,80.28967,4.5,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N5918435985,Akbar herbal mills,13.03479,80.27375,4.5,,,,1,monument,,"other,unclassified_objects,interesting_places,tourist_object",
+W24270582,Sri Karpakambica udanurai Kapaleeswarar temple,13.03377,80.26994,4.5,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+N4633798389,Iyappan Koil,13.11071,80.24546,4.5,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+W670178712,Fathima Church,13.05082,80.22622,4.5,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+W209412389,Shirdi Sai Baba Temple,13.03270,80.26473,4.5,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+N6074258022,"St Alphonsa Syro Malabar Church, Kodambakkam",13.05667,80.22273,4.5,,,,1,temple,spiritual,"religion,churches,interesting_places,catholic_churches",
+N311281260,Perambur Lourdes Church,13.10903,80.24101,4.5,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N2775738421,Agasthiyar Temple,13.03954,80.23672,4.6,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+W355072005,Lakshana Art Gallery,13.03217,80.25800,4.6,,,,1,museum,culture,"cultural,museums,interesting_places,art_galleries",
+W208570710,Veleeswarar Temple,13.03251,80.26959,4.6,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+N2394711897,PowerHouse Church,13.06879,80.21827,4.6,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+W217668977,Rasika Ranjani Sabha,13.03263,80.27160,4.7,,,,1,activity,culture,"cultural,theatres_and_entertainments,interesting_places,other_theatres",
+N388125720,Anna Nagar Arch,13.07517,80.21790,4.7,,,,1,monument,history,"historic,monuments_and_memorials,interesting_places,monuments",
+N339327873,Sri Krishna Gana Sabha - Auditorium,13.04314,80.23042,4.7,,,,1,activity,culture,"cultural,theatres_and_entertainments,interesting_places,other_theatres",
+W666393552,Morning Star Lutheran Church,13.10775,80.28593,4.7,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N472593951,Azad Nagar Mosque,13.06829,80.21776,4.7,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+W666393850,St Roque's Church,13.10829,80.28581,4.7,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N4851258398,Eagle,13.03763,80.23641,4.8,,,,1,viewpoint,culture,"cultural,urban_environment,interesting_places,sculptures",
+N4851259154,Pillaiyar Kovil,13.03780,80.23604,4.8,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+N3830286330,Tomb of St Thomas,13.03353,80.27802,4.8,,,,1,monument,history,"historic,monuments_and_memorials,interesting_places,monuments",
+N4851251153,Dancing Children,13.03740,80.23604,4.8,,,,1,viewpoint,culture,"cultural,urban_environment,interesting_places,sculptures",
+W368743557,Vishalakshi theru koil,13.02983,80.26071,4.8,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+W354849976,Gurukulam,13.02983,80.25936,4.8,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+W215526704,Ganesh Temple,13.04973,80.22322,4.8,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+N8827381920,St. Thomas Pole,13.03322,80.27883,4.9,,,,1,monument,history,"historic,monuments_and_memorials,interesting_places,monuments",
+W217870889,Pandian Theatre,13.11257,80.28056,4.9,,,,1,activity,culture,"cultural,theatres_and_entertainments,interesting_places,other_theatres",
+W354541898,Jamia Masjid,13.03914,80.23125,5.0,,,,1,temple,spiritual,"religion,mosques,interesting_places",
+N389012377,Dr Ambedkar Statue,13.05213,80.22024,5.0,,,,1,monument,,"other,unclassified_objects,interesting_places,tourist_object",
+N4439298096,Holy Cross Church - Catholic,13.03299,80.23980,5.0,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N4788407923,Singaravelar Memorial House,13.10783,80.29125,5.1,,,,1,monument,history,"historic,monuments_and_memorials,interesting_places,monuments",
+N5825210353,S2 Perambur,13.11242,80.23632,5.1,,,,1,activity,culture,"cultural,cinemas,theatres_and_entertainments,interesting_places",
+N4707057064,Lakshmi Amman Temple,13.11615,80.24289,5.2,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+N6057943092,Bala Vinayagar Temple,13.02848,80.24699,5.2,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N386002500,Muthuramalingar Thevar Statue,13.03103,80.24017,5.2,,,,1,monument,,"other,unclassified_objects,interesting_places,tourist_object",
+N618641950,Kambar Arangam,13.09940,80.22108,5.2,,,,1,activity,culture,"cultural,theatres_and_entertainments,interesting_places,other_theatres",
+N389019559,Nandanam Arch,13.02993,80.24219,5.2,,,,1,monument,history,"historic,monuments_and_memorials,interesting_places,monuments",
+N295552094,Anna Nagar Tower,13.08630,80.21379,5.3,,,,1,viewpoint,nature,"view_points,other,interesting_places",
+W23186298,Siva Vishnu Temple,13.03592,80.23013,5.3,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+W217927401,Ayappan Temple,13.08516,80.21319,5.3,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+N907580779,MADRAS KALI BARI,13.04454,80.22118,5.4,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+W468702000,Amman Koil,13.02461,80.26475,5.4,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+W274528989,Panjali Amman Koil,13.07697,80.21072,5.5,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+N4631807211,St.Lukes church,13.02401,80.26410,5.5,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N7121721455,Maagaaniamman Temple,13.09058,80.21340,5.5,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+W468987506,Lord Ganesh Temple,13.02358,80.26361,5.5,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+N618641924,Viinayagar Koil,13.09975,80.21732,5.6,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+N3690737575,Satya Narayana Temple,13.03927,80.22288,5.6,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+W23110086,Foreshore Estate Beach,13.02616,80.27913,5.6,,,,1,beach,nature;relaxation,"natural,interesting_places,beaches,other_beaches",
+W214202905,Kasi Viswanathan Kovil,13.03596,80.22500,5.7,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+W462703957,Vasantha Mandapam,13.03456,80.22626,5.7,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+N1955986764,Sankara Mutt,13.03562,80.22478,5.7,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+W214202950,Sri Kothandaramar Temple,13.03444,80.22572,5.8,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+W214148765,Nawab Fazeelathunnisa Begum Sahiba Masjid,13.02805,80.23495,5.8,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+W341394306,Sai Baba Temple,13.03765,80.22184,5.8,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+N612548203,Sundara Vinayagar Temple,13.07199,80.20683,5.9,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N5910238794,New Logos Telugu Lutheran Church,13.12031,80.28521,5.9,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+W333380488,YMCA chapel,13.02617,80.23643,5.9,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N304943976,Vengeeswaran Sivan Kovil,13.04875,80.21255,5.9,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+W349012400,Vinayager temple,13.03617,80.22153,5.9,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+N4326966491,idea showroom,13.04823,80.21197,6.0,,,,1,viewpoint,nature,"view_points,other,interesting_places",
+N4326960393,arun anna room,13.05859,80.20757,6.0,,,,1,viewpoint,nature,"view_points,other,interesting_places",
+N310504290,Ayappan Koil,13.01893,80.26808,6.1,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+W28275546,Chettiyar's Ayappan Temple,13.01890,80.26818,6.1,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N8096440755,SPI Palazzo Chennai,13.05068,80.20965,6.1,,,,1,activity,culture,"cultural,cinemas,theatres_and_entertainments,interesting_places",
+N4695235090,Mrc nagar sm,13.01971,80.27312,6.1,,,,1,viewpoint,culture,"cultural,urban_environment,interesting_places,installation",
+W352252272,Sri Selva Vijayagar Temple,13.03087,80.22517,6.1,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+W214202914,Srinivasa Theatre,13.03102,80.22472,6.1,,,,1,activity,culture,"cultural,cinemas,theatres_and_entertainments,interesting_places",
+N577376035,Kamala Cinemas,13.04893,80.21016,6.1,,,,1,activity,culture,"cultural,cinemas,theatres_and_entertainments,interesting_places",
+N365251742,IMAGE Auditorium,13.01831,80.26999,6.2,,,,1,activity,culture,"cultural,theatres_and_entertainments,interesting_places,other_theatres",
+W521886289,tiruveedhi amman kovil,13.07634,80.20363,6.2,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+N5304939224,Sri Chandra Mouleeswarar Thirukovil,13.08692,80.20451,6.3,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+W214202949,Sri Adhi Chenna kesava perumal Temple,13.03177,80.22119,6.3,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+W348959275,ECI Arputhanathar Aalayam (Church),13.03237,80.22045,6.3,,,,1,temple,spiritual,"religion,churches,interesting_places,other_churches",
+N4308319795,CHICKEN 65 SHOP,13.03234,80.22009,6.3,,,,1,monument,,"other,unclassified_objects,interesting_places,tourist_object",
+N5631888615,Dharga,13.02987,80.22281,6.3,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N5631888614,Advent Church,13.02963,80.22300,6.4,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N7016742492,Sivaji Ganesan Memorial,13.01607,80.25925,6.4,,,,1,monument,history,"historic,monuments_and_memorials,interesting_places,monuments",
+N410623178,Brodie Castle,13.01584,80.26285,6.4,,,,1,monument,,"other,unclassified_objects,interesting_places,tourist_object",
+W363925222,Anna Nagar Methodist Church,13.08247,80.20269,6.4,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N1237850742,Sri Raghavendra Swamy Temple,13.05923,80.20325,6.4,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+W355079723,Dastageer Sahib Jamia Masjid,13.02553,80.22720,6.4,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+W217864763,Agasthya Theatre,13.12450,80.28960,6.5,,,,1,activity,culture,"cultural,cinemas,theatres_and_entertainments,interesting_places",
+W249522831,Church Building,13.01696,80.24458,6.5,,,,1,temple,spiritual,"religion,churches,interesting_places,other_churches",
+W348493964,Advent Christian Church,13.01692,80.24467,6.5,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+W354310915,Masjid Nooriya,13.11330,80.21640,6.6,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N353873992,SSR Pankajam Theater,13.05167,80.20440,6.6,,,,1,activity,culture,"cultural,cinemas,theatres_and_entertainments,interesting_places",
+W218221686,Saint Mathias Church,13.04176,80.20934,6.6,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+W217928914,AGS Cinemas,13.10479,80.20917,6.6,,,,1,activity,culture,"cultural,cinemas,theatres_and_entertainments,interesting_places",
+N1597178644,Shankaranarayana Swami Temple,13.05916,80.20155,6.6,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+W215762534,Anjaneya Swami Temple,13.03358,80.21529,6.6,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+W640885534,Sri Sowmya Damodara Perumal Temple,13.10657,80.21019,6.6,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+N8094621093,Sri Navasakthi Pidari Kaliamman Kovil,13.03677,80.21211,6.7,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+N2016779518,Pillaiyar Koil,13.02384,80.22514,6.7,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+N6036680399,Sri Shenbaga Vinayagar Temple,13.10555,80.20848,6.7,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+W334480602,Sri Sivasubramiya Swamy Temple,13.02402,80.22482,6.7,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+N416015486,Arulmigu Karaneeswarar Temple,13.02476,80.22338,6.7,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+N2016779515,Nataraja Devara Sabai,13.02359,80.22495,6.8,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+N459647940,AVM Rajeswari Theatre,13.04749,80.20439,6.8,,,,1,activity,culture,"cultural,cinemas,theatres_and_entertainments,interesting_places",
+N5359072132,Sri Angalaparameswari Aalayam,13.08514,80.19969,6.8,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+N5625813433,Ambedkar Statue,13.10559,80.20793,6.8,,,,1,monument,history,"historic,monuments_and_memorials,interesting_places,monuments",
+N315260499,Ashok Pillar,13.03478,80.21222,6.8,,,,1,monument,,"other,unclassified_objects,interesting_places,tourist_object",
+W262500618,Sri Santhana Vinayagar Temple,13.02544,80.22165,6.8,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+W214148768,Arulmigu Pidari Sri Ilan Kaliamman Temple,13.02189,80.22632,6.8,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+W364453753,Sri Adhinath jain Temple,13.02297,80.22465,6.8,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+W343141648,CSI Meetpar Yesu Alayam,13.02201,80.22586,6.8,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N4332284589,BHARAT SCANS,13.03371,80.21225,6.9,,,,1,monument,,"other,unclassified_objects,interesting_places,tourist_object",
+W274375447,Aanjaneya Temple,13.07382,80.19756,6.9,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+W217928950,Varasithi Vinayagar Temple,13.10676,80.20773,6.9,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+W262500062,Koothadum pilliyar temple,13.02503,80.22121,6.9,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+N5227394520,Devi Karumariamman Kovil,13.08402,80.19841,6.9,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+W217802641,Kurungaleswarar Shiva Temple,13.07325,80.19742,6.9,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+W334480601,Sri Dharmaraja Koil,13.02239,80.22466,6.9,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+W217928949,Sri Agastheeswarar Temple,13.10479,80.20626,6.9,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+N7466235285,St. Peter & St.Paul's Orthodox Church,13.07729,80.19743,6.9,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+W553263194,Baaliamman Kovil,13.10651,80.20713,6.9,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+W354764695,Sri Kalyana Subramaniya Swamy Temple,13.10684,80.20696,6.9,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+W215475865,Udhayam Theatre,13.03459,80.21048,6.9,Q7877001,,,1,activity,culture,"cultural,cinemas,theatres_and_entertainments,interesting_places",
+W35015788,Periyar Science and Technology Centre,13.01248,80.24382,7.0,,,,1,monument,,"other,unclassified_objects,interesting_places,tourist_object",
+W250287674,Sri Kadumbadi Chinnamman Temple,13.02467,80.21955,7.0,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+N4308319493,CHENNAI CORPORATION PARK,13.02637,80.21719,7.0,,,,1,monument,,"other,unclassified_objects,interesting_places,tourist_object",
+W282482594,Sri Angalaparameswari temple,13.02217,80.22243,7.0,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+N4851068122,SRI GROUP,13.02986,80.21352,7.0,,,,1,monument,,"other,unclassified_objects,interesting_places,tourist_object",
+W219516141,Rohini Silver Screens,13.07587,80.19585,7.1,,,,1,activity,culture,"cultural,cinemas,theatres_and_entertainments,interesting_places",
+W444096745,St Louis Church,13.01079,80.24928,7.1,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N5338512229,Sri Kamalvinayagar Aalayam,13.10762,80.20601,7.1,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+W218221685,Piilayar Koil,13.04042,80.20488,7.1,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+N4308320005,MLA OFFICE ,13.02477,80.21827,7.1,,,,1,monument,,"other,unclassified_objects,interesting_places,tourist_object",
+N5229475001,Temple,13.08398,80.19601,7.1,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+W338925016,Mehar Ashramam,13.02111,80.22231,7.1,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N5206127523,Egmore,13.07348,80.19484,7.2,,,,1,activity,culture,"cultural,theatres_and_entertainments,interesting_places,other_theatres",
+W338925014,Madaipalli,13.02140,80.22159,7.2,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+W355884028,Nathamuni Theatre,13.10317,80.20235,7.2,,,,1,activity,culture,"cultural,cinemas,theatres_and_entertainments,interesting_places",
+W282480213,Sri Soundareswarar Temple,13.02144,80.22141,7.2,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+N8096940097,Arulmigu Sri Gangai Amman Koil,13.02920,80.21244,7.2,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+W282482203,Sri Varasiddhi Vinayagar Koil,13.02143,80.22118,7.2,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+W250263139,Sri Bhaktha Anjaneyar Sannadhi of Sri Prasanna venkatesa perumal temple,13.02238,80.21962,7.2,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+W250263301,Sri Sivasubramanya Swami Temple (Sengundha Kottam),13.02193,80.22011,7.2,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+W214188214,Raj Theatre,13.01962,80.22331,7.2,,,,1,activity,culture,"cultural,cinemas,theatres_and_entertainments,interesting_places",
+W379698229,CSI Yesu Anbar Alayam,13.00835,80.26474,7.2,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N8095530253,Masjid -E- Taqwa,13.02926,80.21169,7.2,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N8095528963,Karpaga Vinayagar Temple,13.02963,80.21113,7.2,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+W345825305,Sri Veera Anjaneyar Temple,13.02428,80.21651,7.3,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+W671922124,Sri Anantha Padmanaba Swamy Temple,13.00780,80.25728,7.3,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+W214598732,ECI,13.02483,80.21519,7.3,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+W214598744,Little Mount Church,13.01625,80.22711,7.3,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N1985533404,School Church,13.02015,80.22070,7.3,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+W339884182,C.S.I. St. Thomas Church,13.01885,80.22243,7.3,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+W151679750,Vivekananda Auditorium,13.01166,80.23605,7.4,,,,1,activity,culture,"cultural,theatres_and_entertainments,interesting_places,other_theatres",
+W187917919,Pillayar Kovil,13.02004,80.22047,7.4,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+W35475141,Sri Prasanna Venkatesa Narasimha Perumal Temple,13.02286,80.21667,7.4,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+W187917917,Kamaatchi Amman Kovil,13.02002,80.21993,7.4,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+N597590623,Infant Jesus Church,13.05646,80.19463,7.4,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N4426163289,Sri Ganga Cinemas,13.12490,80.21761,7.4,,,,1,activity,culture,"cultural,cinemas,theatres_and_entertainments,interesting_places",
+N2339221098,Canteen Fountain,13.01063,80.23647,7.4,,,,1,viewpoint,culture,"fountains,cultural,urban_environment,interesting_places",
+N8094709411,Valampuri Vinayagar Temple,13.02681,80.21130,7.4,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+W804190023,Varasiddhi vinayagar,13.01442,80.22788,7.5,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+N7522050188,Varasiddhi Vinayagar Temple,13.01441,80.22788,7.5,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+W282483268,Nawab Sadatullah Khan's Jumma Masjid,13.02020,80.21867,7.5,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N4530000593,Arunachleswarar Temple - Agni Stalam,13.13300,80.29223,7.5,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N8144930618,Rajiv Gandhi Statue,13.01554,80.22556,7.5,,,,1,viewpoint,culture,"cultural,urban_environment,interesting_places,sculptures",
+W503083890,Mata Amritanandamayi Math,13.04778,80.19704,7.5,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+N364367391,Kasi Theatre,13.02946,80.20850,7.5,,,,1,activity,culture,"cultural,cinemas,theatres_and_entertainments,interesting_places",
+N4158234247,"Mata Amritanandamayi Math, Bhramastanam Temple",13.04766,80.19704,7.5,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+W152586707,CEG TAG Auditorium,13.01156,80.23296,7.5,,,,1,activity,culture,"cultural,theatres_and_entertainments,interesting_places,other_theatres",
+W32685033,New Life Assembly of God Church,13.01567,80.22444,7.5,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N8096322492,Arulmigu Lakshmi Ganapathy Temple,13.02878,80.20852,7.5,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+W214598748,New Life Assembly of God,13.01556,80.22450,7.5,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N1645214331,Conjeevaram Natarajan Annadurai Statue,13.01022,80.23532,7.5,,,,1,monument,history,"historic,monuments_and_memorials,interesting_places,monuments",
+N8093482026,Kasi Talkies,13.03016,80.20719,7.5,,,,1,activity,culture,"cultural,cinemas,theatres_and_entertainments,interesting_places",
+N394653914,Shri Rathina Ganapathi Temple,13.02745,80.20962,7.5,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+N4532181592,Somanatheswar Temple - chandran Stalam,13.12462,80.21561,7.5,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N4308319797,FISH MARKET,13.02437,80.21265,7.5,,,,1,monument,,"other,unclassified_objects,interesting_places,tourist_object",
+N370521473,Pillayar Koil,13.04464,80.19774,7.5,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+N8095418880,Arulmigu Chelliamman Thirukovil,13.02625,80.21005,7.6,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+N8095529620,Masjid-E-Hameediya,13.02348,80.21246,7.6,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N5048335546,House of Prayer CSI Church,13.00608,80.24506,7.7,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+W282483335,Sri Ramanjayaneya Temple,13.02001,80.21591,7.7,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+node/366848592,Alsa Mall Shopping Complex,13.06866,80.25721,0.6,Q4735741,Alsa Mall,,,market,shopping,shop=mall,
+node/1926734878,Abdul Razaak Market (Vegatables),13.02115,80.22352,7.1,,,,,market,shopping,amenity=marketplace,
+node/2296730807,Chintadripet Market,13.07489,80.26957,1.0,,,,,market,shopping,amenity=marketplace,
+node/12458790368,Wimco Nagar Vegitable Vendor Market,13.17920,80.30721,12.8,,,,,market,shopping,amenity=marketplace,
+node/12458790369,TKS Private Fish Market,13.17893,80.30750,12.8,,,,,market,shopping,amenity=marketplace,
+way/29267290,Chennai Citi Center Mall,13.04291,80.27388,3.7,Q5091433,Chennai Citi Centre,,,market,shopping,shop=mall,
+way/30835027,Koyambedu Fruit and Vegetable Market,13.06769,80.19596,7.1,,,,,market,shopping,amenity=marketplace,
+way/30835037,Koyambedu Flower Market,13.06774,80.19890,6.7,,,,,market,shopping,amenity=marketplace,
+way/154030370,Express Avenue Mall,13.05865,80.26419,1.7,Q5421659,Express Avenue,,,market,shopping,shop=mall,
+way/156250605,Teynampet Vegetable Market,13.03863,80.24905,4.1,,,,,market,shopping,amenity=marketplace,
+way/194858897,hariom harwares,12.94827,80.20017,15.4,,,,,market,shopping,amenity=marketplace,
+way/211864545,Zam Bazaar Market,13.05953,80.27221,2.0,,,,,market,shopping,amenity=marketplace,
+way/214148769,Abdul Razaak Vegatable Market,13.02123,80.22355,7.1,,,,,market,shopping,amenity=marketplace,
+way/217653500,Burma Bazaar,13.09115,80.29139,3.9,Q4999328,Burma Bazaar,,,market,shopping,amenity=marketplace,
+way/217736826,Mambalam Vegetable Market,13.03647,80.22763,5.4,,,,,market,shopping,amenity=marketplace,
+way/223937121,Nanganallur Market,12.98433,80.18842,12.6,,,,,market,shopping,amenity=marketplace,
+way/334478862,Sri Karaneeswarar Fish Market,13.02142,80.22402,7.0,,,,,market,shopping,amenity=marketplace,
+way/393560243,Ampa Skywalk,13.07348,80.22155,4.3,Q2844086,Ampa Skywalk,,,market,shopping,shop=mall,
+way/397069326,Palavakkam Fish Market,12.96197,80.25869,12.4,,,,,market,shopping,amenity=marketplace,
+way/397069327,"Palavakkam PDS Center (Ration SHOP) ,TNSCC",12.96199,80.25858,12.4,,,,,market,shopping,amenity=marketplace,
+way/397072801,kottivakkam seafood Market,12.96985,80.25765,11.5,,,,,market,shopping,amenity=marketplace,
+way/634144271,VR Mall Chennai,13.08108,80.19659,7.0,Q56064045,VR Chennai,,,market,shopping,shop=mall,
+way/1021334105,Koyambedu Market,13.07041,80.19324,7.3,,,,,market,shopping,amenity=marketplace,
+way/1080629454,Marina Beach Market,13.06316,80.28581,2.9,,,,,market,shopping,amenity=marketplace,
+way/1241327269,Seven Wells Market,13.09822,80.28217,3.6,,,,,market,shopping,amenity=marketplace,
+way/1357704397,Modern Fish Market,13.03470,80.27940,4.7,,,,,market,shopping,amenity=marketplace,
+way/1534023217,Pothys Padi,13.10158,80.18845,8.5,Q29002183,,,,market,shopping,shop=mall,
+way/1551345373,Ambattur Market area,13.11609,80.15390,12.5,,,,,market,shopping,amenity=marketplace,
+way/1551345375,Ambattur Market,13.11672,80.15415,12.5,,,,,market,shopping,amenity=marketplace,
+way/1552533907,Ritchie Street Electronics Market,13.06989,80.27102,1.2,,,,,market,shopping,amenity=marketplace,
+way/1567143414,Avadi Market,13.11681,80.10341,17.7,,,,,market,shopping,amenity=marketplace,
+node/353978523,Arjuna's Penance,12.61791,80.19270,51.2,Q1753664,Descent of the Ganges (Mahabalipuram),,,monument,history,historic=ruins;tourism=attraction,
+node/4369777490,Murugan Idli Shop,13.08911,80.28786,3.4,,,,,monument,,amenity=restaurant,
+node/5737223350,Saravana Bhavan,13.07686,80.26229,0.4,,,,,monument,food,amenity=fast_food,
+node/7087524685,Triplicane Ratna Cafe,13.03232,80.26898,4.6,,,,,monument,,amenity=restaurant,
+way/103082949,Five Rathas,12.60895,80.18959,52.2,Q2445615,Pancha Rathas,,,monument,history,historic=archaeological_site;tourism=attraction,
+way/209535291,Ranganathan Street,13.03752,80.22971,5.2,Q11461692,Ranganathan Street,,,monument,,,

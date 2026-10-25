@@ -1,0 +1,152 @@
+{
+ "Marina Beach Market": {
+  "fetched_on": "2026-10-25",
+  "results": []
+ },
+ "Marina Beach Market Chennai": {
+  "fetched_on": "2026-10-25",
+  "results": []
+ },
+ "Marina Beach Market [fuzzy]": {
+  "fetched_on": "2026-10-25",
+  "results": []
+ },
+ "Murugan Idli Shop": {
+  "fetched_on": "2026-10-25",
+  "results": [
+   {
+    "title": "Murugan Idli Shop",
+    "description": "Indian restaurant chain",
+    "lat": null,
+    "lon": null
+   }
+  ]
+ },
+ "Murugan Idli Shop Chennai": {
+  "fetched_on": "2026-10-25",
+  "results": []
+ },
+ "Murugan Idli Shop [fuzzy]": {
+  "fetched_on": "2026-10-25",
+  "results": [
+   {
+    "title": "Murugan Idli Shop",
+    "description": "Indian restaurant chain",
+    "lat": null,
+    "lon": null
+   }
+  ]
+ },
+ "Ratna Cafe": {
+  "fetched_on": "2026-10-25",
+  "results": [
+   {
+    "title": "Ratna Cafe",
+    "description": "Indian fast food restaurant chain",
+    "lat": null,
+    "lon": null
+   },
+   {
+    "title": "Janaka Ratnayake",
+    "description": "Sri Lankan entrepreneur (born 1964)",
+    "lat": null,
+    "lon": null
+   },
+   {
+    "title": "Premil Ratnayake",
+    "description": "Sri Lankan journalist and writer",
+    "lat": null,
+    "lon": null
+   },
+   {
+    "title": "American bullfrog",
+    "description": "Species of amphibian",
+    "lat": null,
+    "lon": null
+   },
+   {
+    "title": "Rumesh Ratnayake",
+    "description": "Sri Lankan cricketer",
+    "lat": null,
+    "lon": null
+   }
+  ]
+ },
+ "Ratna Cafe Chennai": {
+  "fetched_on": "2026-10-25",
+  "results": []
+ },
+ "Ratna Cafe [fuzzy]": {
+  "fetched_on": "2026-10-25",
+  "results": [
+   {
+    "title": "Ratna Cafe",
+    "description": "Indian fast food restaurant chain",
+    "lat": null,
+    "lon": null
+   },
+   {
+    "title": "Janaka Ratnayake",
+    "description": "Sri Lankan entrepreneur (born 1964)",
+    "lat": null,
+    "lon": null
+   },
+   {
+    "title": "Premil Ratnayake",
+    "description": "Sri Lankan journalist and writer",
+    "lat": null,
+    "lon": null
+   },
+   {
+    "title": "American bullfrog",
+    "description": "Species of amphibian",
+    "lat": null,
+    "lon": null
+   },
+   {
+    "title": "Rumesh Ratnayake",
+    "description": "Sri Lankan cricketer",
+    "lat": null,
+    "lon": null
+   }
+  ]
+ },
+ "Saravana Bhavan": {
+  "fetched_on": "2026-10-25",
+  "results": [
+   {
+    "title": "Saravanaa Bhavan",
+    "description": "Restaurant chain",
+    "lat": null,
+    "lon": null
+   },
+   {
+    "title": "E. Saravanapavan",
+    "description": "Sri Lankan politician",
+    "lat": null,
+    "lon": null
+   }
+  ]
+ },
+ "Saravana Bhavan Chennai": {
+  "fetched_on": "2026-10-25",
+  "results": []
+ },
+ "Saravana Bhavan [fuzzy]": {
+  "fetched_on": "2026-10-25",
+  "results": [
+   {
+    "title": "Saravanaa Bhavan",
+    "description": "Restaurant chain",
+    "lat": null,
+    "lon": null
+   },
+   {
+    "title": "E. Saravanapavan",
+    "description": "Sri Lankan politician",
+    "lat": null,
+    "lon": null
+   }
+  ]
+ }
+}

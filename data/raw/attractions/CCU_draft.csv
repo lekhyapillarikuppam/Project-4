@@ -1,0 +1,517 @@
+candidate,name,lat,lon,km,wikidata,wiki_title,pageviews,otm_rate,suggested_type,suggested_tags,kinds_or_osm,description
+Q3350930,West Bengal Legislative Assembly,22.56677,88.34422,0.3,Q3350930,West Bengal Legislative Assembly,1517746,3,monument,history,"other,unclassified_objects,interesting_places,historic_object",Indian political body
+N7575736085,Eden Gardens,22.56521,88.34317,0.3,Q2035004,Eden Gardens,158699,3,monument,history;culture;nature;relaxation,"architecture,historic_architecture,interesting_places,other_buildings_and_structures","International cricket stadium in Kolkata, West Bengal, India"
+N7232757987,Black hole of Calcutta,22.57332,88.34795,0.9,Q1202492,Black Hole of Calcutta,148607,3,monument,history,"other,unclassified_objects,interesting_places,tourist_object",Dungeon used in 1756 to hold British and Indian prisoners
+W325369042,Howrah Bridge,22.58509,88.34682,2.2,Q739641,Howrah Bridge,129677,3,monument,culture;nature,"bridges,architecture,interesting_places,other_bridges","Steel bridge in Kolkata, West Bengal, India"
+N6375289885,Victoria Memorial Hall,22.54508,88.34264,2.2,Q1356352,"Victoria Memorial, Kolkata",104499,3,museum,history;culture;nature;relaxation,"historic,monuments_and_memorials,burial_places,cultural,museums,interesting_places,other_museums,other_burial_places,monuments","Memorial-museum in West Bengal, India"
+W146081534,Kalighat Kali Temple,22.52017,88.34204,5.0,Q535970,Kalighat Temple,83577,3,temple,spiritual,"religion,hindu_temples,interesting_places",Temple dedicated to Goddess Kali in India
+N5808896366,Howrah Junction Railway Station,22.58279,88.34239,2.0,Q986105,Howrah railway station,83432,3,monument,,"other,unclassified_objects,interesting_places,tourist_object","Railway station in Howrah, West Bengal, India"
+Q985758,Writers' Building,22.57369,88.34963,1.0,Q985758,Writers' Building,61822,3,monument,history;culture;nature;relaxation,"historic_architecture,architecture,interesting_places,other_buildings_and_structures","Building in West Bengal, India"
+Q1026391,Calcutta High Court,22.56833,88.34333,0.5,Q1026391,Calcutta High Court,56240,3,activity,history,"other,unclassified_objects,interesting_places,historic_object","High Court in West Bengal, India"
+W52097603,Fort William,22.55450,88.33801,1.4,Q2750027,"Fort William, West Bengal",50609,3,fort,history;nature,"fortifications,historic,interesting_places,other_fortifications","Fort in Calcutta, India"
+Q2749583,Presidency University,22.57632,88.36320,2.1,Q2749583,"Presidency University, Kolkata",43391,3,activity,history;culture,"historic_architecture,architecture,interesting_places,other_buildings_and_structures","Public university in Kolkata, India"
+N7029094686,Jorasanko Thakur Bari,22.58500,88.35905,2.6,Q3347163,Jorasanko Thakur Bari,42802,3,museum,history;culture,"palaces,architecture,historic_architecture,cultural,museums,interesting_places,other_museums","Haveli in North Kolkata, West Bengal, India"
+R2900062,Indian Museum,22.55759,88.35104,1.0,Q1364900,Indian Museum,41322,3,museum,history;culture,"national_museums,cultural,museums,interesting_places","Museum in Kolkata, West Bengal, India, Asia"
+Q7711913,The 42,22.54835,88.34975,1.9,Q7711913,The 42 (Kolkata),40500,3,monument,culture,"skyscrapers,architecture,interesting_places","Residential skyscraper in West Bengal, India"
+Q7592175,St. Xavier's College,22.54840,88.35600,2.1,Q7592175,"St. Xavier's College, Kolkata",39672,3,monument,history;culture,"historic_architecture,architecture,interesting_places,other_buildings_and_structures","Private university and college in Kolkata, India"
+Q7152833,R. G. Kar Medical College and Hospital,22.60417,88.37833,5.5,Q7152833,R. G. Kar Medical College and Hospital,39298,3,activity,history;culture,"historic_architecture,architecture,interesting_places,other_buildings_and_structures","Public Medical College and tertiary teaching hospital in Kolkata West Bengal, India"
+R9102486,Maidan,22.55035,88.34571,1.6,Q987578,Maidan (Kolkata),31486,3,activity,culture;nature;relaxation,"urban_environment,gardens_and_parks,cultural,interesting_places","Urban green space in Kolkata, India"
+W143609605,National Library,22.53256,88.33348,3.8,Q619913,National Library of India,29950,3,activity,history,"other,unclassified_objects,interesting_places,historic_object",Largest library of India in Kolkata
+Q1898467,St. Paul's Cathedral,22.54417,88.34667,2.3,Q1898467,"St. Paul's Cathedral, Kolkata",27032,3,temple,spiritual;culture,"religion,cathedrals,interesting_places",Cathedral of the Diocese of Calcutta
+N1171065436,Marble Palace,22.58212,88.36017,2.4,Q6755210,Marble Palace (Kolkata),21867,3,museum,history;culture,"palaces,architecture,historic_architecture,cultural,museums,interesting_places,other_museums","Building in West Bengal, India"
+Q3346440,Alipore Zoological Gardens,22.53591,88.33205,3.5,Q3346440,"Zoological Garden, Alipore",16914,3,museum,culture;nature;shopping;relaxation,"gardens_and_parks,cultural,urban_environment,museums,interesting_places,zoos","Zoo in Kolkata, India"
+Q11044609,Calcutta Cricket and Football Club,22.53346,88.36375,3.9,Q11044609,Calcutta Cricket and Football Club,16151,3,activity,history,"other,unclassified_objects,interesting_places,historic_object",Multi-sports club based in India
+N7040422488,Princep Ghat-I,22.55667,88.33120,1.8,Q7245233,Prinsep Ghat,15232,3,ghat,spiritual;history;culture;nature,"architecture,historic_architecture,interesting_places,other_buildings_and_structures","Ghat of Kolkata, West Bengal, India"
+W102015156,Bethune College,22.58834,88.36783,3.4,Q13059056,Bethune College,14865,3,monument,history;culture,"architecture,historic_architecture,interesting_places,other_buildings_and_structures",First women's college in Bengal
+Q5588733,Government College of Art & Craft,22.55719,88.35060,1.0,Q5588733,Government College of Art & Craft,13471,3,monument,history;culture,"historic_architecture,architecture,interesting_places,other_buildings_and_structures","Art college in Kolkata, India"
+W325837615,Nakhoda Mosque,22.57762,88.35611,1.7,Q12062296,Nakhoda Mosque,12727,3,temple,spiritual,"religion,mosques,interesting_places","Mosque in Kolkata, India"
+Q4947204,Bose Institute,22.58610,88.39370,5.4,Q4947204,Bose Institute,12176,3,activity,history,"other,unclassified_objects,interesting_places,historic_object","Research institution in Kolkata, India"
+Q3051967,St. John's Church,22.56990,88.34595,0.6,Q3051967,"St. John's Church, Kolkata",11619,3,temple,spiritual,"religion,churches,interesting_places,other_churches","Church in West Bengal, India"
+W112025100,Birla Planetarium,22.54551,88.34732,2.2,Q4916536,"Birla Planetarium, Kolkata",11510,3,museum,culture,"planetariums,cultural,museums,interesting_places","Planetarium museum in Kolkata, India"
+W166894089,Birla Mandir,22.53050,88.36492,4.3,Q4916530,"Birla Mandir, Kolkata",10891,3,temple,spiritual,"religion,hindu_temples,interesting_places","Hindu temple in Kolkata, India"
+Q5766377,Hindu School,22.57610,88.36350,2.2,Q5766377,"Hindu School, Kolkata",10827,3,activity,history;culture,"historic_architecture,architecture,interesting_places,other_buildings_and_structures","Public school in Kolkata, West Bengal, India"
+Q3350712,"General Post Office, Kolkata",22.57305,88.34777,0.9,Q3350712,"General Post Office, Kolkata",10221,3,monument,history;culture,"historic_architecture,architecture,interesting_places,other_buildings_and_structures","Building in Kolkata, India"
+N4930665951,Maghen David Synagogue,22.57769,88.35188,1.5,Q6730097,Magen David Synagogue (Kolkata),10061,3,temple,spiritual,"religion,synagogues,interesting_places","Synagogue in Kolkata, West Bengal, India"
+N4209581189,Tipu Sultan Mosque,22.56550,88.35209,0.6,Q3349172,Tipu Sultan Mosque,9938,3,temple,spiritual;history;culture,"religion,mosques,interesting_places","Mosque in Kolkata, West Bengal, India"
+W584818793,Shaheed Minar,22.56288,88.34926,0.4,Q7461557,"Shaheed Minar, Kolkata",9811,3,activity,history;nature;relaxation,"historic,monuments_and_memorials,interesting_places,monuments","Monument in West Bengal, India"
+Q3349690,Raj Bhavan,22.56726,88.34752,0.3,Q3349690,"Lok Bhavan, Kolkata",9114,3,monument,history;culture;shopping,"historic_architecture,architecture,interesting_places,other_buildings_and_structures",Residence of the governor of West Bengal
+Q13059486,Maulana Azad College,22.56072,88.35802,1.3,Q13059486,Maulana Azad College,8999,3,monument,history;culture,"historic_architecture,architecture,interesting_places,other_buildings_and_structures","Government College in Kolkata, West Bengal, India"
+W362945043,Academi of Fine Arts,22.54293,88.34550,2.5,Q4671456,"Academy of Fine Arts, Kolkata",8005,3,museum,culture,"cultural,museums,interesting_places,art_galleries","Building in Cathedral Road, Kolkata"
+Q5656757,Hare School,22.57565,88.36298,2.1,Q5656757,Hare School,7962,3,monument,history;culture,"historic_architecture,architecture,interesting_places,other_buildings_and_structures","Government school in Kolkata, West Bengal, India"
+Q6823351,Metcalfe Hall,22.57160,88.34477,0.8,Q6823351,Metcalfe Hall,7858,3,temple,spiritual;history;culture;nature,"historic_architecture,architecture,interesting_places,other_buildings_and_structures","Building in Kolkata, India"
+Q6469995,Lady Brabourne College,22.54549,88.36954,3.2,Q6469995,Lady Brabourne College,7645,3,monument,history;culture,"historic_architecture,architecture,interesting_places,other_buildings_and_structures","Women's college in Kolkata, India"
+Q5018955,Calcutta School of Tropical Medicine,22.57524,88.35992,1.8,Q5018955,Calcutta School of Tropical Medicine,7295,3,monument,history;culture,"historic_architecture,architecture,interesting_places,other_buildings_and_structures","Medical research institute in Kolkata, India"
+Q5123111,City College,22.58020,88.36990,3.0,Q5123111,"City College, Kolkata",7179,3,activity,history;culture,"historic_architecture,architecture,interesting_places,other_buildings_and_structures","Government college in Kolkata, West Bengal"
+W176059393,Rabindra Sadan,22.54191,88.34473,2.6,Q7278763,Rabindra Sadan,6058,3,activity,culture,"cultural,theatres_and_entertainments,interesting_places,other_theatres","Cultural centre and theatre in Kolkata, India"
+N5297343925,Town Hall Museum,22.56802,88.34496,0.4,Q6427313,Kolkata Town Hall,5828,3,museum,culture,"cultural,museums,interesting_places,other_museums","Building in Kolkata, India"
+W112075902,St. James' School,22.55465,88.36541,2.3,Q7588404,St. James' School (Kolkata),5796,3,monument,history;culture,"architecture,historic_architecture,interesting_places,other_buildings_and_structures","Private school in Kolkata, West Bengal, India"
+N3406728167,Star Theatre,22.59406,88.37098,4.1,Q7600935,"Star Theatre, Kolkata",5648,3,activity,culture,"cultural,cinemas,theatres_and_entertainments,interesting_places","Cinema Hall in West Bengal, India"
+Q7288812,Swami Vivekananda's Ancestral House & Cultural Centre,22.58633,88.36736,3.2,Q7288812,Ramakrishna Mission Swami Vivekananda's Ancestral House and Cultural Centre,5429,3,museum,history;culture,"museums,cultural,interesting_places,other_museums","Heritage place, museum in Kolkata, India"
+Q68470889,Esplanade Mansions,22.56639,88.34889,0.3,Q68470889,"Esplanade Mansions, Kolkata",5163,3,monument,history;culture,"historic_architecture,architecture,interesting_places,other_buildings_and_structures","Jewish mansion in Kolkata, India"
+W112044472,Kolkata Race Course,22.54425,88.33633,2.5,Q5455830,Kolkata Race Course,5134,3,activity,history;culture,"sport,architecture,historic_architecture,interesting_places,stadiums,other_buildings_and_structures","Race course in Kolkata, India"
+W175484376,Chaplin Park,22.56160,88.35265,0.7,Q5073228,Chaplin Cinema (Kolkata),4846,3,activity,history;culture,"cultural,cinemas,theatres_and_entertainments,interesting_places","Historic movie theatre in Kolkata, India"
+W137958777,Birla Industrial & Technological Museum,22.53471,88.36375,3.8,Q3532605,Birla Industrial & Technological Museum,4651,3,museum,culture,"science_museums,cultural,museums,interesting_places","Science museum in Kolkata, India"
+Q6824536,Metro Cinema,22.56410,88.34940,0.3,Q6824536,Metro Cinema (Kolkata),4465,3,activity,history;culture,"cinemas,cultural,theatres_and_entertainments,interesting_places","Cinema hall, Heritage building in Kolkata, India"
+Q4838076,Babughat,22.56630,88.33980,0.7,Q4838076,Babu Ghat,4387,3,ghat,spiritual;history;culture;nature,"historic_architecture,architecture,interesting_places,other_buildings_and_structures","Ghat of Kolkata, West Bengal, India"
+Q56245193,Currency Building,22.57055,88.35028,0.7,Q56245193,Currency Building,4335,3,activity,history;culture,"historic_architecture,architecture,interesting_places,other_buildings_and_structures","19th-century building in Kolkata, India"
+N1188948187,Mahajati Sadan Auditorium,22.58117,88.36188,2.4,Q6732833,Mahajati Sadan,3889,3,activity,culture,"cultural,cinemas,theatres_and_entertainments,interesting_places","Building in Kolkata, India"
+Q6825020,Metropolitan Building,22.56370,88.35160,0.6,Q6825020,Metropolitan Building (Kolkata),3780,3,monument,history;culture;shopping,"historic_architecture,architecture,interesting_places,other_buildings_and_structures","Building in Kolkata, India"
+N4209577082,Holy Rosary's Catholic Cathedral,22.57864,88.35275,1.7,Q5052457,"Holy Rosary Cathedral, Kolkata",3707,3,temple,spiritual,"religion,cathedrals,interesting_places","Church in Kolkata, India"
+W177714594,Saint Thomas' Catholic Church,22.55018,88.35221,1.7,Q3584578,"St. Thomas Church, Kolkata",3570,3,temple,spiritual;history;nature;relaxation,"religion,churches,interesting_places,other_churches","Church in Kolkata, India"
+Q7591027,St. Paul's Cathedral Mission College,22.57574,88.36990,2.7,Q7591027,St. Paul's Cathedral Mission College,3479,3,monument,history;culture,"historic_architecture,architecture,interesting_places,other_buildings_and_structures","College in Kolkata, West Bengal, India"
+Q18164352,Scottish Church Collegiate School,22.59710,88.36018,3.8,Q18164352,Scottish Church Collegiate School,3058,3,monument,spiritual;history;culture,"historic_architecture,architecture,interesting_places,other_buildings_and_structures",Private school
+Q7102369,Oriental Seminary,22.59250,88.36010,3.4,Q7102369,Oriental Seminary,3025,3,monument,history;culture,"historic_architecture,architecture,interesting_places,other_buildings_and_structures",First Privately Owned and run School in Kolkata
+Q60761242,Gaudiya Mission,22.60284,88.37352,5.1,Q60761242,Gaudiya Mission,2985,3,temple,spiritual,"religion,monasteries,interesting_places","Monastic and missionary organization in Calcutta, India"
+Q5570972,Globe Cinema,22.55910,88.35010,0.8,Q5570972,Globe Cinema (Kolkata),2979,3,activity,history;culture,"cinemas,cultural,theatres_and_entertainments,interesting_places",Building in India
+Q7903416,Uttarpara Jaikrishna Public Library,22.66161,88.34986,10.8,Q7903416,Uttarpara Public Library,2543,3,activity,history;nature;shopping,"other,unclassified_objects,interesting_places,historic_object","Library in Uttarpara, India"
+N4209577085,Old Mission Church,22.57172,88.35147,0.9,Q19950963,"Old Mission Church, Kolkata",2346,3,temple,spiritual,"religion,churches,interesting_places,other_churches",Church in Kolkata
+Q7631200,Subhas Chandra Bose statue,22.60179,88.37363,5.0,Q7631200,"Subhas Chandra Bose statue (Shyambazar, Kolkata)",2255,3,viewpoint,history;culture,"historic,cultural,urban_environment,monuments_and_memorials,interesting_places,sculptures,monuments","Statue by Nagesh Yoglekar in Kolkata, India"
+Q17021121,St. James' Church,22.55505,88.36295,2.0,Q17021121,"St. James' Church, Kolkata",2227,3,temple,spiritual,"religion,churches,interesting_places,other_churches","Church in Kolkata, India"
+N7029031632,State Archeological Museum,22.49935,88.31806,7.9,Q7603021,State Archaeological Museum,2087,3,museum,spiritual;history;culture,"cultural,museums,interesting_places,other_museums",Museum in Kolkata India
+W469678553,Lascar War Memorial,22.55301,88.32880,2.2,Q15241748,Lascar War Memorial,1521,3,monument,history,"historic,monuments_and_memorials,burial_places,interesting_places,war_memorials,monuments","Monument in West Bengal, India"
+W52153188,Eastern Railway Museum,22.57849,88.34014,1.6,Q56683370,"Rail Museum, Howrah",1512,3,museum,history;culture,"cultural,museums,interesting_places,museums_of_science_and_technology,railway_museums,open_air_museums","Rail Museum in West Bengal, India"
+Q6480048,Lal Dighi,22.57200,88.34900,0.8,Q6480048,"Lal Dighi, Kolkata",1467,3,viewpoint,nature;relaxation,"water,interesting_places,natural,other_lakes","Artificial reservoir in Kolkata, India"
+W469883540,Mohor Kunja,22.54480,88.34556,2.2,Q6894297,Mohor Kunja,1421,3,activity,culture;nature;relaxation,"urban_environment,gardens_and_parks,cultural,interesting_places","Urban Park in Kolkata, India"
+Q17054319,Gwalior Monument,22.56068,88.33385,1.4,Q17054319,Gwalior Monument,1161,3,monument,history;culture,"historic,burial_places,interesting_places,war_memorials","Monument in Strand Road, Kolkata, West Bengal, India"
+W190905006,Agri Horticultural Society of India,22.52800,88.33276,4.3,Q4693837,Agri-Horticultural Society of India,1160,3,garden,culture;nature;relaxation,"urban_environment,gardens_and_parks,cultural,interesting_places","Horticultural society and flower garden in Kolkata, India"
+Q56682439,Boat museum,22.58188,88.39082,4.9,Q56682439,"Boat Museum, Kolkata",935,3,museum,history;culture,"museums,cultural,interesting_places,other_museums","Museum in Kolkata, India"
+Q34501238,Elite Cinema,22.56293,88.35386,0.8,Q34501238,"Elite Cinema Hall, Calcutta",822,3,activity,history;culture,"cinemas,cultural,theatres_and_entertainments,interesting_places","Cinema hall in Kolkata, India"
+Q28007387,Fatima Church,22.55428,88.37186,2.9,Q28007387,"Fatima Church, Kolkata",708,3,temple,spiritual;nature;relaxation,"religion,churches,interesting_places,other_churches","Church in West Bengal, India"
+W123491611,St Thomas Girls School,22.53956,88.32931,3.3,Q7595573,"St. Thomas' School, Kolkata",623,3,monument,history;culture,"architecture,historic_architecture,interesting_places,other_buildings_and_structures","Primary, secondary and higher secondary school in Kolkata, West Bengal, India"
+Q7107209,Osmond Memorial Church,22.56027,88.36305,1.8,Q7107209,Osmond Memorial Church,508,3,temple,spiritual;history,"religion,churches,interesting_places,other_churches","Church in Kolkata, India"
+Q40670133,Beth-El Synagogue,22.57051,88.35056,0.8,Q40670133,,,3,temple,spiritual,"religion,synagogues,interesting_places",
+Q22343101,St. Andrew's Church,22.57308,88.35091,1.0,Q22343101,,,3,temple,spiritual,"religion,churches,interesting_places,other_churches",
+Q4673528,Acharya Jagadish Chandra Bose College,22.54187,88.34966,2.6,Q4673528,,,3,monument,history;culture,"historic_architecture,architecture,interesting_places,other_buildings_and_structures",
+W123491597,Church,22.54021,88.32825,3.3,Q69385831,,,3,temple,spiritual,"religion,churches,interesting_places,other_churches",
+Q31724926,Residence of Sister Nivedita,22.60300,88.36695,4.7,Q31724926,,,3,monument,history;culture,"historic_architecture,architecture,interesting_places,other_buildings_and_structures",
+W187721429,Science City,22.54006,88.39584,5.8,Q7433497,"Science City, Kolkata",,3,museum,culture;nature;relaxation,"science_museums,cultural,museums,interesting_places","Science centre in Kolkata, India"
+Q31726001,Tala Tank,22.61000,88.37889,6.0,Q31726001,Tala tank,,3,monument,culture,"architecture,towers,interesting_places,water_towers","Water tower in Kolkata, India"
+Q3346386,Acharya Jagadish Chandra Bose Indian Botanic Garden,22.56056,88.28694,6.1,Q3346386,Acharya Jagadish Chandra Bose Indian Botanic Garden,,3,garden,culture;nature;relaxation,"gardens_and_parks,cultural,urban_environment,interesting_places",Botanic garden in Calcutta
+N5982424285,The great banyan tree,22.56098,88.28667,6.1,Q2509765,The Great Banyan,,3,monument,nature;relaxation,"other,unclassified_objects,interesting_places,tourist_object","Banyan tree in West Bengal, India"
+N7028874585,INOX South City,22.50157,88.36205,7.2,Q7566832,South City Mall,,3,activity,culture;nature;shopping;relaxation,"cultural,cinemas,theatres_and_entertainments,interesting_places,shops,malls,tourist_facilities","Shopping mall in Kolkata, India"
+Q16345231,Cossipore Garden House,22.62627,88.37047,7.3,Q16345231,,,3,monument,history;culture,"historic_architecture,architecture,interesting_places,other_buildings_and_structures",
+Q31726848,Bamondas Mookerjee Kali Mandir,22.62796,88.37182,7.5,Q31726848,,,3,temple,spiritual,"religion,hindu_temples,interesting_places",
+W356008793,Sri Ramakrishna Temple,22.63233,88.35645,7.6,Q816234,Belur Math,,3,temple,spiritual;culture;nature;shopping,"religion,hindu_temples,interesting_places","Headquarters of the Ramakrishna Mission in West Bengal, India"
+N2461173851,National Council of Science Museums,22.57013,88.42834,8.4,Q6971929,National Council of Science Museums,,3,museum,culture,"cultural,museums,interesting_places,other_museums",Indian governmental organization
+Q14947352,Baranagar Math,22.64667,88.36833,9.4,Q14947352,Baranagar Math,,3,temple,spiritual,"religion,monasteries,interesting_places","First monastery of Ramakrishna Order located in Baranagar, India"
+W291865633,Dakshineswar Kali Hindu Temple,22.65483,88.35757,10.1,Q1157765,Dakshineswar Kali Temple,,3,temple,spiritual;history;nature,"religion,hindu_temples,interesting_places","Hindu Temple in Kolkata, West Bengal"
+Q7395916,Sabarna Sangrahashala,22.48030,88.31137,10.1,Q7395916,Sabarna Sangrahashala,,3,museum,history;culture,"museums,cultural,interesting_places,other_museums",Zamindar Family in early British India
+Q6437106,Kripamayee Kali Temple,22.65500,88.35778,10.1,Q6437106,Kripamayee Kali Temple,,3,temple,spiritual;nature,"religion,hindu_temples,interesting_places","Hindu temple in Baranagar, India"
+Q19882287,Benubana Chhaya,22.47610,88.38940,10.8,Q19882287,Benubana Chhaya,,3,activity,spiritual;culture;nature;relaxation,"gardens_and_parks,cultural,urban_environment,interesting_places","Park in Kolkata, India"
+Q23808306,Andul rajbari,22.58320,88.23560,11.6,Q23808306,Andul rajbari,,3,fort,history;culture,"palaces,architecture,historic_architecture,interesting_places","Palace in Andul, West Bengal, India"
+Q6963179,Nandan,22.66417,88.39189,12.0,Q6963179,Nandan (Kolkata),,3,activity,culture,"cinemas,cultural,theatres_and_entertainments,interesting_places","Movie theatre and cultural centre in Kolkata, India"
+Q16893599,Kolkata Museum of Modern Art,22.59890,88.46690,12.9,Q16893599,Kolkata Museum of Modern Art,,3,museum,culture,"museums,cultural,interesting_places,other_museums","Proposed museum in New Town, Kolkata"
+N6914595709,Biswa Bangla Gate,22.57885,88.47166,13.0,Q39087520,New Town Gate,,3,museum,history;culture;food,"historic,monuments_and_memorials,interesting_places,restaurants,foods,monuments,tourist_facilities","Arch-monument in Kolkata, India"
+R7072029,Eco Park,22.59889,88.46864,13.1,Q7012129,"Eco Park, New Town",,3,viewpoint,nature;relaxation,"natural,interesting_places,nature_reserves,other_nature_conservation_areas","Urban park in Rajarhat, Kolkata, India"
+W906869322,Mother's Wax Museum,22.59946,88.47225,13.5,Q22079942,Mother's Wax Museum,,3,museum,culture,"cultural,museums,interesting_places,other_museums","Museum in New Town, West Bengal, India"
+Q5101326,Chintamoni Kar Bird Sanctuary,22.42950,88.40070,16.1,Q5101326,Chintamoni Kar Bird Sanctuary,,3,viewpoint,nature;relaxation,"interesting_places,natural,nature_reserves,other_nature_conservation_areas","Nature reserve in West Bengal, India"
+Q56682452,Smaranika Tram Museum,22.56510,88.34762,0.1,Q56682452,,,2,museum,culture,"museums,cultural,interesting_places,other_museums",
+Q66980266,Akashvani Bhavan,22.56494,88.34377,0.3,Q66980266,,,2,monument,history;culture,"historic_architecture,architecture,interesting_places,other_buildings_and_structures",
+Q7372457,Roxy Cinema,22.56220,88.34990,0.5,Q7372457,Roxy Cinema (Kolkata),,2,activity,culture,"cinemas,cultural,theatres_and_entertainments,interesting_places",Single-screen theater in India
+Q7007106,New Empire Cinema,22.56050,88.34930,0.6,Q7007106,New Empire Cinema (Kolkata),,2,activity,history;culture;shopping,"cinemas,cultural,theatres_and_entertainments,interesting_places","Cinema hall, Past theatre auditorium, Heritage building in Kolkata, India"
+N4368104697,Paradise Cinema,22.56677,88.35188,0.6,Q7134255,Paradise Cinema (Kolkata),,2,activity,history;culture,"cultural,cinemas,theatres_and_entertainments,interesting_places","Cinema hall, Heritage building in Kolkata, India"
+Q56761726,Second Rohilla War Memorial,22.57040,88.34567,0.6,Q56761726,,,2,monument,history,"historic,burial_places,interesting_places,war_memorials",
+N5297233021,Old Reserve Bank of India Building,22.57050,88.34750,0.6,Q68272414,,,2,monument,history;culture,"architecture,historic_architecture,interesting_places,banks,bank,tourist_facilities,other_buildings_and_structures",
+Q85783146,RBI Museum Kolkata,22.57058,88.34751,0.6,Q85783146,,,2,museum,culture,"museums,cultural,interesting_places,other_museums",
+Q68472164,Church of the Sacred Heart of Jesus,22.56483,88.35269,0.7,Q68472164,,,2,temple,spiritual,"religion,churches,interesting_places,other_churches",
+Q6546328,Lighthouse Cinema,22.55970,88.34950,0.7,Q6546328,Lighthouse Cinema (Kolkata),,2,activity,history;culture;shopping,"cinemas,cultural,theatres_and_entertainments,interesting_places","Past Cinema hall, Heritage building in Kolkata, India"
+Q68482484,Manohar Das Tarag,22.55989,88.34994,0.7,Q68482484,,,2,viewpoint,nature;relaxation,"water,interesting_places,natural,other_lakes",
+Q60752059,Bankshall Court,22.57116,88.34692,0.7,Q60752059,Bankshall Court,,2,monument,history;culture,"historic_architecture,architecture,interesting_places,other_buildings_and_structures",Court in West Bengal
+N5295797621,Job Charnock's Mausoleum,22.57121,88.34628,0.7,Q44143387,,,2,monument,history,"historic,monuments_and_memorials,burial_places,interesting_places,mausoleums,monuments",
+N7954234714,Pagoda,22.56413,88.33961,0.7,Q99732708,,,2,temple,spiritual,"religion,buddhist_temples,interesting_places",
+N5295797721,Tomb of Frances Johnson,22.57132,88.34580,0.7,Q56424794,,,2,monument,history,"historic,monuments_and_memorials,burial_places,interesting_places,other_burial_places,monuments",
+Q6319406,Jyoti Cinema,22.56360,88.35350,0.7,Q6319406,Jyoti Cinema (Kolkata),,2,activity,culture,"cinemas,cultural,theatres_and_entertainments,interesting_places",
+Q7112897,Outram Ghat,22.56417,88.33826,0.8,Q7112897,Outram Ghat,,2,monument,history;culture,"historic_architecture,architecture,interesting_places,other_buildings_and_structures",
+Q5018961,Calcutta Technical School,22.56185,88.35518,1.0,Q5018961,Calcutta Technical School,,2,monument,history;culture,"historic_architecture,architecture,interesting_places,other_buildings_and_structures",
+Q65954427,Reserve Bank of India Kolkata,22.57401,88.34795,1.0,Q65954427,,,2,monument,history;culture,"historic_architecture,architecture,interesting_places,bank,banks,tourist_facilities,other_buildings_and_structures",
+Q68292112,Customs House,22.57451,88.34637,1.1,Q68292112,,,2,monument,history;culture,"historic_architecture,architecture,interesting_places,other_buildings_and_structures",
+N7029247785,Carsey Baptist Church,22.57071,88.35511,1.1,Q66313056,,,2,temple,spiritual,"religion,churches,interesting_places,other_churches",
+Q56244717,Asiatic Society building,22.55491,88.35114,1.2,Q56244717,,,2,monument,history;culture,"historic_architecture,architecture,interesting_places,other_buildings_and_structures",
+Q105653829,Ghare Baire,22.57566,88.35230,1.3,Q105653829,,,2,museum,culture,"museums,cultural,interesting_places,art_galleries",
+Q68708889,Queen's Mansion,22.55367,88.35151,1.4,Q68708889,,,2,monument,history;culture,"historic_architecture,architecture,interesting_places,other_buildings_and_structures",
+Q16899442,Royal Calcutta Turf Club,22.55090,88.35090,1.6,Q16899442,Royal Calcutta Turf Club,,2,monument,history,"other,unclassified_objects,interesting_places,historic_object",
+Q20508340,Հայոց ցեղասպանության հուշակոթող,22.57900,88.35100,1.6,Q20508340,,,2,monument,history,"historic,monuments_and_memorials,interesting_places,monuments",
+Q4728949,All India Institute of Hygiene and Public Health,22.57531,88.36003,1.8,Q4728949,All India Institute of Hygiene and Public Health,,2,monument,history;culture,"historic_architecture,architecture,interesting_places,other_buildings_and_structures",
+N6541624088,Loreto School,22.54963,88.35267,1.8,Q6680900,"Loreto College, Kolkata",,2,monument,history;culture,"architecture,historic_architecture,interesting_places,other_buildings_and_structures",
+Q56683537,Hafiz Jamaluddin Masjid,22.57851,88.35636,1.8,Q56683537,,,2,temple,spiritual,"religion,mosques,interesting_places",
+Q3348933,"Medical College and Hospital, Kolkata",22.57360,88.36190,1.9,Q3348933,"Medical College & Hospital, Kolkata",,2,monument,history;culture,"historic_architecture,architecture,interesting_places,other_buildings_and_structures",
+Q59645204,Gurdwara Bara Sikh Sangat,22.58091,88.35367,1.9,Q59645204,,,2,temple,spiritual,"religion,other_temples,interesting_places",
+Q68159840,Ashutosh Shiksha Prangan,22.57492,88.36262,2.0,Q68159840,,,2,monument,history;culture,"historic_architecture,architecture,interesting_places,other_buildings_and_structures",
+Q75738551,Howrah station building,22.58309,88.34261,2.1,Q75738551,,,2,monument,history;culture,"historic_architecture,architecture,interesting_places,other_buildings_and_structures",
+Q7419011,The Sanskrit College and University,22.57573,88.36429,2.2,Q7419011,Sanskrit College and University,,2,monument,history;culture,"historic_architecture,architecture,interesting_places,other_buildings_and_structures",
+Q55593163,Old Howrah Bridge,22.58510,88.34690,2.2,Q55593163,,,2,monument,culture,"architecture,bridges,interesting_places,moveable_bridges",
+Q68074254,College Street Market,22.57782,88.36404,2.3,Q68074254,,,2,market,history;culture;shopping,"historic_architecture,architecture,interesting_places,shops,marketplaces,tourist_facilities,other_buildings_and_structures",
+Q6755206,Marble Palace Zoo,22.58200,88.35950,2.3,Q6755206,Marble Palace Zoo,,2,museum,culture;nature;relaxation,"cultural,museums,gardens_and_parks,urban_environment,interesting_places,zoos",
+Q14957107,Nil Ratan Sircar Medical College and Hospital,22.56189,88.37054,2.5,Q14957107,Nil Ratan Sircar Medical College and Hospital,,2,monument,history;culture,"historic_architecture,architecture,interesting_places,other_buildings_and_structures",
+Q81893627,Sealdah railway station building,22.56757,88.37084,2.5,Q81893627,Sealdah railway station,,2,monument,history;culture,"historic_architecture,architecture,interesting_places,other_buildings_and_structures",
+Q67903771,Jagannath ghat,22.58771,88.34982,2.6,Q67903771,,,2,monument,history;culture,"historic_architecture,architecture,interesting_places,other_buildings_and_structures",
+Q56683358,Rabindra Bharati Museum,22.58492,88.35920,2.6,Q56683358,,,2,museum,culture,"museums,cultural,interesting_places,other_museums",
+Q68061808,Cossimbazar House,22.57234,88.37238,2.8,Q68061808,,,2,fort,history;culture,"palaces,architecture,historic_architecture,interesting_places",
+Q68647037,Gas Crematorium,22.54639,88.36565,2.9,Q68647037,,,2,monument,history;culture,"historic_architecture,architecture,interesting_places,other_buildings_and_structures",
+Q5973023,IPGMER and SSKM Hospital,22.53967,88.33999,2.9,Q5973023,IPGMER and SSKM Hospital,,2,monument,history;culture,"historic_architecture,architecture,interesting_places,other_buildings_and_structures",
+Q11325387,Netaji Bhawan,22.53759,88.35125,3.1,Q11325387,Netaji Bhawan,,2,museum,culture,"museums,cultural,interesting_places,other_museums",
+W287860151,"University of Calcutta, Rajabazar Science College Campus",22.57911,88.37286,3.1,Q7285591,"University College of Science, Technology and Agriculture",,2,monument,history;culture,"architecture,historic_architecture,interesting_places,other_buildings_and_structures",
+Q68015980,House of Dwijendralal Roy,22.58486,88.36897,3.2,Q68015980,,,2,monument,history;culture,"historic_architecture,architecture,interesting_places,other_buildings_and_structures",
+Q56682945,Jagadish Chandra Bose Science Heritage Museum,22.57960,88.37339,3.2,Q56682945,,,2,museum,culture,"museums,cultural,interesting_places,other_museums",
+Q7037794,Nimtala crematorium,22.59352,88.35169,3.2,Q7037794,Nimtala Crematorium,,2,monument,history;culture,"historic_architecture,architecture,interesting_places,other_buildings_and_structures",
+Q68007159,YMCA Vivekananda Road,22.58597,88.36816,3.2,Q68007159,,,2,monument,history;culture,"historic_architecture,architecture,interesting_places,other_buildings_and_structures",
+Q580740,Minerva Theatre,22.59028,88.36195,3.2,Q580740,"Minerva Theatre, Kolkata",,2,activity,culture,"theatres_and_entertainments,cultural,cinemas,interesting_places",
+Q68011169,"16, D. L. Roy street",22.58481,88.36950,3.2,Q68011169,,,2,monument,history;culture,"historic_architecture,architecture,interesting_places,other_buildings_and_structures",
+Q68016817,"15, D. L. Roy street",22.58472,88.36964,3.2,Q68016817,,,2,monument,history;culture,"historic_architecture,architecture,interesting_places,other_buildings_and_structures",
+Q79458603,YMCA working hostel,22.58589,88.36842,3.2,Q79458603,,,2,monument,history;culture,"historic_architecture,architecture,interesting_places,other_buildings_and_structures",
+N7029094688,Raja Rammohun Roy Memorial Museum,22.58321,88.37125,3.3,Q56682483,,,2,museum,culture,"cultural,museums,interesting_places,other_museums",
+Q67886466,Durgeshwar Shiva temple,22.59386,88.35314,3.3,Q67886466,,,2,temple,spiritual,"religion,other_temples,interesting_places",
+Q68015182,Thakurbari of Bankubihari Saha,22.58483,88.37009,3.3,Q68015182,,,2,temple,spiritual,"religion,other_temples,interesting_places",
+N3413973942,Brahmo Balika Shikshalaya,22.57991,88.37408,3.3,Q16255382,,,2,monument,history;culture,"architecture,historic_architecture,interesting_places,other_buildings_and_structures",
+Q68016742,Saha House,22.58561,88.37011,3.4,Q68016742,,,2,monument,history;culture,"historic_architecture,architecture,interesting_places,other_buildings_and_structures",
+Q68015336,"71, Sisir Bhadury Sarani",22.58664,88.36925,3.4,Q68015336,,,2,monument,history;culture,"historic_architecture,architecture,interesting_places,other_buildings_and_structures",
+Q67871358,Residence of Ramdulal Sarkar,22.59031,88.36439,3.4,Q67871358,,,2,monument,history;culture,"historic_architecture,architecture,interesting_places,other_buildings_and_structures",
+Q68008553,Sri Sri Jagat Janani temple,22.58597,88.37009,3.4,Q68008553,,,2,temple,spiritual,"religion,other_temples,interesting_places",
+Q67871483,Deb Houses,22.59028,88.36459,3.4,Q67871483,,,2,monument,history;culture,"historic_architecture,architecture,interesting_places,other_buildings_and_structures",
+Q79443012,Scottish Church College - B.Ed block,22.58711,88.36925,3.4,Q79443012,,,2,monument,history;culture,"historic_architecture,architecture,interesting_places,other_buildings_and_structures",
+Q68011455,Duff Church,22.58656,88.36992,3.4,Q68011455,,,2,temple,spiritual,"religion,churches,interesting_places,other_churches",
+Q68007706,Janardan Saha's house,22.58572,88.37097,3.4,Q68007706,,,2,monument,history;culture,"historic_architecture,architecture,interesting_places,other_buildings_and_structures",
+N7029094685,Kolkata Police Museum,22.58272,88.37383,3.4,Q56682413,,,2,museum,culture,"cultural,museums,interesting_places,other_museums",
+Q68015417,St. Margaret's School,22.58694,88.37000,3.4,Q68015417,,,2,monument,history;culture,"historic_architecture,architecture,interesting_places,other_buildings_and_structures",
+Q68006298,Azad Hind Bag,22.58803,88.36893,3.5,Q68006298,,,2,garden,culture;nature;relaxation,"gardens_and_parks,cultural,urban_environment,water,interesting_places,natural,other_lakes",
+Q68006990,"2, Urquhart Square",22.58755,88.36950,3.5,Q68006990,,,2,monument,history;culture,"historic_architecture,architecture,interesting_places,other_buildings_and_structures",
+Q68016138,"25, Rammohan Saha lane",22.58667,88.37131,3.5,Q68016138,,,2,monument,history;culture,"historic_architecture,architecture,interesting_places,other_buildings_and_structures",
+Q68156673,Statue of Butto Kristo Paul,22.58889,88.36880,3.5,Q68156673,,,2,viewpoint,history;culture,"historic,cultural,urban_environment,monuments_and_memorials,interesting_places,sculptures,monuments",
+Q68015418,"14/1, Duff Street",22.58767,88.37048,3.5,Q68015418,,,2,monument,history;culture,"historic_architecture,architecture,interesting_places,other_buildings_and_structures",
+Q67868120,"55, Avedananda Road",22.58906,88.36911,3.6,Q67868120,,,2,monument,history;culture,"historic_architecture,architecture,interesting_places,other_buildings_and_structures",
+Q67875662,Ahiritola Ghat,22.59629,88.35336,3.6,Q67875662,,,2,monument,history;culture,"historic_architecture,architecture,interesting_places,other_buildings_and_structures",
+Q67869845,Bhabataran Sarkar School,22.58842,88.37072,3.6,Q67869845,,,2,monument,history;culture,"historic_architecture,architecture,interesting_places,other_buildings_and_structures",
+Q68016589,"1, Avedananda Road",22.58828,88.37089,3.6,Q68016589,,,2,monument,history;culture,"historic_architecture,architecture,interesting_places,other_buildings_and_structures",
+Q68015770,"18, Dr. Dhiren Sen Sarani",22.58747,88.37211,3.6,Q68015770,,,2,monument,history;culture,"historic_architecture,architecture,interesting_places,other_buildings_and_structures",
+Q67868339,"37, Avedananda Road",22.58839,88.37117,3.6,Q67868339,,,2,monument,history;culture,"historic_architecture,architecture,interesting_places,other_buildings_and_structures",
+Q67868299,"34, Avedananda Road",22.58828,88.37164,3.7,Q67868299,,,2,monument,history;culture,"historic_architecture,architecture,interesting_places,other_buildings_and_structures",
+Q67872429,House of H. M. Bose,22.59092,88.36867,3.7,Q67872429,,,2,monument,history;culture,"historic_architecture,architecture,interesting_places,other_buildings_and_structures",
+Q67872010,Bhar's thakurbari,22.59295,88.36755,3.8,Q67872010,,,2,temple,spiritual,"religion,other_temples,interesting_places",
+Q105973023,House of Satyendra Nath Bose,22.59203,88.36913,3.8,Q105973023,,,2,monument,history;culture,"historic_architecture,architecture,interesting_places,other_buildings_and_structures",
+Q67882136,House of Butto Kristo Paul,22.59710,88.36018,3.8,Q67882136,,,2,monument,history;culture,"historic_architecture,architecture,interesting_places,other_buildings_and_structures",
+Q67869944,"1, Raja Rajkrishna street",22.59258,88.37077,4.0,Q67869944,,,2,monument,history;culture,"historic_architecture,architecture,interesting_places,other_buildings_and_structures",
+Q67651735,Champatala Ghat,22.60056,88.35917,4.2,Q67651735,,,2,monument,history;culture,"historic_architecture,architecture,interesting_places,other_buildings_and_structures",
+Q56683621,Sola Ana Masjid,22.53451,88.32185,4.2,Q56683621,,,2,temple,spiritual,"religion,mosques,interesting_places",
+Q58691984,Patitpabani Durga temple,22.53584,88.31787,4.4,Q58691984,,,2,temple,spiritual,"religion,hindu_temples,interesting_places",
+Q67842608,Town School,22.59670,88.37150,4.4,Q67842608,,,2,monument,history;culture,"historic_architecture,architecture,interesting_places,other_buildings_and_structures",
+Q67862438,Sri Sri Shitalnath Swami Garden Temple,22.59165,88.37764,4.4,Q67862438,,,2,temple,spiritual,"religion,other_temples,interesting_places",
+Q68952555,Maddox Square,22.52631,88.35464,4.4,Q68952555,,,2,viewpoint,culture,"cultural,urban_environment,interesting_places,squares",
+N2471894146,Asutosh College,22.52542,88.34620,4.4,Q4811950,Asutosh College,,2,monument,history;culture,"architecture,historic_architecture,interesting_places,other_buildings_and_structures",
+W493963486,Swetamber Dadaji's Jain Temple,22.59130,88.37876,4.4,Q67862554,,,2,temple,spiritual,"religion,other_temples,interesting_places",
+Q4726823,Alipore Central Jail,22.52527,88.33987,4.5,Q4726823,Alipore Central Jail,,2,monument,history;culture,"historic_architecture,architecture,interesting_places,other_buildings_and_structures",
+Q76331105,Najrul Setu,22.53820,88.31379,4.5,Q76331105,,,2,monument,culture,"architecture,bridges,interesting_places,moveable_bridges",
+Q7289695,Ramkrishna Sarada Mission Sister Nivedita Girls' School,22.60274,88.36601,4.7,Q7289695,Ramakrishna Sarada Mission Sister Nivedita Girls' School,,2,monument,history;culture,"historic_architecture,architecture,interesting_places,other_buildings_and_structures",
+Q96631584,Gour Nitai temple,22.60324,88.36701,4.8,Q96631584,,,2,temple,spiritual,"religion,other_temples,interesting_places",
+Q67648685,House of Girish Chandra Ghosh,22.60306,88.36776,4.8,Q67648685,,,2,monument,history;culture,"historic_architecture,architecture,interesting_places,other_buildings_and_structures",
+Q56689234,Panjatan Imambara,22.52959,88.31830,4.9,Q56689234,,,2,temple,spiritual,"religion,other_temples,interesting_places",
+Q67642936,Dochala Shiva temple of Jagatram Haldar,22.60586,88.36903,5.1,Q67642936,,,2,temple,spiritual,"religion,other_temples,interesting_places",
+Q67645656,Begum Mosque,22.60453,88.37328,5.2,Q67645656,,,2,temple,spiritual,"religion,mosques,interesting_places",
+W35875337,Deshapriya Park,22.51843,88.35352,5.2,Q5264153,Deshapriya Park,,2,garden,culture;nature;relaxation,"urban_environment,gardens_and_parks,cultural,interesting_places",
+W187711647,Priya Cinema,22.51799,88.35439,5.3,Q7246463,Priya Cinema (Kolkata),,2,activity,culture,"cultural,cinemas,theatres_and_entertainments,interesting_places",
+W810424737,Howrah–Chennai main line,22.59822,88.30939,5.3,Q5922477,Howrah–Chennai main line,,2,monument,culture,"bridges,architecture,interesting_places,other_bridges",
+Q67642423,Barrackpore bridge,22.60541,88.37403,5.3,Q67642423,,,2,monument,culture,"bridges,architecture,interesting_places,other_bridges",
+Q67642184,Bashiri Mosque,22.60844,88.36972,5.4,Q67642184,Basri Shah Mosque,,2,temple,spiritual,"religion,mosques,interesting_places",
+Q61362124,Garden Reach Flyover,22.52570,88.30680,6.0,Q61362124,Garden Reach Flyover,,2,monument,culture,"architecture,bridges,interesting_places,viaducts",
+Q67633318,Dhurjoti Bhawan,22.60636,88.38697,6.2,Q67633318,,,2,monument,history;culture,"historic_architecture,architecture,interesting_places,other_buildings_and_structures",
+Q106522816,Durga Exhibition Museum,22.50942,88.35911,6.3,Q106522816,,,2,museum,culture,"museums,cultural,interesting_places,other_museums",
+Q75802510,ZE-45,22.58265,88.28564,6.5,Q75802510,,,2,monument,history,"other,unclassified_objects,interesting_places,historic_object",
+Q67636967,Gun & Shell factory clock tower,22.61947,88.37039,6.5,Q67636967,,,2,monument,culture,"architecture,towers,interesting_places,clock_towers",
+Q56688361,Sibtainabad Imambara,22.54926,88.28417,6.6,Q56688361,,,2,temple,spiritual,"religion,other_temples,interesting_places",
+Q67635550,Paikpara Great Trigonometrical Survey tower,22.61628,88.37925,6.6,Q67635550,,,2,monument,culture,"architecture,towers,interesting_places,other_towers",
+Q56683533,Zohra Begum Mosque,22.50385,88.33920,6.8,Q56683533,,,2,temple,spiritual,"religion,mosques,interesting_places",
+Q58690155,Kamarghat Dwadash Shiva temple,22.49874,88.34190,7.4,Q58690155,,,2,monument,history;culture,"historic_architecture,architecture,interesting_places,other_buildings_and_structures",
+Q67630900,Bamondas Mukherjee's Gateway,22.62750,88.37167,7.4,Q67630900,,,2,fort,history,"fortifications,historic,interesting_places,other_fortifications",
+Q67629085,Ratan Babu Ghat,22.63028,88.36434,7.5,Q67629085,,,2,monument,history;culture,"historic_architecture,architecture,interesting_places,other_buildings_and_structures",
+Q67629327,Cossipore Burning Ghat,22.63111,88.36522,7.6,Q67629327,,,2,monument,history;culture,"historic_architecture,architecture,interesting_places,other_buildings_and_structures",
+Q67628845,Cast Iron Gate,22.62948,88.37132,7.6,Q67628845,,,2,fort,history,"fortifications,historic,interesting_places,other_fortifications",
+W162339433,Central Park,22.58669,88.41721,7.7,Q5061595,Central Park (Kolkata),,2,garden,culture;nature;relaxation,"urban_environment,gardens_and_parks,cultural,interesting_places",
+Q3349499,Tollygunge Club,22.49328,88.34327,8.0,Q3349499,Tollygunge Club,,2,monument,history,"other,unclassified_objects,interesting_places,historic_object",
+Q2576004,Royal Calcutta Golf Club,22.49300,88.35500,8.1,Q2576004,Royal Calcutta Golf Club,,2,monument,history;culture,"historic_architecture,architecture,interesting_places,other_buildings_and_structures",
+Q56152584,Clive's House,22.62640,88.41615,9.9,Q56152584,,,2,monument,history;culture,"historic_architecture,architecture,interesting_places,other_buildings_and_structures",
+Q16934749,Gurusaday Museum,22.45542,88.30341,13.0,Q16934749,Gurusaday Museum,,2,museum,culture,"museums,cultural,interesting_places,other_museums",
+Q56152661,26 Shiva temple,22.72574,88.36234,18.0,Q56152661,,,2,monument,history;culture,"historic_architecture,architecture,interesting_places,other_buildings_and_structures",
+Q75539842,Ancestral House of Bose family,22.41157,88.42660,18.9,Q75539842,,,2,monument,history;culture,"historic_architecture,architecture,interesting_places,other_buildings_and_structures",
+N6083926871,Glorious Dead Memorial,22.56466,88.34538,0.1,,,,1,viewpoint,culture,"cultural,urban_environment,interesting_places,sculptures",
+N5297343926,Bank of Bengal Historic Building,22.56858,88.34438,0.5,,,,1,monument,,"other,unclassified_objects,interesting_places,tourist_object",
+N4175474594,Saint John's Protestant Church,22.56994,88.34592,0.6,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N4830776726,Banking Museum,22.56967,88.34303,0.6,,,,1,museum,culture,"cultural,museums,interesting_places,other_museums",
+N5295797821,The Black Hole Monument,22.57066,88.34534,0.6,,,,1,monument,history,"historic,monuments_and_memorials,interesting_places,monuments",
+W359293183,THE REGAL,22.56276,88.35259,0.7,,,,1,activity,culture,"cultural,cinemas,theatres_and_entertainments,interesting_places",
+N7028790385,Parsi Temple,22.56628,88.35474,0.9,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+W359293233,C.N.I. Wesleyan Church,22.55865,88.35150,0.9,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N4178815700,Night Market,22.55939,88.35268,0.9,,,,1,monument,,"other,unclassified_objects,interesting_places,tourist_object",
+Q56682426,Postal Museum and Philatelic Library,22.57375,88.34761,1.0,Q56682426,,,1,museum,culture,"museums,cultural,interesting_places,other_museums",
+N4209577087,Saint Andrew's Protestant Church,22.57313,88.35091,1.0,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N7028790586,Parsi Fire Temple,22.57108,88.35461,1.1,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N4930668062,Saint Anthony's Catholic Shrine,22.55987,88.35545,1.1,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N7029084685,Bauddha Dharmankur Sabha,22.56946,88.35685,1.2,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+W325694241,St. Peter's Church,22.55766,88.33733,1.2,,,,1,temple,spiritual,"religion,churches,interesting_places,other_churches",
+N5295505923,Sea Ip Chinese Temple,22.57326,88.35538,1.3,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+Q56682477,Maritime Archives & Heritage Centre,22.57681,88.34695,1.3,Q56682477,,,1,museum,culture,"museums,cultural,interesting_places,other_museums",
+N5295505922,Toong On Chinese Temple,22.57309,88.35583,1.3,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N6135363284,Madina Masjid,22.55567,88.35448,1.3,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N5295747622,Old Jewish Girls’ School,22.57550,88.35259,1.3,,,,1,monument,,"other,unclassified_objects,interesting_places,tourist_object",
+N4209577081,Beth-el Synagogue,22.57573,88.35225,1.3,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N5295544122,Chun Nee Thong Chinese Temple,22.57350,88.35619,1.4,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N5295763621,Sea Voi Chinese Temple,22.57367,88.35627,1.4,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N5295758423,Chinese Alms House,22.57348,88.35651,1.4,,,,1,monument,,"other,unclassified_objects,interesting_places,tourist_object",
+N5295743533,Gee Hing Chinese Temple,22.57417,88.35615,1.4,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+Q56689662,Bagwali Kothi Imambara,22.57569,88.35419,1.4,Q56689662,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N5295763921,Myanmar Buddhist Temple,22.57231,88.35822,1.5,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+Q56689638,Gol Kothi Imambara,22.57599,88.35442,1.5,Q56689638,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N5295743534,Nam Soon Chinese Temple,22.57506,88.35616,1.5,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N7053793928,Kolkata Police Museum,22.55412,88.35565,1.5,,,,1,museum,culture,"cultural,museums,interesting_places,other_museums",
+Q96735084,Sir Nil Ratan Sircar Indian Medical Association House,22.56281,88.36182,1.6,Q96735084,,,1,monument,history;culture,"historic_architecture,architecture,interesting_places,other_buildings_and_structures",
+Q56689453,Haji Karabala Imambara,22.57854,88.35322,1.7,Q56689453,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N4876917922,Sri Sri Nagreswar Mahadev Mandir,22.57995,88.34872,1.7,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+W469676019,James Pricep Ghat Memorial,22.55523,88.33114,1.9,,,,1,monument,history,"historic,monuments_and_memorials,interesting_places,monuments",
+W525517318,Moonlight Cinema,22.57754,88.35983,2.0,,,,1,activity,culture,"cultural,cinemas,theatres_and_entertainments,interesting_places",
+Q56689506,Babul Hawaij Imambara,22.57928,88.35801,2.0,Q56689506,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N6141500453,Satyajit Ray Auditorium,22.54745,88.35162,2.0,,,,1,activity,culture,"cultural,theatres_and_entertainments,interesting_places,other_theatres",
+N4742846622,Harrington Street Arts Centre,22.54728,88.35225,2.1,,,,1,monument,,"other,unclassified_objects,interesting_places,tourist_object",
+Q68074746,College Square,22.57466,88.36380,2.1,Q68074746,,,1,viewpoint,culture,"cultural,urban_environment,interesting_places,squares",
+N2934412982,Indira Gandhi,22.54618,88.34752,2.1,,,,1,monument,history,"historic,monuments_and_memorials,interesting_places,monuments",
+W358876385,Saint Teresa's Catholic Church,22.56006,88.36608,2.1,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+W325835287,Mahabodhi Society of India,22.57434,88.36439,2.1,,,,1,temple,spiritual,"religion,buddhist_temples,interesting_places",
+Q68597114,House of Henry Louis Vivian Derozio,22.55976,88.36668,2.2,Q68597114,,,1,monument,history;culture,"historic_architecture,architecture,interesting_places,other_buildings_and_structures",
+W379062184,Aloka Cinema Hall,22.57011,88.32595,2.2,,,,1,activity,culture,"cultural,cinemas,theatres_and_entertainments,interesting_places",
+N6378406685,Arobindo Bhaban,22.54547,88.35005,2.2,,,,1,monument,history,"historic,monuments_and_memorials,interesting_places,monuments",
+N3324534721,Mother House (Missionaries of Charity),22.55310,88.36366,2.2,,,,1,monument,,"other,unclassified_objects,interesting_places,tourist_object",
+Q67903835,Old mint,22.58451,88.35184,2.2,Q67903835,,,1,monument,history;culture,"historic_architecture,architecture,interesting_places,other_buildings_and_structures",
+N2266850249,Prachi Cinema Hall,22.56488,88.36826,2.2,,,,1,activity,culture,"cultural,cinemas,theatres_and_entertainments,interesting_places",
+W112025097,Saint Paul's Anglican Cathedral,22.54423,88.34661,2.3,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+W379075707,Mayapuri Cinema Hall,22.56735,88.32386,2.3,,,,1,activity,culture,"cultural,cinemas,theatres_and_entertainments,interesting_places",
+Q75557407,"Central Hall, NRS Medical College",22.56519,88.36907,2.3,Q75557407,,,1,monument,history;culture,"historic_architecture,architecture,interesting_places,other_buildings_and_structures",
+W362945050,Parish Hall Saint Paul's Cathedral,22.54379,88.34570,2.4,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N3512180084,Assembly of Gods Church,22.54745,88.36017,2.4,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+Q56689556,Aarao Bibi Imambara,22.55362,88.36655,2.4,Q56689556,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+W204893580,Radha Govinda Mandir,22.54370,88.35363,2.5,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+W362945051,Nandan West Bengal Film Centre,22.54227,88.34567,2.5,,,,1,activity,culture,"cultural,cinemas,theatres_and_entertainments,interesting_places",
+N4974850621,Tagore's House,22.58487,88.35824,2.5,,,,1,monument,,"other,unclassified_objects,interesting_places,tourist_object",
+W362945044,Nehru Children's Museum,22.54207,88.34697,2.5,,,,1,museum,culture,"cultural,museums,interesting_places,other_museums",
+W359036732,Hastings Chapel,22.54793,88.32943,2.6,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N3809532790,Shibtala,22.57211,88.32244,2.6,Q74548573,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+W359481882,Saint John's Catholic Church,22.56947,88.37101,2.6,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+Q75553444,House of Soumendranath Tagore,22.58495,88.35914,2.6,Q75553444,,,1,monument,history;culture,"historic_architecture,architecture,interesting_places,other_buildings_and_structures",
+W469676690,Hastings Mandir,22.54859,88.32851,2.6,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+W384648471,Shibtala Mandir,22.57216,88.32240,2.6,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+W384647870,Rajib Gandhi Statue,22.57029,88.32162,2.6,,,,1,viewpoint,culture,"cultural,urban_environment,interesting_places,installation",
+N4662765938,Vivekananda Statue,22.56405,88.32065,2.6,,,,1,viewpoint,culture,"cultural,urban_environment,interesting_places,sculptures",
+Q56689338,Serajuddin Ali Khan Karamunnesa Begum Imambara,22.55915,88.37154,2.7,Q56689338,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+W187718110,Kala Mandir,22.54386,88.35902,2.7,,,,1,activity,culture,"cultural,theatres_and_entertainments,interesting_places,other_theatres",
+W377852958,Dharmaraj Mandir,22.56803,88.32037,2.7,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+W469680291,Devi Chaura Mandir,22.54790,88.32488,2.9,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+Q68954277,Sambhunath Pandit Hospital,22.53861,88.34814,2.9,Q68954277,,,1,monument,history;culture,"historic_architecture,architecture,interesting_places,other_buildings_and_structures",
+Q75551988,Kamal Kutir,22.57481,88.37289,2.9,Q75551988,,,1,monument,history;culture,"historic_architecture,architecture,interesting_places,other_buildings_and_structures",
+N4176886089,INOX Cinema,22.53840,88.35131,3.0,,,,1,activity,culture,"cultural,cinemas,theatres_and_entertainments,interesting_places",
+N4742888721,Ahuja Museum for Arts,22.53809,88.34924,3.0,,,,1,museum,culture,"cultural,museums,interesting_places,other_museums",
+N4410844091,Mandirtala Mondir,22.56996,88.31742,3.0,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+Q65095447,Gurdwara Sant Kutiya Kolkatta,22.53781,88.34406,3.0,Q65095447,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+W122960352,Lynx House,22.54001,88.33176,3.2,,,,1,monument,,"other,unclassified_objects,interesting_places,tourist_object",
+W122960380,Bears,22.53986,88.33199,3.2,,,,1,monument,,"other,unclassified_objects,interesting_places,tourist_object",
+N8219092966,Syed Jalal Shah Masjid,22.54249,88.32730,3.2,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N7029035888,Datta Ancestral Home - Birthplace of Vivekananda,22.58634,88.36733,3.2,,,,1,museum,culture,"cultural,museums,interesting_places,other_museums",
+W122960325,Hippopotamus Pool,22.53932,88.33199,3.2,,,,1,monument,,"other,unclassified_objects,interesting_places,tourist_object",
+N7029122185,House of Pandit Ishwar Chandra Vidyasagar,22.58173,88.37184,3.2,,,,1,museum,culture,"cultural,museums,interesting_places,other_museums",
+W122960355,Indian Lion Enclosure,22.53901,88.33245,3.2,,,,1,monument,,"other,unclassified_objects,interesting_places,tourist_object",
+W122960331,Birds of Prey House,22.53987,88.33024,3.2,,,,1,monument,,"other,unclassified_objects,interesting_places,tourist_object",
+W358835030,Christ The King's Catholic Church,22.54226,88.36625,3.2,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+W123000734,White Fallow Deer,22.53934,88.33029,3.3,,,,1,monument,,"other,unclassified_objects,interesting_places,tourist_object",
+W112696530,Congress Park,22.54288,88.36814,3.3,Q68935124,,,1,garden,culture;nature;relaxation,"urban_environment,gardens_and_parks,cultural,interesting_places",
+Q67916413,Beadon Street sub post office,22.58984,88.36427,3.3,Q67916413,,,1,monument,history;culture,"historic_architecture,architecture,interesting_places,other_buildings_and_structures",
+W123000755,Carnivora House,22.53862,88.33051,3.4,,,,1,monument,,"other,unclassified_objects,interesting_places,tourist_object",
+W123000749,Bengal Tiger,22.53851,88.33024,3.4,,,,1,monument,,"other,unclassified_objects,interesting_places,tourist_object",
+W123000752,White Tiger,22.53811,88.33060,3.4,,,,1,monument,,"other,unclassified_objects,interesting_places,tourist_object",
+W636399668,Dakshinpara Durga Mandir,22.56500,88.31322,3.4,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+W636399674,Sarbamangala Kali Bari,22.56484,88.31311,3.4,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+W122960329,Parrots,22.53680,88.33287,3.4,,,,1,monument,,"other,unclassified_objects,interesting_places,tourist_object",
+W360505997,Hajarhat Kali Mandir,22.57462,88.31465,3.4,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+W123002398,Macaques,22.53676,88.33191,3.5,,,,1,monument,,"other,unclassified_objects,interesting_places,tourist_object",
+W123003604,Hamadryas Baboon,22.53610,88.33237,3.5,,,,1,monument,,"other,unclassified_objects,interesting_places,tourist_object",
+N5271335721,Inox quest cinema,22.53872,88.36556,3.5,,,,1,activity,culture,"cultural,cinemas,theatres_and_entertainments,interesting_places",
+W123002404,Reptile House,22.53634,88.33137,3.5,,,,1,monument,,"other,unclassified_objects,interesting_places,tourist_object",
+W123003608,Chimpanzee,22.53584,88.33206,3.6,,,,1,monument,,"other,unclassified_objects,interesting_places,tourist_object",
+W123004954,Peafowl,22.53533,88.33241,3.6,,,,1,monument,,"other,unclassified_objects,interesting_places,tourist_object",
+Q56682342,Azad Memorabilia Museum,22.53351,88.35627,3.6,Q56682342,,,1,museum,culture,"museums,cultural,interesting_places,other_museums",
+N6830619234,Jyotirmoyee Radha Krishna Mandir,22.53267,88.35458,3.7,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+N6528150485,Arathdar Masjid,22.53964,88.36961,3.7,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+W382410817,Nirbak Ashram,22.56009,88.31065,3.7,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+W385533525,Mandir,22.56252,88.30970,3.8,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+W123004943,Crocodile Pool,22.53359,88.33104,3.8,,,,1,monument,,"other,unclassified_objects,interesting_places,tourist_object",
+W122755067,Harish Park,22.53053,88.34373,3.8,Q69332274,,,1,garden,culture;nature;relaxation,"urban_environment,gardens_and_parks,cultural,interesting_places",
+N7028996085,Ismail Mosque,22.53868,88.32133,3.9,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+Q69344904,Presidency Jail,22.53097,88.33680,3.9,Q69344904,,,1,monument,history;culture,"historic_architecture,architecture,interesting_places,other_buildings_and_structures",
+W682121852,Shibtala Shib Mandir,22.54551,88.37811,3.9,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+N2471894087,Purna Cinema,22.52869,88.34531,4.0,,,,1,activity,culture,"cultural,cinemas,theatres_and_entertainments,interesting_places",
+N8253898250,Lal Mandir,22.59711,88.36551,4.1,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+N4243787389,Kriya yoga,22.53366,88.36789,4.1,,,,1,viewpoint,culture,"cultural,urban_environment,interesting_places,installation",
+N5295505622,Bhagyakul Roy Family Mansions,22.59926,88.36163,4.1,,,,1,monument,,"other,unclassified_objects,interesting_places,tourist_object",
+W359480716,Shobhabazar Rajbari Nathmandir,22.59683,88.36720,4.1,,,,1,museum,culture,"cultural,museums,interesting_places,other_museums",
+N2471894097,Bharati Cinema Hall,22.52762,88.34568,4.2,,,,1,activity,culture,"cultural,cinemas,theatres_and_entertainments,interesting_places",
+N4738184821,Centre for International Modern Art,22.53158,88.36469,4.2,Q107208118,,,1,museum,culture,"cultural,museums,interesting_places,art_galleries",
+N5295506521,Banamali Sarkar’s Shiva Temple,22.59985,88.36113,4.2,,,,1,monument,,"other,unclassified_objects,interesting_places,tourist_object",
+N2471894117,Indira Cinema Hall,22.52722,88.34663,4.2,,,,1,activity,culture,"cultural,cinemas,theatres_and_entertainments,interesting_places",
+N2471894107,Bijoli Cinema Hall,22.52690,88.34580,4.2,,,,1,activity,culture,"cultural,cinemas,theatres_and_entertainments,interesting_places",
+N5295478424,The Black Pagoda (1732 CE),22.60000,88.36337,4.3,,,,1,monument,,"other,unclassified_objects,interesting_places,tourist_object",
+N6700914342,Sitala Mandir,22.53626,88.31848,4.3,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+N4571085993,Kurmatuli pottery district,22.60076,88.36237,4.3,,,,1,monument,,"other,unclassified_objects,interesting_places,tourist_object",
+N5295350166,Madan Mohan Tala (1761 CE),22.60066,88.36382,4.4,,,,1,monument,,"other,unclassified_objects,interesting_places,tourist_object",
+N6700914343,Patitpabon Mandir,22.53579,88.31784,4.4,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+W653367003,Bhukailash Patit Pabon Mandir,22.53579,88.31784,4.4,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+W493962151,Shree Shree Sheetalnathji Jain Temple,22.59166,88.37764,4.4,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N4612607285,Radha Krishna Mandir,22.52573,88.35011,4.4,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+N7416391785,Gandhi Bhawan,22.56372,88.38918,4.4,,,,1,monument,,"other,unclassified_objects,interesting_places,tourist_object",
+W224411646,23 Palli Durga Temple,22.52543,88.34405,4.4,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+W142757323,Bhukailash Shiv Mandir,22.53525,88.31776,4.4,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+N5295350403,Greek Orthodox Cemetery,22.57245,88.38884,4.4,,,,1,monument,,"other,unclassified_objects,interesting_places,tourist_object",
+W667834955,Statue of Bholsnsth Chskraborty,22.58701,88.30945,4.5,,,,1,viewpoint,culture,"cultural,urban_environment,interesting_places,sculptures",
+W669520681,Shiv Mandir,22.59254,88.31300,4.6,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+W667835407,Anadamoyee Ashram,22.59116,88.31168,4.6,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+Q56689288,South Kolkata Hussaini Akhara Committee Imambara,22.52906,88.32214,4.7,Q56689288,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+W175776604,Kalika Cinema,22.52261,88.34601,4.7,,,,1,activity,culture,"cultural,cinemas,theatres_and_entertainments,interesting_places",
+W175777380,Basusree,22.52258,88.34631,4.7,,,,1,activity,culture,"cultural,cinemas,theatres_and_entertainments,interesting_places",
+Q56683351,Sri Chaitanya Mahaprabhu Museum,22.60324,88.36701,4.8,Q56683351,,,1,museum,culture,"museums,cultural,interesting_places,other_museums",
+N1462167615,Ghosh house,22.60309,88.36777,4.8,,,,1,monument,history,"historic,monuments_and_memorials,interesting_places,monuments",
+N1686122936,London paris cinema,22.52619,88.36670,4.8,,,,1,activity,culture,"cultural,cinemas,theatres_and_entertainments,interesting_places",
+N5295350470,Bishnuram Chakraborty’s 18th C. Temples,22.60447,88.36521,4.8,,,,1,monument,,"other,unclassified_objects,interesting_places,tourist_object",
+W175777378,Ujjala Cinema,22.52107,88.34621,4.9,,,,1,activity,culture,"cultural,cinemas,theatres_and_entertainments,interesting_places",
+W359475874,The Calcutta Bungalow,22.59908,88.37637,4.9,,,,1,monument,,"other,unclassified_objects,interesting_places,tourist_object",
+N4866109121,Chinese Kali Temple,22.54764,88.39126,5.0,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+W191145359,Durga Bari,22.52539,88.36956,5.0,,,,1,activity,culture,"cultural,theatres_and_entertainments,interesting_places,other_theatres",
+W190959647,Palace of Maharaja Barddhaman,22.52393,88.32581,5.0,,,,1,fort,history,"fortifications,historic,interesting_places,castles",
+W359095639,Shitala Mandir,22.55311,88.39464,5.1,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+N8917325752,Dinanta Ashar Kali Mandir,22.56426,88.29639,5.1,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+N8917325753,Lokenath Baba Mandir,22.56371,88.29623,5.1,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+N6520712486,Sitala Mandir-Bondel Road,22.52891,88.37807,5.2,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N5276659832,indhra gandhi statue,22.58775,88.30217,5.2,,,,1,viewpoint,culture,"cultural,urban_environment,interesting_places,sculptures",
+N5305922624,Old Bagbazar Tram Depot (now defunct),22.60725,88.36809,5.2,,,,1,monument,,"other,unclassified_objects,interesting_places,tourist_object",
+W178011877,Gallery Sanskriti,22.52051,88.32979,5.2,,,,1,museum,culture,"cultural,museums,interesting_places,other_museums",
+N5272425645,Ram Mondir,22.58783,88.30156,5.3,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+N5305920325,Bagbazar Lock Gates (1820 CE),22.60779,88.36826,5.3,,,,1,monument,,"other,unclassified_objects,interesting_places,tourist_object",
+W118513208,Mahanirban Math,22.51849,88.35665,5.3,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+N5241916893,Cinepolis,22.51650,88.34881,5.4,,,,1,activity,culture,"cultural,cinemas,theatres_and_entertainments,interesting_places",
+N6441665143,Battala Sitala Mandir,22.52885,88.38213,5.4,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+N6441665145,Radha Krishna Temple,22.52876,88.38295,5.5,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+N6441665144,Shani Temple,22.52994,88.38461,5.5,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+W360283106,Bedia Danga Masjid,22.52711,88.38216,5.6,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+W363076562,hanuman mandir,22.58177,88.29491,5.6,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+Q67590242,Bhot Bagan Math,22.61469,88.35777,5.7,Q67590242,Bhot Bagan Moth,,1,temple,spiritual,"religion,buddhist_temples,interesting_places",
+N5241930862,Inox Swabhumi,22.57101,88.40113,5.7,,,,1,activity,culture,"cultural,cinemas,theatres_and_entertainments,interesting_places",
+N6395309585,Gariahat Sarbojanin Durgotsab,22.51735,88.36675,5.7,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N2017123229,PVR,22.57776,88.40052,5.7,,,,1,activity,culture,"cultural,cinemas,theatres_and_entertainments,interesting_places",
+N5982424388,Giant lilly garden,22.55948,88.29076,5.7,,,,1,monument,,"other,unclassified_objects,interesting_places,tourist_object",
+N5982424389,Large palm house,22.55919,88.29056,5.8,,,,1,monument,,"other,unclassified_objects,interesting_places,tourist_object",
+N8011950448,Lake Kalibari,22.51367,88.35503,5.8,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+W359520687,Parshwanath Jain Temple,22.60570,88.38298,5.9,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+W206653757,Gurudwara Sikh Sangat Behala,22.51551,88.32330,6.0,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+W238373702,Menoka,22.51119,88.35069,6.0,,,,1,activity,culture,"cultural,cinemas,theatres_and_entertainments,interesting_places",
+W118352156,Nazrul Mancha,22.51314,88.36260,6.0,,,,1,activity,culture,"cultural,theatres_and_entertainments,interesting_places,other_theatres",
+Q58691047,Lake Mosque,22.51133,88.35570,6.0,Q58691047,,,1,temple,spiritual,"religion,mosques,interesting_places",
+W547543683,shri kali shitla mandir,22.59326,88.29569,6.1,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+Q56688970,Qasr-ul-buka Imambara,22.54822,88.28970,6.1,Q56688970,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N5982424585,Guard house,22.55740,88.28734,6.1,,,,1,monument,,"other,unclassified_objects,interesting_places,tourist_object",
+N5271596821,Gallery Gold,22.50953,88.34785,6.2,,,,1,viewpoint,culture,"cultural,urban_environment,interesting_places,installation",
+Q56688951,Bait-un-Nizat Imambara,22.54911,88.28853,6.2,Q56688951,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+Q56689161,Firdaus Mahal Imambara,22.55063,88.28650,6.3,Q56689161,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N7028764485,Nipponzan Myohoji Buddhist Temple,22.51065,88.36607,6.4,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N4069799625,Swami Vivekananda Statue,22.50898,88.33297,6.4,,,,1,viewpoint,culture,"cultural,urban_environment,interesting_places,sculptures",
+N2461204981,Paribesh Bhavan,22.56193,88.40907,6.4,,,,1,museum,culture,"cultural,museums,interesting_places,other_museums",
+N4641488817,AB-AC Fountain,22.59411,88.40163,6.5,,,,1,viewpoint,culture,"fountains,cultural,urban_environment,interesting_places",
+W404716769,Bhavani Cinema,22.50549,88.34508,6.6,,,,1,activity,culture,"cultural,cinemas,theatres_and_entertainments,interesting_places",
+Q56689105,Begum Umda Mahal Imambara,22.54913,88.28391,6.6,Q56689105,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+Q56689801,Prince Mohammed Rahimuddin Imambara,22.50400,88.34595,6.8,Q56689801,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+W224931508,Kund Area,22.58779,88.40833,6.9,,,,1,viewpoint,culture,"fountains,cultural,urban_environment,interesting_places",
+W237763881,INOX,22.58864,88.40806,6.9,,,,1,activity,culture,"cultural,cinemas,theatres_and_entertainments,interesting_places",
+N3365872348,Ajanta Cinema,22.50811,88.32023,6.9,,,,1,activity,culture,"cultural,cinemas,theatres_and_entertainments,interesting_places",
+Q56682888,Vadya Vithika,22.57328,88.41341,6.9,Q56682888,,,1,museum,culture,"museums,cultural,interesting_places,other_museums",
+N1850221742,Broadway,22.57330,88.41360,7.0,,,,1,activity,culture,"cultural,cinemas,theatres_and_entertainments,interesting_places",
+W121761952,Tipu Sultan Mosque,22.50178,88.34544,7.0,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+W238373701,Navina,22.50094,88.34872,7.1,,,,1,activity,culture,"cultural,cinemas,theatres_and_entertainments,interesting_places",
+N6463786332,Shibaloy,22.50082,88.33472,7.2,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+Q56244285,Sri Mayer Ghat,22.62916,88.35878,7.3,Q56244285,,,1,monument,history;culture,"historic_architecture,architecture,interesting_places,other_buildings_and_structures",
+Q67631912,Cossipore Club,22.62026,88.38593,7.4,Q67631912,,,1,monument,history;culture,"historic_architecture,architecture,interesting_places,other_buildings_and_structures",
+N3365870673,Hari Sabha,22.50559,88.31407,7.4,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+W238233670,Ramakrishna Mission,22.59196,88.41246,7.4,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+W356008796,Swami Vivekananda Temple,22.63144,88.35747,7.5,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+W356008794,Sri Sarada Devi Temple,22.63184,88.35721,7.5,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+N6017751333,The Church of Jesus Christ of Latter-day Saints,22.59413,88.41245,7.5,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+W356008795,Swami Brahmananda Temple,22.63217,88.35721,7.6,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N7592904208,Shibtala Baroari Durga Temple,22.56451,88.27263,7.6,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+N6528162885,Jora Mandir,22.51669,88.29351,7.6,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N7593224106,Podra More Durga Temple,22.56059,88.27206,7.6,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+N4100514319,SLWA,22.59712,88.41250,7.7,,,,1,monument,,"other,unclassified_objects,interesting_places,tourist_object",
+W359067969,2 no. poddar nagar shiv kali mandir,22.49769,88.36331,7.7,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+N7265543570,Viveknagar Kalibari,22.50107,88.37486,7.7,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+N3992994468,Jagannath Temple,22.50111,88.31692,7.7,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+W153948903,Green Verge,22.60090,88.41172,7.8,,,,1,viewpoint,nature,"natural,interesting_places,nature_reserves,other_nature_conservation_areas",
+N7638288880,Satsang Vihar,22.56673,88.27003,7.8,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+N4937968921,Vipat Tarani Mandir,22.57724,88.42159,7.8,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N1274128862,Kali Temple,22.49923,88.31775,7.9,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N7592890544,Durga Temple,22.56087,88.26871,8.0,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+N5407828931,PARBATI APARTMENTS,22.50683,88.30066,8.0,,,,1,monument,,"other,unclassified_objects,interesting_places,tourist_object",
+N6739892323,Hari Sava.Lord Krishna Temple,22.50559,88.39037,8.0,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+N7592962312,Shiva Temple,22.55981,88.26815,8.1,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+N6403483985,Laxmi Narayan Mandir,22.50243,88.30671,8.1,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N249371248,Unnayan Bhavan,22.58889,88.42068,8.1,,,,1,monument,history,"historic,monuments_and_memorials,interesting_places,monuments",
+N6739888056,Old Radha Krishna Temple,22.50459,88.39297,8.2,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+N249369186,Geological Survey Of India,22.58448,88.42415,8.3,,,,1,monument,history,"historic,monuments_and_memorials,interesting_places,monuments",
+N6739888064,Sada Kali Mandir,22.50321,88.39142,8.3,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+W798336879,Sitala Temple,22.49444,88.32037,8.3,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N6739888067,Kali Mandir,22.50273,88.39091,8.3,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+N6739888060,Lord Shiva Temple,22.50353,88.39285,8.3,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+N6739888063,Hindu Temple,22.50345,88.39375,8.4,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+N6739847842,Maa Kali mandir,22.50410,88.39474,8.4,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+N6739847841,Shoni thakur mandir,22.50407,88.39476,8.4,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+N6739889010,Maa kali temple,22.50402,88.39498,8.4,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+N4013897322,Sarat Sadan,22.49454,88.31598,8.4,,,,1,activity,culture,"cultural,theatres_and_entertainments,interesting_places,other_theatres",
+N1894661828,Ashoka cinema hall,22.49375,88.31659,8.5,,,,1,activity,culture,"cultural,cinemas,theatres_and_entertainments,interesting_places",
+N5162634223,Gouria moth,22.48506,88.34253,8.9,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+N5041514565,RDB Cinemas,22.56864,88.43307,8.9,,,,1,activity,culture,"cultural,cinemas,theatres_and_entertainments,interesting_places",
+N6791412445,Lake Pally Shiv Mandir,22.49179,88.38281,9.0,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+N4466936378,Lichubagan Radha Krishna Temple,22.62495,88.40587,9.0,,,,1,temple,spiritual,"religion,hindu_temples,interesting_places",
+N1360100055,Madhuban Cinema,22.48238,88.35330,9.2,,,,1,activity,culture,"cultural,cinemas,theatres_and_entertainments,interesting_places",
+W121511785,Sri Aurobindo Institute of Culture,22.48042,88.35410,9.4,,,,1,temple,spiritual,"religion,other_temples,interesting_places",
+node/1659494613,Behala Market,22.50015,88.31749,7.8,,,,,market,shopping,amenity=marketplace,
+node/1833362471,Ice Skating Rink,22.53589,88.36476,3.7,,,,,market,shopping,amenity=marketplace,
+node/6700906070,Fancy Market,22.53904,88.32300,3.7,,,,,market,shopping,amenity=marketplace,
+node/6700906071,Five Star Market,22.53896,88.32280,3.8,,,,,market,shopping,amenity=marketplace,
+node/6774912386,Janai Baazar,22.71805,88.24997,19.7,,,,,market,shopping,amenity=marketplace,
+node/11256960241,Kole Market,22.56623,88.36820,2.2,,,,,market,shopping,amenity=marketplace,
+node/11264617757,AE Market,22.60070,88.41387,8.0,,,,,market,shopping,amenity=marketplace,
+node/11300087939,Jadavpur Grocery Market,22.49642,88.36941,8.0,,,,,market,shopping,amenity=marketplace,
+node/11300162207,Ramgarh Bazar,22.47613,88.37669,10.4,,,,,market,shopping,amenity=marketplace,
+node/12753314401,Rabindranagar Bazar,22.65367,88.39737,11.2,,,,,market,shopping,amenity=marketplace,
+node/12946143564,Thakur Pukur Bazaar,22.46323,88.30675,12.0,,,,,market,shopping,amenity=marketplace,
+node/14097733801,Dimple plaza,22.62260,88.41327,9.4,,,,,market,shopping,amenity=marketplace,
+node/14314508803,Taratala 1no Gate Vegetable Market,22.51279,88.31225,6.8,,,,,market,shopping,amenity=marketplace,
+way/123488059,Kidderpore Market,22.54160,88.32813,3.2,,,,,market,shopping,amenity=marketplace,
+way/142718051,Babu Bazar,22.53809,88.31910,4.1,,,,,market,shopping,amenity=marketplace,
+way/156164648,CK Market,22.58425,88.42610,8.5,,,,,market,shopping,amenity=marketplace,
+way/187714518,Lansdowne Market,22.52788,88.35195,4.2,,,,,market,shopping,amenity=marketplace,
+way/192074448,BJ Market,22.59067,88.42579,8.6,,,,,market,shopping,amenity=marketplace,
+way/213852696,Kolkata New market,22.56024,88.35297,0.9,Q7010004,"New Market, Kolkata",,,market,shopping,amenity=marketplace,
+way/237574415,Tegharia Bazar,22.62159,88.43228,10.8,,,,,market,shopping,amenity=marketplace,
+way/237743333,Baguiati market,22.61075,88.42731,9.7,,,,,market,shopping,amenity=marketplace,
+way/237743334,Baguiati AC Market,22.61097,88.42583,9.6,,,,,market,shopping,amenity=marketplace,
+way/238497995,AB-AC Market,22.59446,88.40124,6.5,,,,,market,shopping,amenity=marketplace,
+way/357519432,AG Market,22.60007,88.42421,8.9,,,,,market,shopping,amenity=marketplace,
+way/358852657,Emami Market,22.54365,88.34864,2.4,,,,,market,shopping,amenity=marketplace,
+way/358855014,Raj Market,22.51013,88.39942,8.2,,,,,market,shopping,amenity=marketplace,
+way/359013378,Bamun Para Bazaar,22.54744,88.37979,3.9,,,,,market,shopping,amenity=marketplace,
+way/359140852,V.I.P. Market,22.57511,88.39034,4.7,,,,,market,shopping,amenity=marketplace,
+way/396486017,Hawkers' Corner,22.50041,88.31739,7.8,,,,,market,shopping,amenity=marketplace,
+way/420013112,New Garia Super Market,22.47385,88.40513,11.8,,,,,market,shopping,amenity=marketplace,
+way/451016702,Rajpur Bazar,22.42279,88.41062,17.1,,,,,market,shopping,amenity=marketplace,
+way/455979083,Flower Market,22.58346,88.34904,2.1,,,,,market,shopping,amenity=marketplace,
+way/654688192,Maidan Market,22.56197,88.35025,0.5,,,,,market,shopping,amenity=marketplace,
+way/779824138,Safuipara Bazar,22.50242,88.38457,8.0,,,,,market,shopping,amenity=marketplace,
+way/964212865,Ramchandrapur Municipal Market,22.43837,88.39261,14.9,,,,,market,shopping,amenity=marketplace,
+way/1158461758,Biswa Bangla Haat,22.60987,88.46443,13.1,,,,,market,shopping,amenity=marketplace,
+way/1168321131,NKDA market,22.58527,88.45151,11.0,,,,,market,shopping,amenity=marketplace,
+relation/2113817,GD Market,22.57776,88.41843,7.5,,,,,market,shopping,amenity=marketplace,
+relation/2593345,CA Market,22.58727,88.40080,6.1,,,,,market,shopping,amenity=marketplace,
+relation/5403555,Gariahat Market,22.51951,88.36610,5.4,,,,,market,shopping,amenity=marketplace,
+node/2703679634,College Street,22.57729,88.36418,2.3,,,,,monument,,,
+node/3565448998,Peter Cat,22.55245,88.35262,1.5,,,,,monument,,amenity=restaurant,
+node/4571180589,Indian Coffee House,22.57610,88.36389,2.2,Q4711938,College Street Coffee House,,,monument,,amenity=restaurant,
+node/5421528503,Park Street,22.55516,88.35012,1.2,Q7138060,Park Street metro station (Kolkata),,,monument,,,

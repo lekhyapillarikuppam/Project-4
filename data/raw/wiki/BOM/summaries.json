@@ -1,0 +1,482 @@
+{
+ "Gateway of India": {
+  "description": "Landmark monument in Mumbai, India",
+  "extract": "The Gateway of India is an arch-monument, completed in 1924, on the waterfront of Mumbai, Maharashtra, India. It was erected to commemorate the landing of King George V of the United Kingdom for his coronation as the Emperor of India in December 1911 at Strand Road near Wellington Fountain. He was the first British monarch to visit India.",
+  "url": "https://en.wikipedia.org/wiki/Gateway_of_India"
+ },
+ "Elephanta Caves": {
+  "description": "Collection of cave temples in Maharashtra, India",
+  "extract": "The Elephanta Caves form a collection of cave temples predominantly dedicated to the Hindu god Shiva; UNESCO has designated them as a World Heritage Site. They are located on Elephanta Island, or Gharapuri, in Mumbai Harbour, 10 kilometres (6.2 mi) east of Mumbai in the Indian state of Maharashtra. The island, about 2 kilometres (1.2 mi) west of the Jawaharlal Nehru Port, features five Hindu caves, a few Buddhist stupa mounds that date back to the 2nd century BCE, and two Buddhist caves with water tanks.",
+  "url": "https://en.wikipedia.org/wiki/Elephanta_Caves"
+ },
+ "Haji Ali Dargah": {
+  "description": "Dargah and mosque near Mumbai, Maharashtra, India",
+  "extract": "The Haji Ali Dargah is a Sufi shrine and the monument of Pir Haji Ali Shah Bukhari. It is located on an islet off the coast of Worli in southern Mumbai, in the state of Maharashtra, India.",
+  "url": "https://en.wikipedia.org/wiki/Haji_Ali_Dargah"
+ },
+ "Palais Royale, Mumbai": {
+  "description": "Supertall skyscraper in Mumbai, India",
+  "extract": "Palais Royale is an under-construction residential skyscraper in Mumbai, India. At 297.50 metres (976 ft), it is the second-tallest building and tenth-tallest structure in India. The building topped-out in 2018 but its facades and interior are still under construction. Its completion, previously expected by 30 December 2025, has been delayed due to ongoing litigation and is now expected by 30 December 2026.",
+  "url": "https://en.wikipedia.org/wiki/Palais_Royale%2C_Mumbai"
+ },
+ "Mumbai Trans Harbour Link": {
+  "description": "Sea bridge in India",
+  "extract": "The Mumbai Trans Harbour Link, officially named as Atal Bihari Vajpayee Sewri–Nhava Sheva Atal Setu and colloquially known as Atal Setu, is a 18.2 km (11.3 mi), 6-lane grade separated expressway bridge, which connects Mumbai with Navi Mumbai, its satellite city. It is the longest sea bridge in India, and the world's 12th longest sea bridge. The bridge begins in Sewri, South Mumbai, crosses Thane Creek north of Elephanta Island, and terminates at Chirle near Nhava Sheva in Uran taluka, South Navi Mumbai. The road is linked to NH348 in the east and to the Eastern Freeway in the west.",
+  "url": "https://en.wikipedia.org/wiki/Mumbai_Trans_Harbour_Link"
+ },
+ "Marine Drive, Mumbai": {
+  "description": "Promenade in Maharashtra, India",
+  "extract": "Marine Drive, often referred to as the Queen's Necklace, is a 3-kilometre-long promenade along the Netaji Subhash Chandra Bose Road in Mumbai (Bombay), India. The road and promenade were constructed by Pallonji Mistry in 1940. It is a banana-shaped, six-lane concrete road along the coast of a natural bay. At the northern end of Marine Drive is Girgaon Chowpatty, and the adjacent road links Nariman Point at the southern tip to Babulnath and Malabar Hill at the northern tip. Marine Drive is situated on reclaimed land facing west-south-west. Marine Drive is known as the Queen's Necklace because, when viewed at night from above, the streetlights resemble a string of pearls in a necklace.",
+  "url": "https://en.wikipedia.org/wiki/Marine_Drive%2C_Mumbai"
+ },
+ "Siddhivinayak Temple, Mumbai": {
+  "description": "Hindu temple dedicated to Ganesha in Mumbai",
+  "extract": "The Shri Siddhivinayak Ganapati Mandir is a Hindu temple dedicated to Ganesha. It is located in Prabhadevi neighbourhood of Mumbai, Maharashtra. It was originally built by Laxman Vithu and Deubai Patil on 19 November 1801. It is one of the most popular Hindu temples in Mumbai.",
+  "url": "https://en.wikipedia.org/wiki/Siddhivinayak_Temple%2C_Mumbai"
+ },
+ "World One": {
+  "description": "Residential skyscraper in Mumbai, India",
+  "extract": "World One is a 280.2 m (919 ft), 76-floor skyscraper in Mumbai, Maharashtra, India. As of 2024, it is the second tallest completed building in India and the fourth tallest overall. It is on the 7.1-hectare (17.5-acre) site of the defunct Shrinivas Mill. The site also houses two other towers: World View and World Crest. The complex was developed by the Lodha Group.",
+  "url": "https://en.wikipedia.org/wiki/World_One"
+ },
+ "Chhatrapati Shivaji Maharaj Vastu Sangrahalaya": {
+  "description": "Museum in Mumbai, India",
+  "extract": "Chhatrapati Shivaji Maharaj Vastu Sangrahalaya, (CSMVS) formerly named the Prince of Wales Museum of Western India, is a museum in Mumbai (Bombay) which documents the history of India from prehistoric to modern times.",
+  "url": "https://en.wikipedia.org/wiki/Chhatrapati_Shivaji_Maharaj_Vastu_Sangrahalaya"
+ },
+ "Chaitya Bhoomi": {
+  "description": "Resting place of Babasaheb Ambedkar",
+  "extract": "Chaitya Bhoomi, also written as Chaityabhoomi is a Buddhist chaitya and the cremation place of B. R. Ambedkar, the architect of the Indian Constitution and the revived Buddhism in India. It is situated beside Dadar Chowpatty (beach), Mumbai, Maharashtra, India. Chaitya Bhoomi is a revered place of pilgrimage for Ambedkar's followers, who visit in millions annually on his death anniversary on 6 December.",
+  "url": "https://en.wikipedia.org/wiki/Chaitya_Bhoomi"
+ },
+ "Mumba Devi Temple": {
+  "description": "Hindu Temple in Mumbai, India",
+  "extract": "Mumba Devi Temple is a Hindu temple in Mumbai, Maharashtra, India, dedicated to the goddess Mumbā, the local incarnation of the Parvati. Mumba Devi is the goddess of the city of Mumbai. The name Mumbai is derived from Mumba Devi.",
+  "url": "https://en.wikipedia.org/wiki/Mumba_Devi_Temple"
+ },
+ "Prithvi Theatre": {
+  "description": "Theatre in Mumbai, India",
+  "extract": "\n\nPrithvi Theatre is a theatre and non-profit arts organisation located in Juhu, Mumbai. Established in 1978 to promote Hindi theatre, it has its origins in Prithvi Theatres, a travelling theatre company founded by Prithviraj Kapoor in 1944, who was the spearhead of one of the most influential actor and director families in Bollywood, the Kapoor family. The company toured extensively across India for sixteen years and played an influential role in the development of modern Hindi theatre.",
+  "url": "https://en.wikipedia.org/wiki/Prithvi_Theatre"
+ },
+ "India Tower": {
+  "description": "Proposed skyscraper in Mumbai, India",
+  "extract": "India Tower is an unbuilt 126-story, 707.5 m (2,321 ft) megatall skyscraper in Mumbai, India. Originally planned for completion in 2016, construction was put on hold in May 2011 due to disputes between the developers and Mumbai's civic authorities, and later cancelled in 2015.",
+  "url": "https://en.wikipedia.org/wiki/India_Tower"
+ },
+ "Mahalaxmi Racecourse": {
+  "description": "Horse racing track in Mumbai, India",
+  "extract": "The Mahalaxmi Racecourse is a horse racing track in Mahalaxmi neighbourhood of Mumbai. The track is oval shaped with 2,400 metres (7,900 ft) straight chute, spread over approximately 225 acres of open land in the heart of Mumbai city. It was created out of a marshy land known as Mahalakshmi Flats. It was built in 1883 and the stands were modelled on the Randwick Racecourse in Sydney in 1922 by Sydney architect and racing administrator Theodore John Marks. It is spread over land facing the sea.",
+  "url": "https://en.wikipedia.org/wiki/Mahalaxmi_Racecourse"
+ },
+ "Nariman Point": {
+  "description": "Urban in Maharashtra, India",
+  "extract": "Nariman Point is a prominent downtown area of Mumbai in Maharashtra, India. Located on the southern tip of the Mumbai peninsula, at the end of the Mumbai's Marine Drive, Nariman Point houses some of India's prestigious business headquarters. Because of this, it is seen as the business district of Mumbai.",
+  "url": "https://en.wikipedia.org/wiki/Nariman_Point"
+ },
+ "The Imperial (Mumbai)": {
+  "description": "Residential complex in Mumbai",
+  "extract": "The Imperial is a modernist style twin-tower skyscraper complex in the billionaires row of Mumbai, India. It was the tallest skyscraper in India from 2010 to 2019 when it was overtaken by Lodha Park which was again overtaken by Palais Royale Mumbai. It has been home to several high-net-worth individuals. It is currently the 19th tallest building in India.",
+  "url": "https://en.wikipedia.org/wiki/The_Imperial_(Mumbai)"
+ },
+ "Girgaon Chowpatty": {
+  "description": "Neighbourhood in Mumbai City, Maharashtra, India",
+  "extract": "Girgaon Chowpatty, is a public beach at the eastern end of the Queen’s Necklace adjoining Malabar Hill in the Girgaon area of Mumbai (Bombay), Maharashtra, India.",
+  "url": "https://en.wikipedia.org/wiki/Girgaon_Chowpatty"
+ },
+ "Basilica of Our Lady of the Mount, Bandra": {
+  "description": "Church in Archdiocese of Bombay",
+  "extract": "Officially, the Basilica of Our Lady of the Mount, colloquially known as Mount Bandra and Mount St Mary Church; is a basilica (shrine) of the Roman Catholic Church, located at the Bandra neighbourhood of Bombay (Mumbai), India.",
+  "url": "https://en.wikipedia.org/wiki/Basilica_of_Our_Lady_of_the_Mount%2C_Bandra"
+ },
+ "Babulnath Temple": {
+  "description": "Hindu temple in Mumbai, India",
+  "extract": "Babulnath Temple is a Hindu temple, dedicated to Shiva, in Mumbai, India, on a small hillock near Girgaum Chowpatty. It is one of oldest mandirs in the city, Shiva in the form of the \"Lord of the Babul Tree\" is the main deity in this temple.",
+  "url": "https://en.wikipedia.org/wiki/Babulnath_Temple"
+ },
+ "Rajabai Clock Tower": {
+  "description": "Clock tower in Mumbai, India",
+  "extract": "The Rajabai Tower is a clock tower in Mumbai, India. It is in the confines of the Fort campus of the University of Mumbai. It stands at a height of 85 m. The tower is part of The Victorian and Art Deco Ensemble of Mumbai, which was added to the list of World Heritage Sites in 2018.",
+  "url": "https://en.wikipedia.org/wiki/Rajabai_Clock_Tower"
+ },
+ "Hanging Gardens of Mumbai": {
+  "description": "Indian terraced gardens",
+  "extract": "The Hanging Gardens, in Mumbai, also known as Pherozeshah Mehta Gardens, are terraced gardens perched at the top of Malabar Hill, on its western side, just opposite the Kamala Nehru Park. They provide sunset views over the Arabian Sea and feature numerous hedges carved into the shapes of animals. The park was designed and laid out in 1881 by Ulhas Ghatkopar over Bombay's main reservoir, some say to cover the water from the potentially contaminating activity of the nearby Towers of Silence. When seen from the air, the walkway inside the park, spell out the letters PMG in cursive.",
+  "url": "https://en.wikipedia.org/wiki/Hanging_Gardens_of_Mumbai"
+ },
+ "Banganga Tank": {
+  "description": "Ancient water tank in Mumbai",
+  "extract": "The Banganga Tank is a temple tank which is part of the Hindu Walkeshwar Temple complex in the Malabar Hill area of the city of Mumbai, India.",
+  "url": "https://en.wikipedia.org/wiki/Banganga_Tank"
+ },
+ "Walkeshwar Temple": {
+  "description": "Ancient Hindu temple in Mumbai, India",
+  "extract": "Walkeshwar Temple, also known as the, is an Ancient Hindu temple, dedicated to Lord Shiva located in Walkeshwar, near Malabar Hill neighbourhood, in South Mumbai precinct of the city of Mumbai, India. It is situated at the highest point of the city, and close to the temple lies the Banganga Tank.",
+  "url": "https://en.wikipedia.org/wiki/Walkeshwar_Temple"
+ },
+ "Taraporewala Aquarium": {
+  "description": "Aquarium in Marine Drive, Mumbai",
+  "extract": "Taraporewala Aquarium or Taraporevala Aquarium is India's oldest aquarium and one of Mumbai's main attractions. It hosts marine and freshwater fish. The aquarium is located on Marine Drive.",
+  "url": "https://en.wikipedia.org/wiki/Taraporewala_Aquarium"
+ },
+ "Azad Maidan": {
+  "description": "Sports ground in Mumbai, India",
+  "extract": "Azad Maidan is a triangular-shaped maidan in the city of Mumbai, India. It is located on 25 acres (10 ha) of land near the Chhatrapati Shivaji Terminus station. It is a regular venue for inter-school cricket matches. The name Azad means \"liberty\" in Persian. The ground is known for its cricket pitches, for protest meetings, and for political rallies. The Bombay Gymkhana clubhouse was built in 1875, at the southern end of the maidan. Every year, Sunni Annual Ijtema is held at Azad Maidan.",
+  "url": "https://en.wikipedia.org/wiki/Azad_Maidan"
+ },
+ "St. Thomas Cathedral, Mumbai": {
+  "description": "Church in Maharashtra, India",
+  "extract": "St. Thomas Cathedral, Mumbai, is the 300-year old cathedral church of the Diocese of Mumbai of the Church of North India. It is named in honour of Saint Thomas the Apostle, who is believed to have first brought Christianity to India. The cathedral is located in Horniman Circle, the historic centre of Mumbai. It is in close proximity to famous Mumbai landmarks such as Flora Fountain and Bombay House. It is the oldest church in Mumbai. The Cathedral and John Connon School is run by the cathedral.",
+  "url": "https://en.wikipedia.org/wiki/St._Thomas_Cathedral%2C_Mumbai"
+ },
+ "Dr. Bhau Daji Lad Museum": {
+  "description": "Museum in Mumbai, India",
+  "extract": "The Dr. Bhau Daji Lad Museum is a museum dedicated to the history, art and culture, of Mumbai, India. It is the oldest museum in the city. It is situated in the vicinity of the Byculla Zoo, in the suburb of Byculla East.",
+  "url": "https://en.wikipedia.org/wiki/Dr._Bhau_Daji_Lad_Museum"
+ },
+ "Flora Fountain": {
+  "description": "Heritage monument in Mumbai, India",
+  "extract": "Flora Fountain is a Fountain located at the Hutatma Chowk is an ornamentally sculpted architectural heritage monument located at the southern end of the historic Dadabhai Naoroji Road, at the Fort business district in the heart of South Mumbai, Mumbai, India. Flora Fountain, built in 1864, depicts the Roman goddess Flora. It was built at a total cost of Rs. 47,000, or 9,000 pounds sterling, a large sum in those days.",
+  "url": "https://en.wikipedia.org/wiki/Flora_Fountain"
+ },
+ "Jijamata Udyaan": {
+  "description": "Gardens and zoo in Mumbai, India",
+  "extract": "Jijamata Udyaan, also known as Victoria Gardens and the Byculla Zoo, is a zoo and garden covering 50 acres located at Byculla, in the heart of Mumbai, India. It is the oldest public garden in Mumbai. After Indian independence, it was officially renamed after Jijamata, the mother of Shivaji, the first Maratha emperor; the original name remains popular.",
+  "url": "https://en.wikipedia.org/wiki/Jijamata_Udyaan"
+ },
+ "The Asiatic Society of Mumbai": {
+  "description": "Indian learned society",
+  "extract": "The Asiatic Society of Mumbai is a learned society in the field of Asian studies based in Mumbai, India. It can trace its origin to the Literary Society of Bombay which first met in Mumbai on 26 November 1804, and was founded by Sir James Mackintosh. It was formed with the intention of \"promoting useful knowledge, particularly such as is now immediately connected with India\". After the Royal Asiatic Society of Great Britain and Ireland was established in London in 1823, the Literary Society of Bombay became affiliated with it and was known as the Bombay Branch of the Royal Asiatic Society (BBRAS) since 1830. The Bombay Geographical Society merged with it in 1873, followed by the Anthropological Society of Bombay in 1896. In 1954, it was separated from the Royal Asiatic Society and renamed the Asiatic Society of Bombay. In 2002, it acquired its present name. It is funded by an annual grant from the Central Government of India.",
+  "url": "https://en.wikipedia.org/wiki/The_Asiatic_Society_of_Mumbai"
+ },
+ "SPI Cinemas": {
+  "description": "Indian multiplex cinema chain",
+  "extract": "SPI Cinemas was an Indian multiplex chain originally owned by the SPI Group, headquartered in Chennai, Tamil Nadu. The company was often lauded for its premium quality and inexpensive pricing. Its theatres, primarily PVR Sathyam Cinemas at Royapettah are often used by filmmakers for film premieres and audio launch events. Popcorn served at SPI Cinemas had received considerable praise from film goers and the media. In August 2018, SPI Cinemas was leased to PVR Cinemas and acquisition was completed.",
+  "url": "https://en.wikipedia.org/wiki/SPI_Cinemas"
+ },
+ "Walk of the Stars": {
+  "description": "Entertainment hall of fame in Bandra, Mumbai",
+  "extract": "The Walk of the Stars was a section of the Bandstand Promenade in Bandra, Mumbai honouring Bollywood film stars. The path features about six statues of famous Bollywood actors as well as about 100 brass plates embossed with the handprints and signatures of other stars. The walk is inspired by the Hollywood Walk of Fame. It is funded and privately managed by UTV and promoted through their UTV Stars television channel. The walk is 2 km long. It was inaugurated by actress Kareena Kapoor on 28 March 2012, with actor Randhir Kapoor and filmmaker Madhur Bhandarkar also present. The section was dissolved in 2014.",
+  "url": "https://en.wikipedia.org/wiki/Walk_of_the_Stars"
+ },
+ "Afghan Church": {
+  "description": "Anglican church in Mumbai, India",
+  "extract": "The Church of St John the Evangelist, better known as the Afghan Church, is an Anglican church belonging to the Mumbai diocese of the Church of North India. Located in Mumbai, Maharashtra, India, it was built by the British between 1847 and 1858 to commemorate the dead of the First Afghan War and the disastrous 1842 retreat from Kabul. Memorials at the rear of the nave also record casualties from the Second Anglo-Afghan War. The foundation stone was laid in 1847; it was consecrated in 1858, and work on the steeple finished in 1865.",
+  "url": "https://en.wikipedia.org/wiki/Afghan_Church"
+ },
+ "Jama Mosque, Mumbai": {
+  "description": "Mosque in Mumbai, Maharashtra, India",
+  "extract": "The Jama Masjid is a Sunni Mosque, located in the Kalbadevi, near Crawford Market South Mumbai, Maharashtra, India. The mosque was completed in stages during the 19th century, in the Indo-Islamic architecture.",
+  "url": "https://en.wikipedia.org/wiki/Jama_Mosque%2C_Mumbai"
+ },
+ "Castella de Aguada": {
+  "description": "Coastal fort in Mumbai, India",
+  "extract": "Castella de Aguada, also known as the Bandra Fort, is a fort located in Bandra, Mumbai, India. \"Castella\" is a misspelling for Portuguese \"Castelo\" (castle), although it seems its Portuguese builders actually called it Forte de Bandorá. It is located at Land's End in Bandra. It was built by the Portuguese in 1640 as a watchtower overlooking Mahim Bay, the Arabian Sea and the southern island of Mahim. The strategic value of the fort was enhanced in 1661 after the Portuguese ceded the seven islands of Bombay that lay to the immediate south of Bandra to the English. The name indicates its origin as a place where fresh water was available in the form of a fountain (\"Aguada\") for Portuguese ships cruising the coasts in the initial period of Portuguese presence. The fort lies over several levels, from sea level to an altitude of 24 metres (79 ft). Castella de Aguada has been featured in several Hindi films, such as Dil Chahta Hai and Buddha Mil Gaya.",
+  "url": "https://en.wikipedia.org/wiki/Castella_de_Aguada"
+ },
+ "Victorian Gothic and Art Deco Ensembles of Mumbai": {
+  "description": "Art Deco & Victorian Architecture in Mumbai, India",
+  "extract": "The Victorian Gothic and Art Deco Ensembles of Mumbai is a collection of 19th-century Victorian Revival public and 20th-century Mumbai Art Deco private buildings in the Fort precinct of Mumbai. This ensemble was declared a UNESCO World Heritage Site in 2018.",
+  "url": "https://en.wikipedia.org/wiki/Victorian_Gothic_and_Art_Deco_Ensembles_of_Mumbai"
+ },
+ "Bombay Castle": {
+  "description": "Coastal fort in Mumbai, India",
+  "extract": "Bombay Castle is one of the oldest defensive structures built in the city of Mumbai. The current castle is a structure built by the British on the site of the Manor House built by a Portuguese nobleman Garcia de Orta. Orta had leased the island of Bombay from the King of Portugal between 1554 and 1570.",
+  "url": "https://en.wikipedia.org/wiki/Bombay_Castle"
+ },
+ "Eros Cinema": {
+  "description": "Cinema in Mumbai, India",
+  "extract": "The Eros Cinema is an Art Deco style cinema theatre located in Cambata Building at Churchgate, Mumbai, India. It has a seating capacity of 1,204 people per show.",
+  "url": "https://en.wikipedia.org/wiki/Eros_Cinema"
+ },
+ "Gowalia Tank": {
+  "description": "Park in South Mumbai, India",
+  "extract": "Gowalia Tank Maidan, officially renamed August Kranti Maidan, is a park in Grant Road West, in South Mumbai, in which Mahatma Gandhi issued the Quit India speech on 8 August 1942. It decreed that unless the British left India immediately, mass agitations would take place.",
+  "url": "https://en.wikipedia.org/wiki/Gowalia_Tank"
+ },
+ "Nehru Science Centre": {
+  "description": "Science museum in Worli, Mumbai, India",
+  "extract": "Nehru Science Centre (NSC) is the largest interactive science centre in India. It is located in Worli, Mumbai. The centre is named after India's first Prime Minister, Jawaharlal Nehru. In 1977, the centre started with the 'Light and Sight' exhibition, and then in 1979 a Science Park was built. On 11 November 1985 it was opened to the public by Rajiv Gandhi, the then Prime Minister of India.",
+  "url": "https://en.wikipedia.org/wiki/Nehru_Science_Centre"
+ },
+ "Dhobi Ghat (Mumbai)": {
+  "description": "Open air commercial laundry in Mumbai; a generic term for the same throughout India",
+  "extract": "Dhobi Ghat is an open air laundry in Mumbai, India. It was constructed in 1890. The washers, known as dhobis, work in the open to wash clothes and linens from Mumbai's hotels and hospitals.",
+  "url": "https://en.wikipedia.org/wiki/Dhobi_Ghat_(Mumbai)"
+ },
+ "Horniman Circle Gardens": {
+  "description": "Park in South Mumbai, India",
+  "extract": "The Horniman Circle Gardens is a large park in South Mumbai, Maharashtra, India, which encompasses an area of 1.01 hectares. It is situated in the Fort district of Mumbai, and is surrounded by office complexes housing the country's premier banks. Designed to be a large open space with grand buildings in the middle of the walled city, the area had been known as Bombay Green in the 18th century, later Elphinstone Circle. Following India's independence in 1947, the area was renamed in honour of Benjamin Horniman, editor of The Bombay Chronicle newspaper, who supported Indian independence.",
+  "url": "https://en.wikipedia.org/wiki/Horniman_Circle_Gardens"
+ },
+ "St. Michael's Church, Mumbai": {
+  "description": "Church in Mumbai, India",
+  "extract": "St. Michael's Church is one of the oldest Catholic churches in the Mahim suburb of Mumbai (Bombay), India.",
+  "url": "https://en.wikipedia.org/wiki/St._Michael's_Church%2C_Mumbai"
+ },
+ "Madras Stock Exchange": {
+  "description": "Stock exchange in Chennai, India",
+  "extract": "The Madras Stock Exchange (MSE) was a stock exchange in Chennai, India. The now defunct MSE was the fourth stock exchange to be established in the country and the first in South India. It had a turnover (2001) of ₹ 3,090 crore, but was a fraction of the turnover generated by the Bombay Stock Exchange and National Stock Exchange of India. The turnover of the stock exchange was ₹19,907 Crore as of the financial year 2012.",
+  "url": "https://en.wikipedia.org/wiki/Madras_Stock_Exchange"
+ },
+ "Asiatic Society of Mumbai Town Hall": {
+  "description": "Library and town hall in Mumbai, India",
+  "extract": "The Asiatic Society of Mumbai Town Hall or Town Hall Mumbai is a neoclassical building located in the Fort locality of South Mumbai. It houses The Asiatic Society of Mumbai, State Central Library and a museum, the head office of the Directorate of Libraries Maharashtra State, Maharashtra State Women's Council, the Additional Controller of Stamps Office and a post office.",
+  "url": "https://en.wikipedia.org/wiki/Asiatic_Society_of_Mumbai_Town_Hall"
+ },
+ "National Gallery of Modern Art, Mumbai": {
+  "description": "Art gallery in Mumbai, India",
+  "extract": "National Gallery of Modern Art, Mumbai was opened to the public in 1996. It hosts various exhibitions and art collections of famous artists, sculptors and different civilizations. It is situated in the Cowasji Jehangir Hall, near Regal Cinema in Colaba.",
+  "url": "https://en.wikipedia.org/wiki/National_Gallery_of_Modern_Art%2C_Mumbai"
+ },
+ "Jehangir Art Gallery": {
+  "description": "Art gallery in Mumbai, India",
+  "extract": "Jehangir Art Gallery is an art gallery in Mumbai (India). It was founded by Sir Cowasji Jehangir at the urging of K. K. Hebbar and Homi J. Bhabha. It was built in 1952. Managed by the Committee of Management, the entire cost of this mansion was donated by Cowasji Jehangir. This gallery is situated at Kala Ghoda, behind the Chhatrapati Shivaji Maharaj Vastu Sangrahalaya, in South Mumbai near the Gateway of India, and has four exhibition halls. The gallery was designed by G.M. Bhuta for G.M. Bhuta & Associates. The gallery closed for 11 months as a part of the COVID-19 lockdown in India and was partially re-opened on 16 February 2021. It has since been fully re-opened.",
+  "url": "https://en.wikipedia.org/wiki/Jehangir_Art_Gallery"
+ },
+ "Mani Bhavan": {
+  "description": "Museum in Mumbai",
+  "extract": "Mani Bhavan is a museum and historical building dedicated to Gandhi, situated at Laburnum Road in the Gamdevi precinct of Mumbai. Mani Bhavan was the focal point of Gandhi's political activities in Mumbai between 1917 and 1934.",
+  "url": "https://en.wikipedia.org/wiki/Mani_Bhavan"
+ },
+ "Worli Fort": {
+  "description": "Coastal fort in Mumbai, India",
+  "extract": "The Worli Fort is a fort in Worli, Mumbai, India. Though often incorrectly assumed to have been built by the Portuguese, the fort was built by the British around 1675 on Worli Hill. Worli Fort overlooked Mahim Bay at a time when the city comprised just seven islands and was used as a lookout for enemy ships.",
+  "url": "https://en.wikipedia.org/wiki/Worli_Fort"
+ },
+ "Metro INOX Cinemas": {
+  "description": "Cinema in Mumbai, India",
+  "extract": "Metro INOX Cinemas is an Art Deco Heritage grade IIA multiplex Movie theater in Mumbai, India built in 1938. It was built and originally run by Metro-Goldwyn-Mayer (MGM). The main architect of the cinema was Thomas W. Lamb of New York City, and D. W. Ditchburn of Mumbai was the associate architect.\nIt was one of the main sites targeted in the 2008 Mumbai attacks by Lashkar-e-Taiba.",
+  "url": "https://en.wikipedia.org/wiki/Metro_INOX_Cinemas"
+ },
+ "Knesset Eliyahoo Synagogue": {
+  "description": "Synagogue in Mumbai, India",
+  "extract": "The Knesset Eliyahoo Synagogue, also Knesset Eliyahu and the Blue Synagogue, is a synagogue, located at 55, Dr. V.B. Gandhi Marg, in the Kala Ghoda neighborhood, Fort, in downtown Mumbai, in the state of Maharashtra, India. Completed in 1884, it is the second oldest Sephardic synagogue in Mumbai. The Taj Mahal Palace Hotel, and Oberoi Trident are nearby.",
+  "url": "https://en.wikipedia.org/wiki/Knesset_Eliyahoo_Synagogue"
+ },
+ "Planet Godrej": {
+  "description": "Residential Skyscraper in Mumbai, India",
+  "extract": "Planet Godrej is a residential skyscraper located on a plot of 9-acre (3.6 ha) at Mahalaxmi, Mumbai, Maharashtra, India. The tower stands 181 m (594 ft) tall and is 51 floors high. It has about 300 residential apartments. Only 5% of the total land was used to build the skyscraper, resulting in extensive open space. It was designed by the Singapore-based DP Architects and given the PINNACLE Award 2006, by Zee Business.",
+  "url": "https://en.wikipedia.org/wiki/Planet_Godrej"
+ },
+ "Shri Swaminarayan Mandir, Mumbai": {
+  "description": "Hindu temple in Maharashtra, India",
+  "extract": "Shri Swaminarayan Mandir, Mumbai is a Hindu temple (Mandir) and a part of the Swaminarayan Sampraday. This Swaminarayan Temple is located in the Bhuleshwar area of Mumbai and is the oldest Swaminarayan Mandir in Mumbai, being over a hundred years old.",
+  "url": "https://en.wikipedia.org/wiki/Shri_Swaminarayan_Mandir%2C_Mumbai"
+ },
+ "Sion Hillock Fort": {
+  "description": "Hill fort in Mumbai, India",
+  "extract": "The Sion Hillock Fort is a fort in Mumbai (Bombay), India. It was built under the regime of the English East India Company, between 1669 and 1677, atop a conical hillock when Gerard Aungier was the Governor of Bombay. It was notified in 1925 as a Grade I Heritage structure. When it was built, the fort marked the boundary between British-held Parel island and the Portuguese held Salsette Island that lay to the north across the creek.",
+  "url": "https://en.wikipedia.org/wiki/Sion_Hillock_Fort"
+ },
+ "St. Andrew's Church, Mumbai": {
+  "description": "Church in Mumbai , India",
+  "extract": "St. Andrew's Church is one of the oldest churches in Mumbai. It was originally built by Portuguese Jesuits in 1575. It stands on the sea-shore of the Bandra suburb of Mumbai, and was the only church there till the first quarter of the 17th century.",
+  "url": "https://en.wikipedia.org/wiki/St._Andrew's_Church%2C_Mumbai"
+ },
+ "Maharashtra Police Headquarters": {
+  "description": "Heritage building in Maharashtra",
+  "extract": "Maharashtra Police Headquarters building is a Grade I listed UNESCO World Heritage Site in South Mumbai that was built between 1872 and 1876, and designed by the British architect Frederick William Stevens, who also designed the Chhatrapati Shivaji Maharaj Terminus. The building is often confused with Mumbai Police Headquarters, also built in Gothic Revival style, and several newspapers often carry the image of Maharashtra headquarters while reporting on the latter. The headquarters are located at Wellington Circle in Fort, and face the Wellington Fountain.",
+  "url": "https://en.wikipedia.org/wiki/Maharashtra_Police_Headquarters"
+ },
+ "Gloria Church": {
+  "description": "Church in Byculla, Mumbai",
+  "extract": "Gloria Church or Our Lady of Glory Church was built in 1911-13 on one of the oldest Roman Catholic church sites in Mumbai; its predecessor was built by the Portuguese Franciscans in 1632. The church is situated in Byculla, Mumbai. In 2019, the restoration project for the church received the Award of Merit under the UNESCO Asia-Pacific Awards for Cultural Heritage Conservation.",
+  "url": "https://en.wikipedia.org/wiki/Gloria_Church"
+ },
+ "Cathedral of the Holy Name, Mumbai": {
+  "description": "Church in Mumbai, India",
+  "extract": "The Cathedral of the Holy Name or Holy Name Cathedral is a Roman Catholic cathedral in the Indian city of Mumbai (Bombay), that has the seat and is the headquarters of the Archbishop of Bombay. The cathedral is located in the Colaba area of South Bombay, built in the Gothic Revival style that was favoured by British architects.",
+  "url": "https://en.wikipedia.org/wiki/Cathedral_of_the_Holy_Name%2C_Mumbai"
+ },
+ "Magen David Synagogue (Byculla)": {
+  "description": "Synagogue in Mumbai, India",
+  "extract": "The Magen David Synagogue is a synagogue, located in Byculla, Mumbai, in the state of Maharashtra, India.",
+  "url": "https://en.wikipedia.org/wiki/Magen_David_Synagogue_(Byculla)"
+ },
+ "Mahim Fort": {
+  "description": "Coastal fort in Mumbai, India",
+  "extract": "The Mahim Fort is a fort in Mahim in Mumbai, Maharashtra state, India. Strategically located on the Mahim Bay, the fort overlooks Worli to the south, Bandra to the north, and Mahim to the east. The origins of the fort are unclear, but it occupies a strategic location that has been frequently contested. The fort is currently in disrepair, suffering from administrative neglect, encroachment of slums, and exposure to tidal erosion.",
+  "url": "https://en.wikipedia.org/wiki/Mahim_Fort"
+ },
+ "Capitol Cinema (Mumbai)": {
+  "description": "Theatre in Mumbai, India",
+  "extract": "Capitol Cinema is one of the Mumbai's oldest theatres. Located just opposite Chhatrapati Shivaji Maharaj Terminus, it was built by Kunvarji Paghtivala. It is a Heritage grade II Victorian structure constructed in 1879. Originally a theatre for performing arts known as Tivoli it got its present name in 1928 when it was converted to a Movie theatre.\nPrior to its renaming to Capitol, it was known as Gaiety Theatre.",
+  "url": "https://en.wikipedia.org/wiki/Capitol_Cinema_(Mumbai)"
+ },
+ "Cowasji Jehangir Hall": {
+  "description": "Public hall in Mumbai, India",
+  "extract": "Sir Cowasji Jehangir Public Hall is a museum of modern art and was part of the Institute of Science prior to 1996. The hall was built in 1911 by George Wittet and funded by Cowasji Jehangir. It is located in Colaba area of Mumbai, India.",
+  "url": "https://en.wikipedia.org/wiki/Cowasji_Jehangir_Hall"
+ },
+ "Sewri Fort": {
+  "description": "Hill fort in Mumbai, India",
+  "extract": "The Sewri Fort is a fort in Mumbai built by the British at Sewri. Built in 1680, fort served as a watch tower, atop a quarried hill overlooking the Mumbai harbour.",
+  "url": "https://en.wikipedia.org/wiki/Sewri_Fort"
+ },
+ "Dronagiri Fort": {
+  "description": null,
+  "extract": "Dronagiri Fort is a fort in Navi Mumbai's Raigad district, Maharashtra, India.",
+  "url": "https://en.wikipedia.org/wiki/Dronagiri_Fort"
+ },
+ "Gate of Mercy Synagogue": {
+  "description": "Synagogue in Mumbai, India",
+  "extract": "The Gate of Mercy Synagogue, also known, since its centenary in 1896, as the Shaar Harahamim Synagogue, and known colloquially as Juni Masjid, is a synagogue, located at 254 Samuel Street, in South Mumbai, in the division of Konkan, in the state of Maharashtra, India.",
+  "url": "https://en.wikipedia.org/wiki/Gate_of_Mercy_Synagogue"
+ },
+ "Royal Opera House, Mumbai": {
+  "description": "Opera house in Mumbai, India",
+  "extract": "Royal Opera House, in Mumbai (Bombay), is India's only surviving opera house.",
+  "url": "https://en.wikipedia.org/wiki/Royal_Opera_House%2C_Mumbai"
+ },
+ "Holy Cross Church, Kurla": {
+  "description": "Roman Catholic Church in Mumbai, India",
+  "extract": "Holy Cross Church, Kurla is a Roman Catholic Church in Kurla, a suburb of Mumbai, India. It was built during the Portuguese era by the Jesuits in 1588 and rebuilt in 1848. It is one of the oldest churches in Mumbai. The church belongs to the Archdiocese of Bombay.",
+  "url": "https://en.wikipedia.org/wiki/Holy_Cross_Church%2C_Kurla"
+ },
+ "Portuguese Church, Mumbai": {
+  "description": "Church in Mumbai, India",
+  "extract": "The Church of Our Lady of Salvation, popularly referred to as Portuguese Church, is one of the oldest churches in Mumbai, India. It is located on S. K. Bole Road in Dadar. The church was originally built by the Portuguese Franciscans who called it Nossa Senhora da Salvação. The present structure, designed by famous Indian architect Charles Correa, was constructed between 1974 and 1977.",
+  "url": "https://en.wikipedia.org/wiki/Portuguese_Church%2C_Mumbai"
+ },
+ "Sterling Cineplex": {
+  "description": "Multiplex cinema hall in Mumbai, India",
+  "extract": "Sterling Cineplex is a multiplex cinema hall in Mumbai. Opened in 2007, Sterling has three screens and was the first cinema in India to be THX certified. It is considered a landmark in South Mumbai.",
+  "url": "https://en.wikipedia.org/wiki/Sterling_Cineplex"
+ },
+ "Joseph Baptista Gardens": {
+  "description": "Park in South Mumbai, India",
+  "extract": "The Joseph Baptista Gardens, locally known as the Mazagaon Gardens, is a 1.5-acre (0.6 ha) park in Mazagaon, South Mumbai, India. It lies atop Bhandarwada hill, behind the Dockyard Road railway station, at an altitude of 32 metres (105 ft) and offers a panoramic view of the Mumbai harbour and the southern business district of the city.",
+  "url": "https://en.wikipedia.org/wiki/Joseph_Baptista_Gardens"
+ },
+ "Fort George, Mumbai": {
+  "description": "Fort in Fort, Mumbai",
+  "extract": "Fort George was an extension to the fortified walls of Bombay built in 1769, located in the Fort area to which it lent its name.",
+  "url": "https://en.wikipedia.org/wiki/Fort_George%2C_Mumbai"
+ },
+ "Jamshed Bhabha Theatre": {
+  "description": "Theatre in Mumbai, India",
+  "extract": "The Jamshed Bhabha Theatre is a 1109-seater theatre inaugurated on 24 November 1999 within The National Centre for the Performing Arts premises in Mumbai, India. It was constructed on reclaimed land at Nariman Point, but a fire in December 1997 destroyed the nearly completed structure, prompting a full rebuild completed in two years. The theatre has since become one of India's premier large-format performance venues, hosting landmark productions such as Mughal‑e‑Azam (2016) and The Mirror Crack'd (2019). It features a 1,109-seat proscenium-style auditorium with finely tuned acoustics by Cyril Harris, designed to function without electronic amplification. A 100-year-old Carrara marble staircase from the demolished Petit Hall in Malabar Hill, whcich was donated by Petit family.",
+  "url": "https://en.wikipedia.org/wiki/Jamshed_Bhabha_Theatre"
+ },
+ "Riwa Fort": {
+  "description": "Coastal fort in Mumbai, India",
+  "extract": "The Riwa Fort, locally known as Kala Qilla or Black Fort, is a fort in central Mumbai (Bombay), India on the banks of the Mithi River. The fort is currently in a dilapidated condition amidst the Dharavi slums. Dharavi was initially a large piece of marshy land that was located strategically, dividing the lands ruled by the British and the Portuguese. John Horne, the then Governor of Bombay, had commissioned the construction of this fort to protect Bombay from the aggressive sea-faring Maratha leader Kanhoji Angre. The Riwa Fort was later captured by the Marathas.",
+  "url": "https://en.wikipedia.org/wiki/Riwa_Fort"
+ },
+ "Our Lady of Egypt Church": {
+  "description": "Church in Mumbai, India",
+  "extract": "Our Lady of Egypt is a Roman Catholic church in Kalina, Mumbai under the Archdiocese of Bombay. The church was founded in 1606 and celebrated its 400th anniversary in mid-2006. It is one of the older surviving churches in Mumbai and has served the Catholic communities of Kalina and Vakola. Father John Lopes is the parish priest as of 2026.",
+  "url": "https://en.wikipedia.org/wiki/Our_Lady_of_Egypt_Church"
+ },
+ "Church of Our Lady of Mount Carmel, Bandra": {
+  "description": "Church in Mumbai, India",
+  "extract": "The Church of Our Lady of Mount Carmel, Bandra is a Roman Catholic church in Bandra, Mumbai. It was built in 1894 by Jesuit Missionaries. As the catholic population in Bandra increased in the latter half of the 20th century, a new modern structure was constructed in its place. The new church was blessed and inaugurated on 11 February 1981 by Archbishop Simon Pimenta, Archbishop of Bombay.",
+  "url": "https://en.wikipedia.org/wiki/Church_of_Our_Lady_of_Mount_Carmel%2C_Bandra"
+ },
+ "Kadeshwari Devi Temple": {
+  "description": "Hindu temple in Maharashtra, India",
+  "extract": "Kadeshwari Devi Temple is a Hindu temple located in Bandra, Mumbai, India. The temple is dedicated to mother goddess Kadeshwari situated on the top of hill behind Bandra Fort in Land's End, Bandstand, Mumbai.",
+  "url": "https://en.wikipedia.org/wiki/Kadeshwari_Devi_Temple"
+ },
+ "Chemould Prescott Road": {
+  "description": "Contemporary Art Gallery in Fort, Mumbai",
+  "extract": "Chemould Prescott Road, is the first contemporary art gallery in Mumbai, India.",
+  "url": "https://en.wikipedia.org/wiki/Chemould_Prescott_Road"
+ },
+ "Ballard Bunder Gatehouse": {
+  "description": "Converted maritime museum in Mumbai, India",
+  "extract": "Ballar Bunder Gatehouse is a Grade I Heritage structure that has been converted into a maritime museum, located at Ballard Estate in the old Fort area of Mumbai, India. It was built in 1920 to commemorate the realignment of the harbour and is located where Ballard Pier, a small pier once existed with an approach jetty at right angles to the pier. The building was among the five entries from the Mumbai for the 2009 UNESCO Asia-Pacific Heritage Awards for Culture Heritage Conservation. It is one of the stops on Special tour of Museums in the city, a tour organised by BEST and MTDC as well as the Naval Dockyard Heritage Walk, conducted by the Naval Dockyard on the first Sunday of every month.",
+  "url": "https://en.wikipedia.org/wiki/Ballard_Bunder_Gatehouse"
+ },
+ "Experimental Theatre (NCPA)": {
+  "description": "Arts complex in Mumbai, India",
+  "extract": "The Experimental Theatre is a 300-seat theatre at the National Centre for the Performing Arts in Mumbai, India. It was inaugurated in April 1986 as a black box theatre venue with modular seating and staging units.",
+  "url": "https://en.wikipedia.org/wiki/Experimental_Theatre_(NCPA)"
+ },
+ "St. Mary's Orthodox Cathedral, Dadar, Mumbai": {
+  "description": "Church in Navi Mumbai, India",
+  "extract": "Bombay Diocese is one of the 32 diocese of the Indian Orthodox Church located at The Orthodox Church Centre, Vashi, Navi Mumbai.",
+  "url": "https://en.wikipedia.org/wiki/Bombay_Orthodox_Diocese"
+ },
+ "Crawford Market Fountain": {
+  "description": "Historic fountain in Mumbai, India",
+  "extract": "Crawford Market Fountain or Lockwood Kipling Fountain is a listed heritage structure in Crawford Market, Mumbai that was erected in 1874, and was designed by William Emerson, the British architect who also designed the market. The style is a mix of Greek Revival and Neo-Gothic, and the four carvings depicting the Indian river goddesses and native birds were done by John Lockwood Kipling, who was the principal at Sir Jamsetjee Jeejebhoy School of Art.",
+  "url": "https://en.wikipedia.org/wiki/Crawford_Market_Fountain"
+ },
+ "Church of Our Lady of Health, Cavel": {
+  "description": "Church in Mumbai, India",
+  "extract": "The Church of Our Lady of Health, Cavel is a Roman Catholic church under the Archdiocese of Bombay. It was built by the Portuguese in 1794,\n when it was a chapel under the Padroado jurisdiction.",
+  "url": "https://en.wikipedia.org/wiki/Church_of_Our_Lady_of_Health%2C_Cavel"
+ },
+ "Mazgaon Fort": {
+  "description": "Fort in Mazagaon, Mumbai",
+  "extract": "The Mazagaon Fort was a British fort in Mazagaon, Bombay, in the Indian state of Maharashtra, built around 1680. The fort was razed by the Muslim Koli general, Yakut Khan in June 1690. The fort was located at the present-day Joseph Baptista Gardens, atop Bhandarwada Hill outside the Dockyard Road railway station.",
+  "url": "https://en.wikipedia.org/wiki/Mazgaon_Fort"
+ },
+ "Antarang Museum": {
+  "description": "Sexuality museum in India",
+  "extract": "\n\nThe Antarang – Sex Health Information Art Gallery, also known as the Antarang Museum, was dedicated to educating the young and old about the human body, sexuality and AIDS. It was the only museum of its kind in South Asia. The museum was founded in Mumbai in 2002 as a result of the joint efforts of the Municipal Corporation of Greater Mumbai (MCGM) and the Mumbai District Aids Control Society (MDACS) & Dr Prakash Sarang following an increase in AIDS cases. In 2008, the museum made plans to relocate to Goa. However, the museum shut down and did not reopen.",
+  "url": "https://en.wikipedia.org/wiki/Antarang_Museum"
+ },
+ "Kamala Nehru Park, Mumbai": {
+  "description": "Park in Hanging Gardens Complex, Mumbai",
+  "extract": "\nKamala Nehru Park is part of the Hanging Gardens complex in Mumbai, Maharashtra, India covering an area of approximate 16,000 sq.mt.. Located at the top of Mumbai's Malabar Hill, it is developed and maintained by the Hydraulic Engineer's Department of Municipal Corporation of Greater Mumbai. One of Mumbai's premier gardens it is popular with young children and tourists. The garden has views of the Marine drive below – also known as Queen's necklace.",
+  "url": "https://en.wikipedia.org/wiki/Kamala_Nehru_Park%2C_Mumbai"
+ },
+ "Maratha Mandir": {
+  "description": "CInema hall in Mumbai, India",
+  "extract": "Maratha Mandir is a cinema hall located in Maratha Mandir Marg, Reserve Bank of India Staff Quarters Byculla, Mumbai, Maharashtra, India. Maratha Mandir was opened on 16 October 1945 and has 1000 seats. In the 1960s and 1970s, Maratha Mandir was known for its lavish film launches, with the particularly grand launch of Mughal-e-Azam in 1960 being a highlight. The introduction of multiplexes diverted \"class\" viewers from establishment with the \"masses\" of the working class patronizing the theatre instead. Maratha Mandir is currently known for continuously showing Dilwale Dulhania Le Jayenge daily since its release on 20 October 1995, and the film's run there remains ongoing as of 2026. It is one of the most well-known landmarks in Mumbai.",
+  "url": "https://en.wikipedia.org/wiki/Maratha_Mandir"
+ },
+ "Lokhandwala Minerva": {
+  "description": "Supertall residential skyscraper in India",
+  "extract": "Lokhandwala Minerva is a supertall skyscraper in Mumbai, Maharashtra, India. As of 2026, it is the tallest completed building and the first building to reach supertall height in India.",
+  "url": "https://en.wikipedia.org/wiki/Lokhandwala_Minerva"
+ },
+ "Lodha Bellissimo": {
+  "description": "Residential Apartments in Mumbai, India",
+  "extract": "Lodha Bellissimo is a twin residential skyscraper project located in Mumbai, India developed by Lodha Group. Construction started in 2006 by dividing the project into three wings and was completed in 2012. This 222 metres (728 ft) tall, 53-floor building is the 35th tallest in India.",
+  "url": "https://en.wikipedia.org/wiki/Lodha_Bellissimo"
+ },
+ "Namaste Tower": {
+  "description": "Skyscraper office buildings in Mumbai",
+  "extract": "Namaste Tower was a planned 310 m (1,017 ft) tall skyscraper mega project in Mumbai, India. It would have been a mixed-use skyscraper of 63 floors housing a 380-room W Hotel, offices and retail space. It was designed by Atkins, Dubai. The design resembles the Namaste gesture: two wings of the hotel are clasped together like hands greeting.",
+  "url": "https://en.wikipedia.org/wiki/Namaste_Tower"
+ },
+ "Haffkine Institute": {
+  "description": "Bio-medical research centre in Mumbai, India",
+  "extract": "\n\nThe Haffkine Institute for Training, Research and Testing is located in Parel in Mumbai (Bombay), India. It was established on 10 August 1899 by Dr. Waldemar Mordechai Haffkine, as a bacteriology research centre called the \"Plague Research Laboratory\". It now offers various basic and applied bio-medical science services. The Institute opened a museum on its premises in March 2014 to showcase Haffkine's research and developments in microbiology and chart the history of the institute. The Institute received ISO 9001:2008 certification in 2012.",
+  "url": "https://en.wikipedia.org/wiki/Haffkine_Institute"
+ },
+ "Shivaji Park": {
+  "description": "Urban park in Mumbai, Maharashtra, India",
+  "extract": "Shivaji Park, officially Chhatrapati Shivaji Maharaj Park, is a public park situated in Dadar, Mumbai. It is the largest park in the island city. Similar but bigger in size to Azad Maidan and August Kranti Maidan, it is of historical and cultural value because of the political and social gatherings it has witnessed, both in pre- and post-independence Mumbai. The 113,000 square metres of open space is renowned as having been a cradle of the game of cricket in India. The park has a variety of sports facilities including cricket nets, Tennis court, a Mallakhamba area and a football pitch amongst others.",
+  "url": "https://en.wikipedia.org/wiki/Shivaji_Park"
+ },
+ "Maheshwari Udyan, Mumbai": {
+  "description": "Park in Mumbai, India",
+  "extract": "Maheshwari Udyan is a park in Matunga, Mumbai. It was originally known as King's Circle. It was named after George V, the King-Emperor. Morarji Desai, then Union Finance minister of India, laid the foundation stone on 3 February 1962 to commemorate the name change.",
+  "url": "https://en.wikipedia.org/wiki/Maheshwari_Udyan%2C_Mumbai"
+ },
+ "Church of Our Lady of Good Counsel & Shrine of St. Anthony, Sion": {
+  "description": "Church in Mumbai, India",
+  "extract": "Church of Our Lady of Good Counsel & Shrine of St. Anthony former\nOur Lady of Good Counsel Church initially known by its name in Portuguese, Nossa Senhora de Bom Concelho, is one of the oldest churches in, Bombay built by the Portuguese Franciscans. It was built at Sion and was initially affiliated to the St. Michael's Church at Mahim in 1596. The artistically done stained glass windows of the Church portray the martyrdom of Blessed Thomas of Tolentino, Fr. James of Padua, Fr. Peter of Siena, a Cleric and Br. Demetrius of Tiflis at Thane, in April 1321.",
+  "url": "https://en.wikipedia.org/wiki/Church_of_Our_Lady_of_Good_Counsel_%26_Shrine_of_St._Anthony%2C_Sion"
+ },
+ "Our Lady of Perpetual Succour High School": {
+  "description": "Public school in Mumbai, Maharashtra, India",
+  "extract": "Our Lady of Perpetual Succour High School, also known as OLPS High School, is a school for boys in Chembur, Mumbai, India. The school celebrates its annual feast on 27 June as the feast of Our Lady of Perpetual Help.",
+  "url": "https://en.wikipedia.org/wiki/Our_Lady_of_Perpetual_Succour_High_School"
+ },
+ "Our Lady of Fatima Church, Kirol": {
+  "description": "Suburb in Mumbai Suburban, Maharashtra, India",
+  "extract": "Vidyavihar is a small suburb of Mumbai. It has a railway station with the same name on the Mumbai suburban railway on the Central Railway line. The area consists of mainly the Somaiya Vidyavihar campus.",
+  "url": "https://en.wikipedia.org/wiki/Vidyavihar"
+ },
+ "St. Joseph's Church, Juhu": {
+  "description": "Church in Mumbai, India",
+  "extract": "St. Joseph's Church, Juhu is a Catholic church located in Juhu, Mumbai.",
+  "url": "https://en.wikipedia.org/wiki/St._Joseph's_Church%2C_Juhu"
+ }
+}

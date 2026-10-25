@@ -55,6 +55,15 @@ EXTRA_OSM = {
             "node/4156655118", "node/5708011824", "node/6660775813",   # Japanese Temple, Mahakal Mandir, Nightingale Park,
             "node/2084522610", "node/5982369515", "node/5704936222",   # Glenary's, Keventers, Kunga Restaurant,
             "node/3560266497"],   # Mahakal Market
+    "PDY": ["node/3309597664", "node/4535243902", "node/5358232922"],   # Surguru, Villa Shanti, Baker Street
+    "BOM": ["way/151253238", "way/369460776", "way/40387597",   # Juhu Beach, Kanheri Caves, Leopold Cafe,
+            "node/488208617", "way/31217338"],   # Bademiya, Khau Galli
+    "CCU": ["node/3565448998", "node/4571180589", "node/5421528503",   # Peter Cat, Indian Coffee House, Park Street,
+            "node/2703679634"],   # College Street
+    "HYD": ["node/626897444", "node/7012057585", "node/2710929650",   # Shadab, Pista House, Nimrah Cafe,
+            "node/2429976498", "node/2942998819"],   # Gokul Chat, Chudi Bazaar (Laad Bazaar)
+    "MAA": ["way/103082949", "node/353978523", "node/4369777490",   # Five Rathas, Arjuna's Penance, Murugan Idli Shop,
+            "node/7087524685", "node/5737223350", "way/209535291"],   # Ratna Cafe, Saravana Bhavan, Ranganathan Street
 }
 FETCHED = time.strftime("%Y-%m-%d")
 

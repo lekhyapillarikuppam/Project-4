@@ -1,0 +1,169 @@
+{
+ "College Street": {
+  "fetched_on": "2026-10-25",
+  "results": [
+   {
+    "title": "College Street",
+    "description": "Topics referred to by the same term",
+    "lat": null,
+    "lon": null
+   },
+   {
+    "title": "College Street (Kolkata)",
+    "description": "Road in Kolkata, India",
+    "lat": 22.575514,
+    "lon": 88.363354
+   },
+   {
+    "title": "College Street, Dublin",
+    "description": "Street in central Dublin, by Trinity College",
+    "lat": 53.345433,
+    "lon": -6.25813
+   },
+   {
+    "title": "College Street Coffee House",
+    "description": "Cafe in Kolkata, India",
+    "lat": 22.57615,
+    "lon": 88.36179722
+   },
+   {
+    "title": "College Street, Wrexham",
+    "description": "Street in Wrexham, Wales",
+    "lat": null,
+    "lon": null
+   }
+  ]
+ },
+ "College Street Kolkata": {
+  "fetched_on": "2026-10-25",
+  "results": [
+   {
+    "title": "College Street (Kolkata)",
+    "description": "Road in Kolkata, India",
+    "lat": 22.575514,
+    "lon": 88.363354
+   }
+  ]
+ },
+ "College Street [fuzzy]": {
+  "fetched_on": "2026-10-25",
+  "results": [
+   {
+    "title": "College Street",
+    "description": "Topics referred to by the same term",
+    "lat": null,
+    "lon": null
+   },
+   {
+    "title": "College Street (Kolkata)",
+    "description": "Road in Kolkata, India",
+    "lat": 22.575514,
+    "lon": 88.363354
+   },
+   {
+    "title": "College Street, Dublin",
+    "description": "Street in central Dublin, by Trinity College",
+    "lat": 53.345433,
+    "lon": -6.25813
+   },
+   {
+    "title": "College Street Coffee House",
+    "description": "Cafe in Kolkata, India",
+    "lat": 22.57615,
+    "lon": 88.36179722
+   },
+   {
+    "title": "College Street, Wrexham",
+    "description": "Street in Wrexham, Wales",
+    "lat": null,
+    "lon": null
+   }
+  ]
+ },
+ "Peter Cat": {
+  "fetched_on": "2026-10-25",
+  "results": [
+   {
+    "title": "Peter (Lord's cat)",
+    "description": "Cat at Lord's Cricket Ground in London",
+    "lat": null,
+    "lon": null
+   },
+   {
+    "title": "Peter Cat Recording Co.",
+    "description": "Indian jazz band",
+    "lat": null,
+    "lon": null
+   },
+   {
+    "title": "Peter Cathcart Wason",
+    "description": "English psychologist (1924–2003)",
+    "lat": null,
+    "lon": null
+   },
+   {
+    "title": "Peter Cattaneo",
+    "description": "British filmmaker (born 1964)",
+    "lat": null,
+    "lon": null
+   },
+   {
+    "title": "Peter Catalanotto",
+    "description": "American book illustrator",
+    "lat": null,
+    "lon": null
+   }
+  ]
+ },
+ "Peter Cat Kolkata": {
+  "fetched_on": "2026-10-25",
+  "results": []
+ },
+ "Peter Cat [fuzzy]": {
+  "fetched_on": "2026-10-25",
+  "results": [
+   {
+    "title": "Peter (Lord's cat)",
+    "description": "Cat at Lord's Cricket Ground in London",
+    "lat": null,
+    "lon": null
+   },
+   {
+    "title": "Peter Cat Recording Co.",
+    "description": "Indian jazz band",
+    "lat": null,
+    "lon": null
+   },
+   {
+    "title": "Peter Cathcart Wason",
+    "description": "English psychologist (1924–2003)",
+    "lat": null,
+    "lon": null
+   },
+   {
+    "title": "Peter Cattaneo",
+    "description": "British filmmaker (born 1964)",
+    "lat": null,
+    "lon": null
+   },
+   {
+    "title": "Peter Catalanotto",
+    "description": "American book illustrator",
+    "lat": null,
+    "lon": null
+   }
+  ]
+ },
+ "Gariahat Market": {
+  "fetched_on": "2026-10-25",
+  "results": []
+ },
+ "Gariahat Market Kolkata": {
+  "fetched_on": "2026-10-25",
+  "results": []
+ },
+ "Gariahat Market [fuzzy]": {
+  "fetched_on": "2026-10-25",
+  "results": []
+ }
+}
