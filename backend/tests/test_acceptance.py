@@ -155,3 +155,18 @@ def test_var_at_04_tradeoffs(env):
             assert row.delta_value == round(res.value - base.value, 2), (t["id"], row.factor)
             assert row.added == sorted(set(res.activity_ids()) - set(base.activity_ids()))
             assert row.dropped == sorted(set(base.activity_ids()) - set(res.activity_ids()))
+
+
+def test_variant_at_plans_validate(env):
+    """Replans use variant_at; a plan taken over by an ordering fallback keeps the label of the variant that
+    produced it, so every returned plan passes the validator (V-13 hotel tier included)."""
+    ds, cfg = env
+    relabelled = 0
+    for t in OK[:12]:
+        req = TripRequest.model_validate(t["request"])
+        for name in ("experience", "balanced", "saver"):
+            p = variant_at(req, name, ds, cfg)
+            assert isinstance(p, Plan), (t["id"], name)
+            assert validate(p, req, ds, cfg.as_dict()) == [], (t["id"], name)
+            relabelled += p.variant != name
+    print(f"\nvariant_at: {relabelled} fallback plan(s) kept their producer's label")

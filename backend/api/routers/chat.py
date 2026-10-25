@@ -1,12 +1,15 @@
-"""Chat history per trip (API-FR-10). Sending messages is added by Feature 007."""
+"""Chat per trip: history (API-FR-10) and sending a message (AI-FR-03–AI-FR-05)."""
 
 from __future__ import annotations
 
-from fastapi import APIRouter, Depends
+from fastapi import APIRouter, Body, Depends
 
 from api import db
+from api.ai import chat as assistant
 from api.auth import current_user
+from api.errors import ApiError
 from api.routers.trips import own_trip
+from api.routers.versions import latest
 
 router = APIRouter(prefix="/trips/{trip_id}/chat", tags=["chat"])
 
@@ -26,3 +29,21 @@ def add_message(trip_id: str, role: str, text: str, actions=None, version: int |
 def history(trip_id: str, user: dict = Depends(current_user)) -> list[dict]:
     own_trip(trip_id, user, "id")
     return [message_out(r) for r in db.all_("SELECT * FROM {s}.chat_messages WHERE trip_id::text = %s ORDER BY id", trip_id)]
+
+
+@router.post("", status_code=201)
+async def send(trip_id: str, body: dict = Body(...), user: dict = Depends(current_user)) -> dict:
+    """One chat message: the assistant replies and may create a new version (source "chat")."""
+    text = body.get("message")
+    if not isinstance(text, str) or not text.strip() or len(text) > 1000:
+        raise ApiError(422, "Write a message of 1–1000 characters.", "invalid", {"message": "1–1000 characters."})
+    trip = own_trip(trip_id, user)
+    base = latest(trip_id)
+    if not trip["selected_variant"] or base is None:
+        raise ApiError(409, "Choose a plan first.", "not_selected")
+    history = db.all_("SELECT role, text FROM {s}.chat_messages WHERE trip_id::text = %s ORDER BY id", trip_id)
+    mine = add_message(trip_id, "user", text.strip())
+    out = await assistant.handle(trip, base, user, text.strip(), history)
+    v = out["version"]
+    reply = add_message(trip_id, "assistant", out["text"], out["actions"], v["version"] if v else None)
+    return {"user": mine, "assistant": reply, "version": v}

@@ -94,3 +94,20 @@ def test_v14_v15_v16_catch_broken_plans(pinned):
     q.request_hash = forced.request_hash()
     if (p.transport.return_.mode, p.transport.return_.class_) != ("train", "3A"):
         assert codes(validate(q, forced, ds, cfg)) == ["V-16"]
+
+
+def test_fallback_plan_keeps_its_label():
+    """Found by AI-AT-04: with these chat changes Balanced falls back to the Experience plan (a mid hotel for a
+    budget-comfort trip). variant_at must return it labelled experience, so it passes V-13."""
+    from tripwise.tradeoffs import variant_at
+    req = TripRequest.model_validate(BASE | dict(
+        start_date="2026-12-05", end_date="2026-12-07", locks=["JAI-A-06"], excludes=["JAI-A-03"],
+        pins={"JAI-A-01": 3}, day_hours={2: 6},
+        prefs={"daily_hours_out": 9, "pace": "relaxed", "comfort": "budget", "avoid_crowds": False, "modes": {},
+                         "interests": {"nature": 1, "adventure": 0, "food": 5, "history": 5, "culture": 4, "spiritual": 1,
+                              "shopping": 1, "relaxation": 1, "nightlife": 0}}))
+    for name in ("experience", "balanced", "saver"):
+        p = variant_at(req, name)
+        assert isinstance(p, Plan)
+        valid(req, p)
+    assert variant_at(req, "balanced").variant == "experience"

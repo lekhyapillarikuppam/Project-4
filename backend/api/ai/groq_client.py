@@ -1,4 +1,5 @@
-"""Groq chat-completions client (007 Plan): 10 s timeout, one retry on 5xx, token counts logged, key never logged.
+"""Groq chat-completions client (007 Plan): 10 s timeout, one retry on 5xx (and on a short 429 or a
+malformed tool call), token counts logged, key never logged.
 
 Any failure (no key, timeout, HTTP error, bad response) raises Unavailable, so callers fall back (AI-FR-06).
 """
@@ -38,6 +39,13 @@ def _retry_after(r: httpx.Response) -> float | None:
         return None
 
 
+def _error_code(r: httpx.Response) -> str | None:
+    try:
+        return (r.json().get("error") or {}).get("code")
+    except ValueError:
+        return None
+
+
 def chat(messages: list[dict], *, temperature: float, tools: list[dict] | None = None,
          tool_choice: Any = None, json_mode: bool = False, max_tokens: int | None = None) -> dict:
     """One chat completion; returns the assistant message dict (content and/or tool_calls)."""
@@ -68,8 +76,12 @@ def chat(messages: list[dict], *, temperature: float, tools: list[dict] | None =
                 log.warning("groq 429, retrying in %.1f s", wait)
                 time.sleep(wait)
                 continue
+        code = _error_code(r) if r.status_code == 400 else None
+        if code == "tool_use_failed" and attempt == 0:   # the model produced a malformed tool call: try once more
+            log.warning("groq 400 tool_use_failed, retrying once")
+            continue
         if r.status_code != 200:
-            log.warning("groq HTTP %s", r.status_code)
+            log.warning("groq HTTP %s%s", r.status_code, f" ({code})" if code else "")
             raise Unavailable(f"HTTP {r.status_code}")
         data = r.json()
         usage = data.get("usage") or {}

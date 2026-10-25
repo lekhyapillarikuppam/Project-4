@@ -1756,7 +1756,7 @@ Config keys: `groq_model`, `groq_timeout_s`, `chat_rate_per_hour`, temperatures.
 - [x] **T02** Groq client; pick the model from `/models` and record it in config and the Changelog.
 - [x] **T03** Parse-prefs endpoint + DescribeTrip UI. · Check: AI-AT-01
 - [x] **T04** Grounding + explanations (cached) + Explanation UI. · Check: AI-AT-02
-- [ ] **T05** Chat tools, name resolution, replan mapping, diff, reply, unsupported, why. · Check: AI-AT-04
+- [x] **T05** Chat tools, name resolution, replan mapping, diff, reply, unsupported, why. · Check: AI-AT-04
 - [ ] **T06** ChatPanel UI with history, version chip and undo.
 - [ ] **T07** Write `eval/chat_intents.json` (50) and run it. · Check: AI-AT-03
 - [ ] **T08** Failure modes and rate limit. · Check: AI-AT-05
@@ -1989,7 +1989,7 @@ Measured 2026-10-25 on the developer laptop (Windows 11, Python 3.11.9, OR-Tools
 | AI-AT-01 | 10 free-text preference samples | 007 | `eval/run_parse_samples.py`, `eval/AI_AT_01.md` | Pass (10/10 valid, 10/10 sensible) |
 | AI-AT-02 | Explanations for 10 test trips | 007 | `eval/run_explanations.py`, `eval/AI_AT_02.md`, `tests/ai/test_grounding.py` | Pass (10/10 grounded, 0 shown ungrounded) |
 | AI-AT-03 | `eval/chat_intents.json`: 50 hand-written messages with expected tool and argume | 007 | — | Planned |
-| AI-AT-04 | 10 chat changes end to end | 007 | — | Planned |
+| AI-AT-04 | 10 chat changes end to end | 007 | `eval/run_chat_changes.py`, `eval/AI_AT_04.md`, `tests/api/test_api_chat.py` | Pass (10/10) |
 | AI-AT-05 | Groq key removed | 007 | — | Planned |
 | AI-AT-06 | Engine extensions | 007 | — | Pass |
 | AI-AT-07 | Chat timing over 10 messages, local | 007 | — | Planned |
@@ -2174,3 +2174,7 @@ Run 2026-10-25 with Playwright 1.64.0 (Chromium) against the local API (schema `
 | 2026-10-26 | C 007 (T04 decision) | Grounding counts only ₹ amounts that are cost or budget fields of the plan (not minutes, days or km) | Otherwise any small number such as a day number passed as a price |
 | 2026-10-26 | C 007 (T04 decision) | Config `groq.reasoning_effort: low` is sent with every call | gpt-oss spent the whole token budget on reasoning and returned empty JSON (HTTP 400 json_validate_failed); low also halves latency |
 | 2026-10-26 | C 006 (007 T04) | Playwright runs the API with an empty GROQ_API_KEY, so UI tests never call Groq and show the AI fallbacks | Deterministic UI tests, no free-tier rate limits |
+| 2026-10-26 | C 002 (007 T05 fix) | `variant_plans` records which variant produced each plan; `variant_at` (replans, trade-offs) returns a fallback plan under that variant's label, so a Balanced replan that falls back to the Experience plan says Experience and passes V-13 | AI-AT-04 found a Balanced-labelled plan with an Experience-tier hotel (V-13) |
+| 2026-10-26 | C 007 (T05 decisions) | Chat: `tool_choice` required; several tool calls in one message merge into one change set; a change tool wins over explain and unsupported; `regenerate` replans with the current settings; `set_transport` without a class uses `chat.default_class`; activity names resolve exactly, then by substring, then by similarity (`chat.name_match_cutoff` 0.6, margin 0.1), otherwise a clarifying reply; the last `chat.history_messages` (6) messages go with call 1; unsupported, clarifying and infeasible replies are templates (one Groq call) | Spec fixes the tools, not these details |
+| 2026-10-26 | C 007 (T05 decision) | The Groq client retries once on HTTP 400 `tool_use_failed` | Malformed tool calls happen occasionally and succeed on a second try |
+| 2026-10-26 | C 007 (T05 decision) | Config key `chat_rate_per_hour` moved under a `chat:` section as `rate_per_hour` with the other chat settings | One place for chat tunables |

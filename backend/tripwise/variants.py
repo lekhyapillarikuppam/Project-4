@@ -23,22 +23,24 @@ from tripwise.models import Dropped, Plan, TripRequest, VariantsResult
 ORDER = ("experience", "balanced", "saver")
 
 
-def _as(plan: Plan, name: str) -> Plan:
+def relabel(plan: Plan, name: str) -> Plan:
     p = plan.model_copy(deep=True)
     p.variant = name
     return p
 
 
 def variant_plans(ctx: Context) -> dict:
-    """name -> Plan (after the ordering fallbacks), or {"error": result} when Experience is not a Plan."""
+    """name -> Plan (after the ordering fallbacks), plus "sources": name -> the variant whose run produced that plan;
+    or {"error": result} when Experience is not a Plan."""
     req, cfg = ctx.req, ctx.cfg
     exp = run(ctx, "max_value", hotels_for(ctx.ds, req, tiers_for(req, +1)), variant="experience").result
     if not isinstance(exp, Plan):
         return {"error": exp}
     vstar = exp.value
     bal = run(ctx, "balanced", hotels_for(ctx.ds, req, tiers_for(req)), vstar=vstar, variant="balanced").result
+    src = {"experience": "experience", "balanced": "balanced", "saver": "saver"}
     if not isinstance(bal, Plan) or bal.budget.total > exp.budget.total:
-        bal = _as(exp, "balanced")
+        bal, src["balanced"] = relabel(exp, "balanced"), "experience"
     rho = cfg.variants["rho"]
     floor = rho * vstar
     target = vstar
@@ -52,12 +54,12 @@ def variant_plans(ctx: Context) -> dict:
             break
         target += (floor - s.value) / rho + 1e-6
     if sav is None or sav.budget.total > exp.budget.total:
-        sav = _as(exp, "saver")          # Experience always reaches the floor
+        sav, src["saver"] = relabel(exp, "saver"), "experience"          # Experience always reaches the floor
     if bal.value < floor:                # a Balanced plan below the Saver floor takes the Saver plan
-        bal = _as(sav, "balanced")
+        bal, src["balanced"] = relabel(sav, "balanced"), src["saver"]
     if sav.budget.total > bal.budget.total:
-        sav = _as(bal, "saver")
-    return {"experience": exp, "balanced": bal, "saver": sav}
+        sav, src["saver"] = relabel(bal, "saver"), src["balanced"]
+    return {"experience": exp, "balanced": bal, "saver": sav, "sources": src}
 
 
 def distinct(a: Plan, b: Plan, share: float) -> bool:

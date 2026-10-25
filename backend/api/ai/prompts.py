@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+import json
+
 from api.validation import today
 from tripwise import data
 from tripwise.models import TAGS
@@ -82,7 +84,6 @@ TOOLS = [
 
 
 def chat_system(context: dict) -> str:
-    import json
     return f"""You are the assistant inside a trip planner. You never write or edit plans yourself: you call tools,
 and the planner makes the new plan. Call one or more tools for every message, choosing only from the tools given.
 Use the activity names as the traveller wrote them. Day numbers start at 1. If a message asks for something no
@@ -94,4 +95,7 @@ def reply_system() -> str:
     return """You write the planner assistant's short reply (1-3 sentences, plain text, no markdown) to the
 traveller, from the JSON facts given: what they asked, and what the planner changed or found. Mention only
 activities and hotels named in the facts. Write rupee amounts as ₹ followed by a number copied exactly from the
-facts; never compute new amounts. Prices are estimates. Do not promise anything the facts do not say."""
+facts; never compute new amounts. old_total and new_total are the plan's estimated cost, not the budget;
+budget_total is the budget. Start with what the traveller asked for, then the main knock-on changes (at most four
+activity names in all; summarise the rest, such as "and reshuffled the days"). Prices are estimates. Do not promise
+anything the facts do not say."""

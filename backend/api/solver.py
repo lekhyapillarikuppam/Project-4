@@ -41,3 +41,8 @@ async def solve(fn: Callable, *args: Any) -> Any:
         return await asyncio.get_running_loop().run_in_executor(_pool, fn, *args)
     finally:
         _sem.release()
+
+
+async def run_blocking(fn: Callable, *args: Any, **kw: Any) -> Any:
+    """A blocking call that is not a solve (such as a Groq request), off the event loop and outside the solve limit."""
+    return await asyncio.get_running_loop().run_in_executor(None, lambda: fn(*args, **kw))

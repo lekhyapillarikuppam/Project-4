@@ -12,18 +12,25 @@ from tripwise.config import Config
 from tripwise.data import Dataset, round_half_up
 from tripwise.engine import Context, setup
 from tripwise.models import Plan, TradeOffRow, TradeOffs, TripRequest
-from tripwise.variants import variant_plans
+from tripwise.variants import relabel, variant_plans
 
 
 def variant_at(req: TripRequest, variant: str, ds: Dataset | None = None, cfg: Config | None = None):
-    """The named variant's plan for this request (before the difference rule), or the infeasible result."""
+    """The named variant's plan for this request (before the difference rule), or the infeasible result.
+
+    When an ordering fallback gave this variant another variant's plan, the plan keeps that variant's label, so
+    its hotel tier is checked against the variant that chose it (V-13).
+    """
     cfg = cfg or config_mod.default()
     ds = ds or data_mod.load_cached(str(cfg.data_dir))
     ctx = setup(req, ds, cfg)
     if not isinstance(ctx, Context):
         return ctx
     plans = variant_plans(ctx)
-    return plans.get("error") or plans[variant]
+    if "error" in plans:
+        return plans["error"]
+    src = plans["sources"][variant]
+    return plans[variant] if src == variant else relabel(plans[variant], src)
 
 
 def _journeys(p: Plan) -> str:
