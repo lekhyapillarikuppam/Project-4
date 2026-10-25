@@ -1591,7 +1591,7 @@ chat_messages(id bigserial pk, trip_id uuid references trips on delete cascade, 
 - [x] **T07** `validation.py` + `POST /trips` with `solver.py` (semaphore and 429). · Check: API-AT-03, API-AT-04, API-AT-08
 - [x] **T08** Trips list, get, rename, duplicate, delete. · Check: API-AT-06
 - [x] **T09** Select, replan (locks, excludes, budget, prefs patch), versions, restore, trade-offs cache. · Check: API-AT-05
-- [ ] **T10** `GET /trips/{id}/chat`; ownership checks on every router. · Check: API-AT-02
+- [x] **T10** `GET /trips/{id}/chat`; ownership checks on every router. · Check: API-AT-02
 - [ ] **T11** Write `backend/api/README.md` covering how to run locally and every env var; update `.env.example`. Update Part D; mark 004 Done; commit.
 
 ### Feature 006 — Frontend (web app)
