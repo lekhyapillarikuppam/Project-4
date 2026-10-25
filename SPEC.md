@@ -1473,7 +1473,7 @@ Work top to bottom and tick `[x]` when the check passes. Decide small things you
 
 - [x] **F1 Variant tuning.** Balanced usually equals Experience. Tune `variants.lambda`, `variants.kappa_h` and `variants.rho` in `backend/tripwise/config.yaml` to maximise the number of `ok` test trips with 3 distinct variants, while VAR-AT-01–04 and ENG-AT-01 still pass. Starting point: λ = 1.5, κ_h = 40. Record the before and after counts, and the chosen values, in the Changelog.
 - [x] **F2 Major missing sites (45-minute cap).** Look for official fee pages for Victoria Memorial and the Indian Museum (CCU); Salar Jung Museum, Chowmahalla Palace and the Qutb Shahi Tombs (HYD); and Valluvar Kottam (MAA). Add each one found, rebuild those cities, validate and reload Neon. Skip any without an official or ≥ 2-source fee.
-- [ ] **F3** Delete `002-engine-plan-tasks.md` from the repo root.
+- [x] **F3** Delete `002-engine-plan-tasks.md` from the repo root.
 - [x] **F4 Owner spot-check edits** (done before F1). Apply the owner's edited values in `data/spot_check.md` (BLR-A-05, BOM-A-24, DEL-A-19, HMP-A-04, JAI-A-09, PDY-A-03) to the curated attractions; one window per place (the longest stated window, `hours_approx = true`, real hours in the source text); validate, reload Neon `ref`, run the backend tests and the 30-trip batch; amend DATA-AT-05 to the owner review; fix the `spot_check.md` tables.
 
 ### Feature 004 — Accounts, saved data and API (005 merged in)
@@ -1583,7 +1583,7 @@ chat_messages(id bigserial pk, trip_id uuid references trips on delete cascade, 
 
 #### 004 Tasks
 - [x] **T01** Insert this file's sections into SPEC.md as instructed; commit as `spec(004-008): …`.
-- [ ] **T02** Do follow-ups F1–F3; commit.
+- [x] **T02** Do follow-ups F1–F3; commit.
 - [ ] **T03** `backend/api/` skeleton, settings, requirements, `/health`, `/meta`, `/cities`; run with `uvicorn api.main:app --reload`. · Check: `curl /health`
 - [ ] **T04** `app_schema.sql` + `db.py`; create schemas `app` and `app_test` in Neon.
 - [ ] **T05** `auth.py` + auth router. · Check: API-AT-01, API-AT-07
@@ -2106,3 +2106,4 @@ Measured 2026-10-25 on the developer laptop (Windows 11, Python 3.11.9, OR-Tools
 | 2026-10-25 | C 001 data (F2) | Added CCU Victoria Memorial (₹30, median of ₹50 and ₹10 secondary sources; museum default hours) and Indian Museum (₹50, two sources), HYD Salar Jung Museum (official: 10:00–18:00, closed Friday, ₹50), Chowmahalla Palace (₹125, median of ₹100 and ₹150) and Qutb Shahi Tombs (₹10, two sources). Skipped MAA Valluvar Kottam (sources contradict: free vs nominal fee, no official page). CCU 25 → 27, HYD 26 → 29 attractions; validator 0 errors; Neon ref reloaded | F2: major sites with an official or ≥ 2-source fee; Victoria Memorial's official page blocks automated fetches (403), and its two secondary fees differ widely |
 | 2026-10-25 | C 001 data (F2 decision) | Chowmahalla Palace and Qutb Shahi Tombs keep the default (no) closed days although secondary sources say Fridays | 001 Spec §5.5 takes closed days from the ASI or an official page only |
 | 2026-10-25 | C 002 addendum A2 (F2) | Variant fallbacks refined: Saver that cannot reach ρ V* (or costs more than Experience) takes the Experience plan; a Balanced plan below ρ V* takes the Saver plan; a Saver costing more than Balanced then takes the Balanced plan | After F2, T18's cheapest ρ V* plan cost more than a Balanced plan below ρ V*, so the old rule broke VAR-AT-02 |
+| 2026-10-25 | C Follow-ups (F3) | `002-engine-plan-tasks.md` deleted from the repo root (it was never committed; its content is in 002 Plan and Tasks) | F3 |
