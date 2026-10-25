@@ -28,7 +28,7 @@ N4532503789,Archaeological Museum Old Goa,museum,history;culture,false,false,asi
 N4303706490,Santana Church,church,spiritual;history,false,false,,,
 W199363593,Mandrem Beach,beach,relaxation;nature,true,false,,,
 N1002534290,Arossim Beach,beach,relaxation;nature,true,false,,,
-way/1155293983,Arpora Saturday Night Market,market,shopping;food;nightlife,true,false,,"OSM amenity=marketplace, tourism=attraction (data/raw/seed/GOA.json, markets_food_nightlife); food/nightlife: a night market (OSM name)",
+way/1155293983,Arpora Saturday Night Market,market,shopping;food;nightlife,true,false,official:Arpora Saturday Night Market,"OSM amenity=marketplace, tourism=attraction (data/raw/seed/GOA.json, markets_food_nightlife); food/nightlife: a night market (OSM name)",
 activity:Parasailing at Calangute Beach,Parasailing at Calangute Beach,activity,adventure,true,false,,,
 activity:Scuba Diving at Grand Island,Scuba Diving at Grand Island,activity,adventure;nature,true,false,,,
 activity:Sunset Kayaking at Bambolim Beach,Sunset Kayaking at Bambolim Beach,activity,adventure;nature;relaxation,true,true,,,

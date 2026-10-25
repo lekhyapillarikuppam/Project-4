@@ -1,0 +1,54 @@
+{
+ "Sarojini Nagar Market": {
+  "fetched_on": "2026-10-25",
+  "results": [
+   {
+    "title": "2005 Delhi bombings",
+    "description": "2005 Islamist terror attack in Delhi, India",
+    "lat": null,
+    "lon": null
+   }
+  ]
+ },
+ "Sarojini Nagar Market Delhi": {
+  "fetched_on": "2026-10-25",
+  "results": []
+ },
+ "Hauz Khas Complex": {
+  "fetched_on": "2026-10-25",
+  "results": [
+   {
+    "title": "Hauz Khas Complex",
+    "description": "Site in Delhi, India",
+    "lat": 28.555,
+    "lon": 77.19194444
+   }
+  ]
+ },
+ "Hauz Khas Complex Delhi": {
+  "fetched_on": "2026-10-25",
+  "results": []
+ },
+ "Sarojini Nagar Market [fuzzy]": {
+  "fetched_on": "2026-10-25",
+  "results": [
+   {
+    "title": "2005 Delhi bombings",
+    "description": "2005 Islamist terror attack in Delhi, India",
+    "lat": null,
+    "lon": null
+   }
+  ]
+ },
+ "Hauz Khas Complex [fuzzy]": {
+  "fetched_on": "2026-10-25",
+  "results": [
+   {
+    "title": "Hauz Khas Complex",
+    "description": "Site in Delhi, India",
+    "lat": 28.555,
+    "lon": 77.19194444
+   }
+  ]
+ }
+}

@@ -73,6 +73,7 @@ VISIT_MINUTES_RANGE = (20, 480)
 TAGS_PER_ATTRACTION = (1, 3)
 RATING_RANGE = (1.0, 5.0)
 WEEKDAY_RANGE = (0, 6)           # 0 = Monday (section 3)
+MAX_CLOSED_WEEKDAYS = 6          # an attraction opens on at least one day (5.5)
 MIN_FREE_ATTRACTIONS = 5
 MIN_ATTRACTIONS_PER_REQUIRED_TAG = 3
 MIN_FOOD_ATTRACTIONS = 2         # every city, whatever its character (5.5)

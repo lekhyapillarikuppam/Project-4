@@ -1,7 +1,7 @@
 candidate,name,place_type,tags,outdoor,fixed_slot,official,note,wiki_title
 N2115400289,Virupaksha Temple,temple,spiritual;history;culture,false,false,,OpenTripMap name 'Mula Virupaksha',
-W140192978,Vijaya Vitthala Temple,temple,history;culture;spiritual,true,false,asi:HAM,ASI 'Group of Monuments, Hampi' ticket (the record does not list which monuments it covers),
-N340371819,Lotus Mahal,palace,history;culture,true,false,asi:HAM,ASI 'Group of Monuments, Hampi' ticket (the record does not list which monuments it covers),
+W140192978,Vijaya Vitthala Temple,ruins,history;culture;spiritual,true,false,asi:HAM,"ASI 'Group of Monuments, Hampi' ticket (the record does not list which monuments it covers); type ruins (monument): a walled temple complex with the stone chariot and mandapas, so the monument visit default applies",
+N340371819,Lotus Mahal,palace,history;culture,true,false,asi:HAM,"ASI 'Group of Monuments, Hampi' ticket (the record does not list which monuments it covers)",
 N339931623,Hazara Rama Temple,temple,history;culture;spiritual,true,false,,,
 W84305638,Achyutaraya Temple,temple,history;culture;spiritual,true,false,,OpenTripMap name 'Achyutaraya Temple Complex',
 R12565723,Underground Shiva Temple,temple,history;spiritual,true,false,,,

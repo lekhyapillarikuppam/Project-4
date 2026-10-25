@@ -110,15 +110,24 @@ def wiki_titles(qids: list[str], cache_path: Path) -> dict[str, str | None]:
 
 
 def pageviews(titles: list[str], cache_path: Path) -> dict[str, int | None]:
+    """Title -> 12-month views. Fetch dates go to <cache>_fetched.json (titles cached before it existed have none)."""
     cache = load_cache(cache_path)
+    dates_path = fetched_path(cache_path)
+    dates = load_cache(dates_path)
     for t in titles:
         if t in cache:
             continue
         r = _get(PAGEVIEWS.format(title=quote(t.replace(" ", "_"), safe="")))
         cache[t] = sum(i["views"] for i in r.json().get("items", [])) if r.status_code == 200 else None
+        dates[t] = time.strftime("%Y-%m-%d")
         save_cache(cache_path, cache)
+        save_cache(dates_path, dates)
         time.sleep(0.2)   # Wikimedia rate limits bursts (HTTP 429)
     return cache
+
+
+def fetched_path(cache_path: Path) -> Path:
+    return cache_path.with_name(cache_path.stem + "_fetched.json")
 
 
 def summaries(titles: list[str], cache_path: Path) -> dict[str, dict]:

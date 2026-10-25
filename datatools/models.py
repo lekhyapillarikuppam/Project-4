@@ -304,6 +304,9 @@ class Attraction(Curated):
                                f"weekdays must be {lo_day}–{hi_day}, got {';'.join(days)}"))
         elif len(set(days)) != len(days):
             out.append(Problem("closed_weekdays", "duplicate_value", "weekday listed twice"))
+        elif len(days) > rules.MAX_CLOSED_WEEKDAYS:
+            out.append(Problem("closed_weekdays", "closed_all_week",
+                               f"closed on all {len(days)} weekdays; an attraction must open at least one day"))
         lo, hi = rules.TAGS_PER_ATTRACTION
         if not lo <= len(self.tags) <= hi:
             out.append(Problem("tags", "bad_tag_count", f"needs {lo}–{hi} tags, got {len(self.tags)}"))

@@ -10,7 +10,9 @@ Inputs:
 - data/raw/attractions/asi/<CODE>.json       ASI e-ticket records (official hours and Indian fee)
 - data/raw/attractions/official_hours.csv    hours/fees read from other official sites (a fee the user read
                                              from an official booking page: "read by user from <url>, <date>")
-- data/raw/attractions/fee_secondary.csv     secondary-source fees: city_id, place, fee, url, fetched_on, extract
+- data/raw/attractions/fee_secondary.csv     secondary-source fees: city_id, place, fee, url, fetched_on, page_date (the
+                                             published, updated or reviewed date the page shows; empty if none), extract
+- data/raw/attractions/fee_revisions.csv     known fee revisions: city_id, place, effective_on, url, fetched_on, extract
 - data/raw/attractions/activities.csv        hand-curated adventure activities (selection candidate "activity:<place>"):
                                              location, hours and price read from an operator or state tourism page
 - data/raw/wiki/<CITY>/pageviews.json        12-month pageviews
@@ -83,15 +85,33 @@ ACTIVITY_PREFIX = "activity:"
 MIN_SECONDARY_FEES = 2
 
 
-def secondary_fee(rows: list[dict]) -> tuple[int, str, str] | None:
-    """(median fee, source text, latest fetch date) from >= 2 sources on different sites, else None."""
+def secondary_fee(rows: list[dict], revision: dict | None = None) -> tuple[int, str, str] | None:
+    """(median fee, source text, latest fetch date) from >= 2 sources on different sites, else None.
+
+    With a known fee revision only sources whose page_date is on or after its effective date count;
+    an undated source does not count (001 Spec 5.5)."""
+    if revision:
+        rows = [r for r in rows if r["page_date"] and r["page_date"] >= revision["effective_on"]]
     by_site = {urlparse(r["url"]).netloc.removeprefix("www."): r for r in rows}
     if len(by_site) < MIN_SECONDARY_FEES:
         return None
     fees = [int(r["fee"]) for r in by_site.values()]
     fee = int(math.floor(statistics.median(fees) + 0.5))
-    text = "; ".join(f"{r['url']} Rs {r['fee']}" for r in by_site.values())
-    return fee, f"fee: median of {len(fees)} secondary sources Rs {fee} ({text}; data/raw/attractions/fee_secondary.csv)",         latest(*(r["fetched_on"] for r in by_site.values()))
+    text = "; ".join(f"{r['url']} Rs {r['fee']}" + (f" dated {r['page_date']}" if revision else "") for r in by_site.values())
+    rev = (f", dated on or after the fee revision of {revision['effective_on']} ({revision['url']}; data/raw/attractions/fee_revisions.csv)"
+           if revision else "")
+    dates = [r["fetched_on"] for r in by_site.values()] + ([revision["fetched_on"]] if revision else [])
+    return fee, f"fee: median of {len(fees)} secondary sources Rs {fee}{rev} ({text}; data/raw/attractions/fee_secondary.csv)", latest(*dates)
+
+
+def check_selection(city: str, sel: list[dict]) -> None:
+    """Stop on a row whose columns shifted (an unquoted comma in a note) or a wiki_title with stray whitespace."""
+    for line, s in enumerate(sel, start=2):
+        if None in s or None in s.values():
+            raise SystemExit(f"{city}_selection.csv:{line}: column count differs from the header (quote cells that contain commas)")
+        t = s.get("wiki_title", "")
+        if t != t.strip():
+            raise SystemExit(f"{city}_selection.csv:{line}:wiki_title: leading or trailing whitespace {t!r}")
 
 
 def build(city: str) -> list[list]:
@@ -109,8 +129,10 @@ def build(city: str) -> list[list]:
     for r in read_csv(A / "fee_secondary.csv"):
         if r["city_id"] == city:
             secondary.setdefault(r["place"], []).append(r)
+    revisions = {r["place"]: r for r in read_csv(A / "fee_revisions.csv") if r["city_id"] == city}
     sel = read_csv(A / f"{city}_selection.csv")
-    chosen = [{**draft[s["candidate"]], **{k: v for k, v in s.items() if v != ""}} for s in sel]
+    check_selection(city, sel)
+    chosen =[{**draft[s["candidate"]], **{k: v for k, v in s.items() if v != ""}} for s in sel]
     for s, c in zip(sel, chosen):   # a hand-set article (e.g. the draft had a redirect title) needs its own pageviews
         if s.get("wiki_title") and s["wiki_title"] != draft[s["candidate"]].get("wiki_title"):
             c["pageviews"] = ""
@@ -121,6 +143,10 @@ def build(city: str) -> list[list]:
         for c in chosen:
             if c.get("wiki_title") and not c.get("pageviews") and pv.get(c["wiki_title"]) is not None:
                 c["pageviews"] = str(pv[c["wiki_title"]])
+    pv_dates = drafting.load_cache(drafting.fetched_path(RAW / "wiki" / city / "pageviews.json"))
+    unknown = [c["wiki_title"] for c in chosen if c.get("wiki_title") and not c.get("pageviews")]
+    if unknown:   # a shifted column or a typo lands here: Wikipedia has no such article
+        raise SystemExit(f"{city}_selection.csv: wiki_title not found on English Wikipedia: {unknown}")
     rate = ratings(chosen)
     order = sorted((c["candidate"] for c in chosen if c["candidate"] in rate), key=lambda c: rate[c][0])
     n = len(order)
@@ -166,7 +192,7 @@ def build(city: str) -> list[list]:
             src.append(f"official: {o['url']} ({o['extract']})")
         if hours_approx:
             src.append(f"hours: {ptype} default (001 Spec 5.5)")
-        if fee is None and (sec := secondary_fee(secondary.get(c["name"], []))):
+        if fee is None and (sec := secondary_fee(secondary.get(c["name"], []), revisions.get(c["name"]))):
             fee, text, sec_date = sec
             fee_approx = True
             src.append(text)
@@ -183,8 +209,8 @@ def build(city: str) -> list[list]:
             todo.append("rating")
         else:
             src.append(f"rating: {basis}" + (f" https://en.wikipedia.org/wiki/{c['wiki_title'].replace(' ', '_')}" if c.get("wiki_title") else ""))
-            if c.get("wiki_title"):
-                dates.append(WIKI_FETCHED)
+            if c.get("wiki_title"):   # pageviews cached before fetch dates were kept were fetched while drafting
+                dates.append(pv_dates.get(c["wiki_title"]) or latest(WIKI_FETCHED, seed_date))
         visit, visit_approx = (int(act["visit_minutes"]), False) if act and act["visit_minutes"] else (d["visit"], True)
         src.append((f"visit: {visit} min from the activity page" if not visit_approx else f"visit: {ptype} default {visit} min")
                    + "; tags/type/outdoor: "

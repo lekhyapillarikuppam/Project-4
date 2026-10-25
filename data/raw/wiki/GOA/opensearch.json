@@ -1,0 +1,113 @@
+{
+ "Coco Beach": {
+  "fetched_on": "2026-10-25",
+  "results": [
+   {
+    "title": "Cocobeach",
+    "description": "Place in Estuaire, Gabon",
+    "lat": 0.98333333,
+    "lon": 9.56666667
+   },
+   {
+    "title": "Cocobeach Airport",
+    "description": "Airport in Estuaire, Gabon",
+    "lat": 0.98194444,
+    "lon": 9.57222222
+   },
+   {
+    "title": "Cocoa Beach, Florida",
+    "description": "City in the United States",
+    "lat": 28.320221,
+    "lon": -80.608871
+   },
+   {
+    "title": "Cocoa Beach (horse)",
+    "description": "Chilean-bred Thoroughbred racehorse",
+    "lat": null,
+    "lon": null
+   },
+   {
+    "title": "Cocoa Beach Junior/Senior High School",
+    "description": "Public school in Cocoa Beach, Florida, United States",
+    "lat": 28.31773611,
+    "lon": -80.63049444
+   }
+  ]
+ },
+ "Coco Beach Goa": {
+  "fetched_on": "2026-10-25",
+  "results": [
+   {
+    "title": "Cocoa Beach Glass Bank",
+    "description": "Building in Cocoa Beach, Florida, US",
+    "lat": 28.32596,
+    "lon": -80.60954
+   },
+   {
+    "title": "Cocobeach Airport",
+    "description": "Airport in Estuaire, Gabon",
+    "lat": 0.98194444,
+    "lon": 9.57222222
+   }
+  ]
+ },
+ "Arossim Beach": {
+  "fetched_on": "2026-10-25",
+  "results": []
+ },
+ "Arossim Beach Goa": {
+  "fetched_on": "2026-10-25",
+  "results": []
+ },
+ "Arpora Saturday Night Market": {
+  "fetched_on": "2026-10-25",
+  "results": []
+ },
+ "Arpora Saturday Night Market Goa": {
+  "fetched_on": "2026-10-25",
+  "results": []
+ },
+ "Coco Beach [fuzzy]": {
+  "fetched_on": "2026-10-25",
+  "results": [
+   {
+    "title": "Cocobeach",
+    "description": "Place in Estuaire, Gabon",
+    "lat": 0.98333333,
+    "lon": 9.56666667
+   },
+   {
+    "title": "Cocobeach Airport",
+    "description": "Airport in Estuaire, Gabon",
+    "lat": 0.98194444,
+    "lon": 9.57222222
+   },
+   {
+    "title": "Cocoa Beach, Florida",
+    "description": "City in the United States",
+    "lat": 28.320221,
+    "lon": -80.608871
+   },
+   {
+    "title": "Cocoa Beach (horse)",
+    "description": "Chilean-bred Thoroughbred racehorse",
+    "lat": null,
+    "lon": null
+   },
+   {
+    "title": "Cocoa Beach Junior/Senior High School",
+    "description": "Public school in Cocoa Beach, Florida, United States",
+    "lat": 28.31773611,
+    "lon": -80.63049444
+   }
+  ]
+ },
+ "Arossim Beach [fuzzy]": {
+  "fetched_on": "2026-10-25",
+  "results": []
+ },
+ "Arpora Saturday Night Market [fuzzy]": {
+  "fetched_on": "2026-10-25",
+  "results": []
+ }
+}

@@ -29,7 +29,7 @@ W44188369,Cathedral Church of the Redemption,church,spiritual;history,false,fals
 node/4839810499,Khari Baoli Spice Market,bazaar,food;shopping,true,false,,"food: 'Asia's largest wholesale spice market', 'spices, nuts, herbs, and food products' (https://en.wikipedia.org/wiki/Khari_Baoli, fetched 2026-10-23)",Khari Baoli
 N4690053790,Sarojini Nagar Market,market,shopping,true,false,,,
 R6013399,Deer Park,park,nature;relaxation,true,false,,,
-N1024907338,Hauz Khas Complex,ruins,history;nature,true,false,asi:HZK,OpenTripMap point 'Hauz Khas Medresse Mosque',
+N1024907338,Hauz Khas Complex,ruins,history;nature,true,false,asi:HZK,OpenTripMap point 'Hauz Khas Medresse Mosque',Hauz Khas Complex
 W260131767,Sultan Garhi,tomb,history,true,false,asi:SUG,,
 W290559810,Roshanara Bagh,garden,nature;history;relaxation,true,false,,,
 W87354076,St James' Church,church,spiritual;history,false,false,,,
