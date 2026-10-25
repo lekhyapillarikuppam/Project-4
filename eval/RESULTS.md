@@ -16,15 +16,15 @@ over valid plans. Times: Tripwise and greedy on this laptop; LLM-only includes t
 
 | Planner | Feasible trips with a valid plan | Failed plans | Violations (V-xx: trips) | Declined infeasible | Mean value | Total value | Mean budget use | Mean travel share | Median time | Distinct variants |
 |---|---|---|---|---|---|---|---|---|---|---|
-| Tripwise | 26/26 (100%) | 0 | none | 4/4 | 684.742 | 17803.3 | 72% | 15% | 170 ms | 2.538 |
+| Tripwise | 26/26 (100%) | 0 | none | 4/4 | 684.742 | 17803.3 | 72% | 15% | 159 ms | 2.538 |
 | Greedy | 26/26 (100%) | 0 | none | 4/4 | 645.475 | 16782.4 | 69% | 28% | 6 ms | – |
 
 ## Same 10 trips (all three planners)
 
 | Planner | Feasible trips with a valid plan | Failed plans | Violations (V-xx: trips) | Declined infeasible | Mean value | Total value | Mean budget use | Mean travel share | Median time | Distinct variants |
 |---|---|---|---|---|---|---|---|---|---|---|
-| Tripwise | 10/10 (100%) | 0 | none | – | 687.255 | 6872.5 | 72% | 13% | 236 ms | 2.6 |
-| Greedy | 10/10 (100%) | 0 | none | – | 620.894 | 6208.9 | 69% | 27% | 6 ms | – |
+| Tripwise | 10/10 (100%) | 0 | none | – | 687.255 | 6872.5 | 72% | 13% | 215 ms | 2.6 |
+| Greedy | 10/10 (100%) | 0 | none | – | 620.894 | 6208.9 | 69% | 27% | 5 ms | – |
 
 ![Feasibility](charts/feasibility.png)
 ![Value per trip](charts/value.png)

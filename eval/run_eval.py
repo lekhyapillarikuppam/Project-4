@@ -242,7 +242,7 @@ def main() -> int:
         rows.append(row("llm_only", by_id[s["trip"]], p, (s["info"].get("seconds") or 0) * 1000, ds, cfg,
                         {"status": "plan" if p else "failed"} if not p else None))
     with (OUT / "results.csv").open("w", newline="", encoding="utf-8") as f:
-        w = csv.DictWriter(f, fieldnames=list(rows[0]))
+        w = csv.DictWriter(f, fieldnames=list(rows[0]), lineterminator="\n")
         w.writeheader()
         w.writerows(rows)
     all30 = summarise([r for r in rows if r["planner"] != "llm_only"], {t["id"] for t in trips})
@@ -307,7 +307,7 @@ over valid plans. Times: Tripwise and greedy on this laptop; LLM-only includes t
 
 {discussion}
 """
-    (ROOT / "eval" / "RESULTS.md").write_text(text, encoding="utf-8")
+    (ROOT / "eval" / "RESULTS.md").write_text(text, encoding="utf-8", newline="\n")
 
 
 DISCUSSION = """- **Feasibility.** Tripwise returned a validator-clean plan for {tw[valid]}/{tw[feasible_trips]} feasible trips and
