@@ -1,0 +1,6 @@
+{"origin": "BLR", "destination": "JAI", "start_date": "2026-12-18", "end_date": "2026-12-21", "people": 2, "budget_total": 90000,
+ "prefs": {"daily_hours_out": 9, "pace": "balanced", "comfort": "mid", "avoid_crowds": false,
+           "modes": {"train": "neutral", "bus": "avoid", "flight": "preferred"},
+           "interests": {"nature": 1, "adventure": 0, "food": 4, "history": 5, "culture": 3, "spiritual": 0, "shopping": 2,
+                         "relaxation": 1, "nightlife": 0}},
+ "locks": [], "excludes": []}
