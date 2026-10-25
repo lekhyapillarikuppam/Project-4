@@ -42,7 +42,7 @@ async function request<T>(method: string, path: string, body?: unknown): Promise
   const data = await res.json().catch(() => ({}));
   if (!res.ok) {
     if (res.status === 401 && token) onUnauthorized();
-    const message = res.status === 429 ? "The planner is busy right now. Please retry in a moment."
+    const message = res.status === 429 && data.error !== "rate_limited" ? "The planner is busy right now. Please retry in a moment."
       : (data.message as string) || "Something went wrong.";
     throw new ApiError(res.status, (data.error as string) || "error", message, (data.fields as Record<string, string>) || {}, data);
   }
