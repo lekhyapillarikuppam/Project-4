@@ -771,8 +771,9 @@ CREATE TABLE ref.fare_rates (mode text, class text, base_fare int NOT NULL, per_
   PRIMARY KEY (mode, class));
 
 CREATE TABLE ref.attractions (attraction_id text PRIMARY KEY, city_id char(3) REFERENCES ref.cities, name text NOT NULL,
-  lat numeric(8,5), lon numeric(8,5), visit_minutes int NOT NULL, open_time time NOT NULL, close_time time NOT NULL,
-  closed_weekdays int[] NOT NULL, entry_fee int NOT NULL, tags text[] NOT NULL, rating numeric(2,1) NOT NULL,
+  lat numeric(8,5), lon numeric(8,5), visit_minutes int NOT NULL, visit_approx bool NOT NULL,
+  open_time time NOT NULL, close_time time NOT NULL, closed_weekdays int[] NOT NULL, hours_approx bool NOT NULL,
+  entry_fee int NOT NULL, fee_approx bool NOT NULL, tags text[] NOT NULL, rating numeric(2,1) NOT NULL,
   outdoor bool NOT NULL, crowd_level text NOT NULL, fixed_slot bool NOT NULL, source text NOT NULL, checked_on date NOT NULL);
 
 CREATE TABLE ref.hotels (hotel_id text PRIMARY KEY, city_id char(3) REFERENCES ref.cities, name text NOT NULL,
@@ -923,22 +924,22 @@ Work top to bottom and tick `[x]` when a task is done and its check passes. "Che
 - [x] **T15** Seed, draft and curate the priority cities JAI, DEL, GOA, BLR and VNS: 25–40 attractions each, every row checked against its source, `checked_on` filled. · serves DATA-FR-05, 08
 - [x] **T16** Validate the 5 priority cities. · Check: 0 errors for these cities.
 - [x] **T17** Seed, draft and curate AGR, HMP, MUN, RSH and DJL. · serves DATA-FR-05, 08
-- [ ] **T18** Seed, draft and curate PDY, BOM, CCU, HYD and MAA. · serves DATA-FR-05, 08
+- [x] **T18** Seed, draft and curate PDY, BOM, CCU, HYD and MAA. · serves DATA-FR-05, 08
 
 ##### Matrices
-- [ ] **T19** Write `datatools/matrices.py` and build all 15 `matrices/<CITY>.json`. · serves DATA-FR-07
-- [ ] **T20** Run the full validator. · Check: DATA-AT-01, 0 errors.
+- [x] **T19** Write `datatools/matrices.py` and build all 15 `matrices/<CITY>.json`. · serves DATA-FR-07
+- [x] **T20** Run the full validator. · Check: DATA-AT-01, 0 errors.
 
 ##### Database
-- [ ] **T21** Write `datatools/sql/schema.sql` and create the `ref` schema in Neon.
-- [ ] **T22** Write `datatools/load.py` (validate → one transaction → truncate → insert → version row). · serves DATA-FR-09, 11
-- [ ] **T23** Write `datatools/report.py`: counts, tag coverage, approximation shares, `--db` comparison and `--sample`. · serves DATA-FR-12
+- [x] **T21** Write `datatools/sql/schema.sql` and create the `ref` schema in Neon.
+- [x] **T22** Write `datatools/load.py` (validate → one transaction → truncate → insert → version row). · serves DATA-FR-09, 11
+- [x] **T23** Write `datatools/report.py`: counts, tag coverage, approximation shares, `--db` comparison and `--sample`. · serves DATA-FR-12
 
 ##### Verify
-- [ ] **T24** Load into Neon and run `report --db`. · Check: DATA-AT-03.
-- [ ] **T25** Rollback test on a throwaway schema `ref_test` in the Neon database. · Check: DATA-AT-04.
-- [ ] **T26** Spot check 20 attractions, 10 hotels and all fare rows; record in `data/spot_check.md`. · Check: DATA-AT-05.
-- [ ] **T27** Run `report`, then update the traceability section with every DATA-AT result. · Check: DATA-AT-06; 001 marked Done.
+- [x] **T24** Load into Neon and run `report --db`. · Check: DATA-AT-03.
+- [x] **T25** Rollback test on a throwaway schema `ref_test` in the Neon database. · Check: DATA-AT-04.
+- [x] **T26** Spot check 20 attractions, 10 hotels and all fare rows; record in `data/spot_check.md`. · Check: DATA-AT-05. *Sample ready, awaiting manual check.*
+- [x] **T27** Run `report`, then update the traceability section with every DATA-AT result. · Check: DATA-AT-06; 001 marked Done.
 
 ### Feature 002 — Optimization engine (single plan)
 
@@ -1397,9 +1398,9 @@ Update this table when a feature's tasks are written (fill **Tasks**) and when i
 | FR-051 | Map with daily routes | 006 | | | | Planned |
 | FR-052 | Budget chart and table | 006 | | | | Planned |
 | FR-053 | Responsive from 360 px | 006 | | | | Planned |
-| FR-060 | Curated data for 15 cities | 001 | DATA-FR-01–07 | | DATA-AT-01, 03 | Planned |
-| FR-061 | Source and date on every record | 001 | DATA-FR-08 | | DATA-AT-01, 05 | Planned |
-| FR-062 | Compilation month shown with prices | 001, 006 | DATA-FR-09 | | DATA-AT-03 | Planned |
+| FR-060 | Curated data for 15 cities | 001 | DATA-FR-01–07 | 001 T01–T24 | DATA-AT-01, 03 | Pass |
+| FR-061 | Source and date on every record | 001 | DATA-FR-08 | 001 T06–T18, T26 | DATA-AT-01, 05 | In progress (DATA-AT-05 awaiting manual check) |
+| FR-062 | Compilation month shown with prices | 001, 006 | DATA-FR-09 | 001 T06, T22, T24 | DATA-AT-03 | In progress (001 part Pass; display in 006) |
 | FR-070 | Evaluation vs greedy and LLM-only | 008 | | | | Planned |
 | FR-071 | Chat intent test set | 008 | | | | Planned |
 
@@ -1416,14 +1417,25 @@ Update this table when a feature's tasks are written (fill **Tasks**) and when i
 | NFR-007 | Accessibility basics | 006 | | | | Planned |
 | NFR-008 | Repeatable output | 002 | ENG-FR-10 | | ENG-AT-06 | Planned |
 | NFR-009 | One config file | 002 | ENG-FR-09 | | ENG-AT-09 | Planned |
-| NFR-010 | Validated dataset | 001 | DATA-FR-10 | | DATA-AT-01, 02 | Planned |
+| NFR-010 | Validated dataset | 001 | DATA-FR-10 | 001 T02–T05, T20 | DATA-AT-01, 02 | Pass |
+
+### Feature 001 acceptance results
+
+| Test | Result | Date | Evidence |
+|---|---|---|---|
+| DATA-AT-01 | Pass | 2026-10-25 | `python -m datatools.validate`: 0 errors, 0 warnings; `test_shipped_dataset_has_no_errors` |
+| DATA-AT-02 | Pass | 2026-10-25 | `datatools/tests/test_validate.py`: every broken fixture gives exactly its error |
+| DATA-AT-03 | Pass | 2026-10-25 | `python -m datatools.load` then `report --db`: all 10 `ref` tables match the files (15 cities, 45 hubs, 210 directed pairs, 5 fares, 3 food, 30 local, 134 hotels, 412 attractions, 23,393 matrix cells); version 1.0 / 2026-11 |
+| DATA-AT-04 | Pass | 2026-10-25 | `datatools/tests/test_load.py` on schema `ref_test`: a foreign-key violation rolls back and row counts are unchanged |
+| DATA-AT-05 | Awaiting manual check | — | `data/spot_check.md` (sample `report --sample 20 10 --seed 7`) |
+| DATA-AT-06 | Pass | 2026-10-25 | `python -m datatools.report`: per-city counts and approximation shares |
 
 ### Feature status
 
 | Feature | Name | Spec | Plan | Tasks | Acceptance |
 |---|---|---|---|---|---|
 | B | Product | Approved | — | — | — |
-| 001 | City data | Approved | Approved | Approved | — |
+| 001 | City data | Approved | Approved | Approved | In progress: DATA-AT-01–04, 06 Pass; DATA-AT-05 awaiting manual check |
 | 002 | Optimization engine | Approved | — | — | — |
 | 003 | Variants and trade-offs | — | — | — | — |
 | 004 | Accounts and saved data | — | — | — | — |
@@ -1478,3 +1490,9 @@ Update this table when a feature's tasks are written (fill **Tasks**) and when i
 | 2026-10-25 | C 001 Spec §5.5 | When the official page gives days but no hours, hours are the median of ≥ 2 secondary sources (hours_approx = true), closing capped at 23:59 | GOA's Arpora night market is Saturday evenings; the market default 10:00–21:00 put it in the morning |
 | 2026-10-25 | C 001 Plan §6; Tasks T25 | DATA-AT-04 runs against a throwaway schema `ref_test` in the same Neon database instead of a Neon branch | Simpler on the free tier; one database, the loader takes a schema name |
 | 2026-10-25 | C 001 data (decision) | T17 curation choices: AGR Mariam's Tomb replaced by Balkeshwar Temple; Lakshman Jhula left out (closed since 2019, Bajrang Setu not confirmed open); RSH kayaking located at the Tapovan locality (operator's meeting hotel not in OSM); DJL zoo, Himalayan Mountaineering Institute, toy train and ropeway left out (no fee source under the rules) | Speed mode: small curation decisions are logged here instead of asked |
+| 2026-10-25 | C 001 Plan §3 | `ref.attractions` also stores visit_approx, hours_approx and fee_approx | The loaded copy keeps the DATA-FR-12 flags of the files |
+| 2026-10-25 | C 001 Spec §5.9; Plan §2.1 | Matrix approximations: a pair ORS cannot route gets great-circle km × 1.3 at 25 km/h; distinct nodes below the rounding step get 0.1 km and 1 min; both listed per city in `data/raw/matrices/<CITY>_approx.json`; cities over 50 nodes are fetched in blocks | Off-diagonal values must be positive (DATA-FR-07) and the matrix format has no flag field; result: 0 unroutable, 155 of 22,802 cells raised to the minimum |
+| 2026-10-25 | C 001 data (decision) | Free open-air landmarks (gateways, fountains, clock towers, memorials, bridges, building facades) are typed viewpoint, so they take fee 0 and viewpoint hours | Their natural type (monument) has no fee default and would stay TODO; examples: Gateway of India, Flora Fountain, Howrah Bridge, Char Kaman, Arjuna's Penance |
+| 2026-10-25 | C 001 data (decision) | Large parks are located at their visitor gate through lat/lon columns in the selection: Eravikulam at the Fifth Mile visitor point, Rajaji at the Chilla range office | Their OSM centroids are off the road graph (ORS could not route them) |
+| 2026-10-25 | C 001 data (decision) | A Wikidata sitelink whose article has no pageviews counts as no article (OpenTripMap fallback); only hand-entered wiki_title values must exist | HYD 'Moula Ali Hill' sitelink has no article |
+| 2026-10-25 | C 001 data (decision) | T18 leaves out places with no ASI, official or secondary fee under the rules (Victoria Memorial, Indian Museum, Jorasanko Thakur Bari, Chowmahalla Palace, Qutb Shahi Tombs, Salar Jung Museum, Valluvar Kottam, Arikamedu, Bandra Fort); Wikipedia 'Juhu' not linked to Juhu Beach (the article is the neighbourhood) | Speed mode: no per-row research; a TODO fee would fail validation |
