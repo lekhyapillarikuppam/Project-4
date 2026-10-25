@@ -1663,7 +1663,7 @@ These are run by Claude Code in the browser against a local API, with results re
 
 #### 006 Tasks
 - [x] **T01** Scaffold Vite React TS, Tailwind and routing; layout with header, nav and footer (with the estimate label); API client and auth context.
-- [ ] **T02** Landing, Sign up and Log in pages; route guard with `next=`.
+- [x] **T02** Landing, Sign up and Log in pages; route guard with `next=`.
 - [ ] **T03** PrefsForm + New trip page + Profile page (load and save). · Check: UI-AT-04
 - [ ] **T04** Plan comparison page, including the infeasible and dropped states. · Check: UI-AT-01, UI-AT-03
 - [ ] **T05** Plan detail page: transport, hotel, Timeline, BudgetDonut and BudgetTable, NearMisses, TradeOffs, VersionList. · Check: UI-AT-02, UI-AT-06
@@ -2136,3 +2136,4 @@ Measured 2026-10-25 against Neon schema `app_test` with FastAPI's TestClient (`p
 | 2026-10-25 | C 004 Plan (for 006) | Public `GET /cities/{code}/places` returns a city's attraction and hotel ids, names and coordinates | The Plan schema has ids only, and the map (UI-FR-05) needs coordinates; reference data, no user data |
 | 2026-10-25 | C 006 Plan (T01) | Pinned: react/react-dom 18.3.1, react-router-dom 6.30.6, @tanstack/react-query 5.104.1, tailwindcss 3.4.19, react-leaflet 4.2.1, leaflet 1.9.4, recharts 2.15.4, vite 6.4.4 with @vitejs/plugin-react 4.7.0, typescript 5.9.3, postcss 8.5.29, autoprefixer 10.6.1, @playwright/test 1.64.0 (UI-AT runner) | Latest releases ≥ 2 weeks old within the majors the plan names; Vite 6 because plugin-react 4 (React 18) supports it |
 | 2026-10-25 | C 006 (T01) | Scaffolded by hand (no interactive generator); esbuild's install script is not run (npm 11 allowScripts), its platform binary package works without it | Repeatable, non-interactive setup |
+| 2026-10-25 | C 006 (T02) | After log-in or sign-up the user goes to `next` when it is a same-site path, otherwise to New trip | Avoids open redirects through `next=` |
