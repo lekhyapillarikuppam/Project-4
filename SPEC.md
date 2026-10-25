@@ -1590,7 +1590,7 @@ chat_messages(id bigserial pk, trip_id uuid references trips on delete cascade, 
 - [x] **T06** Profile router.
 - [x] **T07** `validation.py` + `POST /trips` with `solver.py` (semaphore and 429). · Check: API-AT-03, API-AT-04, API-AT-08
 - [x] **T08** Trips list, get, rename, duplicate, delete. · Check: API-AT-06
-- [ ] **T09** Select, replan (locks, excludes, budget, prefs patch), versions, restore, trade-offs cache. · Check: API-AT-05
+- [x] **T09** Select, replan (locks, excludes, budget, prefs patch), versions, restore, trade-offs cache. · Check: API-AT-05
 - [ ] **T10** `GET /trips/{id}/chat`; ownership checks on every router. · Check: API-AT-02
 - [ ] **T11** Write `backend/api/README.md` covering how to run locally and every env var; update `.env.example`. Update Part D; mark 004 Done; commit.
 
@@ -2115,3 +2115,5 @@ Measured 2026-10-25 on the developer laptop (Windows 11, Python 3.11.9, OR-Tools
 | 2026-10-25 | C 004 (T06) | `GET /profile` returns default prefs with `saved: false` when none is stored; saved prefs are normalised to all nine interests and three modes | The New trip form always has values to pre-fill (FR-007) |
 | 2026-10-25 | C 004 (T07) | `POST /trips` takes exactly one of `budget_total` or `budget_per_person` (converted × people); locks/excludes must be destination attraction ids and may not overlap; the trip name defaults to "<origin> to <destination>, <start date>" | API-FR-04, FR-004 |
 | 2026-10-25 | C 004 (T08) | `GET /trips` without `when` lists all trips; an unknown `when` is a 422; trip names are 1–120 characters | API-FR-06 |
+| 2026-10-25 | C 004 (T09) | Select may be repeated (each creates the next version and sets selected_variant); replan builds on the newest version's request, patches prefs (interests and modes merged key by key) and re-runs the selected variant; an infeasible replan returns 409 `infeasible` with the engine's result and stores nothing; trips.request follows the newest version | API-FR-07, API-FR-08; chat (007) needs the infeasible reason |
+| 2026-10-25 | C 004 (T09) | Trade-offs are cached per variant in trips.tradeoffs with the request hash, and recomputed when the request changes; responses carry `cached` | API-FR-09 |

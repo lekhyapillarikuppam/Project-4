@@ -15,8 +15,10 @@ from tripwise.models import Plan, TradeOffRow, TradeOffs, TripRequest
 from tripwise.variants import variant_plans
 
 
-def variant_at(req: TripRequest, variant: str, ds: Dataset, cfg: Config):
+def variant_at(req: TripRequest, variant: str, ds: Dataset | None = None, cfg: Config | None = None):
     """The named variant's plan for this request (before the difference rule), or the infeasible result."""
+    cfg = cfg or config_mod.default()
+    ds = ds or data_mod.load_cached(str(cfg.data_dir))
     ctx = setup(req, ds, cfg)
     if not isinstance(ctx, Context):
         return ctx
