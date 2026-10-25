@@ -1,0 +1,49 @@
+{
+ "title": "Day 2 · Jaipur",
+ "people": 2,
+ "rows": [
+  {
+   "leg": "Cab from the hotel · 5 min",
+   "cost": 49
+  },
+  {
+   "time": "09:05–11:35",
+   "name": "City Palace",
+   "fee": 490
+  },
+  {
+   "leg": "Cab · 1 min",
+   "cost": 37
+  },
+  {
+   "time": "11:36–13:06",
+   "name": "Jantar Mantar",
+   "fee": 200
+  },
+  {
+   "leg": "Cab · 5 min",
+   "cost": 55
+  },
+  {
+   "lunch": "Lunch 13:11–14:11"
+  },
+  {
+   "time": "14:11–16:11",
+   "name": "Albert Hall Museum",
+   "fee": 200
+  },
+  {
+   "leg": "Cab · 4 min",
+   "cost": 51
+  },
+  {
+   "time": "16:15–17:00",
+   "name": "Birla Mandir",
+   "fee": 0
+  },
+  {
+   "leg": "Cab back to the hotel · 11 min",
+   "cost": 155
+  }
+ ]
+}
