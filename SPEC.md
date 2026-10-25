@@ -1564,6 +1564,7 @@ chat_messages(id bigserial pk, trip_id uuid references trips on delete cascade, 
 | GET | `/health` | Liveness + dataset version |
 | GET | `/meta` | Dataset version label, interests, paces, comforts, limits |
 | GET | `/cities` | 15 cities with name, code, lat, lon |
+| GET | `/cities/{code}/places` | Attraction and hotel coordinates for the plan map (added for 006 UI-FR-05) |
 | POST | `/auth/signup`, `/auth/login` | → `{token, user}` |
 | GET | `/auth/me` | Current user |
 | GET, PUT | `/profile` | Saved prefs |
@@ -2132,3 +2133,4 @@ Measured 2026-10-25 against Neon schema `app_test` with FastAPI's TestClient (`p
 | 2026-10-25 | C 004 (T08) | `GET /trips` without `when` lists all trips; an unknown `when` is a 422; trip names are 1–120 characters | API-FR-06 |
 | 2026-10-25 | C 004 (T09) | Select may be repeated (each creates the next version and sets selected_variant); replan builds on the newest version's request, patches prefs (interests and modes merged key by key) and re-runs the selected variant; an infeasible replan returns 409 `infeasible` with the engine's result and stores nothing; trips.request follows the newest version | API-FR-07, API-FR-08; chat (007) needs the infeasible reason |
 | 2026-10-25 | C 004 (T09) | Trade-offs are cached per variant in trips.tradeoffs with the request hash, and recomputed when the request changes; responses carry `cached` | API-FR-09 |
+| 2026-10-25 | C 004 Plan (for 006) | Public `GET /cities/{code}/places` returns a city's attraction and hotel ids, names and coordinates | The Plan schema has ids only, and the map (UI-FR-05) needs coordinates; reference data, no user data |
