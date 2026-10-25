@@ -1,0 +1,5 @@
+# Engine (Feature 002). Install into backend/.venv: python -m pip install -r backend/requirements.txt
+ortools==9.15.6755
+pydantic>=2.6
+pyyaml==6.0.3
+pytest>=8.0
