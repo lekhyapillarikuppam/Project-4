@@ -1433,37 +1433,37 @@ Work top to bottom and tick `[x]` when the check passes. Decide small things you
 
 ##### Setup
 - [x] **T01** Reconcile 002 Spec §§3–10 with the Feature 001 data model as built (local transport formula, hotel counts, bus classes, fixed_slot, fee_approx, place types); add Changelog rows. · serves ENG-FR-01–03
-- [ ] **T02** Create `backend/tripwise/` and `backend/validator/` packages, `backend/requirements.txt`, `config.yaml` + `config.py` with every tunable. · Check: `python -c "import tripwise, validator"` · serves ENG-FR-09
-- [ ] **T03** `data.py`: load the full curated dataset into `Dataset`; expand pairs to 210 directed; matrix lookups × traffic factor. · Check: loads in < 2 s, counts match `datatools.report` · serves ENG-FR-02
-- [ ] **T04** `models.py`: request, plan, infeasible, variants and trade-off schemas exactly as in 002 §3, §8 and addendum A6. · serves ENG-FR-05, 06
+- [x] **T02** Create `backend/tripwise/` and `backend/validator/` packages, `backend/requirements.txt`, `config.yaml` + `config.py` with every tunable. · Check: `python -c "import tripwise, validator"` · serves ENG-FR-09
+- [x] **T03** `data.py`: load the full curated dataset into `Dataset`; expand pairs to 210 directed; matrix lookups × traffic factor. · Check: loads in < 2 s, counts match `datatools.report` · serves ENG-FR-02
+- [x] **T04** `models.py`: request, plan, infeasible, variants and trade-off schemas exactly as in 002 §3, §8 and addendum A6. · serves ENG-FR-05, 06
 
 ##### Core models
-- [ ] **T05** `timemodel.py` + unit tests (ENG-AT-02). · serves ENG-FR-01
-- [ ] **T06** `costs.py` + unit tests on hand-computed cases (ENG-AT-03). · serves ENG-FR-02
-- [ ] **T07** `value.py` + unit tests (ENG-AT-04). · serves ENG-FR-03
+- [x] **T05** `timemodel.py` + unit tests (ENG-AT-02). · serves ENG-FR-01
+- [x] **T06** `costs.py` + unit tests on hand-computed cases (ENG-AT-03). · serves ENG-FR-02
+- [x] **T07** `value.py` + unit tests (ENG-AT-04). · serves ENG-FR-03
 
 ##### Validator (built before the solver, so every plan is checked from the start)
-- [ ] **T08** `validator/validate.py` with V-01…V-13, plus one hand-made broken plan per check (ENG-AT-05). · serves ENG-FR-07, 08
+- [x] **T08** `validator/validate.py` with V-01…V-13, plus one hand-made broken plan per check (ENG-AT-05). · serves ENG-FR-07, 08
 
 ##### Solver
-- [ ] **T09** `prefilter.py` with lock-impossible handling. · serves ENG-FR-04
-- [ ] **T10** `stage1.py` with the three objective modes and cuts; test on 3 trips that the selection respects budget, time and count. · serves ENG-FR-04
-- [ ] **T11** `stage2.py` routing with windows, closures, count, lunch, fixed slots and drop penalties; test that a routed plan passes V-06…V-11. · serves ENG-FR-04
-- [ ] **T12** `engine.py`: hotel loop, feedback loop, exact costing and repair, validator gate, `min_budget()`, infeasible reasons, near-misses (A5). · serves ENG-FR-04, 06, 07
-- [ ] **T13** `cli.py plan` prints a readable plan or the infeasible message. · serves ENG-FR-11
+- [x] **T09** `prefilter.py` with lock-impossible handling. · serves ENG-FR-04
+- [x] **T10** `stage1.py` with the three objective modes and cuts; test on 3 trips that the selection respects budget, time and count. · serves ENG-FR-04
+- [x] **T11** `stage2.py` routing with windows, closures, count, lunch, fixed slots and drop penalties; test that a routed plan passes V-06…V-11. · serves ENG-FR-04
+- [x] **T12** `engine.py`: hotel loop, feedback loop, exact costing and repair, validator gate, `min_budget()`, infeasible reasons, near-misses (A5). · serves ENG-FR-04, 06, 07
+- [x] **T13** `cli.py plan` prints a readable plan or the infeasible message. · serves ENG-FR-11
 
 ##### Test trips
-- [ ] **T14** `eval/make_test_trips.py` generates 30 trips meeting 002 §12. It calibrates tight, medium and generous budgets from `min_budget()` and writes `eval/test_trips.json`. Dates fall between Dec 2026 and Mar 2027. · serves ENG-FR-12
-- [ ] **T15** `cli.py batch`: run all trips, print a summary table (status, cost, value, solve ms, validator result). · Check: ENG-AT-01 · serves ENG-FR-11
+- [x] **T14** `eval/make_test_trips.py` generates 30 trips meeting 002 §12. It calibrates tight, medium and generous budgets from `min_budget()` and writes `eval/test_trips.json`. Dates fall between Dec 2026 and Mar 2027. · serves ENG-FR-12
+- [x] **T15** `cli.py batch`: run all trips, print a summary table (status, cost, value, solve ms, validator result). · Check: ENG-AT-01 · serves ENG-FR-11
 
 ##### Variants and trade-offs
-- [ ] **T16** `variants.py`: Experience → Balanced → Saver, κ_h term, difference rule, dropped list. · Check: VAR-AT-01, VAR-AT-02
-- [ ] **T17** `tradeoffs.py` + `cli.py tradeoffs`. · Check: VAR-AT-04
+- [x] **T16** `variants.py`: Experience → Balanced → Saver, κ_h term, difference rule, dropped list. · Check: VAR-AT-01, VAR-AT-02
+- [x] **T17** `tradeoffs.py` + `cli.py tradeoffs`. · Check: VAR-AT-04
 
 ##### Verify
-- [ ] **T18** Repeatability (ENG-AT-06), min-budget round trip (ENG-AT-07), config change (ENG-AT-09).
-- [ ] **T19** Timing: single plan p95 ≤ 2.5 s (ENG-AT-08) and all variants p95 ≤ 5 s (VAR-AT-03). If over, tune time limits in config only, record the chosen values and their measured effect on value, and re-run.
-- [ ] **T20** Update Part D for every ENG-* and VAR-* test, mark 002 Done, and commit.
+- [x] **T18** Repeatability (ENG-AT-06), min-budget round trip (ENG-AT-07), config change (ENG-AT-09).
+- [x] **T19** Timing: single plan p95 ≤ 2.5 s (ENG-AT-08) and all variants p95 ≤ 5 s (VAR-AT-03). If over, tune time limits in config only, record the chosen values and their measured effect on value, and re-run.
+- [x] **T20** Update Part D for every ENG-* and VAR-* test, mark 002 Done, and commit.
 
 ### Features 003–009
 
@@ -1500,18 +1500,18 @@ Update this table when a feature's tasks are written (fill **Tasks**) and when i
 | FR-005 | Preferences (hours, interests, pace, comfort, modes, crowds) | 005 | | | | Planned |
 | FR-006 | Free-text preferences parsed and confirmed | 007 | | | | Planned |
 | FR-007 | Form pre-filled from saved profile | 005, 006 | | | | Planned |
-| FR-010 | Complete plan produced | 002 | ENG-FR-02–05 | | ENG-AT-01 | Planned |
-| FR-011 | Hard constraints respected | 002 | ENG-FR-01, 04, 07, 08 | | ENG-AT-01, 05 | Planned |
-| FR-012 | Infeasible answer with minimum budget | 002 | ENG-FR-06 | | ENG-AT-07 | Planned |
-| FR-013 | Prices labelled as estimates; breakdown sums exactly | 002, 006 | ENG-FR-02 | | ENG-AT-03 | Planned |
-| FR-014 | Itinerary entries with times, fees and legs | 002 | ENG-FR-01, 05 | | ENG-AT-01, 02 | Planned |
-| FR-015 | Contingency shown | 002, 006 | ENG-FR-02 | | ENG-AT-03 | Planned |
-| FR-020 | Saver / Balanced / Experience variants | 002 (merged from 003) | | | | Planned |
-| FR-021 | Difference rule | 002 (merged from 003) | | | | Planned |
+| FR-010 | Complete plan produced | 002 | ENG-FR-02–05 | 002 T02–T15 | ENG-AT-01 | Pass |
+| FR-011 | Hard constraints respected | 002 | ENG-FR-01, 04, 07, 08 | 002 T05, T08–T12 | ENG-AT-01, 05 | Pass |
+| FR-012 | Infeasible answer with minimum budget | 002 | ENG-FR-06 | 002 T12 | ENG-AT-07 | Pass |
+| FR-013 | Prices labelled as estimates; breakdown sums exactly | 002, 006 | ENG-FR-02 | 002 T06, T12 | ENG-AT-03 | Pass (002 part; display in 006) |
+| FR-014 | Itinerary entries with times, fees and legs | 002 | ENG-FR-01, 05 | 002 T05, T11, T12 | ENG-AT-01, 02 | Pass |
+| FR-015 | Contingency shown | 002, 006 | ENG-FR-02 | 002 T06, T12 | ENG-AT-03 | Pass (002 part; display in 006) |
+| FR-020 | Saver / Balanced / Experience variants | 002 (merged from 003) | A2 | 002 T16 | VAR-AT-01, 02 | Pass |
+| FR-021 | Difference rule | 002 (merged from 003) | A3 | 002 T16 | VAR-AT-01 | Pass |
 | FR-022 | Side-by-side comparison | 006 | | | | Planned |
-| FR-023 | Budget sensitivity ±10/20% | 002 (merged from 003) | | | | Planned |
-| FR-024 | Near-misses with reasons | 002 (merged from 003) | | | | Planned |
-| FR-025 | Trade-offs computed by the engine only | 002 (merged from 003) | | | | Planned |
+| FR-023 | Budget sensitivity ±10/20% | 002 (merged from 003) | A4 | 002 T17 | VAR-AT-04 | Pass |
+| FR-024 | Near-misses with reasons | 002 (merged from 003) | A5 | 002 T12 | ENG-AT-01 | Pass |
+| FR-025 | Trade-offs computed by the engine only | 002 (merged from 003) | A4 | 002 T17 | VAR-AT-04 | Pass |
 | FR-030 | Plan explanations grounded in plan data | 007 | | | | Planned |
 | FR-031 | Chat mapped to fixed action set | 007 | | | | Planned |
 | FR-032 | Chat actions re-solve and create versions | 007, 004 | | | | Planned |
@@ -1540,15 +1540,15 @@ Update this table when a feature's tasks are written (fill **Tasks**) and when i
 
 | Req | Summary | Feature spec | Feature reqs | Tasks | Tests | Status |
 |---|---|---|---|---|---|---|
-| NFR-001 | All variants ≤ 5 s p95 | 002 (merged from 003), 009 | | | ENG-AT-08 (partial) | Planned |
+| NFR-001 | All variants ≤ 5 s p95 | 002 (merged from 003), 009 | A7 | 002 T19 | ENG-AT-08, VAR-AT-03 | In progress (laptop Pass: p95 1.5 s; live system in 009) |
 | NFR-002 | Chat action ≤ 8 s p95 | 007, 009 | | | | Planned |
 | NFR-003 | Security | 004, 009 | | | | Planned |
 | NFR-004 | Free tiers only | 009 | | | | Planned |
 | NFR-005 | LLM call limits | 007 | | | | Planned |
 | NFR-006 | Browser support | 006 | | | | Planned |
 | NFR-007 | Accessibility basics | 006 | | | | Planned |
-| NFR-008 | Repeatable output | 002 | ENG-FR-10 | | ENG-AT-06 | Planned |
-| NFR-009 | One config file | 002 | ENG-FR-09 | | ENG-AT-09 | Planned |
+| NFR-008 | Repeatable output | 002 | ENG-FR-10 | 002 T10–T12, T18 | ENG-AT-06 | Pass |
+| NFR-009 | One config file | 002 | ENG-FR-09 | 002 T02, T18 | ENG-AT-09 | Pass |
 | NFR-010 | Validated dataset | 001 | DATA-FR-10 | 001 T02–T05, T20 | DATA-AT-01, 02 | Pass |
 
 ### Feature 001 acceptance results
@@ -1562,13 +1562,34 @@ Update this table when a feature's tasks are written (fill **Tasks**) and when i
 | DATA-AT-05 | Awaiting manual check | — | `data/spot_check.md` (sample `report --sample 20 10 --seed 7`) |
 | DATA-AT-06 | Pass | 2026-10-25 | `python -m datatools.report`: per-city counts and approximation shares |
 
+### Feature 002 acceptance results
+
+Measured 2026-10-25 on the developer laptop (Windows 11, Python 3.11.9, OR-Tools 9.15.6755) over `eval/test_trips.json`
+(30 trips: 26 `ok`, 3 `budget`, 1 `lock_impossible`). `python -m pytest backend/tests` — 43 passed.
+
+| Test | Result | Evidence |
+|---|---|---|
+| ENG-AT-01 | Pass | `python -m tripwise.cli batch ../eval/test_trips.json`: 30 of 30 match `expect`; every `ok` plan passes the validator |
+| ENG-AT-02 | Pass | `backend/tests/test_timemodel.py` (daytime, overnight, flight, < 60 min window, lunch at the 6 h boundary) |
+| ENG-AT-03 | Pass | `backend/tests/test_costs.py` (1, 3, 6 people; auto and cab), to the rupee |
+| ENG-AT-04 | Pass | `backend/tests/test_value.py`, to 0.01 |
+| ENG-AT-05 | Pass | `backend/tests/test_validator.py`: one broken plan per check V-01–V-13, each caught by exactly that check |
+| ENG-AT-06 | Pass | Every `ok` trip run twice: identical output apart from `solve_ms` |
+| ENG-AT-07 | Pass | T25–T27 re-run at their `min_budget_total` (₹78,000, ₹1,26,500, ₹11,000) return `ok` |
+| ENG-AT-08 | Pass | Single plan p95 568 ms, max 707 ms (limit 2,500 ms) |
+| ENG-AT-09 | Pass | κ_t 15 → 40 and μ 0.05 → 0.5 in a config copy change the plan with no code edit |
+| VAR-AT-01 | Pass | 26 `ok` trips: 1–3 variants each, every kept pair distinct, every plan validated |
+| VAR-AT-02 | Pass | cost(Saver) ≤ cost(Balanced) ≤ cost(Experience) and V(Saver) ≥ 0.7 V* on every trip |
+| VAR-AT-03 | Pass | All variants p95 1,531 ms, max 1,820 ms (limit 5,000 ms) |
+| VAR-AT-04 | Pass | Trade-offs on 5 trips: every row equals a fresh engine run at that budget |
+
 ### Feature status
 
 | Feature | Name | Spec | Plan | Tasks | Acceptance |
 |---|---|---|---|---|---|
 | B | Product | Approved | — | — | — |
 | 001 | City data | Approved | Approved | Approved | In progress: DATA-AT-01–04, 06 Pass; DATA-AT-05 awaiting manual check |
-| 002 | Optimization engine, variants and trade-offs | Approved | Approved | Approved | — |
+| 002 | Optimization engine, variants and trade-offs | Approved | Approved | Approved | Done: ENG-AT-01–09 and VAR-AT-01–04 Pass |
 | 003 | Variants and trade-offs | Merged into 002 | Merged into 002 | Merged into 002 | Merged into 002 |
 | 004 | Accounts and saved data | — | — | — | — |
 | 005 | Trip planning API | — | — | — | — |
@@ -1640,3 +1661,14 @@ Update this table when a feature's tasks are written (fill **Tasks**) and when i
 | 2026-10-25 | C 002 Spec §8.2 (T01) | Minimum budget is the cheapest exactly costed plan (routed legs) over options, hotels and single attractions or the locked set; at that budget the engine returns ok | Stage 1's chained travel estimate is below the exact cost of a one-stop day, so the stage 1 minimum would fail ENG-AT-07 |
 | 2026-10-25 | C 002 Spec §10 (T01) | Config gains variants (κ_h, tier values, λ, ρ, difference share) and tradeoff_factors | Addendum tunables belong in config (NFR-009) |
 | 2026-10-25 | C 002 (T01 note) | Feature 001's visit_approx, hours_approx and fee_approx flags and the place types are not used by the engine; it uses the curated values as given | They document provenance only |
+| 2026-10-25 | C 002 Plan §3 (T11) | Lunch is not an OR-Tools break interval: the routing span bound U_d (which already excludes lunch) keeps the hour free and the exact forward pass places lunch | Break intervals made each routing call 25–50× slower (≈1 s vs 0.02–0.1 s) and hit the time cap, which broke repeatability |
+| 2026-10-25 | C 002 §10 (T11, T19) | `routing_metaheuristic: GUIDED_LOCAL_SEARCH`, `routing_solution_limit: 50` (was 200), `routing_time_limit_s: 1.0` kept as a safety cap; transit times registered as matrices | 50 solutions gave the same placements as 200 in 0.1 s; the cap is not reached on the test trips (ENG-AT-06 passes) |
+| 2026-10-25 | C 002 §9 V-13 (T08) | V-13 accepts the tier above the request for Experience and the tier below for Saver | Addendum A2 widens those variants' candidate hotels |
+| 2026-10-25 | C 002 addendum A2 (T16) | Ordering fallbacks: Saver is re-run with a raised value target (up to `saver_retries` = 2) when its routed V < ρ V*, else it takes the Balanced plan; Balanced costing more than Experience takes the Experience plan; Saver costing more than Balanced takes the Balanced plan. A variant that took another's plan is dropped as "same as …" | Stage 1 uses estimated travel, so routed values can fall below the target; VAR-AT-02 requires the ordering |
+| 2026-10-25 | C 002 §8 (T04, T12) | Output details: `Day.window` is null on days too short for activities; lunch is reported on every day that gets lunch, with or without stops; legs carry `to` as well as `from`; `Infeasible` has `attraction_id` for `lock_impossible`; errors use `{status: error, reason: internal_validation_failed, failures}` | Needed for a complete, checkable schema |
+| 2026-10-25 | C 002 §8.2 (T12) | `lock_over_budget` when the cheapest plan with the locks exceeds the usable budget but the cheapest plan without them fits; otherwise `budget`. If budget repair empties a plan, the engine returns the cheapest exactly costed plan when it fits | Separates the two reasons; keeps ENG-AT-07's round trip |
+| 2026-10-25 | C 002 §7 (T09, T10) | The pre-filter uses each day's widest window over the transport options; stage 1 requires ≥ 1 activity in the first selection (the feedback re-solves do not) | Never drop an attraction some option could schedule; "budget" means no plan with an activity fits |
+| 2026-10-25 | C 002 Plan §1 (T08) | The validator reads `config.yaml` itself and imports only `tripwise.data` and `tripwise.models` | ENG-FR-08 independence |
+| 2026-10-25 | C 002 §12 (T14) | Test-trip budgets: tight = 1.08 × min, medium = 1.6 × min, generous = 2.6 × min, infeasible = 0.8 × min, rounded to ₹500; locks are schedulable attractions just below the top six by value; excludes are the top ones; T28 locks the Saturday-only Arpora market on a Monday–Tuesday trip | Reproducible calibration from `min_budget` (`eval/make_test_trips.py`) |
+| 2026-10-25 | C 002 (T19 result) | No tuning needed: single plan p95 568 ms (≤ 2.5 s), all variants p95 1,531 ms (≤ 5 s) with cpsat 0.4 s, routing 50 solutions / 1.0 s cap | Measured on the developer laptop |
+| 2026-10-25 | C 002 (T16 observation) | On most trips Balanced equals Experience and is dropped (λ = 0.5 rarely outweighs the value of extra activities); κ_h = 10 rarely buys a higher tier because one value point is worth ₹1,000 in the objective | Noted for tuning in Feature 008 evaluation; the spec values are kept |
