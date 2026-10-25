@@ -12,7 +12,9 @@ Inputs:
                                              from an official booking page: "read by user from <url>, <date>")
 - data/raw/attractions/fee_secondary.csv     secondary-source fees: city_id, place, fee, url, fetched_on, page_date (the
                                              published, updated or reviewed date the page shows; empty if none), extract
-- data/raw/attractions/fee_revisions.csv     known fee revisions: city_id, place, effective_on, url, fetched_on, extract
+- data/raw/attractions/fee_revisions.csv     known fee revisions: city_id, place, effective_on, fee, url, published_on,
+                                             fetched_on, extract (the revision's source is also a dated fee source)
+- data/raw/attractions/hours_secondary.csv   secondary-source hours, used when the official page gives days but no hours
 - data/raw/attractions/activities.csv        hand-curated adventure activities (selection candidate "activity:<place>"):
                                              location, hours and price read from an operator or state tourism page
 - data/raw/wiki/<CITY>/pageviews.json        12-month pageviews
@@ -90,8 +92,10 @@ def secondary_fee(rows: list[dict], revision: dict | None = None) -> tuple[int, 
 
     With a known fee revision only sources whose page_date is on or after its effective date count;
     an undated source does not count (001 Spec 5.5)."""
-    if revision:
-        rows = [r for r in rows if r["page_date"] and r["page_date"] >= revision["effective_on"]]
+    if revision:   # the revision's own source is a dated source for the fee it quotes
+        rows = [r for r in rows if r["page_date"] and r["page_date"] >= revision["effective_on"]] + [
+            {"url": revision["url"], "fee": revision["fee"], "fetched_on": revision["fetched_on"],
+             "page_date": revision["published_on"]}]
     by_site = {urlparse(r["url"]).netloc.removeprefix("www."): r for r in rows}
     if len(by_site) < MIN_SECONDARY_FEES:
         return None
@@ -114,6 +118,32 @@ def check_selection(city: str, sel: list[dict]) -> None:
             raise SystemExit(f"{city}_selection.csv:{line}:wiki_title: leading or trailing whitespace {t!r}")
 
 
+def secondary_hours(rows: list[dict]) -> tuple[str, str, str, str] | None:
+    """(open, close, source text, latest fetch date): median opening and closing times of >= 2 sources on
+    different sites, for an official page that gives the days but no hours (001 Spec 5.5). A closing time at
+    or before the opening time is past midnight; the median close is capped at the last minute of the day."""
+    by_site = {urlparse(r["url"]).netloc.removeprefix("www."): r for r in rows}
+    def mins(t: str) -> int:
+        h, m = t.split(":")
+        return int(h) * 60 + int(m)
+    opens = [mins(r["open_time"]) for r in by_site.values() if r["open_time"]]
+    closes = [mins(r["close_time"]) for r in by_site.values() if r["close_time"]]
+    if len(opens) < MIN_SECONDARY_HOURS or len(closes) < MIN_SECONDARY_HOURS:
+        return None
+    o = int(math.floor(statistics.median(opens) + 0.5))
+    c = int(math.floor(statistics.median([x + 1440 if x <= o else x for x in closes]) + 0.5))
+    c = min(c, LAST_MINUTE)
+    text = "; ".join(f"{r['url']} {r['open_time'] or '-'}-{r['close_time'] or '-'}" for r in by_site.values())
+    return (f"{o // 60:02d}:{o % 60:02d}", f"{c // 60:02d}:{c % 60:02d}",
+            f"hours: median of secondary sources ({text}; data/raw/attractions/hours_secondary.csv)"
+            + (", closing capped at 23:59" if c == LAST_MINUTE else ""),
+            latest(*(r["fetched_on"] for r in by_site.values())))
+
+
+LAST_MINUTE = 23 * 60 + 59
+MIN_SECONDARY_HOURS = 2
+
+
 def build(city: str) -> list[list]:
     draft = {r["candidate"]: r for r in read_csv(A / f"{city}_draft.csv")}
     seed = json.loads((RAW / "seed" / f"{city}.json").read_text(encoding="utf-8"))
@@ -130,6 +160,10 @@ def build(city: str) -> list[list]:
         if r["city_id"] == city:
             secondary.setdefault(r["place"], []).append(r)
     revisions = {r["place"]: r for r in read_csv(A / "fee_revisions.csv") if r["city_id"] == city}
+    sec_hours: dict[str, list[dict]] = {}
+    for r in read_csv(A / "hours_secondary.csv"):
+        if r["city_id"] == city:
+            sec_hours.setdefault(r["place"], []).append(r)
     sel = read_csv(A / f"{city}_selection.csv")
     check_selection(city, sel)
     chosen =[{**draft[s["candidate"]], **{k: v for k, v in s.items() if v != ""}} for s in sel]
@@ -158,6 +192,7 @@ def build(city: str) -> list[list]:
         d = rules.PLACE_TYPES[ptype]
         dates, src, todo = [block_date.get(c["candidate"], seed_date)], [], []
         open_t, close_t, closed, fee, hours_approx, fee_approx = d["open"], d["close"], d["closed"], None, True, False
+        sh_src = None
         act = activities.get(c["candidate"].removeprefix(ACTIVITY_PREFIX)) if c["candidate"].startswith(ACTIVITY_PREFIX) else None
         if act:
             dates = [act["fetched_on"]]
@@ -187,10 +222,16 @@ def build(city: str) -> list[list]:
                 closed = [int(x) for x in o["closed_weekdays"].split(";") if x] if o["closed_weekdays"] else []
             elif o["closed_weekdays"]:
                 closed = [int(x) for x in o["closed_weekdays"].split(";")]
+                if sh := secondary_hours(sec_hours.get(c["name"], [])):
+                    open_t, close_t, sh_text, sh_date = sh
+                    sh_src = sh_text
+                    dates.append(sh_date)
             if o["entry_fee"]:
                 fee = int(o["entry_fee"])
             src.append(f"official: {o['url']} ({o['extract']})")
-        if hours_approx:
+        if sh_src:
+            src.append(sh_src)
+        elif hours_approx:
             src.append(f"hours: {ptype} default (001 Spec 5.5)")
         if fee is None and (sec := secondary_fee(secondary.get(c["name"], []), revisions.get(c["name"]))):
             fee, text, sec_date = sec
