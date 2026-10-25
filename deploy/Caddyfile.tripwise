@@ -1,0 +1,7 @@
+# Added inside the existing site block of the Project 2 Caddyfile (~/Project-2/deploy/Caddyfile on the VM),
+# right after the `{$API_DOMAIN} {` line. Caddy (Docker, network audiobook_default) already holds the
+# Let's Encrypt certificate for the VM's DNS name; Tripwise is served under the /tripwise path prefix.
+	# Tripwise API (UMC301 Project 4): systemd tripwise-api on the Docker network gateway, prefix stripped.
+	handle_path /tripwise/* {
+		reverse_proxy 172.18.0.1:8100
+	}

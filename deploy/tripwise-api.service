@@ -1,0 +1,22 @@
+[Unit]
+Description=Tripwise API (FastAPI + OR-Tools), behind the Project 2 Caddy on /tripwise
+After=network-online.target docker.service
+Wants=network-online.target
+
+[Service]
+User=tripwise
+Group=tripwise
+WorkingDirectory=/opt/tripwise/backend
+EnvironmentFile=/etc/tripwise.env
+# Bound to the audiobook Docker network gateway only: Caddy (in Docker) reaches it, the internet does not.
+ExecStart=/opt/tripwise/backend/.venv/bin/uvicorn api.main:app --host 172.18.0.1 --port 8100 --workers 1 --proxy-headers --forwarded-allow-ips 172.18.0.0/16
+Restart=always
+RestartSec=5
+MemoryMax=450M
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target
