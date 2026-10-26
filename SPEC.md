@@ -1713,9 +1713,16 @@ The validator gains checks: V-14 (pins honoured), V-15 (day_hours windows) and V
 - **AI-FR-03 Chat.** `POST /trips/{id}/chat {message}`:
   - **Call 1** uses Groq tool calling with the fixed tools: `lock_activity`, `exclude_activity`, `set_budget`, `set_day_hours`, `set_all_hours`, `set_hotel_tier`, `set_transport`, `set_pace`, `set_interest`, `move_activity`, `regenerate`, `explain`, `unsupported`.
   - Tool arguments are validated: names are resolved to attraction ids with fuzzy matching against the trip's city, and an ambiguous name gets a clarifying reply.
+  - Call 1's context also lists the city's other activities (names only, those not in the plan and not kept out), so a
+    request about a group or kind of place ("only one church", "no masjids") becomes one `exclude_activity` (or
+    `lock_activity`) call per matching activity, in the plan and among the others the planner could add instead. A
+    message that asks for several things gets a tool call for each part.
   - Each change tool maps to a 004 replan change set (`move_activity` → `pins`; hours → `day_hours`/prefs; tier → prefs.comfort; and so on).
   - The server calls replan, stores the new version, and builds a diff: added and removed activities, hotel and transport changes, Δcost and Δvalue.
-  - **Call 2** turns the diff into a reply, using the same grounding check with a template fallback.
+  - **Call 2** turns the diff into a reply, using the same grounding check with a template fallback. Its facts include
+    the applied changes (activities newly kept out, kept in or moved, and settings changed). The reply starts from
+    what was applied and never says the request was done in full when the applied changes do not cover it; it says
+    plainly which part was not changed.
   - At most 2 Groq calls per message. (FR-031, FR-032, NFR-005)
   - **Deadline** (NFR-002): each message has `chat.deadline_s` (7.0 s) from when the handler starts. Call 1, with any retry,
     gets at most `groq.timeout_tools_s` (4.0 s). Call 2 gets the time left before the deadline minus 0.5 s; if under
@@ -1763,6 +1770,7 @@ The validator gains checks: V-14 (pins honoured), V-15 (day_hours windows) and V
 | `backend/api/routers/ai.py` + chat POST | Endpoints, rate limit (in-memory per process is fine) |
 | `frontend/src/components/ChatPanel.tsx`, `DescribeTrip.tsx`, `Explanation.tsx` | UI |
 | `eval/chat_intents.json`, `eval/run_chat_intents.py` | AI-AT-03 |
+| `eval/chat_regression.json`, `eval/run_chat_regression.py` | Regression cases from real owner failures (not part of AI-AT-03; never tuned on together) |
 
 Config keys: `groq_model`, `groq_timeout_s`, `groq.timeout_tools_s`, `chat.deadline_s`, `chat_rate_per_hour`, temperatures. Env: `GROQ_API_KEY`.
 
@@ -2243,3 +2251,4 @@ Real Groq `openai/gpt-oss-120b` (Developer tier) unless noted; backend suite 101
 | 2026-10-26 | D Traceability (008 T05, T06) | Backend redeployed before the live chat timing so it measured the final code. Live chat p95 12.2 s and 13.0 s (two runs), each from one slow Groq response: NFR-002 recorded as not met live, DEP-AT-02 passes on its "gap recorded with the cause" clause. NFR-004 recorded as not met: the Groq account moved to the Developer tier; Part B is unchanged pending the owner's decision | Report results as measured; a Part B change is the owner's call |
 | 2026-10-26 | C 007 Spec AI-FR-03, AI-FR-06, Plan | Per-message chat deadline: `chat.deadline_s` 7.0 s; call 1 at most `groq.timeout_tools_s` 4.0 s (timeout → "assistant unavailable", no change); call 2 gets the remaining deadline minus 0.5 s, skipped for the template reply if under 1 s remains | Owner decision: live chat p95 was 12.2 s and 13.0 s because one slow Groq response could take the full 10 s timeout (NFR-002) |
 | 2026-10-26 | B NFR-004 | "Only free tiers" becomes free tiers except Groq on the Developer (pay-as-you-go) tier from 2026-10-26, total cost under ₹50 | Owner decision: evaluation throughput and demo reliability |
+| 2026-10-26 | C 007 Spec AI-FR-03, Plan | Call 1 context lists the city's other activities; group requests become one tool call per matching activity; call 2 facts include the applied changes and the reply never claims more than was applied; regression set `eval/chat_regression.json` from real failures | Owner test on the live site: "keep one church" and "no masjid" each excluded one activity, the engine refilled with another church or masjid, and the replies said the request was done (0/6 regression runs met the request) |
