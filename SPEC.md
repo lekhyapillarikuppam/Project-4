@@ -1772,7 +1772,7 @@ Config keys: `groq_model`, `groq_timeout_s`, `chat_rate_per_hour`, temperatures.
 - [x] **T06** ChatPanel UI with history, version chip and undo.
 - [x] **T07** Write `eval/chat_intents.json` (50) and run it. · Check: AI-AT-03
 - [x] **T08** Failure modes and rate limit. · Check: AI-AT-05
-- [ ] **T09** Timing. · Check: AI-AT-07. Update Part D; mark 007 Done; commit.
+- [x] **T09** Timing. · Check: AI-AT-07. Update Part D; mark 007 Done; commit.
 
 ### Feature 008 — Evaluation and deployment (009 merged in)
 
@@ -1854,7 +1854,7 @@ Update this table when a feature's tasks are written (fill **Tasks**) and when i
 | FR-003 | Group size 1–6 | 004 (merged from 005) | API-FR-01–13 | 004 T03–T10 | API-AT-03 | Pass |
 | FR-004 | Total or per-person budget, bounds | 004 (merged from 005) | API-FR-01–13 | 004 T03–T10 | API-AT-03 | Pass |
 | FR-005 | Preferences (hours, interests, pace, comfort, modes, crowds) | 004 (merged from 005) | API-FR-01–13 | 004 T03–T10 | API-AT-03 | Pass |
-| FR-006 | Free-text preferences parsed and confirmed | 007 | | | | Planned |
+| FR-006 | Free-text preferences parsed and confirmed | 007 | AI-FR-01, 08 | 007 T02, T03 | AI-AT-01 | Pass |
 | FR-007 | Form pre-filled from saved profile | 004 (merged from 005), 006 | API-FR-03 | 004 T06 | API profile tests | Pass |
 | FR-010 | Complete plan produced | 002 | ENG-FR-02–05, 13 | 002 T02–T15; F6 fill step | ENG-AT-01; `tests/test_fill.py`; `eval/RESULTS.md` | Pass |
 | FR-011 | Hard constraints respected | 002 | ENG-FR-01, 04, 07, 08 | 002 T05, T08–T12 | ENG-AT-01, 05 | Pass |
@@ -1868,12 +1868,12 @@ Update this table when a feature's tasks are written (fill **Tasks**) and when i
 | FR-023 | Budget sensitivity ±10/20% | 002 (merged from 003) | A4 | 002 T17 | VAR-AT-04 | Pass |
 | FR-024 | Near-misses with reasons | 002 (merged from 003) | A5 | 002 T12 | ENG-AT-01 | Pass |
 | FR-025 | Trade-offs computed by the engine only | 002 (merged from 003) | A4 | 002 T17 | VAR-AT-04 | Pass |
-| FR-030 | Plan explanations grounded in plan data | 007 | | | | Planned |
-| FR-031 | Chat mapped to fixed action set | 007 | | | | Planned |
-| FR-032 | Chat actions re-solve and create versions | 007, 004 | | | | Planned |
-| FR-033 | Unsupported requests handled | 007 | | | | Planned |
-| FR-034 | "Why" answered from engine data | 007 | | | | Planned |
-| FR-035 | Works without the LLM | 007 | | | | Planned |
+| FR-030 | Plan explanations grounded in plan data | 007 | AI-FR-02 | 007 T04 | AI-AT-02 | Pass |
+| FR-031 | Chat mapped to fixed action set | 007 | AI-FR-03, 08 | 007 T05–T07 | AI-AT-03, 04 | Pass |
+| FR-032 | Chat actions re-solve and create versions | 007, 004 | AI-FR-03, API-FR-08 | 007 T01, T05 | AI-AT-04, 06 | Pass |
+| FR-033 | Unsupported requests handled | 007 | AI-FR-04 | 007 T05, T07 | AI-AT-03; `tests/api/test_api_chat.py` | Pass |
+| FR-034 | "Why" answered from engine data | 007 | AI-FR-05 | 007 T05 | AI-AT-03; `tests/api/test_api_chat.py` | Pass |
+| FR-035 | Works without the LLM | 007 | AI-FR-06 | 007 T08 | AI-AT-05 | Pass |
 | FR-040 | Sign up and log in | 004 | API-FR-01–13 | 004 T03–T10 | API-AT-01 | Pass |
 | FR-041 | Log out; 7-day sessions | 004 | API-FR-01–13 | 004 T03–T10 | API-AT-01 | Pass |
 | FR-042 | Preference profile | 004 | API-FR-01–13 | 004 T03–T10 | API profile tests | Pass |
@@ -1897,10 +1897,10 @@ Update this table when a feature's tasks are written (fill **Tasks**) and when i
 | Req | Summary | Feature spec | Feature reqs | Tasks | Tests | Status |
 |---|---|---|---|---|---|---|
 | NFR-001 | All variants ≤ 5 s p95 | 002 (merged from 003), 008 (merged from 009) | A7 | 002 T19 | ENG-AT-08, VAR-AT-03 | In progress (laptop Pass: p95 1.5 s; live system in 009) |
-| NFR-002 | Chat action ≤ 8 s p95 | 007, 008 (merged from 009) | | | | Planned |
+| NFR-002 | Chat action ≤ 8 s p95 | 007, 008 (merged from 009) | AI-FR-03, DEP-FR-03 | 007 T09 | AI-AT-07 | In progress (local Pass: p95 7.0 s; live in 008 T05) |
 | NFR-003 | Security | 004, 008 (merged from 009) | API-FR-01, 02, 11, 12 | 004 T03, T05 | API-AT-01, 02, 07 | In progress (API Pass; HTTPS in 008) |
 | NFR-004 | Free tiers only | 008 (merged from 009) | | | | Planned |
-| NFR-005 | LLM call limits | 007 | | | | Planned |
+| NFR-005 | LLM call limits | 007 | AI-FR-02, 03, 07 | 007 T04, T05, T08 | AI-AT-02, 04; `tests/api/test_api_ai_failure.py` (rate limit) | Pass |
 | NFR-006 | Browser support | 006 | UI-FR-08 | 006 T09 | UI-AT-07 (Chromium) | In progress (Chromium Pass; other browsers in 008) |
 | NFR-007 | Accessibility basics | 006 | UI-FR-08 | 006 T08 | UI-AT-08, axe scan | Pass |
 | NFR-008 | Repeatable output | 002 | ENG-FR-10 | 002 T10–T12, T18 | ENG-AT-06 | Pass |
@@ -1965,14 +1965,14 @@ Measured 2026-10-25 on the developer laptop (Windows 11, Python 3.11.9, OR-Tools
 | UI-FR-07 | Estimates | 006 | FR-013, FR-062 | Pass |
 | UI-FR-08 | Responsive and accessible | 006 | FR-053, NFR-007 | Pass |
 | UI-FR-09 | States | 006 | FR-010, NFR-001 | Pass |
-| AI-FR-01 | Preference parsing | 007 | FR-006 | Planned |
-| AI-FR-02 | Explanations | 007 | FR-030, NFR-005 | Planned |
-| AI-FR-03 | Chat | 007 | FR-031, FR-032, NFR-005 | Planned |
-| AI-FR-04 | Unsupported | 007 | FR-033 | Planned |
-| AI-FR-05 | "Why" | 007 | FR-034 | Planned |
-| AI-FR-06 | Failure | 007 | FR-035 | Planned |
-| AI-FR-07 | Model and limits | 007 | NFR-004, NFR-005 | Planned |
-| AI-FR-08 | UI | 007 | FR-006, FR-031 | Planned |
+| AI-FR-01 | Preference parsing | 007 | FR-006 | Pass |
+| AI-FR-02 | Explanations | 007 | FR-030, NFR-005 | Pass |
+| AI-FR-03 | Chat | 007 | FR-031, FR-032, NFR-005 | Pass |
+| AI-FR-04 | Unsupported | 007 | FR-033 | Pass |
+| AI-FR-05 | "Why" | 007 | FR-034 | Pass |
+| AI-FR-06 | Failure | 007 | FR-035 | Pass |
+| AI-FR-07 | Model and limits | 007 | NFR-004, NFR-005 | Pass |
+| AI-FR-08 | UI | 007 | FR-006, FR-031 | Pass |
 | EVAL-FR-01 | Baselines | 008 | FR-070 | Planned |
 | EVAL-FR-02 | Metrics per planner: | 008 | FR-070 | Planned |
 | EVAL-FR-03 | Chat intent accuracy from AI-AT-03 | 008 | FR-071 | Planned |
@@ -2000,11 +2000,11 @@ Measured 2026-10-25 on the developer laptop (Windows 11, Python 3.11.9, OR-Tools
 | UI-AT-09 | Every price on screen | 006 | — | Pass |
 | AI-AT-01 | 10 free-text preference samples | 007 | `eval/run_parse_samples.py`, `eval/AI_AT_01.md` | Pass (10/10 valid, 10/10 sensible) |
 | AI-AT-02 | Explanations for 10 test trips | 007 | `eval/run_explanations.py`, `eval/AI_AT_02.md`, `tests/ai/test_grounding.py` | Pass (10/10 grounded, 0 shown ungrounded) |
-| AI-AT-03 | `eval/chat_intents.json`: 50 hand-written messages with expected tool and argume | 007 | — | Planned |
+| AI-AT-03 | `eval/chat_intents.json`: 50 hand-written messages with expected tool and argume | 007 | `eval/run_chat_intents.py`, `eval/AI_AT_03.md` | Pass (45/50 = 90%) |
 | AI-AT-04 | 10 chat changes end to end | 007 | `eval/run_chat_changes.py`, `eval/AI_AT_04.md`, `tests/api/test_api_chat.py` | Pass (10/10) |
 | AI-AT-05 | Groq key removed | 007 | `tests/api/test_api_ai_failure.py`, `frontend/tests/ai-ui-chat.spec.ts` | Pass |
-| AI-AT-06 | Engine extensions | 007 | — | Pass |
-| AI-AT-07 | Chat timing over 10 messages, local | 007 | — | Planned |
+| AI-AT-06 | Engine extensions | 007 | `tests/test_extensions.py`, `tests/api/test_api_extensions.py` | Pass |
+| AI-AT-07 | Chat timing over 10 messages, local | 007 | `eval/run_chat_changes.py` | Pass (p95 7.0 s) |
 | EVAL-AT-01 | `run_eval.py` | 008 | — | Planned |
 | EVAL-AT-02 | Re-run | 008 | — | Planned |
 | DEP-AT-01 | Live full flow | 008 | — | Planned |
@@ -2042,6 +2042,21 @@ Run 2026-10-25 with Playwright 1.64.0 (Chromium) against the local API (schema `
 | UI-AT-08 | Pass | Keyboard-only UI-AT-01 with a visible focus ring throughout |
 | UI-AT-09 | Pass | Every ₹ amount under an Estimated marker |
 
+### Feature 007 acceptance results
+
+Real Groq `openai/gpt-oss-120b` (Developer tier) unless noted; backend suite 101 passed on 2026-10-26 after the last
+007 change.
+
+| Test | Result | Date | Evidence |
+|---|---|---|---|
+| AI-AT-01 | Pass | 2026-10-26 | `eval/AI_AT_01.md`: 10/10 valid prefs, 10/10 sensible (manual review) |
+| AI-AT-02 | Pass | 2026-10-26 | `eval/AI_AT_02.md`: 10/10 grounded, none shown ungrounded |
+| AI-AT-03 | Pass | 2026-10-26 | `eval/AI_AT_03.md`: 45/50 = 90% (threshold 90%), fresh run of all 50; misses: 3 of 5 ambiguous names, 1 transport direction, 1 unsupported answered as explain |
+| AI-AT-04 | Pass | 2026-10-26 | `eval/run_chat_changes.py`: 10/10 new versions pass the validator, reply diff equals the version diff |
+| AI-AT-05 | Pass | 2026-10-26 | `tests/api/test_api_ai_failure.py` (no key: planning works, parse 503, explanations omitted with a notice, chat unavailable); `frontend/tests/ai-ui-chat.spec.ts` |
+| AI-AT-06 | Pass | 2026-10-26 | `tests/test_extensions.py`, `tests/api/test_api_extensions.py`: pins, day_hours, forced transport (V-14–16), `pin_impossible` |
+| AI-AT-07 | Pass | 2026-10-26 | Same run as AI-AT-04, API in-process on this laptop: p95 7.0 s, max 7.0 s, min 4.9 s (limit 8 s); each Groq call 1.0–1.5 s, the rest is re-planning |
+
 ### Feature status
 
 | Feature | Name | Spec | Plan | Tasks | Acceptance |
@@ -2053,7 +2068,7 @@ Run 2026-10-25 with Playwright 1.64.0 (Chromium) against the local API (schema `
 | 004 | Accounts, saved data and API | Approved | Approved | Approved | Done: API-AT-01–08 Pass |
 | 005 | Trip planning API | Merged into 004 | Merged into 004 | Merged into 004 | Merged into 004 |
 | 006 | Frontend | Approved | Approved | Approved | Done: UI-AT-01–09 Pass |
-| 007 | AI layer | Approved | Approved | Approved | — |
+| 007 | AI layer | Approved | Approved | Approved | Done: AI-AT-01–07 Pass |
 | 008 | Evaluation and deployment | Approved | — (tasks only) | Approved | — |
 | 009 | Deployment | Merged into 008 | Merged into 008 | Merged into 008 | Merged into 008 |
 
