@@ -17,7 +17,7 @@ local servers, real Groq). It signs up, plans Delhi to Jaipur (2 people, ₹50,0
 and finds the trip. Passed in 15 s. Screenshot: `frontend/test-shots/live-my-trips.png`. Re-run on the final deploy
 (after the Groq key rotation and the last 007 changes): passed in 16.7 s.
 
-## DEP-AT-02 — live timings: Pass (variants within NFR-001; chat over NFR-002 with the cause recorded)
+## DEP-AT-02 — live timings: Pass (variants within NFR-001; chat within NFR-002 after the chat deadline)
 
 `python eval/run_live.py` times each request from a laptop in India, so network, Caddy and the Neon write are
 included. Raw rows: `eval/out/live.json`.
@@ -36,11 +36,31 @@ trips give p95 0.68 s (T01–T10: 0.94 s), against 1.21 s (1.54 s) for the live 
 live, by 0.36 s on average. The VM has 2 vCPUs where the laptop has 8 cores (Ryzen 7 5800HS), and the live figure
 also includes the round trip and the database write. Both are well within 5 s.
 
-### Chat (NFR-002, p95 ≤ 8 s): over the limit, cause recorded
+### Chat (NFR-002, p95 ≤ 8 s): Pass with the per-message deadline
 
-`python eval/run_live.py --part chat`, run twice after the final redeploy (Groq Developer tier): one Delhi to Jaipur
-trip per run, Balanced, and the 10 AI-AT-04 messages in sequence (1.5 s pause between messages, not timed). Every
-message returned 201 with a new version.
+`python eval/run_live.py --part chat`: one Delhi to Jaipur trip per run, Balanced, and the 10 AI-AT-04 messages in
+sequence (1.5 s pause between messages, not timed), Groq Developer tier. With 10 messages a run, p95 is the
+slowest message.
+
+**With the chat deadline (AI-FR-03, deployed 2026-10-26: 7 s per message, call 1 at most 4 s, call 2 the rest
+minus 0.5 s):**
+
+| Run | p95 (= max of 10) | Next slowest | Median | Replies |
+|---|---|---|---|---|
+| 1 | 4.72 s | 4.11 s | 2.87 s | 10 new versions, 10 LLM replies |
+| 2 | 7.41 s | 4.82 s | 2.81 s | 9 new versions (8 LLM replies, 1 template), 1 "assistant unavailable" |
+
+Both runs are within 8 s. Run 2 shows both deadline paths, from the VM's log:
+
+- "We love food, bump that up to 5" (7.41 s): call 1 took 0.6 s; call 2 timed out at its 4.5 s budget, so the
+  template reply was used. The change was made (version 8).
+- "Put Hawa Mahal on day 3" (4.82 s): call 1 timed out at 4.0 s, so the chat answered "assistant unavailable" and
+  made no change; the traveller has to send it again.
+
+Every other Groq call in both runs took 0.3–0.7 s.
+
+**Before the deadline** (same day, Groq read timeout 10 s for both calls), for the record. Every message returned
+201 with a new version:
 
 | Run | p95 (= max of 10) | Next slowest | Median | Slow message |
 |---|---|---|---|---|
@@ -54,11 +74,10 @@ VM's log shows (`tripwise.ai` logs each call's duration):
   (`groq.timeout_s`), so the reply fell back to the template, as AI-FR-03 specifies. The change itself was made.
 - **Run 2:** call 1 took 3.6 s and call 2 took 5.9 s, against 0.3–1.6 s for every other call in the run.
 
-Without the Groq time, each message takes about 2–3 s (re-planning on the VM, the Neon writes and the round trip).
-With 10 messages a run, p95 is the slowest message, so one slow Groq response puts the run over 8 s. The same model
-on the laptop gave p95 7.0 s (AI-AT-07), and one Groq read timeout also occurred during the AI-AT-03 run the same
-day. NFR-002 is met by the app's own work but not by Groq's tail latency. Lowering `groq.timeout_s` would cap the
-wait at the cost of more template replies and "assistant unavailable" answers; it is left as an owner decision.
+Without the Groq time, each message takes about 2–3 s (re-planning on the VM, the Neon writes and the round trip),
+so one slow Groq response put a whole run over 8 s. The deadline bounds that wait; the cost is that a slow Groq
+response now gives a template reply or, if call 1 is slow, "assistant unavailable" (1 of 20 messages after the
+change).
 
 ## DEP-AT-03 — security: Pass
 

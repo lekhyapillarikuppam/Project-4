@@ -136,9 +136,9 @@ the other 8 broke day-length, lunch, budget or attraction rules (V-10 and V-11 o
 validator caught. Tripwise shows 2.4 distinct variants per trip on average. Chat tool accuracy (AI-AT-03) is
 45/50 = 90%.
 
-Live, on the Azure VM: all variants p95 1.21 s over the 30 trips (limit 5 s). Chat p95 was 12.2 s and 13.0 s in two
-runs of 10 messages (limit 8 s): 18 of 20 messages took 2.5–5.1 s, and in each run one message waited on a slow Groq
-response. On the laptop the chat p95 is 7.0 s.
+Live, on the Azure VM: all variants p95 1.21 s over the 30 trips (limit 5 s). Chat p95 4.72 s and 7.41 s in two runs
+of 10 messages (limit 8 s), with a per-message deadline: a slow Groq response gets a template reply, or "assistant
+unavailable" if Groq is slow to choose the tool (1 of 20 messages). On the laptop the chat p95 is 7.0 s.
 
 The AI and live checks are written up in `eval/AI_AT_01.md` to `eval/AI_AT_04.md` and `eval/LIVE.md`.
 

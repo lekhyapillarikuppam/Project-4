@@ -1900,9 +1900,9 @@ Update this table when a feature's tasks are written (fill **Tasks**) and when i
 | Req | Summary | Feature spec | Feature reqs | Tasks | Tests | Status |
 |---|---|---|---|---|---|---|
 | NFR-001 | All variants ≤ 5 s p95 | 002 (merged from 003), 008 (merged from 009) | A7, DEP-FR-03 | 002 T19, 008 T05 | ENG-AT-08, VAR-AT-03, DEP-AT-02 | Pass (laptop p95 1.8 s; live p95 1.21 s over 30 trips) |
-| NFR-002 | Chat action ≤ 8 s p95 | 007, 008 (merged from 009) | AI-FR-03, DEP-FR-03 | 007 T09, 008 T05 | AI-AT-07, DEP-AT-02 | Fail live (laptop Pass p95 7.0 s; live p95 12.2 s and 13.0 s in two runs, each from one slow Groq response; 18 of 20 messages ≤ 5.1 s; cause in `eval/LIVE.md`) |
+| NFR-002 | Chat action ≤ 8 s p95 | 007, 008 (merged from 009) | AI-FR-03, DEP-FR-03 | 007 T09, 008 T05 | AI-AT-07, DEP-AT-02 | Pass (laptop p95 7.0 s; live with the chat deadline p95 4.72 s and 7.41 s in two runs; before it 12.2 s and 13.0 s; `eval/LIVE.md`) |
 | NFR-003 | Security | 004, 008 (merged from 009) | API-FR-01, 02, 11, 12, DEP-FR-01, 02 | 004 T03, T05; 008 T03–T05 | API-AT-01, 02, 07, DEP-AT-03 | Pass |
-| NFR-004 | Free tiers only | 008 (merged from 009) | DEP-FR-01, 02, AI-FR-07 | 008 T03, T04 | Manual check of the accounts | Fail since 2026-10-26: the Groq account is on the Developer tier (Vercel Hobby, Neon free, Azure for Students and ORS free are unchanged); owner to amend Part B or return Groq to the free tier |
+| NFR-004 | Free tiers only | 008 (merged from 009) | DEP-FR-01, 02, AI-FR-07 | 008 T03, T04 | Manual check of the accounts | Pass (Part B amended 2026-10-26: Groq on the Developer tier, total under ₹50; Vercel Hobby, Neon free, Azure for Students and ORS free unchanged) |
 | NFR-005 | LLM call limits | 007 | AI-FR-02, 03, 07 | 007 T04, T05, T08 | AI-AT-02, 04; `tests/api/test_api_ai_failure.py` (rate limit) | Pass |
 | NFR-006 | Browser support | 006 | UI-FR-08 | 006 T09 | UI-AT-07 (Chromium) | In progress (Chromium Pass, locally and live in DEP-AT-01; Firefox, Safari and mobile left for the owner, `eval/LIVE.md`) |
 | NFR-007 | Accessibility basics | 006 | UI-FR-08 | 006 T08 | UI-AT-08, axe scan | Pass |
@@ -1982,7 +1982,7 @@ Measured 2026-10-25 on the developer laptop (Windows 11, Python 3.11.9, OR-Tools
 | EVAL-FR-04 | python eval/run_eval.py regenerates eval/out/results.csv, three charts (PNG: fea | 008 | FR-070 | Pass |
 | DEP-FR-01 | Backend on the Azure VM: | 008 | NFR-003, NFR-004 | Pass |
 | DEP-FR-02 | Frontend on Vercel | 008 | NFR-003, NFR-004 | Pass |
-| DEP-FR-03 | Live checks: | 008 | NFR-001, NFR-002 | Pass (recorded in `eval/LIVE.md`; live chat p95 over NFR-002) |
+| DEP-FR-03 | Live checks: | 008 | NFR-001, NFR-002 | Pass |
 | DEP-FR-04 | README.md covers what the app is, the architecture diagram (Mermaid), local run  | 008 | FR-070 | Pass |
 | API-AT-01 | Sign up, log in, `/auth/me`; wrong password; duplicate email; expired token | 004 | — | Pass |
 | API-AT-02 | User B requests user A's trip, versions, chat and replan | 004 | — | Pass |
@@ -2011,7 +2011,7 @@ Measured 2026-10-25 on the developer laptop (Windows 11, Python 3.11.9, OR-Tools
 | EVAL-AT-01 | `run_eval.py` | 008 | `eval/run_eval.py`, `eval/RESULTS.md` | Pass (Tripwise 26/26) |
 | EVAL-AT-02 | Re-run | 008 | `eval/out/results.csv` compared run to run | Pass (70/70 rows identical) |
 | DEP-AT-01 | Live full flow | 008 | `frontend/tests-live/dep-at-01.spec.ts` | Pass |
-| DEP-AT-02 | Live timings | 008 | `eval/run_live.py`, `eval/LIVE.md` | Pass (variants p95 1.21 s; chat over 8 s, cause recorded) |
+| DEP-AT-02 | Live timings | 008 | `eval/run_live.py`, `eval/LIVE.md` | Pass (variants p95 1.21 s; chat p95 4.72 s and 7.41 s) |
 | DEP-AT-03 | Security | 008 | `eval/LIVE.md` | Pass |
 
 ### Feature 004 acceptance results
@@ -2067,7 +2067,7 @@ Real Groq `openai/gpt-oss-120b` (Developer tier) unless noted; backend suite 101
 | EVAL-AT-01 | Pass | 2026-10-26 | `python eval/run_eval.py --llm`: `eval/out/results.csv`, 3 charts, `eval/RESULTS.md`. Tripwise 26/26 feasible trips valid (100%), 4/4 infeasible declined, mean value 729.5; greedy 26/26, 645.5; LLM-only 2/10 valid (V-10 and V-11 on 6 trips each) |
 | EVAL-AT-02 | Pass | 2026-10-26 | Second run (LLM-only reused from `eval/out/llm_only.json`): all 70 rows identical apart from `solve_ms` |
 | DEP-AT-01 | Pass | 2026-10-26 | `npx playwright test -c playwright.live.config.ts` on the deployed URLs: sign up, plan, choose, chat change to version 2, My Trips; 15 s, and 16.7 s again on the final deploy |
-| DEP-AT-02 | Pass (gap recorded) | 2026-10-26 | `eval/LIVE.md`: variants p95 1.21 s over 30 trips, 1.54 s over T01–T10 (limit 5 s). Chat, two runs on the final deploy: p95 12.2 s and 13.0 s (limit 8 s); in each run one message was slow because of Groq (a 10 s read timeout on the reply call; 3.6 s + 5.9 s calls), the other 18 took 2.5–5.1 s |
+| DEP-AT-02 | Pass | 2026-10-26 | `eval/LIVE.md`: variants p95 1.21 s over 30 trips, 1.54 s over T01–T10 (limit 5 s). Chat with the per-message deadline, two runs: p95 4.72 s and 7.41 s (limit 8 s); 19 of 20 messages made their change, 1 got "assistant unavailable" when call 1 hit its 4 s limit. Before the deadline: 12.2 s and 13.0 s, each from one slow Groq response |
 | DEP-AT-03 | Pass | 2026-10-26 | `eval/LIVE.md`: HTTP → 308 HTTPS; CORS allows only the Vercel origin; port 8100 closed; no secrets in the working tree or 91 commits; `/etc/tripwise.env` root 600 |
 
 ### Feature status
@@ -2082,7 +2082,7 @@ Real Groq `openai/gpt-oss-120b` (Developer tier) unless noted; backend suite 101
 | 005 | Trip planning API | Merged into 004 | Merged into 004 | Merged into 004 | Merged into 004 |
 | 006 | Frontend | Approved | Approved | Approved | Done: UI-AT-01–09 Pass |
 | 007 | AI layer | Approved | Approved | Approved | Done: AI-AT-01–07 Pass |
-| 008 | Evaluation and deployment | Approved | — (tasks only) | Approved | Done: EVAL-AT-01–02, DEP-AT-01–03 Pass (DEP-AT-02 with the live chat gap recorded); NFR-002 live and NFR-004 not met, see Part D |
+| 008 | Evaluation and deployment | Approved | — (tasks only) | Approved | Done: EVAL-AT-01–02, DEP-AT-01–03 Pass |
 | 009 | Deployment | Merged into 008 | Merged into 008 | Merged into 008 | Merged into 008 |
 
 ---
