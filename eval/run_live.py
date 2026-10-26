@@ -3,7 +3,7 @@
     python eval/run_live.py [--api URL] [--part trips|chat]   (chat uses real Groq on the VM; about 4 min)
 
 Signs up one new live-check-…@example.com user, then times from this machine (so network time is included):
-  - POST /trips for test trips T01–T10 (all variants; NFR-001 p95 <= 5 s),
+  - POST /trips for all 30 test trips (all variants; NFR-001 p95 <= 5 s over the 30, DEP-FR-03 also over T01–T10),
   - 10 chat changes on one Delhi to Jaipur trip, the AI-AT-04 messages (NFR-002 p95 <= 8 s; the pauses between
     messages are not timed).
 --part runs one half and keeps the other half's saved rows. Writes eval/out/live.json; eval/LIVE.md records the result.
@@ -21,6 +21,9 @@ from pathlib import Path
 import httpx
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "backend"))
+
+from tripwise import config  # noqa: E402
 
 # the AI-AT-04 messages (eval/run_chat_changes.py; not imported, since that module loads the API in-process)
 MESSAGES = [
@@ -46,7 +49,7 @@ def p95(xs: list[float]) -> float:
 
 def main() -> int:
     api = sys.argv[sys.argv.index("--api") + 1] if "--api" in sys.argv else API
-    trips = json.loads((ROOT / "eval" / "test_trips.json").read_text(encoding="utf-8"))[:10]
+    trips = json.loads((ROOT / "eval" / "test_trips.json").read_text(encoding="utf-8"))
     c = httpx.Client(base_url=api, timeout=60, headers={"Origin": ORIGIN})
     r = c.post("/auth/signup", json={"email": f"live-check-{uuid.uuid4().hex[:8]}@example.com", "password": "correct horse 1"})
     r.raise_for_status()
@@ -67,12 +70,12 @@ def main() -> int:
     if part in ("both", "chat"):
         out["chat"], out["chat_date"] = chat(c), date.today().isoformat()
     tt, ct = [x["seconds"] for x in out["trips"]], [x["seconds"] for x in out["chat"]]
-    out["summary"] = {"trips_p95": tt and p95(tt), "trips_max": tt and max(tt), "chat_p95": ct and p95(ct), "chat_max": ct and max(ct)}
+    out["summary"] = {"trips_p95": tt and p95(tt), "trips_max": tt and max(tt), "first10_p95": tt and p95(tt[:10]), "chat_p95": ct and p95(ct), "chat_max": ct and max(ct)}
     out_file.parent.mkdir(parents=True, exist_ok=True)
     out_file.write_text(json.dumps(out, indent=1, ensure_ascii=False) + "\n", encoding="utf-8", newline="\n")
-    print(f"variants p95 {out['summary']['trips_p95']} s over {len(tt)} trips (limit 5 s); "
+    print(f"variants p95 {out['summary']['trips_p95']} s over {len(tt)} trips, {out['summary']['first10_p95']} s over T01–T10 (limit 5 s); "
           f"chat p95 {out['summary']['chat_p95']} s over {len(ct)} messages (limit 8 s)")
-    return 0 if len(tt) == 10 and len(ct) == 10 and p95(tt) <= 5 and p95(ct) <= 8 else 1
+    return 0 if len(tt) == 30 and len(ct) == 10 and p95(tt) <= 5 and p95(ct) <= 8 else 1
 
 
 def chat(c: httpx.Client) -> list[dict]:
@@ -95,7 +98,7 @@ def chat(c: httpx.Client) -> list[dict]:
         rows.append({"message": m, "http": r.status_code, "version": v and v["version"],
                      "reply_source": (a.get("actions") or {}).get("reply"), "seconds": round(secs, 2)})
         print(f"HTTP {r.status_code} v{v and v['version']} {secs:.2f} s  {m}", flush=True)
-        time.sleep(15)        # Groq free tier: stay under the tokens-per-minute limit
+        time.sleep(config.default().groq["eval_pause_s"])
     return rows
 
 

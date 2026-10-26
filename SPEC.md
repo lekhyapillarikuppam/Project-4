@@ -1822,7 +1822,7 @@ Traces to: FR-070, FR-071, NFR-001–NFR-004 · Depends on: 007
 - [x] **T02** `eval/run_eval.py`: metrics, CSV, charts, RESULTS.md. · Check: EVAL-AT-01, EVAL-AT-02
 - [x] **T03** Check VM RAM and disk over SSH; deploy the backend (systemd, nginx, certbot); `/health` over HTTPS. Ask the user for the SSH host or key if it's not already configured.
 - [x] **T04** Deploy the frontend to Vercel (CLI or Git integration); set env and CORS. · Check: DEP-AT-01
-- [ ] **T05** Live timings + security checks. · Check: DEP-AT-02, DEP-AT-03; write `eval/LIVE.md`.
+- [x] **T05** Live timings + security checks. · Check: DEP-AT-02, DEP-AT-03; write `eval/LIVE.md`.
 - [ ] **T06** README + architecture diagram. Update Part D for everything; mark 008 Done; final commit and push.
 
 **Left for the user:** the friend test (3+ people rating realism 1–5, recorded in `eval/LIVE.md`), the demo video, and the `data/spot_check.md` manual check.
@@ -1896,9 +1896,9 @@ Update this table when a feature's tasks are written (fill **Tasks**) and when i
 
 | Req | Summary | Feature spec | Feature reqs | Tasks | Tests | Status |
 |---|---|---|---|---|---|---|
-| NFR-001 | All variants ≤ 5 s p95 | 002 (merged from 003), 008 (merged from 009) | A7 | 002 T19 | ENG-AT-08, VAR-AT-03 | In progress (laptop Pass: p95 1.5 s; live system in 009) |
-| NFR-002 | Chat action ≤ 8 s p95 | 007, 008 (merged from 009) | AI-FR-03, DEP-FR-03 | 007 T09 | AI-AT-07 | In progress (local Pass: p95 7.0 s; live in 008 T05) |
-| NFR-003 | Security | 004, 008 (merged from 009) | API-FR-01, 02, 11, 12 | 004 T03, T05 | API-AT-01, 02, 07 | In progress (API Pass; HTTPS in 008) |
+| NFR-001 | All variants ≤ 5 s p95 | 002 (merged from 003), 008 (merged from 009) | A7, DEP-FR-03 | 002 T19, 008 T05 | ENG-AT-08, VAR-AT-03, DEP-AT-02 | Pass (laptop p95 1.8 s; live p95 1.21 s over 30 trips) |
+| NFR-002 | Chat action ≤ 8 s p95 | 007, 008 (merged from 009) | AI-FR-03, DEP-FR-03 | 007 T09, 008 T05 | AI-AT-07, DEP-AT-02 | Fail live (laptop Pass p95 7.0 s; live p95 12.2 s and 13.0 s in two runs, each from one slow Groq response; 18 of 20 messages ≤ 5.1 s; cause in `eval/LIVE.md`) |
+| NFR-003 | Security | 004, 008 (merged from 009) | API-FR-01, 02, 11, 12, DEP-FR-01, 02 | 004 T03, T05; 008 T03–T05 | API-AT-01, 02, 07, DEP-AT-03 | Pass |
 | NFR-004 | Free tiers only | 008 (merged from 009) | | | | Planned |
 | NFR-005 | LLM call limits | 007 | AI-FR-02, 03, 07 | 007 T04, T05, T08 | AI-AT-02, 04; `tests/api/test_api_ai_failure.py` (rate limit) | Pass |
 | NFR-006 | Browser support | 006 | UI-FR-08 | 006 T09 | UI-AT-07 (Chromium) | In progress (Chromium Pass; other browsers in 008) |
@@ -2008,8 +2008,8 @@ Measured 2026-10-25 on the developer laptop (Windows 11, Python 3.11.9, OR-Tools
 | EVAL-AT-01 | `run_eval.py` | 008 | `eval/run_eval.py`, `eval/RESULTS.md` | Pass (Tripwise 26/26) |
 | EVAL-AT-02 | Re-run | 008 | `eval/out/results.csv` compared run to run | Pass (70/70 rows identical) |
 | DEP-AT-01 | Live full flow | 008 | — | Planned |
-| DEP-AT-02 | Live timings | 008 | — | Planned |
-| DEP-AT-03 | Security | 008 | — | Planned |
+| DEP-AT-02 | Live timings | 008 | `eval/run_live.py`, `eval/LIVE.md` | Pass (variants p95 1.21 s; chat over 8 s, cause recorded) |
+| DEP-AT-03 | Security | 008 | `eval/LIVE.md` | Pass |
 
 ### Feature 004 acceptance results
 
@@ -2063,6 +2063,8 @@ Real Groq `openai/gpt-oss-120b` (Developer tier) unless noted; backend suite 101
 |---|---|---|---|
 | EVAL-AT-01 | Pass | 2026-10-26 | `python eval/run_eval.py --llm`: `eval/out/results.csv`, 3 charts, `eval/RESULTS.md`. Tripwise 26/26 feasible trips valid (100%), 4/4 infeasible declined, mean value 729.5; greedy 26/26, 645.5; LLM-only 2/10 valid (V-10 and V-11 on 6 trips each) |
 | EVAL-AT-02 | Pass | 2026-10-26 | Second run (LLM-only reused from `eval/out/llm_only.json`): all 70 rows identical apart from `solve_ms` |
+| DEP-AT-02 | Pass (gap recorded) | 2026-10-26 | `eval/LIVE.md`: variants p95 1.21 s over 30 trips, 1.54 s over T01–T10 (limit 5 s). Chat, two runs on the final deploy: p95 12.2 s and 13.0 s (limit 8 s); in each run one message was slow because of Groq (a 10 s read timeout on the reply call; 3.6 s + 5.9 s calls), the other 18 took 2.5–5.1 s |
+| DEP-AT-03 | Pass | 2026-10-26 | `eval/LIVE.md`: HTTP → 308 HTTPS; CORS allows only the Vercel origin; port 8100 closed; no secrets in the working tree or 91 commits; `/etc/tripwise.env` root 600 |
 
 ### Feature status
 
