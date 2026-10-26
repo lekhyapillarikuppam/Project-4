@@ -198,7 +198,7 @@ Origin and destination are both chosen from this list and must be different. Thi
   - **Transport modes:** each of train, bus and flight can be marked preferred, neutral (default) or avoided. At least one mode is not avoided.
   - **Avoid crowds:** on or off (default off).
 - **FR-006** The user may describe preferences in free text. The AI layer converts it into the FR-005 fields. The converted values are shown to the user, who can adjust them before planning.
-- **FR-007** For a logged-in user, the trip form is pre-filled from their saved preference profile.
+- **FR-007** For a logged-in user, the trip form starts with blank preferences and a "Fill from my profile" button fills them from the saved preference profile.
 
 #### 6.2 Plan generation
 
@@ -1513,7 +1513,7 @@ An HTTPS JSON API (FastAPI) over the engine. It provides accounts, saved prefere
   - Passwords are 8–128 characters.
   - (FR-040, FR-041, NFR-003)
 - **API-FR-02** Every endpoint except `/health`, `/cities`, `/auth/*` and `/meta` requires `Authorization: Bearer <jwt>`. A user can read or change only their own rows; anyone else's id returns 404, never 403, so ids are not revealed. (FR-047)
-- **API-FR-03** Profile: get and put the saved preferences (the `prefs` schema of 002 §3). (FR-042, FR-007)
+- **API-FR-03** Profile: get and put the saved preferences (the `prefs` schema of 002 §3). With nothing saved, GET returns a blank profile with `saved: false`: all nine interests 0, `daily_hours_out`, `pace` and `comfort` null (not chosen), every mode neutral, `avoid_crowds` false. PUT validates exactly as before, so a saved profile is always complete. (FR-042, FR-007)
 - **API-FR-04** Trip input validation. Reject with 422 and a field-level message:
   - origin = destination, or an unknown city (FR-001),
   - start not in [tomorrow, today + 365], or length not 2–7 days (FR-002),
@@ -1522,7 +1522,7 @@ An HTTPS JSON API (FastAPI) over the engine. It provides accounts, saved prefere
   - prefs out of range: hours 4–14, weights 0–5 with at least one > 0, every mode avoided (FR-005).
   - A per-person budget is converted to a total.
 - **API-FR-05** Creating a trip runs `plan_variants`. It saves the request and the result (variants or infeasible) and returns the trip. Infeasible trips are saved too, so users can duplicate and re-budget them. (FR-043)
-- **API-FR-06** My Trips: list (upcoming = start date ≥ today, otherwise past), get, rename, duplicate and delete.
+- **API-FR-06** My Trips: list (upcoming = start date ≥ today, otherwise past; each item includes `created_at`), get, rename, duplicate and delete.
   - Duplicate returns a copy of the request for the form and creates nothing.
   - Delete removes the trip, its versions and its chat messages. (FR-046)
 - **API-FR-07** Selecting a variant creates plan version 1. Re-planning with changes, or restoring an old version, creates the next version. Restoring copies the old plan as the newest version. Versions are immutable. (FR-044)
@@ -1626,10 +1626,14 @@ A responsive React web app over the 004 API. It has seven pages, a map of each d
 
 ##### 2. Requirements
 - **UI-FR-01** The seven pages: Landing, Sign up / Log in, New trip, Plan comparison, Plan detail, My Trips, Profile. Routes `/`, `/login`, `/signup`, `/new`, `/trips/:id`, `/trips/:id/plan`, `/trips`, `/profile`. Every page except Landing and auth requires login, and redirects to `/login?next=`. (FR-050)
+  - Landing's hero has one call to action, "Plan a trip". Signed out, the header shows "Log in" and "Sign up" as outlined buttons (accent border, accent-50 fill, one shade darker on hover, 44 px high, visible focus ring, WCAG AA).
+  - Log in and Sign up each start with empty fields and no errors, including when switching between them (the form remounts per mode; email and password are kept in no shared state or URL). The password field has a show/hide toggle: a real button inside the field, labelled "Show password" / "Hide password" with `aria-pressed`, reachable by keyboard, never submitting the form; inline SVG icon.
+  - After sign-up the user lands on Profile with the note "Set your preferences once; you can reuse them for every trip" and a link to skip to New trip (or to the page they were heading to).
 - **UI-FR-02 New trip form.**
-  - Fields: origin and destination selects (15 cities, must differ), date range (2–7 days, tomorrow onwards), people 1–6, budget with a Total / Per-person toggle.
-  - Preferences: hours-out slider 4–14, nine interest sliders 0–5, pace, comfort, three mode toggles (preferred / neutral / avoid), and avoid-crowds.
-  - The form is pre-filled from the saved profile (FR-007), validated on the client with the same rules as API-FR-04, and server 422 messages are shown next to their fields.
+  - Fields: origin and destination selects (15 cities, must differ), date range (2–7 days, tomorrow onwards), people 1–6, budget with a Total / Per-person toggle, and an optional trip name (up to 120 characters; the placeholder shows the automatic name, which is used when it is left empty).
+  - Preferences: hours out each day chosen from a list (4–14 h), nine interest sliders 0–5, pace, comfort, three mode toggles (preferred / neutral / avoid), and avoid-crowds. They start blank: interests 0, no hours, pace or comfort chosen, transport neutral, avoid-crowds off.
+  - A "Fill from my profile" button under "Your preferences" fills them from the saved profile (FR-007); while nothing is saved it is disabled, with the hint "Save your preferences in Profile first". "Describe your trip" also fills them. A duplicated or re-budgeted trip still opens with its own values.
+  - The form is validated on the client with the same rules as API-FR-04, plus: hours, pace and comfort must be chosen and at least one interest must be above 0, each with a message next to its field. Server 422 messages are shown next to their fields. The server rules are unchanged.
   - A free-text box ("Describe your trip") is added in 007.
 - **UI-FR-03 Plan comparison.** 1–3 variant cards side by side, stacking on mobile. Each card shows:
   - name and total cost,
@@ -1648,7 +1652,7 @@ A responsive React web app over the 004 API. It has seven pages, a map of each d
   - Version history with restore.
   - A docked chat panel slot (007).
 - **UI-FR-05 Map.** Leaflet with OSM tiles. Markers for the hotel and each stop are numbered per day, and each day's legs are drawn as straight polylines in a distinct colour, with a day legend. The caption reads "Routes shown as straight lines". (FR-051)
-- **UI-FR-06 My Trips.** Upcoming and Past tabs; each trip has rename (inline), duplicate (opens the New trip form pre-filled) and delete (an in-page confirm dialog). (FR-046)
+- **UI-FR-06 My Trips.** Upcoming and Past tabs; each trip shows when it was created ("Created 26 Oct 2026, 3:12 pm", Asia/Kolkata) and has rename (inline), duplicate (opens the New trip form pre-filled, named "<name> (copy)") and delete (an in-page confirm dialog). (FR-046)
 - **UI-FR-07 Estimates.** Every price is labelled "Estimated", and the footer and budget card show the dataset compilation label from `/meta`, for example "Estimated prices, compiled Nov 2026". (FR-013, FR-062)
 - **UI-FR-08 Responsive and accessible.**
   - Works from 360 px wide with no horizontal scroll (FR-053).
@@ -1690,6 +1694,14 @@ These are run by Claude Code in the browser against a local API, with results re
 - [x] **T07** My Trips page. · Check: UI-AT-05
 - [x] **T08** Loading, error and 429 states; accessibility pass. · Check: UI-AT-08, UI-AT-09
 - [x] **T09** Run UI-AT-01–09 in the browser at 360 px and 1280 px; save screenshots to `frontend/test-shots/`; record in `frontend/TESTING.md`. Update Part D; mark 006 Done; commit.
+
+**Follow-up F7 (owner UI changes, 2026-10-26)**
+- [ ] **F7.1** API: blank default profile (API-FR-03) and `created_at` in the trip list (API-FR-06); backend tests.
+- [ ] **F7.2** Landing hero with one call to action; signed-out header buttons outlined. · serves UI-FR-01
+- [ ] **F7.3** Auth: show/hide password toggle; empty fields when switching Log in ↔ Sign up; after sign-up go to Profile with the note. · serves UI-FR-01
+- [ ] **F7.4** Blank preferences, "Fill from my profile", hours as a list, required hours/pace/comfort with field messages; optional trip name. · serves UI-FR-02, FR-007
+- [ ] **F7.5** My Trips: created time (Asia/Kolkata); duplicate named "<name> (copy)". · serves UI-FR-06
+- [ ] **F7.6** Playwright helpers set preferences explicitly; new checks (eye toggle, empty fields after switching, created time and custom name, Fill-from-profile disabled/enabled, blank profile for a new user); full UI suite with axe at 360 and 1280 px; backend tests; redeploy backend and frontend; DEP-AT-01. · Check: UI-AT-01–09, DEP-AT-01
 
 ### Feature 007 — AI layer (Groq)
 
@@ -2267,6 +2279,9 @@ Real Groq `openai/gpt-oss-120b` (Developer tier) unless noted; backend suite 101
 | 2026-10-26 | D Traceability (008 T05, T06) | Backend redeployed before the live chat timing so it measured the final code. Live chat p95 12.2 s and 13.0 s (two runs), each from one slow Groq response: NFR-002 recorded as not met live, DEP-AT-02 passes on its "gap recorded with the cause" clause. NFR-004 recorded as not met: the Groq account moved to the Developer tier; Part B is unchanged pending the owner's decision | Report results as measured; a Part B change is the owner's call |
 | 2026-10-26 | C 007 Spec AI-FR-03, AI-FR-06, Plan | Per-message chat deadline: `chat.deadline_s` 7.0 s; call 1 at most `groq.timeout_tools_s` 4.0 s (timeout → "assistant unavailable", no change); call 2 gets the remaining deadline minus 0.5 s, skipped for the template reply if under 1 s remains | Owner decision: live chat p95 was 12.2 s and 13.0 s because one slow Groq response could take the full 10 s timeout (NFR-002) |
 | 2026-10-26 | B NFR-004 | "Only free tiers" becomes free tiers except Groq on the Developer (pay-as-you-go) tier from 2026-10-26, total cost under ₹50 | Owner decision: evaluation throughput and demo reliability |
+| 2026-10-26 | B FR-007 | The trip form starts with blank preferences; a "Fill from my profile" button fills them from the saved profile (was: pre-filled automatically) | Owner decision (F7): preferences should be a deliberate choice per trip, not silently inherited |
+| 2026-10-26 | C 004 API-FR-03, API-FR-06 | Unsaved profile is blank (interests 0; hours, pace, comfort null; modes neutral; avoid crowds off) with `saved: false`; PUT unchanged; trip list items include `created_at` | Owner decision (F7): no invented preferences (the old default liked history, culture and food); My Trips shows when a trip was made |
+| 2026-10-26 | C 006 UI-FR-01, 02, 06 | One hero CTA; outlined header buttons when signed out; password show/hide toggle; auth forms remount per mode; sign-up lands on Profile with a note; blank preferences with Fill from my profile; hours from a list; hours/pace/comfort required on the client; optional trip name; My Trips shows created time and duplicates as "<name> (copy)"; tasks F7.1–F7.6 | Owner UI review (F7). Hours become a list because a slider always shows a value and cannot look unchosen |
 | 2026-10-26 | C 007 Spec AI-AT-03 | Scored on the mean of 3 fresh runs instead of one run. Measured before shipping limit_kind: old code 45, 45, 44 (mean 44.7, 89.3%); new code 43, 43, 42 (mean 42.7, 85.3%). Shipped under the owner's rule fixed before the runs (ship if within 2 cases of the old mean; here exactly 2.0), recorded as Fail | Single runs were thought too noisy to judge a change. The 3 runs showed the opposite: each version fails nearly the same cases every run (±1), and the difference is systematic (new loses C18, C23, C46; gains C50 and usually C49). Owner decision: ship because it fixes a real user bug (chat regression 0/6 → 5/6) |
 | 2026-10-26 | C 007 Spec AI-FR-03 (scope of limit_kind) | Call 1 no longer lists the city's other activities (superseded by `limit_kind`, which keeps out places outside the plan on the server); `limit_kind` is for a counted or plural kind only, not a single place or an interest | AI-AT-03 fell from 90% to 82% with the first limit_kind build: the model used it for "not into shopping", "skip the garden" and "remove the mandir", and picked specific places from the other-activities list for vague names. One fix from the tool's intended meaning, not tuned on the test cases |
 | 2026-10-26 | C 001 Spec §5.5, DATA-FR-10 | New column `kind` in `attractions/<CITY>.csv`, derived from the drafting place type refined by name keywords; 3 corrections in `data/raw/attractions/kind_overrides.csv`; validator code `unknown_kind`; `ref.attractions.kind`; dataset 1.0 → 1.1 (same compilation month, no other value changed) | Owner decision: chat requests about a kind of place ("only one church") need the kind in the data |
