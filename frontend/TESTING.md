@@ -40,3 +40,8 @@ The API runs with an empty `GROQ_API_KEY` in these tests, so the AI parts show t
 
 ₹ amounts inside AI text (explanations, chat replies) are rendered with the "est." tag, as UI-AT-09 requires.
 
+## Feature 008 live check (2026-10-26)
+
+| Check | Test file | Result | Notes |
+|---|---|---|---|
+| Live full flow (DEP-AT-01) | `tests-live/dep-at-01.spec.ts` | Pass (15 s) | Runs against https://tripwise-inky.vercel.app and the VM API with real Groq, no local servers: `npx playwright test -c playwright.live.config.ts` (`LIVE_URL` overrides the site). Sign up, plan Delhi to Jaipur, choose, "Switch to a budget hotel" gives version 2, My Trips lists the trip. Each run adds one `live-check-…@example.com` user |
