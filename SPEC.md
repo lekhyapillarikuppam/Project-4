@@ -1721,11 +1721,11 @@ These are run by Claude Code in the browser against a local API, with results re
 - [x] **F7.6** Playwright helpers set preferences explicitly; new checks (eye toggle, empty fields after switching, created time and custom name, Fill-from-profile disabled/enabled, blank profile for a new user); full UI suite with axe at 360 and 1280 px; backend tests; redeploy backend and frontend; DEP-AT-01. · Check: UI-AT-01–09, DEP-AT-01
 
 **Follow-up F8 (owner features, 2026-10-26)**
-- [ ] **F8.1** API: `trip_shares` table, share create/return and revoke (owner only), public `GET /shared/{token}` with the listed fields and a rate limit; `live_prices` patterns in config and `/meta`. · Check: API-AT-09 · serves API-FR-14, API-FR-15
-- [ ] **F8.2** Shared plan page `/s/:token` with noindex, and the Share dialog on Plan detail. · Check: UI-AT-10 · serves UI-FR-10, UI-FR-11
-- [ ] **F8.3** Download PDF and the print stylesheet. · Check: UI-AT-11 · serves UI-FR-12
-- [ ] **F8.4** Live-price links on journey and hotel cards. · Check: UI-AT-12 · serves UI-FR-13
-- [ ] **F8.5** Full UI suite with axe at 360 and 1280 px; backend tests; redeploy backend and frontend; DEP-AT-01; update Part D.
+- [x] **F8.1** API: `trip_shares` table, share create/return and revoke (owner only), public `GET /shared/{token}` with the listed fields and a rate limit; `live_prices` patterns in config and `/meta`. · Check: API-AT-09 · serves API-FR-14, API-FR-15
+- [x] **F8.2** Shared plan page `/s/:token` with noindex, and the Share dialog on Plan detail. · Check: UI-AT-10 · serves UI-FR-10, UI-FR-11
+- [x] **F8.3** Download PDF and the print stylesheet. · Check: UI-AT-11 · serves UI-FR-12
+- [x] **F8.4** Live-price links on journey and hotel cards. · Check: UI-AT-12 · serves UI-FR-13
+- [x] **F8.5** Full UI suite with axe at 360 and 1280 px; backend tests; redeploy backend and frontend; DEP-AT-01; update Part D.
 
 ### Feature 007 — AI layer (Groq)
 
@@ -1945,10 +1945,13 @@ Update this table when a feature's tasks are written (fill **Tasks**) and when i
 | FR-045 | Chat history saved | 004 | API-FR-01–13 | 004 T03–T10 | API-AT-02 | Pass |
 | FR-046 | My Trips: rename, duplicate, delete | 004, 006 | API-FR-06 | 004 T08 | API-AT-06 | Pass |
 | FR-047 | Per-user data isolation | 004 | API-FR-01–13 | 004 T03–T10 | API-AT-02 | Pass |
+| FR-048 | Read-only share link | 004, 006 | API-FR-14, UI-FR-10, UI-FR-11 | F8.1, F8.2 | API-AT-09, UI-AT-10 | Pass |
 | FR-050 | Seven pages | 006 | UI-FR-01–09 | 006 T01–T09 | UI-AT-01, 07 | Pass |
 | FR-051 | Map with daily routes | 006 | UI-FR-01–09 | 006 T01–T09 | UI-AT-02 | Pass |
 | FR-052 | Budget chart and table | 006 | UI-FR-01–09 | 006 T01–T09 | UI-AT-02 | Pass |
 | FR-053 | Responsive from 360 px | 006 | UI-FR-01–09 | 006 T01–T09 | UI-AT-07 | Pass |
+| FR-054 | PDF through the print dialog | 006 | UI-FR-12 | F8.3 | UI-AT-11 | Pass |
+| FR-055 | Links to booking sites' own searches | 004, 006 | API-FR-15, UI-FR-13 | F8.1, F8.4 | API-AT-09, UI-AT-12 | Pass |
 | FR-060 | Curated data for 15 cities | 001 | DATA-FR-01–07 | 001 T01–T24 | DATA-AT-01, 03 | Pass |
 | FR-061 | Source and date on every record | 001 | DATA-FR-08 | 001 T06–T18, T26, F4 | DATA-AT-01, 05 | Pass |
 | FR-062 | Compilation month shown with prices | 001, 006 | DATA-FR-09 | 001 T06, T22, T24 | DATA-AT-03 | Pass |
@@ -2019,6 +2022,8 @@ Measured 2026-10-25 on the developer laptop (Windows 11, Python 3.11.9, OR-Tools
 | API-FR-11 | Errors return {"error": "<code>", "message": "<plain text>", "fields": {…}?} wit | 004 | FR-012, NFR-003 | Pass |
 | API-FR-12 | CORS allows only FRONTEND_ORIGIN, plus http://localhost:5173 in development | 004 | NFR-003 | Pass |
 | API-FR-13 | Planning calls run in a thread pool, at most max_concurrent_solves (config, defa | 004 | NFR-001, NFR-004 | Pass |
+| API-FR-14 | Share link: owner create/return and revoke; public read of plan and trip facts; rate limit | 004 | FR-048, NFR-003 | Pass |
+| API-FR-15 | Live-price URL patterns in /meta from config | 004 | FR-055 | Pass |
 | UI-FR-01 | The seven pages: Landing, Sign up / Log in, New trip, Plan comparison, Plan deta | 006 | FR-050 | Pass |
 | UI-FR-02 | New trip form | 006 | FR-007 | Pass |
 | UI-FR-03 | Plan comparison | 006 | FR-012, FR-022 | Pass |
@@ -2028,6 +2033,10 @@ Measured 2026-10-25 on the developer laptop (Windows 11, Python 3.11.9, OR-Tools
 | UI-FR-07 | Estimates | 006 | FR-013, FR-062 | Pass |
 | UI-FR-08 | Responsive and accessible | 006 | FR-053, NFR-007 | Pass |
 | UI-FR-09 | States | 006 | FR-010, NFR-001 | Pass |
+| UI-FR-10 | Shared plan page, read-only, noindex | 006 | FR-048, FR-050 | Pass |
+| UI-FR-11 | Share dialog: copy link, stop sharing | 006 | FR-048 | Pass |
+| UI-FR-12 | Download PDF and print stylesheet | 006 | FR-054 | Pass |
+| UI-FR-13 | Check live prices links | 006 | FR-055 | Pass |
 | AI-FR-01 | Preference parsing | 007 | FR-006 | Pass |
 | AI-FR-02 | Explanations | 007 | FR-030, NFR-005 | Pass |
 | AI-FR-03 | Chat | 007 | FR-031, FR-032, NFR-005 | Pass |
@@ -2052,6 +2061,7 @@ Measured 2026-10-25 on the developer laptop (Windows 11, Python 3.11.9, OR-Tools
 | API-AT-06 | Rename, duplicate, delete, list upcoming/past | 004 | — | Pass |
 | API-AT-07 | Passwords in DB and logs | 004 | — | Pass |
 | API-AT-08 | 3 concurrent creates with max 2 solves | 004 | — | Pass |
+| API-AT-09 | Share link: create twice, read publicly, another user, revoke, rate limit | 004 | `tests/api/test_api_share.py` | Pass |
 | UI-AT-01 | Sign up → New trip → submit a feasible trip | 006 | — | Pass |
 | UI-AT-02 | Choose a plan | 006 | — | Pass |
 | UI-AT-03 | Infeasible budget | 006 | — | Pass |
@@ -2061,6 +2071,9 @@ Measured 2026-10-25 on the developer laptop (Windows 11, Python 3.11.9, OR-Tools
 | UI-AT-07 | 360 px and 1280 px screenshots of every page | 006 | — | Pass |
 | UI-AT-08 | Keyboard-only run of UI-AT-01 | 006 | — | Pass |
 | UI-AT-09 | Every price on screen | 006 | — | Pass |
+| UI-AT-10 | Share: copy the link, open it logged out, stop sharing | 006 | `frontend/tests/f8-share-pdf-links.spec.ts` | Pass |
+| UI-AT-11 | Download PDF | 006 | `frontend/tests/f8-share-pdf-links.spec.ts` | Pass |
+| UI-AT-12 | Live-price links | 006 | `frontend/tests/f8-share-pdf-links.spec.ts` | Pass |
 | AI-AT-01 | 10 free-text preference samples | 007 | `eval/run_parse_samples.py`, `eval/AI_AT_01.md` | Pass (10/10 valid, 10/10 sensible) |
 | AI-AT-02 | Explanations for 10 test trips | 007 | `eval/run_explanations.py`, `eval/AI_AT_02.md`, `tests/ai/test_grounding.py` | Pass (10/10 grounded, 0 shown ungrounded) |
 | AI-AT-03 | `eval/chat_intents.json`: 50 hand-written messages with expected tool and argume | 007 | `eval/run_chat_intents.py`, `eval/AI_AT_03.md` | Fail on the 3-run mean (85.3%; code before the limit_kind fix 89.3%) |
@@ -2088,6 +2101,7 @@ Measured 2026-10-25 against Neon schema `app_test` with FastAPI's TestClient (`p
 | API-AT-06 | Pass | `test_api_trips_manage.py`: rename, duplicate (creates nothing), upcoming/past lists, delete removes versions and chat |
 | API-AT-07 | Pass | Stored hashes start with `$2b$`; no password or JWT in any log record |
 | API-AT-08 | Pass | 3 concurrent creates: all 201, at most 2 solves at once (peak exactly 2) |
+| API-AT-09 | Pass | 2026-10-26, `test_api_share.py` (4 tests): the same token on a second POST (43 characters); the public response has exactly the nine listed keys and no email, user id, trip id, prefs, locks, excludes, interests, chat or request_hash; revoke → 404, and a new share gets a new token while the old stays 404; another user's trip 404 on POST and DELETE, no token 401, unknown token 404, unchosen trip 409; the 61st read in a minute 429. Live on the VM: public read 200 with the nine keys, revoke 204 then 404 |
 
 ### Feature 006 acceptance results
 
@@ -2104,6 +2118,9 @@ Run 2026-10-25 with Playwright 1.64.0 (Chromium) against the local API (schema `
 | UI-AT-07 | Pass | 7 pages × 360 px and 1280 px, no horizontal scroll or clipping |
 | UI-AT-08 | Pass | Keyboard-only UI-AT-01 with a visible focus ring throughout |
 | UI-AT-09 | Pass | Every ₹ amount under an Estimated marker |
+| UI-AT-10 | Pass | 2026-10-26 at 1280 and 360 px: Copy link writes the URL to the clipboard; a fresh logged-out context shows "Shared plan · prices are estimates", the name, transport, hotel, days, map and budget, `noindex` meta, no chat, versions, trade-offs, share or edit controls; axe clean; after "Stop sharing" the link shows "This shared plan isn't available". Production sends `X-Robots-Tag: noindex` for `/s/*` |
+| UI-AT-11 | Pass | 2026-10-26: Download PDF calls `window.print()`; under print media the header, chat, versions, trade-offs, buttons, live-price links and the donut are hidden, the title, days and budget table with "Estimated prices, compiled Nov 2026" stay, text is black on white; `page.pdf()` (A4) writes a valid PDF. The map printed cleanly (screenshot `frontend/test-shots/plan-print-chromium-1280.png`), so it stays, without its zoom buttons |
+| UI-AT-12 | Pass | 2026-10-26: three links (outbound, return, hotel), each `target="_blank"` with `rel="noopener noreferrer"`; journeys go to the configured site for their mode; the hotel link is Booking.com with `ss=Jaipur`, the trip's check-in and a later check-out, `group_adults=3`, `no_rooms=2` |
 
 Re-run 2026-10-26 after follow-up F7, with every spec at both 1280 px and 360 px (two Playwright projects): 36 passed, 2
 skipped (the live-Groq chat spec, run only with `E2E_LIVE_GROQ=1`), axe clean on all seven pages at both widths. New
