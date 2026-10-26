@@ -2139,6 +2139,15 @@ start moves past it. Full suite: 44 passed, 2 skipped (live Groq). One earlier f
 `ai-ui-chat.spec.ts` at 1280 px (element not found, a timing failure in a spec F9 does not touch); it passed on
 rerun and in the clean full run.
 
+F10 (2026-10-26): `frontend/tests/f10-budget-list.spec.ts` at 1280 and 360 px: the budget starts empty with
+placeholder "e.g. 30000"; submitting it empty shows "Enter your budget." and focuses the field, for Total and Per
+person; of three trips (two planned, one infeasible) My Trips lists the two, newest first, while the infeasible one
+still showed "Edit budget" after planning and still opens by URL. API: `test_api_trips_manage.py` checks the
+exclusion and newest-first order in both tabs. UI-AT-08 now waits for each lazy page to render before walking it by
+keyboard (one run had failed tabbing to "Skip for now" before Profile rendered; it passed 4/4 repeated). Full UI
+suite 48 passed, 2 skipped (live Groq); backend 117 passed; live API listed newest first without the infeasible
+trip; DEP-AT-01 passed in 17.4 s after both redeploys.
+
 ### Feature 007 acceptance results
 
 Real Groq `openai/gpt-oss-120b` (Developer tier) unless noted; backend suite 101 passed on 2026-10-26 after the last
