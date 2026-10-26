@@ -43,3 +43,6 @@ frontend/playwright-report/
 
 # Impeccable local settings
 .impeccable/config.local.json
+
+# Claude Code local settings
+.claude/

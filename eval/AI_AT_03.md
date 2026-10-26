@@ -40,6 +40,8 @@ The three ambiguous misses are the model choosing an activity itself instead of 
 so the server never sees the vague name. The plan stays engine-made and valid either way, and the reply names the
 activity that was changed, so the traveller can undo it.
 
+Not tuned further to avoid overfitting the test set; known weakness: vague names.
+
 Median call 1.5 s; the slowest case took 26 s because of one Groq read timeout and retry.
 
 Fixed on the way (the earlier partial run scored 43/50 = 86%):

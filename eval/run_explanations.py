@@ -17,6 +17,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "backend"))
 
 from api.ai import explain, groq_client, grounding  # noqa: E402
+from tripwise import config  # noqa: E402
 from tripwise.models import TripRequest, dump  # noqa: E402
 from tripwise.variants import plan_variants  # noqa: E402
 
@@ -29,8 +30,8 @@ def main() -> int:
         res = dump(plan_variants(req))
         try:
             out = explain.explain(req.model_dump(mode="json", by_alias=True), res["variants"])
-        except groq_client.Unavailable:          # free-tier token limit: wait a minute and try once more
-            time.sleep(60)
+        except groq_client.Unavailable:          # Groq refused: wait and try once more
+            time.sleep(config.default().groq["eval_retry_wait_s"])
             out = explain.explain(req.model_dump(mode="json", by_alias=True), res["variants"])
         by = {p["variant"]: p for p in res["variants"]}
         bad = {v: grounding.check_plan_text(txt, by[v], req.destination) for v, txt in out["texts"].items()}
@@ -39,7 +40,7 @@ def main() -> int:
         llm_ok += grounded
         rows.append({"id": t["id"], **out, "final_problems": bad})
         print(t["id"], out["source"], "calls", out["calls"])
-        time.sleep(20)         # stay under the Groq free-tier tokens-per-minute limit
+        time.sleep(config.default().groq["eval_pause_s"])
     (ROOT / "eval" / "out").mkdir(parents=True, exist_ok=True)
     (ROOT / "eval" / "out" / "explanations.json").write_text(json.dumps(rows, indent=1, ensure_ascii=False), encoding="utf-8")
     print(f"grounded on first or second try: {llm_ok}/{len(trips)}; ungrounded texts shown: {leaks}")

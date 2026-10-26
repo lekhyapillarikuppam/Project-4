@@ -18,6 +18,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "backend"))
 
 from api.ai import parse  # noqa: E402
+from tripwise import config  # noqa: E402
 
 
 def check(out: dict, exp: dict) -> list[str]:
@@ -55,7 +56,7 @@ def main() -> int:
         except Exception as exc:     # noqa: BLE001 — record any failure as invalid
             out, misses = {"error": type(exc).__name__}, ["invalid"]
         results.append({"id": s["id"], "text": s["text"], "output": out, "misses": misses})
-        time.sleep(4)      # stay under the Groq free-tier tokens-per-minute limit
+        time.sleep(config.default().groq["eval_pause_s"])
         print(s["id"], "OK" if not misses else "MISS: " + "; ".join(misses))
     (ROOT / "eval" / "out").mkdir(parents=True, exist_ok=True)
     (ROOT / "eval" / "out" / "parse_samples.json").write_text(json.dumps(results, indent=1, ensure_ascii=False), encoding="utf-8")
