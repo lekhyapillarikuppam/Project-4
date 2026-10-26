@@ -303,7 +303,7 @@ Origin and destination are both chosen from this list and must be different. Thi
   - HTTPS only,
   - CORS limited to the frontend's domain,
   - secrets only in environment variables.
-- **NFR-004 Cost:** only free tiers are used: Vercel Hobby, Neon free tier, Azure for Students, Groq free tier, OpenRouteService free tier.
+- **NFR-004 Cost:** free tiers: Vercel Hobby, Neon free tier, Azure for Students, OpenRouteService free tier; except Groq on the Developer (pay-as-you-go) tier from 2026-10-26, for evaluation throughput and demo reliability; total cost under ₹50.
 - **NFR-005 LLM usage:** at most one Groq call to explain all variants of a request, and at most two Groq calls per chat message.
 - **NFR-006 Browsers:** current versions of Chrome, Edge, Firefox and Safari, on desktop and on mobile.
 - **NFR-007 Accessibility:** every form control has a label, every action works by keyboard, and text meets WCAG AA contrast.
@@ -2242,3 +2242,4 @@ Real Groq `openai/gpt-oss-120b` (Developer tier) unless noted; backend suite 101
 | 2026-10-26 | C 007 (AI-AT-03 fixes) | Name resolution drops a leading "the"/"a"/"an" ("the temple" asks which one, like "temple"); the tool `name` argument says to copy the traveller's words even when vague. AI-AT-03 re-run fresh on all 50: 45/50 = 90%, pass (was 43/50 on the resumed run); the remaining misses are in `eval/AI_AT_03.md` | AI-AT-03 resumed run: 86%, below the 90% threshold; 4 of 5 ambiguous messages got a specific activity instead of a clarifying question |
 | 2026-10-26 | D Traceability (008 T05, T06) | Backend redeployed before the live chat timing so it measured the final code. Live chat p95 12.2 s and 13.0 s (two runs), each from one slow Groq response: NFR-002 recorded as not met live, DEP-AT-02 passes on its "gap recorded with the cause" clause. NFR-004 recorded as not met: the Groq account moved to the Developer tier; Part B is unchanged pending the owner's decision | Report results as measured; a Part B change is the owner's call |
 | 2026-10-26 | C 007 Spec AI-FR-03, AI-FR-06, Plan | Per-message chat deadline: `chat.deadline_s` 7.0 s; call 1 at most `groq.timeout_tools_s` 4.0 s (timeout → "assistant unavailable", no change); call 2 gets the remaining deadline minus 0.5 s, skipped for the template reply if under 1 s remains | Owner decision: live chat p95 was 12.2 s and 13.0 s because one slow Groq response could take the full 10 s timeout (NFR-002) |
+| 2026-10-26 | B NFR-004 | "Only free tiers" becomes free tiers except Groq on the Developer (pay-as-you-go) tier from 2026-10-26, total cost under ₹50 | Owner decision: evaluation throughput and demo reliability |
