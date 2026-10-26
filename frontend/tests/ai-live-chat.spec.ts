@@ -1,5 +1,5 @@
 import { expect, test } from "@playwright/test";
-import { fillTrip, isoInDays, signUp } from "./helpers";
+import { fillPrefs, fillTrip, isoInDays, signUp } from "./helpers";
 
 // 007 T06 live check (real Groq): a chat change shows "Version N created", the plan moves to version N, and Undo
 // restores the previous version. Run with:  $env:E2E_LIVE_GROQ="1"; npx playwright test tests/ai-live-chat.spec.ts
@@ -9,6 +9,7 @@ test("live chat change, version chip and undo", async ({ page }) => {
   test.setTimeout(120_000);
   await signUp(page);
   await fillTrip(page, { from: "Delhi", to: "Jaipur", start: isoInDays(30), end: isoInDays(32), people: "2", budget: "50000" });
+  await fillPrefs(page);
   await page.getByRole("button", { name: "Plan my trip" }).click();
   await expect(page.getByText(/Why this plan/).first()).toBeVisible({ timeout: 30_000 });
   await page.getByRole("button", { name: /^Choose / }).first().click();

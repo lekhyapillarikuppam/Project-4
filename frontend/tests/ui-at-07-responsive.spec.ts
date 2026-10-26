@@ -1,7 +1,7 @@
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { expect, test, type Page } from "@playwright/test";
-import { fillTrip, isoInDays, noHorizontalScroll, signUp } from "./helpers";
+import { fillPrefs, fillTrip, isoInDays, noHorizontalScroll, signUp } from "./helpers";
 
 const SHOTS = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "test-shots");
 
@@ -33,6 +33,7 @@ for (const width of [360, 1280]) {
     await signUp(page);
     await shot("3-new-trip");
     await fillTrip(page, { from: "Delhi", to: "Jaipur", start: isoInDays(50), end: isoInDays(53), people: "2", budget: "60000" });
+    await fillPrefs(page);
     await page.getByRole("button", { name: "Plan my trip" }).click();
     await expect(page.getByRole("button", { name: /^Choose / }).first()).toBeVisible();
     await shot("4-comparison");

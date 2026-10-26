@@ -5,6 +5,9 @@ import { EstimatedLabel, Skeleton } from "./ui";
 
 const navClass = ({ isActive }: { isActive: boolean }) =>
   `inline-flex min-h-11 items-center rounded-md px-3 text-sm font-medium ${isActive ? "bg-accent-50 text-accent-800" : "text-ink-700 hover:bg-sand-100"}`;
+// Signed out (UI-FR-01): outlined in the accent; accent-800 text is AA on accent-50 and on the darker accent-100 hover.
+const authClass = ({ isActive }: { isActive: boolean }) =>
+  `inline-flex min-h-11 items-center rounded-md border border-accent-600 px-4 text-sm font-semibold text-accent-800 hover:bg-accent-100 ${isActive ? "bg-accent-100" : "bg-accent-50"}`;
 
 export default function Layout() {
   const { user, logout } = useAuth();
@@ -30,8 +33,8 @@ export default function Layout() {
               </>
             ) : (
               <>
-                <NavLink to="/login" className={navClass}>Log in</NavLink>
-                <NavLink to="/signup" className={navClass}>Sign up</NavLink>
+                <NavLink to="/login" className={authClass}>Log in</NavLink>
+                <NavLink to="/signup" className={authClass}>Sign up</NavLink>
               </>
             )}
           </nav>

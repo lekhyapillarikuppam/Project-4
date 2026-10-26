@@ -1,10 +1,11 @@
 import { expect, test } from "@playwright/test";
-import { fillTrip, isoInDays, signUp } from "./helpers";
+import { fillPrefs, fillTrip, isoInDays, signUp } from "./helpers";
 
 // UI-AT-01: sign up → new trip → feasible trip shows 1–3 cards in < 8 s locally.
 test("UI-AT-01 feasible trip comparison", async ({ page }) => {
   await signUp(page);
   await fillTrip(page, { from: "Delhi", to: "Agra", start: isoInDays(30), end: isoInDays(32), people: "2", budget: "30000" });
+  await fillPrefs(page);
   const t0 = Date.now();
   await page.getByRole("button", { name: "Plan my trip" }).click();
   await expect(page.getByRole("button", { name: /^Choose / }).first()).toBeVisible({ timeout: 8_000 });
@@ -19,6 +20,7 @@ test("UI-AT-01 feasible trip comparison", async ({ page }) => {
 test("UI-AT-03 infeasible budget", async ({ page }) => {
   await signUp(page);
   await fillTrip(page, { from: "Bengaluru", to: "Delhi", start: isoInDays(40), end: isoInDays(43), people: "2", budget: "4000" });
+  await fillPrefs(page);
   await page.getByRole("button", { name: "Plan my trip" }).click();
   await expect(page.getByText("No plan fits this trip yet")).toBeVisible();
   await expect(page.getByText(/Minimum budget for these dates and people/)).toBeVisible();

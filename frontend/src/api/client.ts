@@ -1,7 +1,7 @@
 // Minimal typed client for the Tripwise API. The JWT lives in localStorage; a 401 logs the user out.
 
 import type {
-  ChatMessage, ChatReply, City, Explanations, Meta, ParsedTrip, Places, Prefs, TradeOffs, Trip, TripForm, TripSummary, User, Version, VersionSummary, VariantName,
+  ChatMessage, ChatReply, City, DraftPrefs, Explanations, Meta, ParsedTrip, Places, Prefs, TradeOffs, Trip, TripForm, TripSummary, User, Version, VersionSummary, VariantName,
 } from "./types";
 
 export const API_URL = (import.meta.env.VITE_API_URL as string | undefined)?.replace(/\/$/, "") || "http://localhost:8000";
@@ -56,7 +56,7 @@ export const api = {
   signup: (email: string, password: string) => request<{ token: string; user: User }>("POST", "/auth/signup", { email, password }),
   login: (email: string, password: string) => request<{ token: string; user: User }>("POST", "/auth/login", { email, password }),
   me: () => request<User>("GET", "/auth/me"),
-  getProfile: () => request<{ prefs: Prefs; saved: boolean }>("GET", "/profile"),
+  getProfile: () => request<{ prefs: DraftPrefs; saved: boolean }>("GET", "/profile"),
   putProfile: (prefs: Prefs) => request<{ prefs: Prefs; saved: boolean }>("PUT", "/profile", { prefs }),
   createTrip: (form: TripForm) => request<Trip>("POST", "/trips", form),
   listTrips: (when: "upcoming" | "past") => request<TripSummary[]>("GET", `/trips?when=${when}`),

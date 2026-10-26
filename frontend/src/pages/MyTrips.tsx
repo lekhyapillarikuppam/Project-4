@@ -5,7 +5,7 @@ import { api } from "../api/client";
 import type { TripSummary } from "../api/types";
 import ConfirmDialog from "../components/ConfirmDialog";
 import { ErrorBox, PageTitle, Skeleton } from "../components/ui";
-import { inr, niceDate, VARIANT_LABEL } from "../lib/format";
+import { createdAt, inr, niceDate, VARIANT_LABEL } from "../lib/format";
 import { useCityName } from "../lib/meta";
 import { useDocumentTitle } from "../lib/title";
 
@@ -23,7 +23,7 @@ function TripRow({ t, onDelete }: { t: TripSummary; onDelete: (t: TripSummary) =
   });
   const duplicate = useMutation({
     mutationFn: () => api.duplicateTrip(t.id),
-    onSuccess: (r) => navigate("/new", { state: { request: r.request } }),
+    onSuccess: (r) => navigate("/new", { state: { request: r.request, name: `${t.name} (copy)`.slice(0, 120) } }),
   });
   const link = t.selected_variant ? `/trips/${t.id}/plan` : `/trips/${t.id}`;
   return (
@@ -43,6 +43,7 @@ function TripRow({ t, onDelete }: { t: TripSummary; onDelete: (t: TripSummary) =
         <p className="mt-0.5 text-sm text-ink-700">
           {city(t.origin)} → {city(t.destination)} · {niceDate(t.start_date)} – {niceDate(t.end_date)} · {t.people} {t.people === 1 ? "person" : "people"} · <span data-not-price>budget <span className="num">{inr(t.budget_total)}</span></span>
         </p>
+        <p className="mt-0.5 text-xs text-ink-500">Created <time dateTime={t.created_at}>{createdAt(t.created_at)}</time></p>
         <p className="mt-2">
           {t.status === "infeasible" ? <span className="chip bg-warn-50 text-warn-700">No plan fits yet</span>
             : t.selected_variant ? <span className="chip bg-accent-50 text-accent-800">{VARIANT_LABEL[t.selected_variant]} plan chosen</span>

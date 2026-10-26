@@ -66,7 +66,6 @@ export default function Landing() {
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
             <Link to={user ? "/new" : "/signup"} className="btn-primary px-6 py-3 text-base">Plan a trip</Link>
-            {!user && <Link to="/login" className="btn-secondary px-6 py-3 text-base">Log in</Link>}
           </div>
           <p className="mt-4 text-sm text-ink-500">Prices are estimates compiled for planning; Tripwise does not book anything.</p>
         </div>

@@ -28,6 +28,7 @@ def test_api_at_06_manage(client, user):
     up = client.get("/trips?when=upcoming", headers=user["h"]).json()
     pa = client.get("/trips?when=past", headers=user["h"]).json()
     assert [t["id"] for t in up] == [tid] and [t["id"] for t in pa] == [str(past["id"])]
+    assert up[0]["created_at"] == created["created_at"]                    # list items carry created_at (API-FR-06)
     assert client.get("/trips?when=later", headers=user["h"]).status_code == 422
 
     # versions and chat rows go with the trip

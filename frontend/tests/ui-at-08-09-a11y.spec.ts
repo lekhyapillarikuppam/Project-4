@@ -1,6 +1,6 @@
 import AxeBuilder from "@axe-core/playwright";
 import { expect, test, type Page } from "@playwright/test";
-import { fillTrip, isoInDays, newEmail, signUp } from "./helpers";
+import { fillPrefs, fillTrip, isoInDays, newEmail, signUp } from "./helpers";
 
 /** Press Tab until the focused element's label matches, checking each stop shows a visible focus ring. */
 async function tabTo(page: Page, name: RegExp, max = 80) {
@@ -29,12 +29,25 @@ test("UI-AT-08 keyboard-only run", async ({ page }) => {
   await tabTo(page, /^Password/);
   await page.keyboard.type("correct horse 1");
   await page.keyboard.press("Enter");
+  await expect(page).toHaveURL(/\/profile$/);
+  await tabTo(page, /^Skip for now/);
+  await page.keyboard.press("Enter");
   await expect(page).toHaveURL(/\/new$/);
   await tabTo(page, /^From/);
   await page.keyboard.type("Delhi");
   await tabTo(page, /^To/);
   await page.keyboard.type("Agra");
   await expect(page.getByLabel("To", { exact: true })).toHaveValue("AGR");
+  // blank preferences, chosen by keyboard: hours from the list, an interest, pace and comfort
+  await tabTo(page, /^Hours out/);
+  await page.keyboard.type("9");
+  await expect(page.getByLabel("Hours out each day")).toHaveValue("9");
+  await tabTo(page, /^History/);
+  for (let i = 0; i < 3; i++) await page.keyboard.press("ArrowRight");
+  await tabTo(page, /^relaxed/i);
+  await page.keyboard.press("Space");
+  await tabTo(page, /^Budget —/);
+  await page.keyboard.press("Space");
   await tabTo(page, /^Plan my trip/);
   await page.keyboard.press("Enter");
   await expect(page.getByRole("button", { name: /^Choose / }).first()).toBeVisible();
@@ -61,6 +74,7 @@ async function unlabelledPrices(page: Page): Promise<string[]> {
 test("UI-AT-09 estimated labels", async ({ page }) => {
   await signUp(page);
   await fillTrip(page, { from: "Delhi", to: "Jaipur", start: isoInDays(45), end: isoInDays(47), budget: "50000" });
+  await fillPrefs(page);
   await page.getByRole("button", { name: "Plan my trip" }).click();
   await expect(page.getByRole("button", { name: /^Choose / }).first()).toBeVisible();
   expect(await unlabelledPrices(page)).toEqual([]);
@@ -76,6 +90,7 @@ test("UI-AT-09 estimated labels", async ({ page }) => {
 test("busy planner shows retry", async ({ page }) => {
   await signUp(page);
   await fillTrip(page, { from: "Delhi", to: "Agra" });
+  await fillPrefs(page);
   await page.route("**/trips", (route) => route.request().method() === "POST"
     ? route.fulfill({ status: 429, contentType: "application/json", body: JSON.stringify({ error: "busy", message: "busy" }) })
     : route.continue());
@@ -99,6 +114,7 @@ test("accessibility scan of every page", async ({ page }) => {
   await signUp(page);
   problems.push(...await scan("new trip"));
   await fillTrip(page, { from: "Delhi", to: "Agra" });
+  await fillPrefs(page);
   await page.getByRole("button", { name: "Plan my trip" }).click();
   await expect(page.getByRole("button", { name: /^Choose / }).first()).toBeVisible();
   problems.push(...await scan("comparison"));

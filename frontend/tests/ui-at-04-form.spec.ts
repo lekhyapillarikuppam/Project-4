@@ -1,5 +1,5 @@
 import { expect, test } from "@playwright/test";
-import { fillTrip, isoInDays, signUp } from "./helpers";
+import { fillPrefs, fillTrip, isoInDays, signUp } from "./helpers";
 
 // UI-AT-04: each FR-001–005 violation is blocked on the client; a forced server 422 shows next to its field.
 test("UI-AT-04 form validation", async ({ page }) => {
@@ -13,6 +13,11 @@ test("UI-AT-04 form validation", async ({ page }) => {
     expect(posted).toBe(false);
     void field;
   };
+
+  // preferences start blank: hours, pace, comfort and an interest must be chosen, each with its own message
+  await blocked("Hours out each day", /Choose how many hours a day you want to be out/);
+  for (const t of [/Choose a pace/, /Choose a stay comfort/, /at least one interest a weight above 0/]) await expect(page.getByText(t)).toBeVisible();
+  await fillPrefs(page);
 
   await fillTrip(page, { from: "Delhi", to: "Delhi" });
   await blocked("To", /Destination must differ from origin/);

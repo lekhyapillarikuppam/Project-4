@@ -68,7 +68,8 @@ def list_trips(when: str | None = None, user: dict = Depends(current_user)) -> l
              "destination": r["request"]["destination"], "start_date": r["start_date"].isoformat(),
              "end_date": r["request"]["end_date"], "people": r["request"]["people"],
              "budget_total": r["request"]["budget_total"], "status": r["status"],
-             "selected_variant": r["selected_variant"], "updated_at": r["updated_at"].isoformat()} for r in rows]
+             "selected_variant": r["selected_variant"], "created_at": r["created_at"].isoformat(),
+             "updated_at": r["updated_at"].isoformat()} for r in rows]
 
 
 @router.get("/{trip_id}")

@@ -1,9 +1,10 @@
 import { expect, test, type Page } from "@playwright/test";
-import { fillTrip, isoInDays, signUp } from "./helpers";
+import { fillPrefs, fillTrip, isoInDays, signUp } from "./helpers";
 
 async function planAndChoose(page: Page) {
   await signUp(page);
   await fillTrip(page, { from: "Delhi", to: "Jaipur", start: isoInDays(35), end: isoInDays(38), people: "2", budget: "60000" });
+  await fillPrefs(page);
   await page.getByRole("button", { name: "Plan my trip" }).click();
   await page.getByRole("button", { name: /^Choose / }).first().click();
   await expect(page).toHaveURL(/\/plan$/);

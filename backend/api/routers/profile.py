@@ -6,7 +6,7 @@ from fastapi import APIRouter, Body, Depends
 
 from api import db
 from api.auth import current_user
-from api.validation import DEFAULT_PREFS, prefs_or_422
+from api.validation import BLANK_PREFS, prefs_or_422
 
 router = APIRouter(prefix="/profile", tags=["profile"])
 
@@ -15,7 +15,7 @@ router = APIRouter(prefix="/profile", tags=["profile"])
 def get_profile(user: dict = Depends(current_user)) -> dict:
     row = db.one("SELECT prefs, updated_at FROM {s}.profiles WHERE user_id = %s", user["id"])
     if row is None:
-        return {"prefs": DEFAULT_PREFS, "saved": False}
+        return {"prefs": BLANK_PREFS, "saved": False}
     return {"prefs": row["prefs"], "saved": True, "updated_at": row["updated_at"].isoformat()}
 
 

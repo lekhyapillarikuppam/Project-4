@@ -1,4 +1,4 @@
-"""Profile (API-FR-03): defaults before saving, save and reload, invalid prefs rejected."""
+"""Profile (API-FR-03): a blank profile before saving, save and reload, invalid prefs rejected."""
 
 PREFS = {"daily_hours_out": 10, "pace": "packed", "comfort": "budget", "avoid_crowds": True,
          "modes": {"train": "preferred", "bus": "avoid", "flight": "neutral"},
@@ -9,6 +9,13 @@ PREFS = {"daily_hours_out": 10, "pace": "packed", "comfort": "budget", "avoid_cr
 def test_profile_round_trip(client, user):
     r = client.get("/profile", headers=user["h"])
     assert r.status_code == 200 and r.json()["saved"] is False
+    blank = r.json()["prefs"]                                     # nothing invented for a new user
+    assert blank["daily_hours_out"] is None and blank["pace"] is None and blank["comfort"] is None
+    assert set(blank["interests"].values()) == {0} and len(blank["interests"]) == 9
+    assert blank["modes"] == {"train": "neutral", "bus": "neutral", "flight": "neutral"} and blank["avoid_crowds"] is False
+    r = client.put("/profile", headers=user["h"], json={"prefs": blank})       # a blank profile cannot be saved
+    assert r.status_code == 422
+    assert {"prefs.daily_hours_out", "prefs.pace", "prefs.comfort", "prefs.interests"} <= set(r.json()["fields"])
     r = client.put("/profile", headers=user["h"], json={"prefs": PREFS})
     assert r.status_code == 200 and r.json()["prefs"] == PREFS
     r = client.get("/profile", headers=user["h"])

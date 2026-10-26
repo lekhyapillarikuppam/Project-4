@@ -1,5 +1,5 @@
 import { expect, test } from "@playwright/test";
-import { fillTrip, isoInDays, noHorizontalScroll, signUp } from "./helpers";
+import { fillPrefs, fillTrip, isoInDays, noHorizontalScroll, signUp } from "./helpers";
 
 // 007 T06 + AI-AT-05 (UI side): the API runs without a Groq key here, so the assistant must say it is unavailable,
 // leave the plan alone, and the rest of the page (explanations included) must degrade quietly.
@@ -9,6 +9,7 @@ for (const width of [360, 1280]) {
     await signUp(page);
     await expect(page.getByRole("heading", { name: /Describe your trip/ })).toBeVisible();
     await fillTrip(page, { from: "Delhi", to: "Jaipur", start: isoInDays(30), end: isoInDays(32), people: "2", budget: "50000" });
+    await fillPrefs(page);
     await page.getByRole("button", { name: "Plan my trip" }).click();
     await expect(page.getByText(/Explanations are unavailable right now/).first()).toBeVisible();
     await page.getByRole("button", { name: /^Choose / }).first().click();

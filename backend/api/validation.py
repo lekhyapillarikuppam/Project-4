@@ -19,6 +19,9 @@ MODES = ("train", "bus", "flight")
 MODE_PREFS = ("preferred", "neutral", "avoid")
 DEFAULT_PREFS = {"daily_hours_out": 9, "interests": {t: 0 for t in TAGS} | {"history": 3, "culture": 3, "food": 3},
                  "pace": "balanced", "comfort": "mid", "modes": {m: "neutral" for m in MODES}, "avoid_crowds": False}
+# An unsaved profile (API-FR-03): nothing chosen yet. Not valid for planning; the user picks hours, pace and comfort.
+BLANK_PREFS = {"daily_hours_out": None, "interests": {t: 0 for t in TAGS}, "pace": None, "comfort": None,
+               "modes": {m: "neutral" for m in MODES}, "avoid_crowds": False}
 
 
 def today() -> date:

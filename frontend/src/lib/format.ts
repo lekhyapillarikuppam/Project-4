@@ -43,6 +43,13 @@ export function daysBetween(a: string, b: string): number {
   return Math.round((Date.UTC(pb[0], pb[1] - 1, pb[2]) - Date.UTC(pa[0], pa[1] - 1, pa[2])) / 86_400_000);
 }
 
+/** "26 Oct 2026, 3:12 pm" in India time, from an ISO timestamp. */
+export function createdAt(iso: string): string {
+  return new Intl.DateTimeFormat("en-IN", {
+    timeZone: "Asia/Kolkata", day: "numeric", month: "short", year: "numeric", hour: "numeric", minute: "2-digit", hour12: true,
+  }).format(new Date(iso)).replace(/\bam\b|\bpm\b/gi, (s) => s.toLowerCase());
+}
+
 export const VARIANT_LABEL: Record<string, string> = { experience: "Experience", balanced: "Balanced", saver: "Saver" };
 export const MODE_LABEL: Record<string, string> = { train: "Train", bus: "Bus", flight: "Flight" };
 export const TIER_LABEL: Record<string, string> = { budget: "Budget", mid: "Mid-range", premium: "Premium" };

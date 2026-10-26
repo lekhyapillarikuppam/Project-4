@@ -2,32 +2,50 @@ import { useEffect, useState, type FormEvent, type KeyboardEvent } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { useLocation, useNavigate } from "react-router-dom";
 import { api, ApiError } from "../api/client";
-import type { Prefs, TripForm } from "../api/types";
+import type { DraftPrefs, Meta, TripForm } from "../api/types";
 import DescribeTrip from "../components/DescribeTrip";
 import PrefsForm, { prefsSummary } from "../components/PrefsForm";
 import { ErrorBox, FieldError, PageTitle, Skeleton } from "../components/ui";
 import { addDays, todayIST } from "../lib/format";
 import { useDocumentTitle } from "../lib/title";
 import { useCities, useMeta } from "../lib/meta";
-import { validateTrip, type Errors } from "../lib/validate";
+import { fieldId, validateTrip, type DraftTripForm, type Errors } from "../lib/validate";
 
-type Draft = Omit<TripForm, "budget_total" | "budget_per_person"> & { budget: string; per: boolean };
+type Draft = Omit<DraftTripForm, "budget_total" | "budget_per_person" | "name"> & { budget: string; per: boolean; name: string };
 
-function draftFrom(req: Partial<TripForm> | undefined, prefs: Prefs): Draft {
+/** Blank preferences (UI-FR-02): nothing chosen, interests 0, transport neutral, crowds allowed. */
+function blankPrefs(meta: Meta): DraftPrefs {
+  return {
+    daily_hours_out: null, pace: null, comfort: null, avoid_crowds: false,
+    interests: Object.fromEntries(meta.interests.map((t) => [t, 0])) as DraftPrefs["interests"],
+    modes: Object.fromEntries(meta.modes.map((m) => [m, "neutral"])) as DraftPrefs["modes"],
+  };
+}
+
+function draftFrom(req: Partial<TripForm> | undefined, name: string | undefined, meta: Meta): Draft {
   const start = addDays(todayIST(), 30);
   return {
     origin: req?.origin ?? "", destination: req?.destination ?? "",
     start_date: req?.start_date ?? start, end_date: req?.end_date ?? addDays(start, 2),
-    people: req?.people ?? 2, prefs: req?.prefs ?? prefs, locks: req?.locks ?? [], excludes: req?.excludes ?? [],
-    budget: req?.budget_total ? String(req.budget_total) : "30000", per: false,
+    people: req?.people ?? 2, prefs: req?.prefs ?? blankPrefs(meta), locks: req?.locks ?? [], excludes: req?.excludes ?? [],
+    budget: req?.budget_total ? String(req.budget_total) : "30000", per: false, name: name ?? "",
   };
 }
 
-function toForm(d: Draft): TripForm {
+function toForm(d: Draft): DraftTripForm {
   const amount = d.budget.trim() === "" ? NaN : Number(d.budget);
-  const { budget, per, ...rest } = d;
+  const { budget, per, name, ...rest } = d;
   void budget;
-  return per ? { ...rest, budget_per_person: amount } : { ...rest, budget_total: amount };
+  const named = name.trim() ? { name: name.trim() } : {};
+  return per ? { ...rest, ...named, budget_per_person: amount } : { ...rest, ...named, budget_total: amount };
+}
+
+/** The name the API gives a trip left unnamed: "Delhi to Agra, 05 Nov 2026" (backend default_name). */
+function autoName(d: Draft, cityName: (code: string) => string): string {
+  if (!d.origin || !d.destination || !d.start_date) return "Named from your cities and start date";
+  const day = new Date(`${d.start_date}T00:00:00`);
+  const date = `${String(day.getDate()).padStart(2, "0")} ${day.toLocaleString("en-GB", { month: "short" })} ${day.getFullYear()}`;
+  return `${cityName(d.origin)} to ${cityName(d.destination)}, ${date}`;
 }
 
 export default function NewTrip() {
@@ -36,7 +54,8 @@ export default function NewTrip() {
   const profile = useQuery({ queryKey: ["profile"], queryFn: api.getProfile });
   const loc = useLocation();
   const navigate = useNavigate();
-  const incoming = (loc.state as { request?: Partial<TripForm> } | null)?.request;
+  const state = loc.state as { request?: Partial<TripForm>; name?: string } | null;
+  const incoming = state?.request;
   const [draft, setDraft] = useState<Draft | null>(null);
   const [errors, setErrors] = useState<Errors>({});
   const [error, setError] = useState<unknown>(null);
@@ -44,13 +63,15 @@ export default function NewTrip() {
   useDocumentTitle("New trip");
 
   useEffect(() => {
-    if (draft === null && profile.data) setDraft(draftFrom(incoming, profile.data.prefs));
-  }, [profile.data, incoming, draft]);
+    if (draft === null && meta.data) setDraft(draftFrom(incoming, state?.name, meta.data));
+  }, [meta.data, incoming, state?.name, draft]);
 
-  if (meta.isError || profile.isError || cities.isError) return <ErrorBox error={meta.error || profile.error || cities.error} />;
+  if (meta.isError || cities.isError) return <ErrorBox error={meta.error || cities.error} />;
   if (!meta.data || !draft || !cities.data) return <Skeleton lines={8} />;
   const m = meta.data;
   const set = <K extends keyof Draft>(k: K, v: Draft[K]) => setDraft({ ...draft, [k]: v });
+  const cityName = (code: string) => cities.data!.find((c) => c.code === code)?.name ?? code;
+  const saved = profile.data?.saved === true;
 
   async function submit(e: FormEvent) {
     e.preventDefault();
@@ -59,12 +80,12 @@ export default function NewTrip() {
     setErrors(errs);
     setError(null);
     if (Object.keys(errs).length) {
-      document.getElementById(`f-${Object.keys(errs)[0].split(".")[0]}`)?.focus();
+      document.getElementById(fieldId(Object.keys(errs)[0], m))?.focus();
       return;
     }
     setBusy(true);
     try {
-      const trip = await api.createTrip(form);
+      const trip = await api.createTrip(form as TripForm);       // validated: hours, pace and comfort are chosen
       navigate(`/trips/${trip.id}`);
     } catch (err) {
       if (err instanceof ApiError && Object.keys(err.fields).length) setErrors(err.fields);
@@ -145,10 +166,24 @@ export default function NewTrip() {
             </div>
             <FieldError id="budget-err" message={errors[budgetField]} />
           </div>
+          <div className="sm:col-span-2">
+            <label htmlFor="f-name" className="label">Trip name <span className="font-normal text-ink-500">(optional)</span></label>
+            <input id="f-name" className="input" maxLength={120} value={draft.name} placeholder={autoName(draft, cityName)}
+                   aria-invalid={!!errors.name} aria-describedby="name-err" onChange={(e) => set("name", e.target.value)} />
+            <FieldError id="name-err" message={errors.name} />
+          </div>
         </section>
         <section className="card">
           <h2 className="text-lg font-semibold">Your preferences</h2>
-          <p className="mb-4 mt-1 text-sm text-ink-500">{prefsSummary(draft.prefs)}</p>
+          <p className="mt-1 text-sm text-ink-500">{prefsSummary(draft.prefs)}</p>
+          <div className="mb-4 mt-3 flex flex-wrap items-center gap-3">
+            <button type="button" className="btn-secondary btn-sm" disabled={!saved}
+                    aria-describedby={saved ? undefined : "fill-hint"}
+                    onClick={() => { if (profile.data?.saved) { set("prefs", profile.data.prefs); setErrors({}); } }}>
+              Fill from my profile
+            </button>
+            {!saved && profile.data && <p id="fill-hint" className="text-sm text-ink-500">Save your preferences in Profile first.</p>}
+          </div>
           <PrefsForm value={draft.prefs} onChange={(p) => set("prefs", p)} meta={m} errors={errors} />
         </section>
         {error !== null && <ErrorBox error={error}

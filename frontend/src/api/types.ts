@@ -17,6 +17,11 @@ export interface Prefs {
   avoid_crowds: boolean;
 }
 
+/** Preferences while being filled in: hours, pace and comfort start unchosen (API-FR-03 blank profile, UI-FR-02). */
+export type DraftPrefs = Omit<Prefs, "daily_hours_out" | "pace" | "comfort"> & {
+  daily_hours_out: number | null; pace: Pace | null; comfort: Comfort | null;
+};
+
 export interface TripRequest {
   origin: string;
   destination: string;
@@ -81,7 +86,8 @@ export interface Trip {
 }
 export interface TripSummary {
   id: string; name: string; origin: string; destination: string; start_date: string; end_date: string;
-  people: number; budget_total: number; status: "ok" | "infeasible"; selected_variant: VariantName | null; updated_at: string;
+  people: number; budget_total: number; status: "ok" | "infeasible"; selected_variant: VariantName | null;
+  created_at: string; updated_at: string;
 }
 export interface VersionSummary {
   version: number; source: "select" | "replan" | "chat" | "restore"; note: string | null; changes: unknown;

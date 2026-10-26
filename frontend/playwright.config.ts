@@ -9,7 +9,11 @@ export default defineConfig({
   workers: 1,
   reporter: [["list"]],
   use: { baseURL: "http://localhost:5173", trace: "off", screenshot: "off" },
-  projects: [{ name: "chromium", use: { ...devices["Desktop Chrome"] } }],
+  // every spec at 1280 px and at 360 px (UI-FR-08); specs that set their own viewport keep it
+  projects: [
+    { name: "chromium-1280", use: { ...devices["Desktop Chrome"], viewport: { width: 1280, height: 800 } } },
+    { name: "chromium-360", use: { ...devices["Desktop Chrome"], viewport: { width: 360, height: 800 } } },
+  ],
   webServer: [
     {
       command: "..\\backend\\.venv\\Scripts\\python.exe -m uvicorn api.main:app --port 8000",

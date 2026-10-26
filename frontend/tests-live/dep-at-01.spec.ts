@@ -1,5 +1,5 @@
 import { expect, test } from "@playwright/test";
-import { fillTrip, isoInDays, signUp } from "../tests/helpers";
+import { fillPrefs, fillTrip, isoInDays, signUp } from "../tests/helpers";
 
 // DEP-AT-01 / DEP-FR-03: the full flow for a new user on the deployed URLs —
 // sign up → plan → choose → chat change → My Trips.
@@ -7,6 +7,7 @@ test("DEP-AT-01 live full flow", async ({ page }) => {
   const email = `live-check-${Date.now()}@example.com`;
   await signUp(page, email);
   await fillTrip(page, { from: "Delhi", to: "Jaipur", start: isoInDays(30), end: isoInDays(32), people: "2", budget: "50000" });
+  await fillPrefs(page);
   await page.getByRole("button", { name: "Plan my trip" }).click();
   await expect(page.getByRole("button", { name: /^Choose / }).first()).toBeVisible();
   await page.getByRole("button", { name: /^Choose / }).first().click();
