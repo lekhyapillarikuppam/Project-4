@@ -89,6 +89,9 @@ groq:
   temperature_parse: 0.2
   max_tokens: 1200
   reasoning_effort: "low"     # gpt-oss: reasoning tokens count against max_tokens; "low" leaves room for the answer
+  eval_pause_s: 1.5           # eval scripts: pause between Groq calls (Developer tier: 250k tokens a minute)
+  eval_retry_wait_s: 10       # eval scripts: wait after a Groq refusal, then try again (up to eval_retries times)
+  eval_retries: 6
 chat:
   rate_per_hour: 30            # per user (AI-FR-07); 429 beyond this
   history_messages: 6          # earlier chat messages sent with each tool call

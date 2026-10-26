@@ -79,7 +79,7 @@ def main() -> int:
                          "reply_source": a["actions"].get("reply"), "version": a["version"], "seconds": round(secs, 2),
                          "problems": problems})
             print(f"{'OK ' if not problems else 'BAD'} {secs:4.1f}s  {m}\n     {a['text']}" + (f"\n     {problems}" if problems else ""))
-            time.sleep(15)        # Groq free tier: stay under the tokens-per-minute limit
+            time.sleep(config.default().groq["eval_pause_s"])
     (ROOT / "eval" / "out").mkdir(parents=True, exist_ok=True)
     (ROOT / "eval" / "out" / "chat_changes.json").write_text(json.dumps(rows, indent=1, ensure_ascii=False), encoding="utf-8")
     print(f"changes with a valid new version and matching diff: {ok}/{len(MESSAGES)}")

@@ -45,7 +45,8 @@ def _tool(name: str, description: str, props: dict | None = None, required: list
         "type": "object", "properties": props or {}, "required": required or [], "additionalProperties": False}}}
 
 
-_NAME = {"name": {"type": "string", "description": "The activity's name as the traveller wrote it"}}
+_NAME = {"name": {"type": "string", "description": "The activity's name exactly as the traveller wrote it, even when vague "
+                  "(for example \"the palace\"); never swap in a specific activity from the trip, the planner asks which one"}}
 _HOURS = {"type": "number", "minimum": 4, "maximum": 14}
 
 TOOLS = [

@@ -1,7 +1,7 @@
 """Evaluation (008 EVAL-FR-01–EVAL-FR-04): Tripwise vs greedy vs LLM-only on eval/test_trips.json.
 
     python eval/run_eval.py            # Tripwise and greedy on all 30; LLM-only reused from eval/out/llm_only.json if present
-    python eval/run_eval.py --llm      # (re)run the LLM-only baseline on its 10 trips first (Groq, 1 call a minute)
+    python eval/run_eval.py --llm      # (re)run the LLM-only baseline on its 10 trips first (Groq, paced by groq.eval_*)
 
 Writes eval/out/results.csv, three charts (eval/charts/feasibility.png, value.png, travel_share.png) and
 eval/RESULTS.md. Tripwise and greedy are deterministic: a re-run gives the same numbers (EVAL-AT-02); solve times
@@ -78,21 +78,22 @@ def row(planner: str, t: dict, res, ms: float, ds, cfg, extra: dict | None = Non
 
 
 def run_llm(trips: list[dict], ids: list[str]) -> list[dict]:
-    """One Groq call per trip, paced 1 a minute; waits out free-tier refusals. Saved raw to llm_only.json."""
+    """One Groq call per trip, paced by config groq.eval_*; retries a refusal a few times. Saved raw to llm_only.json."""
+    g = config.default().groq
     saved = []
     for t in (t for t in trips if t["id"] in ids):
         req = TripRequest.model_validate(t["request"])
-        for attempt in range(37):
+        for attempt in range(g["eval_retries"] + 1):
             p, info = llm_only.plan(req)
-            if not info.get("reason", "").startswith("groq unavailable"):
+            if not info.get("reason", "").startswith("groq unavailable") or attempt == g["eval_retries"]:
                 break
-            print(f"   {t['id']}: Groq refused; waiting 5 min", flush=True)
-            time.sleep(300)
+            print(f"   {t['id']}: Groq refused; waiting {g['eval_retry_wait_s']} s", flush=True)
+            time.sleep(g["eval_retry_wait_s"])
         saved.append({"trip": t["id"], "plan": p.model_dump(mode="json", by_alias=True) if isinstance(p, Plan) else None,
                       "info": info})
         (OUT / "llm_only.json").write_text(json.dumps(saved, indent=1, ensure_ascii=False), encoding="utf-8")
         print(f"   LLM-only {t['id']}: {'plan' if isinstance(p, Plan) else info.get('reason')} ({info.get('seconds')} s)", flush=True)
-        time.sleep(60)
+        time.sleep(g["eval_pause_s"])
     return saved
 
 

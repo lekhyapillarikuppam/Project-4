@@ -1,7 +1,7 @@
 """AI-AT-03 / EVAL-FR-03: chat tool accuracy on eval/chat_intents.json (50 messages).
 
-    python eval/run_chat_intents.py [--resume] [--max N]   (needs GROQ_API_KEY; about 30 min on the Groq free tier;
-                                                            --max N stops after N new cases, for short batches)
+    python eval/run_chat_intents.py [--resume] [--max N]   (needs GROQ_API_KEY; a few minutes; pacing in config
+                                                            groq.eval_*; --max N stops after N new cases)
 
 Each message goes through chat call 1 only (Groq tool calling with the real system prompt and trip context; no
 replan). A message is correct when the model calls exactly the expected tool with the expected arguments (names
@@ -34,17 +34,15 @@ REQUEST = {"origin": "DEL", "destination": "JAI", "start_date": "2026-12-14", "e
 
 
 def call(messages: list[dict]) -> dict:
-    # Groq free tier: 8000 tokens a minute and 200000 a day (rolling). On a refusal, wait 5 min and try again,
-    # for up to 3 hours, so a run that meets the daily limit finishes once tokens free up.
-    for attempt in range(37):
+    g = config.default().groq
+    for attempt in range(g["eval_retries"] + 1):
         try:
-            return groq_client.chat(messages, temperature=config.default().groq["temperature_tools"], tools=TOOLS,
-                                    tool_choice="required")
+            return groq_client.chat(messages, temperature=g["temperature_tools"], tools=TOOLS, tool_choice="required")
         except groq_client.Unavailable as exc:
-            if attempt == 36:
+            if attempt == g["eval_retries"]:
                 raise
-            print(f"   Groq refused ({exc}); waiting 5 min", flush=True)
-            time.sleep(300)
+            print(f"   Groq refused ({exc}); waiting {g['eval_retry_wait_s']} s", flush=True)
+            time.sleep(g["eval_retry_wait_s"])
     raise AssertionError
 
 
@@ -110,7 +108,7 @@ def main() -> int:
         rows.append({**c, "ok": ok, "note": note, "seconds": round(time.perf_counter() - t0, 2)})
         out_file.write_text(json.dumps(rows, indent=1, ensure_ascii=False), encoding="utf-8")   # resumable
         print(f"{'OK ' if ok else 'BAD'} {c['id']} {c['text']!r}: {note}", flush=True)
-        time.sleep(30)
+        time.sleep(config.default().groq["eval_pause_s"])
     right = sum(r["ok"] for r in rows)
     print(f"tool accuracy {right}/{len(cases)} = {right / len(cases):.0%}")
     return 0 if right / len(cases) >= 0.9 else 1

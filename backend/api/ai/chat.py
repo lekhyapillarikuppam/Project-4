@@ -56,7 +56,7 @@ def _norm(s: str) -> str:
 def resolve(name: str, city: str) -> tuple[str, str]:
     """(attraction_id, canonical name), or raises Clarify when the name is unknown or ambiguous."""
     cands = {a.attraction_id: a.name for a in data.default().attractions.values() if a.city_id == city}
-    q = _norm(name or "")
+    q = re.sub(r"^(the|a|an) ", "", _norm(name or ""))     # "the temple" is as vague as "temple"
     if not q:
         raise Clarify("Which activity do you mean?")
     exact = [i for i, n in cands.items() if _norm(n) == q]
