@@ -134,9 +134,10 @@ Tripwise scores 13% more value than greedy on average and spends 16% of the day 
 28%; greedy still scores higher on 6 of the 26 trips. The LLM-only planner wrote a usable plan for only 2 of 10 trips:
 the other 8 broke day-length, lunch, budget or attraction rules (V-10 and V-11 on 6 trips each), which the
 validator caught. Tripwise shows 2.4 distinct variants per trip on average. Chat tool accuracy (AI-AT-03) is
-45/50 = 90%.
+42.7/50 = 85.3% on the mean of 3 runs, below the 90% target: the `limit_kind` fix for requests such as "only one
+church" cost about two cases on that set (see `eval/AI_AT_03.md`).
 
-Live, on the Azure VM: all variants p95 1.21 s over the 30 trips (limit 5 s). Chat p95 4.72 s and 7.41 s in two runs
+Live, on the Azure VM: all variants p95 1.21 s over the 30 trips (limit 5 s). Chat p95 7.30 s and 7.31 s in two runs
 of 10 messages (limit 8 s), with a per-message deadline: a slow Groq response gets a template reply, or "assistant
 unavailable" if Groq is slow to choose the tool (1 of 20 messages). On the laptop the chat p95 is 7.0 s.
 

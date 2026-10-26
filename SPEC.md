@@ -1924,7 +1924,7 @@ Update this table when a feature's tasks are written (fill **Tasks**) and when i
 | Req | Summary | Feature spec | Feature reqs | Tasks | Tests | Status |
 |---|---|---|---|---|---|---|
 | NFR-001 | All variants ≤ 5 s p95 | 002 (merged from 003), 008 (merged from 009) | A7, DEP-FR-03 | 002 T19, 008 T05 | ENG-AT-08, VAR-AT-03, DEP-AT-02 | Pass (laptop p95 1.8 s; live p95 1.21 s over 30 trips) |
-| NFR-002 | Chat action ≤ 8 s p95 | 007, 008 (merged from 009) | AI-FR-03, DEP-FR-03 | 007 T09, 008 T05 | AI-AT-07, DEP-AT-02 | Pass (laptop p95 7.0 s; live with the chat deadline p95 4.72 s and 7.41 s in two runs; before it 12.2 s and 13.0 s; `eval/LIVE.md`) |
+| NFR-002 | Chat action ≤ 8 s p95 | 007, 008 (merged from 009) | AI-FR-03, DEP-FR-03 | 007 T09, 008 T05 | AI-AT-07, DEP-AT-02 | Pass (laptop p95 7.0 s; live with the chat deadline p95 4.72 s and 7.41 s, and after limit_kind 7.30 s and 7.31 s; before the deadline 12.2 s and 13.0 s; `eval/LIVE.md`) |
 | NFR-003 | Security | 004, 008 (merged from 009) | API-FR-01, 02, 11, 12, DEP-FR-01, 02 | 004 T03, T05; 008 T03–T05 | API-AT-01, 02, 07, DEP-AT-03 | Pass |
 | NFR-004 | Free tiers only | 008 (merged from 009) | DEP-FR-01, 02, AI-FR-07 | 008 T03, T04 | Manual check of the accounts | Pass (Part B amended 2026-10-26: Groq on the Developer tier, total under ₹50; Vercel Hobby, Neon free, Azure for Students and ORS free unchanged) |
 | NFR-005 | LLM call limits | 007 | AI-FR-02, 03, 07 | 007 T04, T05, T08 | AI-AT-02, 04; `tests/api/test_api_ai_failure.py` (rate limit) | Pass |
@@ -2027,7 +2027,7 @@ Measured 2026-10-25 on the developer laptop (Windows 11, Python 3.11.9, OR-Tools
 | UI-AT-09 | Every price on screen | 006 | — | Pass |
 | AI-AT-01 | 10 free-text preference samples | 007 | `eval/run_parse_samples.py`, `eval/AI_AT_01.md` | Pass (10/10 valid, 10/10 sensible) |
 | AI-AT-02 | Explanations for 10 test trips | 007 | `eval/run_explanations.py`, `eval/AI_AT_02.md`, `tests/ai/test_grounding.py` | Pass (10/10 grounded, 0 shown ungrounded) |
-| AI-AT-03 | `eval/chat_intents.json`: 50 hand-written messages with expected tool and argume | 007 | `eval/run_chat_intents.py`, `eval/AI_AT_03.md` | Pass (45/50 = 90%) |
+| AI-AT-03 | `eval/chat_intents.json`: 50 hand-written messages with expected tool and argume | 007 | `eval/run_chat_intents.py`, `eval/AI_AT_03.md` | Fail on the 3-run mean (85.3%; code before the limit_kind fix 89.3%) |
 | AI-AT-04 | 10 chat changes end to end | 007 | `eval/run_chat_changes.py`, `eval/AI_AT_04.md`, `tests/api/test_api_chat.py` | Pass (10/10) |
 | AI-AT-05 | Groq key removed | 007 | `tests/api/test_api_ai_failure.py`, `frontend/tests/ai-ui-chat.spec.ts` | Pass |
 | AI-AT-06 | Engine extensions | 007 | `tests/test_extensions.py`, `tests/api/test_api_extensions.py` | Pass |
@@ -2035,7 +2035,7 @@ Measured 2026-10-25 on the developer laptop (Windows 11, Python 3.11.9, OR-Tools
 | EVAL-AT-01 | `run_eval.py` | 008 | `eval/run_eval.py`, `eval/RESULTS.md` | Pass (Tripwise 26/26) |
 | EVAL-AT-02 | Re-run | 008 | `eval/out/results.csv` compared run to run | Pass (70/70 rows identical) |
 | DEP-AT-01 | Live full flow | 008 | `frontend/tests-live/dep-at-01.spec.ts` | Pass |
-| DEP-AT-02 | Live timings | 008 | `eval/run_live.py`, `eval/LIVE.md` | Pass (variants p95 1.21 s; chat p95 4.72 s and 7.41 s) |
+| DEP-AT-02 | Live timings | 008 | `eval/run_live.py`, `eval/LIVE.md` | Pass (variants p95 1.21 s; chat p95 7.30 s and 7.31 s after limit_kind) |
 | DEP-AT-03 | Security | 008 | `eval/LIVE.md` | Pass |
 
 ### Feature 004 acceptance results
@@ -2078,7 +2078,7 @@ Real Groq `openai/gpt-oss-120b` (Developer tier) unless noted; backend suite 101
 |---|---|---|---|
 | AI-AT-01 | Pass | 2026-10-26 | `eval/AI_AT_01.md`: 10/10 valid prefs, 10/10 sensible (manual review) |
 | AI-AT-02 | Pass | 2026-10-26 | `eval/AI_AT_02.md`: 10/10 grounded, none shown ungrounded |
-| AI-AT-03 | Pass | 2026-10-26 | `eval/AI_AT_03.md`: 45/50 = 90% (threshold 90%), fresh run of all 50; misses: 3 of 5 ambiguous names, 1 transport direction, 1 unsupported answered as explain |
+| AI-AT-03 | Fail | 2026-10-26 | `eval/AI_AT_03.md`: mean of 3 fresh runs 42.7/50 = 85.3% (43, 43, 42; threshold 90%) with the limit_kind fix; the code before it scored 45, 45, 44 (89.3%). Systematic, not noise: the fix loses C18, C23, C46 and gains C50 and usually C49. Shipped by owner decision for the chat bug (regression set 0/6 → 6/6). Earlier single run 45/50 |
 | AI-AT-04 | Pass | 2026-10-26 | `eval/run_chat_changes.py`: 10/10 new versions pass the validator, reply diff equals the version diff |
 | AI-AT-05 | Pass | 2026-10-26 | `tests/api/test_api_ai_failure.py` (no key: planning works, parse 503, explanations omitted with a notice, chat unavailable); `frontend/tests/ai-ui-chat.spec.ts` |
 | AI-AT-06 | Pass | 2026-10-26 | `tests/test_extensions.py`, `tests/api/test_api_extensions.py`: pins, day_hours, forced transport (V-14–16), `pin_impossible` |
@@ -2090,8 +2090,8 @@ Real Groq `openai/gpt-oss-120b` (Developer tier) unless noted; backend suite 101
 |---|---|---|---|
 | EVAL-AT-01 | Pass | 2026-10-26 | `python eval/run_eval.py --llm`: `eval/out/results.csv`, 3 charts, `eval/RESULTS.md`. Tripwise 26/26 feasible trips valid (100%), 4/4 infeasible declined, mean value 729.5; greedy 26/26, 645.5; LLM-only 2/10 valid (V-10 and V-11 on 6 trips each) |
 | EVAL-AT-02 | Pass | 2026-10-26 | Second run (LLM-only reused from `eval/out/llm_only.json`): all 70 rows identical apart from `solve_ms` |
-| DEP-AT-01 | Pass | 2026-10-26 | `npx playwright test -c playwright.live.config.ts` on the deployed URLs: sign up, plan, choose, chat change to version 2, My Trips; 15 s, 16.7 s after the key rotation, 14.9 s on the chat-deadline deploy |
-| DEP-AT-02 | Pass | 2026-10-26 | `eval/LIVE.md`: variants p95 1.21 s over 30 trips, 1.54 s over T01–T10 (limit 5 s). Chat with the per-message deadline, two runs: p95 4.72 s and 7.41 s (limit 8 s); 19 of 20 messages made their change, 1 got "assistant unavailable" when call 1 hit its 4 s limit. Before the deadline: 12.2 s and 13.0 s, each from one slow Groq response |
+| DEP-AT-01 | Pass | 2026-10-26 | `npx playwright test -c playwright.live.config.ts` on the deployed URLs: sign up, plan, choose, chat change to version 2, My Trips; 15 s, 16.7 s after the key rotation, 14.9 s on the chat-deadline deploy, 38.1 s on the limit_kind deploy |
+| DEP-AT-02 | Pass | 2026-10-26 | `eval/LIVE.md`: variants p95 1.21 s over 30 trips, 1.54 s over T01–T10 (limit 5 s). Chat with the per-message deadline, two runs: p95 4.72 s and 7.41 s (limit 8 s); 19 of 20 messages made their change, 1 got "assistant unavailable" when call 1 hit its 4 s limit. After the limit_kind fix (call 1 about 2,370 prompt tokens): p95 7.30 s and 7.31 s; 4 Groq timeouts in 20 messages (1 call 1 → unavailable, 3 call 2 → template). Before the deadline: 12.2 s and 13.0 s, each from one slow Groq response |
 | DEP-AT-03 | Pass | 2026-10-26 | `eval/LIVE.md`: HTTP → 308 HTTPS; CORS allows only the Vercel origin; port 8100 closed; no secrets in the working tree or 91 commits; `/etc/tripwise.env` root 600 |
 
 ### Feature status
@@ -2105,7 +2105,7 @@ Real Groq `openai/gpt-oss-120b` (Developer tier) unless noted; backend suite 101
 | 004 | Accounts, saved data and API | Approved | Approved | Approved | Done: API-AT-01–08 Pass |
 | 005 | Trip planning API | Merged into 004 | Merged into 004 | Merged into 004 | Merged into 004 |
 | 006 | Frontend | Approved | Approved | Approved | Done: UI-AT-01–09 Pass |
-| 007 | AI layer | Approved | Approved | Approved | Done: AI-AT-01–07 Pass |
+| 007 | AI layer | Approved | Approved | Approved | Done: AI-AT-01, 02, 04–07 Pass; AI-AT-03 Fail on the 3-run mean (85.3%), shipped by owner decision |
 | 008 | Evaluation and deployment | Approved | — (tasks only) | Approved | Done: EVAL-AT-01–02, DEP-AT-01–03 Pass |
 | 009 | Deployment | Merged into 008 | Merged into 008 | Merged into 008 | Merged into 008 |
 

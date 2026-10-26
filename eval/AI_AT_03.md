@@ -42,6 +42,28 @@ activity that was changed, so the traveller can undo it.
 
 Not tuned further to avoid overfitting the test set; known weakness: vague names.
 
+## Re-run with `limit_kind` (2026-10-26): Fail on the mean of 3 runs
+
+Since 2026-10-26 AI-AT-03 is scored on the mean of 3 fresh runs. Before shipping the chat fix for the owner's bug
+report (`limit_kind`, list-valued exclude/lock, no other-activities context), both versions were run 3 times at
+the same time, with no edits between runs:
+
+| Code | Run 1 | Run 2 | Run 3 | Mean |
+|---|---|---|---|---|
+| Deployed before the fix (`81bd9a3`) | 45 | 45 | 44 | 44.7 / 50 (89.3%) |
+| With the fix (shipped) | 43 | 43 | 42 | **42.7 / 50 (85.3%)** |
+
+Failed cases per run:
+- Before: C25, C45, C47, C49, C50 (run 3 also C48).
+- With the fix: C18, C23, C25, C45, C46, C47, C48 (run 3 also C49).
+
+The runs are not noisy: each version fails nearly the same cases every time (±1). The difference is systematic.
+The fix loses C18 ("Make each day 7 hours" → `set_day_hours`), C23 ("Fly both ways" → train) and C46 ("Add the
+temple" → a specific temple, no clarifying question), and gains C50 and usually C49. It was shipped under the
+owner's rule fixed before the runs (ship if the new mean is within 2 cases of the old; here exactly 2.0), because it
+fixes a real user bug: the chat regression set built from the owner's failures went from 0/6 to 6/6 runs meeting
+the request (`eval/chat_regression.json`). No prompt was changed after the runs.
+
 Median call 1.5 s; the slowest case took 26 s because of one Groq read timeout and retry.
 
 Fixed on the way (the earlier partial run scored 43/50 = 86%):

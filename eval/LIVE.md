@@ -15,7 +15,8 @@ Each live run signs up one new `live-check-…@example.com` user on the producti
 local servers, real Groq). It signs up, plans Delhi to Jaipur (2 people, ₹50,000), chooses the first variant, sends
 "Switch to a budget hotel" (the chat shows "Version 2 created" and the page moves to version 2), then opens My Trips
 and finds the trip. Passed in 15 s. Screenshot: `frontend/test-shots/live-my-trips.png`. Re-run on the final deploy
-(after the Groq key rotation and the last 007 changes): passed in 16.7 s; and on the chat-deadline deploy: 14.9 s.
+(after the Groq key rotation and the last 007 changes): passed in 16.7 s; on the chat-deadline deploy: 14.9 s; on the limit_kind deploy: 38.1 s (passed; the test does not
+time its steps).
 
 ## DEP-AT-02 — live timings: Pass (variants within NFR-001; chat within NFR-002 after the chat deadline)
 
@@ -58,6 +59,20 @@ Both runs are within 8 s. Run 2 shows both deadline paths, from the VM's log:
   made no change; the traveller has to send it again.
 
 Every other Groq call in both runs took 0.3–0.7 s.
+
+**After the limit_kind chat fix** (deployed 2026-10-26 with dataset 1.1; call 1 now carries the `limit_kind`
+schema, about 2,370 prompt tokens against about 1,850):
+
+| Run | p95 (= max of 10) | Median | Replies |
+|---|---|---|---|
+| 1 | 7.30 s | 5.6 s | 10 answered: 7 LLM replies, 2 template, 1 "plan did not change" |
+| 2 | 7.31 s | 4.6 s | 9 answered (7 LLM, 1 template, 1 "plan did not change"), 1 "assistant unavailable" |
+
+Both runs are within 8 s, with less headroom than before. The VM's log shows 4 Groq read timeouts in the 20
+messages: one on call 1 at 4.0 s ("Increase our budget to 60000" got "assistant unavailable") and three on call 2
+at its remaining budget (template replies; the changes were made). Call 1's median was 450 ms and call 2's 922 ms.
+"We love food, bump that up to 5" now gets the honest "Your plan did not change" reply: the higher food weight left
+the plan the same.
 
 **Before the deadline** (same day, Groq read timeout 10 s for both calls), for the record. Every message returned
 201 with a new version:
