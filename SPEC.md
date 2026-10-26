@@ -537,7 +537,10 @@ One file per city (for example `attractions/JAI.csv`), so each city can be curat
 | outdoor | bool | |
 | crowd_level | enum | `low`, `medium`, `high`: popularity terciles within the city |
 | fixed_slot | bool | True for events at a set time, such as Ganga Aarti. Then open_time/close_time is the event window and visit_minutes fits inside it |
+| kind | text | What sort of place it is, for chat requests such as "only one church" (007 `limit_kind`). Derived, not curated by hand (see **Kind** below); never empty |
 | source, checked_on | | Opening hours and fee source; may differ from seed source |
+
+**Kind.** Computed when the curated file is built, from the drafting place type before it is mapped below (for example `church`, `mosque`, `palace`, `lake`), refined by whole-word name keywords, first match wins: church, cathedral, basilica → `church`; masjid, mosque, dargah → `mosque`; temple, mandir, math → `temple`; gurudwara → `gurudwara`; fort, qila → `fort`; otherwise the place type. A row where the keyword plainly misreads the name (a viewpoint of a fort, a street named after a church, an observatory called Mandir) is corrected in `data/raw/attractions/kind_overrides.csv` with a reason. The validator rejects an empty or unknown kind (`unknown_kind`); `python -m datatools.report` prints the count per kind per city.
 
 **Place types.** Each attraction is given one place type during drafting (kept in `data/raw/attractions/`), used only for defaults. Other kinds map onto these: palace → fort; tomb, ruins → monument; gallery, zoo → museum; mosque, church, gurudwara → temple; lake, waterfall → viewpoint; park → garden; mall, bazaar → market; trek, rafting, safari, show, water sports → activity.
 
@@ -1711,20 +1714,28 @@ The validator gains checks: V-14 (pins honoured), V-15 (day_hours windows) and V
   - **Output:** 2–4 sentences per variant.
   - **Grounding check:** every attraction, hotel or city-attraction name found in the text must be in that plan or its near-miss list, and every ₹ amount must appear in the plan. Text that fails is regenerated once; if it fails again, a template explanation built from the plan is used instead. (FR-030)
 - **AI-FR-03 Chat.** `POST /trips/{id}/chat {message}`:
-  - **Call 1** uses Groq tool calling with the fixed tools: `lock_activity`, `exclude_activity`, `set_budget`, `set_day_hours`, `set_all_hours`, `set_hotel_tier`, `set_transport`, `set_pace`, `set_interest`, `move_activity`, `regenerate`, `explain`, `unsupported`.
+  - **Call 1** uses Groq tool calling with the fixed tools: `lock_activity`, `exclude_activity`, `limit_kind`, `set_budget`, `set_day_hours`, `set_all_hours`, `set_hotel_tier`, `set_transport`, `set_pace`, `set_interest`, `move_activity`, `regenerate`, `explain`, `unsupported`.
   - Tool arguments are validated: names are resolved to attraction ids with fuzzy matching against the trip's city, and an ambiguous name gets a clarifying reply.
-  - Call 1's context also lists the city's other activities (names only, those not in the plan and not kept out).
-    `exclude_activity` and `lock_activity` take a list of names, so a request about a group or kind of place ("only
-    one church", "no masjids") is one call naming every matching activity, in the plan and among the others the
-    planner could add instead. The model returns one tool call per message (`openai/gpt-oss-120b` on Groq, checked
-    with `parallel_tool_calls`), so a message that mixes different tools gets only one of them; the reply then says
-    which part was not changed.
-  - Each change tool maps to a 004 replan change set (`move_activity` → `pins`; hours → `day_hours`/prefs; tier → prefs.comfort; and so on).
+  - The model returns one tool call per message (`openai/gpt-oss-120b` on Groq, checked with `parallel_tool_calls`),
+    so tools that act on several things take lists: `exclude_activity` and `lock_activity` take a list of names, and
+    `limit_kind` a list of limits. A message that mixes different tools gets only one of them. Call 1's context also
+    lists the city's other activities (names only, those not in the plan and not kept out).
+  - **`limit_kind(limits: [{kind, max}])`** caps how many places of a kind (001 §5.5 `kind`, for example `church`,
+    `mosque`, `temple`, `fort`, `beach`) the plan has: "no masjid" is mosque max 0, "only one church" is church max 1.
+    The server expands each limit into excludes: of the places of that kind already in the plan it keeps the `max`
+    with the highest value v(a) (002 §5), and keeps out every other place of that kind in the city, in or out of the
+    plan (removing their locks and pins), so the planner cannot fill the gap with another of the same kind. A kind
+    with no place in the trip's city gets an honest reply naming it, and no replan.
+  - Each change tool maps to a 004 replan change set (`move_activity` → `pins`; hours → `day_hours`/prefs; tier → prefs.comfort; `limit_kind` → `excludes`; and so on).
+  - When the change set changes nothing (for example the activity is already kept out, or the setting already has
+    that value), no replan is run and the reply says plainly that nothing changed and why.
   - The server calls replan, stores the new version, and builds a diff: added and removed activities, hotel and transport changes, Δcost and Δvalue.
-  - **Call 2** turns the diff into a reply, using the same grounding check with a template fallback. Its facts include
-    the applied changes (activities newly kept out, kept in or moved, and settings changed). The reply starts from
-    what was applied and never says the request was done in full when the applied changes do not cover it; it says
-    plainly which part was not changed, and never describes what the plan now has or lacks overall.
+  - When the diff is empty, call 2 is skipped and a fixed reply says that the plan did not change (the planner found
+    no better plan with that change) and suggests naming places to add or remove; it never says "done".
+  - **Call 2** turns the diff into a reply, using the same grounding check with a template fallback. Its facts are the
+    applied changes (activities newly kept out, kept in or moved, kinds limited, settings changed) and the diff, not the
+    traveller's message, so it describes only what changed. When the message names an activity of the city that the
+    applied changes do not cover, the server adds a fixed line saying it was not changed and to ask again by name.
   - At most 2 Groq calls per message. (FR-031, FR-032, NFR-005)
   - **Deadline** (NFR-002): each message has `chat.deadline_s` (7.0 s) from when the handler starts. Call 1, with any retry,
     gets at most `groq.timeout_tools_s` (4.0 s). Call 2 gets the time left before the deadline minus 0.5 s; if under
@@ -2253,5 +2264,7 @@ Real Groq `openai/gpt-oss-120b` (Developer tier) unless noted; backend suite 101
 | 2026-10-26 | D Traceability (008 T05, T06) | Backend redeployed before the live chat timing so it measured the final code. Live chat p95 12.2 s and 13.0 s (two runs), each from one slow Groq response: NFR-002 recorded as not met live, DEP-AT-02 passes on its "gap recorded with the cause" clause. NFR-004 recorded as not met: the Groq account moved to the Developer tier; Part B is unchanged pending the owner's decision | Report results as measured; a Part B change is the owner's call |
 | 2026-10-26 | C 007 Spec AI-FR-03, AI-FR-06, Plan | Per-message chat deadline: `chat.deadline_s` 7.0 s; call 1 at most `groq.timeout_tools_s` 4.0 s (timeout → "assistant unavailable", no change); call 2 gets the remaining deadline minus 0.5 s, skipped for the template reply if under 1 s remains | Owner decision: live chat p95 was 12.2 s and 13.0 s because one slow Groq response could take the full 10 s timeout (NFR-002) |
 | 2026-10-26 | B NFR-004 | "Only free tiers" becomes free tiers except Groq on the Developer (pay-as-you-go) tier from 2026-10-26, total cost under ₹50 | Owner decision: evaluation throughput and demo reliability |
+| 2026-10-26 | C 001 Spec §5.5, DATA-FR-10 | New column `kind` in `attractions/<CITY>.csv`, derived from the drafting place type refined by name keywords; 3 corrections in `data/raw/attractions/kind_overrides.csv`; validator code `unknown_kind`; `ref.attractions.kind`; dataset 1.0 → 1.1 (same compilation month, no other value changed) | Owner decision: chat requests about a kind of place ("only one church") need the kind in the data |
+| 2026-10-26 | C 007 Spec AI-FR-03 (kind limits, honest replies) | New tool `limit_kind(limits)`, expanded by the server into excludes (keep the top-`max` of that kind in the plan by v(a), keep out every other one in the city); no-op change sets run no replan; an empty diff gets a fixed "nothing changed" reply; call 2 facts drop the traveller's message; a fixed line names activities the message mentions that were not changed | Owner decision after the regression set stayed at 0/6: kinds cannot be inferred from names reliably by the model, and replies restated the request as done |
 | 2026-10-26 | C 007 Spec AI-FR-03 (revised) | `exclude_activity` and `lock_activity` take a list of names instead of one; "one call per activity" dropped; the reply never describes what the plan now has overall | The model returns exactly one tool call per message even with `parallel_tool_calls` (probe: a 3-activity + pace request gave 1 call), and the first fix still met 0/6 regression runs |
 | 2026-10-26 | C 007 Spec AI-FR-03, Plan | Call 1 context lists the city's other activities; group requests become one tool call per matching activity; call 2 facts include the applied changes and the reply never claims more than was applied; regression set `eval/chat_regression.json` from real failures | Owner test on the live site: "keep one church" and "no masjid" each excluded one activity, the engine refilled with another church or masjid, and the replies said the request was done (0/6 regression runs met the request) |
