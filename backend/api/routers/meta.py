@@ -25,7 +25,8 @@ def meta() -> dict:
             "modes": ["train", "bus", "flight"], "mode_prefs": ["preferred", "neutral", "avoid"],
             "limits": {"trip_days": list(a["trip_days"]), "people": list(a["people"]), "hours_out": list(a["hours_out"]),
                        "interest_weight": [0, 5], "budget_min_per_person": a["budget_min_per_person"],
-                       "budget_max_total": a["budget_max_total"], "max_days_ahead": a["max_days_ahead"]}}
+                       "budget_max_total": a["budget_max_total"], "max_days_ahead": a["max_days_ahead"]},
+            "live_prices": {k: dict(v) for k, v in cfg.live_prices.items()}}
 
 
 @router.get("/cities")

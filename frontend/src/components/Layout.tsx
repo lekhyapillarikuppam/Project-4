@@ -17,7 +17,7 @@ export default function Layout() {
       <a href="#main" className="sr-only focus:not-sr-only focus:absolute focus:left-2 focus:top-2 focus:z-50 focus:rounded focus:bg-white focus:px-3 focus:py-2">
         Skip to content
       </a>
-      <header className="border-b border-sand-200 bg-white">
+      <header className="border-b border-sand-200 bg-white print:hidden">
         <div className="mx-auto flex max-w-6xl flex-wrap items-center gap-2 px-4 py-3">
           <Link to="/" className="mr-auto font-display text-xl font-bold tracking-tight text-accent-800">Tripwise</Link>
           <nav aria-label="Main" className="flex flex-wrap items-center gap-1">
@@ -45,7 +45,7 @@ export default function Layout() {
           <Outlet />
         </Suspense>
       </main>
-      <footer className="border-t border-sand-200 bg-white">
+      <footer className="border-t border-sand-200 bg-white print:hidden">
         <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-2 px-4 py-3 text-xs text-ink-500">
           <span>Tripwise — budget trips between 15 Indian cities</span>
           <EstimatedLabel />

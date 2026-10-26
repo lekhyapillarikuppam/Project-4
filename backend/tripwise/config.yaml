@@ -78,6 +78,20 @@ api:
   # max_idle_s: close pooled connections idle this long, below Neon's 5-minute suspend; each checkout is also checked
   db_pool: {min: 1, max: 5, max_idle_s: 240}
 
+# Read-only share links (API-FR-14)
+share:
+  token_bytes: 32              # secrets.token_urlsafe(32): 43 URL-safe characters
+  rate_per_minute: 60          # public GET /shared/{token}, per client address; 429 beyond this
+
+# "Check live prices" links (API-FR-15, UI-FR-13). Tripwise never calls these sites. Placeholders: {city} {checkin}
+# {checkout} (YYYY-MM-DD) {adults} {rooms}. Only Booking.com's prefilled format is confirmed (Changelog 2026-10-26);
+# the others are each site's plain search page.
+live_prices:
+  flight: {site: "MakeMyTrip", url: "https://www.makemytrip.com/flights/"}
+  train: {site: "MakeMyTrip", url: "https://www.makemytrip.com/railways/"}
+  bus: {site: "redBus", url: "https://www.redbus.in/"}
+  hotel: {site: "Booking.com", url: "https://www.booking.com/searchresults.html?ss={city}&checkin={checkin}&checkout={checkout}&group_adults={adults}&no_rooms={rooms}"}
+
 # AI layer (Feature 007). The model is chosen from GET https://api.groq.com/openai/v1/models (Changelog).
 groq:
   base_url: "https://api.groq.com/openai/v1"

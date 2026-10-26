@@ -46,3 +46,6 @@ frontend/playwright-report/
 
 # Claude Code local settings
 .claude/
+
+# Print PDFs written by UI-AT-11 (regenerated each run)
+frontend/test-shots/plan-print-*.pdf

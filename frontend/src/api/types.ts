@@ -116,6 +116,13 @@ export interface Meta {
     trip_days: [number, number]; people: [number, number]; hours_out: [number, number]; interest_weight: [number, number];
     budget_min_per_person: number; budget_max_total: number; max_days_ahead: number;
   };
+  /** "Check live prices" link per mode and for the hotel (API-FR-15); placeholders {city} {checkin} {checkout} {adults} {rooms}. */
+  live_prices: Record<Mode | "hotel", { site: string; url: string }>;
+}
+/** A shared plan as the public sees it (API-FR-14): plan and trip facts only. */
+export interface SharedPlan {
+  name: string; origin: string; destination: string; start_date: string; end_date: string; people: number;
+  budget_total: number; version_created_at: string; plan: Plan;
 }
 export interface User { id: string; email: string }
 export interface ParsedTrip {

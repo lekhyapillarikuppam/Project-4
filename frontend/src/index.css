@@ -34,6 +34,20 @@
   .chip { @apply inline-flex items-center gap-1 rounded-full bg-sand-100 px-2.5 py-0.5 text-sm text-ink-700; }
 }
 
+/* Download PDF (UI-FR-12): black on white, no chrome; each day stays on one page when it fits */
+@media print {
+  @page { margin: 14mm; }
+  html, body { background: #fff !important; }
+  body * { color: #000 !important; box-shadow: none !important; }
+  .card { border-color: #9a9a9a !important; background: #fff !important; }
+  .chip { background: #fff !important; border: 1px solid #9a9a9a; }
+  .print-day, table, tr { break-inside: avoid; page-break-inside: avoid; }
+  h2, h3 { break-after: avoid; page-break-after: avoid; }
+  a { text-decoration: none; }
+  /* the map prints cleanly (checked in the UI-AT-11 PDF); only its zoom buttons go */
+  .leaflet-control-zoom { display: none !important; }
+}
+
 .leaflet-container { font: inherit; }
 /* a white halo under each day's route keeps the light day colours visible on the map tiles */
 .leaflet-overlay-pane path { filter: drop-shadow(0 0 1.5px #fff) drop-shadow(0 0 1px #fff); }

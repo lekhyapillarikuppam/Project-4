@@ -15,7 +15,7 @@ const LINES: { key: keyof Budget; label: string; colour: string }[] = [
 export function BudgetDonut({ budget }: { budget: Budget }) {
   const data = LINES.map((l) => ({ name: l.label, value: budget[l.key] as number, colour: l.colour })).filter((d) => d.value > 0);
   return (
-    <figure data-estimate aria-label={`Budget chart: estimated total ${inr(budget.total)}`} className="flex flex-col items-center">
+    <figure data-estimate aria-label={`Budget chart: estimated total ${inr(budget.total)}`} className="flex flex-col items-center print:hidden">
       <div className="h-56 w-full max-w-xs" aria-hidden>
         <ResponsiveContainer>
           <PieChart accessibilityLayer={false}>

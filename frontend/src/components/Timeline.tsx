@@ -34,7 +34,7 @@ function DayBlock({ day }: { day: Day }) {
   const colour = DAY_COLOURS[(day.day - 1) % DAY_COLOURS.length];
   const li = lunchBefore(day);
   return (
-    <section aria-labelledby={`day-${day.day}`} className="card">
+    <section aria-labelledby={`day-${day.day}`} className="card print-day">
       <h3 id={`day-${day.day}`} className="flex flex-wrap items-baseline gap-2 font-semibold">
         <span aria-hidden className="inline-block h-3 w-3 rounded-full" style={{ background: colour }} />
         Day {day.day} · {weekday(day.weekday)} {niceDate(day.date)}

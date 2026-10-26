@@ -47,3 +47,9 @@ CREATE TABLE IF NOT EXISTS app.chat_messages (
   version int,
   created_at timestamptz NOT NULL DEFAULT now());
 CREATE INDEX IF NOT EXISTS chat_trip ON app.chat_messages (trip_id, id);
+
+-- Read-only share links (API-FR-14). One per trip; deleting the row turns the link off.
+CREATE TABLE IF NOT EXISTS app.trip_shares (
+  trip_id uuid PRIMARY KEY REFERENCES app.trips ON DELETE CASCADE,
+  token text UNIQUE NOT NULL,
+  created_at timestamptz NOT NULL DEFAULT now());

@@ -12,6 +12,7 @@ const MyTrips = lazy(() => import("./pages/MyTrips"));
 const NewTrip = lazy(() => import("./pages/NewTrip"));
 const PlanDetail = lazy(() => import("./pages/PlanDetail"));
 const Profile = lazy(() => import("./pages/Profile"));
+const SharedPlan = lazy(() => import("./pages/SharedPlan"));
 
 export default function App() {
   const guard = (el: JSX.Element) => <RequireAuth>{el}</RequireAuth>;
@@ -26,6 +27,7 @@ export default function App() {
         <Route path="/trips/:id" element={guard(<Compare />)} />
         <Route path="/trips/:id/plan" element={guard(<PlanDetail />)} />
         <Route path="/profile" element={guard(<Profile />)} />
+        <Route path="/s/:token" element={<SharedPlan />} />
         <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>
