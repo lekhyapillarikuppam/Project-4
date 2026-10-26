@@ -28,7 +28,7 @@ function draftFrom(req: Partial<TripForm> | undefined, name: string | undefined,
     origin: req?.origin ?? "", destination: req?.destination ?? "",
     start_date: req?.start_date ?? start, end_date: req?.end_date ?? addDays(start, 2),
     people: req?.people ?? 2, prefs: req?.prefs ?? blankPrefs(meta), locks: req?.locks ?? [], excludes: req?.excludes ?? [],
-    budget: req?.budget_total ? String(req.budget_total) : "30000", per: false, name: name ?? "",
+    budget: req?.budget_total ? String(req.budget_total) : "", per: false, name: name ?? "",
   };
 }
 
@@ -165,6 +165,7 @@ export default function NewTrip() {
             <label htmlFor={`f-${budgetField}`} className="label">Budget (₹)</label>
             <div className="flex gap-2">
               <input id={`f-${budgetField}`} type="number" inputMode="numeric" min={0} step={500} className="input" value={draft.budget}
+                     placeholder="e.g. 30000"
                      aria-invalid={!!errors[budgetField]} aria-describedby="budget-err" onChange={(e) => set("budget", e.target.value)} />
               <div role="radiogroup" aria-label="Budget is" onKeyDown={radioKeys}
                    className="flex shrink-0 overflow-hidden rounded-md border border-sand-500">

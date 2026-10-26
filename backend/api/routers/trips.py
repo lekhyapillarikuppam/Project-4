@@ -52,18 +52,17 @@ async def create_trip(body: dict = Body(...), user: dict = Depends(current_user)
 def list_trips(when: str | None = None, user: dict = Depends(current_user)) -> list[dict]:
     if when not in (None, "upcoming", "past"):
         raise ApiError(422, "when is upcoming or past.", "invalid", {"when": "upcoming or past"})
+    # only trips with a plan, newest first (API-FR-06); infeasible trips stay stored and open by id
     sql = ("SELECT id, name, request, result->>'status' AS status, selected_variant, start_date, created_at, updated_at "
-           "FROM {s}.trips WHERE user_id = %s")
+           "FROM {s}.trips WHERE user_id = %s AND result->>'status' = 'ok'")
     args = [user["id"]]
     if when == "upcoming":
-        sql += " AND start_date >= %s ORDER BY start_date, created_at"
+        sql += " AND start_date >= %s"
         args.append(today())
     elif when == "past":
-        sql += " AND start_date < %s ORDER BY start_date DESC, created_at DESC"
+        sql += " AND start_date < %s"
         args.append(today())
-    else:
-        sql += " ORDER BY start_date, created_at"
-    rows = db.all_(sql, *args)
+    rows = db.all_(sql + " ORDER BY created_at DESC, id", *args)
     return [{"id": str(r["id"]), "name": r["name"], "origin": r["request"]["origin"],
              "destination": r["request"]["destination"], "start_date": r["start_date"].isoformat(),
              "end_date": r["request"]["end_date"], "people": r["request"]["people"],

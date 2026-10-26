@@ -31,6 +31,23 @@ def test_api_at_06_manage(client, user):
     assert up[0]["created_at"] == created["created_at"]                    # list items carry created_at (API-FR-06)
     assert client.get("/trips?when=later", headers=user["h"]).status_code == 422
 
+    # newest first in each tab, and trips with no plan are left out but still open by id (API-FR-06, F10)
+    newer = client.post("/trips", headers=user["h"], json=trip(name="Second trip")).json()
+    infeasible = client.post("/trips", headers=user["h"], json=trip(name="Too cheap", budget_total=4000)).json()
+    assert infeasible["result"]["status"] == "infeasible"
+    up = client.get("/trips?when=upcoming", headers=user["h"]).json()
+    assert [t["id"] for t in up] == [newer["id"], tid]
+    assert all(t["status"] == "ok" for t in client.get("/trips", headers=user["h"]).json())
+    assert infeasible["id"] not in [t["id"] for t in client.get("/trips", headers=user["h"]).json()]
+    assert client.get(f"/trips/{infeasible['id']}", headers=user["h"]).status_code == 200
+    older_past = db.one("INSERT INTO {s}.trips (user_id, name, request, result, start_date, created_at) "
+                        "VALUES (%s, %s, %s, %s, %s, now() - interval '1 day') RETURNING id",
+                        user["id"], "Older past trip", db.jsonb(req), db.jsonb(created["result"]), past_start)
+    pa = client.get("/trips?when=past", headers=user["h"]).json()
+    assert [t["id"] for t in pa] == [str(past["id"]), str(older_past["id"])]
+    for extra in (newer["id"], infeasible["id"], str(older_past["id"])):
+        client.delete(f"/trips/{extra}", headers=user["h"])
+
     # versions and chat rows go with the trip
     plan = created["result"]["variants"][0]
     db.run("INSERT INTO {s}.plan_versions (trip_id, version, plan, request, source) VALUES (%s, 1, %s, %s, 'select')",

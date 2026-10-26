@@ -62,7 +62,8 @@ export function validateTrip(f: DraftTripForm, meta: Meta): Errors {
   const perPerson = f.budget_per_person !== undefined;
   const field = perPerson ? "budget_per_person" : "budget_total";
   const amount = perPerson ? f.budget_per_person : f.budget_total;
-  if (amount === undefined || !Number.isInteger(amount) || amount <= 0) errs[field] = "Enter your budget in whole rupees.";
+  if (amount === undefined || Number.isNaN(amount)) errs[field] = "Enter your budget.";
+  else if (!Number.isInteger(amount) || amount <= 0) errs[field] = "Enter your budget in whole rupees.";
   else if (!errs.people) {
     const total = perPerson ? amount * f.people : amount;
     if (total < L.budget_min_per_person * f.people) errs[field] = `The budget must be at least ₹${L.budget_min_per_person.toLocaleString("en-IN")} per person.`;

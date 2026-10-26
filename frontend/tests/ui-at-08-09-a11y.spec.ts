@@ -30,14 +30,19 @@ test("UI-AT-08 keyboard-only run", async ({ page }) => {
   await page.keyboard.type("correct horse 1");
   await page.keyboard.press("Enter");
   await expect(page).toHaveURL(/\/profile$/);
+  // wait for each page to render before walking it by keyboard (the URL changes before the lazy page loads)
+  await expect(page.getByRole("link", { name: "Skip for now" })).toBeVisible();
   await tabTo(page, /^Skip for now/);
   await page.keyboard.press("Enter");
   await expect(page).toHaveURL(/\/new$/);
+  await expect(page.getByLabel("From", { exact: true })).toBeVisible();
   await tabTo(page, /^From/);
   await page.keyboard.type("Delhi");
   await tabTo(page, /^To/);
   await page.keyboard.type("Agra");
   await expect(page.getByLabel("To", { exact: true })).toHaveValue("AGR");
+  await tabTo(page, /^Budget \(/);                                  // the budget starts empty (F10)
+  await page.keyboard.type("30000");
   // blank preferences, chosen by keyboard: hours from the list, an interest, pace and comfort
   await tabTo(page, /^Hours out/);
   await page.keyboard.type("9");
@@ -89,7 +94,7 @@ test("UI-AT-09 estimated labels", async ({ page }) => {
 // UI-FR-09: a busy planner (429) shows the retry state.
 test("busy planner shows retry", async ({ page }) => {
   await signUp(page);
-  await fillTrip(page, { from: "Delhi", to: "Agra" });
+  await fillTrip(page, { from: "Delhi", to: "Agra", budget: "30000" });
   await fillPrefs(page);
   await page.route("**/trips", (route) => route.request().method() === "POST"
     ? route.fulfill({ status: 429, contentType: "application/json", body: JSON.stringify({ error: "busy", message: "busy" }) })
@@ -113,7 +118,7 @@ test("accessibility scan of every page", async ({ page }) => {
   problems.push(...await scan("login"));
   await signUp(page);
   problems.push(...await scan("new trip"));
-  await fillTrip(page, { from: "Delhi", to: "Agra" });
+  await fillTrip(page, { from: "Delhi", to: "Agra", budget: "30000" });
   await fillPrefs(page);
   await page.getByRole("button", { name: "Plan my trip" }).click();
   await expect(page.getByRole("button", { name: /^Choose / }).first()).toBeVisible();
