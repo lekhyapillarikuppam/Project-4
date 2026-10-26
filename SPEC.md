@@ -1696,12 +1696,12 @@ These are run by Claude Code in the browser against a local API, with results re
 - [x] **T09** Run UI-AT-01–09 in the browser at 360 px and 1280 px; save screenshots to `frontend/test-shots/`; record in `frontend/TESTING.md`. Update Part D; mark 006 Done; commit.
 
 **Follow-up F7 (owner UI changes, 2026-10-26)**
-- [ ] **F7.1** API: blank default profile (API-FR-03) and `created_at` in the trip list (API-FR-06); backend tests.
-- [ ] **F7.2** Landing hero with one call to action; signed-out header buttons outlined. · serves UI-FR-01
-- [ ] **F7.3** Auth: show/hide password toggle; empty fields when switching Log in ↔ Sign up; after sign-up go to Profile with the note. · serves UI-FR-01
-- [ ] **F7.4** Blank preferences, "Fill from my profile", hours as a list, required hours/pace/comfort with field messages; optional trip name. · serves UI-FR-02, FR-007
-- [ ] **F7.5** My Trips: created time (Asia/Kolkata); duplicate named "<name> (copy)". · serves UI-FR-06
-- [ ] **F7.6** Playwright helpers set preferences explicitly; new checks (eye toggle, empty fields after switching, created time and custom name, Fill-from-profile disabled/enabled, blank profile for a new user); full UI suite with axe at 360 and 1280 px; backend tests; redeploy backend and frontend; DEP-AT-01. · Check: UI-AT-01–09, DEP-AT-01
+- [x] **F7.1** API: blank default profile (API-FR-03) and `created_at` in the trip list (API-FR-06); backend tests.
+- [x] **F7.2** Landing hero with one call to action; signed-out header buttons outlined. · serves UI-FR-01
+- [x] **F7.3** Auth: show/hide password toggle; empty fields when switching Log in ↔ Sign up; after sign-up go to Profile with the note. · serves UI-FR-01
+- [x] **F7.4** Blank preferences, "Fill from my profile", hours as a list, required hours/pace/comfort with field messages; optional trip name. · serves UI-FR-02, FR-007
+- [x] **F7.5** My Trips: created time (Asia/Kolkata); duplicate named "<name> (copy)". · serves UI-FR-06
+- [x] **F7.6** Playwright helpers set preferences explicitly; new checks (eye toggle, empty fields after switching, created time and custom name, Fill-from-profile disabled/enabled, blank profile for a new user); full UI suite with axe at 360 and 1280 px; backend tests; redeploy backend and frontend; DEP-AT-01. · Check: UI-AT-01–09, DEP-AT-01
 
 ### Feature 007 — AI layer (Groq)
 
@@ -2081,6 +2081,15 @@ Run 2026-10-25 with Playwright 1.64.0 (Chromium) against the local API (schema `
 | UI-AT-08 | Pass | Keyboard-only UI-AT-01 with a visible focus ring throughout |
 | UI-AT-09 | Pass | Every ₹ amount under an Estimated marker |
 
+Re-run 2026-10-26 after follow-up F7, with every spec at both 1280 px and 360 px (two Playwright projects): 36 passed, 2
+skipped (the live-Groq chat spec, run only with `E2E_LIVE_GROQ=1`), axe clean on all seven pages at both widths. New
+checks in `frontend/tests/f7-owner-ui.spec.ts`: the password toggle (keyboard-reachable, `aria-pressed`, does not
+submit), empty fields after switching Log in ↔ Sign up, a new user's blank profile, "Fill from my profile" disabled
+until a profile is saved and then filling the form, a custom trip name and the created time on My Trips. UI-AT-04
+also checks the blank-preference messages, UI-AT-05 the created time and the "(copy)" name, and UI-AT-08 picks the
+preferences by keyboard. Header buttons: accent-800 on accent-50 8.91:1, on accent-100 7.88:1, accent-600 border on
+white 5.47:1. Backend 113 passed. DEP-AT-01 on the redeployed backend and frontend: passed in 14.2 s.
+
 ### Feature 007 acceptance results
 
 Real Groq `openai/gpt-oss-120b` (Developer tier) unless noted; backend suite 101 passed on 2026-10-26 after the last
@@ -2282,6 +2291,7 @@ Real Groq `openai/gpt-oss-120b` (Developer tier) unless noted; backend suite 101
 | 2026-10-26 | B FR-007 | The trip form starts with blank preferences; a "Fill from my profile" button fills them from the saved profile (was: pre-filled automatically) | Owner decision (F7): preferences should be a deliberate choice per trip, not silently inherited |
 | 2026-10-26 | C 004 API-FR-03, API-FR-06 | Unsaved profile is blank (interests 0; hours, pace, comfort null; modes neutral; avoid crowds off) with `saved: false`; PUT unchanged; trip list items include `created_at` | Owner decision (F7): no invented preferences (the old default liked history, culture and food); My Trips shows when a trip was made |
 | 2026-10-26 | C 006 UI-FR-01, 02, 06 | One hero CTA; outlined header buttons when signed out; password show/hide toggle; auth forms remount per mode; sign-up lands on Profile with a note; blank preferences with Fill from my profile; hours from a list; hours/pace/comfort required on the client; optional trip name; My Trips shows created time and duplicates as "<name> (copy)"; tasks F7.1–F7.6 | Owner UI review (F7). Hours become a list because a slider always shows a value and cannot look unchosen |
+| 2026-10-26 | C 006 Plan (tests) | `playwright.config.ts` runs every UI spec in two projects, 1280 px and 360 px (was one desktop project, with 360 px only in UI-AT-07 and the chat spec) | Owner asked for the full suite, axe included, at both widths |
 | 2026-10-26 | C 007 Spec AI-AT-03 | Scored on the mean of 3 fresh runs instead of one run. Measured before shipping limit_kind: old code 45, 45, 44 (mean 44.7, 89.3%); new code 43, 43, 42 (mean 42.7, 85.3%). Shipped under the owner's rule fixed before the runs (ship if within 2 cases of the old mean; here exactly 2.0), recorded as Fail | Single runs were thought too noisy to judge a change. The 3 runs showed the opposite: each version fails nearly the same cases every run (±1), and the difference is systematic (new loses C18, C23, C46; gains C50 and usually C49). Owner decision: ship because it fixes a real user bug (chat regression 0/6 → 5/6) |
 | 2026-10-26 | C 007 Spec AI-FR-03 (scope of limit_kind) | Call 1 no longer lists the city's other activities (superseded by `limit_kind`, which keeps out places outside the plan on the server); `limit_kind` is for a counted or plural kind only, not a single place or an interest | AI-AT-03 fell from 90% to 82% with the first limit_kind build: the model used it for "not into shopping", "skip the garden" and "remove the mandir", and picked specific places from the other-activities list for vague names. One fix from the tool's intended meaning, not tuned on the test cases |
 | 2026-10-26 | C 001 Spec §5.5, DATA-FR-10 | New column `kind` in `attractions/<CITY>.csv`, derived from the drafting place type refined by name keywords; 3 corrections in `data/raw/attractions/kind_overrides.csv`; validator code `unknown_kind`; `ref.attractions.kind`; dataset 1.0 → 1.1 (same compilation month, no other value changed) | Owner decision: chat requests about a kind of place ("only one church") need the kind in the data |
