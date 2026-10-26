@@ -34,7 +34,10 @@ def pool() -> ConnectionPool:
     global _pool
     if _pool is None:
         size = config.default().api["db_pool"]
+        # Neon closes idle connections when its compute suspends: check each one on checkout (a dead one is
+        # replaced instead of failing the request) and retire idle ones before that happens
         _pool = ConnectionPool(settings.get().database_url, min_size=size["min"], max_size=size["max"],
+                               max_idle=size["max_idle_s"], check=ConnectionPool.check_connection,
                                kwargs={"row_factory": dict_row, "autocommit": True}, configure=_configure, open=True)
     return _pool
 

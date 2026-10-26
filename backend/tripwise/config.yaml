@@ -75,7 +75,8 @@ api:
   budget_min_per_person: 2000
   budget_max_total: 1000000
   max_days_ahead: 365
-  db_pool: {min: 1, max: 5}
+  # max_idle_s: close pooled connections idle this long, below Neon's 5-minute suspend; each checkout is also checked
+  db_pool: {min: 1, max: 5, max_idle_s: 240}
 
 # AI layer (Feature 007). The model is chosen from GET https://api.groq.com/openai/v1/models (Changelog).
 groq:
