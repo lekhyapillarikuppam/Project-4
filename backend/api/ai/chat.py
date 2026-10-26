@@ -11,7 +11,9 @@ from __future__ import annotations
 
 import difflib
 import json
+import logging
 import re
+import time
 
 from api import solver
 from api.ai import diff as diffs, explain, groq_client, grounding
@@ -22,6 +24,8 @@ from api.validation import check_trip
 from tripwise import config, data
 from tripwise.models import Plan, dump
 from tripwise.tradeoffs import variant_at
+
+log = logging.getLogger("tripwise.ai")
 
 CHANGE_TOOLS = {"lock_activity", "exclude_activity", "set_budget", "set_day_hours", "set_all_hours", "set_hotel_tier",
                 "set_transport", "set_pace", "set_interest", "move_activity", "regenerate"}
@@ -187,12 +191,18 @@ def context(trip: dict, plan: dict, request: dict) -> dict:
     }
 
 
-def _reply(facts: dict, fallback: str, city: str, names: set[str], amounts: set[int]) -> tuple[str, str]:
-    """Call 2, grounded, or the template (text, source)."""
+def _reply(facts: dict, fallback: str, city: str, names: set[str], amounts: set[int], deadline: float) -> tuple[str, str]:
+    """Call 2, grounded, or the template (text, source). Call 2 gets the time left before the message deadline
+    minus 0.5 s, and is skipped when under 1 s is left (AI-FR-03)."""
+    left = deadline - time.perf_counter() - 0.5
+    if left < 1:
+        log.info("chat reply: %.1f s left before the deadline, template used", left + 0.5)
+        return fallback, "template"
     try:
         msg = groq_client.chat([{"role": "system", "content": reply_system()},
                                 {"role": "user", "content": json.dumps(facts, ensure_ascii=False)}],
-                               temperature=config.default().groq["temperature_explain"])
+                               temperature=config.default().groq["temperature_explain"], timeout=left,
+                               deadline=time.perf_counter() + left)
     except groq_client.Unavailable:
         return fallback, "template"
     text = (msg.get("content") or "").strip()
@@ -228,14 +238,18 @@ def change_template(version: int, d: dict) -> str:
 
 async def handle(trip: dict, base: dict, user: dict, message: str, history: list[dict]) -> dict:
     """Returns {"text", "actions", "version"} (version is the new full version or None)."""
+    t0 = time.perf_counter()
+    deadline = t0 + config.default().chat["deadline_s"]
     request, plan = base["request"], base["plan"]
     city = request["destination"]
     messages = [{"role": "system", "content": chat_system(context(trip, plan, request))}]
     messages += [{"role": m["role"], "content": m["text"]} for m in history[-config.default().chat["history_messages"]:]]
     messages.append({"role": "user", "content": message})
+    g = config.default().groq
     try:
-        msg = await solver.run_blocking(groq_client.chat, messages, temperature=config.default().groq["temperature_tools"],
-                                        tools=TOOLS, tool_choice="required")
+        msg = await solver.run_blocking(groq_client.chat, messages, temperature=g["temperature_tools"],
+                                        tools=TOOLS, tool_choice="required", timeout=g["timeout_tools_s"],
+                                        deadline=time.perf_counter() + g["timeout_tools_s"])
     except groq_client.Unavailable:
         return {"text": "The assistant is unavailable right now, so nothing was changed. You can still edit the plan "
                         "with the form.", "actions": {"kind": "unavailable"}, "version": None}
@@ -247,9 +261,9 @@ async def handle(trip: dict, base: dict, user: dict, message: str, history: list
         names = [n for n, _ in calls]
         if any(n in CHANGE_TOOLS for n in names):
             changes = to_changes([c for c in calls if c[0] in CHANGE_TOOLS], request, city)
-            return await _change(trip, base, user, message, changes, tools)
+            return await _change(trip, base, user, message, changes, tools, deadline)
         if "explain" in names:
-            return await _why(trip, base, dict(calls)["explain"].get("name"), tools)
+            return await _why(trip, base, dict(calls)["explain"].get("name"), tools, deadline)
         closest = dict(calls).get("unsupported", {}).get("closest", "none")
         text = ("Sorry, that's outside what I can do here: I can't book, check weather or plan other cities. I can "
                 + CLOSEST_HINT.get(closest, CLOSEST_HINT["none"]) + ".")
@@ -266,7 +280,7 @@ def _safe_calls(msg: dict) -> list:
         return []
 
 
-async def _change(trip: dict, base: dict, user: dict, message: str, changes: dict, tools: list) -> dict:
+async def _change(trip: dict, base: dict, user: dict, message: str, changes: dict, tools: list, deadline: float) -> dict:
     city = base["request"]["destination"]
     try:
         v = await replan_request(str(trip["id"]), user, changes, "chat", message[:200])
@@ -284,18 +298,18 @@ async def _change(trip: dict, base: dict, user: dict, message: str, changes: dic
     names = grounding.plan_names(base["plan"]) | grounding.plan_names(v["plan"])
     amounts = (grounding.numbers(base["plan"]) | grounding.numbers(v["plan"]) | diffs.amounts(d)
                | {v["request"]["budget_total"]})
-    text, src = await solver.run_blocking(_reply, facts, change_template(v["version"], d), city, names, amounts)
+    text, src = await solver.run_blocking(_reply, facts, change_template(v["version"], d), city, names, amounts, deadline)
     return {"text": text, "actions": {"kind": "change", "tools": tools, "changes": changes, "diff": d, "reply": src},
             "version": v}
 
 
-async def _why(trip: dict, base: dict, name: str | None, tools: list) -> dict:
+async def _why(trip: dict, base: dict, name: str | None, tools: list, deadline: float) -> dict:
     request, plan = base["request"], base["plan"]
     city = request["destination"]
     names, amounts = grounding.plan_names(plan), grounding.numbers(plan)
     if not name:
         facts = {"question": "about the plan", "plan": explain.compact(plan)}
-        text, src = await solver.run_blocking(_reply, facts, explain.template(plan), city, names, amounts)
+        text, src = await solver.run_blocking(_reply, facts, explain.template(plan), city, names, amounts, deadline)
         return {"text": text, "actions": {"kind": "why", "tools": tools, "reply": src}, "version": None}
     aid, canon = resolve(name, city)
     a = data.default().attractions[aid]
@@ -331,5 +345,5 @@ async def _why(trip: dict, base: dict, name: str | None, tools: list) -> dict:
             out = dump(res)
             facts |= {"status": "would not fit even if kept in", "engine_message": out.get("message")}
             fallback = f"{canon} wouldn't fit even if you keep it in: {out.get('message', '')}".strip()
-    text, src = await solver.run_blocking(_reply, facts, fallback, city, names, amounts)
+    text, src = await solver.run_blocking(_reply, facts, fallback, city, names, amounts, deadline)
     return {"text": text, "actions": {"kind": "why", "tools": tools, "facts": facts, "reply": src}, "version": None}

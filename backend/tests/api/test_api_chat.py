@@ -8,7 +8,7 @@ import pytest
 from api.ai import chat, diff as diffs, groq_client
 from tests.api.test_api_trips_create import trip
 from tests.api.test_api_versions import check
-from tripwise import data
+from tripwise import config, data
 
 
 def tool(fn, **args):
@@ -19,11 +19,12 @@ class Stub:
     """Groq stand-in: a call with tools returns the next queued message; a reply call returns `reply`."""
 
     def __init__(self, monkeypatch, reply="Done."):
-        self.queue, self.reply, self.calls = [], reply, 0
+        self.queue, self.reply, self.calls, self.kw = [], reply, 0, []
         monkeypatch.setattr(groq_client, "chat", self)
 
     def __call__(self, messages, **kw):
         self.calls += 1
+        self.kw.append(kw)
         if kw.get("tools"):
             r = self.queue.pop(0)
             if isinstance(r, Exception):
@@ -135,6 +136,45 @@ def test_unavailable_and_infeasible(client, user, chosen, monkeypatch):
     assert len(versions(client, user, chosen)) == 1
     hist = client.get(f"/trips/{chosen}/chat", headers=user["h"]).json()
     assert [m["role"] for m in hist] == ["user", "assistant"] * 3
+
+
+def test_deadline_call1_timeout_is_unavailable(client, user, chosen, monkeypatch):
+    s = Stub(monkeypatch)
+    s.queue.append(groq_client.Unavailable("ReadTimeout"))
+    a = say(client, user, chosen, "add a fort")["assistant"]
+    assert a["actions"]["kind"] == "unavailable" and a["version"] is None
+    assert s.calls == 1 and s.kw[0]["timeout"] == config.default().groq["timeout_tools_s"]
+    assert len(versions(client, user, chosen)) == 1
+
+
+def test_deadline_call2_gets_the_rest(client, user, chosen, monkeypatch):
+    s = Stub(monkeypatch)
+    s.queue.append(tool("set_budget", budget_total=60000))
+    a = say(client, user, chosen, "budget 60000")["assistant"]
+    assert a["actions"]["reply"] == "llm" and s.calls == 2
+    assert 1 <= s.kw[1]["timeout"] <= config.default().chat["deadline_s"] - 0.5
+
+
+def test_deadline_skips_call2_under_1s(client, user, chosen, monkeypatch):
+    import copy
+    s = Stub(monkeypatch)
+    raw = copy.deepcopy(config.default().as_dict())
+    raw["chat"]["deadline_s"] = 1.2                                     # less than 1 s left after re-planning
+    short = config.Config(raw, config.default().path)
+    monkeypatch.setattr(config, "default", lambda: short)
+    s.queue.append(tool("set_budget", budget_total=60000))
+    out = say(client, user, chosen, "budget 60000")
+    a = out["assistant"]
+    assert a["actions"]["reply"] == "template" and a["text"].startswith("Done, this is version")
+    assert s.calls == 1 and out["version"]["version"] == 2               # the change itself is made
+
+
+def test_client_stops_at_deadline(monkeypatch):
+    import time
+    monkeypatch.setenv("GROQ_API_KEY", "test")
+    monkeypatch.setattr(groq_client.httpx, "post", lambda *a, **k: pytest.fail("no request after the deadline"))
+    with pytest.raises(groq_client.Unavailable):
+        groq_client.chat([{"role": "user", "content": "hi"}], temperature=0, deadline=time.perf_counter() - 1)
 
 
 def test_chat_needs_selection_and_owner(client, user, monkeypatch):

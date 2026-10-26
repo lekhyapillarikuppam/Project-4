@@ -83,6 +83,7 @@ groq:
   base_url: "https://api.groq.com/openai/v1"
   model: "openai/gpt-oss-120b"
   timeout_s: 10
+  timeout_tools_s: 4.0        # chat call 1 (tool choice), retries included; on timeout the chat says unavailable
   rate_limit_wait_s: 5
   temperature_tools: 0.2
   temperature_explain: 0.4
@@ -94,6 +95,7 @@ groq:
   eval_retries: 6
 chat:
   rate_per_hour: 30            # per user (AI-FR-07); 429 beyond this
+  deadline_s: 7.0              # per message (NFR-002): call 2 gets what is left minus 0.5 s, or the template if < 1 s
   history_messages: 6          # earlier chat messages sent with each tool call
   name_match_cutoff: 0.6       # fuzzy activity-name match: minimum similarity
   name_match_margin: 0.1       # best match must beat the next by this much, else ask which one

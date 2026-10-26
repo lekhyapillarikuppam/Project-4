@@ -47,8 +47,13 @@ def _error_code(r: httpx.Response) -> str | None:
 
 
 def chat(messages: list[dict], *, temperature: float, tools: list[dict] | None = None,
-         tool_choice: Any = None, json_mode: bool = False, max_tokens: int | None = None) -> dict:
-    """One chat completion; returns the assistant message dict (content and/or tool_calls)."""
+         tool_choice: Any = None, json_mode: bool = False, max_tokens: int | None = None,
+         timeout: float | None = None, deadline: float | None = None) -> dict:
+    """One chat completion; returns the assistant message dict (content and/or tool_calls).
+
+    timeout replaces groq.timeout_s for each attempt; deadline (a time.perf_counter() value) bounds every attempt
+    and retry, so the whole call ends by then.
+    """
     g = config.default().groq
     body: dict[str, Any] = {"model": g["model"], "messages": messages, "temperature": temperature,
                             "max_tokens": max_tokens or g["max_tokens"]}
@@ -62,17 +67,24 @@ def chat(messages: list[dict], *, temperature: float, tools: list[dict] | None =
     headers = {"Authorization": f"Bearer {_key()}", "Content-Type": "application/json"}
     for attempt in range(2):
         t0 = time.perf_counter()
+        limit = timeout or g["timeout_s"]
+        if deadline is not None:
+            if deadline - t0 <= 0:
+                log.warning("groq call skipped: deadline passed")
+                raise Unavailable("deadline")
+            limit = min(limit, deadline - t0)
         try:
-            r = httpx.post(f"{g['base_url']}/chat/completions", json=body, headers=headers, timeout=g["timeout_s"])
+            r = httpx.post(f"{g['base_url']}/chat/completions", json=body, headers=headers, timeout=limit)
         except httpx.HTTPError as exc:
-            log.warning("groq call failed: %s", type(exc).__name__)
+            log.warning("groq call failed: %s after %.0f ms", type(exc).__name__, (time.perf_counter() - t0) * 1000)
             raise Unavailable(type(exc).__name__) from None
         if r.status_code >= 500 and attempt == 0:
             log.warning("groq %s, retrying once", r.status_code)
             continue
         if r.status_code == 429 and attempt == 0:      # rate limited: wait once if Groq asks for a short pause
             wait = _retry_after(r)
-            if wait is not None and wait <= g["rate_limit_wait_s"]:
+            if (wait is not None and wait <= g["rate_limit_wait_s"]
+                    and (deadline is None or time.perf_counter() + wait < deadline)):
                 log.warning("groq 429, retrying in %.1f s", wait)
                 time.sleep(wait)
                 continue
