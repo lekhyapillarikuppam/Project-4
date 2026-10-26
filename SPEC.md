@@ -34,7 +34,7 @@ Last updated 2026-10-25.
 
 ## Part A — Constitution
 
-Version 1.1 · Ratified 2026-10-22. These are the project-wide rules. Every section of Part C and every line of code must follow them.
+Version 2.0 · Ratified 2026-10-22, amended 2026-10-26 (Article VIII.2). These are the project-wide rules. Every section of Part C and every line of code must follow them.
 
 ### Article I — The spec is the source of truth
 
@@ -92,7 +92,7 @@ Adding a new external service or library with a large footprint requires a spec 
 ### Article VIII — Security and privacy
 
 1. Passwords are hashed with bcrypt. Plain-text passwords are never stored or logged.
-2. A user can read and change only their own data. Every data endpoint checks ownership.
+2. A user can read and change only their own data. Every data endpoint checks ownership. The one exception: a plan its owner chooses to share through a revocable read-only link, which shows the plan and trip facts only (never chat, email or account data).
 3. Secrets (API keys, database URL, JWT secret) live in environment variables, never in the repository. `.env.example` lists the names without values.
 4. Only the data needed for the app is collected: email, password hash, preferences, trips and chat history.
 
@@ -266,11 +266,12 @@ Origin and destination are both chosen from this list and must be different. Thi
 - **FR-044** The selected plan keeps a version history. The user can restore an earlier version, which becomes the newest version.
 - **FR-045** The chat history is saved per trip.
 - **FR-046** **My Trips** lists upcoming and past trips. The user can rename, duplicate (same inputs, editable before re-planning) and delete a trip. Delete asks for confirmation on the page.
-- **FR-047** A user can never see or change another user's data.
+- **FR-047** A user can never see or change another user's data, except a plan its owner shares read-only (FR-048).
+- **FR-048** The owner of a plan can create a read-only share link to it and turn the link off again. Anyone with the link, logged in or not, sees the newest plan and the trip facts (cities, dates, people, budget, name), never the chat, account details or version history.
 
 #### 6.6 Pages and interface
 
-- **FR-050** The app has seven pages:
+- **FR-050** The app has seven pages, plus a read-only shared plan page (FR-048):
   1. Landing
   2. Sign up / Log in
   3. New trip form
@@ -281,6 +282,8 @@ Origin and destination are both chosen from this list and must be different. Thi
 - **FR-051** The plan detail page shows a map with the hotel, each day's stops and each day's route in a distinct colour.
 - **FR-052** The plan detail page shows the budget breakdown as a chart and as a table.
 - **FR-053** All pages are usable at widths from 360 px (phone) to desktop, with no horizontal scrolling.
+- **FR-054** A plan (the user's own or a shared one) can be saved as a PDF through the browser's print dialog, laid out for paper.
+- **FR-055** Each journey and hotel links to a booking site's own search in a new tab, prefilled with the trip's city, dates and travellers where the site's URL format is confirmed, otherwise its plain search page, with the note that Tripwise doesn't book and prices there may differ. Tripwise never fetches or shows those prices.
 
 #### 6.7 Data
 
@@ -324,12 +327,12 @@ Origin and destination are both chosen from this list and must be different. Thi
 
 ### 9. Out of scope
 
-- Real bookings, payments or live prices.
+- Real bookings or payments; fetching or showing live prices (links that open a booking site's own search are in scope, FR-055).
 - Cities beyond the 15, and multi-city trips.
 - A native mobile app.
 - Seasonal or dynamic pricing, weather and festival calendars.
 - Child or foreign-national pricing.
-- Sharing trips with other users, or collaborative editing.
+- Collaborative editing, or sharing with edit rights (a read-only share link is in scope, FR-048).
 - Social login (Google, etc.). It may be added later through a spec amendment.
 - Languages other than English.
 
@@ -1512,7 +1515,7 @@ An HTTPS JSON API (FastAPI) over the engine. It provides accounts, saved prefere
   - Emails are case-insensitive and unique.
   - Passwords are 8–128 characters.
   - (FR-040, FR-041, NFR-003)
-- **API-FR-02** Every endpoint except `/health`, `/cities`, `/auth/*` and `/meta` requires `Authorization: Bearer <jwt>`. A user can read or change only their own rows; anyone else's id returns 404, never 403, so ids are not revealed. (FR-047)
+- **API-FR-02** Every endpoint except `/health`, `/cities`, `/auth/*`, `/meta` and `GET /shared/{token}` (API-FR-14) requires `Authorization: Bearer <jwt>`. A user can read or change only their own rows; anyone else's id returns 404, never 403, so ids are not revealed. (FR-047)
 - **API-FR-03** Profile: get and put the saved preferences (the `prefs` schema of 002 §3). With nothing saved, GET returns a blank profile with `saved: false`: all nine interests 0, `daily_hours_out`, `pace` and `comfort` null (not chosen), every mode neutral, `avoid_crowds` false. PUT validates exactly as before, so a saved profile is always complete. (FR-042, FR-007)
 - **API-FR-04** Trip input validation. Reject with 422 and a field-level message:
   - origin = destination, or an unknown city (FR-001),
@@ -1532,6 +1535,12 @@ An HTTPS JSON API (FastAPI) over the engine. It provides accounts, saved prefere
 - **API-FR-11** Errors return `{"error": "<code>", "message": "<plain text>", "fields": {…}?}` with status 400/401/404/409/422/429/500. 500 errors never leak stack traces.
 - **API-FR-12** CORS allows only `FRONTEND_ORIGIN`, plus `http://localhost:5173` in development. (NFR-003)
 - **API-FR-13** Planning calls run in a thread pool, at most `max_concurrent_solves` (config, default 2) at once. Extra requests wait up to 20 s, then get a 429 "busy, try again". (This protects the small VM.)
+- **API-FR-14 Share link** (FR-048, Article VIII.2).
+  - `POST /trips/{id}/share` (owner) creates the trip's share token, or returns the existing one: `{token, url_path: "/s/<token>"}`. The token is `secrets.token_urlsafe(32)` (32 random bytes). It is stored as is, not hashed: POST must be able to return the existing link, and hashing would only hide the link from someone who can already read the plan in the database. A trip with no chosen plan gets 409.
+  - `DELETE /trips/{id}/share` (owner) turns it off; the token stops working at once. Anyone else's trip gets 404 on both.
+  - `GET /shared/{token}` (public) returns `{name, origin, destination, start_date, end_date, people, budget_total, version_created_at, plan}` from the newest plan version, with the plan's `request_hash` removed. Never the chat, email, user id, trip id, version list, preferences, locks or excludes. An unknown or turned-off token gets 404.
+  - The public endpoint is rate-limited per client address (`share.rate_per_minute` in config, 60); beyond it, 429.
+- **API-FR-15 Live-price links** (FR-055). `/meta` includes `live_prices`: per mode (flight, train, bus) and for the hotel, the site name and a URL pattern from `config.yaml` (placeholders `{city}`, `{checkin}`, `{checkout}`, `{adults}`, `{rooms}`). The server never calls these sites.
 
 ##### 3. Acceptance tests
 | ID | Test | Pass when |
@@ -1544,6 +1553,7 @@ An HTTPS JSON API (FastAPI) over the engine. It provides accounts, saved prefere
 | API-AT-06 | Rename, duplicate, delete, list upcoming/past | Expected results; deleted trip's versions and chat are gone |
 | API-AT-07 | Passwords in DB and logs | Only bcrypt hashes; no password or JWT in logs |
 | API-AT-08 | 3 concurrent creates with max 2 solves | All succeed, or the third gets 429 after 20 s; none fail with 500 |
+| API-AT-09 | Share link: create twice, read publicly, another user, revoke, rate limit | Owner gets the same token twice; another user's trip and an unknown token get 404; the public response has only the listed fields (no chat, email, ids, versions, prefs, locks, excludes, request_hash); after DELETE the token gets 404; over the limit, 429 |
 
 #### 004 Plan
 
@@ -1658,6 +1668,10 @@ A responsive React web app over the 004 API. It has seven pages, a map of each d
   - Works from 360 px wide with no horizontal scroll (FR-053).
   - Every input has a label, everything works by keyboard with visible focus, and text meets WCAG AA contrast (NFR-007).
 - **UI-FR-09 States.** Loading skeletons while planning (with "Planning your trip… usually under 5 s"), clear error messages from API-FR-11, and a "busy, retry" message for 429.
+- **UI-FR-10 Shared plan page** `/s/:token` (public, FR-048): a read-only view with the trip name and facts, transport, hotel, day by day, map and budget, labelled "Shared plan · prices are estimates", with a "Plan your own trip" button. No chat, editing, version or trade-off controls. `<meta name="robots" content="noindex">` on the page and an `X-Robots-Tag: noindex` header for `/s/*` on Vercel. An unknown or turned-off link shows "This shared plan isn't available".
+- **UI-FR-11 Share dialog** on Plan detail: a "Share" button opens a dialog that creates or shows the link, with "Copy link" (`navigator.clipboard`, falling back to selecting the text for manual copy) and "Stop sharing".
+- **UI-FR-12 PDF** (FR-054): "Download PDF" on Plan detail and on the shared page calls `window.print()`. The print stylesheet hides the header, footer, chat, buttons, version history and trade-offs; keeps the title, trip facts, transport and hotel, day by day, the budget table and the "Estimated prices" label; avoids page breaks inside a day; prints black on white. The map prints only if it does so cleanly (decided from the Playwright PDF).
+- **UI-FR-13 Live-price links** (FR-055): each journey card and the hotel card has "Check live prices on <site> ↗" (new tab, `rel="noopener noreferrer"`) built from `/meta` `live_prices`, with the note "Tripwise doesn't book; prices there may differ."
 
 ##### 3. Acceptance tests
 These are run by Claude Code in the browser against a local API, with results recorded in `frontend/TESTING.md`.
@@ -1673,6 +1687,9 @@ These are run by Claude Code in the browser against a local API, with results re
 | UI-AT-07 | 360 px and 1280 px screenshots of every page | No horizontal scroll; nothing clipped |
 | UI-AT-08 | Keyboard-only run of UI-AT-01 | Possible end to end; focus is always visible |
 | UI-AT-09 | Every price on screen | Has the Estimated label or sits under one |
+| UI-AT-10 | Share: copy the link, open it logged out, stop sharing | The copied link opens a read-only plan in a fresh context (no chat, version or edit controls; noindex meta present; axe clean); after "Stop sharing" the link shows the not-available page |
+| UI-AT-11 | Download PDF | `page.pdf()` in print media produces a PDF with the title, every day and the budget table, and without the chat, header or buttons |
+| UI-AT-12 | Live-price links | Each journey and the hotel link to the configured site in a new tab with `rel="noopener noreferrer"`; the hotel link carries the city, dates, adults and rooms |
 
 #### 006 Plan
 - **Stack:** Vite + React 18 + TypeScript; react-router-dom 6; TanStack Query for API state; Tailwind CSS 3; react-leaflet 4 + leaflet; recharts for the donut. Pin each to a version at least two weeks old. No other UI framework.
@@ -1702,6 +1719,13 @@ These are run by Claude Code in the browser against a local API, with results re
 - [x] **F7.4** Blank preferences, "Fill from my profile", hours as a list, required hours/pace/comfort with field messages; optional trip name. · serves UI-FR-02, FR-007
 - [x] **F7.5** My Trips: created time (Asia/Kolkata); duplicate named "<name> (copy)". · serves UI-FR-06
 - [x] **F7.6** Playwright helpers set preferences explicitly; new checks (eye toggle, empty fields after switching, created time and custom name, Fill-from-profile disabled/enabled, blank profile for a new user); full UI suite with axe at 360 and 1280 px; backend tests; redeploy backend and frontend; DEP-AT-01. · Check: UI-AT-01–09, DEP-AT-01
+
+**Follow-up F8 (owner features, 2026-10-26)**
+- [ ] **F8.1** API: `trip_shares` table, share create/return and revoke (owner only), public `GET /shared/{token}` with the listed fields and a rate limit; `live_prices` patterns in config and `/meta`. · Check: API-AT-09 · serves API-FR-14, API-FR-15
+- [ ] **F8.2** Shared plan page `/s/:token` with noindex, and the Share dialog on Plan detail. · Check: UI-AT-10 · serves UI-FR-10, UI-FR-11
+- [ ] **F8.3** Download PDF and the print stylesheet. · Check: UI-AT-11 · serves UI-FR-12
+- [ ] **F8.4** Live-price links on journey and hotel cards. · Check: UI-AT-12 · serves UI-FR-13
+- [ ] **F8.5** Full UI suite with axe at 360 and 1280 px; backend tests; redeploy backend and frontend; DEP-AT-01; update Part D.
 
 ### Feature 007 — AI layer (Groq)
 
@@ -2288,6 +2312,10 @@ Real Groq `openai/gpt-oss-120b` (Developer tier) unless noted; backend suite 101
 | 2026-10-26 | D Traceability (008 T05, T06) | Backend redeployed before the live chat timing so it measured the final code. Live chat p95 12.2 s and 13.0 s (two runs), each from one slow Groq response: NFR-002 recorded as not met live, DEP-AT-02 passes on its "gap recorded with the cause" clause. NFR-004 recorded as not met: the Groq account moved to the Developer tier; Part B is unchanged pending the owner's decision | Report results as measured; a Part B change is the owner's call |
 | 2026-10-26 | C 007 Spec AI-FR-03, AI-FR-06, Plan | Per-message chat deadline: `chat.deadline_s` 7.0 s; call 1 at most `groq.timeout_tools_s` 4.0 s (timeout → "assistant unavailable", no change); call 2 gets the remaining deadline minus 0.5 s, skipped for the template reply if under 1 s remains | Owner decision: live chat p95 was 12.2 s and 13.0 s because one slow Groq response could take the full 10 s timeout (NFR-002) |
 | 2026-10-26 | B NFR-004 | "Only free tiers" becomes free tiers except Groq on the Developer (pay-as-you-go) tier from 2026-10-26, total cost under ₹50 | Owner decision: evaluation throughput and demo reliability |
+| 2026-10-26 | A Article VIII.2 (constitution 1.1 → 2.0) | A user reads and changes only their own data, except a plan its owner shares through a revocable read-only link (plan and trip facts only; never chat, email or account data) | Owner decision (F8): read-only share links; a changed rule, hence 2.0 |
+| 2026-10-26 | B FR-047, FR-048, FR-050, FR-054, FR-055, §9 | New FR-048 share link, FR-054 PDF via print, FR-055 links to booking sites' own searches; FR-047 notes the share exception; FR-050 adds the shared page; Out of scope narrowed to collaborative editing / edit-rights sharing, and to fetching or showing live prices | Owner decision (F8); Article VII.2 needs Part B amended before building anything on the Out of scope list |
+| 2026-10-26 | C 004 API-FR-02, API-FR-14, API-FR-15, API-AT-09 | Public `GET /shared/{token}`; share create/return and revoke for the owner; token stored unhashed (POST must return the existing link; a hash would protect nothing a database reader can't already see); rate limit `share.rate_per_minute`; `live_prices` in `/meta` | Owner decision (F8) |
+| 2026-10-26 | C 006 UI-FR-10–13, UI-AT-10–12, tasks F8.1–F8.5 | Shared plan page with noindex; Share dialog; Download PDF with a print stylesheet; live-price links. URL patterns: Booking.com hotel search prefilled (`ss`, `checkin`, `checkout`, `group_adults`, `no_rooms`; confirmed from consistent public examples and Booking's Demand API property URLs, not by a live fetch, as the page renders in JavaScript); MakeMyTrip flights and trains and redBus buses link to their plain search pages, because no published prefilled format was found and live fetches timed out | Owner decision (F8); the owner's rule: link the plain search page when a prefilled format can't be confirmed |
 | 2026-10-26 | B FR-007 | The trip form starts with blank preferences; a "Fill from my profile" button fills them from the saved profile (was: pre-filled automatically) | Owner decision (F7): preferences should be a deliberate choice per trip, not silently inherited |
 | 2026-10-26 | C 004 API-FR-03, API-FR-06 | Unsaved profile is blank (interests 0; hours, pace, comfort null; modes neutral; avoid crowds off) with `saved: false`; PUT unchanged; trip list items include `created_at` | Owner decision (F7): no invented preferences (the old default liked history, culture and food); My Trips shows when a trip was made |
 | 2026-10-26 | C 006 UI-FR-01, 02, 06 | One hero CTA; outlined header buttons when signed out; password show/hide toggle; auth forms remount per mode; sign-up lands on Profile with a note; blank preferences with Fill from my profile; hours from a list; hours/pace/comfort required on the client; optional trip name; My Trips shows created time and duplicates as "<name> (copy)"; tasks F7.1–F7.6 | Owner UI review (F7). Hours become a list because a slider always shows a value and cannot look unchosen |
