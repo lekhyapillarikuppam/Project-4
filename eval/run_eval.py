@@ -340,11 +340,11 @@ DISCUSSION = """- **Feasibility.** Tripwise returned a validator-clean plan for 
   also clean ({gr[valid]}/{gr[feasible_trips]}): feasibility comes from the shared model, not from the optimiser.
   {llm_line}
 - **Value.** Tripwise's mean value is {tw[mean_value]} against greedy's {gr[mean_value]}, but greedy scored higher on
-  {wins} of {n_ok} trips ({won}). On those trips greedy fits more activities ({gr_stops_won} against
-  {tw_stops_won} on average) for about the same share of the budget ({gr_use_won} against {tw_use_won}): the engine selects
-  activities in stage 1 on conservative estimates of time and cost and does not top up the plan after exact routing.
-  Over all trips budget use is similar ({tw[mean_budget_use]} against {gr[mean_budget_use]}). A post-routing fill step
-  is the clearest improvement to make next.
+  {wins} of {n_ok} trips ({won}). On those trips greedy fits {gr_stops_won} activities against Tripwise's
+  {tw_stops_won} on average and uses {gr_use_won} of the usable budget against {tw_use_won}: stage 1 picks the set on
+  conservative estimates of time and cost, and the fill step after routing can add stops but not swap a chosen one for
+  a better one (see "Before and after the fill step" below). Over all trips budget use is similar
+  ({tw[mean_budget_use]} against {gr[mean_budget_use]}).
 - **Travel.** Tripwise routes each day (OR-Tools), so a smaller share of the day goes on local rides
   ({tw[mean_travel_share]} against greedy's {gr[mean_travel_share]}).
 - **Variants.** Tripwise showed {tw[mean_variants]} distinct variants per feasible trip on average.

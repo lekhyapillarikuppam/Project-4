@@ -1,0 +1,441 @@
+[
+ {
+  "id": "C01",
+  "text": "Make sure we see Amber Fort",
+  "tool": "lock_activity",
+  "args": {
+   "attraction": "JAI-A-02"
+  },
+  "outcome": "tool"
+ },
+ {
+  "id": "C02",
+  "text": "We must visit City Palace",
+  "tool": "lock_activity",
+  "args": {
+   "attraction": "JAI-A-05"
+  },
+  "outcome": "tool"
+ },
+ {
+  "id": "C03",
+  "text": "Add Jaigarh Fort to the plan",
+  "tool": "lock_activity",
+  "args": {
+   "attraction": "JAI-A-09"
+  },
+  "outcome": "tool"
+ },
+ {
+  "id": "C04",
+  "text": "Please keep Hawa Mahal in",
+  "tool": "lock_activity",
+  "args": {
+   "attraction": "JAI-A-01"
+  },
+  "outcome": "tool"
+ },
+ {
+  "id": "C05",
+  "text": "I really want to go to Albert Hall Museum",
+  "tool": "lock_activity",
+  "args": {
+   "attraction": "JAI-A-10"
+  },
+  "outcome": "tool"
+ },
+ {
+  "id": "C06",
+  "text": "Skip Jal Mahal",
+  "tool": "exclude_activity",
+  "args": {
+   "attraction": "JAI-A-03"
+  },
+  "outcome": "tool"
+ },
+ {
+  "id": "C07",
+  "text": "Remove Birla Mandir from our trip",
+  "tool": "exclude_activity",
+  "args": {
+   "attraction": "JAI-A-11"
+  },
+  "outcome": "tool"
+ },
+ {
+  "id": "C08",
+  "text": "We don't want to go to Johari Bazar",
+  "tool": "exclude_activity",
+  "args": {
+   "attraction": "JAI-A-28"
+  },
+  "outcome": "tool"
+ },
+ {
+  "id": "C09",
+  "text": "No Jantar Mantar please",
+  "tool": "exclude_activity",
+  "args": {
+   "attraction": "JAI-A-04"
+  },
+  "outcome": "tool"
+ },
+ {
+  "id": "C10",
+  "text": "Set the budget to 60000",
+  "tool": "set_budget",
+  "args": {
+   "budget_total": 60000
+  },
+  "outcome": "tool"
+ },
+ {
+  "id": "C11",
+  "text": "Our budget is now 45k",
+  "tool": "set_budget",
+  "args": {
+   "budget_total": 45000
+  },
+  "outcome": "tool"
+ },
+ {
+  "id": "C12",
+  "text": "Increase the budget by 10000",
+  "tool": "set_budget",
+  "args": {
+   "budget_total": 60000
+  },
+  "outcome": "tool"
+ },
+ {
+  "id": "C13",
+  "text": "We can spend 1 lakh in total",
+  "tool": "set_budget",
+  "args": {
+   "budget_total": 100000
+  },
+  "outcome": "tool"
+ },
+ {
+  "id": "C14",
+  "text": "Only 5 hours out on day 2",
+  "tool": "set_day_hours",
+  "args": {
+   "day": 2,
+   "hours": 5
+  },
+  "outcome": "tool"
+ },
+ {
+  "id": "C15",
+  "text": "Day 1 should be short, just 4 hours",
+  "tool": "set_day_hours",
+  "args": {
+   "day": 1,
+   "hours": 4
+  },
+  "outcome": "tool"
+ },
+ {
+  "id": "C16",
+  "text": "Let's do 12 hours on day 3",
+  "tool": "set_day_hours",
+  "args": {
+   "day": 3,
+   "hours": 12
+  },
+  "outcome": "tool"
+ },
+ {
+  "id": "C17",
+  "text": "We want 10 hours out every day",
+  "tool": "set_all_hours",
+  "args": {
+   "hours": 10
+  },
+  "outcome": "tool"
+ },
+ {
+  "id": "C18",
+  "text": "Make each day 7 hours",
+  "tool": "set_all_hours",
+  "args": {
+   "hours": 7
+  },
+  "outcome": "tool"
+ },
+ {
+  "id": "C19",
+  "text": "Shorter days please, 6 hours each",
+  "tool": "set_all_hours",
+  "args": {
+   "hours": 6
+  },
+  "outcome": "tool"
+ },
+ {
+  "id": "C20",
+  "text": "Switch to a budget hotel",
+  "tool": "set_hotel_tier",
+  "args": {
+   "tier": "budget"
+  },
+  "outcome": "tool"
+ },
+ {
+  "id": "C21",
+  "text": "Upgrade us to a premium hotel",
+  "tool": "set_hotel_tier",
+  "args": {
+   "tier": "premium"
+  },
+  "outcome": "tool"
+ },
+ {
+  "id": "C22",
+  "text": "A mid-range hotel is fine",
+  "tool": "set_hotel_tier",
+  "args": {
+   "tier": "mid"
+  },
+  "outcome": "tool"
+ },
+ {
+  "id": "C23",
+  "text": "Fly both ways",
+  "tool": "set_transport",
+  "args": {
+   "direction": "both",
+   "mode": "flight"
+  },
+  "outcome": "tool"
+ },
+ {
+  "id": "C24",
+  "text": "Come back by train in 3A",
+  "tool": "set_transport",
+  "args": {
+   "direction": "ret",
+   "mode": "train",
+   "class": "3A"
+  },
+  "outcome": "tool"
+ },
+ {
+  "id": "C25",
+  "text": "Take the bus there",
+  "tool": "set_transport",
+  "args": {
+   "direction": "out",
+   "mode": "bus"
+  },
+  "outcome": "tool"
+ },
+ {
+  "id": "C26",
+  "text": "Go by sleeper train on the way out",
+  "tool": "set_transport",
+  "args": {
+   "direction": "out",
+   "mode": "train",
+   "class": "SL"
+  },
+  "outcome": "tool"
+ },
+ {
+  "id": "C27",
+  "text": "Make the trip more relaxed",
+  "tool": "set_pace",
+  "args": {
+   "pace": "relaxed"
+  },
+  "outcome": "tool"
+ },
+ {
+  "id": "C28",
+  "text": "We want a packed schedule",
+  "tool": "set_pace",
+  "args": {
+   "pace": "packed"
+  },
+  "outcome": "tool"
+ },
+ {
+  "id": "C29",
+  "text": "A balanced pace please",
+  "tool": "set_pace",
+  "args": {
+   "pace": "balanced"
+  },
+  "outcome": "tool"
+ },
+ {
+  "id": "C30",
+  "text": "We love food, bump that up to 5",
+  "tool": "set_interest",
+  "args": {
+   "interest": "food",
+   "weight": 5
+  },
+  "outcome": "tool"
+ },
+ {
+  "id": "C31",
+  "text": "We're not into shopping at all",
+  "tool": "set_interest",
+  "args": {
+   "interest": "shopping",
+   "weight": 0
+  },
+  "outcome": "tool"
+ },
+ {
+  "id": "C32",
+  "text": "More history please, make it 5",
+  "tool": "set_interest",
+  "args": {
+   "interest": "history",
+   "weight": 5
+  },
+  "outcome": "tool"
+ },
+ {
+  "id": "C33",
+  "text": "Put Hawa Mahal on day 3",
+  "tool": "move_activity",
+  "args": {
+   "attraction": "JAI-A-01",
+   "day": 3
+  },
+  "outcome": "tool"
+ },
+ {
+  "id": "C34",
+  "text": "Move Amber Fort to day 1",
+  "tool": "move_activity",
+  "args": {
+   "attraction": "JAI-A-02",
+   "day": 1
+  },
+  "outcome": "tool"
+ },
+ {
+  "id": "C35",
+  "text": "Can City Palace be on the second day?",
+  "tool": "move_activity",
+  "args": {
+   "attraction": "JAI-A-05",
+   "day": 2
+  },
+  "outcome": "tool"
+ },
+ {
+  "id": "C36",
+  "text": "Plan it again",
+  "tool": "regenerate",
+  "args": {},
+  "outcome": "tool"
+ },
+ {
+  "id": "C37",
+  "text": "Regenerate the plan",
+  "tool": "regenerate",
+  "args": {},
+  "outcome": "tool"
+ },
+ {
+  "id": "C38",
+  "text": "Why isn't Jal Mahal in the plan?",
+  "tool": "explain",
+  "args": {
+   "attraction": "JAI-A-03"
+  },
+  "outcome": "tool"
+ },
+ {
+  "id": "C39",
+  "text": "Why did you pick this hotel?",
+  "tool": "explain",
+  "args": {},
+  "outcome": "tool"
+ },
+ {
+  "id": "C40",
+  "text": "Why is Amber Fort on day 1?",
+  "tool": "explain",
+  "args": {
+   "attraction": "JAI-A-02"
+  },
+  "outcome": "tool"
+ },
+ {
+  "id": "C41",
+  "text": "Book the hotel for us",
+  "tool": "unsupported",
+  "args": {},
+  "outcome": "tool"
+ },
+ {
+  "id": "C42",
+  "text": "What's the weather in Jaipur next week?",
+  "tool": "unsupported",
+  "args": {},
+  "outcome": "tool"
+ },
+ {
+  "id": "C43",
+  "text": "Can we add Udaipur to the trip?",
+  "tool": "unsupported",
+  "args": {},
+  "outcome": "tool"
+ },
+ {
+  "id": "C44",
+  "text": "Find us a good restaurant for dinner",
+  "tool": "unsupported",
+  "args": {},
+  "outcome": "tool"
+ },
+ {
+  "id": "C45",
+  "text": "Do we need a visa?",
+  "tool": "unsupported",
+  "args": {},
+  "outcome": "tool"
+ },
+ {
+  "id": "C46",
+  "text": "Add the temple",
+  "tool": "lock_activity",
+  "args": {},
+  "outcome": "clarify"
+ },
+ {
+  "id": "C47",
+  "text": "Skip the garden",
+  "tool": "exclude_activity",
+  "args": {},
+  "outcome": "clarify"
+ },
+ {
+  "id": "C48",
+  "text": "Make sure we see the fort",
+  "tool": "lock_activity",
+  "args": {},
+  "outcome": "clarify"
+ },
+ {
+  "id": "C49",
+  "text": "Remove the mandir",
+  "tool": "exclude_activity",
+  "args": {},
+  "outcome": "clarify"
+ },
+ {
+  "id": "C50",
+  "text": "Put the park on day 1",
+  "tool": "move_activity",
+  "args": {},
+  "outcome": "clarify"
+ }
+]

@@ -3,7 +3,8 @@
     python eval/run_chat_changes.py   (needs GROQ_API_KEY, DATABASE_URL, JWT_SECRET)
 
 Pass when each message creates a new version that passes the validator, and the diff the reply was written from
-equals the diff between the stored versions. Writes eval/out/chat_changes.json.
+equals the diff between the stored versions. The same run gives AI-AT-07 (chat p95 <= 8 s; the pauses between
+messages are not timed). Writes eval/out/chat_changes.json.
 """
 
 from __future__ import annotations
@@ -82,7 +83,10 @@ def main() -> int:
     (ROOT / "eval" / "out").mkdir(parents=True, exist_ok=True)
     (ROOT / "eval" / "out" / "chat_changes.json").write_text(json.dumps(rows, indent=1, ensure_ascii=False), encoding="utf-8")
     print(f"changes with a valid new version and matching diff: {ok}/{len(MESSAGES)}")
-    return 0 if ok == len(MESSAGES) else 1
+    times = sorted(r["seconds"] for r in rows)
+    p95 = times[min(len(times) - 1, int(0.95 * len(times)))]
+    print(f"AI-AT-07 chat timing over {len(times)} messages: p95 {p95:.1f} s, max {times[-1]:.1f} s (limit 8 s)")
+    return 0 if ok == len(MESSAGES) and p95 <= 8 else 1
 
 
 if __name__ == "__main__":
