@@ -2066,7 +2066,7 @@ Real Groq `openai/gpt-oss-120b` (Developer tier) unless noted; backend suite 101
 |---|---|---|---|
 | EVAL-AT-01 | Pass | 2026-10-26 | `python eval/run_eval.py --llm`: `eval/out/results.csv`, 3 charts, `eval/RESULTS.md`. Tripwise 26/26 feasible trips valid (100%), 4/4 infeasible declined, mean value 729.5; greedy 26/26, 645.5; LLM-only 2/10 valid (V-10 and V-11 on 6 trips each) |
 | EVAL-AT-02 | Pass | 2026-10-26 | Second run (LLM-only reused from `eval/out/llm_only.json`): all 70 rows identical apart from `solve_ms` |
-| DEP-AT-01 | Pass | 2026-10-26 | `npx playwright test -c playwright.live.config.ts` on the deployed URLs: sign up, plan, choose, chat change to version 2, My Trips; 15 s, and 16.7 s again on the final deploy |
+| DEP-AT-01 | Pass | 2026-10-26 | `npx playwright test -c playwright.live.config.ts` on the deployed URLs: sign up, plan, choose, chat change to version 2, My Trips; 15 s, 16.7 s after the key rotation, 14.9 s on the chat-deadline deploy |
 | DEP-AT-02 | Pass | 2026-10-26 | `eval/LIVE.md`: variants p95 1.21 s over 30 trips, 1.54 s over T01–T10 (limit 5 s). Chat with the per-message deadline, two runs: p95 4.72 s and 7.41 s (limit 8 s); 19 of 20 messages made their change, 1 got "assistant unavailable" when call 1 hit its 4 s limit. Before the deadline: 12.2 s and 13.0 s, each from one slow Groq response |
 | DEP-AT-03 | Pass | 2026-10-26 | `eval/LIVE.md`: HTTP → 308 HTTPS; CORS allows only the Vercel origin; port 8100 closed; no secrets in the working tree or 91 commits; `/etc/tripwise.env` root 600 |
 
