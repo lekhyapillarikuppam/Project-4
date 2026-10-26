@@ -17,6 +17,8 @@ Inputs:
 - data/raw/attractions/hours_secondary.csv   secondary-source hours, used when the official page gives days but no hours
 - data/raw/attractions/owner_review.csv      the owner's spot-check edits (DATA-AT-05), applied last: hours, closed days,
                                              fee, visit and approx flags, with notes that replace the hours/fee/visit text
+- data/raw/attractions/kind_overrides.csv    corrections to the derived kind where a name keyword misreads the place:
+                                             city_id, name, kind, reason
 - data/raw/attractions/activities.csv        hand-curated adventure activities (selection candidate "activity:<place>"):
                                              location, hours and price read from an operator or state tourism page
 - data/raw/wiki/<CITY>/pageviews.json        12-month pageviews
@@ -47,7 +49,7 @@ A = RAW / "attractions"
 WIKI_FETCHED = "2026-10-23"
 HEADER = ["attraction_id", "city_id", "name", "lat", "lon", "visit_minutes", "visit_approx", "open_time", "close_time",
           "closed_weekdays", "hours_approx", "entry_fee", "fee_approx", "tags", "rating", "outdoor", "crowd_level", "fixed_slot",
-          "source", "checked_on"]
+          "source", "checked_on", "kind"]
 WEEKDAYS = ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"]
 
 
@@ -290,15 +292,45 @@ def build(city: str) -> list[list]:
                      open_t, close_t, ";".join(str(x) for x in closed), str(hours_approx).lower(),
                      "" if fee is None else fee, str(fee_approx).lower(), c["tags"], "" if r is None else f"{r:.1f}", c["outdoor"],
                      crowd.get(c["candidate"], ""), c.get("fixed_slot", "false"), " | ".join(src),
-                     "" if todo else latest(*dates)])
+                     "" if todo else latest(*dates), kind(city, c)])
     return rows
+
+
+def kind(city: str, c: dict) -> str:
+    """5.5 Kind: the override if there is one, else the place type refined by name keywords."""
+    if (city, c["name"]) in kind_overrides():
+        return kind_overrides()[(city, c["name"])]
+    return rules.kind_of(c["place_type"], c["name"])
+
+
+_OVERRIDES: dict | None = None
+
+
+def kind_overrides() -> dict:
+    global _OVERRIDES
+    if _OVERRIDES is None:
+        _OVERRIDES = {(r["city_id"], r["name"]): r["kind"] for r in read_csv(A / "kind_overrides.csv")}
+    return _OVERRIDES
+
+
+def disagreements(city: str) -> list[str]:
+    """Rows where a name keyword and the place type disagree, with the kind used: for the owner to eyeball."""
+    out = []
+    for c in read_csv(A / f"{city}_selection.csv"):
+        word = rules.kind_of("", c["name"])
+        if word and word != c["place_type"]:
+            out.append(f"{city} {c['name']!r}: type {c['place_type']}, keyword {word} -> kind {kind(city, c)}"
+                       + (" (override)" if (city, c["name"]) in kind_overrides() else ""))
+    return out
 
 
 def main(argv: list[str] | None = None) -> int:
     for city in (argv if argv is not None else sys.argv[1:]):
         rows = build(city)
         write_csv(CURATED / rules.ATTRACTIONS_DIR / f"{city}.csv", HEADER, rows)
-        print(city, len(rows), "attractions,", sum(1 for r in rows if r[-1] == ""), "TODO")
+        print(city, len(rows), "attractions,", sum(1 for r in rows if r[-2] == ""), "TODO")
+        for line in disagreements(city):
+            print("  kind check:", line)
     return 0
 
 

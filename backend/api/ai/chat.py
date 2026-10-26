@@ -27,12 +27,13 @@ from tripwise.tradeoffs import variant_at
 
 log = logging.getLogger("tripwise.ai")
 
-CHANGE_TOOLS = {"lock_activity", "exclude_activity", "set_budget", "set_day_hours", "set_all_hours", "set_hotel_tier",
+CHANGE_TOOLS = {"lock_activity", "exclude_activity", "limit_kind", "set_budget", "set_day_hours", "set_all_hours", "set_hotel_tier",
                 "set_transport", "set_pace", "set_interest", "move_activity", "regenerate"}
 NAMED = {"lock_activity", "exclude_activity", "move_activity"}
 CLOSEST_HINT = {
     "lock_activity": "keep or add an activity (\"make sure we see Amber Fort\")",
     "exclude_activity": "drop an activity (\"skip the zoo\")",
+    "limit_kind": "limit a kind of place (\"only one temple\", \"no beaches\")",
     "set_budget": "change your budget (\"raise the budget to 50000\")",
     "set_day_hours": "change the hours on one day (\"only 5 hours on day 2\")",
     "set_all_hours": "change your hours out each day",
@@ -49,6 +50,13 @@ REASON_TEXT = {"budget": "it didn't fit the budget", "time": "there wasn't time 
 
 class Clarify(Exception):
     """The message needs a clarifying reply instead of a change."""
+
+
+class NoChange(Exception):
+    """The request would change nothing (already set, or no such kind of place in the city): no replan."""
+
+
+SUGGEST = "You can name places to add or remove, or change the budget, hours or pace."
 
 
 # --- names -------------------------------------------------------------------------------------------------
@@ -99,8 +107,25 @@ def _calls(msg: dict) -> list[tuple[str, dict]]:
     return out
 
 
-def to_changes(calls: list[tuple[str, dict]], request: dict, city: str) -> dict:
-    """One merged replan change set for the change tools (AI-FR-03)."""
+def kind_excludes(kind: str, keep_max: int, request: dict, city: str, plan: dict | None) -> tuple[list[str], list[str]]:
+    """limit_kind expansion (AI-FR-03): (kept, excluded) attraction ids. Of the places of that kind already in the plan
+    keep the keep_max with the highest v(a); keep out every other place of that kind in the city."""
+    from tripwise import value
+    from tripwise.models import Prefs
+    ds = data.default()
+    same = [a for a in ds.by_city.get(city, []) if a.kind == kind]
+    if not same:
+        raise NoChange(f"There is no {kind} in {ds.cities[city].name} in Tripwise's list of places, so nothing changed. "
+                       + SUGGEST)
+    in_plan = {s["attraction_id"] for d in (plan or {}).get("days", []) for s in d["stops"]}
+    prefs, cfg = Prefs.model_validate(request["prefs"]), config.default()
+    ranked = sorted((a for a in same if a.attraction_id in in_plan), key=lambda a: -value.activity(a, prefs, cfg))
+    kept = [a.attraction_id for a in ranked[:max(0, keep_max)]]
+    return kept, [a.attraction_id for a in same if a.attraction_id not in kept]
+
+
+def to_changes(calls: list[tuple[str, dict]], request: dict, city: str, plan: dict | None = None) -> dict:
+    """One merged replan change set for the change tools (AI-FR-03). plan is the current plan (for limit_kind)."""
     n_days = len(_dates(request))
     locks, excludes = list(request.get("locks", [])), list(request.get("excludes", []))
     pins = dict(request.get("pins") or {})
@@ -119,18 +144,34 @@ def to_changes(calls: list[tuple[str, dict]], request: dict, city: str) -> dict:
         return v
 
     for name, a in calls:
-        if name in NAMED:
+        if name in ("lock_activity", "exclude_activity"):      # a list of names; "name" is accepted too
+            given = a.get("names") if isinstance(a.get("names"), list) else [a.get("name", "")]
+            ids = list(dict.fromkeys(resolve(n, city)[0] for n in given or [""]))
+        elif name in NAMED:
             aid, _ = resolve(a.get("name", ""), city)
-        if name == "lock_activity":
-            locks = locks + [aid] if aid not in locks else locks
-            excludes = [x for x in excludes if x != aid]
+        if name == "limit_kind":
+            limits = a.get("limits") if isinstance(a.get("limits"), list) else []
+            if not limits:
+                raise Clarify("Which kind of place, and how many of them do you want to keep?")
+            for lim in limits:
+                _, out = kind_excludes(str(lim.get("kind", "")), int(lim.get("max", 0) or 0), request, city, plan)
+                excludes = excludes + [i for i in out if i not in excludes]
+                locks = [x for x in locks if x not in out]
+                ch |= {"locks": locks, "excludes": excludes}
+                for i in out:
+                    if i in pins:
+                        ch.setdefault("pins", {})[i] = None
+        elif name == "lock_activity":
+            locks = locks + [i for i in ids if i not in locks]
+            excludes = [x for x in excludes if x not in ids]
             ch |= {"locks": locks, "excludes": excludes}
         elif name == "exclude_activity":
-            excludes = excludes + [aid] if aid not in excludes else excludes
-            locks = [x for x in locks if x != aid]
+            excludes = excludes + [i for i in ids if i not in excludes]
+            locks = [x for x in locks if x not in ids]
             ch |= {"locks": locks, "excludes": excludes}
-            if aid in pins:
-                ch.setdefault("pins", {})[aid] = None
+            for i in ids:
+                if i in pins:
+                    ch.setdefault("pins", {})[i] = None
         elif name == "move_activity":
             ch.setdefault("pins", {})[aid] = day(a.get("day"))
             if aid in excludes:
@@ -189,6 +230,72 @@ def context(trip: dict, plan: dict, request: dict) -> dict:
         "moved": {name(i): d for i, d in (request.get("pins") or {}).items()},
         "day_hours": request.get("day_hours") or {},
     }
+
+
+def applied(base_request: dict, changes: dict) -> dict:
+    """What a change set actually did, by name, for the reply (AI-FR-03): activities newly kept out, kept in or
+    moved, and the settings that changed."""
+    ds = data.default()
+    name = lambda i: ds.attractions[i].name if i in ds.attractions else i   # noqa: E731
+    out: dict = {}
+    for key, label in (("excludes", "removed_and_kept_out"), ("locks", "now_always_included")):
+        new = [name(i) for i in changes.get(key, []) if i not in base_request.get(key, [])]
+        if new:
+            out[label] = new
+    pins = {name(i): d for i, d in (changes.get("pins") or {}).items()
+            if d is not None and (base_request.get("pins") or {}).get(i) != d}
+    if pins:
+        out["moved_to_day"] = pins
+    if "budget_total" in changes and changes["budget_total"] != base_request.get("budget_total"):
+        out["budget_total"] = changes["budget_total"]
+    prefs = {}
+    for k, v in (changes.get("prefs") or {}).items():
+        old = base_request["prefs"].get(k)
+        if isinstance(v, dict):
+            v = {t: w for t, w in v.items() if (old or {}).get(t) != w}
+            if v:
+                prefs[k] = v
+        elif v != old:
+            prefs[k] = v
+    if prefs:
+        out["prefs"] = prefs
+    hours = {d: h for d, h in (changes.get("day_hours") or {}).items() if (base_request.get("day_hours") or {}).get(d) != h}
+    if hours:
+        out["day_hours"] = hours
+    if "day_hours" in changes and not changes["day_hours"] and base_request.get("day_hours"):
+        out["day_hours"] = "cleared"
+    transport = {k: v for k, v in (changes.get("transport") or {}).items() if (base_request.get("transport") or {}).get(k) != v}
+    if transport:
+        out["transport"] = transport
+    return out
+
+
+def change_names(changes: dict) -> set[str]:
+    """Names of every activity a change set refers to (so the reply may mention one that left the plan)."""
+    ds = data.default()
+    ids = list(changes.get("excludes", [])) + list(changes.get("locks", [])) + list((changes.get("pins") or {}))
+    return {ds.attractions[i].name for i in ids if i in ds.attractions}
+
+
+def reply_facts(version: int, request: dict, d: dict, changes: dict, base_request: dict, tools: list) -> dict:
+    """Call 2's facts: what was applied and the diff, not the traveller's message (AI-FR-03)."""
+    facts = {"applied": applied(base_request, changes), "new_version": version, "budget_total": request["budget_total"],
+             "changes": d}
+    kinds = [lim for t in tools if t["name"] == "limit_kind" for lim in (t["args"].get("limits") or [])]
+    if kinds:
+        facts["kinds_limited"] = kinds
+    return facts
+
+
+def empty(d: dict) -> bool:
+    return not (d["added"] or d["removed"] or d["moved"] or d["hotel"] or d["transport"] or d["delta_cost"])
+
+
+def unchanged_named(message: str, city: str, covered: set[str]) -> list[str]:
+    """Activities of the city named in full in the message that the change did not touch."""
+    q = f" {_norm(message)} "
+    return [a.name for a in data.default().by_city.get(city, [])
+            if f" {_norm(a.name)} " in q and a.name not in covered]
 
 
 def _reply(facts: dict, fallback: str, city: str, names: set[str], amounts: set[int], deadline: float) -> tuple[str, str]:
@@ -260,7 +367,9 @@ async def handle(trip: dict, base: dict, user: dict, message: str, history: list
         tools = [{"name": n, "args": a} for n, a in calls]
         names = [n for n, _ in calls]
         if any(n in CHANGE_TOOLS for n in names):
-            changes = to_changes([c for c in calls if c[0] in CHANGE_TOOLS], request, city)
+            changes = to_changes([c for c in calls if c[0] in CHANGE_TOOLS], request, city, plan)
+            if not applied(request, changes) and "regenerate" not in names:
+                raise NoChange("Nothing changed: that is already how your plan is set. " + SUGGEST)
             return await _change(trip, base, user, message, changes, tools, deadline)
         if "explain" in names:
             return await _why(trip, base, dict(calls)["explain"].get("name"), tools, deadline)
@@ -270,6 +379,9 @@ async def handle(trip: dict, base: dict, user: dict, message: str, history: list
         return {"text": text, "actions": {"kind": "unsupported", "tools": tools}, "version": None}
     except Clarify as c:
         return {"text": str(c), "actions": {"kind": "clarify", "tools": [{"name": n, "args": a} for n, a in _safe_calls(msg)]},
+                "version": None}
+    except NoChange as c:
+        return {"text": str(c), "actions": {"kind": "no_change", "tools": [{"name": n, "args": a} for n, a in _safe_calls(msg)]},
                 "version": None}
 
 
@@ -293,12 +405,20 @@ async def _change(trip: dict, base: dict, user: dict, message: str, changes: dic
                     "version": None}
         raise
     d = diffs.diff(base["plan"], v["plan"])
-    facts = {"request": message, "new_version": v["version"], "budget_total": v["request"]["budget_total"],
-             "changes": d}
-    names = grounding.plan_names(base["plan"]) | grounding.plan_names(v["plan"])
+    if empty(d):                          # never "done" for a plan that did not change (AI-FR-03)
+        text = (f"Your plan did not change (saved as version {v['version']}): the planner found no better plan with "
+                f"that change. {SUGGEST}")
+        return {"text": text, "actions": {"kind": "change", "tools": tools, "changes": changes, "diff": d,
+                                          "reply": "no_change"}, "version": v}
+    facts = reply_facts(v["version"], v["request"], d, changes, base["request"], tools)
+    names = grounding.plan_names(base["plan"]) | grounding.plan_names(v["plan"]) | change_names(changes)
     amounts = (grounding.numbers(base["plan"]) | grounding.numbers(v["plan"]) | diffs.amounts(d)
                | {v["request"]["budget_total"]})
     text, src = await solver.run_blocking(_reply, facts, change_template(v["version"], d), city, names, amounts, deadline)
+    covered = set(d["added"]) | set(d["removed"]) | {m["name"] for m in d["moved"]} | change_names(changes)
+    missed = unchanged_named(message, city, covered)
+    if missed:                            # a fixed, server-written line: never let the reply imply these were done
+        text += f" I didn't change {', '.join(missed)}; ask again naming {'it' if len(missed) == 1 else 'them'} if you want."
     return {"text": text, "actions": {"kind": "change", "tools": tools, "changes": changes, "diff": d, "reply": src},
             "version": v}
 

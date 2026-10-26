@@ -65,13 +65,16 @@ def score(case: dict, msg: dict, request: dict) -> tuple[bool, str]:
         return False, f"tools {names}"
     args = calls[0][1]
     for k, v in case["args"].items():
-        if k == "attraction":
+        if k == "attraction":            # lock/exclude take a list of names (one expected here); move takes name
+            given = args.get("names") if isinstance(args.get("names"), list) else [args.get("name", "")]
+            if len(given) != 1:
+                return False, f"names {given!r}, expected one"
             try:
-                got = chat.resolve(args.get("name", ""), "JAI")[0]
+                got = chat.resolve(given[0], "JAI")[0]
             except chat.Clarify as c:
-                return False, f"name {args.get('name')!r}: {c}"
+                return False, f"name {given[0]!r}: {c}"
             if got != v:
-                return False, f"name {args.get('name')!r} -> {got}"
+                return False, f"name {given[0]!r} -> {got}"
         elif args.get(k) != v:
             return False, f"{k} {args.get(k)!r} != {v!r}"
     if case["tool"] == "explain" and "attraction" not in case["args"] and args.get("name"):

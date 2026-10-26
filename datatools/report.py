@@ -67,6 +67,12 @@ def counts(data: Path) -> None:
             unroutable, below, cells = unroutable + len(a["unroutable"]), below + len(a["below_rounding"]), cells + n * (n - 1)
     print("  matrix cells unroutable (fallback):    ", share(unroutable, cells))
     print("  matrix cells raised to the minimum:    ", share(below, cells))
+    print("\nKinds per city (5.5 kind)")
+    for c, rows in attractions(data).items():
+        n: dict[str, int] = {}
+        for r in rows:
+            n[r.get("kind") or "(none)"] = n.get(r.get("kind") or "(none)", 0) + 1
+        print(f"  {c}: " + ", ".join(f"{k} {v}" for k, v in sorted(n.items(), key=lambda kv: (-kv[1], kv[0]))))
 
 
 def expected_counts(data: Path) -> dict[str, int]:

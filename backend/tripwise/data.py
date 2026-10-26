@@ -82,6 +82,7 @@ class Attraction:
     rating: float
     crowd: str
     fixed_slot: bool
+    kind: str = ""          # 001 §5.5: church, mosque, temple, fort, beach, … (007 limit_kind)
 
 
 @dataclass(frozen=True)
@@ -184,7 +185,7 @@ def load(data_dir: Path) -> Dataset:
                            int(r["visit_minutes"]), _hhmm(r["open_time"]), _hhmm(r["close_time"]),
                            frozenset(int(x) for x in r["closed_weekdays"].split(";") if x),
                            int(r["entry_fee"]), tuple(r["tags"].split(";")), float(r["rating"]),
-                           r["crowd_level"], _bool(r["fixed_slot"]))
+                           r["crowd_level"], _bool(r["fixed_slot"]), r.get("kind", ""))
             ds.attractions[a.attraction_id] = a
             ds.by_city[city].append(a)
     for r in _rows(data_dir / "hotels.csv"):

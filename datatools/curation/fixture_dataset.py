@@ -51,9 +51,10 @@ for c in centres:
         rows.append([f"{c}-A-{i:02d}", c, f"Fixture Site {c} {i:02d}", lat, lon, 60 + 10*(i%6), "false",
                      "09:00" if i % 7 else "00:00", "18:00" if i % 7 else "23:59", "0" if i % 9 == 0 else "", "false",
                      fee, "false", tags, f"{3.5 + (i%15)/10:.1f}", "true" if i % 2 else "false",
-                     ["low","medium","high"][i%3], "false", SRC, CHK])
+                     ["low","medium","high"][i%3], "false", SRC, CHK, "monument"])
     w(f"attractions/{c}.csv", ["attraction_id","city_id","name","lat","lon","visit_minutes","visit_approx","open_time","close_time",
-       "closed_weekdays","hours_approx","entry_fee","fee_approx","tags","rating","outdoor","crowd_level","fixed_slot","source","checked_on"], rows)
+       "closed_weekdays","hours_approx","entry_fee","fee_approx","tags","rating","outdoor","crowd_level","fixed_slot","source","checked_on",
+       "kind"], rows)
     nodes[c] = [(r[0], float(r[3]), float(r[4])) for r in rows]
 
 rows = []

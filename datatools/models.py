@@ -280,6 +280,7 @@ class Attraction(Curated):
     outdoor: Bool
     crowd_level: Literal["low", "medium", "high"]
     fixed_slot: Bool
+    kind: str = ""
 
     def weekdays(self) -> list[int]:
         return [int(d) for d in self.closed_weekdays]
@@ -288,6 +289,9 @@ class Attraction(Curated):
         out = _city_problem("city_id", self.city_id)
         if out:
             return out
+        if self.kind not in rules.KINDS:
+            out.append(Problem("kind", "unknown_kind",
+                               f"must be one of {', '.join(sorted(rules.KINDS))}, got {self.kind!r}"))
         if self.attraction_id[:3] != self.city_id:
             out.append(Problem("attraction_id", "id_city_mismatch",
                                f"{self.attraction_id} does not start with city {self.city_id}"))

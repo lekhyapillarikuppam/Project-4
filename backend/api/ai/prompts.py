@@ -47,12 +47,28 @@ def _tool(name: str, description: str, props: dict | None = None, required: list
 
 _NAME = {"name": {"type": "string", "description": "The activity's name exactly as the traveller wrote it, even when vague "
                   "(for example \"the palace\"); never swap in a specific activity from the trip, the planner asks which one"}}
+_NAMES = {"names": {"type": "array", "minItems": 1, "items": {"type": "string"},
+                    "description": "Every activity meant, each name exactly as the traveller wrote it, even when vague "
+                    "(for example [\"the palace\"]), or as listed in the trip when the traveller means a group or kind "
+                    "of place"}}
 _HOURS = {"type": "number", "minimum": 4, "maximum": 14}
+KINDS = sorted({a.kind for a in data.default().attractions.values() if a.kind})   # 001 §5.5 kind
 
 TOOLS = [
-    _tool("lock_activity", "Make sure an activity is in the plan (keep it, add it, must see it) when no day is named; "
-          "if a day is named, use move_activity.", _NAME, ["name"]),
-    _tool("exclude_activity", "Take an activity out of the plan and keep it out.", _NAME, ["name"]),
+    _tool("lock_activity", "Make sure one or more activities are in the plan (keep, add, must see) when no day is named; "
+          "if a day is named, use move_activity.", _NAMES, ["names"]),
+    _tool("exclude_activity", "Take one or more named activities out of the plan and keep them out. A single place, even "
+          "a vague one (\"the lake\"), goes here as the traveller wrote it.", _NAMES, ["names"]),
+    _tool("limit_kind", "Cap how many places of a kind the plan has, only when the traveller counts or talks about a "
+          "kind in the plural rather than one place: \"no masjids\" is mosque max 0, \"only one church\" is church "
+          "max 1, \"just one temple and one church\" is two limits, \"too many forts\" is fort max 1. The planner "
+          "keeps the best ones and replaces the rest. Masjids and dargahs are mosque; mandirs are temple. Not for one "
+          "place (\"the gurudwara\": use exclude_activity or lock_activity) and not for interests (\"we don't care "
+          "about nightlife\": use set_interest).",
+          {"limits": {"type": "array", "minItems": 1, "items": {"type": "object", "additionalProperties": False,
+                      "properties": {"kind": {"type": "string", "enum": KINDS},
+                                     "max": {"type": "integer", "minimum": 0, "maximum": 10}},
+                      "required": ["kind", "max"]}}}, ["limits"]),
     _tool("set_budget", "Change the total trip budget for the whole group, in whole rupees. For a relative change "
           "(\"5000 more\") compute the new total from the current budget.",
           {"budget_total": {"type": "integer", "minimum": 1}}, ["budget_total"]),
@@ -80,7 +96,7 @@ TOOLS = [
     _tool("unsupported", "Anything the other tools cannot do: booking, payments, other cities, weather, visas, "
           "restaurants, adding days, and so on.",
           {"topic": {"type": "string", "description": "What was asked, in a few words"},
-           "closest": {"type": "string", "enum": ["lock_activity", "exclude_activity", "set_budget", "set_day_hours",
+           "closest": {"type": "string", "enum": ["lock_activity", "exclude_activity", "limit_kind", "set_budget", "set_day_hours",
                                                   "set_all_hours", "set_hotel_tier", "set_transport", "set_pace",
                                                   "set_interest", "move_activity", "explain", "none"]}},
           ["topic", "closest"]),
@@ -89,17 +105,21 @@ TOOLS = [
 
 def chat_system(context: dict) -> str:
     return f"""You are the assistant inside a trip planner. You never write or edit plans yourself: you call tools,
-and the planner makes the new plan. Call one or more tools for every message, choosing only from the tools given.
-Use the activity names as the traveller wrote them. Day numbers start at 1. If a message asks for something no
-tool can do, call unsupported. If it asks a question, call explain.
+and the planner makes the new plan. Call a tool for every message, choosing only from the tools given. Use the
+activity names as the traveller wrote them. When the traveller counts or talks about a kind of place in the
+plural (churches, temples, beaches, forts and so on), use limit_kind: the planner also keeps out places of that
+kind that are not in the plan yet. Day numbers start at 1. If a message asks for something no tool can do, call unsupported. If it asks a question,
+call explain.
 The current trip (JSON): {json.dumps(context, ensure_ascii=False)}"""
 
 
 def reply_system() -> str:
     return """You write the planner assistant's short reply (1-3 sentences, plain text, no markdown) to the
-traveller, from the JSON facts given: what they asked, and what the planner changed or found. Mention only
-activities and hotels named in the facts. Write rupee amounts as ₹ followed by a number copied exactly from the
-facts; never compute new amounts. old_total and new_total are the plan's estimated cost, not the budget;
-budget_total is the budget. Start with what the traveller asked for, then the main knock-on changes (at most four
-activity names in all; summarise the rest, such as "and reshuffled the days"). Prices are estimates. Do not promise
-anything the facts do not say."""
+traveller, from the JSON facts given: what the planner changed or found. Describe only what the facts say
+changed: "applied" (activities removed and kept out, now always included or moved, kinds limited, settings
+changed) and "changes" (added, removed and moved activities, hotel and transport, cost). Do not guess what the
+traveller asked for and do not say a request was done; just say what changed. Mention only activities and hotels
+named in the facts, at most four names in all; summarise the rest (for example "and reshuffled the days"). Write
+rupee amounts as ₹ followed by a number copied exactly from the facts; never compute new amounts. old_total and
+new_total are the plan's estimated cost, not the budget; budget_total is the budget. Prices are estimates. Do not
+promise anything the facts do not say."""

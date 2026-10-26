@@ -4,6 +4,8 @@ Nothing else in datatools hard-codes a rule value; it imports from here.
 Section numbers refer to the 001 Spec unless marked "Plan".
 """
 
+import re
+
 # --- Cities (Part B §4) ---------------------------------------------------
 
 CITY_CODES = (
@@ -101,6 +103,15 @@ PLACE_TYPE_ALIASES = {
     "trek": "activity", "rafting": "activity", "safari": "activity", "show": "activity", "water sports": "activity",
 }
 FREE_BY_DEFAULT = ("temple", "ghat", "viewpoint", "garden", "market", "beach")   # fee 0 when no source (5.5)
+# Kind (5.5): the drafting place type before aliasing, refined by whole-word name keywords, first match wins.
+KIND_KEYWORDS = (("church", ("church", "cathedral", "basilica")), ("mosque", ("masjid", "mosque", "dargah")),
+                 ("temple", ("temple", "mandir", "math")), ("gurudwara", ("gurudwara",)), ("fort", ("fort", "qila")))
+KINDS = frozenset(PLACE_TYPES) | frozenset(PLACE_TYPE_ALIASES) | frozenset(k for k, _ in KIND_KEYWORDS)
+
+
+def kind_of(place_type: str, name: str) -> str:
+    words = set(re.findall(r"[a-z]+", name.lower()))
+    return next((k for k, keys in KIND_KEYWORDS if words & set(keys)), place_type)
 # Rating (5.5): OpenTripMap rate -> rating when there is no Wikipedia article.
 OTM_RATE_TO_RATING = {1: 2.0, 2: 3.0, 3: 4.0}
 RATING_SAME_PAGEVIEWS = 3.0

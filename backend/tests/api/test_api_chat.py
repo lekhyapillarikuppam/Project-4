@@ -79,13 +79,17 @@ def test_change_tools_make_versions(client, user, chosen, monkeypatch):
         prev = client.get(f"/trips/{tid}/versions/{v['version'] - 1}", headers=user["h"]).json()
         assert a["actions"]["diff"] == diffs.diff(prev["plan"], v["plan"])   # the reply's diff is the real one
         assert a["version"] == v["version"] and v["source"] == "chat"
-    assert s.calls == 2 * len(cases)                                # at most 2 Groq calls per message
+    assert s.calls <= 2 * len(cases)                                # at most 2 Groq calls per message
+
+
+def first_stop(client, user, tid):
+    return client.get(f"/trips/{tid}/versions/1", headers=user["h"]).json()["plan"]["days"][0]["stops"][0]["name"]
 
 
 def test_ungrounded_reply_uses_template(client, user, chosen, monkeypatch):
     s = Stub(monkeypatch, reply="Added a sunset camel safari for ₹999999.")
-    s.queue.append(tool("set_budget", budget_total=70000))
-    a = say(client, user, chosen, "more budget")["assistant"]
+    s.queue.append(tool("exclude_activity", names=[first_stop(client, user, chosen)]))   # a change that alters the plan
+    a = say(client, user, chosen, "drop the first stop")["assistant"]
     assert a["actions"]["reply"] == "template" and "999999" not in a["text"] and a["text"].startswith("Done, this is version")
 
 
@@ -138,6 +142,99 @@ def test_unavailable_and_infeasible(client, user, chosen, monkeypatch):
     assert [m["role"] for m in hist] == ["user", "assistant"] * 3
 
 
+def stops(plan):
+    return [s["attraction_id"] for d in plan["days"] for s in d["stops"]]
+
+
+def of_kind(kind):
+    return [a for a in data.default().by_city["JAI"] if a.kind == kind]
+
+
+def test_limit_kind_max_0_keeps_every_one_out(client, user, chosen, monkeypatch):
+    s = Stub(monkeypatch)
+    s.queue.append(tool("limit_kind", limits=[{"kind": "temple", "max": 0}]))
+    out = say(client, user, chosen, "no temples please")
+    v = out["version"]
+    check(v)
+    temples = {a.attraction_id for a in of_kind("temple")}
+    assert temples and temples <= set(v["request"]["excludes"])          # in the plan or not, all kept out
+    assert not temples & set(stops(v["plan"]))
+
+
+def test_limit_kind_max_1_keeps_the_best_in_the_plan(client, user, chosen, monkeypatch):
+    from tripwise import value
+    from tripwise.models import Prefs
+    s = Stub(monkeypatch)
+    plan = client.get(f"/trips/{chosen}/versions/1", headers=user["h"]).json()
+    in_plan = stops(plan["plan"])
+    kind = next(k for k in sorted({a.kind for a in data.default().by_city["JAI"]})
+                if sum(a.attraction_id in in_plan for a in of_kind(k)) >= 2)       # a kind with 2+ places in the plan
+    places = [a for a in of_kind(kind) if a.attraction_id in in_plan]
+    prefs = Prefs.model_validate(plan["request"]["prefs"])
+    best = max(places, key=lambda a: value.activity(a, prefs, config.default())).attraction_id
+    s.queue.append(tool("limit_kind", limits=[{"kind": kind, "max": 1}]))
+    v = say(client, user, chosen, f"only one {kind}")["version"]
+    check(v)
+    assert best not in v["request"]["excludes"]
+    every = {a.attraction_id for a in of_kind(kind)}
+    assert every - {best} <= set(v["request"]["excludes"])
+    assert [i for i in stops(v["plan"]) if i in every] in ([best], [])
+
+
+@pytest.mark.parametrize("kind", ["spaceport", "beach"])            # unknown anywhere; no beach in Jaipur
+def test_limit_kind_not_in_city_changes_nothing(client, user, chosen, monkeypatch, kind):
+    s = Stub(monkeypatch)
+    s.queue.append(tool("limit_kind", limits=[{"kind": kind, "max": 0}]))
+    out = say(client, user, chosen, f"no {kind}")
+    a = out["assistant"]
+    assert a["actions"]["kind"] == "no_change" and out["version"] is None
+    assert kind in a["text"] and "Jaipur" in a["text"] and "nothing changed" in a["text"]
+    assert s.calls == 1 and len(versions(client, user, chosen)) == 1    # no replan, no call 2
+
+
+def test_no_op_change_runs_no_replan(client, user, chosen, monkeypatch):
+    s = Stub(monkeypatch)
+    pace = client.get(f"/trips/{chosen}/versions/1", headers=user["h"]).json()["request"]["prefs"]["pace"]
+    s.queue.append(tool("set_pace", pace=pace))
+    a = say(client, user, chosen, "same pace")["assistant"]
+    assert a["actions"]["kind"] == "no_change" and "Nothing changed" in a["text"] and "Done" not in a["text"]
+    s.queue.append(tool("exclude_activity", names=["Hawa Mahal"]))
+    say(client, user, chosen, "drop hawa mahal")
+    s.queue.append(tool("exclude_activity", names=["Hawa Mahal"]))
+    a = say(client, user, chosen, "drop hawa mahal again")["assistant"]
+    assert a["actions"]["kind"] == "no_change"
+    assert len(versions(client, user, chosen)) == 2                     # only the first exclude made a version
+
+
+def test_empty_diff_never_says_done(client, user, chosen, monkeypatch):
+    s = Stub(monkeypatch)
+    s.queue.append(tool("regenerate"))
+    out = say(client, user, chosen, "plan it again")
+    a = out["assistant"]
+    assert a["actions"]["reply"] == "no_change" and a["text"].startswith("Your plan did not change")
+    assert "Done" not in a["text"] and s.calls == 1                     # call 2 skipped
+
+
+def test_exclude_takes_a_list_and_names_what_it_did_not_change(client, user, chosen, monkeypatch):
+    s = Stub(monkeypatch)
+    s.queue.append(tool("exclude_activity", names=["Hawa Mahal", "Jal Mahal"]))
+    v = say(client, user, chosen, "drop hawa mahal and jal mahal")["version"]
+    assert {"JAI-A-01", chat.resolve("Jal Mahal", "JAI")[0]} <= set(v["request"]["excludes"])
+    s.queue.append(tool("exclude_activity", names=["Amber Fort"]))
+    out = say(client, user, chosen, "skip Amber Fort and Albert Hall Museum")
+    a, d = out["assistant"], out["assistant"]["actions"]["diff"]
+    touched = set(d["added"]) | set(d["removed"]) | {m["name"] for m in d["moved"]}
+    if "Albert Hall Museum" not in touched:
+        assert a["text"].endswith("I didn't change Albert Hall Museum; ask again naming it if you want.")
+
+
+def test_reply_facts_hold_no_message():
+    facts = chat.reply_facts(2, {"budget_total": 50000}, {"added": [], "removed": [], "moved": [], "hotel": None,
+                             "transport": {}, "delta_cost": 0}, {"excludes": ["JAI-A-01"]}, {"excludes": [], "prefs": {}},
+                             [{"name": "exclude_activity", "args": {"names": ["Hawa Mahal"]}}])
+    assert "request" not in facts and facts["applied"] == {"removed_and_kept_out": ["Hawa Mahal"]}
+
+
 def test_deadline_call1_timeout_is_unavailable(client, user, chosen, monkeypatch):
     s = Stub(monkeypatch)
     s.queue.append(groq_client.Unavailable("ReadTimeout"))
@@ -149,8 +246,8 @@ def test_deadline_call1_timeout_is_unavailable(client, user, chosen, monkeypatch
 
 def test_deadline_call2_gets_the_rest(client, user, chosen, monkeypatch):
     s = Stub(monkeypatch)
-    s.queue.append(tool("set_budget", budget_total=60000))
-    a = say(client, user, chosen, "budget 60000")["assistant"]
+    s.queue.append(tool("exclude_activity", names=[first_stop(client, user, chosen)]))
+    a = say(client, user, chosen, "drop the first stop")["assistant"]
     assert a["actions"]["reply"] == "llm" and s.calls == 2
     assert 1 <= s.kw[1]["timeout"] <= config.default().chat["deadline_s"] - 0.5
 
@@ -162,8 +259,8 @@ def test_deadline_skips_call2_under_1s(client, user, chosen, monkeypatch):
     raw["chat"]["deadline_s"] = 1.2                                     # less than 1 s left after re-planning
     short = config.Config(raw, config.default().path)
     monkeypatch.setattr(config, "default", lambda: short)
-    s.queue.append(tool("set_budget", budget_total=60000))
-    out = say(client, user, chosen, "budget 60000")
+    s.queue.append(tool("exclude_activity", names=[first_stop(client, user, chosen)]))
+    out = say(client, user, chosen, "drop the first stop")
     a = out["assistant"]
     assert a["actions"]["reply"] == "template" and a["text"].startswith("Done, this is version")
     assert s.calls == 1 and out["version"]["version"] == 2               # the change itself is made

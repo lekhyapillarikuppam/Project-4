@@ -1,0 +1,104 @@
+[
+ {
+  "id": "R01",
+  "source": "owner test on the live site, 2026-10-26, message 1 (trip version 1)",
+  "variant": "experience",
+  "request": {
+   "pins": {},
+   "locks": [],
+   "prefs": {
+    "pace": "balanced",
+    "modes": {
+     "bus": "neutral",
+     "train": "neutral",
+     "flight": "neutral"
+    },
+    "comfort": "mid",
+    "interests": {
+     "food": 4,
+     "nature": 2,
+     "culture": 2,
+     "history": 2,
+     "shopping": 2,
+     "adventure": 4,
+     "nightlife": 5,
+     "spiritual": 2,
+     "relaxation": 4
+    },
+    "avoid_crowds": false,
+    "daily_hours_out": 8.0
+   },
+   "origin": "BLR",
+   "people": 4,
+   "end_date": "2026-11-28",
+   "excludes": [],
+   "day_hours": {},
+   "transport": null,
+   "start_date": "2026-11-25",
+   "destination": "GOA",
+   "budget_total": 80000
+  },
+  "message": "i do not want to see so many churches just keep one of them and replace others",
+  "expect": {
+   "church": {
+    "max": 1
+   }
+  },
+  "note": "Asked to keep one church and replace the others; the plan had 5 churches."
+ },
+ {
+  "id": "R02",
+  "source": "owner test on the live site, 2026-10-26, message 2 (trip version 2)",
+  "variant": "experience",
+  "request": {
+   "pins": {},
+   "locks": [],
+   "prefs": {
+    "pace": "balanced",
+    "modes": {
+     "bus": "neutral",
+     "train": "neutral",
+     "flight": "neutral"
+    },
+    "comfort": "mid",
+    "interests": {
+     "food": 4,
+     "nature": 2,
+     "culture": 2,
+     "history": 2,
+     "shopping": 2,
+     "adventure": 4,
+     "nightlife": 5,
+     "spiritual": 2,
+     "relaxation": 4
+    },
+    "avoid_crowds": false,
+    "daily_hours_out": 8.0
+   },
+   "origin": "BLR",
+   "people": 4,
+   "end_date": "2026-11-28",
+   "excludes": [
+    "GOA-A-01"
+   ],
+   "day_hours": {},
+   "transport": null,
+   "start_date": "2026-11-25",
+   "destination": "GOA",
+   "budget_total": 80000
+  },
+  "message": "i can still see the churches in day 4 and only keep 1 temple and i church i do not want to go to any masjid replace them all with other places or make some more relaxation time",
+  "expect": {
+   "church": {
+    "max": 1
+   },
+   "temple": {
+    "max": 1
+   },
+   "mosque": {
+    "max": 0
+   }
+  },
+  "note": "Asked for at most 1 church and 1 temple and no masjid, replaced by other places or more relaxation."
+ }
+]

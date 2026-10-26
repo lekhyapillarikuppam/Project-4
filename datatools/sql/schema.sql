@@ -30,7 +30,9 @@ CREATE TABLE IF NOT EXISTS ref.attractions (attraction_id text PRIMARY KEY, city
   lat numeric(8,5), lon numeric(8,5), visit_minutes int NOT NULL, visit_approx bool NOT NULL,
   open_time time NOT NULL, close_time time NOT NULL, closed_weekdays int[] NOT NULL, hours_approx bool NOT NULL,
   entry_fee int NOT NULL, fee_approx bool NOT NULL, tags text[] NOT NULL, rating numeric(2,1) NOT NULL,
-  outdoor bool NOT NULL, crowd_level text NOT NULL, fixed_slot bool NOT NULL, source text NOT NULL, checked_on date NOT NULL);
+  outdoor bool NOT NULL, crowd_level text NOT NULL, fixed_slot bool NOT NULL, source text NOT NULL, checked_on date NOT NULL,
+  kind text NOT NULL);
+ALTER TABLE ref.attractions ADD COLUMN IF NOT EXISTS kind text;   -- 001 §5.5 kind (2026-10-26), for databases loaded before it
 
 CREATE TABLE IF NOT EXISTS ref.hotels (hotel_id text PRIMARY KEY, city_id char(3) REFERENCES ref.cities, name text NOT NULL,
   tier text NOT NULL, lat numeric(8,5), lon numeric(8,5), price_per_room_night int NOT NULL,
