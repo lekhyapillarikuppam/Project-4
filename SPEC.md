@@ -2150,6 +2150,15 @@ keyboard (one run had failed tabbing to "Skip for now" before Profile rendered; 
 suite 48 passed, 2 skipped (live Groq); backend 117 passed; live API listed newest first without the infeasible
 trip; DEP-AT-01 passed in 17.4 s after both redeploys.
 
+F11 (2026-10-26): `frontend/tests/f11-empty-fields.spec.ts` at 1280 and 360 px: a fresh New trip has empty start
+date, end date, people and budget (no budget placeholder) and no day count; submitting with only the cities and
+preferences shows "Choose a start date.", "Choose an end date.", "Enter how many people are going (1–6).", "Enter your
+budget.", marks all four invalid and focuses Start date. `fillTrip` now always sets dates and people (a default only
+when a field is still empty); UI-AT-08 types the dates and people by keyboard, with the UI tests pinned to locale
+en-IN and time zone Asia/Kolkata so the typed date order does not depend on the machine. One full run failed only on
+the F10 spec's old "e.g. 30000" placeholder assertion, updated; the clean full run: 50 passed, 2 skipped (live Groq).
+DEP-AT-01 passed in 15.6 s on the redeployed frontend.
+
 ### Feature 007 acceptance results
 
 Real Groq `openai/gpt-oss-120b` (Developer tier) unless noted; backend suite 101 passed on 2026-10-26 after the last
