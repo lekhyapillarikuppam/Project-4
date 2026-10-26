@@ -781,7 +781,8 @@ CREATE TABLE ref.attractions (attraction_id text PRIMARY KEY, city_id char(3) RE
   lat numeric(8,5), lon numeric(8,5), visit_minutes int NOT NULL, visit_approx bool NOT NULL,
   open_time time NOT NULL, close_time time NOT NULL, closed_weekdays int[] NOT NULL, hours_approx bool NOT NULL,
   entry_fee int NOT NULL, fee_approx bool NOT NULL, tags text[] NOT NULL, rating numeric(2,1) NOT NULL,
-  outdoor bool NOT NULL, crowd_level text NOT NULL, fixed_slot bool NOT NULL, source text NOT NULL, checked_on date NOT NULL);
+  outdoor bool NOT NULL, crowd_level text NOT NULL, fixed_slot bool NOT NULL, source text NOT NULL, checked_on date NOT NULL,
+  kind text NOT NULL);
 
 CREATE TABLE ref.hotels (hotel_id text PRIMARY KEY, city_id char(3) REFERENCES ref.cities, name text NOT NULL,
   tier text NOT NULL, lat numeric(8,5), lon numeric(8,5), price_per_room_night int NOT NULL,
