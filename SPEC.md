@@ -1722,8 +1722,9 @@ The validator gains checks: V-14 (pins honoured), V-15 (day_hours windows) and V
     `limit_kind` a list of limits. A message that mixes different tools gets only one of them.
   - **`limit_kind(limits: [{kind, max}])`** caps how many places of a kind (001 §5.5 `kind`, for example `church`,
     `mosque`, `temple`, `fort`, `beach`) the plan has: "no masjids" is mosque max 0, "only one church" is church max 1.
-    It is for a counted or plural kind only: a single place ("the mandir") is a name for `exclude_activity` or
-    `lock_activity` (vague names get a clarifying question), and an interest ("not into shopping") is `set_interest`.
+    It is for a counted or plural kind only: a single place ("the gurudwara") is a name for `exclude_activity` or
+    `lock_activity` (vague names get a clarifying question), and an interest ("we don't care about nightlife") is
+    `set_interest`. Examples in prompts and tool descriptions never come from `eval/chat_intents.json`.
     The server expands each limit into excludes: of the places of that kind already in the plan it keeps the `max`
     with the highest value v(a) (002 §5), and keeps out every other place of that kind in the city, in or out of the
     plan (removing their locks and pins), so the planner cannot fill the gap with another of the same kind. A kind
