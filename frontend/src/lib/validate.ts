@@ -28,21 +28,34 @@ export function fieldId(key: string, meta: Meta): string {
   return `f-${key.split(".")[0]}`;
 }
 
-export function validateTrip(f: DraftTripForm, meta: Meta): Errors {
-  const errs: Errors = {};
+/** Start and end date rules (API-FR-04), shared by the live check and the submit check (UI-FR-02). */
+export function validateDates(f: { start_date: string; end_date: string }, meta: Meta, errs: Errors = {}): Errors {
   const L = meta.limits;
-  if (!f.origin) errs.origin = "Choose where you're starting from.";
-  if (!f.destination) errs.destination = "Choose a destination.";
-  else if (f.origin === f.destination) errs.destination = "Destination must differ from origin.";
   const today = todayIST();
   if (!f.start_date) errs.start_date = "Choose a start date.";
   else if (f.start_date < addDays(today, 1)) errs.start_date = "The trip must start tomorrow or later.";
   else if (f.start_date > addDays(today, L.max_days_ahead)) errs.start_date = `The trip must start within ${L.max_days_ahead} days.`;
   if (!f.end_date) errs.end_date = "Choose an end date.";
   else if (f.start_date) {
-    const days = daysBetween(f.start_date, f.end_date) + 1;
-    if (days < L.trip_days[0] || days > L.trip_days[1]) errs.end_date = `A trip lasts ${L.trip_days[0]} to ${L.trip_days[1]} days (start and end included).`;
+    const days = tripDays(f.start_date, f.end_date);
+    if (days < 1) errs.end_date = "End date can't be before the start date.";
+    else if (days < L.trip_days[0] || days > L.trip_days[1]) errs.end_date = `A trip lasts ${L.trip_days[0]} to ${L.trip_days[1]} days (start and end included).`;
   }
+  return errs;
+}
+
+/** Days in a trip, start and end included (0 or less when the end is before the start). */
+export function tripDays(start: string, end: string): number {
+  return daysBetween(start, end) + 1;
+}
+
+export function validateTrip(f: DraftTripForm, meta: Meta): Errors {
+  const errs: Errors = {};
+  const L = meta.limits;
+  if (!f.origin) errs.origin = "Choose where you're starting from.";
+  if (!f.destination) errs.destination = "Choose a destination.";
+  else if (f.origin === f.destination) errs.destination = "Destination must differ from origin.";
+  validateDates(f, meta, errs);
   if (f.name !== undefined && f.name.length > 120) errs.name = "A trip name has at most 120 characters.";
   const [plo, phi] = L.people;
   if (!Number.isInteger(f.people) || f.people < plo || f.people > phi) errs.people = `Group size is ${plo} to ${phi} people.`;

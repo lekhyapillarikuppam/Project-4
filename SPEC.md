@@ -2132,6 +2132,13 @@ also checks the blank-preference messages, UI-AT-05 the created time and the "(c
 preferences by keyboard. Header buttons: accent-800 on accent-50 8.91:1, on accent-100 7.88:1, accent-600 border on
 white 5.47:1. Backend 113 passed. DEP-AT-01 on the redeployed backend and frontend: passed in 14.2 s.
 
+F9 (2026-10-26): `frontend/tests/f9-dates.spec.ts` at 1280 and 360 px picks an end date before the start, then a
+15-day range, and sees each message with no submit ("(check dates)" and "(15 days)" in bad-700, about 7:1 on white),
+the start-date message for a past start, all cleared after a valid range, and the end date left as it is when the
+start moves past it. Full suite: 44 passed, 2 skipped (live Groq). One earlier full run had a single failure in
+`ai-ui-chat.spec.ts` at 1280 px (element not found, a timing failure in a spec F9 does not touch); it passed on
+rerun and in the clean full run.
+
 ### Feature 007 acceptance results
 
 Real Groq `openai/gpt-oss-120b` (Developer tier) unless noted; backend suite 101 passed on 2026-10-26 after the last

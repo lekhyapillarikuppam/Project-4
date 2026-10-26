@@ -9,7 +9,7 @@ import { ErrorBox, FieldError, PageTitle, Skeleton } from "../components/ui";
 import { addDays, todayIST } from "../lib/format";
 import { useDocumentTitle } from "../lib/title";
 import { useCities, useMeta } from "../lib/meta";
-import { fieldId, validateTrip, type DraftTripForm, type Errors } from "../lib/validate";
+import { fieldId, tripDays, validateDates, validateTrip, type DraftTripForm, type Errors } from "../lib/validate";
 
 type Draft = Omit<DraftTripForm, "budget_total" | "budget_per_person" | "name"> & { budget: string; per: boolean; name: string };
 
@@ -70,6 +70,14 @@ export default function NewTrip() {
   if (!meta.data || !draft || !cities.data) return <Skeleton lines={8} />;
   const m = meta.data;
   const set = <K extends keyof Draft>(k: K, v: Draft[K]) => setDraft({ ...draft, [k]: v });
+  /** A date changed: recheck both dates at once (UI-FR-02); other fields keep their submit-time errors. */
+  const setDate = (k: "start_date" | "end_date", v: string) => {
+    const next = { ...draft, [k]: v };
+    setDraft(next);
+    const { start_date: _s, end_date: _e, ...others } = errors;
+    void _s; void _e;
+    setErrors({ ...others, ...validateDates(next, m) });
+  };
   const cityName = (code: string) => cities.data!.find((c) => c.code === code)?.name ?? code;
   const saved = profile.data?.saved === true;
 
@@ -101,8 +109,11 @@ export default function NewTrip() {
     set("per", !draft!.per);
     requestAnimationFrame(() => e.currentTarget?.querySelector<HTMLElement>('[aria-checked="true"]')?.focus());
   }
-  const days = draft.start_date && draft.end_date
-    ? Math.round((Date.parse(draft.end_date) - Date.parse(draft.start_date)) / 86_400_000) + 1 : null;
+  const days = draft.start_date && draft.end_date ? tripDays(draft.start_date, draft.end_date) : null;
+  const [minDays, maxDays] = m.limits.trip_days;
+  const dayCount = days === null ? null
+    : days < 1 ? <span className="font-normal text-bad-700">(check dates)</span>
+    : <span className={`font-normal ${days < minDays || days > maxDays ? "text-bad-700" : "text-ink-500"}`}>({days} {days === 1 ? "day" : "days"})</span>;
   return (
     <div>
       <PageTitle sub={incoming ? "Adjust the details and plan again." : "Tell us about your trip."}>New trip</PageTitle>
@@ -132,13 +143,15 @@ export default function NewTrip() {
           <div>
             <label htmlFor="f-start_date" className="label">Start date</label>
             <input id="f-start_date" type="date" className="input" value={draft.start_date} min={addDays(todayIST(), 1)}
-                   aria-invalid={!!errors.start_date} aria-describedby="start-err" onChange={(e) => set("start_date", e.target.value)} />
+                   max={addDays(todayIST(), m.limits.max_days_ahead)}
+                   aria-invalid={!!errors.start_date} aria-describedby="start-err" onChange={(e) => setDate("start_date", e.target.value)} />
             <FieldError id="start-err" message={errors.start_date} />
           </div>
           <div>
-            <label htmlFor="f-end_date" className="label">End date {days !== null && days > 0 && <span className="font-normal text-ink-500">({days} days)</span>}</label>
-            <input id="f-end_date" type="date" className="input" value={draft.end_date} min={draft.start_date}
-                   aria-invalid={!!errors.end_date} aria-describedby="end-err" onChange={(e) => set("end_date", e.target.value)} />
+            <label htmlFor="f-end_date" className="label">End date {dayCount}</label>
+            <input id="f-end_date" type="date" className="input" value={draft.end_date}
+                   min={draft.start_date || undefined} max={draft.start_date ? addDays(draft.start_date, maxDays - 1) : undefined}
+                   aria-invalid={!!errors.end_date} aria-describedby="end-err" onChange={(e) => setDate("end_date", e.target.value)} />
             <FieldError id="end-err" message={errors.end_date} />
           </div>
           <div>

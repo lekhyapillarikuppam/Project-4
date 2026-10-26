@@ -53,9 +53,9 @@ export function ErrorBox({ error, onRetry }: { error: unknown; onRetry?: () => v
   );
 }
 
+/** A field's error, announced when it appears (UI-FR-02): the live region stays mounted, empty when there's no error. */
 export function FieldError({ id, message }: { id: string; message?: string }) {
-  if (!message) return null;
-  return <p id={id} className="field-error">{message}</p>;
+  return <p id={id} aria-live="polite" className={message ? "field-error" : "sr-only"}>{message ?? ""}</p>;
 }
 
 export function PageTitle({ children, sub }: { children: ReactNode; sub?: ReactNode }) {
