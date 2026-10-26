@@ -49,7 +49,8 @@ _NAME = {"name": {"type": "string", "description": "The activity's name as the t
 _HOURS = {"type": "number", "minimum": 4, "maximum": 14}
 
 TOOLS = [
-    _tool("lock_activity", "Make sure an activity is in the plan (keep it, add it, must see it).", _NAME, ["name"]),
+    _tool("lock_activity", "Make sure an activity is in the plan (keep it, add it, must see it) when no day is named; "
+          "if a day is named, use move_activity.", _NAME, ["name"]),
     _tool("exclude_activity", "Take an activity out of the plan and keep it out.", _NAME, ["name"]),
     _tool("set_budget", "Change the total trip budget for the whole group, in whole rupees. For a relative change "
           "(\"5000 more\") compute the new total from the current budget.",
@@ -58,7 +59,8 @@ TOOLS = [
           {"day": {"type": "integer", "minimum": 1}, "hours": _HOURS}, ["day", "hours"]),
     _tool("set_all_hours", "Change the hours out of the hotel on every day.", {"hours": _HOURS}, ["hours"]),
     _tool("set_hotel_tier", "Change the hotel level.", {"tier": {"type": "string", "enum": ["budget", "mid", "premium"]}}, ["tier"]),
-    _tool("set_transport", "Travel by a given mode (and optionally class) on the way out, back or both.",
+    _tool("set_transport", "Travel by a given mode (and optionally class): direction out = the way there, ret = the way back, "
+          "both only when both are meant or no direction is clear.",
           {"direction": {"type": "string", "enum": ["out", "ret", "both"]},
            "mode": {"type": "string", "enum": ["train", "bus", "flight"]},
            "class": {"type": "string", "enum": ["SL", "3A", "2A", "ACS", "Y"],
@@ -68,11 +70,12 @@ TOOLS = [
     _tool("set_interest", "Change how much the traveller cares about one interest, 0 (not at all) to 5 (loves it).",
           {"interest": {"type": "string", "enum": list(TAGS)}, "weight": {"type": "integer", "minimum": 0, "maximum": 5}},
           ["interest", "weight"]),
-    _tool("move_activity", "Put an activity on a given day of the trip.",
+    _tool("move_activity", "Put, move or schedule an activity on a given day of the trip (this also keeps it in the plan).",
           _NAME | {"day": {"type": "integer", "minimum": 1}}, ["name", "day"]),
     _tool("regenerate", "Plan the trip again from the current settings."),
     _tool("explain", "Answer a question about the plan, such as why an activity is or is not in it. Give the activity's "
-          "name when the question is about one.", {"name": {"type": "string"}}),
+          "name when the question is about one; otherwise leave name out.",
+          {"name": {"type": ["string", "null"], "description": "The activity's name, or null for a general question"}}),
     _tool("unsupported", "Anything the other tools cannot do: booking, payments, other cities, weather, visas, "
           "restaurants, adding days, and so on.",
           {"topic": {"type": "string", "description": "What was asked, in a few words"},
