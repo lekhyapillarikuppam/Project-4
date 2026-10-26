@@ -1717,12 +1717,15 @@ The validator gains checks: V-14 (pins honoured), V-15 (day_hours windows) and V
   - The server calls replan, stores the new version, and builds a diff: added and removed activities, hotel and transport changes, Δcost and Δvalue.
   - **Call 2** turns the diff into a reply, using the same grounding check with a template fallback.
   - At most 2 Groq calls per message. (FR-031, FR-032, NFR-005)
+  - **Deadline** (NFR-002): each message has `chat.deadline_s` (7.0 s) from when the handler starts. Call 1, with any retry,
+    gets at most `groq.timeout_tools_s` (4.0 s). Call 2 gets the time left before the deadline minus 0.5 s; if under
+    1 s is left, call 2 is skipped and the template reply is used.
 - **AI-FR-04 Unsupported.** Anything outside the tool set (booking, other cities, weather, …) gets a short refusal plus the closest supported action. No replan is run. (FR-033)
 - **AI-FR-05 "Why".**
   - If the activity is in the near-miss list: answer with its reason and the numbers.
   - Otherwise: run one trial engine call with it locked (not saved) and report whether it fits and its Δcost and Δvalue.
   - The answer is generated from engine data only. (FR-034)
-- **AI-FR-06 Failure.** On Groq timeout (10 s), error or missing key:
+- **AI-FR-06 Failure.** On Groq timeout (10 s; in chat, the deadlines of AI-FR-03), error or missing key:
   - parse returns 503 "Use the sliders",
   - explanations are omitted with a notice,
   - chat returns "Assistant unavailable" and no changes.
@@ -1761,7 +1764,7 @@ The validator gains checks: V-14 (pins honoured), V-15 (day_hours windows) and V
 | `frontend/src/components/ChatPanel.tsx`, `DescribeTrip.tsx`, `Explanation.tsx` | UI |
 | `eval/chat_intents.json`, `eval/run_chat_intents.py` | AI-AT-03 |
 
-Config keys: `groq_model`, `groq_timeout_s`, `chat_rate_per_hour`, temperatures. Env: `GROQ_API_KEY`.
+Config keys: `groq_model`, `groq_timeout_s`, `groq.timeout_tools_s`, `chat.deadline_s`, `chat_rate_per_hour`, temperatures. Env: `GROQ_API_KEY`.
 
 #### 007 Tasks
 - [x] **T01** Engine extensions + validator V-14–16 + tests. · Check: AI-AT-06, and all 002 acceptance tests still pass
@@ -2238,3 +2241,4 @@ Real Groq `openai/gpt-oss-120b` (Developer tier) unless noted; backend suite 101
 | 2026-10-26 | C 008 EVAL-FR-01, eval pacing | Groq account on the Developer tier (250k tokens a minute): the eval scripts' fixed 15–60 s pauses and 5-minute refusal waits are replaced by config `groq.eval_pause_s` (1.5 s), `groq.eval_retry_wait_s` (10 s) and `groq.eval_retries` (6); EVAL-FR-01's "paced at 1 call per minute" now points at the config | Owner: the free-tier pacing is no longer needed; tunables belong in config |
 | 2026-10-26 | C 007 (AI-AT-03 fixes) | Name resolution drops a leading "the"/"a"/"an" ("the temple" asks which one, like "temple"); the tool `name` argument says to copy the traveller's words even when vague. AI-AT-03 re-run fresh on all 50: 45/50 = 90%, pass (was 43/50 on the resumed run); the remaining misses are in `eval/AI_AT_03.md` | AI-AT-03 resumed run: 86%, below the 90% threshold; 4 of 5 ambiguous messages got a specific activity instead of a clarifying question |
 | 2026-10-26 | D Traceability (008 T05, T06) | Backend redeployed before the live chat timing so it measured the final code. Live chat p95 12.2 s and 13.0 s (two runs), each from one slow Groq response: NFR-002 recorded as not met live, DEP-AT-02 passes on its "gap recorded with the cause" clause. NFR-004 recorded as not met: the Groq account moved to the Developer tier; Part B is unchanged pending the owner's decision | Report results as measured; a Part B change is the owner's call |
+| 2026-10-26 | C 007 Spec AI-FR-03, AI-FR-06, Plan | Per-message chat deadline: `chat.deadline_s` 7.0 s; call 1 at most `groq.timeout_tools_s` 4.0 s (timeout → "assistant unavailable", no change); call 2 gets the remaining deadline minus 0.5 s, skipped for the template reply if under 1 s remains | Owner decision: live chat p95 was 12.2 s and 13.0 s because one slow Groq response could take the full 10 s timeout (NFR-002) |
