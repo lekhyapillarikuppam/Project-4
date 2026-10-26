@@ -7,7 +7,7 @@ test("an empty budget is blocked with its message", async ({ page }) => {
   await signUp(page);
   const budget = page.getByLabel("Budget (₹)", { exact: true });
   await expect(budget).toHaveValue("");
-  await expect(budget).toHaveAttribute("placeholder", "e.g. 30000");
+  await expect(budget).not.toHaveAttribute("placeholder", /.+/);              // plainly empty since F11
   await fillTrip(page, { from: "Delhi", to: "Agra", start: isoInDays(30), end: isoInDays(32), people: "2" });
   await fillPrefs(page);
   let posted = false;

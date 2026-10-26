@@ -8,7 +8,8 @@ export default defineConfig({
   fullyParallel: false,
   workers: 1,
   reporter: [["list"]],
-  use: { baseURL: "http://localhost:5173", trace: "off", screenshot: "off" },
+  // en-IN: date inputs read dd-mm-yyyy, so keyboard-typed dates (UI-AT-08) don't depend on the machine's locale
+  use: { baseURL: "http://localhost:5173", trace: "off", screenshot: "off", locale: "en-IN", timezoneId: "Asia/Kolkata" },
   // every spec at 1280 px and at 360 px (UI-FR-08); specs that set their own viewport keep it
   projects: [
     { name: "chromium-1280", use: { ...devices["Desktop Chrome"], viewport: { width: 1280, height: 800 } } },

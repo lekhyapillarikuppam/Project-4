@@ -22,12 +22,12 @@ function blankPrefs(meta: Meta): DraftPrefs {
   };
 }
 
+/** A fresh trip starts with no dates, people or budget (UI-FR-02); a duplicated or re-budgeted one brings its own. */
 function draftFrom(req: Partial<TripForm> | undefined, name: string | undefined, meta: Meta): Draft {
-  const start = addDays(todayIST(), 30);
   return {
     origin: req?.origin ?? "", destination: req?.destination ?? "",
-    start_date: req?.start_date ?? start, end_date: req?.end_date ?? addDays(start, 2),
-    people: req?.people ?? 2, prefs: req?.prefs ?? blankPrefs(meta), locks: req?.locks ?? [], excludes: req?.excludes ?? [],
+    start_date: req?.start_date ?? "", end_date: req?.end_date ?? "",
+    people: req?.people ?? NaN, prefs: req?.prefs ?? blankPrefs(meta), locks: req?.locks ?? [], excludes: req?.excludes ?? [],
     budget: req?.budget_total ? String(req.budget_total) : "", per: false, name: name ?? "",
   };
 }
@@ -70,13 +70,13 @@ export default function NewTrip() {
   if (!meta.data || !draft || !cities.data) return <Skeleton lines={8} />;
   const m = meta.data;
   const set = <K extends keyof Draft>(k: K, v: Draft[K]) => setDraft({ ...draft, [k]: v });
-  /** A date changed: recheck both dates at once (UI-FR-02); other fields keep their submit-time errors. */
+  /** A date changed: once both are chosen, recheck them at once (UI-FR-02); other fields keep their submit-time errors. */
   const setDate = (k: "start_date" | "end_date", v: string) => {
     const next = { ...draft, [k]: v };
     setDraft(next);
     const { start_date: _s, end_date: _e, ...others } = errors;
     void _s; void _e;
-    setErrors({ ...others, ...validateDates(next, m) });
+    setErrors(next.start_date && next.end_date ? { ...others, ...validateDates(next, m) } : others);
   };
   const cityName = (code: string) => cities.data!.find((c) => c.code === code)?.name ?? code;
   const saved = profile.data?.saved === true;
@@ -165,7 +165,6 @@ export default function NewTrip() {
             <label htmlFor={`f-${budgetField}`} className="label">Budget (₹)</label>
             <div className="flex gap-2">
               <input id={`f-${budgetField}`} type="number" inputMode="numeric" min={0} step={500} className="input" value={draft.budget}
-                     placeholder="e.g. 30000"
                      aria-invalid={!!errors[budgetField]} aria-describedby="budget-err" onChange={(e) => set("budget", e.target.value)} />
               <div role="radiogroup" aria-label="Budget is" onKeyDown={radioKeys}
                    className="flex shrink-0 overflow-hidden rounded-md border border-sand-500">

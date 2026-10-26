@@ -58,7 +58,8 @@ export function validateTrip(f: DraftTripForm, meta: Meta): Errors {
   validateDates(f, meta, errs);
   if (f.name !== undefined && f.name.length > 120) errs.name = "A trip name has at most 120 characters.";
   const [plo, phi] = L.people;
-  if (!Number.isInteger(f.people) || f.people < plo || f.people > phi) errs.people = `Group size is ${plo} to ${phi} people.`;
+  if (Number.isNaN(f.people)) errs.people = `Enter how many people are going (${plo}–${phi}).`;
+  else if (!Number.isInteger(f.people) || f.people < plo || f.people > phi) errs.people = `Group size is ${plo} to ${phi} people.`;
   const perPerson = f.budget_per_person !== undefined;
   const field = perPerson ? "budget_per_person" : "budget_total";
   const amount = perPerson ? f.budget_per_person : f.budget_total;

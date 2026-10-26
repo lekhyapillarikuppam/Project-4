@@ -41,7 +41,17 @@ test("UI-AT-08 keyboard-only run", async ({ page }) => {
   await tabTo(page, /^To/);
   await page.keyboard.type("Agra");
   await expect(page.getByLabel("To", { exact: true })).toHaveValue("AGR");
-  await tabTo(page, /^Budget \(/);                                  // the budget starts empty (F10)
+  // a fresh trip has no dates, people or budget (F10, F11): type them, dates as dd mm yyyy in en-IN
+  const ddmmyyyy = (iso: string) => iso.slice(8, 10) + iso.slice(5, 7) + iso.slice(0, 4);
+  await tabTo(page, /^Start date/);
+  await page.keyboard.type(ddmmyyyy(isoInDays(30)));
+  await expect(page.getByLabel("Start date", { exact: true })).toHaveValue(isoInDays(30));
+  await tabTo(page, /^End date/);
+  await page.keyboard.type(ddmmyyyy(isoInDays(32)));
+  await expect(page.getByLabel(/^End date/)).toHaveValue(isoInDays(32));
+  await tabTo(page, /^People/);
+  await page.keyboard.type("2");
+  await tabTo(page, /^Budget \(/);
   await page.keyboard.type("30000");
   // blank preferences, chosen by keyboard: hours from the list, an interest, pace and comfort
   await tabTo(page, /^Hours out/);

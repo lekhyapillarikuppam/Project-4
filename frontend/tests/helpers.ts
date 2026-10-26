@@ -19,13 +19,19 @@ export async function signUp(page: Page, email = newEmail(), password = "correct
   return { email, password };
 }
 
-/** Fill the trip fields of the New trip form. Preferences start blank: set them with fillPrefs. */
+/** Fill the trip fields of the New trip form. A fresh form has no dates or people (F11), so those always end up set:
+ *  the given value, or a default (start +30 days, end +32, 2 people) when the field is still empty. A value already in
+ *  the field is kept, so step-by-step specs can change one field at a time. Preferences start blank: use fillPrefs. */
 export async function fillTrip(page: Page, o: { from?: string; to?: string; start?: string; end?: string; people?: string; budget?: string; name?: string } = {}) {
+  const start = page.getByLabel("Start date", { exact: true });
+  const end = page.getByLabel(/^End date/);
+  const people = page.getByLabel("People", { exact: true });
   if (o.from) await page.getByLabel("From", { exact: true }).selectOption({ label: o.from });
   if (o.to) await page.getByLabel("To", { exact: true }).selectOption({ label: o.to });
-  if (o.start) await page.getByLabel("Start date", { exact: true }).fill(o.start);
-  if (o.end) await page.getByLabel(/^End date/).fill(o.end);
-  if (o.people) await page.getByLabel("People", { exact: true }).fill(o.people);
+  const startValue = o.start ?? ((await start.inputValue()) || isoInDays(30));
+  await start.fill(startValue);
+  await end.fill(o.end ?? ((await end.inputValue()) || isoInDays(32)));
+  await people.fill(o.people ?? ((await people.inputValue()) || "2"));
   if (o.budget) await page.getByLabel("Budget (₹)", { exact: true }).fill(o.budget);
   if (o.name !== undefined) await page.getByLabel(/^Trip name/).fill(o.name);
 }
