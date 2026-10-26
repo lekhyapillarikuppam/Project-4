@@ -1,0 +1,4262 @@
+[
+ {
+  "trip": "T01",
+  "plan": {
+   "status": "ok",
+   "variant": null,
+   "dataset_version": "1.0 (2026-11)",
+   "request_hash": "sha256:3d456a68a9054b0c3885eb18110bc531f68754060a73e4c56782c1583a9b8494",
+   "value": 794.56,
+   "transport": {
+    "outbound": {
+     "mode": "flight",
+     "class": "Y",
+     "depart": "07:00",
+     "arrive_centre": "10:21",
+     "minutes": 330,
+     "overnight": false,
+     "cost": 17436
+    },
+    "return": {
+     "mode": "flight",
+     "class": "Y",
+     "leave_centre": "18:09",
+     "arrive_origin": "23:00",
+     "minutes": 330,
+     "overnight": false,
+     "cost": 17436
+    }
+   },
+   "hotel": {
+    "hotel_id": "JAI-H-06",
+    "name": "Jai Villa - A Boutique Hotel",
+    "tier": "mid",
+    "nights": 3,
+    "rooms": 1,
+    "price_per_room_night": 2503,
+    "cost": 7509
+   },
+   "days": [
+    {
+     "day": 1,
+     "date": "2026-12-18",
+     "weekday": 4,
+     "window": [
+      "10:51",
+      "18:00"
+     ],
+     "lunch": null,
+     "stops": [
+      {
+       "attraction_id": "JAI-A-02",
+       "name": "Amber Fort",
+       "arrive": "11:04",
+       "start": "11:04",
+       "end": "13:34",
+       "entry_cost": 400,
+       "leg_from_prev": {
+        "from": "JAI-H-06",
+        "to": "JAI-A-02",
+        "minutes": 13,
+        "km": 7.2,
+        "mode": "cab",
+        "cost": 151
+       }
+      },
+      {
+       "attraction_id": "JAI-A-04",
+       "name": "Jantar Mantar",
+       "arrive": "13:52",
+       "start": "13:52",
+       "end": "15:22",
+       "entry_cost": 200,
+       "leg_from_prev": {
+        "from": "JAI-A-02",
+        "to": "JAI-A-04",
+        "minutes": 18,
+        "km": 9.4,
+        "mode": "cab",
+        "cost": 197
+       }
+      },
+      {
+       "attraction_id": "JAI-A-27",
+       "name": "Masala Chowk",
+       "arrive": "15:28",
+       "start": "15:28",
+       "end": "16:58",
+       "entry_cost": 0,
+       "leg_from_prev": {
+        "from": "JAI-A-04",
+        "to": "JAI-A-27",
+        "minutes": 6,
+        "km": 2.8,
+        "mode": "cab",
+        "cost": 59
+       }
+      }
+     ],
+     "return_leg": {
+      "from": "JAI-A-27",
+      "to": "JAI-H-06",
+      "minutes": 7,
+      "km": 4.1,
+      "mode": "cab",
+      "cost": 86
+     }
+    },
+    {
+     "day": 2,
+     "date": "2026-12-19",
+     "weekday": 5,
+     "window": [
+      "09:00",
+      "18:00"
+     ],
+     "lunch": [
+      "13:45",
+      "14:45"
+     ],
+     "stops": [
+      {
+       "attraction_id": "JAI-A-05",
+       "name": "City Palace",
+       "arrive": "09:05",
+       "start": "09:05",
+       "end": "11:35",
+       "entry_cost": 490,
+       "leg_from_prev": {
+        "from": "JAI-H-06",
+        "to": "JAI-A-05",
+        "minutes": 5,
+        "km": 2.3,
+        "mode": "cab",
+        "cost": 49
+       }
+      },
+      {
+       "attraction_id": "JAI-A-10",
+       "name": "Albert Hall Museum",
+       "arrive": "11:40",
+       "start": "11:40",
+       "end": "13:40",
+       "entry_cost": 200,
+       "leg_from_prev": {
+        "from": "JAI-A-05",
+        "to": "JAI-A-10",
+        "minutes": 5,
+        "km": 2.5,
+        "mode": "cab",
+        "cost": 53
+       }
+      },
+      {
+       "attraction_id": "JAI-A-28",
+       "name": "Johari Bazar",
+       "arrive": "13:45",
+       "start": "14:45",
+       "end": "16:15",
+       "entry_cost": 0,
+       "leg_from_prev": {
+        "from": "JAI-A-10",
+        "to": "JAI-A-28",
+        "minutes": 5,
+        "km": 2.9,
+        "mode": "cab",
+        "cost": 61
+       }
+      }
+     ],
+     "return_leg": {
+      "from": "JAI-A-28",
+      "to": "JAI-H-06",
+      "minutes": 5,
+      "km": 3.1,
+      "mode": "cab",
+      "cost": 65
+     }
+    },
+    {
+     "day": 3,
+     "date": "2026-12-20",
+     "weekday": 6,
+     "window": [
+      "09:00",
+      "18:00"
+     ],
+     "lunch": null,
+     "stops": [
+      {
+       "attraction_id": "JAI-A-01",
+       "name": "Hawa Mahal",
+       "arrive": "09:04",
+       "start": "09:04",
+       "end": "10:34",
+       "entry_cost": 200,
+       "leg_from_prev": {
+        "from": "JAI-H-06",
+        "to": "JAI-A-01",
+        "minutes": 4,
+        "km": 2.1,
+        "mode": "cab",
+        "cost": 44
+       }
+      },
+      {
+       "attraction_id": "JAI-A-06",
+       "name": "Nahargarh Fort",
+       "arrive": "11:22",
+       "start": "11:22",
+       "end": "13:52",
+       "entry_cost": 200,
+       "leg_from_prev": {
+        "from": "JAI-A-01",
+        "to": "JAI-A-06",
+        "minutes": 48,
+        "km": 14.2,
+        "mode": "cab",
+        "cost": 298
+       }
+      },
+      {
+       "attraction_id": "JAI-A-08",
+       "name": "Galtaji",
+       "arrive": "14:51",
+       "start": "14:51",
+       "end": "15:36",
+       "entry_cost": 0,
+       "leg_from_prev": {
+        "from": "JAI-A-06",
+        "to": "JAI-A-08",
+        "minutes": 59,
+        "km": 22.0,
+        "mode": "cab",
+        "cost": 461
+       }
+      }
+     ],
+     "return_leg": {
+      "from": "JAI-A-08",
+      "to": "JAI-H-06",
+      "minutes": 16,
+      "km": 10.7,
+      "mode": "cab",
+      "cost": 225
+     }
+    },
+    {
+     "day": 4,
+     "date": "2026-12-21",
+     "weekday": 0,
+     "window": [
+      "09:00",
+      "17:39"
+     ],
+     "lunch": [
+      "13:33",
+      "14:33"
+     ],
+     "stops": [
+      {
+       "attraction_id": "JAI-A-09",
+       "name": "Jaigarh Fort",
+       "arrive": "09:29",
+       "start": "09:29",
+       "end": "11:59",
+       "entry_cost": 400,
+       "leg_from_prev": {
+        "from": "JAI-H-06",
+        "to": "JAI-A-09",
+        "minutes": 29,
+        "km": 8.6,
+        "mode": "cab",
+        "cost": 181
+       }
+      },
+      {
+       "attraction_id": "JAI-A-11",
+       "name": "Birla Mandir",
+       "arrive": "12:37",
+       "start": "12:37",
+       "end": "13:22",
+       "entry_cost": 0,
+       "leg_from_prev": {
+        "from": "JAI-A-09",
+        "to": "JAI-A-11",
+        "minutes": 38,
+        "km": 14.9,
+        "mode": "cab",
+        "cost": 312
+       }
+      }
+     ],
+     "return_leg": {
+      "from": "JAI-A-11",
+      "to": "JAI-H-06",
+      "minutes": 11,
+      "km": 7.4,
+      "mode": "cab",
+      "cost": 155
+     }
+    }
+   ],
+   "budget": {
+    "outbound": 17436,
+    "return": 17436,
+    "stay": 7509,
+    "food": 14400,
+    "entry_fees": 2090,
+    "local_travel": 2397,
+    "total": 61268,
+    "usable_budget": 148950,
+    "contingency": 16550,
+    "budget_total": 165500,
+    "estimate_label": "Estimated prices, compiled Nov 2026"
+   },
+   "near_misses": [
+    {
+     "attraction_id": "JAI-A-03",
+     "name": "Jal Mahal",
+     "reason": "time"
+    },
+    {
+     "attraction_id": "JAI-A-07",
+     "name": "Govind Dev Ji Temple",
+     "reason": "time"
+    },
+    {
+     "attraction_id": "JAI-A-21",
+     "name": "Isarlat",
+     "reason": "time"
+    },
+    {
+     "attraction_id": "JAI-A-12",
+     "name": "Moti Doongri",
+     "reason": "time"
+    },
+    {
+     "attraction_id": "JAI-A-13",
+     "name": "Jagat Shiromani Temple",
+     "reason": "time"
+    }
+   ],
+   "solver": {
+    "hotel_candidates": 1,
+    "feedback_iters": 0,
+    "repairs": 0,
+    "solve_ms": 2866
+   }
+  },
+  "info": {
+   "prompt_chars": 3110,
+   "choice": {
+    "outbound": 0,
+    "return": 0,
+    "hotel_id": "JAI-H-06",
+    "days": [
+     {
+      "day": 1,
+      "stops": [
+       "JAI-A-02",
+       "JAI-A-04",
+       "JAI-A-27"
+      ]
+     },
+     {
+      "day": 2,
+      "stops": [
+       "JAI-A-05",
+       "JAI-A-10",
+       "JAI-A-28"
+      ]
+     },
+     {
+      "day": 3,
+      "stops": [
+       "JAI-A-01",
+       "JAI-A-06",
+       "JAI-A-08"
+      ]
+     },
+     {
+      "day": 4,
+      "stops": [
+       "JAI-A-09",
+       "JAI-A-11"
+      ]
+     }
+    ]
+   },
+   "seconds": 2.87
+  }
+ },
+ {
+  "trip": "T02",
+  "plan": {
+   "status": "ok",
+   "variant": null,
+   "dataset_version": "1.0 (2026-11)",
+   "request_hash": "sha256:33345f2fb9853b581b2b4ce7f04e4657459403502c5dcc81a0ca3aad590c30c2",
+   "value": 279.51,
+   "transport": {
+    "outbound": {
+     "mode": "train",
+     "class": "SL",
+     "depart": "06:00",
+     "arrive_centre": "09:25",
+     "minutes": 214,
+     "overnight": false,
+     "cost": 363
+    },
+    "return": {
+     "mode": "train",
+     "class": "SL",
+     "leave_centre": "19:35",
+     "arrive_origin": "23:00",
+     "minutes": 214,
+     "overnight": false,
+     "cost": 363
+    }
+   },
+   "hotel": {
+    "hotel_id": "AGR-H-02",
+    "name": "Sia Taj Hotel nearest Taj Mahal Agra",
+    "tier": "budget",
+    "nights": 1,
+    "rooms": 1,
+    "price_per_room_night": 1058,
+    "cost": 1058
+   },
+   "days": [
+    {
+     "day": 1,
+     "date": "2026-12-14",
+     "weekday": 0,
+     "window": [
+      "09:55",
+      "17:00"
+     ],
+     "lunch": null,
+     "stops": [
+      {
+       "attraction_id": "AGR-A-01",
+       "name": "Taj Mahal",
+       "arrive": "10:05",
+       "start": "10:05",
+       "end": "12:35",
+       "entry_cost": 45,
+       "leg_from_prev": {
+        "from": "AGR-H-02",
+        "to": "AGR-A-01",
+        "minutes": 10,
+        "km": 6.2,
+        "mode": "auto",
+        "cost": 94
+       }
+      },
+      {
+       "attraction_id": "AGR-A-02",
+       "name": "Agra Fort",
+       "arrive": "12:40",
+       "start": "12:40",
+       "end": "15:10",
+       "entry_cost": 35,
+       "leg_from_prev": {
+        "from": "AGR-A-01",
+        "to": "AGR-A-02",
+        "minutes": 5,
+        "km": 2.2,
+        "mode": "auto",
+        "cost": 38
+       }
+      }
+     ],
+     "return_leg": {
+      "from": "AGR-A-02",
+      "to": "AGR-H-02",
+      "minutes": 10,
+      "km": 6.8,
+      "mode": "auto",
+      "cost": 103
+     }
+    },
+    {
+     "day": 2,
+     "date": "2026-12-15",
+     "weekday": 1,
+     "window": [
+      "09:00",
+      "17:00"
+     ],
+     "lunch": null,
+     "stops": [
+      {
+       "attraction_id": "AGR-A-06",
+       "name": "Mehtab Bagh",
+       "arrive": "09:23",
+       "start": "09:23",
+       "end": "10:53",
+       "entry_cost": 20,
+       "leg_from_prev": {
+        "from": "AGR-H-02",
+        "to": "AGR-A-06",
+        "minutes": 23,
+        "km": 11.8,
+        "mode": "auto",
+        "cost": 173
+       }
+      },
+      {
+       "attraction_id": "AGR-A-07",
+       "name": "Ram Bagh",
+       "arrive": "11:07",
+       "start": "11:07",
+       "end": "12:37",
+       "entry_cost": 20,
+       "leg_from_prev": {
+        "from": "AGR-A-06",
+        "to": "AGR-A-07",
+        "minutes": 14,
+        "km": 5.2,
+        "mode": "auto",
+        "cost": 80
+       }
+      },
+      {
+       "attraction_id": "AGR-A-24",
+       "name": "Rawatpara Spice Market",
+       "arrive": "12:44",
+       "start": "12:44",
+       "end": "14:14",
+       "entry_cost": 0,
+       "leg_from_prev": {
+        "from": "AGR-A-07",
+        "to": "AGR-A-24",
+        "minutes": 7,
+        "km": 4.8,
+        "mode": "auto",
+        "cost": 75
+       }
+      }
+     ],
+     "return_leg": {
+      "from": "AGR-A-24",
+      "to": "AGR-H-02",
+      "minutes": 12,
+      "km": 8.0,
+      "mode": "auto",
+      "cost": 120
+     }
+    }
+   ],
+   "budget": {
+    "outbound": 363,
+    "return": 363,
+    "stay": 1058,
+    "food": 1800,
+    "entry_fees": 120,
+    "local_travel": 683,
+    "total": 4387,
+    "usable_budget": 4500,
+    "contingency": 500,
+    "budget_total": 5000,
+    "estimate_label": "Estimated prices, compiled Nov 2026"
+   },
+   "near_misses": [
+    {
+     "attraction_id": "AGR-A-03",
+     "name": "Fatehpur Sikri",
+     "reason": "budget"
+    },
+    {
+     "attraction_id": "AGR-A-04",
+     "name": "Akbar's Tomb",
+     "reason": "budget"
+    },
+    {
+     "attraction_id": "AGR-A-05",
+     "name": "Itimad-ud-Daulah Tomb",
+     "reason": "budget"
+    },
+    {
+     "attraction_id": "AGR-A-12",
+     "name": "Cathedral of the Immaculate Conception",
+     "reason": "budget"
+    },
+    {
+     "attraction_id": "AGR-A-13",
+     "name": "Gurdwara Mai Than",
+     "reason": "budget"
+    }
+   ],
+   "solver": {
+    "hotel_candidates": 1,
+    "feedback_iters": 0,
+    "repairs": 0,
+    "solve_ms": 3323
+   }
+  },
+  "info": {
+   "prompt_chars": 3306,
+   "choice": {
+    "outbound": 0,
+    "return": 0,
+    "hotel_id": "AGR-H-02",
+    "days": [
+     {
+      "day": 1,
+      "stops": [
+       "AGR-A-01",
+       "AGR-A-02"
+      ]
+     },
+     {
+      "day": 2,
+      "stops": [
+       "AGR-A-06",
+       "AGR-A-07",
+       "AGR-A-24"
+      ]
+     }
+    ]
+   },
+   "seconds": 3.32
+  }
+ },
+ {
+  "trip": "T03",
+  "plan": {
+   "status": "ok",
+   "variant": null,
+   "dataset_version": "1.0 (2026-11)",
+   "request_hash": "sha256:e9977026b06c9db8b1e3445518564f2e3407c7308b3b184d32d31f8ebe5f67d2",
+   "value": 985.9,
+   "transport": {
+    "outbound": {
+     "mode": "train",
+     "class": "SL",
+     "depart": "20:17",
+     "arrive_centre": "07:34",
+     "minutes": 680,
+     "overnight": true,
+     "cost": 2067
+    },
+    "return": {
+     "mode": "train",
+     "class": "SL",
+     "leave_centre": "20:26",
+     "arrive_origin": "07:43",
+     "minutes": 680,
+     "overnight": true,
+     "cost": 2067
+    }
+   },
+   "hotel": {
+    "hotel_id": "GOA-H-05",
+    "name": "Hotel Gopika International",
+    "tier": "mid",
+    "nights": 4,
+    "rooms": 2,
+    "price_per_room_night": 4129,
+    "cost": 33032
+   },
+   "days": [
+    {
+     "day": 1,
+     "date": "2027-01-08",
+     "weekday": 4,
+     "window": [
+      "09:00",
+      "19:00"
+     ],
+     "lunch": null,
+     "stops": [
+      {
+       "attraction_id": "GOA-A-29",
+       "name": "Arossim Beach",
+       "arrive": "09:40",
+       "start": "09:40",
+       "end": "11:40",
+       "entry_cost": 0,
+       "leg_from_prev": {
+        "from": "GOA-H-05",
+        "to": "GOA-A-29",
+        "minutes": 40,
+        "km": 30.0,
+        "mode": "cab",
+        "cost": 629
+       }
+      },
+      {
+       "attraction_id": "GOA-A-03",
+       "name": "Fort Aguada",
+       "arrive": "12:32",
+       "start": "12:32",
+       "end": "15:02",
+       "entry_cost": 60,
+       "leg_from_prev": {
+        "from": "GOA-A-29",
+        "to": "GOA-A-03",
+        "minutes": 52,
+        "km": 39.7,
+        "mode": "cab",
+        "cost": 832
+       }
+      },
+      {
+       "attraction_id": "GOA-A-16",
+       "name": "Mapusa Municipal Market",
+       "arrive": "15:25",
+       "start": "15:25",
+       "end": "16:55",
+       "entry_cost": 0,
+       "leg_from_prev": {
+        "from": "GOA-A-03",
+        "to": "GOA-A-16",
+        "minutes": 23,
+        "km": 15.7,
+        "mode": "cab",
+        "cost": 329
+       }
+      },
+      {
+       "attraction_id": "GOA-A-19",
+       "name": "Anjuna Beach",
+       "arrive": "17:12",
+       "start": "17:12",
+       "end": "19:12",
+       "entry_cost": 0,
+       "leg_from_prev": {
+        "from": "GOA-A-16",
+        "to": "GOA-A-19",
+        "minutes": 17,
+        "km": 10.4,
+        "mode": "cab",
+        "cost": 218
+       }
+      },
+      {
+       "attraction_id": "GOA-A-30",
+       "name": "Arpora Saturday Night Market",
+       "arrive": "19:20",
+       "start": "19:20",
+       "end": "20:50",
+       "entry_cost": 0,
+       "leg_from_prev": {
+        "from": "GOA-A-19",
+        "to": "GOA-A-30",
+        "minutes": 8,
+        "km": 4.8,
+        "mode": "cab",
+        "cost": 101
+       }
+      }
+     ],
+     "return_leg": {
+      "from": "GOA-A-30",
+      "to": "GOA-H-05",
+      "minutes": 26,
+      "km": 17.8,
+      "mode": "cab",
+      "cost": 373
+     }
+    },
+    {
+     "day": 2,
+     "date": "2027-01-09",
+     "weekday": 5,
+     "window": [
+      "09:00",
+      "19:00"
+     ],
+     "lunch": null,
+     "stops": [
+      {
+       "attraction_id": "GOA-A-31",
+       "name": "Parasailing at Calangute Beach",
+       "arrive": "09:24",
+       "start": "10:00",
+       "end": "13:00",
+       "entry_cost": 2697,
+       "leg_from_prev": {
+        "from": "GOA-H-05",
+        "to": "GOA-A-31",
+        "minutes": 24,
+        "km": 16.9,
+        "mode": "cab",
+        "cost": 354
+       }
+      },
+      {
+       "attraction_id": "GOA-A-17",
+       "name": "Baga Beach",
+       "arrive": "13:04",
+       "start": "13:04",
+       "end": "15:04",
+       "entry_cost": 0,
+       "leg_from_prev": {
+        "from": "GOA-A-31",
+        "to": "GOA-A-17",
+        "minutes": 4,
+        "km": 2.0,
+        "mode": "cab",
+        "cost": 42
+       }
+      },
+      {
+       "attraction_id": "GOA-A-18",
+       "name": "Calangute Beach",
+       "arrive": "15:11",
+       "start": "15:11",
+       "end": "17:11",
+       "entry_cost": 0,
+       "leg_from_prev": {
+        "from": "GOA-A-17",
+        "to": "GOA-A-18",
+        "minutes": 7,
+        "km": 2.8,
+        "mode": "cab",
+        "cost": 59
+       }
+      },
+      {
+       "attraction_id": "GOA-A-33",
+       "name": "Sunset Kayaking at Bambolim Beach",
+       "arrive": "17:41",
+       "start": "17:41",
+       "end": "19:41",
+       "entry_cost": 2970,
+       "leg_from_prev": {
+        "from": "GOA-A-18",
+        "to": "GOA-A-33",
+        "minutes": 30,
+        "km": 20.2,
+        "mode": "cab",
+        "cost": 424
+       }
+      }
+     ],
+     "return_leg": {
+      "from": "GOA-A-33",
+      "to": "GOA-H-05",
+      "minutes": 13,
+      "km": 8.6,
+      "mode": "cab",
+      "cost": 181
+     }
+    },
+    {
+     "day": 3,
+     "date": "2027-01-10",
+     "weekday": 6,
+     "window": [
+      "09:00",
+      "19:00"
+     ],
+     "lunch": null,
+     "stops": [
+      {
+       "attraction_id": "GOA-A-32",
+       "name": "Scuba Diving at Grand Island",
+       "arrive": "09:22",
+       "start": "09:22",
+       "end": "12:22",
+       "entry_cost": 4497,
+       "leg_from_prev": {
+        "from": "GOA-H-05",
+        "to": "GOA-A-32",
+        "minutes": 22,
+        "km": 15.3,
+        "mode": "cab",
+        "cost": 321
+       }
+      },
+      {
+       "attraction_id": "GOA-A-11",
+       "name": "Vagator Beach",
+       "arrive": "12:41",
+       "start": "12:41",
+       "end": "14:41",
+       "entry_cost": 0,
+       "leg_from_prev": {
+        "from": "GOA-A-32",
+        "to": "GOA-A-11",
+        "minutes": 19,
+        "km": 14.0,
+        "mode": "cab",
+        "cost": 294
+       }
+      },
+      {
+       "attraction_id": "GOA-A-23",
+       "name": "Morjim Beach",
+       "arrive": "15:05",
+       "start": "15:05",
+       "end": "17:05",
+       "entry_cost": 0,
+       "leg_from_prev": {
+        "from": "GOA-A-11",
+        "to": "GOA-A-23",
+        "minutes": 24,
+        "km": 14.2,
+        "mode": "cab",
+        "cost": 298
+       }
+      },
+      {
+       "attraction_id": "GOA-A-06",
+       "name": "Dona Paula",
+       "arrive": "17:59",
+       "start": "17:59",
+       "end": "18:29",
+       "entry_cost": 0,
+       "leg_from_prev": {
+        "from": "GOA-A-23",
+        "to": "GOA-A-06",
+        "minutes": 54,
+        "km": 34.2,
+        "mode": "cab",
+        "cost": 717
+       }
+      }
+     ],
+     "return_leg": {
+      "from": "GOA-A-06",
+      "to": "GOA-H-05",
+      "minutes": 8,
+      "km": 4.6,
+      "mode": "cab",
+      "cost": 97
+     }
+    },
+    {
+     "day": 4,
+     "date": "2027-01-11",
+     "weekday": 0,
+     "window": [
+      "09:00",
+      "19:00"
+     ],
+     "lunch": null,
+     "stops": [
+      {
+       "attraction_id": "GOA-A-22",
+       "name": "Sinquerim Beach",
+       "arrive": "09:23",
+       "start": "09:23",
+       "end": "11:23",
+       "entry_cost": 0,
+       "leg_from_prev": {
+        "from": "GOA-H-05",
+        "to": "GOA-A-22",
+        "minutes": 23,
+        "km": 15.5,
+        "mode": "cab",
+        "cost": 325
+       }
+      },
+      {
+       "attraction_id": "GOA-A-24",
+       "name": "Bogmalo Beach",
+       "arrive": "12:13",
+       "start": "12:13",
+       "end": "14:13",
+       "entry_cost": 0,
+       "leg_from_prev": {
+        "from": "GOA-A-22",
+        "to": "GOA-A-24",
+        "minutes": 50,
+        "km": 38.7,
+        "mode": "cab",
+        "cost": 811
+       }
+      },
+      {
+       "attraction_id": "GOA-A-28",
+       "name": "Mandrem Beach",
+       "arrive": "15:29",
+       "start": "15:29",
+       "end": "17:29",
+       "entry_cost": 0,
+       "leg_from_prev": {
+        "from": "GOA-A-24",
+        "to": "GOA-A-28",
+        "minutes": 76,
+        "km": 55.5,
+        "mode": "cab",
+        "cost": 1163
+       }
+      },
+      {
+       "attraction_id": "GOA-A-21",
+       "name": "Coco Beach",
+       "arrive": "18:07",
+       "start": "18:07",
+       "end": "20:07",
+       "entry_cost": 0,
+       "leg_from_prev": {
+        "from": "GOA-A-28",
+        "to": "GOA-A-21",
+        "minutes": 38,
+        "km": 27.0,
+        "mode": "cab",
+        "cost": 566
+       }
+      }
+     ],
+     "return_leg": {
+      "from": "GOA-A-21",
+      "to": "GOA-H-05",
+      "minutes": 22,
+      "km": 13.3,
+      "mode": "cab",
+      "cost": 279
+     }
+    },
+    {
+     "day": 5,
+     "date": "2027-01-12",
+     "weekday": 1,
+     "window": [
+      "09:00",
+      "19:00"
+     ],
+     "lunch": [
+      "13:03",
+      "14:03"
+     ],
+     "stops": [
+      {
+       "attraction_id": "GOA-A-01",
+       "name": "Basilica of Bom Jesus",
+       "arrive": "09:20",
+       "start": "09:20",
+       "end": "10:05",
+       "entry_cost": 0,
+       "leg_from_prev": {
+        "from": "GOA-H-05",
+        "to": "GOA-A-01",
+        "minutes": 20,
+        "km": 14.3,
+        "mode": "cab",
+        "cost": 300
+       }
+      },
+      {
+       "attraction_id": "GOA-A-05",
+       "name": "Se Cathedral",
+       "arrive": "10:06",
+       "start": "10:06",
+       "end": "10:51",
+       "entry_cost": 0,
+       "leg_from_prev": {
+        "from": "GOA-A-01",
+        "to": "GOA-A-05",
+        "minutes": 1,
+        "km": 0.6,
+        "mode": "cab",
+        "cost": 37
+       }
+      },
+      {
+       "attraction_id": "GOA-A-09",
+       "name": "Church of St Francis of Assisi",
+       "arrive": "10:52",
+       "start": "10:52",
+       "end": "11:37",
+       "entry_cost": 0,
+       "leg_from_prev": {
+        "from": "GOA-A-05",
+        "to": "GOA-A-09",
+        "minutes": 1,
+        "km": 0.2,
+        "mode": "cab",
+        "cost": 37
+       }
+      },
+      {
+       "attraction_id": "GOA-A-15",
+       "name": "Our Lady of the Mount Chapel",
+       "arrive": "11:41",
+       "start": "11:41",
+       "end": "12:26",
+       "entry_cost": 0,
+       "leg_from_prev": {
+        "from": "GOA-A-09",
+        "to": "GOA-A-15",
+        "minutes": 4,
+        "km": 2.1,
+        "mode": "cab",
+        "cost": 44
+       }
+      },
+      {
+       "attraction_id": "GOA-A-29",
+       "name": "Arossim Beach",
+       "arrive": "13:03",
+       "start": "14:03",
+       "end": "16:03",
+       "entry_cost": 0,
+       "leg_from_prev": {
+        "from": "GOA-A-15",
+        "to": "GOA-A-29",
+        "minutes": 37,
+        "km": 28.4,
+        "mode": "cab",
+        "cost": 595
+       }
+      }
+     ],
+     "return_leg": {
+      "from": "GOA-A-29",
+      "to": "GOA-H-05",
+      "minutes": 37,
+      "km": 29.6,
+      "mode": "cab",
+      "cost": 620
+     }
+    }
+   ],
+   "budget": {
+    "outbound": 2067,
+    "return": 2067,
+    "stay": 33032,
+    "food": 33750,
+    "entry_fees": 10224,
+    "local_travel": 9417,
+    "total": 90557,
+    "usable_budget": 113850,
+    "contingency": 12650,
+    "budget_total": 126500,
+    "estimate_label": "Estimated prices, compiled Nov 2026"
+   },
+   "near_misses": [
+    {
+     "attraction_id": "GOA-A-20",
+     "name": "Candolim Beach",
+     "reason": "time"
+    },
+    {
+     "attraction_id": "GOA-A-08",
+     "name": "Miramar Beach",
+     "reason": "time"
+    },
+    {
+     "attraction_id": "GOA-A-02",
+     "name": "Mangueshi Temple",
+     "reason": "time"
+    },
+    {
+     "attraction_id": "GOA-A-04",
+     "name": "Our Lady of the Immaculate Conception Church",
+     "reason": "time"
+    },
+    {
+     "attraction_id": "GOA-A-10",
+     "name": "Safa Masjid",
+     "reason": "time"
+    }
+   ],
+   "solver": {
+    "hotel_candidates": 1,
+    "feedback_iters": 0,
+    "repairs": 0,
+    "solve_ms": 3922
+   }
+  },
+  "info": {
+   "prompt_chars": 3606,
+   "choice": {
+    "outbound": 0,
+    "return": 0,
+    "hotel_id": "GOA-H-05",
+    "days": [
+     {
+      "day": 1,
+      "stops": [
+       "GOA-A-29",
+       "GOA-A-03",
+       "GOA-A-16",
+       "GOA-A-19",
+       "GOA-A-30"
+      ]
+     },
+     {
+      "day": 2,
+      "stops": [
+       "GOA-A-31",
+       "GOA-A-17",
+       "GOA-A-18",
+       "GOA-A-33"
+      ]
+     },
+     {
+      "day": 3,
+      "stops": [
+       "GOA-A-32",
+       "GOA-A-11",
+       "GOA-A-23",
+       "GOA-A-06"
+      ]
+     },
+     {
+      "day": 4,
+      "stops": [
+       "GOA-A-22",
+       "GOA-A-24",
+       "GOA-A-28",
+       "GOA-A-21"
+      ]
+     },
+     {
+      "day": 5,
+      "stops": [
+       "GOA-A-01",
+       "GOA-A-05",
+       "GOA-A-09",
+       "GOA-A-15",
+       "GOA-A-29"
+      ]
+     }
+    ]
+   },
+   "seconds": 3.92
+  }
+ },
+ {
+  "trip": "T04",
+  "plan": {
+   "status": "ok",
+   "variant": null,
+   "dataset_version": "1.0 (2026-11)",
+   "request_hash": "sha256:f16c5a90489c2c48cddff52326977c12461b509673b306595d7fcb51f05a9965",
+   "value": 667.25,
+   "transport": {
+    "outbound": {
+     "mode": "train",
+     "class": "SL",
+     "depart": "20:22",
+     "arrive_centre": "08:08",
+     "minutes": 714,
+     "overnight": true,
+     "cost": 2570
+    },
+    "return": {
+     "mode": "train",
+     "class": "SL",
+     "leave_centre": "19:52",
+     "arrive_origin": "07:38",
+     "minutes": 714,
+     "overnight": true,
+     "cost": 2570
+    }
+   },
+   "hotel": {
+    "hotel_id": "DJL-H-09",
+    "name": "Gakhil Boutique Hotel",
+    "tier": "premium",
+    "nights": 3,
+    "rooms": 2,
+    "price_per_room_night": 7009,
+    "cost": 42054
+   },
+   "days": [
+    {
+     "day": 1,
+     "date": "2027-02-10",
+     "weekday": 2,
+     "window": [
+      "09:08",
+      "18:00"
+     ],
+     "lunch": [
+      "14:11",
+      "15:11"
+     ],
+     "stops": [
+      {
+       "attraction_id": "DJL-A-01",
+       "name": "Tiger Hill",
+       "arrive": "09:29",
+       "start": "09:29",
+       "end": "09:59",
+       "entry_cost": 0,
+       "leg_from_prev": {
+        "from": "DJL-H-09",
+        "to": "DJL-A-01",
+        "minutes": 21,
+        "km": 12.0,
+        "mode": "cab",
+        "cost": 180
+       }
+      },
+      {
+       "attraction_id": "DJL-A-02",
+       "name": "Batasia Loop",
+       "arrive": "10:14",
+       "start": "10:14",
+       "end": "10:44",
+       "entry_cost": 0,
+       "leg_from_prev": {
+        "from": "DJL-A-01",
+        "to": "DJL-A-02",
+        "minutes": 15,
+        "km": 7.0,
+        "mode": "cab",
+        "cost": 105
+       }
+      },
+      {
+       "attraction_id": "DJL-A-04",
+       "name": "Happy Valley Tea Estate",
+       "arrive": "10:57",
+       "start": "10:57",
+       "end": "12:27",
+       "entry_cost": 0,
+       "leg_from_prev": {
+        "from": "DJL-A-02",
+        "to": "DJL-A-04",
+        "minutes": 13,
+        "km": 5.9,
+        "mode": "cab",
+        "cost": 89
+       }
+      },
+      {
+       "attraction_id": "DJL-A-05",
+       "name": "Lloyd Botanical Garden",
+       "arrive": "12:33",
+       "start": "12:33",
+       "end": "14:03",
+       "entry_cost": 0,
+       "leg_from_prev": {
+        "from": "DJL-A-04",
+        "to": "DJL-A-05",
+        "minutes": 6,
+        "km": 2.0,
+        "mode": "cab",
+        "cost": 30
+       }
+      }
+     ],
+     "return_leg": {
+      "from": "DJL-A-05",
+      "to": "DJL-H-09",
+      "minutes": 8,
+      "km": 2.5,
+      "mode": "cab",
+      "cost": 38
+     }
+    },
+    {
+     "day": 2,
+     "date": "2027-02-11",
+     "weekday": 3,
+     "window": [
+      "09:00",
+      "18:00"
+     ],
+     "lunch": [
+      "13:23",
+      "14:23"
+     ],
+     "stops": [
+      {
+       "attraction_id": "DJL-A-21",
+       "name": "Margaret's Hope Tea Estate",
+       "arrive": "09:31",
+       "start": "09:31",
+       "end": "11:01",
+       "entry_cost": 0,
+       "leg_from_prev": {
+        "from": "DJL-H-09",
+        "to": "DJL-A-21",
+        "minutes": 31,
+        "km": 23.2,
+        "mode": "cab",
+        "cost": 348
+       }
+      },
+      {
+       "attraction_id": "DJL-A-17",
+       "name": "Senchal Wildlife Sanctuary",
+       "arrive": "11:31",
+       "start": "11:31",
+       "end": "13:01",
+       "entry_cost": 0,
+       "leg_from_prev": {
+        "from": "DJL-A-21",
+        "to": "DJL-A-17",
+        "minutes": 30,
+        "km": 20.0,
+        "mode": "cab",
+        "cost": 300
+       }
+      },
+      {
+       "attraction_id": "DJL-A-23",
+       "name": "Tenzing Rock",
+       "arrive": "13:23",
+       "start": "14:23",
+       "end": "14:53",
+       "entry_cost": 0,
+       "leg_from_prev": {
+        "from": "DJL-A-17",
+        "to": "DJL-A-23",
+        "minutes": 22,
+        "km": 15.8,
+        "mode": "cab",
+        "cost": 237
+       }
+      },
+      {
+       "attraction_id": "DJL-A-07",
+       "name": "Nightingale Park",
+       "arrive": "14:55",
+       "start": "14:55",
+       "end": "16:25",
+       "entry_cost": 0,
+       "leg_from_prev": {
+        "from": "DJL-A-23",
+        "to": "DJL-A-07",
+        "minutes": 2,
+        "km": 2.4,
+        "mode": "cab",
+        "cost": 36
+       }
+      }
+     ],
+     "return_leg": {
+      "from": "DJL-A-07",
+      "to": "DJL-H-09",
+      "minutes": 6,
+      "km": 2.5,
+      "mode": "cab",
+      "cost": 38
+     }
+    },
+    {
+     "day": 3,
+     "date": "2027-02-12",
+     "weekday": 4,
+     "window": [
+      "09:00",
+      "18:00"
+     ],
+     "lunch": null,
+     "stops": [
+      {
+       "attraction_id": "DJL-A-03",
+       "name": "Rock Garden",
+       "arrive": "09:18",
+       "start": "09:18",
+       "end": "10:48",
+       "entry_cost": 0,
+       "leg_from_prev": {
+        "from": "DJL-H-09",
+        "to": "DJL-A-03",
+        "minutes": 18,
+        "km": 7.3,
+        "mode": "cab",
+        "cost": 110
+       }
+      },
+      {
+       "attraction_id": "DJL-A-06",
+       "name": "Chowrasta",
+       "arrive": "11:13",
+       "start": "11:13",
+       "end": "12:43",
+       "entry_cost": 0,
+       "leg_from_prev": {
+        "from": "DJL-A-03",
+        "to": "DJL-A-06",
+        "minutes": 25,
+        "km": 14.8,
+        "mode": "cab",
+        "cost": 222
+       }
+      },
+      {
+       "attraction_id": "DJL-A-20",
+       "name": "Glenburn Tea Estate",
+       "arrive": "13:37",
+       "start": "13:37",
+       "end": "15:07",
+       "entry_cost": 0,
+       "leg_from_prev": {
+        "from": "DJL-A-06",
+        "to": "DJL-A-20",
+        "minutes": 54,
+        "km": 36.5,
+        "mode": "cab",
+        "cost": 548
+       }
+      },
+      {
+       "attraction_id": "DJL-A-24",
+       "name": "Glenary's",
+       "arrive": "15:49",
+       "start": "15:49",
+       "end": "17:19",
+       "entry_cost": 0,
+       "leg_from_prev": {
+        "from": "DJL-A-20",
+        "to": "DJL-A-24",
+        "minutes": 42,
+        "km": 28.3,
+        "mode": "cab",
+        "cost": 425
+       }
+      }
+     ],
+     "return_leg": {
+      "from": "DJL-A-24",
+      "to": "DJL-H-09",
+      "minutes": 3,
+      "km": 1.0,
+      "mode": "cab",
+      "cost": 30
+     }
+    },
+    {
+     "day": 4,
+     "date": "2027-02-13",
+     "weekday": 5,
+     "window": [
+      "09:00",
+      "18:00"
+     ],
+     "lunch": [
+      "13:12",
+      "14:12"
+     ],
+     "stops": [
+      {
+       "attraction_id": "DJL-A-08",
+       "name": "Observatory Hill",
+       "arrive": "09:06",
+       "start": "09:06",
+       "end": "09:51",
+       "entry_cost": 0,
+       "leg_from_prev": {
+        "from": "DJL-H-09",
+        "to": "DJL-A-08",
+        "minutes": 6,
+        "km": 2.2,
+        "mode": "cab",
+        "cost": 33
+       }
+      },
+      {
+       "attraction_id": "DJL-A-10",
+       "name": "Peace Pagoda",
+       "arrive": "10:01",
+       "start": "10:01",
+       "end": "10:46",
+       "entry_cost": 0,
+       "leg_from_prev": {
+        "from": "DJL-A-08",
+        "to": "DJL-A-10",
+        "minutes": 10,
+        "km": 3.4,
+        "mode": "cab",
+        "cost": 51
+       }
+      },
+      {
+       "attraction_id": "DJL-A-11",
+       "name": "Japanese Temple",
+       "arrive": "10:47",
+       "start": "10:47",
+       "end": "11:32",
+       "entry_cost": 0,
+       "leg_from_prev": {
+        "from": "DJL-A-10",
+        "to": "DJL-A-11",
+        "minutes": 1,
+        "km": 0.1,
+        "mode": "cab",
+        "cost": 30
+       }
+      },
+      {
+       "attraction_id": "DJL-A-25",
+       "name": "Keventers",
+       "arrive": "11:39",
+       "start": "11:39",
+       "end": "13:09",
+       "entry_cost": 0,
+       "leg_from_prev": {
+        "from": "DJL-A-11",
+        "to": "DJL-A-25",
+        "minutes": 7,
+        "km": 2.1,
+        "mode": "cab",
+        "cost": 32
+       }
+      }
+     ],
+     "return_leg": {
+      "from": "DJL-A-25",
+      "to": "DJL-H-09",
+      "minutes": 3,
+      "km": 0.9,
+      "mode": "cab",
+      "cost": 30
+     }
+    }
+   ],
+   "budget": {
+    "outbound": 2570,
+    "return": 2570,
+    "stay": 42054,
+    "food": 55200,
+    "entry_fees": 0,
+    "local_travel": 2912,
+    "total": 105306,
+    "usable_budget": 266850,
+    "contingency": 29650,
+    "budget_total": 296500,
+    "estimate_label": "Estimated prices, compiled Nov 2026"
+   },
+   "near_misses": [
+    {
+     "attraction_id": "DJL-A-22",
+     "name": "Victoria Falls",
+     "reason": "time"
+    },
+    {
+     "attraction_id": "DJL-A-19",
+     "name": "Puttabong Tea Estate",
+     "reason": "time"
+    },
+    {
+     "attraction_id": "DJL-A-18",
+     "name": "Arya Tea Estate",
+     "reason": "time"
+    },
+    {
+     "attraction_id": "DJL-A-12",
+     "name": "Ghum Monastery",
+     "reason": "time"
+    },
+    {
+     "attraction_id": "DJL-A-26",
+     "name": "Kunga Restaurant",
+     "reason": "time"
+    }
+   ],
+   "solver": {
+    "hotel_candidates": 1,
+    "feedback_iters": 0,
+    "repairs": 0,
+    "solve_ms": 2772
+   }
+  },
+  "info": {
+   "prompt_chars": 3336,
+   "choice": {
+    "outbound": 0,
+    "return": 0,
+    "hotel_id": "DJL-H-09",
+    "days": [
+     {
+      "day": 1,
+      "stops": [
+       "DJL-A-01",
+       "DJL-A-02",
+       "DJL-A-04",
+       "DJL-A-05"
+      ]
+     },
+     {
+      "day": 2,
+      "stops": [
+       "DJL-A-21",
+       "DJL-A-17",
+       "DJL-A-23",
+       "DJL-A-07"
+      ]
+     },
+     {
+      "day": 3,
+      "stops": [
+       "DJL-A-03",
+       "DJL-A-06",
+       "DJL-A-20",
+       "DJL-A-24"
+      ]
+     },
+     {
+      "day": 4,
+      "stops": [
+       "DJL-A-08",
+       "DJL-A-10",
+       "DJL-A-11",
+       "DJL-A-25"
+      ]
+     }
+    ]
+   },
+   "seconds": 2.77
+  }
+ },
+ {
+  "trip": "T05",
+  "plan": {
+   "status": "ok",
+   "variant": null,
+   "dataset_version": "1.0 (2026-11)",
+   "request_hash": "sha256:92a1021bc075d4ae9048568bdadb0561909ee4efaeebf781d5012e3181ac584f",
+   "value": 240.37,
+   "transport": {
+    "outbound": {
+     "mode": "train",
+     "class": "SL",
+     "depart": "06:00",
+     "arrive_centre": "09:53",
+     "minutes": 237,
+     "overnight": false,
+     "cost": 587
+    },
+    "return": {
+     "mode": "train",
+     "class": "SL",
+     "leave_centre": "19:07",
+     "arrive_origin": "23:00",
+     "minutes": 237,
+     "overnight": false,
+     "cost": 587
+    }
+   },
+   "hotel": {
+    "hotel_id": "PDY-H-03",
+    "name": "Pondy Beach Resort Swimming Pool Pondicherry",
+    "tier": "budget",
+    "nights": 2,
+    "rooms": 1,
+    "price_per_room_night": 600,
+    "cost": 1200
+   },
+   "days": [
+    {
+     "day": 1,
+     "date": "2027-01-22",
+     "weekday": 4,
+     "window": [
+      "10:23",
+      "17:00"
+     ],
+     "lunch": [
+      "13:55",
+      "14:55"
+     ],
+     "stops": [
+      {
+       "attraction_id": "PDY-A-25",
+       "name": "Villa Shanti",
+       "arrive": "10:37",
+       "start": "10:37",
+       "end": "12:07",
+       "entry_cost": 0,
+       "leg_from_prev": {
+        "from": "PDY-H-03",
+        "to": "PDY-A-25",
+        "minutes": 14,
+        "km": 7.1,
+        "mode": "auto",
+        "cost": 107
+       }
+      },
+      {
+       "attraction_id": "PDY-A-16",
+       "name": "Botanical Garden, Puducherry",
+       "arrive": "12:12",
+       "start": "12:12",
+       "end": "13:42",
+       "entry_cost": 0,
+       "leg_from_prev": {
+        "from": "PDY-A-25",
+        "to": "PDY-A-16",
+        "minutes": 5,
+        "km": 2.1,
+        "mode": "auto",
+        "cost": 37
+       }
+      }
+     ],
+     "return_leg": {
+      "from": "PDY-A-16",
+      "to": "PDY-H-03",
+      "minutes": 13,
+      "km": 7.4,
+      "mode": "auto",
+      "cost": 111
+     }
+    },
+    {
+     "day": 2,
+     "date": "2027-01-23",
+     "weekday": 5,
+     "window": [
+      "09:00",
+      "17:00"
+     ],
+     "lunch": null,
+     "stops": [
+      {
+       "attraction_id": "PDY-A-20",
+       "name": "Chunnambar Backwaters",
+       "arrive": "09:18",
+       "start": "09:18",
+       "end": "09:48",
+       "entry_cost": 0,
+       "leg_from_prev": {
+        "from": "PDY-H-03",
+        "to": "PDY-A-20",
+        "minutes": 18,
+        "km": 10.6,
+        "mode": "auto",
+        "cost": 156
+       }
+      },
+      {
+       "attraction_id": "PDY-A-19",
+       "name": "Paradise Beach",
+       "arrive": "10:11",
+       "start": "10:11",
+       "end": "12:11",
+       "entry_cost": 0,
+       "leg_from_prev": {
+        "from": "PDY-A-20",
+        "to": "PDY-A-19",
+        "minutes": 23,
+        "km": 9.8,
+        "mode": "auto",
+        "cost": 145
+       }
+      },
+      {
+       "attraction_id": "PDY-A-24",
+       "name": "Surguru Restaurant",
+       "arrive": "12:43",
+       "start": "12:43",
+       "end": "14:13",
+       "entry_cost": 0,
+       "leg_from_prev": {
+        "from": "PDY-A-19",
+        "to": "PDY-A-24",
+        "minutes": 32,
+        "km": 14.9,
+        "mode": "auto",
+        "cost": 216
+       }
+      }
+     ],
+     "return_leg": {
+      "from": "PDY-A-24",
+      "to": "PDY-H-03",
+      "minutes": 14,
+      "km": 5.9,
+      "mode": "auto",
+      "cost": 90
+     }
+    },
+    {
+     "day": 3,
+     "date": "2027-01-24",
+     "weekday": 6,
+     "window": [
+      "09:00",
+      "17:00"
+     ],
+     "lunch": [
+      "13:53",
+      "14:53"
+     ],
+     "stops": [
+      {
+       "attraction_id": "PDY-A-23",
+       "name": "Goubert Market",
+       "arrive": "10:00",
+       "start": "10:00",
+       "end": "11:30",
+       "entry_cost": 0,
+       "leg_from_prev": {
+        "from": "PDY-H-03",
+        "to": "PDY-A-23",
+        "minutes": 13,
+        "km": 6.3,
+        "mode": "auto",
+        "cost": 96
+       }
+      },
+      {
+       "attraction_id": "PDY-A-26",
+       "name": "Baker Street",
+       "arrive": "11:32",
+       "start": "11:32",
+       "end": "13:02",
+       "entry_cost": 0,
+       "leg_from_prev": {
+        "from": "PDY-A-23",
+        "to": "PDY-A-26",
+        "minutes": 2,
+        "km": 1.0,
+        "mode": "auto",
+        "cost": 30
+       }
+      },
+      {
+       "attraction_id": "PDY-A-15",
+       "name": "Old Lighthouse",
+       "arrive": "13:06",
+       "start": "13:06",
+       "end": "13:36",
+       "entry_cost": 0,
+       "leg_from_prev": {
+        "from": "PDY-A-26",
+        "to": "PDY-A-15",
+        "minutes": 4,
+        "km": 1.2,
+        "mode": "auto",
+        "cost": 30
+       }
+      }
+     ],
+     "return_leg": {
+      "from": "PDY-A-15",
+      "to": "PDY-H-03",
+      "minutes": 17,
+      "km": 7.2,
+      "mode": "auto",
+      "cost": 108
+     }
+    }
+   ],
+   "budget": {
+    "outbound": 587,
+    "return": 587,
+    "stay": 1200,
+    "food": 3060,
+    "entry_fees": 0,
+    "local_travel": 1126,
+    "total": 6560,
+    "usable_budget": 6750,
+    "contingency": 750,
+    "budget_total": 7500,
+    "estimate_label": "Estimated prices, compiled Nov 2026"
+   },
+   "near_misses": [
+    {
+     "attraction_id": "PDY-A-01",
+     "name": "Promenade Beach",
+     "reason": "time"
+    },
+    {
+     "attraction_id": "PDY-A-02",
+     "name": "Matrimandir Viewpoint",
+     "reason": "time"
+    },
+    {
+     "attraction_id": "PDY-A-17",
+     "name": "Bharathi Park",
+     "reason": "time"
+    },
+    {
+     "attraction_id": "PDY-A-18",
+     "name": "Serenity Beach",
+     "reason": "time"
+    },
+    {
+     "attraction_id": "PDY-A-21",
+     "name": "Auroville Botanical Garden",
+     "reason": "time"
+    }
+   ],
+   "solver": {
+    "hotel_candidates": 1,
+    "feedback_iters": 0,
+    "repairs": 0,
+    "solve_ms": 3710
+   }
+  },
+  "info": {
+   "prompt_chars": 3477,
+   "choice": {
+    "outbound": 0,
+    "return": 0,
+    "hotel_id": "PDY-H-03",
+    "days": [
+     {
+      "day": 1,
+      "stops": [
+       "PDY-A-25",
+       "PDY-A-16"
+      ]
+     },
+     {
+      "day": 2,
+      "stops": [
+       "PDY-A-20",
+       "PDY-A-19",
+       "PDY-A-24"
+      ]
+     },
+     {
+      "day": 3,
+      "stops": [
+       "PDY-A-23",
+       "PDY-A-26",
+       "PDY-A-15"
+      ]
+     }
+    ]
+   },
+   "seconds": 3.71
+  }
+ },
+ {
+  "trip": "T06",
+  "plan": {
+   "status": "ok",
+   "variant": null,
+   "dataset_version": "1.0 (2026-11)",
+   "request_hash": "sha256:f7ccf04d80491eb88fd4f9b81a109d147b0a4cdcc1e3ef26a7fcf03159543a7f",
+   "value": 751.4,
+   "transport": {
+    "outbound": {
+     "mode": "train",
+     "class": "SL",
+     "depart": "19:46",
+     "arrive_centre": "07:04",
+     "minutes": 687,
+     "overnight": true,
+     "cost": 2842
+    },
+    "return": {
+     "mode": "train",
+     "class": "SL",
+     "leave_centre": "20:56",
+     "arrive_origin": "08:14",
+     "minutes": 687,
+     "overnight": true,
+     "cost": 2842
+    }
+   },
+   "hotel": {
+    "hotel_id": "VNS-H-03",
+    "name": "Hotel Seraine by Perfectstayz",
+    "tier": "budget",
+    "nights": 2,
+    "rooms": 3,
+    "price_per_room_night": 1998,
+    "cost": 11988
+   },
+   "days": [
+    {
+     "day": 1,
+     "date": "2027-01-04",
+     "weekday": 0,
+     "window": [
+      "09:00",
+      "18:00"
+     ],
+     "lunch": [
+      "13:47",
+      "14:47"
+     ],
+     "stops": [
+      {
+       "attraction_id": "VNS-A-01",
+       "name": "Kashi Vishwanath Temple",
+       "arrive": "09:06",
+       "start": "09:06",
+       "end": "09:51",
+       "entry_cost": 0,
+       "leg_from_prev": {
+        "from": "VNS-H-03",
+        "to": "VNS-A-01",
+        "minutes": 6,
+        "km": 3.4,
+        "mode": "auto",
+        "cost": 110
+       }
+      },
+      {
+       "attraction_id": "VNS-A-02",
+       "name": "Manikarnika Ghat",
+       "arrive": "09:53",
+       "start": "09:53",
+       "end": "10:23",
+       "entry_cost": 0,
+       "leg_from_prev": {
+        "from": "VNS-A-01",
+        "to": "VNS-A-02",
+        "minutes": 2,
+        "km": 0.6,
+        "mode": "auto",
+        "cost": 60
+       }
+      },
+      {
+       "attraction_id": "VNS-A-06",
+       "name": "Dhamek Stupa and Sarnath Excavated Remains",
+       "arrive": "10:36",
+       "start": "10:36",
+       "end": "12:06",
+       "entry_cost": 120,
+       "leg_from_prev": {
+        "from": "VNS-A-02",
+        "to": "VNS-A-06",
+        "minutes": 13,
+        "km": 9.7,
+        "mode": "auto",
+        "cost": 286
+       }
+      },
+      {
+       "attraction_id": "VNS-A-15",
+       "name": "Chaukhandi Stupa",
+       "arrive": "12:07",
+       "start": "12:07",
+       "end": "13:37",
+       "entry_cost": 120,
+       "leg_from_prev": {
+        "from": "VNS-A-06",
+        "to": "VNS-A-15",
+        "minutes": 1,
+        "km": 0.9,
+        "mode": "auto",
+        "cost": 60
+       }
+      }
+     ],
+     "return_leg": {
+      "from": "VNS-A-15",
+      "to": "VNS-H-03",
+      "minutes": 10,
+      "km": 8.7,
+      "mode": "auto",
+      "cost": 258
+     }
+    },
+    {
+     "day": 2,
+     "date": "2027-01-05",
+     "weekday": 1,
+     "window": [
+      "09:00",
+      "18:00"
+     ],
+     "lunch": [
+      "13:07",
+      "14:07"
+     ],
+     "stops": [
+      {
+       "attraction_id": "VNS-A-03",
+       "name": "Dashashwamedh Ghat",
+       "arrive": "09:07",
+       "start": "09:07",
+       "end": "09:37",
+       "entry_cost": 0,
+       "leg_from_prev": {
+        "from": "VNS-H-03",
+        "to": "VNS-A-03",
+        "minutes": 7,
+        "km": 3.7,
+        "mode": "auto",
+        "cost": 118
+       }
+      },
+      {
+       "attraction_id": "VNS-A-04",
+       "name": "Assi Ghat",
+       "arrive": "09:49",
+       "start": "09:49",
+       "end": "10:19",
+       "entry_cost": 0,
+       "leg_from_prev": {
+        "from": "VNS-A-03",
+        "to": "VNS-A-04",
+        "minutes": 12,
+        "km": 4.2,
+        "mode": "auto",
+        "cost": 132
+       }
+      },
+      {
+       "attraction_id": "VNS-A-23",
+       "name": "Man Mandir Observatory",
+       "arrive": "10:31",
+       "start": "10:31",
+       "end": "12:01",
+       "entry_cost": 120,
+       "leg_from_prev": {
+        "from": "VNS-A-04",
+        "to": "VNS-A-23",
+        "minutes": 12,
+        "km": 4.3,
+        "mode": "auto",
+        "cost": 136
+       }
+      },
+      {
+       "attraction_id": "VNS-A-07",
+       "name": "Sankat Mochan Hanuman Temple",
+       "arrive": "12:11",
+       "start": "12:11",
+       "end": "12:56",
+       "entry_cost": 0,
+       "leg_from_prev": {
+        "from": "VNS-A-23",
+        "to": "VNS-A-07",
+        "minutes": 10,
+        "km": 4.2,
+        "mode": "auto",
+        "cost": 132
+       }
+      }
+     ],
+     "return_leg": {
+      "from": "VNS-A-07",
+      "to": "VNS-H-03",
+      "minutes": 11,
+      "km": 6.1,
+      "mode": "auto",
+      "cost": 186
+     }
+    },
+    {
+     "day": 3,
+     "date": "2027-01-06",
+     "weekday": 2,
+     "window": [
+      "09:00",
+      "18:00"
+     ],
+     "lunch": [
+      "12:52",
+      "13:52"
+     ],
+     "stops": [
+      {
+       "attraction_id": "VNS-A-08",
+       "name": "Ratneshwar Mahadev Temple",
+       "arrive": "09:08",
+       "start": "09:08",
+       "end": "09:53",
+       "entry_cost": 0,
+       "leg_from_prev": {
+        "from": "VNS-H-03",
+        "to": "VNS-A-08",
+        "minutes": 8,
+        "km": 4.1,
+        "mode": "auto",
+        "cost": 130
+       }
+      },
+      {
+       "attraction_id": "VNS-A-09",
+       "name": "Shri Vishwanath Mandir (BHU)",
+       "arrive": "10:10",
+       "start": "10:10",
+       "end": "10:55",
+       "entry_cost": 0,
+       "leg_from_prev": {
+        "from": "VNS-A-08",
+        "to": "VNS-A-09",
+        "minutes": 17,
+        "km": 7.3,
+        "mode": "auto",
+        "cost": 220
+       }
+      },
+      {
+       "attraction_id": "VNS-A-10",
+       "name": "Annapurna Devi Mandir",
+       "arrive": "11:09",
+       "start": "11:09",
+       "end": "11:54",
+       "entry_cost": 0,
+       "leg_from_prev": {
+        "from": "VNS-A-09",
+        "to": "VNS-A-10",
+        "minutes": 14,
+        "km": 6.4,
+        "mode": "auto",
+        "cost": 194
+       }
+      },
+      {
+       "attraction_id": "VNS-A-11",
+       "name": "Durga Mandir",
+       "arrive": "12:00",
+       "start": "12:00",
+       "end": "12:45",
+       "entry_cost": 0,
+       "leg_from_prev": {
+        "from": "VNS-A-10",
+        "to": "VNS-A-11",
+        "minutes": 6,
+        "km": 3.1,
+        "mode": "auto",
+        "cost": 102
+       }
+      }
+     ],
+     "return_leg": {
+      "from": "VNS-A-11",
+      "to": "VNS-H-03",
+      "minutes": 7,
+      "km": 5.1,
+      "mode": "auto",
+      "cost": 158
+     }
+    }
+   ],
+   "budget": {
+    "outbound": 2842,
+    "return": 2842,
+    "stay": 11988,
+    "food": 8100,
+    "entry_fees": 360,
+    "local_travel": 2282,
+    "total": 28414,
+    "usable_budget": 41850,
+    "contingency": 4650,
+    "budget_total": 46500,
+    "estimate_label": "Estimated prices, compiled Nov 2026"
+   },
+   "near_misses": [
+    {
+     "attraction_id": "VNS-A-05",
+     "name": "Vishalakshi Temple",
+     "reason": "time"
+    },
+    {
+     "attraction_id": "VNS-A-12",
+     "name": "Alamgir Mosque",
+     "reason": "time"
+    },
+    {
+     "attraction_id": "VNS-A-14",
+     "name": "Tilbhandeshwar Mahadev Temple",
+     "reason": "time"
+    },
+    {
+     "attraction_id": "VNS-A-16",
+     "name": "Munshi Ghat",
+     "reason": "time"
+    },
+    {
+     "attraction_id": "VNS-A-17",
+     "name": "Tulsi Manas Temple",
+     "reason": "time"
+    }
+   ],
+   "solver": {
+    "hotel_candidates": 1,
+    "feedback_iters": 0,
+    "repairs": 0,
+    "solve_ms": 2551
+   }
+  },
+  "info": {
+   "prompt_chars": 3478,
+   "choice": {
+    "outbound": 0,
+    "return": 0,
+    "hotel_id": "VNS-H-03",
+    "days": [
+     {
+      "day": 1,
+      "stops": [
+       "VNS-A-01",
+       "VNS-A-02",
+       "VNS-A-06",
+       "VNS-A-15"
+      ]
+     },
+     {
+      "day": 2,
+      "stops": [
+       "VNS-A-03",
+       "VNS-A-04",
+       "VNS-A-23",
+       "VNS-A-07"
+      ]
+     },
+     {
+      "day": 3,
+      "stops": [
+       "VNS-A-08",
+       "VNS-A-09",
+       "VNS-A-10",
+       "VNS-A-11"
+      ]
+     }
+    ]
+   },
+   "seconds": 2.55
+  }
+ },
+ {
+  "trip": "T07",
+  "plan": {
+   "status": "ok",
+   "variant": null,
+   "dataset_version": "1.0 (2026-11)",
+   "request_hash": "sha256:0a96dad24a5ec60b35924e2d7984b58dfa6188ca8dda1f4553af5075a35d03ca",
+   "value": 1154.14,
+   "transport": {
+    "outbound": {
+     "mode": "bus",
+     "class": "ACS",
+     "depart": "15:22",
+     "arrive_centre": "07:03",
+     "minutes": 948,
+     "overnight": true,
+     "cost": 3120
+    },
+    "return": {
+     "mode": "bus",
+     "class": "ACS",
+     "leave_centre": "20:57",
+     "arrive_origin": "12:38",
+     "minutes": 948,
+     "overnight": true,
+     "cost": 3120
+    }
+   },
+   "hotel": {
+    "hotel_id": "GOA-H-08",
+    "name": "Novotel Goa Panjim",
+    "tier": "premium",
+    "nights": 5,
+    "rooms": 1,
+    "price_per_room_night": 7889,
+    "cost": 39445
+   },
+   "days": [
+    {
+     "day": 1,
+     "date": "2027-03-05",
+     "weekday": 4,
+     "window": [
+      "09:00",
+      "21:00"
+     ],
+     "lunch": null,
+     "stops": [
+      {
+       "attraction_id": "GOA-A-29",
+       "name": "Arossim Beach",
+       "arrive": "09:34",
+       "start": "09:34",
+       "end": "11:34",
+       "entry_cost": 0,
+       "leg_from_prev": {
+        "from": "GOA-H-08",
+        "to": "GOA-A-29",
+        "minutes": 34,
+        "km": 27.7,
+        "mode": "cab",
+        "cost": 581
+       }
+      },
+      {
+       "attraction_id": "GOA-A-18",
+       "name": "Calangute Beach",
+       "arrive": "12:26",
+       "start": "12:26",
+       "end": "14:26",
+       "entry_cost": 0,
+       "leg_from_prev": {
+        "from": "GOA-A-29",
+        "to": "GOA-A-18",
+        "minutes": 52,
+        "km": 39.4,
+        "mode": "cab",
+        "cost": 826
+       }
+      },
+      {
+       "attraction_id": "GOA-A-16",
+       "name": "Mapusa Municipal Market",
+       "arrive": "14:43",
+       "start": "14:43",
+       "end": "16:13",
+       "entry_cost": 0,
+       "leg_from_prev": {
+        "from": "GOA-A-18",
+        "to": "GOA-A-16",
+        "minutes": 17,
+        "km": 9.4,
+        "mode": "cab",
+        "cost": 197
+       }
+      },
+      {
+       "attraction_id": "GOA-A-31",
+       "name": "Parasailing at Calangute Beach",
+       "arrive": "16:26",
+       "start": "16:26",
+       "end": "19:26",
+       "entry_cost": 1798,
+       "leg_from_prev": {
+        "from": "GOA-A-16",
+        "to": "GOA-A-31",
+        "minutes": 13,
+        "km": 8.2,
+        "mode": "cab",
+        "cost": 172
+       }
+      },
+      {
+       "attraction_id": "GOA-A-33",
+       "name": "Sunset Kayaking at Bambolim Beach",
+       "arrive": "19:54",
+       "start": "19:54",
+       "end": "21:54",
+       "entry_cost": 1980,
+       "leg_from_prev": {
+        "from": "GOA-A-31",
+        "to": "GOA-A-33",
+        "minutes": 28,
+        "km": 19.1,
+        "mode": "cab",
+        "cost": 400
+       }
+      }
+     ],
+     "return_leg": {
+      "from": "GOA-A-33",
+      "to": "GOA-H-08",
+      "minutes": 10,
+      "km": 6.6,
+      "mode": "cab",
+      "cost": 139
+     }
+    },
+    {
+     "day": 2,
+     "date": "2027-03-06",
+     "weekday": 5,
+     "window": [
+      "09:00",
+      "21:00"
+     ],
+     "lunch": null,
+     "stops": [
+      {
+       "attraction_id": "GOA-A-19",
+       "name": "Anjuna Beach",
+       "arrive": "09:29",
+       "start": "09:29",
+       "end": "11:29",
+       "entry_cost": 0,
+       "leg_from_prev": {
+        "from": "GOA-H-08",
+        "to": "GOA-A-19",
+        "minutes": 29,
+        "km": 19.2,
+        "mode": "cab",
+        "cost": 403
+       }
+      },
+      {
+       "attraction_id": "GOA-A-17",
+       "name": "Baga Beach",
+       "arrive": "11:41",
+       "start": "11:41",
+       "end": "13:41",
+       "entry_cost": 0,
+       "leg_from_prev": {
+        "from": "GOA-A-19",
+        "to": "GOA-A-17",
+        "minutes": 12,
+        "km": 6.9,
+        "mode": "cab",
+        "cost": 145
+       }
+      },
+      {
+       "attraction_id": "GOA-A-30",
+       "name": "Arpora Saturday Night Market",
+       "arrive": "13:46",
+       "start": "16:00",
+       "end": "17:30",
+       "entry_cost": 0,
+       "leg_from_prev": {
+        "from": "GOA-A-17",
+        "to": "GOA-A-30",
+        "minutes": 5,
+        "km": 2.7,
+        "mode": "cab",
+        "cost": 57
+       }
+      },
+      {
+       "attraction_id": "GOA-A-11",
+       "name": "Vagator Beach",
+       "arrive": "17:40",
+       "start": "17:40",
+       "end": "19:40",
+       "entry_cost": 0,
+       "leg_from_prev": {
+        "from": "GOA-A-30",
+        "to": "GOA-A-11",
+        "minutes": 10,
+        "km": 6.5,
+        "mode": "cab",
+        "cost": 137
+       }
+      }
+     ],
+     "return_leg": {
+      "from": "GOA-A-11",
+      "to": "GOA-H-08",
+      "minutes": 29,
+      "km": 19.5,
+      "mode": "cab",
+      "cost": 409
+     }
+    },
+    {
+     "day": 3,
+     "date": "2027-03-07",
+     "weekday": 6,
+     "window": [
+      "09:00",
+      "21:00"
+     ],
+     "lunch": [
+      "12:30",
+      "13:30"
+     ],
+     "stops": [
+      {
+       "attraction_id": "GOA-A-32",
+       "name": "Scuba Diving at Grand Island",
+       "arrive": "09:16",
+       "start": "09:16",
+       "end": "12:16",
+       "entry_cost": 2998,
+       "leg_from_prev": {
+        "from": "GOA-H-08",
+        "to": "GOA-A-32",
+        "minutes": 16,
+        "km": 11.8,
+        "mode": "cab",
+        "cost": 248
+       }
+      },
+      {
+       "attraction_id": "GOA-A-03",
+       "name": "Fort Aguada",
+       "arrive": "12:21",
+       "start": "13:30",
+       "end": "16:00",
+       "entry_cost": 40,
+       "leg_from_prev": {
+        "from": "GOA-A-32",
+        "to": "GOA-A-03",
+        "minutes": 5,
+        "km": 3.2,
+        "mode": "cab",
+        "cost": 67
+       }
+      },
+      {
+       "attraction_id": "GOA-A-05",
+       "name": "Se Cathedral",
+       "arrive": "16:32",
+       "start": "16:32",
+       "end": "17:17",
+       "entry_cost": 0,
+       "leg_from_prev": {
+        "from": "GOA-A-03",
+        "to": "GOA-A-05",
+        "minutes": 32,
+        "km": 24.5,
+        "mode": "cab",
+        "cost": 514
+       }
+      },
+      {
+       "attraction_id": "GOA-A-09",
+       "name": "Church of St Francis of Assisi",
+       "arrive": "17:18",
+       "start": "17:18",
+       "end": "18:03",
+       "entry_cost": 0,
+       "leg_from_prev": {
+        "from": "GOA-A-05",
+        "to": "GOA-A-09",
+        "minutes": 1,
+        "km": 0.2,
+        "mode": "cab",
+        "cost": 37
+       }
+      }
+     ],
+     "return_leg": {
+      "from": "GOA-A-09",
+      "to": "GOA-H-08",
+      "minutes": 16,
+      "km": 11.2,
+      "mode": "cab",
+      "cost": 235
+     }
+    },
+    {
+     "day": 4,
+     "date": "2027-03-08",
+     "weekday": 0,
+     "window": [
+      "09:00",
+      "21:00"
+     ],
+     "lunch": null,
+     "stops": [
+      {
+       "attraction_id": "GOA-A-28",
+       "name": "Mandrem Beach",
+       "arrive": "09:42",
+       "start": "09:42",
+       "end": "11:42",
+       "entry_cost": 0,
+       "leg_from_prev": {
+        "from": "GOA-H-08",
+        "to": "GOA-A-28",
+        "minutes": 42,
+        "km": 30.1,
+        "mode": "cab",
+        "cost": 631
+       }
+      },
+      {
+       "attraction_id": "GOA-A-23",
+       "name": "Morjim Beach",
+       "arrive": "11:53",
+       "start": "11:53",
+       "end": "13:53",
+       "entry_cost": 0,
+       "leg_from_prev": {
+        "from": "GOA-A-28",
+        "to": "GOA-A-23",
+        "minutes": 11,
+        "km": 5.6,
+        "mode": "cab",
+        "cost": 118
+       }
+      },
+      {
+       "attraction_id": "GOA-A-06",
+       "name": "Dona Paula",
+       "arrive": "14:47",
+       "start": "14:47",
+       "end": "15:17",
+       "entry_cost": 0,
+       "leg_from_prev": {
+        "from": "GOA-A-23",
+        "to": "GOA-A-06",
+        "minutes": 54,
+        "km": 34.2,
+        "mode": "cab",
+        "cost": 717
+       }
+      },
+      {
+       "attraction_id": "GOA-A-24",
+       "name": "Bogmalo Beach",
+       "arrive": "15:59",
+       "start": "15:59",
+       "end": "17:59",
+       "entry_cost": 0,
+       "leg_from_prev": {
+        "from": "GOA-A-06",
+        "to": "GOA-A-24",
+        "minutes": 42,
+        "km": 30.4,
+        "mode": "cab",
+        "cost": 637
+       }
+      }
+     ],
+     "return_leg": {
+      "from": "GOA-A-24",
+      "to": "GOA-H-08",
+      "minutes": 37,
+      "km": 28.2,
+      "mode": "cab",
+      "cost": 591
+     }
+    },
+    {
+     "day": 5,
+     "date": "2027-03-09",
+     "weekday": 1,
+     "window": [
+      "09:00",
+      "21:00"
+     ],
+     "lunch": [
+      "13:30",
+      "14:30"
+     ],
+     "stops": [
+      {
+       "attraction_id": "GOA-A-20",
+       "name": "Candolim Beach",
+       "arrive": "09:16",
+       "start": "09:16",
+       "end": "11:16",
+       "entry_cost": 0,
+       "leg_from_prev": {
+        "from": "GOA-H-08",
+        "to": "GOA-A-20",
+        "minutes": 16,
+        "km": 11.5,
+        "mode": "cab",
+        "cost": 241
+       }
+      },
+      {
+       "attraction_id": "GOA-A-22",
+       "name": "Sinquerim Beach",
+       "arrive": "11:20",
+       "start": "11:20",
+       "end": "13:20",
+       "entry_cost": 0,
+       "leg_from_prev": {
+        "from": "GOA-A-20",
+        "to": "GOA-A-22",
+        "minutes": 4,
+        "km": 2.7,
+        "mode": "cab",
+        "cost": 57
+       }
+      },
+      {
+       "attraction_id": "GOA-A-21",
+       "name": "Coco Beach",
+       "arrive": "13:30",
+       "start": "14:30",
+       "end": "16:30",
+       "entry_cost": 0,
+       "leg_from_prev": {
+        "from": "GOA-A-22",
+        "to": "GOA-A-21",
+        "minutes": 10,
+        "km": 5.0,
+        "mode": "cab",
+        "cost": 105
+       }
+      }
+     ],
+     "return_leg": {
+      "from": "GOA-A-21",
+      "to": "GOA-H-08",
+      "minutes": 16,
+      "km": 9.6,
+      "mode": "cab",
+      "cost": 201
+     }
+    },
+    {
+     "day": 6,
+     "date": "2027-03-10",
+     "weekday": 2,
+     "window": [
+      "09:00",
+      "20:27"
+     ],
+     "lunch": [
+      "12:30",
+      "13:30"
+     ],
+     "stops": [
+      {
+       "attraction_id": "GOA-A-29",
+       "name": "Arossim Beach",
+       "arrive": "09:34",
+       "start": "09:34",
+       "end": "11:34",
+       "entry_cost": 0,
+       "leg_from_prev": {
+        "from": "GOA-H-08",
+        "to": "GOA-A-29",
+        "minutes": 34,
+        "km": 27.7,
+        "mode": "cab",
+        "cost": 581
+       }
+      },
+      {
+       "attraction_id": "GOA-A-18",
+       "name": "Calangute Beach",
+       "arrive": "12:26",
+       "start": "13:30",
+       "end": "15:30",
+       "entry_cost": 0,
+       "leg_from_prev": {
+        "from": "GOA-A-29",
+        "to": "GOA-A-18",
+        "minutes": 52,
+        "km": 39.4,
+        "mode": "cab",
+        "cost": 826
+       }
+      }
+     ],
+     "return_leg": {
+      "from": "GOA-A-18",
+      "to": "GOA-H-08",
+      "minutes": 20,
+      "km": 14.3,
+      "mode": "cab",
+      "cost": 300
+     }
+    }
+   ],
+   "budget": {
+    "outbound": 3120,
+    "return": 3120,
+    "stay": 39445,
+    "food": 54000,
+    "entry_fees": 6816,
+    "local_travel": 8165,
+    "total": 114666,
+    "usable_budget": 260100,
+    "contingency": 28900,
+    "budget_total": 289000,
+    "estimate_label": "Estimated prices, compiled Nov 2026"
+   },
+   "near_misses": [
+    {
+     "attraction_id": "GOA-A-08",
+     "name": "Miramar Beach",
+     "reason": "time"
+    },
+    {
+     "attraction_id": "GOA-A-01",
+     "name": "Basilica of Bom Jesus",
+     "reason": "time"
+    },
+    {
+     "attraction_id": "GOA-A-15",
+     "name": "Our Lady of the Mount Chapel",
+     "reason": "time"
+    },
+    {
+     "attraction_id": "GOA-A-02",
+     "name": "Mangueshi Temple",
+     "reason": "time"
+    },
+    {
+     "attraction_id": "GOA-A-04",
+     "name": "Our Lady of the Immaculate Conception Church",
+     "reason": "time"
+    }
+   ],
+   "solver": {
+    "hotel_candidates": 1,
+    "feedback_iters": 0,
+    "repairs": 0,
+    "solve_ms": 2791
+   }
+  },
+  "info": {
+   "prompt_chars": 3430,
+   "choice": {
+    "outbound": 0,
+    "return": 0,
+    "hotel_id": "GOA-H-08",
+    "days": [
+     {
+      "day": 1,
+      "stops": [
+       "GOA-A-29",
+       "GOA-A-18",
+       "GOA-A-16",
+       "GOA-A-31",
+       "GOA-A-33"
+      ]
+     },
+     {
+      "day": 2,
+      "stops": [
+       "GOA-A-19",
+       "GOA-A-17",
+       "GOA-A-30",
+       "GOA-A-11"
+      ]
+     },
+     {
+      "day": 3,
+      "stops": [
+       "GOA-A-32",
+       "GOA-A-03",
+       "GOA-A-05",
+       "GOA-A-09"
+      ]
+     },
+     {
+      "day": 4,
+      "stops": [
+       "GOA-A-28",
+       "GOA-A-23",
+       "GOA-A-06",
+       "GOA-A-24"
+      ]
+     },
+     {
+      "day": 5,
+      "stops": [
+       "GOA-A-20",
+       "GOA-A-22",
+       "GOA-A-21"
+      ]
+     },
+     {
+      "day": 6,
+      "stops": [
+       "GOA-A-29",
+       "GOA-A-18"
+      ]
+     }
+    ]
+   },
+   "seconds": 2.79
+  }
+ },
+ {
+  "trip": "T08",
+  "plan": {
+   "status": "ok",
+   "variant": null,
+   "dataset_version": "1.0 (2026-11)",
+   "request_hash": "sha256:3805b745a68a1761e89dc52c148a1ee1afa4f80e1921e94ca357bc822810313f",
+   "value": 526.8,
+   "transport": {
+    "outbound": {
+     "mode": "bus",
+     "class": "ACS",
+     "depart": "20:10",
+     "arrive_centre": "07:03",
+     "minutes": 660,
+     "overnight": true,
+     "cost": 1175
+    },
+    "return": {
+     "mode": "bus",
+     "class": "ACS",
+     "leave_centre": "20:57",
+     "arrive_origin": "07:50",
+     "minutes": 660,
+     "overnight": true,
+     "cost": 1175
+    }
+   },
+   "hotel": {
+    "hotel_id": "MUN-H-04",
+    "name": "Rhythm Stays",
+    "tier": "mid",
+    "nights": 3,
+    "rooms": 1,
+    "price_per_room_night": 3004,
+    "cost": 9012
+   },
+   "days": [
+    {
+     "day": 1,
+     "date": "2026-12-26",
+     "weekday": 5,
+     "window": [
+      "09:00",
+      "17:00"
+     ],
+     "lunch": [
+      "12:30",
+      "13:30"
+     ],
+     "stops": [
+      {
+       "attraction_id": "MUN-A-03",
+       "name": "Mattupetty Dam",
+       "arrive": "09:36",
+       "start": "09:36",
+       "end": "10:06",
+       "entry_cost": 0,
+       "leg_from_prev": {
+        "from": "MUN-H-04",
+        "to": "MUN-A-03",
+        "minutes": 36,
+        "km": 22.9,
+        "mode": "cab",
+        "cost": 480
+       }
+      },
+      {
+       "attraction_id": "MUN-A-05",
+       "name": "Echo Point",
+       "arrive": "10:16",
+       "start": "10:16",
+       "end": "10:46",
+       "entry_cost": 0,
+       "leg_from_prev": {
+        "from": "MUN-A-03",
+        "to": "MUN-A-05",
+        "minutes": 10,
+        "km": 6.0,
+        "mode": "cab",
+        "cost": 126
+       }
+      },
+      {
+       "attraction_id": "MUN-A-15",
+       "name": "Tea Paddies Panorama",
+       "arrive": "11:07",
+       "start": "11:07",
+       "end": "11:37",
+       "entry_cost": 0,
+       "leg_from_prev": {
+        "from": "MUN-A-05",
+        "to": "MUN-A-15",
+        "minutes": 21,
+        "km": 12.5,
+        "mode": "cab",
+        "cost": 262
+       }
+      }
+     ],
+     "return_leg": {
+      "from": "MUN-A-15",
+      "to": "MUN-H-04",
+      "minutes": 25,
+      "km": 16.4,
+      "mode": "cab",
+      "cost": 344
+     }
+    },
+    {
+     "day": 2,
+     "date": "2026-12-27",
+     "weekday": 6,
+     "window": [
+      "09:00",
+      "17:00"
+     ],
+     "lunch": [
+      "13:51",
+      "14:51"
+     ],
+     "stops": [
+      {
+       "attraction_id": "MUN-A-06",
+       "name": "Top Station",
+       "arrive": "10:21",
+       "start": "10:21",
+       "end": "10:51",
+       "entry_cost": 0,
+       "leg_from_prev": {
+        "from": "MUN-H-04",
+        "to": "MUN-A-06",
+        "minutes": 81,
+        "km": 47.8,
+        "mode": "cab",
+        "cost": 1002
+       }
+      },
+      {
+       "attraction_id": "MUN-A-04",
+       "name": "Kundala Dam",
+       "arrive": "11:27",
+       "start": "11:27",
+       "end": "11:57",
+       "entry_cost": 0,
+       "leg_from_prev": {
+        "from": "MUN-A-06",
+        "to": "MUN-A-04",
+        "minutes": 36,
+        "km": 16.5,
+        "mode": "cab",
+        "cost": 346
+       }
+      },
+      {
+       "attraction_id": "MUN-A-20",
+       "name": "Sunset Point",
+       "arrive": "13:14",
+       "start": "13:14",
+       "end": "13:44",
+       "entry_cost": 0,
+       "leg_from_prev": {
+        "from": "MUN-A-04",
+        "to": "MUN-A-20",
+        "minutes": 77,
+        "km": 44.3,
+        "mode": "cab",
+        "cost": 928
+       }
+      }
+     ],
+     "return_leg": {
+      "from": "MUN-A-20",
+      "to": "MUN-H-04",
+      "minutes": 7,
+      "km": 4.2,
+      "mode": "cab",
+      "cost": 88
+     }
+    },
+    {
+     "day": 3,
+     "date": "2026-12-28",
+     "weekday": 0,
+     "window": [
+      "09:00",
+      "17:00"
+     ],
+     "lunch": [
+      "13:05",
+      "14:05"
+     ],
+     "stops": [
+      {
+       "attraction_id": "MUN-A-12",
+       "name": "Periya Canal Waterfall",
+       "arrive": "09:30",
+       "start": "09:30",
+       "end": "10:00",
+       "entry_cost": 0,
+       "leg_from_prev": {
+        "from": "MUN-H-04",
+        "to": "MUN-A-12",
+        "minutes": 30,
+        "km": 23.1,
+        "mode": "cab",
+        "cost": 484
+       }
+      },
+      {
+       "attraction_id": "MUN-A-19",
+       "name": "Anayirangal Dam View",
+       "arrive": "10:13",
+       "start": "10:13",
+       "end": "10:43",
+       "entry_cost": 0,
+       "leg_from_prev": {
+        "from": "MUN-A-12",
+        "to": "MUN-A-19",
+        "minutes": 13,
+        "km": 9.2,
+        "mode": "cab",
+        "cost": 193
+       }
+      },
+      {
+       "attraction_id": "MUN-A-22",
+       "name": "Hydel Park",
+       "arrive": "11:20",
+       "start": "11:20",
+       "end": "12:50",
+       "entry_cost": 0,
+       "leg_from_prev": {
+        "from": "MUN-A-19",
+        "to": "MUN-A-22",
+        "minutes": 37,
+        "km": 28.6,
+        "mode": "cab",
+        "cost": 600
+       }
+      }
+     ],
+     "return_leg": {
+      "from": "MUN-A-22",
+      "to": "MUN-H-04",
+      "minutes": 15,
+      "km": 9.6,
+      "mode": "cab",
+      "cost": 201
+     }
+    },
+    {
+     "day": 4,
+     "date": "2026-12-29",
+     "weekday": 1,
+     "window": [
+      "09:00",
+      "17:00"
+     ],
+     "lunch": null,
+     "stops": [
+      {
+       "attraction_id": "MUN-A-02",
+       "name": "KDHP Tea Museum",
+       "arrive": "09:21",
+       "start": "10:00",
+       "end": "12:00",
+       "entry_cost": 75,
+       "leg_from_prev": {
+        "from": "MUN-H-04",
+        "to": "MUN-A-02",
+        "minutes": 21,
+        "km": 14.0,
+        "mode": "cab",
+        "cost": 294
+       }
+      },
+      {
+       "attraction_id": "MUN-A-21",
+       "name": "Meenuliyan Para",
+       "arrive": "13:04",
+       "start": "13:04",
+       "end": "13:34",
+       "entry_cost": 0,
+       "leg_from_prev": {
+        "from": "MUN-A-02",
+        "to": "MUN-A-21",
+        "minutes": 64,
+        "km": 47.0,
+        "mode": "cab",
+        "cost": 985
+       }
+      },
+      {
+       "attraction_id": "MUN-A-14",
+       "name": "Photo Point",
+       "arrive": "14:42",
+       "start": "14:42",
+       "end": "15:12",
+       "entry_cost": 0,
+       "leg_from_prev": {
+        "from": "MUN-A-21",
+        "to": "MUN-A-14",
+        "minutes": 68,
+        "km": 49.6,
+        "mode": "cab",
+        "cost": 1039
+       }
+      }
+     ],
+     "return_leg": {
+      "from": "MUN-A-14",
+      "to": "MUN-H-04",
+      "minutes": 25,
+      "km": 16.6,
+      "mode": "cab",
+      "cost": 348
+     }
+    }
+   ],
+   "budget": {
+    "outbound": 1175,
+    "return": 1175,
+    "stay": 9012,
+    "food": 6000,
+    "entry_fees": 75,
+    "local_travel": 7720,
+    "total": 25157,
+    "usable_budget": 19350,
+    "contingency": 2150,
+    "budget_total": 21500,
+    "estimate_label": "Estimated prices, compiled Nov 2026"
+   },
+   "near_misses": [
+    {
+     "attraction_id": "MUN-A-09",
+     "name": "Cheeyappara Waterfalls",
+     "reason": "budget"
+    },
+    {
+     "attraction_id": "MUN-A-08",
+     "name": "Attukad Waterfall",
+     "reason": "budget"
+    },
+    {
+     "attraction_id": "MUN-A-10",
+     "name": "Valara Waterfalls",
+     "reason": "budget"
+    },
+    {
+     "attraction_id": "MUN-A-11",
+     "name": "Ripple Waterfalls",
+     "reason": "budget"
+    },
+    {
+     "attraction_id": "MUN-A-13",
+     "name": "Pothamedu Viewpoint",
+     "reason": "budget"
+    }
+   ],
+   "solver": {
+    "hotel_candidates": 1,
+    "feedback_iters": 0,
+    "repairs": 0,
+    "solve_ms": 2588
+   }
+  },
+  "info": {
+   "prompt_chars": 3258,
+   "choice": {
+    "outbound": 3,
+    "return": 3,
+    "hotel_id": "MUN-H-04",
+    "days": [
+     {
+      "day": 1,
+      "stops": [
+       "MUN-A-03",
+       "MUN-A-05",
+       "MUN-A-15"
+      ]
+     },
+     {
+      "day": 2,
+      "stops": [
+       "MUN-A-06",
+       "MUN-A-04",
+       "MUN-A-20"
+      ]
+     },
+     {
+      "day": 3,
+      "stops": [
+       "MUN-A-12",
+       "MUN-A-19",
+       "MUN-A-22"
+      ]
+     },
+     {
+      "day": 4,
+      "stops": [
+       "MUN-A-02",
+       "MUN-A-21",
+       "MUN-A-14"
+      ]
+     }
+    ]
+   },
+   "seconds": 2.59
+  }
+ },
+ {
+  "trip": "T09",
+  "plan": {
+   "status": "ok",
+   "variant": null,
+   "dataset_version": "1.0 (2026-11)",
+   "request_hash": "sha256:e667aca47ea175aee4052763a97129151c72b83e31b926364f0a04ae94817cdd",
+   "value": 440.5,
+   "transport": {
+    "outbound": {
+     "mode": "train",
+     "class": "SL",
+     "depart": "18:00",
+     "arrive_centre": "07:03",
+     "minutes": 788,
+     "overnight": true,
+     "cost": 795
+    },
+    "return": {
+     "mode": "train",
+     "class": "SL",
+     "leave_centre": "20:57",
+     "arrive_origin": "10:00",
+     "minutes": 788,
+     "overnight": true,
+     "cost": 795
+    }
+   },
+   "hotel": {
+    "hotel_id": "RSH-H-04",
+    "name": "Sitara Premium Gangotri Palace, 1km Distance from New Glass Bridge - Tapovan #privateparking",
+    "tier": "mid",
+    "nights": 2,
+    "rooms": 1,
+    "price_per_room_night": 3004,
+    "cost": 6008
+   },
+   "days": [
+    {
+     "day": 1,
+     "date": "2027-02-17",
+     "weekday": 2,
+     "window": [
+      "09:00",
+      "19:00"
+     ],
+     "lunch": [
+      "12:30",
+      "13:30"
+     ],
+     "stops": [
+      {
+       "attraction_id": "RSH-A-01",
+       "name": "Neelkanth Mahadev Temple",
+       "arrive": "14:00",
+       "start": "14:00",
+       "end": "14:45",
+       "entry_cost": 0,
+       "leg_from_prev": {
+        "from": "RSH-H-04",
+        "to": "RSH-A-01",
+        "minutes": 30,
+        "km": 22.1,
+        "mode": "cab",
+        "cost": 463
+       }
+      },
+      {
+       "attraction_id": "RSH-A-02",
+       "name": "Beatles Ashram",
+       "arrive": "15:19",
+       "start": "15:19",
+       "end": "16:49",
+       "entry_cost": 300,
+       "leg_from_prev": {
+        "from": "RSH-A-01",
+        "to": "RSH-A-02",
+        "minutes": 34,
+        "km": 23.6,
+        "mode": "cab",
+        "cost": 495
+       }
+      },
+      {
+       "attraction_id": "RSH-A-04",
+       "name": "Parmarth Niketan Ganga Aarti",
+       "arrive": "16:52",
+       "start": "17:15",
+       "end": "18:00",
+       "entry_cost": 0,
+       "leg_from_prev": {
+        "from": "RSH-A-02",
+        "to": "RSH-A-04",
+        "minutes": 3,
+        "km": 1.6,
+        "mode": "cab",
+        "cost": 37
+       }
+      }
+     ],
+     "return_leg": {
+      "from": "RSH-A-04",
+      "to": "RSH-H-04",
+      "minutes": 19,
+      "km": 11.0,
+      "mode": "cab",
+      "cost": 231
+     }
+    },
+    {
+     "day": 2,
+     "date": "2027-02-18",
+     "weekday": 3,
+     "window": [
+      "09:00",
+      "19:00"
+     ],
+     "lunch": [
+      "13:24",
+      "14:24"
+     ],
+     "stops": [
+      {
+       "attraction_id": "RSH-A-25",
+       "name": "River Rafting from Shivpuri",
+       "arrive": "09:21",
+       "start": "09:21",
+       "end": "12:21",
+       "entry_cost": 1600,
+       "leg_from_prev": {
+        "from": "RSH-H-04",
+        "to": "RSH-A-25",
+        "minutes": 21,
+        "km": 13.9,
+        "mode": "cab",
+        "cost": 292
+       }
+      },
+      {
+       "attraction_id": "RSH-A-10",
+       "name": "Kunjapuri Temple",
+       "arrive": "13:24",
+       "start": "14:24",
+       "end": "15:09",
+       "entry_cost": 0,
+       "leg_from_prev": {
+        "from": "RSH-A-25",
+        "to": "RSH-A-10",
+        "minutes": 63,
+        "km": 40.3,
+        "mode": "cab",
+        "cost": 845
+       }
+      },
+      {
+       "attraction_id": "RSH-A-22",
+       "name": "Chotiwala",
+       "arrive": "16:08",
+       "start": "16:08",
+       "end": "17:38",
+       "entry_cost": 0,
+       "leg_from_prev": {
+        "from": "RSH-A-10",
+        "to": "RSH-A-22",
+        "minutes": 59,
+        "km": 37.0,
+        "mode": "cab",
+        "cost": 775
+       }
+      }
+     ],
+     "return_leg": {
+      "from": "RSH-A-22",
+      "to": "RSH-H-04",
+      "minutes": 18,
+      "km": 10.6,
+      "mode": "cab",
+      "cost": 222
+     }
+    },
+    {
+     "day": 3,
+     "date": "2027-02-19",
+     "weekday": 4,
+     "window": [
+      "09:00",
+      "19:00"
+     ],
+     "lunch": [
+      "12:36",
+      "13:36"
+     ],
+     "stops": [
+      {
+       "attraction_id": "RSH-A-06",
+       "name": "Triveni Ghat",
+       "arrive": "09:09",
+       "start": "09:09",
+       "end": "09:39",
+       "entry_cost": 0,
+       "leg_from_prev": {
+        "from": "RSH-H-04",
+        "to": "RSH-A-06",
+        "minutes": 9,
+        "km": 4.3,
+        "mode": "cab",
+        "cost": 90
+       }
+      },
+      {
+       "attraction_id": "RSH-A-15",
+       "name": "Yoga Niketan Ashram",
+       "arrive": "09:48",
+       "start": "09:48",
+       "end": "10:33",
+       "entry_cost": 0,
+       "leg_from_prev": {
+        "from": "RSH-A-06",
+        "to": "RSH-A-15",
+        "minutes": 9,
+        "km": 4.3,
+        "mode": "cab",
+        "cost": 90
+       }
+      },
+      {
+       "attraction_id": "RSH-A-23",
+       "name": "Little Buddha Cafe",
+       "arrive": "10:51",
+       "start": "10:51",
+       "end": "12:21",
+       "entry_cost": 0,
+       "leg_from_prev": {
+        "from": "RSH-A-15",
+        "to": "RSH-A-23",
+        "minutes": 18,
+        "km": 10.9,
+        "mode": "cab",
+        "cost": 229
+       }
+      }
+     ],
+     "return_leg": {
+      "from": "RSH-A-23",
+      "to": "RSH-H-04",
+      "minutes": 15,
+      "km": 9.2,
+      "mode": "cab",
+      "cost": 193
+     }
+    }
+   ],
+   "budget": {
+    "outbound": 795,
+    "return": 795,
+    "stay": 6008,
+    "food": 7650,
+    "entry_fees": 1900,
+    "local_travel": 3962,
+    "total": 21110,
+    "usable_budget": 27000,
+    "contingency": 3000,
+    "budget_total": 30000,
+    "estimate_label": "Estimated prices, compiled Nov 2026"
+   },
+   "near_misses": [
+    {
+     "attraction_id": "RSH-A-07",
+     "name": "Trayambakeshwar Temple",
+     "reason": "time"
+    },
+    {
+     "attraction_id": "RSH-A-08",
+     "name": "Sri Bharat Mandir",
+     "reason": "time"
+    },
+    {
+     "attraction_id": "RSH-A-09",
+     "name": "Vashishta Gufa",
+     "reason": "time"
+    },
+    {
+     "attraction_id": "RSH-A-12",
+     "name": "Gurdwara Sri Hemkund Sahib",
+     "reason": "time"
+    },
+    {
+     "attraction_id": "RSH-A-13",
+     "name": "Ved Niketan Dham",
+     "reason": "time"
+    }
+   ],
+   "solver": {
+    "hotel_candidates": 1,
+    "feedback_iters": 0,
+    "repairs": 0,
+    "solve_ms": 2447
+   }
+  },
+  "info": {
+   "prompt_chars": 3493,
+   "choice": {
+    "outbound": 0,
+    "return": 0,
+    "hotel_id": "RSH-H-04",
+    "days": [
+     {
+      "day": 1,
+      "stops": [
+       "RSH-A-01",
+       "RSH-A-02",
+       "RSH-A-04"
+      ]
+     },
+     {
+      "day": 2,
+      "stops": [
+       "RSH-A-25",
+       "RSH-A-10",
+       "RSH-A-22"
+      ]
+     },
+     {
+      "day": 3,
+      "stops": [
+       "RSH-A-06",
+       "RSH-A-15",
+       "RSH-A-23"
+      ]
+     }
+    ]
+   },
+   "seconds": 2.45
+  }
+ },
+ {
+  "trip": "T13",
+  "plan": {
+   "status": "ok",
+   "variant": null,
+   "dataset_version": "1.0 (2026-11)",
+   "request_hash": "sha256:c6e4fe60f05cd505c0539f6cd93555fa1c667b0e54a8da063aa348e1bbdcb216",
+   "value": 847.38,
+   "transport": {
+    "outbound": {
+     "mode": "train",
+     "class": "SL",
+     "depart": "13:05",
+     "arrive_centre": "07:09",
+     "minutes": 1087,
+     "overnight": true,
+     "cost": 1454
+    },
+    "return": {
+     "mode": "train",
+     "class": "SL",
+     "leave_centre": "20:51",
+     "arrive_origin": "14:55",
+     "minutes": 1087,
+     "overnight": true,
+     "cost": 1454
+    }
+   },
+   "hotel": {
+    "hotel_id": "DEL-H-08",
+    "name": "The Empire Palace , New Delhi",
+    "tier": "premium",
+    "nights": 3,
+    "rooms": 1,
+    "price_per_room_night": 8918,
+    "cost": 26754
+   },
+   "days": [
+    {
+     "day": 1,
+     "date": "2026-12-30",
+     "weekday": 2,
+     "window": [
+      "09:00",
+      "18:00"
+     ],
+     "lunch": [
+      "12:30",
+      "13:30"
+     ],
+     "stops": [
+      {
+       "attraction_id": "DEL-A-01",
+       "name": "Red Fort",
+       "arrive": "09:08",
+       "start": "09:08",
+       "end": "11:38",
+       "entry_cost": 70,
+       "leg_from_prev": {
+        "from": "DEL-H-08",
+        "to": "DEL-A-01",
+        "minutes": 8,
+        "km": 4.5,
+        "mode": "cab",
+        "cost": 110
+       }
+      },
+      {
+       "attraction_id": "DEL-A-06",
+       "name": "Jama Masjid",
+       "arrive": "11:42",
+       "start": "11:42",
+       "end": "12:27",
+       "entry_cost": 0,
+       "leg_from_prev": {
+        "from": "DEL-A-01",
+        "to": "DEL-A-06",
+        "minutes": 4,
+        "km": 1.9,
+        "mode": "cab",
+        "cost": 58
+       }
+      },
+      {
+       "attraction_id": "DEL-A-10",
+       "name": "Chandni Chowk",
+       "arrive": "12:30",
+       "start": "13:30",
+       "end": "15:00",
+       "entry_cost": 0,
+       "leg_from_prev": {
+        "from": "DEL-A-06",
+        "to": "DEL-A-10",
+        "minutes": 3,
+        "km": 1.1,
+        "mode": "cab",
+        "cost": 42
+       }
+      },
+      {
+       "attraction_id": "DEL-A-28",
+       "name": "Khari Baoli Spice Market",
+       "arrive": "15:03",
+       "start": "15:03",
+       "end": "16:33",
+       "entry_cost": 0,
+       "leg_from_prev": {
+        "from": "DEL-A-10",
+        "to": "DEL-A-28",
+        "minutes": 3,
+        "km": 1.8,
+        "mode": "cab",
+        "cost": 56
+       }
+      }
+     ],
+     "return_leg": {
+      "from": "DEL-A-28",
+      "to": "DEL-H-08",
+      "minutes": 6,
+      "km": 2.4,
+      "mode": "cab",
+      "cost": 68
+     }
+    },
+    {
+     "day": 2,
+     "date": "2026-12-31",
+     "weekday": 3,
+     "window": [
+      "09:00",
+      "18:00"
+     ],
+     "lunch": [
+      "12:51",
+      "13:51"
+     ],
+     "stops": [
+      {
+       "attraction_id": "DEL-A-02",
+       "name": "Qutub Minar",
+       "arrive": "09:27",
+       "start": "09:27",
+       "end": "10:57",
+       "entry_cost": 70,
+       "leg_from_prev": {
+        "from": "DEL-H-08",
+        "to": "DEL-A-02",
+        "minutes": 27,
+        "km": 15.6,
+        "mode": "cab",
+        "cost": 332
+       }
+      },
+      {
+       "attraction_id": "DEL-A-03",
+       "name": "India Gate",
+       "arrive": "11:14",
+       "start": "11:14",
+       "end": "12:44",
+       "entry_cost": 0,
+       "leg_from_prev": {
+        "from": "DEL-A-02",
+        "to": "DEL-A-03",
+        "minutes": 17,
+        "km": 11.1,
+        "mode": "cab",
+        "cost": 242
+       }
+      },
+      {
+       "attraction_id": "DEL-A-13",
+       "name": "Lodi Gardens",
+       "arrive": "12:51",
+       "start": "13:51",
+       "end": "15:21",
+       "entry_cost": 0,
+       "leg_from_prev": {
+        "from": "DEL-A-03",
+        "to": "DEL-A-13",
+        "minutes": 7,
+        "km": 3.7,
+        "mode": "cab",
+        "cost": 94
+       }
+      },
+      {
+       "attraction_id": "DEL-A-04",
+       "name": "Lotus Temple",
+       "arrive": "15:41",
+       "start": "15:41",
+       "end": "16:26",
+       "entry_cost": 0,
+       "leg_from_prev": {
+        "from": "DEL-A-13",
+        "to": "DEL-A-04",
+        "minutes": 20,
+        "km": 9.5,
+        "mode": "cab",
+        "cost": 210
+       }
+      }
+     ],
+     "return_leg": {
+      "from": "DEL-A-04",
+      "to": "DEL-H-08",
+      "minutes": 28,
+      "km": 13.5,
+      "mode": "cab",
+      "cost": 290
+     }
+    },
+    {
+     "day": 3,
+     "date": "2027-01-01",
+     "weekday": 4,
+     "window": [
+      "09:00",
+      "18:00"
+     ],
+     "lunch": [
+      "12:35",
+      "13:35"
+     ],
+     "stops": [
+      {
+       "attraction_id": "DEL-A-11",
+       "name": "Humayun's Tomb",
+       "arrive": "09:17",
+       "start": "09:17",
+       "end": "10:47",
+       "entry_cost": 70,
+       "leg_from_prev": {
+        "from": "DEL-H-08",
+        "to": "DEL-A-11",
+        "minutes": 17,
+        "km": 8.0,
+        "mode": "cab",
+        "cost": 180
+       }
+      },
+      {
+       "attraction_id": "DEL-A-05",
+       "name": "Jantar Mantar",
+       "arrive": "11:01",
+       "start": "11:01",
+       "end": "12:31",
+       "entry_cost": 40,
+       "leg_from_prev": {
+        "from": "DEL-A-11",
+        "to": "DEL-A-05",
+        "minutes": 14,
+        "km": 5.9,
+        "mode": "cab",
+        "cost": 138
+       }
+      },
+      {
+       "attraction_id": "DEL-A-19",
+       "name": "National Museum",
+       "arrive": "12:35",
+       "start": "13:35",
+       "end": "15:35",
+       "entry_cost": 40,
+       "leg_from_prev": {
+        "from": "DEL-A-05",
+        "to": "DEL-A-19",
+        "minutes": 4,
+        "km": 2.0,
+        "mode": "cab",
+        "cost": 60
+       }
+      },
+      {
+       "attraction_id": "DEL-A-07",
+       "name": "Akshardham",
+       "arrive": "15:55",
+       "start": "15:55",
+       "end": "16:40",
+       "entry_cost": 0,
+       "leg_from_prev": {
+        "from": "DEL-A-19",
+        "to": "DEL-A-07",
+        "minutes": 20,
+        "km": 10.7,
+        "mode": "cab",
+        "cost": 234
+       }
+      }
+     ],
+     "return_leg": {
+      "from": "DEL-A-07",
+      "to": "DEL-H-08",
+      "minutes": 22,
+      "km": 10.7,
+      "mode": "cab",
+      "cost": 234
+     }
+    },
+    {
+     "day": 4,
+     "date": "2027-01-02",
+     "weekday": 5,
+     "window": [
+      "09:00",
+      "18:00"
+     ],
+     "lunch": null,
+     "stops": [
+      {
+       "attraction_id": "DEL-A-22",
+       "name": "Tughlaqabad Fort",
+       "arrive": "09:35",
+       "start": "09:35",
+       "end": "12:05",
+       "entry_cost": 40,
+       "leg_from_prev": {
+        "from": "DEL-H-08",
+        "to": "DEL-A-22",
+        "minutes": 35,
+        "km": 19.1,
+        "mode": "cab",
+        "cost": 402
+       }
+      },
+      {
+       "attraction_id": "DEL-A-26",
+       "name": "Mehrauli Archaeological Park",
+       "arrive": "12:23",
+       "start": "12:23",
+       "end": "13:53",
+       "entry_cost": 0,
+       "leg_from_prev": {
+        "from": "DEL-A-22",
+        "to": "DEL-A-26",
+        "minutes": 18,
+        "km": 9.0,
+        "mode": "cab",
+        "cost": 200
+       }
+      },
+      {
+       "attraction_id": "DEL-A-31",
+       "name": "Hauz Khas Complex",
+       "arrive": "14:04",
+       "start": "14:04",
+       "end": "15:34",
+       "entry_cost": 40,
+       "leg_from_prev": {
+        "from": "DEL-A-26",
+        "to": "DEL-A-31",
+        "minutes": 11,
+        "km": 5.4,
+        "mode": "cab",
+        "cost": 128
+       }
+      },
+      {
+       "attraction_id": "DEL-A-09",
+       "name": "Raj Ghat",
+       "arrive": "15:58",
+       "start": "15:58",
+       "end": "17:28",
+       "entry_cost": 0,
+       "leg_from_prev": {
+        "from": "DEL-A-31",
+        "to": "DEL-A-09",
+        "minutes": 24,
+        "km": 12.7,
+        "mode": "cab",
+        "cost": 274
+       }
+      }
+     ],
+     "return_leg": {
+      "from": "DEL-A-09",
+      "to": "DEL-H-08",
+      "minutes": 10,
+      "km": 4.8,
+      "mode": "cab",
+      "cost": 116
+     }
+    }
+   ],
+   "budget": {
+    "outbound": 1454,
+    "return": 1454,
+    "stay": 26754,
+    "food": 48000,
+    "entry_fees": 370,
+    "local_travel": 3468,
+    "total": 81500,
+    "usable_budget": 124650,
+    "contingency": 13850,
+    "budget_total": 138500,
+    "estimate_label": "Estimated prices, compiled Nov 2026"
+   },
+   "near_misses": [
+    {
+     "attraction_id": "DEL-A-15",
+     "name": "Safdarjung's Tomb",
+     "reason": "time"
+    },
+    {
+     "attraction_id": "DEL-A-12",
+     "name": "Purana Qila",
+     "reason": "time"
+    },
+    {
+     "attraction_id": "DEL-A-20",
+     "name": "Feroz Shah Kotla",
+     "reason": "time"
+    },
+    {
+     "attraction_id": "DEL-A-08",
+     "name": "Gurdwara Bangla Sahib",
+     "reason": "time"
+    },
+    {
+     "attraction_id": "DEL-A-14",
+     "name": "Nizamuddin Dargah",
+     "reason": "time"
+    }
+   ],
+   "solver": {
+    "hotel_candidates": 1,
+    "feedback_iters": 0,
+    "repairs": 0,
+    "solve_ms": 2608
+   }
+  },
+  "info": {
+   "prompt_chars": 3410,
+   "choice": {
+    "outbound": 0,
+    "return": 0,
+    "hotel_id": "DEL-H-08",
+    "days": [
+     {
+      "day": 1,
+      "stops": [
+       "DEL-A-01",
+       "DEL-A-06",
+       "DEL-A-10",
+       "DEL-A-28"
+      ]
+     },
+     {
+      "day": 2,
+      "stops": [
+       "DEL-A-02",
+       "DEL-A-03",
+       "DEL-A-13",
+       "DEL-A-04"
+      ]
+     },
+     {
+      "day": 3,
+      "stops": [
+       "DEL-A-11",
+       "DEL-A-05",
+       "DEL-A-19",
+       "DEL-A-07"
+      ]
+     },
+     {
+      "day": 4,
+      "stops": [
+       "DEL-A-22",
+       "DEL-A-26",
+       "DEL-A-31",
+       "DEL-A-09"
+      ]
+     }
+    ]
+   },
+   "seconds": 2.61
+  }
+ }
+]

@@ -16,15 +16,16 @@ over valid plans. Times: Tripwise and greedy on this laptop; LLM-only includes t
 
 | Planner | Feasible trips with a valid plan | Failed plans | Violations (V-xx: trips) | Declined infeasible | Mean value | Total value | Mean budget use | Mean travel share | Median time | Distinct variants |
 |---|---|---|---|---|---|---|---|---|---|---|
-| Tripwise | 26/26 (100%) | 0 | none | 4/4 | 729.472 | 18966.3 | 72% | 16% | 154 ms | 2.423 |
-| Greedy | 26/26 (100%) | 0 | none | 4/4 | 645.475 | 16782.4 | 69% | 28% | 6 ms | – |
+| Tripwise | 26/26 (100%) | 0 | none | 4/4 | 729.472 | 18966.3 | 72% | 16% | 178 ms | 2.423 |
+| Greedy | 26/26 (100%) | 0 | none | 4/4 | 645.475 | 16782.4 | 69% | 28% | 8 ms | – |
 
 ## Same 10 trips (all three planners)
 
 | Planner | Feasible trips with a valid plan | Failed plans | Violations (V-xx: trips) | Declined infeasible | Mean value | Total value | Mean budget use | Mean travel share | Median time | Distinct variants |
 |---|---|---|---|---|---|---|---|---|---|---|
-| Tripwise | 10/10 (100%) | 0 | none | – | 714.961 | 7149.6 | 73% | 13% | 208 ms | 2.6 |
-| Greedy | 10/10 (100%) | 0 | none | – | 620.894 | 6208.9 | 69% | 27% | 6 ms | – |
+| Tripwise | 10/10 (100%) | 0 | none | – | 714.961 | 7149.6 | 73% | 13% | 250 ms | 2.6 |
+| Greedy | 10/10 (100%) | 0 | none | – | 620.894 | 6208.9 | 69% | 27% | 8 ms | – |
+| LLM-only | 2/10 (20%) | 0 | V-04: 1, V-05: 2, V-10: 6, V-11: 6 | – | 595.95 | 1191.9 | 73% | 23% | 2,780 ms | – |
 
 ![Feasibility](charts/feasibility.png)
 ![Value per trip](charts/value.png)
@@ -35,13 +36,13 @@ over valid plans. Times: Tripwise and greedy on this laptop; LLM-only includes t
 - **Feasibility.** Tripwise returned a validator-clean plan for 26/26 feasible trips and
   correctly declined 4/4 infeasible ones. Greedy, built on the same time and cost functions, was
   also clean (26/26): feasibility comes from the shared model, not from the optimiser.
-  LLM-only has not been run yet (`python eval/run_eval.py --llm`).
+  LLM-only produced valid plans for 2/10 of its trips (0 could not be used at all); violations seen: V-04 over the usable budget (1 trip), V-05 an activity repeated or not in the city (2 trips), V-10 a day too long or with too many activities (6 trips), V-11 the lunch rule broken (6 trips). A plan written by a language model needs the engine's checks before it can be trusted.
 - **Value.** Tripwise's mean value is 729.472 against greedy's 645.475, but greedy scored higher on
-  6 of 26 trips (T04, T06, T12, T16, T20, T23). On those trips greedy fits more activities (15 against
-  14.67 on average) for about the same share of the budget (0.68 against 0.68): the engine selects
-  activities in stage 1 on conservative estimates of time and cost and does not top up the plan after exact routing.
-  Over all trips budget use is similar (0.721 against 0.693). A post-routing fill step
-  is the clearest improvement to make next.
+  6 of 26 trips (T04, T06, T12, T16, T20, T23). On those trips greedy fits 15 activities against Tripwise's
+  14.67 on average and uses 0.68 of the usable budget against 0.68: stage 1 picks the set on
+  conservative estimates of time and cost, and the fill step after routing can add stops but not swap a chosen one for
+  a better one (see "Before and after the fill step" below). Over all trips budget use is similar
+  (0.721 against 0.693).
 - **Travel.** Tripwise routes each day (OR-Tools), so a smaller share of the day goes on local rides
   (0.156 against greedy's 0.277).
 - **Variants.** Tripwise showed 2.423 distinct variants per feasible trip on average.

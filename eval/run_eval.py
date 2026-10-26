@@ -275,7 +275,8 @@ def write_results(all30: dict, same10: dict, rows: list[dict], ten: list[str]):
         tw_stops_won=mean([stops[("tripwise", t)] for t in won]), gr_stops_won=mean([stops[("greedy", t)] for t in won]),
         llm_line=(f"LLM-only produced valid plans for {llm['valid']}/{llm['feasible_trips']} of its trips ({llm['failed']} "
                   "could not be used at all); violations seen: "
-                  + (", ".join(f"{k} ({v} trips)" for k, v in sorted(llm["violations"].items())) or "none")
+                  + (", ".join(f"{k} {CHECKS.get(k, '')} ({v} trip{'s' if v != 1 else ''})".replace("  ", " ")
+                               for k, v in sorted(llm["violations"].items())) or "none")
                   + ". A plan written by a language model needs the engine's checks before it can be trusted.")
         if llm else "LLM-only has not been run yet (`python eval/run_eval.py --llm`).")
     text = f"""# Evaluation results (Feature 008)
@@ -311,6 +312,10 @@ over valid plans. Times: Tripwise and greedy on this laptop; LLM-only includes t
 {HISTORY}
 """
     (ROOT / "eval" / "RESULTS.md").write_text(text, encoding="utf-8", newline="\n")
+
+
+CHECKS = {"V-04": "over the usable budget", "V-05": "an activity repeated or not in the city",
+          "V-10": "a day too long or with too many activities", "V-11": "the lunch rule broken"}
 
 
 HISTORY = """## Before and after the fill step (2026-10-26)

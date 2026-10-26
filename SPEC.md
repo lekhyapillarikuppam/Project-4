@@ -1819,7 +1819,7 @@ Traces to: FR-070, FR-071, NFR-001–NFR-004 · Depends on: 007
 
 #### 008 Tasks
 - [x] **T01** `eval/baselines/greedy.py` + `eval/baselines/llm_only.py` (Groq).
-- [ ] **T02** `eval/run_eval.py`: metrics, CSV, charts, RESULTS.md. · Check: EVAL-AT-01, EVAL-AT-02
+- [x] **T02** `eval/run_eval.py`: metrics, CSV, charts, RESULTS.md. · Check: EVAL-AT-01, EVAL-AT-02
 - [x] **T03** Check VM RAM and disk over SSH; deploy the backend (systemd, nginx, certbot); `/health` over HTTPS. Ask the user for the SSH host or key if it's not already configured.
 - [x] **T04** Deploy the frontend to Vercel (CLI or Git integration); set env and CORS. · Check: DEP-AT-01
 - [ ] **T05** Live timings + security checks. · Check: DEP-AT-02, DEP-AT-03; write `eval/LIVE.md`.
@@ -1889,8 +1889,8 @@ Update this table when a feature's tasks are written (fill **Tasks**) and when i
 | FR-060 | Curated data for 15 cities | 001 | DATA-FR-01–07 | 001 T01–T24 | DATA-AT-01, 03 | Pass |
 | FR-061 | Source and date on every record | 001 | DATA-FR-08 | 001 T06–T18, T26, F4 | DATA-AT-01, 05 | Pass |
 | FR-062 | Compilation month shown with prices | 001, 006 | DATA-FR-09 | 001 T06, T22, T24 | DATA-AT-03 | Pass |
-| FR-070 | Evaluation vs greedy and LLM-only | 008 | | | | Planned |
-| FR-071 | Chat intent test set | 008 | | | | Planned |
+| FR-070 | Evaluation vs greedy and LLM-only | 008 | EVAL-FR-01, 02, 04 | 008 T01, T02 | EVAL-AT-01, 02 | Pass |
+| FR-071 | Chat intent test set | 008 | EVAL-FR-03, AI-FR-03 | 007 T07 | AI-AT-03 | Pass |
 
 ### Non-functional requirements
 
@@ -1973,10 +1973,10 @@ Measured 2026-10-25 on the developer laptop (Windows 11, Python 3.11.9, OR-Tools
 | AI-FR-06 | Failure | 007 | FR-035 | Pass |
 | AI-FR-07 | Model and limits | 007 | NFR-004, NFR-005 | Pass |
 | AI-FR-08 | UI | 007 | FR-006, FR-031 | Pass |
-| EVAL-FR-01 | Baselines | 008 | FR-070 | Planned |
-| EVAL-FR-02 | Metrics per planner: | 008 | FR-070 | Planned |
-| EVAL-FR-03 | Chat intent accuracy from AI-AT-03 | 008 | FR-071 | Planned |
-| EVAL-FR-04 | python eval/run_eval.py regenerates eval/out/results.csv, three charts (PNG: fea | 008 | FR-070 | Planned |
+| EVAL-FR-01 | Baselines | 008 | FR-070 | Pass |
+| EVAL-FR-02 | Metrics per planner: | 008 | FR-070 | Pass |
+| EVAL-FR-03 | Chat intent accuracy from AI-AT-03 | 008 | FR-071 | Pass |
+| EVAL-FR-04 | python eval/run_eval.py regenerates eval/out/results.csv, three charts (PNG: fea | 008 | FR-070 | Pass |
 | DEP-FR-01 | Backend on the Azure VM: | 008 | NFR-003, NFR-004 | Planned |
 | DEP-FR-02 | Frontend on Vercel | 008 | NFR-003, NFR-004 | Planned |
 | DEP-FR-03 | Live checks: | 008 | NFR-001, NFR-002 | Planned |
@@ -2005,8 +2005,8 @@ Measured 2026-10-25 on the developer laptop (Windows 11, Python 3.11.9, OR-Tools
 | AI-AT-05 | Groq key removed | 007 | `tests/api/test_api_ai_failure.py`, `frontend/tests/ai-ui-chat.spec.ts` | Pass |
 | AI-AT-06 | Engine extensions | 007 | `tests/test_extensions.py`, `tests/api/test_api_extensions.py` | Pass |
 | AI-AT-07 | Chat timing over 10 messages, local | 007 | `eval/run_chat_changes.py` | Pass (p95 7.0 s) |
-| EVAL-AT-01 | `run_eval.py` | 008 | — | Planned |
-| EVAL-AT-02 | Re-run | 008 | — | Planned |
+| EVAL-AT-01 | `run_eval.py` | 008 | `eval/run_eval.py`, `eval/RESULTS.md` | Pass (Tripwise 26/26) |
+| EVAL-AT-02 | Re-run | 008 | `eval/out/results.csv` compared run to run | Pass (70/70 rows identical) |
 | DEP-AT-01 | Live full flow | 008 | — | Planned |
 | DEP-AT-02 | Live timings | 008 | — | Planned |
 | DEP-AT-03 | Security | 008 | — | Planned |
@@ -2056,6 +2056,13 @@ Real Groq `openai/gpt-oss-120b` (Developer tier) unless noted; backend suite 101
 | AI-AT-05 | Pass | 2026-10-26 | `tests/api/test_api_ai_failure.py` (no key: planning works, parse 503, explanations omitted with a notice, chat unavailable); `frontend/tests/ai-ui-chat.spec.ts` |
 | AI-AT-06 | Pass | 2026-10-26 | `tests/test_extensions.py`, `tests/api/test_api_extensions.py`: pins, day_hours, forced transport (V-14–16), `pin_impossible` |
 | AI-AT-07 | Pass | 2026-10-26 | Same run as AI-AT-04, API in-process on this laptop: p95 7.0 s, max 7.0 s, min 4.9 s (limit 8 s); each Groq call 1.0–1.5 s, the rest is re-planning |
+
+### Feature 008 acceptance results
+
+| Test | Result | Date | Evidence |
+|---|---|---|---|
+| EVAL-AT-01 | Pass | 2026-10-26 | `python eval/run_eval.py --llm`: `eval/out/results.csv`, 3 charts, `eval/RESULTS.md`. Tripwise 26/26 feasible trips valid (100%), 4/4 infeasible declined, mean value 729.5; greedy 26/26, 645.5; LLM-only 2/10 valid (V-10 and V-11 on 6 trips each) |
+| EVAL-AT-02 | Pass | 2026-10-26 | Second run (LLM-only reused from `eval/out/llm_only.json`): all 70 rows identical apart from `solve_ms` |
 
 ### Feature status
 
