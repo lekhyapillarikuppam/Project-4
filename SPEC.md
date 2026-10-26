@@ -1823,7 +1823,7 @@ Traces to: FR-070, FR-071, NFR-001–NFR-004 · Depends on: 007
 - [x] **T03** Check VM RAM and disk over SSH; deploy the backend (systemd, nginx, certbot); `/health` over HTTPS. Ask the user for the SSH host or key if it's not already configured.
 - [x] **T04** Deploy the frontend to Vercel (CLI or Git integration); set env and CORS. · Check: DEP-AT-01
 - [x] **T05** Live timings + security checks. · Check: DEP-AT-02, DEP-AT-03; write `eval/LIVE.md`.
-- [ ] **T06** README + architecture diagram. Update Part D for everything; mark 008 Done; final commit and push.
+- [x] **T06** README + architecture diagram. Update Part D for everything; mark 008 Done; final commit and push.
 
 **Left for the user:** the friend test (3+ people rating realism 1–5, recorded in `eval/LIVE.md`), the demo video, and the `data/spot_check.md` manual check.
 
@@ -1899,9 +1899,9 @@ Update this table when a feature's tasks are written (fill **Tasks**) and when i
 | NFR-001 | All variants ≤ 5 s p95 | 002 (merged from 003), 008 (merged from 009) | A7, DEP-FR-03 | 002 T19, 008 T05 | ENG-AT-08, VAR-AT-03, DEP-AT-02 | Pass (laptop p95 1.8 s; live p95 1.21 s over 30 trips) |
 | NFR-002 | Chat action ≤ 8 s p95 | 007, 008 (merged from 009) | AI-FR-03, DEP-FR-03 | 007 T09, 008 T05 | AI-AT-07, DEP-AT-02 | Fail live (laptop Pass p95 7.0 s; live p95 12.2 s and 13.0 s in two runs, each from one slow Groq response; 18 of 20 messages ≤ 5.1 s; cause in `eval/LIVE.md`) |
 | NFR-003 | Security | 004, 008 (merged from 009) | API-FR-01, 02, 11, 12, DEP-FR-01, 02 | 004 T03, T05; 008 T03–T05 | API-AT-01, 02, 07, DEP-AT-03 | Pass |
-| NFR-004 | Free tiers only | 008 (merged from 009) | | | | Planned |
+| NFR-004 | Free tiers only | 008 (merged from 009) | DEP-FR-01, 02, AI-FR-07 | 008 T03, T04 | Manual check of the accounts | Fail since 2026-10-26: the Groq account is on the Developer tier (Vercel Hobby, Neon free, Azure for Students and ORS free are unchanged); owner to amend Part B or return Groq to the free tier |
 | NFR-005 | LLM call limits | 007 | AI-FR-02, 03, 07 | 007 T04, T05, T08 | AI-AT-02, 04; `tests/api/test_api_ai_failure.py` (rate limit) | Pass |
-| NFR-006 | Browser support | 006 | UI-FR-08 | 006 T09 | UI-AT-07 (Chromium) | In progress (Chromium Pass; other browsers in 008) |
+| NFR-006 | Browser support | 006 | UI-FR-08 | 006 T09 | UI-AT-07 (Chromium) | In progress (Chromium Pass, locally and live in DEP-AT-01; Firefox, Safari and mobile left for the owner, `eval/LIVE.md`) |
 | NFR-007 | Accessibility basics | 006 | UI-FR-08 | 006 T08 | UI-AT-08, axe scan | Pass |
 | NFR-008 | Repeatable output | 002 | ENG-FR-10 | 002 T10–T12, T18 | ENG-AT-06 | Pass |
 | NFR-009 | One config file | 002 | ENG-FR-09 | 002 T02, T18 | ENG-AT-09 | Pass |
@@ -1977,10 +1977,10 @@ Measured 2026-10-25 on the developer laptop (Windows 11, Python 3.11.9, OR-Tools
 | EVAL-FR-02 | Metrics per planner: | 008 | FR-070 | Pass |
 | EVAL-FR-03 | Chat intent accuracy from AI-AT-03 | 008 | FR-071 | Pass |
 | EVAL-FR-04 | python eval/run_eval.py regenerates eval/out/results.csv, three charts (PNG: fea | 008 | FR-070 | Pass |
-| DEP-FR-01 | Backend on the Azure VM: | 008 | NFR-003, NFR-004 | Planned |
-| DEP-FR-02 | Frontend on Vercel | 008 | NFR-003, NFR-004 | Planned |
-| DEP-FR-03 | Live checks: | 008 | NFR-001, NFR-002 | Planned |
-| DEP-FR-04 | README.md covers what the app is, the architecture diagram (Mermaid), local run  | 008 | FR-070 | Planned |
+| DEP-FR-01 | Backend on the Azure VM: | 008 | NFR-003, NFR-004 | Pass |
+| DEP-FR-02 | Frontend on Vercel | 008 | NFR-003, NFR-004 | Pass |
+| DEP-FR-03 | Live checks: | 008 | NFR-001, NFR-002 | Pass (recorded in `eval/LIVE.md`; live chat p95 over NFR-002) |
+| DEP-FR-04 | README.md covers what the app is, the architecture diagram (Mermaid), local run  | 008 | FR-070 | Pass |
 | API-AT-01 | Sign up, log in, `/auth/me`; wrong password; duplicate email; expired token | 004 | — | Pass |
 | API-AT-02 | User B requests user A's trip, versions, chat and replan | 004 | — | Pass |
 | API-AT-03 | Each FR-001–FR-005 violation | 004 | — | Pass |
@@ -2007,7 +2007,7 @@ Measured 2026-10-25 on the developer laptop (Windows 11, Python 3.11.9, OR-Tools
 | AI-AT-07 | Chat timing over 10 messages, local | 007 | `eval/run_chat_changes.py` | Pass (p95 7.0 s) |
 | EVAL-AT-01 | `run_eval.py` | 008 | `eval/run_eval.py`, `eval/RESULTS.md` | Pass (Tripwise 26/26) |
 | EVAL-AT-02 | Re-run | 008 | `eval/out/results.csv` compared run to run | Pass (70/70 rows identical) |
-| DEP-AT-01 | Live full flow | 008 | — | Planned |
+| DEP-AT-01 | Live full flow | 008 | `frontend/tests-live/dep-at-01.spec.ts` | Pass |
 | DEP-AT-02 | Live timings | 008 | `eval/run_live.py`, `eval/LIVE.md` | Pass (variants p95 1.21 s; chat over 8 s, cause recorded) |
 | DEP-AT-03 | Security | 008 | `eval/LIVE.md` | Pass |
 
@@ -2063,6 +2063,7 @@ Real Groq `openai/gpt-oss-120b` (Developer tier) unless noted; backend suite 101
 |---|---|---|---|
 | EVAL-AT-01 | Pass | 2026-10-26 | `python eval/run_eval.py --llm`: `eval/out/results.csv`, 3 charts, `eval/RESULTS.md`. Tripwise 26/26 feasible trips valid (100%), 4/4 infeasible declined, mean value 729.5; greedy 26/26, 645.5; LLM-only 2/10 valid (V-10 and V-11 on 6 trips each) |
 | EVAL-AT-02 | Pass | 2026-10-26 | Second run (LLM-only reused from `eval/out/llm_only.json`): all 70 rows identical apart from `solve_ms` |
+| DEP-AT-01 | Pass | 2026-10-26 | `npx playwright test -c playwright.live.config.ts` on the deployed URLs: sign up, plan, choose, chat change to version 2, My Trips; 15 s, and 16.7 s again on the final deploy |
 | DEP-AT-02 | Pass (gap recorded) | 2026-10-26 | `eval/LIVE.md`: variants p95 1.21 s over 30 trips, 1.54 s over T01–T10 (limit 5 s). Chat, two runs on the final deploy: p95 12.2 s and 13.0 s (limit 8 s); in each run one message was slow because of Groq (a 10 s read timeout on the reply call; 3.6 s + 5.9 s calls), the other 18 took 2.5–5.1 s |
 | DEP-AT-03 | Pass | 2026-10-26 | `eval/LIVE.md`: HTTP → 308 HTTPS; CORS allows only the Vercel origin; port 8100 closed; no secrets in the working tree or 91 commits; `/etc/tripwise.env` root 600 |
 
@@ -2078,7 +2079,7 @@ Real Groq `openai/gpt-oss-120b` (Developer tier) unless noted; backend suite 101
 | 005 | Trip planning API | Merged into 004 | Merged into 004 | Merged into 004 | Merged into 004 |
 | 006 | Frontend | Approved | Approved | Approved | Done: UI-AT-01–09 Pass |
 | 007 | AI layer | Approved | Approved | Approved | Done: AI-AT-01–07 Pass |
-| 008 | Evaluation and deployment | Approved | — (tasks only) | Approved | — |
+| 008 | Evaluation and deployment | Approved | — (tasks only) | Approved | Done: EVAL-AT-01–02, DEP-AT-01–03 Pass (DEP-AT-02 with the live chat gap recorded); NFR-002 live and NFR-004 not met, see Part D |
 | 009 | Deployment | Merged into 008 | Merged into 008 | Merged into 008 | Merged into 008 |
 
 ---
@@ -2236,3 +2237,4 @@ Real Groq `openai/gpt-oss-120b` (Developer tier) unless noted; backend suite 101
 | 2026-10-26 | C 008 DEP-FR-01 (ops) | Groq key rotated (old key exposed in a local transcript); VM env updated: only the `GROQ_API_KEY` line of `/etc/tripwise.env` replaced (root:root, 600, LF), `tripwise-api` restarted, health 200, one live chat change to version 2. The new key was copied into the repo-root `.env` (fingerprints match), and the stray `backend/.env` was deleted: nothing reads it (the API, tests and datatools load the root `.env`, the VM uses `/etc/tripwise.env`), and its other values were stale (a malformed `DATABASE_URL`, a non-production `JWT_SECRET`) | Security: the old key is revoked on Groq; one local `.env` only |
 | 2026-10-26 | C 008 EVAL-FR-01, eval pacing | Groq account on the Developer tier (250k tokens a minute): the eval scripts' fixed 15–60 s pauses and 5-minute refusal waits are replaced by config `groq.eval_pause_s` (1.5 s), `groq.eval_retry_wait_s` (10 s) and `groq.eval_retries` (6); EVAL-FR-01's "paced at 1 call per minute" now points at the config | Owner: the free-tier pacing is no longer needed; tunables belong in config |
 | 2026-10-26 | C 007 (AI-AT-03 fixes) | Name resolution drops a leading "the"/"a"/"an" ("the temple" asks which one, like "temple"); the tool `name` argument says to copy the traveller's words even when vague. AI-AT-03 re-run fresh on all 50: 45/50 = 90%, pass (was 43/50 on the resumed run); the remaining misses are in `eval/AI_AT_03.md` | AI-AT-03 resumed run: 86%, below the 90% threshold; 4 of 5 ambiguous messages got a specific activity instead of a clarifying question |
+| 2026-10-26 | D Traceability (008 T05, T06) | Backend redeployed before the live chat timing so it measured the final code. Live chat p95 12.2 s and 13.0 s (two runs), each from one slow Groq response: NFR-002 recorded as not met live, DEP-AT-02 passes on its "gap recorded with the cause" clause. NFR-004 recorded as not met: the Groq account moved to the Developer tier; Part B is unchanged pending the owner's decision | Report results as measured; a Part B change is the owner's call |

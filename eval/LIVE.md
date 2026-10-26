@@ -14,7 +14,8 @@ Each live run signs up one new `live-check-…@example.com` user on the producti
 `npx playwright test -c playwright.live.config.ts` (in `frontend/`; spec `tests-live/dep-at-01.spec.ts`, Chrome, no
 local servers, real Groq). It signs up, plans Delhi to Jaipur (2 people, ₹50,000), chooses the first variant, sends
 "Switch to a budget hotel" (the chat shows "Version 2 created" and the page moves to version 2), then opens My Trips
-and finds the trip. Passed in 15 s. Screenshot: `frontend/test-shots/live-my-trips.png`.
+and finds the trip. Passed in 15 s. Screenshot: `frontend/test-shots/live-my-trips.png`. Re-run on the final deploy
+(after the Groq key rotation and the last 007 changes): passed in 16.7 s.
 
 ## DEP-AT-02 — live timings: Pass (variants within NFR-001; chat over NFR-002 with the cause recorded)
 
