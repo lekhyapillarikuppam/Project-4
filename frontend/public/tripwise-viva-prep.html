@@ -1,0 +1,1006 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Tripwise Viva Prep</title>
+<meta name="description" content="Turn-by-turn notes on how Tripwise works, how plans are finalised, the AI assistant, and viva questions with answers.">
+<style>
+:root{--bg:#f6f5f1;--card:#ffffff;--ink:#1f1e1b;--dim:#6a6862;--line:#e3e1da;--accent:#2b5c8a;--accent-soft:#e8eff6;--prompt:#f1efe8;--code:#f4f3ee;--th:#f1efe8}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#141413;--card:#1d1d1b;--ink:#ebe9e3;--dim:#9c9a93;--line:#33322e;--accent:#8fb6dd;--accent-soft:#1d2a37;--prompt:#252420;--code:#191917;--th:#252420}}
+:root[data-theme="dark"]{--bg:#141413;--card:#1d1d1b;--ink:#ebe9e3;--dim:#9c9a93;--line:#33322e;--accent:#8fb6dd;--accent-soft:#1d2a37;--prompt:#252420;--code:#191917;--th:#252420}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;-webkit-text-size-adjust:100%}
+.wrap{max-width:860px;margin:0 auto;padding:32px 16px 80px}
+header h1{font-size:1.75rem;line-height:1.25;margin:0 0 6px;letter-spacing:-.01em}
+header p{margin:0;color:var(--dim)}
+.bar{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0 8px}
+button{font:inherit;font-size:.9rem;padding:7px 14px;border-radius:8px;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer}
+button:hover{border-color:var(--accent);color:var(--accent)}
+button:focus-visible,summary:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+nav.toc{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin:16px 0 28px}
+nav.toc h2{font-size:.8rem;text-transform:uppercase;letter-spacing:.06em;color:var(--dim);margin:0 0 8px}
+nav.toc ol{list-style:none;margin:0;padding:0}
+nav.toc li{margin:2px 0}
+nav.toc a{display:flex;gap:10px;align-items:baseline;color:var(--ink);text-decoration:none;padding:4px 0}
+nav.toc a:hover{color:var(--accent)}
+.toc-n{flex:none;width:1.6em;color:var(--accent);font-weight:600;font-variant-numeric:tabular-nums}
+.turn{background:var(--card);border:1px solid var(--line);border-radius:14px;margin:0 0 18px;overflow:hidden;scroll-margin-top:12px}
+.turn-head{display:flex;align-items:baseline;gap:10px;padding:14px 18px 0}
+.num{font-weight:700;color:var(--accent);text-decoration:none}
+.who{font-size:.8rem;color:var(--dim);text-transform:uppercase;letter-spacing:.06em}
+.prompt{margin:8px 18px 14px;padding:12px 14px;background:var(--prompt);border-radius:10px;white-space:normal;overflow-wrap:anywhere}
+details{border-top:1px solid var(--line)}
+summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:10px;padding:12px 18px;user-select:none}
+summary::-webkit-details-marker{display:none}
+summary:hover{background:var(--accent-soft)}
+.chev{flex:none;width:8px;height:8px;border-right:2px solid var(--accent);border-bottom:2px solid var(--accent);transform:rotate(-45deg);transition:transform .15s}
+details[open] .chev{transform:rotate(45deg)}
+.sum-label{font-size:.8rem;text-transform:uppercase;letter-spacing:.06em;color:var(--dim);flex:none}
+.sum-title{font-weight:600;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.answer{padding:4px 18px 20px;overflow-wrap:anywhere}
+.answer h1{font-size:1.4rem;margin:18px 0 8px;line-height:1.3}
+.answer h2{font-size:1.18rem;margin:28px 0 8px;padding-top:12px;border-top:1px solid var(--line);line-height:1.3}
+.answer h3{font-size:1.02rem;margin:20px 0 6px}
+.answer p{margin:10px 0}
+.answer ul,.answer ol{padding-left:1.4em;margin:8px 0}
+.answer li{margin:4px 0}
+.answer hr{border:0;border-top:1px solid var(--line);margin:24px 0}
+.answer code{font:.88em/1.4 ui-monospace,SFMono-Regular,Consolas,monospace;background:var(--code);border:1px solid var(--line);border-radius:5px;padding:1px 5px}
+.answer pre{background:var(--code);border:1px solid var(--line);border-radius:10px;padding:12px 14px;overflow-x:auto;margin:12px 0}
+.answer pre code{background:none;border:0;padding:0;font-size:.85em;white-space:pre}
+.tw{overflow-x:auto;margin:12px 0;border:1px solid var(--line);border-radius:10px}
+.answer table{border-collapse:collapse;width:100%;font-size:.92rem}
+.answer th,.answer td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+.answer th{background:var(--th);font-weight:600}
+.answer tr:last-child td{border-bottom:0}
+.answer strong{font-weight:650}
+.answer a{color:var(--accent)}
+@media (max-width:520px){header h1{font-size:1.4rem}.turn-head,.answer{padding-left:14px;padding-right:14px}.prompt{margin-left:14px;margin-right:14px}summary{padding:12px 14px}}
+@media print{details{display:block}details>*{display:block}.bar,nav.toc{display:none}.turn{break-inside:auto}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>Tripwise viva prep</h1>
+  <p>5 turns. Click a turn's response to expand it.</p>
+</header>
+<div class="bar">
+  <button type="button" id="open-all">Expand all</button>
+  <button type="button" id="close-all">Collapse all</button>
+</div>
+<nav class="toc" aria-label="Turns"><h2>Turns</h2><ol><li><a href="#turn-1"><span class="toc-n">1</span>CLAUDE.md review</a></li><li><a href="#turn-2"><span class="toc-n">2</span>Tripwise: how it works, from start to end</a></li><li><a href="#turn-3"><span class="toc-n">3</span>How a plan gets finalised, and what the trade-offs are</a></li><li><a href="#turn-4"><span class="toc-n">4</span>How the AI assistant works</a></li><li><a href="#turn-5"><span class="toc-n">5</span>Viva questions and answers for Tripwise</a></li></ol></nav>
+<main>
+
+<section class="turn" id="turn-1">
+  <div class="turn-head">
+    <a class="num" href="#turn-1">Turn 1</a>
+    <span class="who">You asked</span>
+  </div>
+  <div class="prompt">/init</div>
+  <details>
+    <summary><span class="chev" aria-hidden="true"></span><span class="sum-label">Response</span><span class="sum-title">CLAUDE.md review</span></summary>
+    <div class="answer"><p>I compared the existing <code>CLAUDE.md</code> (updated in your last commit, 9e2885e) with the repo, and I left the file as it is. The commands I checked match the code: the <code>slow</code> pytest marker, the CLI subcommands, the Playwright configs and specs, the deploy script and the Vercel command. There are no Cursor, Copilot, Codex or Gemini config files to import.</p>
+<p>A few small gaps you could fill:</p>
+<ol>
+<li><strong>First-time setup.</strong> The file never says how to create <code>backend/.venv</code>. README &quot;Run locally&quot; has it: <code>python -m venv backend\.venv</code> followed by <code>backend\.venv\Scripts\python.exe -m pip install -r backend\requirements.txt</code>, then <code>npm install</code> in <code>frontend\</code>. You could add one line pointing there.</li>
+<li><strong>Frontend typecheck.</strong> <code>npm run typecheck</code> (<code>tsc --noEmit</code>) is a quicker check than <code>npm run build</code>. It&#39;s worth listing next to <code>build</code>.</li>
+<li><strong><code>datatools</code> has its own tests.</strong> They&#39;re in <code>datatools/tests/</code> (<code>test_load.py</code>, <code>test_validate.py</code>, with fixtures) and live outside <code>backend/</code>, so <code>pytest -q</code> from <code>backend\</code> doesn&#39;t run them. A line like &quot;datatools tests: <code>python -m pytest datatools/tests -q</code> from the repo root&quot; would make that clear. I haven&#39;t run this command.</li>
+<li><strong>Environment variables.</strong> The file mentions <code>.env</code> and <code>.env.example</code> but not the main variables. You could name <code>DATABASE_URL</code>, <code>JWT_SECRET</code>, <code>GROQ_API_KEY</code> and <code>DB_SCHEMA</code>, and point to the full table in README &quot;Environment variables&quot;. <code>FRONTEND_ORIGIN</code> and <code>APP_ENV</code> control CORS, so a CORS bug is easy to misdiagnose without them.</li>
+</ol>
+<p>The rest is already in good shape: the architecture section, the spec-driven workflow rules and the commit conventions.</p>
+<p>Want me to add these four?</p>
+</div>
+  </details>
+</section>
+
+<section class="turn" id="turn-2">
+  <div class="turn-head">
+    <a class="num" href="#turn-2">Turn 2</a>
+    <span class="who">You asked</span>
+  </div>
+  <div class="prompt">i am preparing for viva and i have selected this a s my main project for interview so i shd be very clear about this project<br>i need you to first explain to me clearly how the whole project works from start to end in simple terms, what each part does and which technologies we used. explain based on our actual code</div>
+  <details>
+    <summary><span class="chev" aria-hidden="true"></span><span class="sum-label">Response</span><span class="sum-title">Tripwise: how it works, from start to end</span></summary>
+    <div class="answer"><h1>Tripwise: how it works, from start to end</h1>
+<h2>1. The idea in one paragraph</h2>
+<p>Tripwise plans a budget trip between two of 15 Indian cities. The user gives an origin, a destination, dates (2–7 days), a group size (1–6), a budget in ₹ and some preferences. Tripwise returns up to three plans: <strong>Saver</strong>, <strong>Balanced</strong> and <strong>Experience</strong>. Each plan has transport there and back, a hotel, a day-by-day schedule with times, the local rides between places, and a full cost breakdown. The user then picks a plan and refines it by chatting, for example &quot;skip the zoo&quot; or &quot;cheaper hotel&quot;.</p>
+<p><strong>The key design decision (Constitution Article II in <code>SPEC.md</code>):</strong> a mathematical optimiser builds every plan. The AI (an LLM) never writes or edits a plan. It only translates between people and the engine. Why: if you ask ChatGPT for a trip plan, it reads well but often goes over budget, visits places on days they&#39;re closed, or packs in impossible travel. Your evaluation proves this: the LLM-only planner produced a valid plan for only 2 of 10 trips.</p>
+<h2>2. The big picture: five parts</h2>
+<pre><code>Browser (React app, on Vercel)
+   │  HTTPS + JSON, login token (JWT)
+   ▼
+Caddy (HTTPS) → FastAPI backend (Python, on an Azure VM)
+                   ├── Planning engine (OR-Tools)  ← reads the curated city dataset (CSV/JSON files)
+                   ├── Validator (independent checker)
+                   ├── Neon Postgres (users, trips, plan versions, chat)
+                   └── Groq LLM (parse text, explain, chat → tools)
+</code></pre>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Part</th>
+<th>Folder</th>
+<th>Technology</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>City data</td>
+<td><code>data/curated/</code>, built by <code>datatools/</code></td>
+<td>CSV + JSON; sources: OpenStreetMap, OpenTripMap, OpenRouteService, Wikipedia, Booking.com</td>
+</tr>
+<tr>
+<td>Planning engine</td>
+<td><code>backend/tripwise/</code></td>
+<td>Python, <strong>Google OR-Tools</strong> (CP-SAT solver + Routing solver)</td>
+</tr>
+<tr>
+<td>Validator</td>
+<td><code>backend/validator/</code></td>
+<td>Plain Python</td>
+</tr>
+<tr>
+<td>API</td>
+<td><code>backend/api/</code></td>
+<td><strong>FastAPI</strong>, uvicorn, psycopg, bcrypt, JWT</td>
+</tr>
+<tr>
+<td>AI layer</td>
+<td><code>backend/api/ai/</code></td>
+<td><strong>Groq</strong> API, model <code>openai/gpt-oss-120b</code></td>
+</tr>
+<tr>
+<td>Database</td>
+<td><code>backend/api/sql/app_schema.sql</code></td>
+<td><strong>PostgreSQL on Neon</strong></td>
+</tr>
+<tr>
+<td>Frontend</td>
+<td><code>frontend/</code></td>
+<td><strong>React 18, Vite, TypeScript, Tailwind, TanStack Query, react-leaflet (maps), Recharts (charts)</strong></td>
+</tr>
+<tr>
+<td>Hosting</td>
+<td><code>deploy/</code></td>
+<td>Azure VM (systemd + Caddy), Vercel for the frontend</td>
+</tr>
+<tr>
+<td>Tests</td>
+<td><code>backend/tests/</code>, <code>frontend/tests/</code></td>
+<td>pytest, Playwright (+ axe for accessibility)</td>
+</tr>
+</tbody></table>
+</div><h2>3. Part 1: the data (Feature 001)</h2>
+<p>The engine never calls a live website while planning. Everything comes from curated files in <code>data/curated/</code>:</p>
+<ul>
+<li><code>cities.csv</code>: the 15 cities (Jaipur, Goa, Delhi and so on).</li>
+<li><code>hubs.csv</code>: the stations, bus stands and airports in each city.</li>
+<li><code>city_pairs.csv</code>: the 105 city pairs, with distances, travel times and which modes (train, bus, flight) exist.</li>
+<li><code>fare_rates.csv</code>: the fare formula for each mode and class: <code>max(min_fare, base + per_km × distance)</code>.</li>
+<li><code>attractions/&lt;CITY&gt;.csv</code>: 25–40 places per city, each with opening hours, closed weekdays, entry fee, visit length, interest tags (history, food…), rating and crowd level.</li>
+<li><code>hotels.csv</code>: 3 tiers (budget, mid, premium) with a price per room per night.</li>
+<li><code>food.csv</code> and <code>local_transport.csv</code>: daily food allowance, and auto or cab rates.</li>
+<li><code>matrices/&lt;CITY&gt;.json</code>: precomputed travel time and km between every pair of places in the city (from OpenRouteService).</li>
+</ul>
+<p>Every row records its source and the date it was checked (Article III, &quot;honest data&quot;). That&#39;s why the UI marks every ₹ amount as an estimate (&quot;compiled Nov 2026&quot;). <code>datatools/</code> contains the scripts that built and validated these files.</p>
+<h2>4. Part 2: the planning engine (the heart of the project)</h2>
+<p>Entry point: <code>engine.plan()</code> in <code>backend/tripwise/engine.py</code>. A request goes through these steps:</p>
+<h3>Step 0: Time model (<code>timemodel.py</code>)</h3>
+<p>This works out how much time each day has. For each transport option (for example &quot;train 3A&quot;) it calculates departure and arrival times. Day 1 starts after you arrive (plus a 30-minute buffer). The last day ends before you leave. Middle days run from 09:00 for &quot;daily hours out&quot; hours. A lunch hour (12:30–14:30) is reserved, and pace limits how many activities fit in a day.</p>
+<h3>Step 1: Prefilter (<code>prefilter.py</code>)</h3>
+<p>This throws away attractions that can&#39;t possibly fit: ones the user excluded, ones closed on every trip day, and ones whose opening hours never overlap a day window. That makes the solver&#39;s search space smaller.</p>
+<h3>Step 2: Score each place (<code>value.py</code>)</h3>
+<p>Each attraction gets a <strong>value</strong> that depends on how good it is and how well it matches the user:</p>
+<pre><code>v(a) = 100 × (rating/5) × (base + (1−base) × interest_match) × crowd_factor
+</code></pre>
+<p>For example, someone who rates &quot;history&quot; at 5 gets a high value for Amber Fort. The <strong>whole plan&#39;s value</strong> is:
+<code>V = sum of activity values + transport comfort + bonus for preferred modes − penalty per minute of local travel + hotel tier bonus</code>.
+All weights are in <code>config.yaml</code>, and no number is hard-coded.</p>
+<h3>Step 3: Stage 1, choosing what goes in (<code>stage1.py</code>, <strong>CP-SAT</strong>)</h3>
+<p>CP-SAT is Google&#39;s constraint solver for integer programming. For <strong>each candidate hotel</strong>, it builds a model with yes/no (Boolean) variables:</p>
+<ul>
+<li><code>o[j]</code>: take outbound option j (exactly one)</li>
+<li><code>r[j]</code>: take return option j (exactly one)</li>
+<li><code>x[a]</code>: include attraction a</li>
+</ul>
+<p>The constraints are:</p>
+<ul>
+<li><strong>Budget:</strong> total cost ≤ 90% of the budget (10% is held back as contingency).</li>
+<li><strong>Time:</strong> the sum of (visit time + estimated travel) ≤ the total usable time over all days.</li>
+<li><strong>Count:</strong> the number of activities ≤ the pace limit summed over the days.</li>
+<li><strong>Variety:</strong> at most about 40% of activities share the same main tag, so you don&#39;t get &quot;5 temples&quot;.</li>
+<li><strong>Locks:</strong> places the user locked must be included.</li>
+</ul>
+<p>The <strong>objective</strong> depends on the variant:</p>
+<ul>
+<li><code>max_value</code> (Experience): maximise value.</li>
+<li><code>balanced</code>: maximise value minus λ × cost.</li>
+<li><code>min_cost</code> (Saver): minimise cost while keeping value ≥ ρ × the best value.</li>
+</ul>
+<p>The best hotel&#39;s solution wins.</p>
+<h3>Step 4: Stage 2, scheduling the days (<code>stage2.py</code>, <strong>OR-Tools Routing</strong>)</h3>
+<p>Stage 1 only decided <em>what</em> to include. Stage 2 decides <em>which day and in what order</em>. It models the problem as a <strong>vehicle routing problem with time windows</strong>:</p>
+<ul>
+<li>each trip day is one &quot;vehicle&quot;</li>
+<li>the hotel is the depot</li>
+<li>each attraction is a stop with an opening-hours time window and a visit duration</li>
+<li>closed weekdays stop a place from going on certain days</li>
+<li>if not everything fits, a stop can be dropped, and dropping it costs a penalty equal to its value, so the solver drops the least valuable places</li>
+</ul>
+<p>The solver uses Guided Local Search. A precise forward pass (<code>schedule_day</code>) then fixes exact start and end times and places lunch.</p>
+<h3>Step 5: Feedback cuts (<code>engine.run</code>)</h3>
+<p>If routing had to drop places, those places are &quot;cut&quot; (banned) and Stage 1 is re-solved, up to 3 times. This way, the two stages agree.</p>
+<h3>Step 6: Exact costing and budget repair</h3>
+<p>Stage 1 worked with <em>estimated</em> local travel. Now the real route is known, so the engine calculates exact costs (<code>costs.py</code>: fares × people, rooms = ⌈people/2⌉ × nights, entry fees, auto or cab fares). If the plan is over budget, it removes the place with the lowest value per rupee and re-routes. It repeats until the plan fits.</p>
+<h3>Step 7: Fill step</h3>
+<p>Because Stage 1 used estimates, there can be time and money left over. The engine tries to add unused places (highest value first) at their cheapest position, but only if they still fit the exact schedule and budget. Saver skips this step.</p>
+<h3>Step 8: Validator gate</h3>
+<p>The plan is checked by the <strong>independent validator</strong> (next section). If it fails, the user never sees it.</p>
+<h3>If no plan is possible</h3>
+<p>The engine finds the cheapest workable plan and tells the user the <strong>minimum budget needed</strong>, rounded up to ₹500 (FR-012). For example: &quot;No plan fits ₹8,000 … needs about ₹11,500.&quot;</p>
+<h3>Variants and trade-offs</h3>
+<ul>
+<li><strong><code>variants.py</code></strong> runs the pipeline three times. Experience runs first, using the user&#39;s hotel tier and one tier higher, and its value becomes V*. Balanced uses the user&#39;s tier. Saver uses the user&#39;s tier and one tier lower, with the target value ≥ ρ × V*. Variants that are too similar (same hotel and less than 30% of activities different) are merged, and the user is told &quot;same as Balanced&quot;.</li>
+<li><strong><code>tradeoffs.py</code></strong> re-runs the engine at budget × 0.8, 0.9, 1.1 and 1.2 to show &quot;with 10% more money you&#39;d gain X&quot;. Every trade-off figure comes from the engine, never from the AI (FR-025).</li>
+<li><strong>Near misses:</strong> the top places that didn&#39;t make it, each with a reason (budget, time or closed).</li>
+</ul>
+<h2>5. Part 3: the validator (<code>backend/validator/validate.py</code>)</h2>
+<p>This runs checks <strong>V-01 to V-16</strong>. It recalculates every time, cost and window from the raw data and trusts nothing in the plan. Some examples:</p>
+<ul>
+<li>V-02: is the transport mode available, and not one the user said to avoid?</li>
+<li>V-03: does every ₹ amount match the tariffs?</li>
+<li>V-06/V-07: is any place visited on a closed day or outside its opening hours?</li>
+<li>V-08: do travel legs match the distance matrix?</li>
+<li>V-09/V-10: does the day stay within the window and the pace limit?</li>
+<li>V-11: is the lunch rule kept?</li>
+<li>V-12: are locked places present and excluded places absent?</li>
+</ul>
+<p><strong>It deliberately doesn&#39;t import any solver code.</strong> That makes it a genuinely independent check, and it means the same validator can judge the greedy and LLM-only baselines fairly in the evaluation.</p>
+<h2>6. Part 4: the API (<code>backend/api/</code>, FastAPI)</h2>
+<ul>
+<li><strong>Startup (<code>main.py</code>):</strong> it loads the dataset into memory once, creates the database schema if it&#39;s missing, and starts a thread pool for solves.</li>
+<li><strong><code>solver.py</code>:</strong> solving is CPU-heavy, so at most N solves run at once (the number is in <code>config.yaml</code>). Extra requests wait, and if they wait too long they get <strong>HTTP 429 &quot;planner is busy&quot;</strong>.</li>
+<li><strong>Auth (<code>auth.py</code>):</strong> passwords are hashed with <strong>bcrypt</strong>, and login returns a <strong>JWT</strong> that expires after 7 days. Every trip query filters on the caller&#39;s <code>user_id</code>, so another user&#39;s trip returns 404.</li>
+<li><strong>Routers:</strong> <code>auth</code>, <code>profile</code>, <code>trips</code> (create + plan, list, rename, duplicate, delete), <code>versions</code> (select, replan, restore, trade-offs), <code>chat</code>, <code>ai</code> (parse preferences, explanations), <code>share</code> (read-only link), <code>meta</code> (cities, health).</li>
+<li><strong>Database tables:</strong> <code>users</code>, <code>profiles</code>, <code>trips</code>, <code>plan_versions</code>, <code>chat_messages</code>, <code>trip_shares</code>.</li>
+<li><strong>Plan versioning:</strong> versions are <em>immutable</em>. Selecting a plan, replanning, restoring and every chat change each <strong>insert a new numbered version</strong>, and the old ones are kept. Restoring version 2 creates a new version 5 that is a copy of 2.</li>
+</ul>
+<h2>7. Part 5: the AI layer (<code>backend/api/ai/</code>, Groq)</h2>
+<p>The LLM has three jobs. None of them writes a plan.</p>
+<ol>
+<li><strong>Parse (<code>parse.py</code>):</strong> turns free text like &quot;we love food and history, not too tiring&quot; into the structured preference fields (interest weights 0–5, pace…). The user sees the result and can adjust it before planning.</li>
+<li><strong>Explain (<code>explain.py</code>):</strong> writes a plain-language explanation of a plan.</li>
+<li><strong>Chat (<code>chat.py</code>):</strong> at most <strong>2 Groq calls</strong> per message.<ul>
+<li><strong>Call 1 (tool calling):</strong> the LLM picks from a fixed set of tools: <code>lock_activity</code>, <code>exclude_activity</code>, <code>limit_kind</code>, <code>set_budget</code>, <code>set_day_hours</code>, <code>set_all_hours</code>, <code>set_hotel_tier</code>, <code>set_transport</code>, <code>set_pace</code>, <code>set_interest</code>, <code>move_activity</code>, <code>regenerate</code>, <code>explain</code>. The code checks the arguments and fuzzy-matches place names against the city&#39;s data.</li>
+<li>The tools become a <strong>change set</strong> (locks, excludes, budget, prefs…). <strong>The engine replans</strong> and saves a new version.</li>
+<li><strong><code>diff.py</code></strong> works out what changed between versions: places added, removed or moved, and the cost difference.</li>
+<li><strong>Call 2:</strong> the LLM writes a friendly reply <em>based only on that diff</em>.</li>
+</ul>
+</li>
+</ol>
+<p><strong>Grounding (<code>grounding.py</code>):</strong> every place name and every ₹ amount in the AI&#39;s reply is checked against the plan. If the AI mentions a place not in the plan, or a number the engine didn&#39;t produce, the reply is <strong>thrown away and a template reply is used instead</strong>. This stops the AI from hallucinating.</p>
+<p><strong>Graceful degradation:</strong> if <code>GROQ_API_KEY</code> is empty or Groq is slow, planning still works. Explanations are left out, and chat shows &quot;temporarily unavailable&quot;.</p>
+<h2>8. Part 6: the frontend (<code>frontend/src/</code>)</h2>
+<p>The pages (<code>App.tsx</code> routes):</p>
+<ol>
+<li><strong>Landing</strong> (<code>/</code>)</li>
+<li><strong>Login / Sign up</strong></li>
+<li><strong>New trip</strong> (<code>/new</code>): the form, plus &quot;Describe your trip&quot; (AI parse) and &quot;Fill from my profile&quot;.</li>
+<li><strong>Compare</strong> (<code>/trips/:id</code>): the variant cards side by side.</li>
+<li><strong>Plan detail</strong> (<code>/trips/:id/plan</code>): the timeline, a <strong>Leaflet map</strong> with each day&#39;s route in its own colour, a <strong>Recharts</strong> budget chart and table, trade-offs, near misses, the AI explanation and the <strong>chat panel</strong>.</li>
+<li><strong>My Trips</strong>: upcoming and past trips, with rename, duplicate and delete.</li>
+<li><strong>Profile</strong>: saved preferences.</li>
+</ol>
+<p>There&#39;s also a shared read-only page (<code>/s/:token</code>). Data fetching goes through <strong>TanStack Query</strong> (<code>src/api/client.ts</code>). Every page works at 360 px phone width and passes axe accessibility checks. Plans can be printed to PDF, and links go to booking sites (Tripwise itself never books anything).</p>
+<h2>9. One request, start to finish</h2>
+<ol>
+<li>The user fills the New Trip form, for example Delhi → Jaipur, 3 days, 2 people, ₹20,000, history 5, food 4.</li>
+<li>React sends <code>POST /trips</code> with the JWT.</li>
+<li>FastAPI validates the input (<code>validation.py</code>) and waits for a free solver slot.</li>
+<li><code>variants.py</code> runs the engine 3 times: prefilter → CP-SAT → routing → cuts → exact cost → repair → fill → validator.</li>
+<li>The trip and its variants are saved in Postgres, and the API returns JSON.</li>
+<li>The Compare page shows Saver, Balanced and Experience. The user picks one, which calls <code>POST /trips/{id}/select</code> and creates version 1.</li>
+<li>Plan detail shows the map, schedule, budget and explanation (from Groq, grounded).</li>
+<li>The user types &quot;skip City Palace and make day 2 relaxed&quot;. Groq call 1 picks <code>exclude_activity</code> and <code>set_pace</code>, the engine replans and validates, version 2 is saved, <code>diff</code> runs, Groq call 2 writes the reply, grounding checks it, and the reply is shown.</li>
+</ol>
+<h2>10. Evaluation (Feature 008, <code>eval/</code>)</h2>
+<p><code>eval/run_eval.py</code> runs 30 test trips (26 feasible, 4 that must be declined) through Tripwise and two baselines, all checked by the same validator:</p>
+<ul>
+<li><strong>Greedy</strong> (<code>eval/baselines/greedy.py</code>): picks the cheapest transport and hotel, then adds places in order of value per fee, with no optimisation.</li>
+<li><strong>LLM-only</strong> (<code>eval/baselines/llm_only.py</code>): asks the LLM to write the plan directly.</li>
+</ul>
+<div class="tw"><table>
+<thead>
+<tr>
+<th></th>
+<th>Valid plans</th>
+<th>Mean value</th>
+<th>Share of day spent travelling</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Tripwise</td>
+<td>26/26 (+4/4 correctly declined)</td>
+<td>729.5</td>
+<td>16%</td>
+</tr>
+<tr>
+<td>Greedy</td>
+<td>26/26</td>
+<td>645.5</td>
+<td>28%</td>
+</tr>
+<tr>
+<td>LLM-only (10 trips)</td>
+<td><strong>2/10</strong></td>
+<td>—</td>
+<td>23%</td>
+</tr>
+</tbody></table>
+</div><p><strong>Headline:</strong> Tripwise gets 13% more value than greedy and spends much less of the day in transit, and the LLM alone breaks the rules 80% of the time.</p>
+<p>Other numbers:</p>
+<ul>
+<li><strong>Chat tool accuracy:</strong> 85.3%, below the 90% target. Be ready to explain this honestly: the <code>limit_kind</code> fix cost about two cases.</li>
+<li><strong>Live latency:</strong> all variants p95 1.21 s; chat p95 about 7.3 s.</li>
+</ul>
+<h2>11. How it was built: spec-driven development</h2>
+<p>Everything was specified first in <code>SPEC.md</code>:</p>
+<ul>
+<li><strong>Part A</strong> is the constitution (the rules).</li>
+<li><strong>Part B</strong> is the product.</li>
+<li><strong>Part C</strong> has the features, each with Spec → Plan → Tasks.</li>
+<li><strong>Part D</strong> traces every requirement ID (FR-xxx and others) to its tests.</li>
+</ul>
+<p>Commits reference requirement IDs. When the code had to differ from the spec, the spec was changed first, and a Changelog row records why.</p>
+<h2>Likely viva questions, with short answers</h2>
+<ul>
+<li><strong>Why not just use an LLM?</strong> LLMs can&#39;t guarantee constraints. The evaluation shows 2/10 valid plans. The optimiser guarantees feasibility, and the LLM only provides the natural-language interface.</li>
+<li><strong>Why two stages instead of one model?</strong> Choosing places <em>and</em> scheduling them in one model is too slow. CP-SAT selects quickly using estimates, routing schedules exactly, and the feedback cuts plus the repair and fill steps fix any mismatch between the two.</li>
+<li><strong>Why is the validator separate?</strong> So a bug in the engine can&#39;t hide itself. It also judges the baselines fairly.</li>
+<li><strong>How do you stop AI hallucination?</strong> A fixed set of tools, the engine does all the planning, and a grounding check on names and ₹ amounts with a template fallback.</li>
+<li><strong>What if Groq is down?</strong> Planning still works, and only the AI features degrade.</li>
+<li><strong>Why is 10% of the budget held back?</strong> It&#39;s a contingency, because the prices are estimates.</li>
+</ul>
+<p>Would you like me to quiz you next with likely viva questions, or go deeper on one part? The CP-SAT model and the routing model are what examiners most often ask about.</p>
+</div>
+  </details>
+</section>
+
+<section class="turn" id="turn-3">
+  <div class="turn-head">
+    <a class="num" href="#turn-3">Turn 3</a>
+    <span class="who">You asked</span>
+  </div>
+  <div class="prompt">ok can u tell me how plans are finalised in this and what are the trade offs</div>
+  <details>
+    <summary><span class="chev" aria-hidden="true"></span><span class="sum-label">Response</span><span class="sum-title">How a plan gets finalised, and what the trade-offs are</span></summary>
+    <div class="answer"><h1>How a plan gets finalised, and what the trade-offs are</h1>
+<h2>Part A: how a plan is finalised</h2>
+<p>A plan is finalised in three layers: the engine finishes <strong>one plan</strong>, then <code>variants.py</code> picks the <strong>final set of variants</strong>, and finally the <strong>user</strong> picks one, which is saved as a version.</p>
+<h3>Layer 1: the engine finishes one plan (<code>engine.run</code> in <code>tripwise/engine.py</code>)</h3>
+<p>Every plan goes through these steps in this order:</p>
+<ol>
+<li><strong>CP-SAT selection</strong> (<code>stage1.py</code>). It chooses outbound transport, return transport, a hotel and a set of places, all within 90% of the budget. Local travel at this point is only an estimate.</li>
+<li><strong>Routing</strong> (<code>stage2.py</code>). It puts the chosen places onto days and into an order, respecting opening hours, closed days and travel times.</li>
+<li><strong>Feedback loop.</strong> If routing couldn&#39;t fit some places, they are banned and CP-SAT runs again. This repeats up to 3 times (<code>max_feedback_iters: 3</code>).</li>
+<li><strong>Exact costing.</strong> Now that the real route is known, every rupee is recalculated: fares × people, rooms × nights, entry fees, and the actual auto or cab fare for every leg.</li>
+<li><strong>Budget repair.</strong> If the exact total is over budget, it removes the place with the <strong>lowest value per rupee</strong> and re-routes. This repeats up to 20 times (<code>max_repairs</code>). Locked places are never removed. If the plan still doesn&#39;t fit, the engine falls back to the cheapest workable plan. If even that doesn&#39;t fit, the request is <strong>infeasible</strong>, and the user is told the minimum budget needed, rounded up to ₹500.</li>
+<li><strong>Fill step.</strong> Stage 1 worked on estimates, so time or money may be left over. The engine tries unused places, highest value first, at their cheapest position, and keeps one only if the exact schedule and budget still hold and the plan&#39;s value goes up. Saver skips this step, because its goal is low cost.</li>
+<li><strong><code>build()</code>.</strong> It assembles the final plan: times for every stop, legs, lunch, the budget breakdown, the 10% contingency, near misses and the value score.</li>
+<li><strong>Validator gate.</strong> <code>validate()</code> re-checks everything independently (V-01 to V-16). <strong>If any check fails, the plan is withheld</strong> (it becomes <code>InternalError</code>, and the API returns 500). So a plan the user sees is guaranteed valid.</li>
+</ol>
+<h3>Layer 2: choosing the final variants (<code>tripwise/variants.py</code>)</h3>
+<p>The engine runs three times, in this order:</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Variant</th>
+<th>Objective</th>
+<th>Hotel tiers allowed</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Experience</strong> (runs first)</td>
+<td>Maximise value</td>
+<td>The user&#39;s tier and one tier higher</td>
+</tr>
+<tr>
+<td><strong>Balanced</strong></td>
+<td>Maximise value − λ × V* × cost/budget (λ = 4.0)</td>
+<td>The user&#39;s tier</td>
+</tr>
+<tr>
+<td><strong>Saver</strong></td>
+<td>Minimise cost, subject to value ≥ ρ × V* (ρ = 0.7)</td>
+<td>The user&#39;s tier and one tier lower</td>
+</tr>
+</tbody></table>
+</div><p>Experience runs first because its value becomes <strong>V*</strong> (the best achievable value), and the other two need V*.</p>
+<p><strong>Ordering rules</strong> keep the labels honest:</p>
+<ul>
+<li>Saver must reach 70% of V*. If it misses, it retries with a higher target, up to 2 times. If it still misses, it takes the Experience plan.</li>
+<li>Balanced may not cost more than Experience.</li>
+<li>Balanced may not fall below Saver&#39;s 70% value floor.</li>
+<li>Saver may not cost more than Balanced.</li>
+</ul>
+<p><strong>Difference rule:</strong> two variants are both shown only if they have a <strong>different hotel</strong> or <strong>at least 30% different activities</strong> (<code>difference: 0.30</code>). Otherwise the later one is dropped with a reason like &quot;same as Balanced&quot;. That&#39;s why a user sometimes sees only 2 variants, or 1.</p>
+<p>The trip and all its variants are saved in the <code>trips</code> table (<code>POST /trips</code>).</p>
+<h3>Layer 3: the user finalises it (<code>api/routers/versions.py</code>)</h3>
+<ul>
+<li>On the Compare page, the user clicks a variant. That calls <code>POST /trips/{id}/select</code>, which saves the plan as <strong>version 1</strong> in <code>plan_versions</code> and records <code>selected_variant</code>.</li>
+<li>After that, the plan only changes through <strong>new versions</strong>:<ul>
+<li><strong>Chat or replan</strong> (<code>/replan</code>): the changes are merged into the request, the engine re-runs the <em>same variant</em> (<code>variant_at</code>) and validates the result, and a new version is saved. If nothing fits, the user gets a 409 with the reason, and the current plan stays unchanged.</li>
+<li><strong>Restore</strong> (<code>/versions/{n}/restore</code>): copies an old version as the newest version.</li>
+</ul>
+</li>
+<li>Versions are <strong>never edited or deleted</strong>. The <strong>current plan is always the latest version</strong>, which keeps a full history.</li>
+</ul>
+<p><strong>In one sentence:</strong> a plan is final when the engine has costed it exactly, repaired and filled it, and the validator has passed it. The user&#39;s choice is saved as version 1, and every later change is a new validated version.</p>
+<h2>Part B: the trade-offs</h2>
+<p>&quot;Trade-offs&quot; appears in the project in three places.</p>
+<h3>1. Trade-offs between the variants: value vs cost</h3>
+<p>This is the core idea of having three plans:</p>
+<ul>
+<li><strong>Experience</strong> gives the most value. It can use a higher hotel tier and spend more of the budget.</li>
+<li><strong>Saver</strong> gives the lowest cost, while still keeping at least 70% of the best value.</li>
+<li><strong>Balanced</strong> sits in between. λ sets how much each extra rupee &quot;hurts&quot; compared with each extra point of value.</li>
+</ul>
+<p>The Compare page shows them side by side with total cost, value, hotel, transport and highlights (FR-022). The user is effectively choosing a point on the cost-vs-value curve.</p>
+<h3>2. The budget trade-off table (FR-023, <code>tripwise/tradeoffs.py</code>)</h3>
+<p>For the selected plan, the system answers: <strong>&quot;what if my budget were 20% lower, 10% lower, 10% higher or 20% higher?&quot;</strong> (<code>tradeoff_factors: [0.8, 0.9, 1.1, 1.2]</code>).</p>
+<p>How it works: it <strong>re-runs the full engine</strong> for the same variant at each new budget, then compares the result with the current plan. Each row shows:</p>
+<ul>
+<li><strong>Δ cost:</strong> how much more or less the plan would cost.</li>
+<li><strong>Δ value:</strong> how much value is gained or lost.</li>
+<li><strong>Added / dropped places.</strong></li>
+<li><strong>Hotel change</strong> and <strong>transport change</strong>, if any.</li>
+<li>Or <strong>&quot;No plan fits this budget&quot;</strong> if the lower budget is infeasible.</li>
+</ul>
+<p>Points worth stating in the viva:</p>
+<ul>
+<li><strong>Every figure comes from the engine, not the AI</strong> (FR-025). The LLM may phrase the numbers but never computes them.</li>
+<li>The table is <strong>computed on demand</strong> (<code>GET /trips/{id}/tradeoffs</code>), because it takes four full engine runs. The result is <strong>cached in the database</strong>, keyed by a hash of the request, so a later request change makes the cache stale automatically.</li>
+<li>In the UI, it&#39;s a collapsible panel on Plan detail (<code>components/PlanPanels.tsx</code>), and it only loads when the user opens it.</li>
+</ul>
+<h3>3. Near misses (FR-024)</h3>
+<p>These are the top 5 places that <em>didn&#39;t</em> make it, each with a reason:</p>
+<ul>
+<li><strong>budget:</strong> adding it would push the total past the usable budget</li>
+<li><strong>time:</strong> not enough time in the days</li>
+<li><strong>closed:</strong> closed or not open at a reachable time on the trip days</li>
+</ul>
+<p>This shows the user the trade-off the engine made. The chat &quot;why&quot; questions are answered from this data.</p>
+<h3>If the examiner means <em>design</em> trade-offs</h3>
+<ul>
+<li><strong>Two stages vs one big model:</strong> solving selection and scheduling together is far too slow. The cost of splitting is that Stage 1 estimates travel time, so the plan may not be strictly optimal. The feedback loop, repair and fill steps fix most of the gap.</li>
+<li><strong>Fixed solver time limits</strong> (CP-SAT 0.4 s, routing 1 s): fast responses (p95 1.21 s for all variants) at the cost of a guaranteed optimum.</li>
+<li><strong>Curated data vs live prices:</strong> results are reproducible and checked, but prices are estimates. That&#39;s why there&#39;s a 10% contingency and every ₹ is labelled an estimate.</li>
+<li><strong>The LLM only uses fixed tools:</strong> this makes the system safe and validated, but less flexible. Requests outside the tool set get &quot;can&#39;t do that, here&#39;s the closest option&quot;, and tool accuracy is 85% rather than 100%.</li>
+</ul>
+<p>Want me to show you a real example? I can run <code>python -m tripwise.cli variants ..\eval\example_request.json</code> and <code>tradeoffs</code>, and walk you through the actual output numbers. Concrete numbers help a lot in a viva.</p>
+</div>
+  </details>
+</section>
+
+<section class="turn" id="turn-4">
+  <div class="turn-head">
+    <a class="num" href="#turn-4">Turn 4</a>
+    <span class="who">You asked</span>
+  </div>
+  <div class="prompt">how is the ai assistant in this app working</div>
+  <details>
+    <summary><span class="chev" aria-hidden="true"></span><span class="sum-label">Response</span><span class="sum-title">How the AI assistant works</span></summary>
+    <div class="answer"><h1>How the AI assistant works</h1>
+<h2>The core idea</h2>
+<p><strong>The AI is a translator, not a planner.</strong> It turns human words into structured instructions for the engine, and turns engine results back into human words. It never creates or edits a plan itself (Constitution Article II). Every plan still comes from the optimisation engine and passes the validator.</p>
+<p><strong>Technology:</strong></p>
+<ul>
+<li><strong>Provider and model:</strong> <strong>Groq</strong> (a fast LLM inference service), model <strong><code>openai/gpt-oss-120b</code></strong>.</li>
+<li><strong>How it&#39;s called:</strong> over HTTPS with <code>httpx</code> in <code>backend/api/ai/groq_client.py</code>, using Groq&#39;s OpenAI-compatible API.</li>
+<li><strong>Settings:</strong> all in <code>config.yaml</code> under <code>groq:</code> and <code>chat:</code>: model, timeouts, temperatures (0.2 for tools and parsing so they&#39;re consistent, 0.4 for explanations so they&#39;re a bit more natural), and the token limit.</li>
+<li><strong>Code layout:</strong> the AI code lives in <code>backend/api/ai/</code>, with one file per job.</li>
+</ul>
+<p>The assistant does <strong>three jobs</strong>.</p>
+<h2>Job 1: Parse, &quot;Describe your trip&quot; (<code>parse.py</code>)</h2>
+<p><strong>What the user sees:</strong> on the New Trip page they type something like <em>&quot;2 of us from Delhi to Jaipur next weekend, ₹20k total, love history and street food, not too tiring, hate buses&quot;</em>. The form then fills itself in.</p>
+<p><strong>How it works:</strong></p>
+<ol>
+<li><code>POST /ai/parse-prefs</code> sends the text to Groq <strong>in JSON mode</strong>. The system prompt (<code>prompts.py: parse_system</code>) lists the exact fields allowed: interest weights 0–5, pace, comfort, transport modes, hours out, and optionally cities, dates, people and budget. It also says <em>&quot;never invent values the text does not support&quot;</em>.</li>
+<li>The JSON that comes back is <strong>validated with the same rules as the form</strong>: city codes must exist, people must be 1–6, dates must be real dates, and no extra keys are allowed.</li>
+<li>If the JSON is invalid, the errors are sent back to the model for <strong>one retry</strong>. If it fails again, the user sees <em>&quot;Couldn&#39;t understand that, please use the sliders&quot;</em>.</li>
+<li>The user <strong>sees the filled values and can change them</strong> before planning (FR-006). The AI only suggests.</li>
+</ol>
+<h2>Job 2: Explain each plan (<code>explain.py</code>)</h2>
+<p><strong>What the user sees:</strong> a short paragraph per variant, for example <em>&quot;Balanced suits your love of history: it includes Amber Fort and Hawa Mahal… It leaves out Nahargarh because of time.&quot;</em></p>
+<p><strong>How it works:</strong></p>
+<ol>
+<li><code>GET /trips/{id}/explanations</code> makes <strong>one Groq call for all the variants together</strong>.</li>
+<li>The model gets only a <strong>compact version of the plans</strong>: costs, transport, hotel, activities per day and near misses, plus the user&#39;s preferences.</li>
+<li>The prompt rules are: mention only places that are in the data, copy ₹ amounts exactly, and never add, subtract or estimate amounts.</li>
+<li>Each explanation goes through the <strong>grounding check</strong> (explained below). If a variant&#39;s text fails, the model is asked again <strong>once, with the list of problems</strong>. If it fails again, a <strong>template</strong> built purely from the plan data is used instead.</li>
+<li>The result is <strong>cached in the database</strong>, so Groq is called only once per trip.</li>
+</ol>
+<h2>Job 3: Chat to refine the plan (<code>chat.py</code>), the main one</h2>
+<p><strong>What the user sees:</strong> on Plan Detail, they type <em>&quot;skip City Palace and make day 2 more relaxed&quot;</em>. The plan updates and the assistant replies <em>&quot;Done: I removed City Palace… total is now ₹17,850, down ₹400.&quot;</em></p>
+<p>Each message makes <strong>at most two Groq calls</strong>.</p>
+<h3>Step 1: Groq call 1, choosing tools (&quot;function calling&quot;)</h3>
+<p>The model gets:</p>
+<ul>
+<li>a system prompt describing the trip (city, dates, hotel, the activities on each day, near misses)</li>
+<li>the last 6 chat messages</li>
+<li>the new message</li>
+<li>a <strong>fixed list of tools</strong> it must choose from (<code>tool_choice=&quot;required&quot;</code>, so it can&#39;t just chat freely)</li>
+</ul>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Tool</th>
+<th>Example message</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>lock_activity</code></td>
+<td>&quot;make sure we see Amber Fort&quot;</td>
+</tr>
+<tr>
+<td><code>exclude_activity</code></td>
+<td>&quot;skip the zoo&quot;</td>
+</tr>
+<tr>
+<td><code>limit_kind</code></td>
+<td>&quot;only one temple&quot;, &quot;no beaches&quot;</td>
+</tr>
+<tr>
+<td><code>move_activity</code></td>
+<td>&quot;move Hawa Mahal to day 3&quot;</td>
+</tr>
+<tr>
+<td><code>set_budget</code></td>
+<td>&quot;raise budget to 25000&quot;</td>
+</tr>
+<tr>
+<td><code>set_day_hours</code> / <code>set_all_hours</code></td>
+<td>&quot;only 5 hours on day 2&quot;</td>
+</tr>
+<tr>
+<td><code>set_hotel_tier</code></td>
+<td>&quot;cheaper hotel&quot;</td>
+</tr>
+<tr>
+<td><code>set_transport</code></td>
+<td>&quot;go by flight&quot;</td>
+</tr>
+<tr>
+<td><code>set_pace</code></td>
+<td>&quot;make it relaxed&quot;</td>
+</tr>
+<tr>
+<td><code>set_interest</code></td>
+<td>&quot;more food&quot;</td>
+</tr>
+<tr>
+<td><code>regenerate</code></td>
+<td>&quot;try again&quot;</td>
+</tr>
+<tr>
+<td><code>explain</code></td>
+<td>&quot;why isn&#39;t Jal Mahal in my plan?&quot;</td>
+</tr>
+<tr>
+<td><code>unsupported</code></td>
+<td>&quot;book my tickets&quot;, &quot;what&#39;s the weather?&quot;</td>
+</tr>
+</tbody></table>
+</div><p>For example, <em>&quot;skip City Palace and make it relaxed&quot;</em> produces <code>exclude_activity(names=[&quot;City Palace&quot;])</code> and <code>set_pace(pace=&quot;relaxed&quot;)</code>.</p>
+<h3>Step 2: the code checks the tool calls (no AI involved)</h3>
+<ul>
+<li><strong>Tool name and arguments are checked.</strong> An unknown tool or malformed JSON gets <em>&quot;Sorry, I didn&#39;t catch that.&quot;</em></li>
+<li><strong>Place names are matched to real attractions</strong> (<code>resolve()</code>): exact match first, then partial match, then fuzzy matching with <code>difflib</code>. If two places are about equally likely, the assistant <strong>asks</strong>: <em>&quot;Which one do you mean: X or Y?&quot;</em></li>
+<li><strong>Days are checked:</strong> &quot;day 9&quot; on a 3-day trip gets <em>&quot;Your trip has days 1 to 3. Which day?&quot;</em></li>
+<li><code>to_changes()</code> turns the tools into <strong>one change set</strong>, the same format the manual replan uses:<pre><code>{ &quot;excludes&quot;: [&quot;JAI-A-05&quot;], &quot;prefs&quot;: {&quot;pace&quot;: &quot;relaxed&quot;} }
+</code></pre>
+</li>
+<li>If the change set changes nothing (the setting is already like that), the user gets <em>&quot;Nothing changed: that is already how your plan is set.&quot;</em></li>
+</ul>
+<h3>Step 3: the engine replans</h3>
+<p><code>replan_request()</code> merges the changes into the trip&#39;s request and <strong>runs the engine for the same variant</strong>. The engine does the usual work: CP-SAT, routing, exact costing, then the validator. A <strong>new plan version</strong> is saved with source <code>chat</code>.</p>
+<ul>
+<li>If no plan fits, the user gets <em>&quot;I couldn&#39;t make that change: [engine&#39;s reason]. Your plan is unchanged.&quot;</em></li>
+</ul>
+<h3>Step 4: diff between versions (<code>diff.py</code>, no AI)</h3>
+<p>The code compares the old and new versions: places added, removed and moved between days, hotel change, transport change, Δ cost and Δ value. <strong>These are the facts of what actually happened.</strong></p>
+<h3>Step 5: Groq call 2, writing the reply</h3>
+<p>The model gets <strong>only the diff facts</strong> and writes a friendly sentence or two. Then:</p>
+<ul>
+<li><strong>The grounding check runs.</strong> If it fails, a <strong>template reply</strong> made from the diff is used instead.</li>
+<li>If the user named a place the engine didn&#39;t actually change, the server adds a fixed line: <em>&quot;I didn&#39;t change X; ask again naming it if you want.&quot;</em> This way the reply can never imply something was done when it wasn&#39;t.</li>
+</ul>
+<h3>&quot;Why&quot; questions (the <code>explain</code> tool)</h3>
+<p><em>&quot;Why isn&#39;t Jal Mahal in my plan?&quot;</em> is answered <strong>from engine data</strong>:</p>
+<ul>
+<li><strong>If it&#39;s in the plan:</strong> &quot;It&#39;s on day 2.&quot;</li>
+<li><strong>If the user excluded it:</strong> &quot;You asked to keep it out.&quot;</li>
+<li><strong>If it&#39;s a near miss:</strong> the engine&#39;s reason (budget, time or closed).</li>
+<li><strong>Otherwise:</strong> the engine runs a <strong>trial replan with the place locked in</strong>, and <em>nothing is saved</em>. The assistant can then say <em>&quot;It would fit if you keep it: total would be ₹X and Y would drop out&quot;</em>, or <em>&quot;It wouldn&#39;t fit even if kept in.&quot;</em></li>
+</ul>
+<p>Groq call 2 phrases this, and the grounding check applies again.</p>
+<h2>The safety layers (the most important viva point)</h2>
+<ol>
+<li><p><strong>Fixed tools only.</strong> The LLM can only choose from a menu. It can&#39;t output a plan.</p>
+</li>
+<li><p><strong>The code validates every argument.</strong> Names are resolved against real data, and days, classes and modes are checked.</p>
+</li>
+<li><p><strong>The engine does all the planning.</strong> Feasibility is guaranteed by the optimiser.</p>
+</li>
+<li><p><strong>The validator</strong> checks every new version (V-01 to V-16).</p>
+</li>
+<li><p><strong>Grounding check</strong> (<code>grounding.py</code>). It scans the AI&#39;s text for:</p>
+<ul>
+<li><strong>names:</strong> any attraction or hotel name of that city must be in the plan, its near misses, or the change. It matches the longest names first, so &quot;Qutb Minar Complex&quot; isn&#39;t mistaken for &quot;Qutb Minar&quot;.</li>
+<li><strong>₹ amounts:</strong> it understands &quot;₹12,400&quot;, &quot;Rs 12400&quot;, &quot;20k&quot; and &quot;1.5 lakh&quot;, and every amount must appear in the plan or the diff.</li>
+</ul>
+<p>If anything fails, a <strong>template</strong> is used instead. <strong>So no made-up place or number can reach the user.</strong></p>
+</li>
+<li><p><strong>Every message is logged</strong> in <code>chat_messages</code>, including which tools were called and whether the reply came from the LLM or the template.</p>
+</li>
+</ol>
+<h2>When things go wrong (graceful degradation)</h2>
+<ul>
+<li><strong>No <code>GROQ_API_KEY</code>, Groq down, or an HTTP error:</strong> <code>groq_client</code> raises <code>Unavailable</code>, and each feature falls back:<ul>
+<li>Parse: <em>&quot;Use the sliders instead.&quot;</em></li>
+<li>Explain: <em>&quot;Explanations are unavailable right now; the plans themselves are unaffected.&quot;</em> This isn&#39;t cached, so it retries on the next visit.</li>
+<li>Chat: <em>&quot;The assistant is unavailable right now, so nothing was changed.&quot;</em></li>
+</ul>
+</li>
+<li><strong>Timeouts:</strong><ul>
+<li>Each message has a <strong>7-second deadline</strong>. Call 1 gets up to 4 seconds. Call 2 gets whatever time is left minus 0.5 seconds, and if less than 1 second remains, the template is used immediately.</li>
+</ul>
+</li>
+<li><strong>Retries:</strong> one retry on a 5xx error, on a short rate-limit wait, or on a malformed tool call.</li>
+<li><strong>Rate limit:</strong> 30 chat messages per user per hour, otherwise HTTP 429.</li>
+<li><strong>Planning never depends on the AI.</strong> You can create and refine trips entirely through the form.</li>
+</ul>
+<h2>How well it works (evaluation)</h2>
+<ul>
+<li><strong>Tool accuracy (AI-AT-03):</strong> on 50 hand-written chat requests with known correct tools, accuracy was <strong>85.3%</strong> (mean of 3 runs). The target was 90%, so it fell short. The honest explanation is that adding <code>limit_kind</code> (for &quot;only one church&quot;) cost about two cases (<code>eval/AI_AT_03.md</code>).</li>
+<li><strong>Grounding</strong> is tested with checks that every reply&#39;s names and amounts match the versions (AI-AT-04).</li>
+<li><strong>Live chat latency:</strong> p95 about <strong>7.3 s</strong>, under the 8 s limit. In one of 20 messages, Groq was too slow and the user got &quot;assistant unavailable&quot;.</li>
+<li><strong>Tests use a Groq stub,</strong> so the backend tests don&#39;t need the real API.</li>
+</ul>
+<h2>Short answers for the viva</h2>
+<ul>
+<li><strong>&quot;Why not let the LLM edit the plan directly?&quot;</strong> LLMs break constraints. Our LLM-only baseline produced valid plans for only 2 of 10 trips. Tool calling plus the engine gives a natural interface <em>and</em> guaranteed feasibility.</li>
+<li><strong>&quot;How do you prevent hallucination?&quot;</strong> The LLM only sees facts produced by the engine, it can only pick tools, and a grounding check rejects any unknown name or ₹ amount and falls back to a template.</li>
+<li><strong>&quot;Why Groq?&quot;</strong> It&#39;s very fast, which matters because chat has a 7–8 s budget for two LLM calls plus an engine replan. It also has an OpenAI-compatible API with tool calling and JSON mode.</li>
+<li><strong>&quot;Why two calls rather than one?&quot;</strong> The reply must describe what <em>actually</em> changed, and that&#39;s only known after the engine replans. So call 1 decides the action, the engine acts, and call 2 describes the real result.</li>
+<li><strong>&quot;What happens if the AI misunderstands?&quot;</strong> Wrong names lead to a clarifying question. An impossible change leaves the plan unchanged, with the engine&#39;s reason. A wrong but valid change can be undone with <strong>restore</strong> from version history, because every change is a new version.</li>
+</ul>
+<p>If it helps, I can open <code>prompts.py</code> and walk through the exact tool definitions and system prompts. Examiners sometimes ask to see what the model is actually told.</p>
+</div>
+  </details>
+</section>
+
+<section class="turn" id="turn-5">
+  <div class="turn-head">
+    <a class="num" href="#turn-5">Turn 5</a>
+    <span class="who">You asked</span>
+  </div>
+  <div class="prompt">tell me the major questions that can be asked, coding is not an issue but whywe took certain decisions about tech stacks and their tradeoffs how are the features impemented.<br>can u give me answers to these kind of questions</div>
+  <details>
+    <summary><span class="chev" aria-hidden="true"></span><span class="sum-label">Response</span><span class="sum-title">Viva questions and answers for Tripwise</span></summary>
+    <div class="answer"><h1>Viva questions and answers for Tripwise</h1>
+<p>The answers below are based on the code and on the decision log in <code>SPEC.md</code> (the Changelog at the end of the file). Wherever possible, an answer gives <strong>the decision, why it was made, and its trade-off</strong>, because that&#39;s what examiners look for.</p>
+<hr>
+<h2>Section 1: The problem and the overall approach</h2>
+<p><strong>Q1. What problem does Tripwise solve?</strong>
+Planning a budget trip means balancing fares, hotel prices, entry fees, opening hours, distances and interests all at once. Spreadsheets can&#39;t schedule, and general chatbots produce plans that <em>read</em> well but break the budget, visit places on days they&#39;re closed, or include impossible travel. Tripwise combines <strong>constrained optimisation</strong>, which gives guarantees, with an <strong>LLM</strong>, which gives a natural interface.</p>
+<p><strong>Q2. Why not just use ChatGPT or an LLM to plan trips?</strong>
+LLMs can&#39;t reliably satisfy hard constraints. I measured this: an LLM-only planner given the same data produced a valid plan for <strong>only 2 of 10 trips</strong>. The other 8 broke day-length, lunch, budget or opening-hours rules, and my validator caught them. Tripwise produced valid plans for <strong>26 of 26</strong> feasible trips and correctly declined all 4 impossible ones.</p>
+<p><strong>Q3. What is the single most important design principle?</strong>
+&quot;<strong>The solver owns feasibility</strong>&quot; (Constitution Article II). Every plan comes from the optimisation engine and passes an independent validator. The LLM may only parse text into preferences, map a chat message to a fixed action, or explain engine output. It never creates or edits a plan.
+<em>Trade-off:</em> the chat is less flexible than a free-form chatbot. It can only do what the tools allow, and tool-picking accuracy is 85%. In exchange, every plan is guaranteed valid.</p>
+<p><strong>Q4. Why a hybrid of optimisation and AI, instead of only one of them?</strong>
+Optimisation alone is correct but hard to use: users would have to set weights, locks and excludes by hand. An LLM alone is easy to use but unreliable. In the hybrid, each does what it&#39;s good at: the LLM handles language, and the solver handles correctness.</p>
+<hr>
+<h2>Section 2: The optimisation engine</h2>
+<p><strong>Q5. Why Google OR-Tools?</strong></p>
+<ul>
+<li>It&#39;s free and open source, and it provides <strong>both</strong> solvers I needed: <strong>CP-SAT</strong>, a state-of-the-art constraint/integer solver, and a <strong>Routing library</strong> with built-in support for vehicle routing with time windows.</li>
+<li>It has a Python API, which fits the FastAPI backend.</li>
+<li><em>Alternatives:</em> PuLP, or a MILP solver like CBC or Gurobi. Gurobi is commercial. PuLP has no routing support, so I would have had to write scheduling with time windows myself.</li>
+</ul>
+<p><strong>Q6. Why two stages (selection and then routing) instead of one model?</strong>
+A single model that picks places <em>and</em> assigns days, orders and exact times is a very large combinatorial problem and would be too slow for an interactive app. My target was all three variants in <strong>≤ 5 s at p95</strong>. So:</p>
+<ul>
+<li><strong>Stage 1 (CP-SAT)</strong> decides <em>what</em> to include (transport, hotel, places) using estimated travel time.</li>
+<li><strong>Stage 2 (Routing)</strong> decides <em>which day and in what order</em>, with exact travel times and opening hours.</li>
+</ul>
+<p><em>Trade-off:</em> Stage 1 works with estimates, so the two stages can disagree. I added three things to fix that:</p>
+<ul>
+<li><strong>feedback cuts</strong>, which ban places routing couldn&#39;t fit and re-solve</li>
+<li><strong>budget repair</strong>, which removes the lowest value-per-rupee place if the exact cost is over</li>
+<li>the <strong>fill step</strong>, which adds places into leftover time and money</li>
+</ul>
+<p>The result: all variants p95 <strong>1.21 s</strong> live.</p>
+<p><strong>Q7. Why did you add the fill step? Was there a problem?</strong>
+Yes. The evaluation showed the <strong>greedy baseline beat Tripwise on value in 8 of 26 trips</strong>, because Stage 1&#39;s conservative estimates left time and money unused after exact routing. On one trip, ₹14,500 was left unspent. So I added the fill step (ENG-FR-13): it tries unused places in order of value and keeps one only if the exact schedule and budget still hold. After the fix, greedy wins on <strong>6 of 26</strong>, and Tripwise averages <strong>13% more value</strong>. Greedy still sometimes wins because the stages use estimates and solver time limits, so Tripwise isn&#39;t guaranteed globally optimal.</p>
+<p><strong>Q8. How is the &quot;value&quot; of a plan defined?</strong>
+Each place gets <code>v(a) = 100 × (rating/5) × (base + (1−base) × interest_match) × crowd_factor</code>. The plan&#39;s value is the sum of those values, plus transport comfort, plus a bonus for preferred modes, minus a penalty per minute of local travel, plus a hotel tier bonus. All weights are in <code>config.yaml</code>.
+<em>Trade-off:</em> it&#39;s a hand-designed scoring function, so it&#39;s subjective. But it&#39;s transparent, tunable and the same for every planner, so the evaluation is fair.</p>
+<p><strong>Q9. Where do ratings come from?</strong>
+From Wikipedia page views over 12 months, log-scaled to 1–5 within each city, with OpenTripMap&#39;s rating as a fallback. <em>Why:</em> this gives one reproducible popularity measure for every city. Review sites like Google ratings aren&#39;t freely usable. Crowd level is derived from rating terciles, because there&#39;s no public crowd data.</p>
+<p><strong>Q10. Why keep 10% of the budget as contingency?</strong>
+The prices are estimates, not live quotes, so the plan must stay at ≤ 90% of the budget to leave a safety margin. The margin is shown as its own line in the breakdown.</p>
+<p><strong>Q11. How do you produce three different plans?</strong>
+The same pipeline runs with different <strong>objectives and hotel tiers</strong>:</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Variant</th>
+<th>Objective</th>
+<th>Hotel tiers</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Experience</td>
+<td>Maximise value</td>
+<td>The user&#39;s tier and one tier higher</td>
+</tr>
+<tr>
+<td>Balanced</td>
+<td>Value minus a cost penalty (λ = 4)</td>
+<td>The user&#39;s tier</td>
+</tr>
+<tr>
+<td>Saver</td>
+<td>Minimise cost while keeping ≥ 70% of the best value (ρ = 0.7)</td>
+<td>The user&#39;s tier and one tier lower</td>
+</tr>
+</tbody></table>
+</div><p>If two variants are near-duplicates (same hotel and less than 30% different activities), one is dropped with &quot;same as …&quot;.</p>
+<p><strong>Q12. How did you choose λ = 4.0? Did you tune anything?</strong>
+Yes. With the original λ = 0.5, Balanced almost always equalled Experience, so only 3 test trips showed 3 distinct variants. I grid-searched λ and the hotel weight κ_h. With λ = 4.0 and κ_h = 160, <strong>15 trips</strong> show 3 distinct variants, all tests pass, and speed is unchanged. This is recorded as follow-up F1 in the Changelog.</p>
+<p><strong>Q13. What happens if the budget is too small?</strong>
+The engine finds the cheapest workable plan and tells the user the <strong>minimum budget needed</strong>, rounded up to ₹500. For example: &quot;No plan fits ₹8,000 for 2 people over 3 days. The cheapest workable plan needs about ₹11,500.&quot;</p>
+<p><strong>Q14. Are the results reproducible?</strong>
+Yes (Article IX, NFR-008). CP-SAT uses a fixed seed and 1 worker. Routing stops after a fixed number of solutions (50) rather than a wall-clock time limit. <em>Why:</em> a wall-clock stop made Guided Local Search return different answers on different runs. <em>Trade-off:</em> a single worker is slower than parallel search, but the same request always gives the same plan.</p>
+<p><strong>Q15. Why isn&#39;t lunch modelled inside the routing solver?</strong>
+I tried it with OR-Tools &quot;break intervals&quot;, and each routing call became <strong>25–50× slower</strong> and hit the time cap. Instead, the routing time limit per day already leaves the lunch hour free, and an exact forward pass places lunch afterwards. This is a speed vs model-purity trade-off.</p>
+<hr>
+<h2>Section 3: The validator</h2>
+<p><strong>Q16. Why have a separate validator if the engine already applies the constraints?</strong>
+It&#39;s defence in depth. The validator (V-01 to V-16) <strong>recalculates every time, cost and window from the raw data</strong>, trusts no field in the plan, and <strong>doesn&#39;t import any solver code</strong>. So a bug in the engine can&#39;t hide itself. If validation fails, the plan is withheld (HTTP 500), and the user never sees an invalid plan.</p>
+<p><strong>Q17. What&#39;s the second benefit of independence?</strong>
+<strong>Fair evaluation.</strong> The same validator judges Tripwise, the greedy baseline and the LLM-only baseline. If it reused engine logic, it would be biased toward the engine.</p>
+<hr>
+<h2>Section 4: The data</h2>
+<p><strong>Q18. Why curated static data instead of live APIs for prices and places?</strong></p>
+<ul>
+<li><strong>Reproducibility:</strong> the same input always gives the same output, which is required for testing and evaluation.</li>
+<li><strong>Cost:</strong> live hotel, flight and train APIs are paid or restricted.</li>
+<li><strong>Speed:</strong> the engine needs all distances instantly.</li>
+<li><strong>Honesty:</strong> every row records its source and the date it was checked (Article III).</li>
+</ul>
+<p><em>Trade-off:</em> prices go stale and there&#39;s no seasonal pricing. I handle this by labelling every ₹ amount as an estimate with the compile month (&quot;compiled Nov 2026&quot;), keeping the 10% contingency, and linking out to booking sites for real prices.</p>
+<p><strong>Q19. Why precompute travel-time matrices instead of calling a routing API live?</strong>
+Each plan needs hundreds of place-to-place travel times, and calling OpenRouteService live would be slow and would hit free-tier limits. So I precomputed one matrix per city. Pairs ORS couldn&#39;t route use straight-line distance × 1.3 at 25 km/h, and those are flagged as approximations.</p>
+<p><strong>Q20. How did you handle missing data?</strong>
+Nothing is invented (Article III.4). The order of preference is:</p>
+<ol>
+<li>official or ASI sources,</li>
+<li>the median of at least 2 dated secondary sources (flagged <code>fee_approx</code>),</li>
+<li>defaults by place type (for example, temple visits are 45 min and a fort 150 min).</li>
+</ol>
+<p>Places with no fee source at all were left out. Every approximation is flagged in the row.</p>
+<p><strong>Q21. Why only 15 cities?</strong>
+Scope discipline (Article VII). Curating hours, fees, hotels and matrices properly takes real effort per city. The 15 cities cover different trip types (heritage, nature, beach, metro, spiritual), which is enough to show the method works.</p>
+<hr>
+<h2>Section 5: The AI layer</h2>
+<p><strong>Q22. Why Groq?</strong></p>
+<ul>
+<li><strong>Speed.</strong> Chat has a budget of about 8 s for two LLM calls <em>plus</em> an engine replan, so slow inference would break it.</li>
+<li>It has an <strong>OpenAI-compatible API</strong> with <strong>tool calling</strong> and <strong>JSON mode</strong>.</li>
+<li>It&#39;s cheap.</li>
+</ul>
+<p><em>Trade-off:</em> it&#39;s an external dependency with rate limits. During evaluation I hit the free tier&#39;s 200k tokens per day, so I moved to the Developer (pay-as-you-go) tier, keeping the total cost under ₹50.</p>
+<p><strong>Q23. How did you choose the model <code>openai/gpt-oss-120b</code>?</strong>
+I listed Groq&#39;s tool-capable models and tested three: gpt-oss-120b, gpt-oss-20b and qwen3. All three produced a correct tool call and valid JSON. gpt-oss-120b was chosen for quality at good speed (tool call about 0.95 s). I also set <code>reasoning_effort: low</code>, because the model was spending its whole token budget on reasoning and returning empty JSON. Low effort also halved latency.</p>
+<p><strong>Q24. How does chat work?</strong>
+Each message makes at most <strong>2 Groq calls</strong>:</p>
+<ol>
+<li><strong>Call 1</strong> picks tools from a fixed list (<code>exclude_activity</code>, <code>set_budget</code>, <code>move_activity</code>, …). Tool choice is required.</li>
+<li>The server validates the arguments, fuzzy-matches place names to real attractions, and builds a change set.</li>
+<li>The <strong>engine replans</strong>, the validator checks the result, and a new version is saved.</li>
+<li>The code computes a <strong>diff</strong> between the old and new versions.</li>
+<li><strong>Call 2</strong> writes the reply from the diff only.</li>
+<li>The <strong>grounding check</strong> runs on the reply, with a template as the fallback.</li>
+</ol>
+<p><strong>Q25. Why tool calling and not letting the LLM output a modified plan?</strong>
+Tool calling limits the LLM to a small, checkable set of actions. The engine then guarantees feasibility. If the LLM wrote JSON plans, I would have to validate and repair arbitrary output, and the evaluation shows LLM plans fail 80% of the time.</p>
+<p><strong>Q26. How do you prevent hallucination?</strong>
+There are four layers:</p>
+<ol>
+<li>The LLM only sees <strong>facts the engine produced</strong>: compact plan data and the diff.</li>
+<li>Prompts say &quot;only mention places in the data, copy ₹ amounts exactly&quot;.</li>
+<li>The <strong>grounding check</strong> scans the output for every attraction or hotel name of that city and every ₹ amount (it understands &quot;20k&quot; and &quot;1.5 lakh&quot;). Each must appear in the plan or the diff.</li>
+<li>If the check fails, the LLM retries once (for explanations), and then a <strong>template built from the data</strong> is used instead.</li>
+</ol>
+<p><strong>Q27. What if Groq is down or slow?</strong>
+Planning never depends on the AI (Article II.4). Parsing falls back to &quot;use the sliders&quot;, explanations show a notice, and chat says &quot;assistant unavailable, nothing was changed&quot;. Each chat message has a <strong>7-second deadline</strong>: call 1 gets up to 4 s, and if too little time is left, call 2 is skipped and the template is used.
+<em>Why the deadline was added:</em> live chat p95 was first measured at <strong>12–13 s</strong>, caused by occasional slow Groq responses. The deadline brought it to <strong>7.3 s</strong>, under the 8 s target.</p>
+<p><strong>Q28. Your chat accuracy is 85%, below the 90% target. Why?</strong>
+I&#39;ll be honest about this one. The old code scored 89.3%. I added a <code>limit_kind</code> tool for requests like &quot;only one temple&quot;, which real users needed. It confused the model on about 2 test cases, giving 85.3% (the mean of 3 runs). I had set a rule <em>before</em> running the test: ship if the drop is within 2 cases. It was exactly 2.0, so it shipped and the result was recorded. <em>Trade-off:</em> a useful feature vs a measured accuracy cost. The safety of the system isn&#39;t affected, because a wrong tool still produces a valid plan and can be undone with restore.</p>
+<p><strong>Q29. How do you test the AI without paying for or depending on Groq?</strong>
+The backend tests use a <strong>Groq stub</strong>, and the UI tests run with an empty API key, so they exercise the fallbacks deterministically. Real-Groq tests are opt-in (<code>E2E_LIVE_GROQ=1</code>) or run as separate evaluation scripts.</p>
+<hr>
+<h2>Section 6: The backend and API</h2>
+<p><strong>Q30. Why Python and FastAPI?</strong></p>
+<ul>
+<li><strong>Python</strong> was required because the engine uses OR-Tools, and keeping everything in one language lets the API call the engine directly with no network hop.</li>
+<li><strong>FastAPI</strong> gives async request handling, automatic OpenAPI docs at <code>/docs</code>, a lightweight design and good performance.</li>
+<li><em>Alternatives:</em> Flask (no async, no automatic docs) or Django (too heavy for a JSON API).</li>
+</ul>
+<p><strong>Q31. The solver is CPU-heavy. How does a web server handle that?</strong>
+Solves run in a <strong>bounded thread pool</strong> (<code>api/solver.py</code>), with at most 2 at once (in <code>config.yaml</code>). Other requests wait up to 20 s, then get <strong>HTTP 429 &quot;planner is busy&quot;</strong>. This keeps the event loop responsive, and the server never overloads.
+<em>Trade-off:</em> limited throughput on one VM, which is fine for a course-scale app. Scaling up would mean a job queue with several worker processes.</p>
+<p><strong>Q32. Why only 1 uvicorn worker?</strong>
+The dataset is loaded into memory <strong>once</strong> at startup, and the thread pool controls concurrency. More workers would each load the dataset and multiply the concurrent solves on a small VM.</p>
+<p><strong>Q33. How does authentication work, and why JWT?</strong>
+Passwords are hashed with <strong>bcrypt</strong>. Login returns a <strong>JWT</strong> (HS256) that expires after 7 days, and every request sends it in the <code>Authorization</code> header.
+<em>Why JWT:</em> it&#39;s stateless, so no session table and no extra DB lookup per request, and it suits a separate frontend domain.
+<em>Trade-off:</em> a token can&#39;t be revoked before it expires. Logout simply discards the token on the client. That&#39;s acceptable for this scope.</p>
+<p><strong>Q34. How do you make sure a user can&#39;t see another user&#39;s trips?</strong>
+Every trip query filters on both <code>id</code> <strong>and</strong> <code>user_id</code>. If the trip belongs to someone else, the API returns <strong>404, not 403</strong>, so it doesn&#39;t even reveal that the trip exists. The only exception is a read-only share link: a revocable random token that shows the plan and trip facts, never the chat, email or version history.</p>
+<p><strong>Q35. How are plan changes stored? Why versions?</strong>
+Plans are stored as <strong>immutable numbered versions</strong> in <code>plan_versions</code>. Select, replan, chat and restore each <strong>insert</strong> a new version, and nothing is overwritten.
+<em>Why:</em> you get full history, safe undo (&quot;restore version 2&quot; creates version 5, which is a copy of 2), an audit trail of what the AI changed, and the chat can compute diffs.
+<em>Trade-off:</em> more storage, but plans are small JSON documents.</p>
+<p><strong>Q36. Why are trade-offs computed on demand and cached?</strong>
+They need <strong>4 full engine runs</strong> (budget × 0.8, 0.9, 1.1 and 1.2). Running them for every plan would slow down planning. So they&#39;re computed only when the user opens the panel, and cached in the database <strong>keyed by a hash of the request</strong>. If the request changes, the hash no longer matches and the trade-offs are recomputed automatically. Explanations are cached the same way.</p>
+<hr>
+<h2>Section 7: The database</h2>
+<p><strong>Q37. Why PostgreSQL?</strong>
+The data is relational (users, trips, versions, messages, with ownership) and benefits from foreign keys and transactions. Postgres&#39;s <strong>JSONB</strong> type stores plans and requests as JSON documents in the same database, so I didn&#39;t need a separate document store.</p>
+<p><strong>Q38. Why Neon?</strong>
+It&#39;s a free, managed, serverless Postgres with no server to maintain.
+<em>Trade-offs I ran into:</em></p>
+<ul>
+<li>Neon <strong>suspends after 5 minutes idle</strong> and closes connections, which made the first request fail. Fix: the connection pool checks each connection on checkout and retires idle ones after 240 s.</li>
+<li>Neon&#39;s pooled endpoint uses <strong>PgBouncer in transaction mode</strong>, which breaks prepared statements, so I turned them off.</li>
+</ul>
+<p><strong>Q39. How do two simultaneous chat messages avoid creating the same version number?</strong>
+The insert computes <code>MAX(version) + 1</code> with a unique constraint on (trip, version). If two writers collide, it retries up to 3 times, then returns HTTP 409.</p>
+<hr>
+<h2>Section 8: The frontend</h2>
+<p><strong>Q40. Why React with Vite and TypeScript?</strong></p>
+<ul>
+<li><strong>React:</strong> a component model and a large ecosystem.</li>
+<li><strong>Vite:</strong> a fast development server and build.</li>
+<li><strong>TypeScript:</strong> the plan JSON is complex (days, stops, legs, budget), and types catch mismatches with the API at build time (<code>tsc --noEmit</code> runs as part of the build).</li>
+</ul>
+<p><strong>Q41. Why TanStack Query?</strong>
+It handles server-state caching, loading and error states, and refetching. For example, after a chat change, the plan and versions are refreshed. Without it I&#39;d be writing that logic by hand in each page.</p>
+<p><strong>Q42. Why Leaflet with OpenStreetMap instead of Google Maps?</strong>
+It&#39;s free, with no API key or billing, it&#39;s open data, and it&#39;s part of the fixed stack. Each day&#39;s route is drawn in a distinct colour.</p>
+<p><strong>Q43. Why Tailwind?</strong>
+Fast, consistent styling with no separate CSS files to maintain. Responsive design (360 px phones up to desktop) is easy with its breakpoint utilities.</p>
+<p><strong>Q44. How did you handle accessibility and mobile?</strong>
+Every page is tested at <strong>360 px and 1280 px</strong> with no horizontal scroll, and passes <strong>axe</strong> accessibility checks in Playwright. Form controls have labels, actions work by keyboard, and text meets WCAG AA contrast (NFR-007).</p>
+<hr>
+<h2>Section 9: Deployment</h2>
+<p><strong>Q45. Why an Azure VM for the backend and not serverless (Vercel functions, AWS Lambda)?</strong></p>
+<ul>
+<li>OR-Tools solves are <strong>CPU-heavy and take about a second</strong>, and serverless platforms have cold starts and time limits.</li>
+<li>The dataset should stay <strong>loaded in memory</strong>, which needs a long-running process.</li>
+<li>I had <strong>Azure for Students</strong> credits, and the VM already ran Caddy for another project, so I reused it.</li>
+</ul>
+<p><em>Trade-off:</em> I manage the server myself (systemd, Caddy, a deploy script) and there&#39;s no auto-scaling.</p>
+<p><strong>Q46. Why Vercel for the frontend?</strong>
+The frontend is a static build. Vercel hosts it for free on a global CDN with HTTPS, and deploys with one CLI command.</p>
+<p><strong>Q47. How is it secured in production?</strong></p>
+<ul>
+<li>HTTPS through <strong>Caddy</strong> with Let&#39;s Encrypt.</li>
+<li>CORS allows only the Vercel domain.</li>
+<li>Secrets live in <code>/etc/tripwise.env</code> (owned by root, mode 600), never in the repo.</li>
+<li>The service runs under <strong>systemd</strong>, which restarts it automatically.</li>
+</ul>
+<hr>
+<h2>Section 10: Testing, evaluation and process</h2>
+<p><strong>Q48. How did you evaluate the project?</strong>
+<code>eval/run_eval.py</code> runs <strong>30 test trips</strong> (26 feasible, 4 that must be declined, with tight, medium and generous budgets) through Tripwise, a greedy baseline and an LLM-only baseline. <strong>The same validator checks all three.</strong></p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Planner</th>
+<th>Valid plans</th>
+<th>Mean value</th>
+<th>Share of day spent on local travel</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Tripwise</td>
+<td>26/26, and 4/4 correctly declined</td>
+<td>729.5</td>
+<td>16%</td>
+</tr>
+<tr>
+<td>Greedy</td>
+<td>26/26</td>
+<td>645.5</td>
+<td>28%</td>
+</tr>
+<tr>
+<td>LLM-only (10 trips)</td>
+<td><strong>2/10</strong></td>
+<td>—</td>
+<td>23%</td>
+</tr>
+</tbody></table>
+</div><p>The chat assistant was evaluated separately on 50 labelled requests (85.3% tool accuracy). Live latency was measured on the deployed site.</p>
+<p><strong>Q49. Why compare against a greedy baseline?</strong>
+To show the optimiser adds real value beyond common sense. Greedy also uses the same data, cost model and value function, so the comparison isolates the effect of optimisation.</p>
+<p><strong>Q50. What testing did you do?</strong></p>
+<ul>
+<li><strong>pytest</strong> for the engine, the validator and the API, which runs against a real Neon test schema (<code>app_test</code>).</li>
+<li>A Groq stub for the AI tests.</li>
+<li><strong>Playwright</strong> end-to-end tests at two screen widths, with axe accessibility checks.</li>
+<li>A live test against the deployed site (DEP-AT-01).</li>
+</ul>
+<p><strong>Q51. What is spec-driven development and why did you use it?</strong>
+Everything is written first in <code>SPEC.md</code>:</p>
+<ul>
+<li>the <strong>constitution</strong> (rules),</li>
+<li>the <strong>product</strong> spec,</li>
+<li>each <strong>feature</strong> as Spec, then Plan, then Tasks.</li>
+</ul>
+<p>Each requirement has an ID (FR-xxx, NFR-xxx) and acceptance tests, and <strong>Part D traces every requirement to its tests</strong>. If the code needs to change, the spec changes first, with a Changelog row recording why.
+<em>Why:</em> clear requirements, testable acceptance criteria, an audit trail of every decision, and it kept AI-assisted coding on track.
+<em>Trade-off:</em> more documentation overhead.</p>
+<p><strong>Q52. Why are all the tunable numbers in <code>config.yaml</code>?</strong>
+So that weights, solver time limits, API limits and AI settings can be tuned without code changes, and so tuning is reproducible and visible in one place (NFR-009).</p>
+<hr>
+<h2>Section 11: Limitations and future work (almost always asked)</h2>
+<p><strong>Q53. What are the limitations?</strong></p>
+<ul>
+<li>Prices are estimates. There&#39;s no live pricing, seasonal pricing, weather or festival data.</li>
+<li>Only 15 cities, and single-destination trips only.</li>
+<li>Local travel is auto or cab only, with no metro or bus. Each place has one opening interval per day.</li>
+<li>Chat tool accuracy is 85%, below the 90% target.</li>
+<li>The engine isn&#39;t guaranteed globally optimal (two stages plus time limits). Greedy still wins on 6 of 26 trips.</li>
+<li>There&#39;s one VM with at most 2 concurrent solves, so it doesn&#39;t scale horizontally.</li>
+<li>JWTs can&#39;t be revoked before they expire.</li>
+</ul>
+<p><strong>Q54. What would you improve with more time?</strong></p>
+<ul>
+<li>Live or seasonal price feeds behind the same cost model.</li>
+<li>More cities and multi-city trips.</li>
+<li>Modelling metro and buses.</li>
+<li>A job queue with several solver workers for scale.</li>
+<li>Better tool accuracy, for example through few-shot examples or a smaller set of tools.</li>
+<li>Tighter coupling between Stage 1 and Stage 2, so the estimates are closer to the routed result.</li>
+</ul>
+<p><strong>Q55. What was the hardest part?</strong>
+Making the two solver stages agree. Stage 1 uses estimates, so I needed feedback cuts, exact costing with repair, and later the fill step after the evaluation showed greedy sometimes winning. Keeping the system <strong>deterministic and fast</strong> at the same time was a related challenge. It&#39;s why routing uses a solution count instead of a time limit, and why lunch is placed after routing.</p>
+<hr>
+<h3>How to answer in the viva</h3>
+<p>For any &quot;why X&quot; question, use the pattern <strong>requirement → choice → alternative → trade-off</strong>. For example: &quot;Chat had to respond in under 8 seconds, so I chose Groq for fast inference rather than a slower provider. The trade-off is depending on an external service, so I built fallbacks for when it&#39;s down.&quot;</p>
+<p>Do you want me to turn this into a page you can revise from on your phone, or run a mock viva where I ask you questions one at a time and give feedback on your answers?</p>
+</div>
+  </details>
+</section>
+</main>
+</div>
+<script>
+(function(){
+  var all=function(){return document.querySelectorAll("details")};
+  document.getElementById("open-all").onclick=function(){all().forEach(function(d){d.open=true})};
+  document.getElementById("close-all").onclick=function(){all().forEach(function(d){d.open=false})};
+  function openHash(){var t=location.hash&&document.querySelector(location.hash+" details");if(t)t.open=true}
+  window.addEventListener("hashchange",openHash);openHash();
+})();
+</script>
+</body>
+</html>
